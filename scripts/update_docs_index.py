@@ -125,11 +125,33 @@ def parse_html_metadata(file_path: Path) -> dict:
     excerpt = plain_all[140:320].strip() if len(plain_all) > 140 else ""
 
     ticker_match = re.search(
-        r"\((?:NASDAQ|NYSE|NYSE\s+Arca|OTC\s+ADR|HKEX)\s*:\s*([A-Z0-9.\-]+)\)",
+        r"[\(（](?:NASDAQ|NYSE|NYSE\s+Arca|OTC\s+ADR|HKEX)\s*[:：]\s*([A-Z0-9.\-]+)[\)）]",
         title,
         flags=re.IGNORECASE,
     )
     inferred_ticker = ticker_match.group(1).upper() if ticker_match else ""
+
+    inferred_label = ""
+    bilingual_match = re.match(
+        r"^([\u4e00-\u9fa5]{2,12}?)(?:集团|公司|控股|股份)?\s+([A-Z][A-Za-z0-9.&'\-\s]{1,32}?)\s*[\(（](?:NASDAQ|NYSE|NYSE\s+Arca|OTC\s+ADR|HKEX)",
+        title,
+    )
+    if bilingual_match:
+        zh_part = bilingual_match.group(1).strip()
+        en_part = re.sub(
+            r"(?:,\s*Inc\.|\s+Inc\.|\s+Corp\.|\s+Corporation|\s+Group,?\s*Inc\.|\s+Group|\s+Holdings?|\s+PLC|\s+Ltd\.)+$",
+            "",
+            bilingual_match.group(2).strip(),
+            flags=re.IGNORECASE,
+        ).strip()
+        inferred_label = f"{zh_part} {en_part}".strip()
+    else:
+        zh_paren_match = re.search(
+            r"([\u4e00-\u9fa5]{2,10}?)(?:集团|公司|控股)?[\(（](?:NASDAQ|NYSE|HKEX)\s*[:：]\s*[A-Z0-9.\-]+[\)）]",
+            title,
+        )
+        if zh_paren_match:
+            inferred_label = zh_paren_match.group(1).strip()
 
     return {
         "title": title,
@@ -137,6 +159,7 @@ def parse_html_metadata(file_path: Path) -> dict:
         "summary": summary,
         "excerpt": excerpt,
         "inferredTicker": inferred_ticker,
+        "inferredLabel": inferred_label,
     }
 
 
@@ -267,7 +290,7 @@ def build_updated_catalog(docs_dir: Path, prev_catalog: dict) -> dict:
 
             if is_portal:
                 title = "王安安的数据中心 (index.html)"
-                headings, summary, excerpt, inferred_ticker = [], "网站全局搜索与目录导航入口文件", "", "INDEX"
+                headings, summary, excerpt, inferred_ticker, inferred_label = [], "网站全局搜索与目录导航入口文件", "", "INDEX", ""
             else:
                 parsed = parse_html_metadata(fpath)
                 title = parsed["title"]
@@ -275,11 +298,17 @@ def build_updated_catalog(docs_dir: Path, prev_catalog: dict) -> dict:
                 summary = parsed["summary"]
                 excerpt = parsed["excerpt"]
                 inferred_ticker = parsed["inferredTicker"]
+                inferred_label = parsed.get("inferredLabel", "")
 
             comp_name = rel_parts[0] if len(rel_parts) > 1 else "根目录"
             cmeta = comp_map.get(comp_name)
             if cmeta and inferred_ticker and cmeta["ticker"] == comp_name[:6].upper():
                 cmeta["ticker"] = inferred_ticker
+            if cmeta and inferred_label and cmeta["label"] == comp_name:
+                cmeta["label"] = inferred_label
+                for existing_f in files_out:
+                    if existing_f.get("company") == comp_name:
+                        existing_f["companyLabel"] = inferred_label
 
             cat_display, folder_cat = infer_category(rel_parts)
             fid = prev_f.get("id") or stable_local_id("file", rel_path)
