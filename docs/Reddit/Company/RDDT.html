@@ -99,6 +99,264 @@
  font-weight: 600;
  }
  </style>
+
+<!-- PORTAL_DETAIL_SYNC_CSS_START -->
+  <script>
+    (function () {
+      try {
+        var rawT = window.localStorage.getItem('mui_portal_theme_v4');
+        var t = rawT ? String(rawT).replace(/^"|"$/g, '') : 'light';
+        var isDark = (t === 'dark');
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.setAttribute('data-mui-theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalDetailSyncStyle">
+    /* MUI Homepage-Consistent Light & Dark Surfaces for Classic Detail Pages */
+    html:not(.dark) body {
+      background-color: #F8FAFC !important;
+      color: #0F172A !important;
+    }
+    html.dark body {
+      background-color: #090D16 !important;
+      color: #F8FAFC !important;
+    }
+    html:not(.dark) aside#sidebar {
+      background-color: #FFFFFF !important;
+      color: #334155 !important;
+      border-right: 1px solid #E2E8F0 !important;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+    }
+    html.dark aside#sidebar {
+      background-color: #0F1623 !important;
+      color: #CBD5E1 !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.09) !important;
+    }
+    html:not(.dark) aside#sidebar h2,
+    html:not(.dark) aside#sidebar .text-white {
+      color: #0F172A !important;
+    }
+    html:not(.dark) aside#sidebar .text-slate-300,
+    html:not(.dark) aside#sidebar .text-slate-400,
+    html:not(.dark) aside#sidebar .text-slate-500 {
+      color: #475569 !important;
+    }
+    html:not(.dark) aside#sidebar .border-slate-800,
+    html:not(.dark) aside#sidebar .border-slate-800\/80,
+    html:not(.dark) aside#sidebar .border-slate-800\/70,
+    html:not(.dark) aside#sidebar .border-slate-700 {
+      border-color: #E2E8F0 !important;
+    }
+    html:not(.dark) aside#sidebar .bg-navy-950\/70,
+    html:not(.dark) aside#sidebar .bg-navy-800 {
+      background-color: #F1F5F9 !important;
+      color: #0F172A !important;
+    }
+    html:not(.dark) aside#sidebar #desktop-nav .nav-link:hover {
+      background-color: #F1F5F9 !important;
+      color: #0073E6 !important;
+    }
+    html:not(.dark) header#mobile-header {
+      background-color: rgba(255, 255, 255, 0.92) !important;
+      color: #0F172A !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      backdrop-filter: blur(12px);
+    }
+    html:not(.dark) header#mobile-header .text-white {
+      color: #0F172A !important;
+    }
+
+    /* Sticky Homepage-Consistent Top AppBar */
+    .PortalDetailAppBar {
+      position: sticky;
+      top: 0;
+      z-index: 35;
+      height: 56px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #E2E8F0;
+    }
+    html.dark .PortalDetailAppBar {
+      background: rgba(9, 13, 22, 0.86);
+      border-bottom-color: rgba(255, 255, 255, 0.09);
+    }
+    .PortalDetailAppBar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .PortalBackLink {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 9px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0073E6;
+      background: rgba(0, 115, 230, 0.08);
+      border: 1px solid rgba(0, 115, 230, 0.24);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .PortalBackLink:hover {
+      background: rgba(0, 115, 230, 0.14);
+    }
+    html.dark .PortalBackLink {
+      color: #3399FF;
+      background: rgba(51, 153, 255, 0.14);
+      border-color: rgba(51, 153, 255, 0.32);
+    }
+    .PortalCrumbMeta {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748B;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    html.dark .PortalCrumbMeta {
+      color: #94A3B8;
+    }
+    .PortalDetailAppBar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .PortalLangSwitch {
+      display: inline-flex;
+      align-items: center;
+      height: 36px;
+      padding: 2px;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+      background: #F1F5F9;
+      gap: 2px;
+    }
+    html.dark .PortalLangSwitch {
+      border-color: rgba(255, 255, 255, 0.10);
+      background: rgba(19, 29, 47, 0.85);
+    }
+    .PortalLangBtn {
+      height: 30px;
+      padding: 0 10px;
+      border: none;
+      border-radius: 7px;
+      background: transparent;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    html.dark .PortalLangBtn {
+      color: #94A3B8;
+    }
+    .PortalLangBtn.active {
+      background: #FFFFFF;
+      color: #0073E6;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);
+    }
+    html.dark .PortalLangBtn.active {
+      background: #0F1623;
+      color: #3399FF;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    }
+    .PortalThemeBtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #475569;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .PortalThemeBtn:hover {
+      background: #F1F5F9;
+      color: #0073E6;
+      border-color: rgba(0, 115, 230, 0.32);
+    }
+    html.dark .PortalThemeBtn {
+      background: #0F1623;
+      border-color: rgba(255, 255, 255, 0.10);
+      color: #CBD5E1;
+    }
+    html.dark .PortalThemeBtn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #3399FF;
+    }
+
+    /* Sidebar Related Navigation Block */
+    .PortalSideRelatedWrap {
+      padding: 10px 12px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    html.dark .PortalSideRelatedWrap {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .PortalSideRelatedLabel {
+      padding: 0 8px 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #64748B;
+    }
+    .PortalSideRelatedList {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      max-height: 158px;
+      overflow-y: auto;
+    }
+    .PortalSideRelatedLink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.14s ease;
+    }
+    .PortalSideRelatedLink:hover {
+      background: rgba(0, 115, 230, 0.08);
+      color: #0073E6;
+    }
+    html.dark .PortalSideRelatedLink {
+      color: #CBD5E1;
+    }
+    html.dark .PortalSideRelatedLink:hover {
+      background: rgba(51, 153, 255, 0.14);
+      color: #3399FF;
+    }
+    aside#sidebar svg, header#mobile-header svg { max-width: 20px; max-height: 20px; }
+    .hidden { display: none; }
+    @media print {
+      .PortalDetailAppBar { display: none !important; }
+    }
+  </style>
+<!-- PORTAL_DETAIL_SYNC_CSS_END -->
 </head>
 <body class="bg-[#F8FAFC] text-[#1E293B] dark:bg-navy-950 dark:text-slate-100 antialiased selection:bg-rddtorange-500 selection:text-white transition-colors duration-200">
 
@@ -237,10 +495,37 @@
  <span>打印 / 导出 PDF 研报</span>
  </button>
  </div>
- </aside>
+ 
+  <!-- SITE_RELATED_NAV_START -->
+      <div class="PortalSideRelatedWrap">
+        <div class="PortalSideRelatedLabel" data-i18n-zh="站点与关联导航" data-i18n-en="Site &amp; Related Nav">站点与关联导航</div>
+        <ul class="PortalSideRelatedList">
+        <li><a href="../../index.html" class="PortalSideRelatedLink"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" data-i18n-zh="🏠 返回数据中心首页" data-i18n-en="🏠 Back to Research Hub">🏠 返回数据中心首页</span><span style="opacity:0.65;">↩</span></a></li>
+        <li><a href="../SeniorExecutive/Steve_Huffman_Reddit_CEO_Analysis.html" class="PortalSideRelatedLink"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" data-i18n-zh="[高管人物] 史蒂夫·霍夫曼 Steve Huffman…" data-i18n-en="[Executive] Steve Huffman">[高管人物] 史蒂夫·霍夫曼 Steve Huffman…</span><span style="opacity:0.65;">↗</span></a></li>
+        </ul>
+      </div>
+      <!-- SITE_RELATED_NAV_END -->
+  </aside>
 
  <!-- 主内容区 -->
  <main class="lg:ml-[280px] min-h-screen">
+    <!-- PORTAL_DETAIL_TOPBAR_START -->
+    <div class="PortalDetailAppBar">
+      <div class="PortalDetailAppBar-left">
+        <a href="../../index.html" class="PortalBackLink"><span data-i18n-zh="← 数据中心首页" data-i18n-en="← Research Hub">← 数据中心首页</span></a>
+        <span class="PortalCrumbMeta" data-i18n-zh="Reddit · 公司深度" data-i18n-en="Reddit · Deep Dive">Reddit · 公司深度</span>
+      </div>
+      <div class="PortalDetailAppBar-right">
+        <div id="portalDetailLangSwitch" class="PortalLangSwitch" role="group" aria-label="语言切换">
+          <button type="button" id="portalDetailZhBtn" class="PortalLangBtn active" aria-pressed="true">中文</button>
+          <button type="button" id="portalDetailEnBtn" class="PortalLangBtn" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="portalDetailThemeBtn" class="PortalThemeBtn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="portalDetailThemeIcon" style="display:inline-flex;align-items:center;"></span>
+        </button>
+      </div>
+    </div>
+    <!-- PORTAL_DETAIL_TOPBAR_END -->
  <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-12">
 
  <!-- =========================================================
@@ -1763,5 +2048,295 @@
  initValEvolutionChart();
  });
  </script>
+
+<!-- PORTAL_DETAIL_SYNC_JS_START -->
+  <script id="portalDetailSyncScript">
+    (function () {
+      'use strict';
+      var THEME_KEY = 'mui_portal_theme_v4';
+      var LANG_KEY = 'mui_portal_lang_v1';
+
+      var UI_PAIRS = [
+        ['站点与关联导航', 'Site & Related Nav'],
+        ['返回数据中心首页', 'Back to Research Hub'],
+        ['阅读模式切换', 'Theme Appearance'],
+        ['深色护眼模式', 'Dark Mode'],
+        ['机构亮色模式', 'Light Mode'],
+        ['打印 / 导出 PDF 研报', 'Print / Export PDF'],
+        ['导出独立 HTML 文件 (.html)', 'Export Standalone HTML (.html)'],
+        ['导出独立 HTML 研报文件', 'Export Standalone HTML (.html)'],
+        ['一键导出独立 HTML 文件', 'Export Standalone HTML'],
+        ['一键下载独立 HTML 文件', 'Download Standalone HTML'],
+        ['导出HTML', 'Export HTML'],
+        ['下载 .html', 'Download .html'],
+        ['核心研究章节', 'Research Chapters'],
+        ['重置清单', 'Reset Checklist'],
+        ['00. 执行摘要与核心指标', '00. Executive Summary & KPIs'],
+        ['执行摘要与核心指标', 'Executive Summary & KPIs'],
+        ['01. 业务与收入架构', '01. Business & Revenue Architecture'],
+        ['业务与收入架构', 'Business & Revenue Architecture'],
+        ['02. 行业地位与四重护城河', '02. Industry Position & Four Moats'],
+        ['行业地位与四重护城河', 'Industry Position & Four Moats'],
+        ['02. 行业地位与四重核心护城河', '02. Industry Position & Four Moats'],
+        ['行业地位与四重核心护城河', 'Industry Position & Four Moats'],
+        ['05. 投资决策与风险配置', '05. Investment Thesis & Risk Allocation'],
+        ['投资决策与风险配置', 'Investment Thesis & Risk Allocation'],
+        ['05. 三幕演进与管理遗产复盘', '05. Three-Era Evolution & Legacy'],
+        ['三幕演进与管理遗产复盘', 'Three-Era Evolution & Legacy'],
+        ['06. 季度跟踪 KPI 核查清单', '06. Quarterly KPI Checklist'],
+        ['季度跟踪 KPI 核查清单', 'Quarterly KPI Checklist'],
+        ['六、 季度基本面跟踪 KPI 交互式核查清单（Checklist）', '06. Interactive Fundamental KPI Checklist'],
+        ['核心复盘：', 'Key Takeaway:'],
+        ['核心假设：', 'Key Assumptions:'],
+        ['数据来源与研究说明：', 'Primary Sources & Notes:'],
+        ['免责声明：', 'Disclaimer:'],
+        ['研究基准', 'Research Basis'],
+        ['牛市情景 (Bull Case)', 'Bull Case Scenario'],
+        ['基准情景 (Base Case)', 'Base Case Scenario'],
+        ['熊市情景 (Bear Case)', 'Bear Case Scenario'],
+        ['多头核心论点 (Bull Thesis)', 'Bull Thesis'],
+        ['空头担忧论点 (Bear Thesis)', 'Bear Thesis'],
+        ['初始投入本金 (USD)', 'Initial Principal (USD)'],
+        ['长期持有年限 (Years)', 'Holding Horizon (Years)'],
+        ['年化复合回报率 (CAGR %)', 'Annualized Return (CAGR %)'],
+        ['年化复合增长率 (CAGR %)', 'Compound Annual Growth (CAGR %)'],
+        ['有效综合年化复合增长率', 'Effective Compound Annual Growth Rate'],
+        ['期末预计总资产市值', 'Projected Terminal Value'],
+        ['本金增值倍数 (MOIC Multiple)', 'Multiple on Invested Capital (MOIC)'],
+        ['累计创造净资本利得', 'Cumulative Net Capital Gain'],
+        ['扣除初始投入本金后的纯复利收益', 'Net compounding gain above initial principal'],
+        ['四大核心潜在风险评估与跟踪边界', 'Four Key Risks & Monitoring Guardrails'],
+        ['核心优劣势与竞合定位评估', 'Strengths, Weaknesses & Competitive Positioning'],
+        ['客观局限与组织张力反思 (Critical Lens)', 'Critical Lens & Organizational Trade-offs'],
+        ['总市值与最新股价', 'Market Cap & Share Price'],
+        ['参考股价 (52周区间)', 'Share Price (52-Wk Range)'],
+        ['关注度：极高', 'Priority: Critical'],
+        ['关注度：高', 'Priority: High'],
+        ['关注度：中高', 'Priority: Med-High'],
+        ['关注度：中', 'Priority: Medium']
+      ];
+
+      var zh2en = {};
+      var en2zh = {};
+      for (var i = 0; i < UI_PAIRS.length; i++) {
+        zh2en[UI_PAIRS[i][0]] = UI_PAIRS[i][1];
+        en2zh[UI_PAIRS[i][1]] = UI_PAIRS[i][0];
+      }
+
+      function getStoreStr(k, fb) {
+        try {
+          var v = window.localStorage.getItem(k);
+          return v ? String(v).replace(/^"|"$/g, '') : fb;
+        } catch (e) {
+          return fb;
+        }
+      }
+
+      function setStoreStr(k, v) {
+        try {
+          window.localStorage.setItem(k, v);
+        } catch (e) {}
+      }
+
+      function renderThemeIcon(isDark) {
+        var ic = document.getElementById('portalDetailThemeIcon');
+        if (!ic) return;
+        ic.innerHTML = isDark
+          ? '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+      }
+
+      function applyDetailTheme(mode, persist) {
+        var isDark = (mode === 'dark');
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.setAttribute('data-mui-theme', isDark ? 'dark' : 'light');
+        renderThemeIcon(isDark);
+        if (persist) setStoreStr(THEME_KEY, isDark ? 'dark' : 'light');
+        if (typeof window.updateChartsTheme === 'function') {
+          try { window.updateChartsTheme(); } catch (e) {}
+        }
+      }
+
+      /* Hook global toggleTheme() so sidebar button also syncs with homepage */
+      var origToggleTheme = window.toggleTheme;
+      window.toggleTheme = function () {
+        var nextDark = !document.documentElement.classList.contains('dark');
+        applyDetailTheme(nextDark ? 'dark' : 'light', true);
+      };
+
+      var origTextMap = new WeakMap();
+      var netTransCache = {};
+      var curLang = 'zh';
+
+      function translateDynamicPattern(s, toEn) {
+        if (toEn) {
+          var m1 = s.match(/^已核查\s*(\d+)\s*\/\s*(\d+)\s*项\s*\((\d+%)\)$/);
+          if (m1) return 'Verified ' + m1[1] + ' / ' + m1[2] + ' (' + m1[3] + ')';
+          var m2 = s.match(/^概率：(\d+%)$/);
+          if (m2) return 'Prob: ' + m2[1];
+          var m3 = s.match(/^(\d+)\s*年$/);
+          if (m3) return m3[1] + ' Yrs';
+          var m4 = s.match(/^覆盖时间：(\d{4})年(\d{1,2})月$/);
+          if (m4) return 'Coverage: ' + m4[1] + '-' + m4[2];
+        } else {
+          var e1 = s.match(/^Verified\s*(\d+)\s*\/\s*(\d+)\s*\((\d+%)\)$/);
+          if (e1) return '已核查 ' + e1[1] + ' / ' + e1[2] + ' 项 (' + e1[3] + ')';
+          var e2 = s.match(/^Prob:\s*(\d+%)$/);
+          if (e2) return '概率：' + e2[1];
+          var e3 = s.match(/^(\d+)\s*Yrs$/);
+          if (e3) return e3[1] + ' 年';
+          var e4 = s.match(/^Coverage:\s*(\d{4})-(\d{1,2})$/);
+          if (e4) return '覆盖时间：' + e4[1] + '年' + e4[2] + '月';
+        }
+        return null;
+      }
+
+      function maybeTranslateRemainingOnline(nodesToTranslate) {
+        if (!nodesToTranslate.length || typeof window.fetch !== 'function') return;
+        if (typeof navigator !== 'undefined' && navigator.onLine === false) return;
+        var batchSize = 18;
+        var idx = 0;
+        function nextBatch() {
+          if (curLang !== 'en' || idx >= nodesToTranslate.length) return;
+          var slice = nodesToTranslate.slice(idx, idx + batchSize);
+          idx += batchSize;
+          var joined = slice.map(function (it) { return it.zh; }).join('\n====\n');
+          var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+          var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 3500) : 0;
+          window.fetch(
+            'https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-CN&tl=en&dt=t&q=' + encodeURIComponent(joined),
+            ctrl ? { signal: ctrl.signal } : {}
+          ).then(function (r) {
+            if (timer) clearTimeout(timer);
+            return r.ok ? r.json() : null;
+          }).then(function (data) {
+            if (!data || !Array.isArray(data[0]) || curLang !== 'en') return;
+            var fullEn = data[0].map(function (seg) { return seg && seg[0] ? seg[0] : ''; }).join('');
+            var parts = fullEn.split(/\s*====\s*/);
+            if (parts.length === slice.length) {
+              for (var k = 0; k < slice.length; k++) {
+                var enTxt = parts[k].trim();
+                if (enTxt) {
+                  netTransCache[slice[k].zh] = enTxt;
+                  if (curLang === 'en') slice[k].node.nodeValue = slice[k].lead + enTxt + slice[k].trail;
+                }
+              }
+            }
+            nextBatch();
+          }).catch(function () {
+            if (timer) clearTimeout(timer);
+          });
+        }
+        nextBatch();
+      }
+
+      function applyDetailLang(lang, persist) {
+        curLang = (lang === 'en') ? 'en' : 'zh';
+        var en = (curLang === 'en');
+        document.documentElement.setAttribute('lang', en ? 'en' : 'zh-CN');
+        document.documentElement.setAttribute('data-lang', curLang);
+
+        var zhB = document.getElementById('portalDetailZhBtn');
+        var enB = document.getElementById('portalDetailEnBtn');
+        if (zhB && enB) {
+          zhB.classList.toggle('active', !en);
+          enB.classList.toggle('active', en);
+          zhB.setAttribute('aria-pressed', !en ? 'true' : 'false');
+          enB.setAttribute('aria-pressed', en ? 'true' : 'false');
+        }
+        var thB = document.getElementById('portalDetailThemeBtn');
+        if (thB) {
+          thB.setAttribute('title', en ? 'Toggle Light / Dark theme' : '切换浅色 / 深色主题');
+          thB.setAttribute('aria-label', en ? 'Toggle color theme' : '切换深浅色主题');
+        }
+
+        var tagged = document.querySelectorAll('[data-i18n-zh][data-i18n-en]');
+        for (var d = 0; d < tagged.length; d++) {
+          tagged[d].textContent = en ? tagged[d].getAttribute('data-i18n-en') : tagged[d].getAttribute('data-i18n-zh');
+        }
+
+        var cjkRe = /[\u4e00-\u9fff]/;
+        var pendingOnline = [];
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        var n;
+        while ((n = walker.nextNode())) {
+          var p = n.parentElement;
+          if (!p) continue;
+          var tn = p.tagName;
+          if (tn === 'SCRIPT' || tn === 'STYLE' || p.closest('#portalDetailLangSwitch') || p.closest('[data-i18n-zh]')) continue;
+          var raw = n.nodeValue || '';
+          var trimmed = raw.replace(/\s+/g, ' ').trim();
+          if (!trimmed) continue;
+
+          if (!origTextMap.has(n) && cjkRe.test(trimmed)) {
+            origTextMap.set(n, raw);
+          }
+
+          var lead = (raw.match(/^\s*/) || [''])[0];
+          var trail = (raw.match(/\s*$/) || [''])[0];
+
+          if (en) {
+            var baseRaw = origTextMap.has(n) ? origTextMap.get(n) : raw;
+            var baseTrim = baseRaw.replace(/\s+/g, ' ').trim();
+            var hit = zh2en[baseTrim] || translateDynamicPattern(baseTrim, true) || netTransCache[baseTrim];
+            if (hit) {
+              n.nodeValue = lead + hit + trail;
+            } else if (cjkRe.test(baseTrim) && baseTrim.length >= 2) {
+              pendingOnline.push({ node: n, zh: baseTrim, lead: lead, trail: trail });
+            }
+          } else {
+            if (origTextMap.has(n)) {
+              n.nodeValue = origTextMap.get(n);
+            } else {
+              var rev = en2zh[trimmed] || translateDynamicPattern(trimmed, false);
+              if (rev) n.nodeValue = lead + rev + trail;
+            }
+          }
+        }
+
+        if (persist) setStoreStr(LANG_KEY, curLang);
+        if (en && pendingOnline.length) {
+          maybeTranslateRemainingOnline(pendingOnline);
+        }
+      }
+
+      function initDetailPortalSync() {
+        var savedTheme = getStoreStr(THEME_KEY, 'light');
+        applyDetailTheme(savedTheme === 'dark' ? 'dark' : 'light', false);
+
+        var savedLang = getStoreStr(LANG_KEY, 'zh');
+        applyDetailLang(savedLang === 'en' ? 'en' : 'zh', false);
+
+        var tBtn = document.getElementById('portalDetailThemeBtn');
+        if (tBtn) {
+          tBtn.addEventListener('click', function () {
+            var nextDark = !document.documentElement.classList.contains('dark');
+            applyDetailTheme(nextDark ? 'dark' : 'light', true);
+          });
+        }
+        var zBtn = document.getElementById('portalDetailZhBtn');
+        var eBtn = document.getElementById('portalDetailEnBtn');
+        if (zBtn) zBtn.addEventListener('click', function () { applyDetailLang('zh', true); });
+        if (eBtn) eBtn.addEventListener('click', function () { applyDetailLang('en', true); });
+
+        window.addEventListener('storage', function (ev) {
+          if (ev.key === THEME_KEY && ev.newValue) {
+            var nt = String(ev.newValue).replace(/^"|"$/g, '');
+            if (nt === 'light' || nt === 'dark') applyDetailTheme(nt, false);
+          } else if (ev.key === LANG_KEY && ev.newValue) {
+            var nl = String(ev.newValue).replace(/^"|"$/g, '');
+            if (nl === 'zh' || nl === 'en') applyDetailLang(nl, false);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDetailPortalSync);
+      } else {
+        initDetailPortalSync();
+      }
+    })();
+  </script>
+<!-- PORTAL_DETAIL_SYNC_JS_END -->
 </body>
 </html>
