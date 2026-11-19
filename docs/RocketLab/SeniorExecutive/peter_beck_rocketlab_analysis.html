@@ -1271,6 +1271,54 @@
         overflow-wrap: anywhere;
       }
     }
+    /* Sidebar Height & Nav Optimization */
+    @media (min-width: 1024px) {
+      .mui-sidebar {
+        top: 72px !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding-bottom: 24px !important;
+        gap: 10px !important;
+      }
+    }
+    .sidebar-card {
+      padding: 12px 14px !important;
+      flex-shrink: 0 !important;
+    }
+    .sidebar-subtitle {
+      margin: 4px 0 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.4 !important;
+    }
+    .sidebar-mini-kpis {
+      gap: 4px !important;
+      padding-top: 8px !important;
+    }
+    .mui-sidebar .mui-nav-list {
+      gap: 2px !important;
+    }
+    .mui-sidebar .mui-nav-list:first-of-type {
+      max-height: 175px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      padding-right: 3px;
+    }
+    .mui-ext-nav-link {
+      padding: 4px 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.32 !important;
+    }
+    .mui-ext-nav-left > span:last-child {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .mui-nav-link {
+      padding: 5px 10px !important;
+      font-size: 0.80rem !important;
+    }
+
 
   </style>
 </head>

@@ -126,7 +126,7 @@ STANDARD_DIMS = [
 ]
 
 DEFAULT_ROOT_DRIVE_URL = "https://drive.google.com/drive/folders/1GEm-cxIC-tAvyiMlAs82b8QYzjUqhNBc"
-SKIP_TAGS = {"script", "style", "svg", "noscript", "template"}
+SKIP_TAGS = {"script", "style", "svg", "noscript", "template", "header", "aside"}
 
 INJECTED_BLOCK_PATTERNS = (
     r"<!--\s*SITE_RELATED_NAV_START\s*-->[\s\S]*?<!--\s*SITE_RELATED_NAV_END\s*-->",
@@ -217,6 +217,213 @@ class HTMLContentParser(HTMLParser):
         cleaned = data.strip()
         if cleaned:
             self.text_chunks.append(cleaned)
+
+
+
+ZH_EN_PHRASES = [
+    ("企业文化与组织架构深度研究报告", "Corporate Culture & Org Architecture Deep Dive"),
+    ("企业文化与治理架构深度研究报告", "Corporate Culture & Governance Deep Dive"),
+    ("企业文化与工程治理深度研究报告", "Corporate Culture & Engineering Governance Deep Dive"),
+    ("企业文化与组织演进深度研究报告", "Corporate Culture & Organizational Evolution Deep Dive"),
+    ("深度商业与产品战略研究报告", "Business & Product Strategy Deep Dive"),
+    ("深度商业与领导力研究报告", "Business & Leadership Deep Dive"),
+    ("深度商业与价值投资研究报告", "Business & Value Investing Deep Dive"),
+    ("深度商业与资本配置研究报告", "Business & Capital Allocation Deep Dive"),
+    ("深度商业与投资研究报告", "Business & Investment Deep Dive"),
+    ("深度商业与战略研究报告", "Business & Strategy Deep Dive"),
+    ("深度商业、财务与估值研究报告", "Business, Financials & Valuation Deep Dive"),
+    ("深度投资人物与战略研究报告", "Investor & Strategy Deep Dive"),
+    ("深度商业与领袖战略研究报告", "Business & Leadership Strategy Deep Dive"),
+    ("深度商业与技术战略研究报告", "Business & Technology Strategy Deep Dive"),
+    ("深度商业与全栈算力战略研究报告", "Business & Full-Stack Compute Strategy Deep Dive"),
+    ("深度商业与平台战略研究报告", "Business & Platform Strategy Deep Dive"),
+    ("深度商业与航天战略研究报告", "Business & Aerospace Strategy Deep Dive"),
+    ("深度商业与转型战略研究报告", "Business & Transformation Strategy Deep Dive"),
+    ("深度商业与算力架构研究报告", "Business & Compute Architecture Deep Dive"),
+    ("深度商业与供应链战略研究报告", "Business & Supply Chain Strategy Deep Dive"),
+    ("深度商业与工程战略研究报告", "Business & Engineering Strategy Deep Dive"),
+    ("深度领导力与战略研究报告", "Leadership & Strategy Deep Dive"),
+    ("深度持仓研究报告", "13F Portfolio Deep Dive"),
+    ("深度研究报告", "Deep Dive Research Report"),
+    ("深度分析报告", "Deep Dive Analysis"),
+    ("企业文化深度研究报告", "Corporate Culture Deep Dive"),
+    ("企业文化研报", "Corporate Culture Report"),
+    ("执行摘要与核心指标", "Executive Summary & KPIs"),
+    ("《股东手册》", "Owner's Manual "),
+    ("所有权原则", "Owner-Related Principles"),
+    ("头版测试", "Front-Page Test"),
+    ("声誉铁律", "Reputation Ironclad"),
+    ("美债堡垒", "T-Bill Fortress"),
+    ("零成本浮存金", "Zero-Cost Float"),
+    ("浮存金", "Float"),
+    ("现金堡垒", "Cash Fortress"),
+    ("净现金与美债储备", "Net Cash & T-Bills Reserve"),
+    ("净现金", "Net Cash"),
+    ("营业利润率", "Operating Margin"),
+    ("营业利润", "Operating Earnings"),
+    ("自由现金流", "Free Cash Flow"),
+    ("毛利率", "Gross Margin"),
+    ("净利率", "Net Margin"),
+    ("同比增长率", "YoY Growth"),
+    ("同比增速", "YoY Growth"),
+    ("市场份额", "Market Share"),
+    ("总市值", "Market Cap"),
+    ("市值", "Market Cap"),
+    ("股价", "Stock Price"),
+    ("市盈率", "P/E"),
+    ("市销率", "P/S"),
+    ("资本配置", "Capital Allocation"),
+    ("资本开支", "CapEx"),
+    ("股票回购", "Share Buybacks"),
+    ("股息增长", "Dividend Growth"),
+    ("护城河", "Moat"),
+    ("雷达图", "Radar"),
+    ("横向对比", "Peer Comparison"),
+    ("组织架构", "Org Architecture"),
+    ("企业文化", "Corporate Culture"),
+    ("治理架构", "Governance Architecture"),
+    ("领导力哲学", "Leadership Philosophy"),
+    ("商业版图", "Business Architecture"),
+    ("产品矩阵", "Product Matrix"),
+    ("收入架构", "Revenue Architecture"),
+    ("业务与收入架构", "Business & Revenue Architecture"),
+    ("行业地位与四重核心护城河", "Industry Position & Four Core Moats"),
+    ("四重核心护城河", "Four Core Moats"),
+    ("四重文化护城河", "Four Cultural Moats"),
+    ("核心护城河", "Core Moats"),
+    ("核心竞争力", "Core Competitiveness"),
+    ("五大核心", "Five Core"),
+    ("四大核心", "Four Core"),
+    ("三大核心", "Three Core"),
+    ("前十大重仓", "Top 10 Holdings"),
+    ("前五大公司", "Top 5 Companies"),
+    ("组合集中度", "Portfolio Concentration"),
+    ("完整持仓矩阵", "Full Holdings Matrix"),
+    ("持仓全景", "Portfolio Overview"),
+    ("调仓脉络", "Rebalancing Moves"),
+    ("阿贝尔时代", "Greg Abel Era"),
+    ("后巴菲特时代", "Post-Buffett Era"),
+    ("巴菲特", "Buffett"),
+    ("芒格", "Munger"),
+    ("阿贝尔", "Greg Abel"),
+    ("伯克希尔·哈撒韦", "Berkshire Hathaway"),
+    ("伯克希尔哈撒韦", "Berkshire Hathaway"),
+    ("伯克希尔", "Berkshire"),
+    ("苹果公司", "Apple Inc."),
+    ("苹果", "Apple"),
+    ("奥驰亚集团", "Altria Group"),
+    ("奥驰亚", "Altria"),
+    ("亚马逊", "Amazon"),
+    ("谷歌", "Google"),
+    ("英伟达", "NVIDIA"),
+    ("特斯拉", "Tesla"),
+    ("奈飞", "Netflix"),
+    ("拼多多控股", "PDD Holdings"),
+    ("拼多多", "PDD"),
+    ("段永平", "Duan Yongping"),
+    ("李录", "Li Lu"),
+    ("喜马拉雅资本", "Himalaya Capital"),
+    ("格雷格·阿贝尔", "Greg Abel"),
+    ("史蒂夫·乔布斯", "Steve Jobs"),
+    ("蒂姆·库克", "Tim Cook"),
+    ("黄仁勋", "Jensen Huang"),
+    ("埃隆·马斯克", "Elon Musk"),
+    ("马克·扎克伯格", "Mark Zuckerberg"),
+    ("桑达尔·皮查伊", "Sundar Pichai"),
+    ("查克·罗宾斯", "Chuck Robbins"),
+    ("萨尔·曼库索", "Sal Mancuso"),
+    ("博通", "Broadcom"),
+    ("新思科技", "Synopsys"),
+    ("闪迪", "SanDisk"),
+    ("西部数据", "Western Digital"),
+    ("安谋控股", "Arm Holdings"),
+    ("火箭实验室", "Rocket Lab"),
+    ("莱纳房产", "Lennar Corp"),
+    ("昂跑", "On Holding"),
+    ("罗布乐思", "Roblox"),
+    ("资生堂集团", "Shiseido"),
+    ("腾讯音乐", "Tencent Music"),
+    ("华特迪士尼", "Walt Disney"),
+    ("思科系统", "Cisco Systems"),
+    ("卡骆驰", "Crocs"),
+    ("优倍快", "Ubiquiti"),
+    ("纳斯达克100ETF", "Nasdaq-100 ETF"),
+    ("标普500ETF", "S&P 500 ETF"),
+    ("标普500", "S&P 500"),
+    ("无创健康传感与生物光学监测技术", "Non-Invasive Health Sensing & Bio-Optical Tech"),
+    ("第一性原理", "First Principles"),
+    ("人均创收", "Revenue per Employee"),
+    ("员工", "Employees"),
+    ("总部", "HQ"),
+    ("极端分权", "Extreme Decentralization"),
+    ("分权联邦", "Decentralized Federation"),
+    ("复利机器", "Compounding Machine"),
+    ("流媒体", "Streaming"),
+    ("全栈", "Full-Stack"),
+    ("算力", "Compute"),
+    ("人工智能", "AI"),
+    ("数据中心", "Data Center"),
+    ("半导体", "Semiconductor"),
+    ("供应链", "Supply Chain"),
+    ("商业模式", "Business Model"),
+    ("估值", "Valuation"),
+    ("营收", "Revenue"),
+    ("净利润", "Net Income"),
+    ("净利", "Net Income"),
+    ("组合", "Portfolio"),
+    ("现金", "Cash"),
+    ("控股", "Holding"),
+    ("年化", "Annualized"),
+    ("研究报告", "Research Report"),
+    ("研报", "Report"),
+    ("深度", "Deep Dive"),
+    ("全景", "Overview"),
+    ("对比", "Comparison"),
+    ("演进", "Trajectory"),
+    ("拆解", "Breakdown"),
+    ("分析", "Analysis"),
+    ("报告", "Report"),
+    ("与", " & "),
+    ("和", " & "),
+    ("、", ", "),
+    ("：", ": "),
+    ("（", " ("),
+    ("）", ")"),
+    ("—", " - "),
+    ("万亿", "T"),
+    ("十亿", "B"),
+    ("亿", "00M"),
+    ("万", "0k"),
+    ("人", " People"),
+    ("条", ""),
+    ("项", ""),
+    ("只", ""),
+    ("家", ""),
+    ("年", "Y"),
+    ("月", "M"),
+]
+
+def zh_to_en_portal_text(text: str) -> str:
+    if not text or not re.search(r"[\u4e00-\u9fff]", text):
+        return text
+    out = text
+    # Convert Chinese numeric units (万亿 -> T, 亿 -> B/M, 万 -> k) cleanly
+    def _conv_tril(m):
+        return f"${float(m.group(1).replace(',', '')):.2f}T " if m.group(0).startswith("$") else f"{float(m.group(1).replace(',', '')):.2f}T "
+    out = re.sub(r"(\$?)([\d,]+(?:\.\d+)?)\s*万亿", lambda m: f"{m.group(1)}{float(m.group(2).replace(',', '')):.2f}T ", out)
+    out = re.sub(r"(\$?)([\d,]+(?:\.\d+)?)\s*亿", lambda m: f"{m.group(1)}{float(m.group(2).replace(',', ''))/10:.2f}B " if float(m.group(2).replace(',', '')) >= 10 else f"{m.group(1)}{float(m.group(2).replace(',', ''))*100:.0f}M ", out)
+    out = re.sub(r"([\d,]+(?:\.\d+)?)\s*万", lambda m: f"{float(m.group(1).replace(',', ''))*10:.1f}k ", out)
+    for zh, en in ZH_EN_PHRASES:
+        out = out.replace(zh, en)
+    out = out.replace("。", ". ").replace("，", ", ").replace("；", "; ")
+    out = re.sub(r"[\u4e00-\u9fff]+", " ", out)
+    out = re.sub(r"[《》「」『』【】]", "", out)
+    # Deduplicate consecutive repeated English words/phrases (e.g. "Berkshire Hathaway Berkshire Hathaway")
+    out = re.sub(r"\b([A-Za-z0-9.&'\-]+(?:\s+[A-Za-z0-9.&'\-]+){0,2})\s+\1\b", r"\1", out, flags=re.I)
+    out = re.sub(r"\s+([.,;:)])", r"\1", out)
+    out = re.sub(r"\(\s*\)", "", out)
+    out = re.sub(r"\s{2,}", " ", out).strip(" ,:;-·/")
+    return out or text
 
 
 def stable_id(prefix: str, key: str) -> str:
@@ -469,7 +676,10 @@ def extract_file_payload(full_path: str, file_name: str, max_chars: int) -> dict
     return {
         "title": title,
         "headings": headings,
+        "headingsEn": [zh_to_en_portal_text(h) for h in headings],
+        "titleEn": zh_to_en_portal_text(title),
         "summary": summary,
+        "summaryEn": zh_to_en_portal_text(summary),
         "fileType": file_type,
         "wordCount": len(body),
         "fullText": body,
@@ -882,6 +1092,55 @@ DETAIL_SYNC_CSS_TEMPLATE = """<!-- PORTAL_DETAIL_SYNC_CSS_START -->
     @media print {
       .PortalDetailAppBar { display: none !important; }
     }
+    /* Sidebar Height & Nav Optimization */
+    @media (min-width: 1024px) {
+      .mui-sidebar {
+        top: 72px !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding-bottom: 24px !important;
+        gap: 10px !important;
+      }
+    }
+    .sidebar-card {
+      padding: 12px 14px !important;
+      flex-shrink: 0 !important;
+    }
+    .sidebar-subtitle {
+      margin: 4px 0 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.4 !important;
+    }
+    .sidebar-mini-kpis {
+      gap: 4px !important;
+      padding-top: 8px !important;
+    }
+    .mui-sidebar .mui-nav-list {
+      gap: 2px !important;
+    }
+    .mui-sidebar .mui-nav-list:first-of-type {
+      max-height: 175px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      padding-right: 3px;
+    }
+    .mui-ext-nav-link {
+      padding: 4px 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.32 !important;
+    }
+    .mui-ext-nav-left > span:last-child {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .mui-nav-link {
+      padding: 5px 10px !important;
+      font-size: 0.80rem !important;
+    }
+
+
   </style>
 <!-- PORTAL_DETAIL_SYNC_CSS_END -->"""
 
@@ -1773,7 +2032,10 @@ def build_catalog_and_index(
             "driveUrl": drive_url,
             "isPortalIndex": False,
             "headings": payload["headings"],
+            "headingsEn": payload.get("headingsEn") or [zh_to_en_portal_text(h) for h in payload["headings"]],
+            "titleEn": payload.get("titleEn") or zh_to_en_portal_text(title),
             "summary": payload["summary"],
+            "summaryEn": payload.get("summaryEn") or zh_to_en_portal_text(payload["summary"]),
             "wordCount": payload.get("wordCount", 0),
         }
         files_list.append(record)
