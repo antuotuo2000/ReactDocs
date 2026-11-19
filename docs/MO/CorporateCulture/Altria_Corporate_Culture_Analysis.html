@@ -2016,6 +2016,61 @@
       color: var(--mui-primary-lighter);
     }
 
+  
+    /* Mobile Horizontal Overflow Fix (320px-760px) */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    .mui-paper, .section-block, .chart-card, .arch-blueprint, .mui-alert,
+    .sim-controls, .sim-output-panel, .matrix-card, .feature-card, .kpi-card {
+      min-width: 0;
+      max-width: 100%;
+    }
+    .mui-chip {
+      max-width: 100%;
+    }
+    .cite-link {
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    @media (max-width: 760px) {
+      .layout-shell {
+        padding: 16px 12px 56px;
+        gap: 18px;
+      }
+      .mui-chip {
+        height: auto;
+        min-height: 24px;
+        padding: 4px 10px;
+        white-space: normal;
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .mui-segmented {
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+      .mui-seg-btn {
+        white-space: normal;
+        text-align: left;
+        line-height: 1.3;
+      }
+      .mui-input-outlined {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+      .sources-list li {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .hero-h1, .sec-h2, .lead-prose, .matrix-card-body, .pillar-desc {
+        overflow-wrap: anywhere;
+      }
+    }
+
   </style>
 </head>
 <body>
