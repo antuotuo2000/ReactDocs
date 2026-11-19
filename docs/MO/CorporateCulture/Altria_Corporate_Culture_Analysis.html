@@ -6,8 +6,23 @@
   <title>奥驰亚集团 Altria Group, Inc. (NYSE: MO) 企业文化与组织架构深度研究报告：Moving Beyond Smoking 战略转型、运营子公司矩阵、合规护城河与股息复利纪律</title>
   <!-- Tailwind CSS (Pinned Version) -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
   <!-- Chart.js (Pinned Version) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://unpkg.com/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+    }
+  </script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"><\/script>');
+    }
+  </script>
   <!-- Google Fonts: Inter + Noto Sans SC + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1239,8 +1254,7 @@
           cv.removeAttribute('style');
         });
 
-        const htmlContent = '<!DOCTYPE html>
-' + clone.outerHTML;
+        const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
         const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
@@ -1885,13 +1899,35 @@
       initValEvolutionChart();
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      loadKpiChecklist();
-      updateValueSimulator();
+    function renderAllReportCharts() {
+      if (typeof Chart === 'undefined') {
+        document.querySelectorAll('canvas').forEach(cv => {
+          const parent = cv.parentElement;
+          if (parent && !parent.querySelector('.chart-fallback-msg')) {
+            const msg = document.createElement('div');
+            msg.className = 'chart-fallback-msg flex items-center justify-center h-full text-xs text-amber-600 bg-amber-500/10 rounded-xl p-4 text-center';
+            msg.textContent = 'Chart.js 图表库加载受阻：请确认网络连接正常，或直接下载本地 .html 文件后用 Chrome/Edge 浏览器打开查看。';
+            parent.appendChild(msg);
+          }
+        });
+        return;
+      }
       initBizChart();
       initRadarChart();
       initCompMarginChart();
       initValEvolutionChart();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadKpiChecklist();
+      updateValueSimulator();
+      renderAllReportCharts();
+    });
+
+    window.addEventListener('load', () => {
+      if (!bizChartInstance || !radarChartInstance || !compMarginChartInstance || !valEvolutionChartInstance) {
+        renderAllReportCharts();
+      }
     });
   </script>
 </body>
