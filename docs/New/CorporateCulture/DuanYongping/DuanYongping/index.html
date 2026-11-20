@@ -2196,6 +2196,9 @@
   <script>
     (function () {
       try {
+        if (window.location.search.indexOf('embed=1') !== -1 || window.self !== window.top) {
+          document.documentElement.setAttribute('data-embed-mode', '1');
+        }
         if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
           document.documentElement.setAttribute('data-sidebar-collapsed', '1');
         }
@@ -2369,6 +2372,27 @@
     .co-hub-meta {
       font-size: 0.68rem; color: var(--mui-text-muted, #64748b);
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    /* Embedded / Iframe Mode: Show Body Content Only */
+    html[data-embed-mode="1"] .mui-appbar,
+    html[data-embed-mode="1"] .PortalDetailAppBar,
+    html[data-embed-mode="1"] #muiSidebar,
+    html[data-embed-mode="1"] aside#sidebar,
+    html[data-embed-mode="1"] header#mobile-header,
+    html[data-embed-mode="1"] #companySubfolderHub,
+    html[data-embed-mode="1"] #readingProgressBar {
+      display: none !important;
+    }
+    html[data-embed-mode="1"] .layout-shell {
+      display: block !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+    html[data-embed-mode="1"] .main-content {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
     }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
