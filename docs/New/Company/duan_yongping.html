@@ -2136,6 +2136,29 @@
       font-size: 0.80rem !important;
     }
     main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
+    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Hero, Cards) */
+    .mui-chip {
+      max-width: 100% !important;
+      white-space: normal !important;
+      height: auto !important;
+      min-height: 24px;
+      line-height: 1.35 !important;
+      padding: 3px 10px !important;
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+    }
+    .appbar-left .mui-chip {
+      white-space: nowrap !important;
+      max-width: 190px !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      display: inline-block !important;
+    }
+    .sidebar-brand-top, .hero-overline, .mui-hero-badges, .kpi-top, .matrix-card-head {
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+      max-width: 100% !important;
+    }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
