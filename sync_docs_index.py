@@ -48,7 +48,6 @@ import time
 from urllib.parse import quote, unquote
 import webbrowser
 import xml.etree.ElementTree as ET
-import zipfile
 
 IGNORED_NAMES = {
     ".ds_store",
@@ -145,9 +144,6 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
   <script>
     (function () {
       try {
-        if (window.location.search.indexOf('embed=1') !== -1 || window.self !== window.top) {
-          document.documentElement.setAttribute('data-embed-mode', '1');
-        }
         if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
           document.documentElement.setAttribute('data-sidebar-collapsed', '1');
         }
@@ -187,12 +183,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
     .mui-sidebar .mui-nav-list {
       gap: 2px !important;
     }
-    .mui-sidebar .mui-nav-list:first-of-type {
-      max-height: 175px;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      padding-right: 3px;
-    }
+
     .mui-ext-nav-link {
       padding: 4px 8px !important;
       font-size: 0.77rem !important;
@@ -208,7 +199,6 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       padding: 5px 10px !important;
       font-size: 0.80rem !important;
     }
-    main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
     /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Mobile Drawer, Hero, Cards) */
     .mui-chip {
       box-sizing: border-box !important;
@@ -242,112 +232,113 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
     }
     @media (max-width: 1023px) {
       .mui-sidebar {
-        width: min(300px, 86vw) !important;
-        max-width: 86vw !important;
+        width: min(320px, 88vw) !important;
+        max-width: 88vw !important;
         box-sizing: border-box !important;
         overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
       }
       .mui-sidebar .sidebar-card {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
-        overflow-x: hidden !important;
+        overflow: visible !important;
       }
+      .co-side-home { padding: 4px 10px; min-height: 28px; font-size: 0.72rem; }
+      .co-hub-btn { min-height: 36px; font-size: 0.76rem; }
+      .co-hub-pills { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; overflow: visible !important; gap: 6px; padding: 6px; }
+      .co-hub-pill { min-height: 38px; padding: 7px 10px; font-size: 0.78rem; }
+      .co-side-list { max-height: none !important; overflow: visible !important; gap: 7px !important; padding: 4px 2px !important; margin: 0 !important; }
+      .co-hub-item { height: auto !important; min-height: 0 !important; padding: 9px 10px !important; }
     }
-    /* Company Subfolder Hub on Detail Pages */
-    .co-hub-card {
-      margin: 0 0 -10px !important; padding: 12px 14px !important; border-radius: 14px;
-      border: 1px solid var(--mui-divider, #e2e8f0);
-      background: linear-gradient(rgba(25, 118, 210, 0.03) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(25, 118, 210, 0.03) 1px, transparent 1px),
-                  var(--mui-bg-paper, #fff);
-      background-size: 20px 20px, 20px 20px, auto;
+    /* Categorized Company Navigation Inside Left Sidebar */
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle, #e2e8f0); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted, #64748b); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .co-side-home {
+      display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 6px;
+      font-size: 0.70rem; font-weight: 700; text-decoration: none !important; flex-shrink: 0;
+      color: #0073E6 !important; background: rgba(0, 115, 230, 0.08); border: 1px solid rgba(0, 115, 230, 0.22);
+      transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-theme="dark"] .co-hub-card, html.dark .co-hub-card {
-      background: var(--mui-bg-paper, #0f172a);
-      border-color: rgba(255,255,255,0.10);
-    }
-    .co-hub-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-    .co-hub-heading { font-size: 0.90rem; color: var(--mui-text-primary, #0f172a); }
-    [data-theme="dark"] .co-hub-heading, html.dark .co-hub-heading { color: #f1f5f9; }
-    .co-hub-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .co-side-home:hover { background: rgba(0, 115, 230, 0.15); border-color: #0073E6; }
+    [data-theme="dark"] .co-side-home, html.dark .co-side-home { color: #66B2FF !important; background: rgba(51, 153, 255, 0.14); border-color: rgba(51, 153, 255, 0.3); }
+    .co-side-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
     .co-hub-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 5px;
-      height: 34px; padding: 0 13px; border-radius: 999px; font-size: 0.80rem; font-weight: 700;
-      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff);
-      color: var(--mui-text-primary, #0f172a); text-decoration: none !important; cursor: pointer;
-      transition: all 0.14s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+      height: 30px; padding: 0 8px; border-radius: 8px; font-size: 0.74rem; font-weight: 700;
+      border: 1px solid var(--border-default, #cbd5e1); background: var(--bg-paper, #ffffff);
+      color: var(--text-primary, #0f172a) !important; text-decoration: none !important; cursor: pointer;
+      transition: transform 0.16s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.16s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.16s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.16s cubic-bezier(0.4, 0, 0.2, 1), color 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-theme="dark"] .co-hub-btn, html.dark .co-hub-btn { background: rgba(15,23,42,0.8); color: #e2e8f0; border-color: rgba(255,255,255,0.14); }
-    .co-hub-btn:hover { border-color: #1976d2; color: #1976d2; }
-    .co-hub-btn-primary { background: #0073e6 !important; color: #fff !important; border-color: #0073e6 !important; }
-    .co-hub-btn-primary:hover { background: #005bb5 !important; color: #fff !important; }
+    .co-hub-btn:hover { border-color: #3399FF; color: #0073E6 !important; background: rgba(0, 115, 230, 0.06); transform: translateY(-1px); }
+    .co-hub-btn:active { transform: translateY(0) scale(0.98); }
     .co-hub-pills {
-      display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border-radius: 10px;
-      background: var(--mui-bg-subtle, #f1f5f9); border: 1px solid var(--mui-divider, #e2e8f0); margin-bottom: 10px;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px;
+      background: var(--bg-subtle, #f1f5f9); border: 1px solid var(--border-subtle, #e2e8f0); margin-bottom: 10px;
     }
-    [data-theme="dark"] .co-hub-pills, html.dark .co-hub-pills { background: rgba(15,23,42,0.65); border-color: rgba(255,255,255,0.10); }
     .co-hub-pill {
-      padding: 5px 12px; border-radius: 8px; font-size: 0.77rem; font-weight: 700; cursor: pointer;
-      border: none; background: transparent; color: var(--mui-text-secondary, #475569); transition: all 0.14s ease;
+      display: inline-flex; align-items: center; justify-content: center; text-align: center;
+      min-height: 34px; padding: 6px 10px; border-radius: 8px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+      border: none; background: transparent; color: var(--text-secondary, #475569);
+      transition: transform 0.16s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.16s cubic-bezier(0.4, 0, 0.2, 1), color 0.16s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-theme="dark"] .co-hub-pill, html.dark .co-hub-pill { color: #94a3b8; }
-    .co-hub-pill.active { background: #fff; color: #0073e6; box-shadow: 0 1px 3px rgba(15,23,42,0.10); }
-    [data-theme="dark"] .co-hub-pill.active, html.dark .co-hub-pill.active { background: #1e293b; color: #60a5fa; }
-    .co-hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-    @media (max-width: 1120px) { .co-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    @media (max-width: 720px) { .co-hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 440px) { .co-hub-grid { grid-template-columns: minmax(0, 1fr); } }
+    .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+    .co-hub-pill:not(.active):hover { color: var(--text-primary, #0f172a); background: rgba(255, 255, 255, 0.55); }
+    [data-theme="dark"] .co-hub-pill:not(.active):hover, html.dark .co-hub-pill:not(.active):hover { color: #F8FAFC; background: rgba(255, 255, 255, 0.06); }
+    .co-hub-pill.active { background: var(--bg-paper, #ffffff); color: #0073E6; box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    [data-theme="dark"] .co-hub-pill.active, html.dark .co-hub-pill.active { color: #66B2FF; }
+    .co-side-list {
+      display: flex; flex-direction: column; gap: 6px; max-height: none !important;
+      overflow: visible !important; padding: 4px 2px; margin: 0;
+    }
     .co-hub-item {
-      display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px;
-      border: 1px solid var(--mui-divider, #e2e8f0); background: var(--mui-bg-paper, #fff);
-      text-decoration: none !important; min-width: 0; transition: all 0.14s ease;
+      display: flex; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 10px;
+      border: 1px solid var(--border-subtle, #e2e8f0); background: var(--bg-paper, #ffffff);
+      text-decoration: none !important; min-width: 0;
+      transition: transform 0.16s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.16s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.16s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-theme="dark"] .co-hub-item, html.dark .co-hub-item { background: rgba(15,23,42,0.7); border-color: rgba(255,255,255,0.10); }
-    .co-hub-item:hover, .co-hub-item.active {
-      border-color: #1976d2; box-shadow: 0 0 0 1px #1976d2;
-    }
+    .co-hub-item.co-hub-hidden { display: none !important; }
+    .co-hub-item:hover { border-color: #3399FF; background: rgba(0, 115, 230, 0.05); transform: translateY(-1px); }
+    .co-hub-item:active { transform: translateY(0) scale(0.99); }
+    .co-hub-item.active { border-color: #0073E6; background: rgba(0, 115, 230, 0.08); box-shadow: 0 0 0 1px #0073E6, 0 2px 8px rgba(0, 115, 230, 0.14); }
+    [data-theme="dark"] .co-hub-item.active, html.dark .co-hub-item.active { border-color: #3399FF; background: rgba(51, 153, 255, 0.14); box-shadow: 0 0 0 1px #3399FF, 0 2px 8px rgba(0, 115, 230, 0.24); }
     .co-hub-ticker {
-      flex-shrink: 0; min-width: 38px; padding: 4px 5px; border-radius: 6px; text-align: center;
-      font-size: 0.68rem; font-weight: 800; background: rgba(25,118,210,0.12); color: #1976d2;
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.66rem; font-weight: 800; background: rgba(0, 115, 230, 0.09) !important;
+      color: #0073E6 !important; border: 1px solid rgba(0, 115, 230, 0.22) !important;
+      transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .co-hub-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    [data-theme="dark"] .co-hub-ticker, html.dark .co-hub-ticker { background: rgba(51, 153, 255, 0.14) !important; color: #66B2FF !important; border-color: rgba(51, 153, 255, 0.28) !important; }
+    .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%) !important; color: #FFFFFF !important; border-color: #0059B2 !important; }
+    .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
     .co-hub-title {
-      font-size: 0.77rem; font-weight: 700; color: var(--mui-text-primary, #0f172a);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-size: 0.73rem; font-weight: 700; line-height: 1.3;
+      color: var(--text-primary, #0f172a) !important;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-    [data-theme="dark"] .co-hub-title, html.dark .co-hub-title { color: #e2e8f0; }
-    .co-hub-meta {
-      font-size: 0.68rem; color: var(--mui-text-muted, #64748b);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    .co-hub-meta { font-size: 0.63rem; color: var(--text-muted, #64748b) !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* Ensure all detail sections render at natural height with zero blank gaps */
+    main > section,
+    .section-block,
+    .mui-section {
+      content-visibility: visible !important;
+      contain-intrinsic-size: none !important;
     }
-    /* Embedded / Iframe Mode: Show Body Content Only */
-    html[data-embed-mode="1"] .mui-appbar,
-    html[data-embed-mode="1"] .PortalDetailAppBar,
-    html[data-embed-mode="1"] #muiSidebar,
-    html[data-embed-mode="1"] aside#sidebar,
-    html[data-embed-mode="1"] header#mobile-header,
-    html[data-embed-mode="1"] #companySubfolderHub,
-    html[data-embed-mode="1"] #readingProgressBar {
-      display: none !important;
-    }
-    html[data-embed-mode="1"] .layout-shell {
-      display: block !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      max-width: 100% !important;
-    }
-    html[data-embed-mode="1"] .main-content {
-      padding: 0 !important;
-      margin: 0 !important;
-      max-width: 100% !important;
-    }
-    /* Mobile Horizontal Overflow Fix */
+    /* Mobile Navigation & Horizontal Overflow Optimization */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
       .mui-chip, .mui-segmented button, .cite-link { white-space: normal !important; max-width: 100%; overflow-wrap: anywhere; }
       .mui-input-outlined { max-width: 100%; min-width: 0; }
+      .mui-appbar { padding: 0 12px !important; }
+
+      .mui-sidebar .mui-nav-link, .mui-sidebar .mui-ext-nav-link { min-height: 36px; }
+    }
+    @media (max-width: 440px) {
+      .appbar-left .mui-chip { display: none !important; }
     }
   </style>
   <script>
@@ -376,6 +367,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       window.addEventListener('storage', function (ev) {
         if (ev.key === KEY) syncFromStorage();
       });
+
     })();
   </script>
 <!-- PORTAL_MUI_OPT_CSS_END -->"""
@@ -391,6 +383,23 @@ def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) ->
         cpath = os.path.join(docs_dir, comp)
         if not os.path.isdir(cpath) or comp.startswith("."):
             continue
+        for fn in sorted(os.listdir(cpath)):
+            fpath = os.path.join(cpath, fn)
+            if os.path.isfile(fpath) and fn.lower().endswith(".html") and fn.lower() != "index.html":
+                rel_p = f"{comp}/{fn}"
+                meta = files_by_rel.get(rel_p, {})
+                cat_root = meta.get("category") or "Company"
+                matrix.append({
+                    "company": comp,
+                    "companyLabel": meta.get("companyLabel", comp),
+                    "ticker": meta.get("ticker", comp[:6].upper()),
+                    "category": cat_root,
+                    "subPath": fn,
+                    "relPath": rel_p,
+                    "title": meta.get("title") or fn.replace(".html", ""),
+                    "titleEn": meta.get("titleEn") or fn.replace(".html", ""),
+                    "isIndex": False,
+                })
         for sub in sorted(os.listdir(cpath)):
             spath = os.path.join(cpath, sub)
             if not os.path.isdir(spath) or sub.startswith("."):
@@ -500,7 +509,7 @@ def audit_detail_chip_wrapping(docs_dir: str) -> dict[str, int]:
             scanned += 1
             with open(fp, "r", encoding="utf-8", errors="ignore") as f:
                 txt = f.read()
-            if "mui-chip" in txt and "Detail Page Tag/Chip Wrapping Fix" not in txt:
+            if "mui-chip" in txt and ("portalMuiOptStyle" not in txt or "overflow-wrap:anywhere" not in txt.replace(" ", "")):
                 missing_opt += 1
             # Strip any inline white-space:nowrap on .mui-chip elements
             patched = re.sub(
@@ -523,7 +532,7 @@ def package_portal_zip(portal_root: Path, zip_path: Path) -> Path:
         for dp, dns, fns in os.walk(str(portal_root)):
             dns[:] = sorted(d for d in dns if d not in ("__MACOSX", "__pycache__", ".git"))
             for fn in sorted(fns):
-                if fn.startswith("._") or fn == ".DS_Store" or fn.endswith(".tmp"):
+                if fn.startswith("._") or fn in (".DS_Store", ".index_cache.json") or fn.endswith(".tmp"):
                     continue
                 fp = os.path.join(dp, fn)
                 if os.path.abspath(fp) == os.path.abspath(str(zip_path)):
@@ -535,6 +544,16 @@ def package_portal_zip(portal_root: Path, zip_path: Path) -> Path:
                 with open(fp, "rb") as f:
                     zf.writestr(zi, f.read())
     return zip_path
+
+def minify_injected_style_block(block: str) -> str:
+    """压缩注入详情页的 <style> 块中的注释与冗余空白，加快解析速度同时保持源码可读。"""
+    def _min_style(m):
+        attrs, css = m.group(1), m.group(2)
+        css = re.sub(r"/\*[\s\S]*?\*/", "", css)
+        css = re.sub(r"\s+", " ", css)
+        css = re.sub(r"\s*([{}:;,])\s*", r"\1", css).strip()
+        return f"<style{attrs}>{css}</style>"
+    return re.sub(r"<style([^>]*)>([\s\S]*?)</style>", _min_style, block, flags=re.IGNORECASE)
 
 def strip_injected_detail_blocks(raw_html: str) -> str:
     """移除脚本注入的导航与顶栏块，保证正文摘要提取干净且重复执行幂等。"""
@@ -1492,55 +1511,6 @@ DETAIL_SYNC_CSS_TEMPLATE = """<!-- PORTAL_DETAIL_SYNC_CSS_START -->
     @media print {
       .PortalDetailAppBar { display: none !important; }
     }
-    /* Sidebar Height & Nav Optimization */
-    @media (min-width: 1024px) {
-      .mui-sidebar {
-        top: 72px !important;
-        max-height: none !important;
-        overflow-y: visible !important;
-        padding-bottom: 24px !important;
-        gap: 10px !important;
-      }
-    }
-    .sidebar-card {
-      padding: 12px 14px !important;
-      flex-shrink: 0 !important;
-    }
-    .sidebar-subtitle {
-      margin: 4px 0 8px !important;
-      font-size: 0.77rem !important;
-      line-height: 1.4 !important;
-    }
-    .sidebar-mini-kpis {
-      gap: 4px !important;
-      padding-top: 8px !important;
-    }
-    .mui-sidebar .mui-nav-list {
-      gap: 2px !important;
-    }
-    .mui-sidebar .mui-nav-list:first-of-type {
-      max-height: 175px;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      padding-right: 3px;
-    }
-    .mui-ext-nav-link {
-      padding: 4px 8px !important;
-      font-size: 0.77rem !important;
-      line-height: 1.32 !important;
-    }
-    .mui-ext-nav-left > span:last-child {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .mui-nav-link {
-      padding: 5px 10px !important;
-      font-size: 0.80rem !important;
-    }
-
-
   </style>
 <!-- PORTAL_DETAIL_SYNC_CSS_END -->"""
 
@@ -1838,7 +1808,7 @@ DETAIL_SYNC_JS_TEMPLATE = """<!-- PORTAL_DETAIL_SYNC_JS_START -->
 
 
 def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: list[dict]) -> str:
-    """为每个公司的详情页顶部生成该公司子目录分类切换面板（含上一/下一公司、打开独立网页、导出HTML与分段标签栏）。"""
+    """为详情页顶部生成极简无 Bug 的 MUI 导航条：1 行快捷上一篇/下一篇 + 可折叠分类目录抽屉（纯原生链接跳转，零 fetch/DOM 替换冲突）。"""
     if not comp_items:
         return ""
     cur_dir = os.path.dirname(cur_rel)
@@ -1852,12 +1822,19 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
         counts[c] = counts.get(c, 0) + 1
     cats = sorted(counts.keys())
 
-    # Resolve Prev / Next / Current hrefs
-    cur_idx = 0
+    cur_idx = -1
     for i, it in enumerate(comp_items):
         if it["relPath"] == cur_rel:
             cur_idx = i
             break
+    if cur_idx == -1:
+        for i, it in enumerate(comp_items):
+            if it.get("isIndex") and os.path.dirname(it["relPath"]) == cur_dir:
+                cur_idx = i
+                break
+    if cur_idx == -1:
+        cur_idx = 0
+
     prev_it = comp_items[(cur_idx - 1) % len(comp_items)]
     next_it = comp_items[(cur_idx + 1) % len(comp_items)]
     cur_it = comp_items[cur_idx]
@@ -1867,8 +1844,10 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
 
     prev_href = _href(prev_it)
     next_href = _href(next_it)
-    cur_href = _href(cur_it)
-    cur_short = (cur_it.get("companyLabel") or comp_folder).split()[0]
+    cur_title = (cur_it.get("title") or cur_it.get("subPath") or comp_folder).strip()
+    cur_short = cur_title[:28] + ("…" if len(cur_title) > 28 else "")
+    cur_title_en = (cur_it.get("titleEn") or cur_title).strip()
+    cur_short_en = cur_title_en[:36] + ("…" if len(cur_title_en) > 36 else "")
 
     pills_html = [
         f'<button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 ({len(comp_items)})" data-i18n-en="All ({len(comp_items)})">全部 ({len(comp_items)})</button>'
@@ -1880,17 +1859,132 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
         )
 
     cards_html = []
-    for it in comp_items:
+    for idx, it in enumerate(comp_items, 1):
         rel_href = _href(it)
-        is_cur = (it["relPath"] == cur_rel)
+        is_cur = (idx - 1 == cur_idx)
         cls = "co-hub-item active" if is_cur else "co-hub-item"
         target_attr = ' target="_blank" rel="noopener noreferrer"' if it.get("isIndex") else ""
         idx_badge = " · index.html ↗" if it.get("isIndex") else ""
+        _raw_t = it.get("title") or it["subPath"]
+        _comp_pfx = (it.get("companyLabel") or comp_folder).split()[0]
+        t_zh = _raw_t
+        if len(t_zh) > 18 and _comp_pfx and t_zh.startswith(_comp_pfx):
+            _trimmed = re.sub(r'^[^·：:—\-|]+?(?:\([^)]*\))?\s*(?:[·：:—\-|]+\s*)?', '', t_zh).strip()
+            if len(_trimmed) >= 4:
+                t_zh = _trimmed
+        t_en = it.get("titleEn") or t_zh
+        cards_html.append(
+            f'<a class="{cls}" data-co-item-cat="{html_mod.escape(it["category"])}" href="{html_mod.escape(rel_href)}"{target_attr} title="{html_mod.escape(t_zh)}">'
+            f'<span class="co-hub-ticker mono">{idx:02d}</span>'
+            f'<span class="co-hub-info">'
+            f'<span class="co-hub-title" data-i18n-zh="{html_mod.escape(t_zh)}" data-i18n-en="{html_mod.escape(t_en)}">{html_mod.escape(t_zh)}</span>'
+            f'<span class="co-hub-meta mono">{html_mod.escape(it["subPath"] + idx_badge)}</span>'
+            f'</span></a>'
+        )
+
+    prev_target = ' target="_blank" rel="noopener noreferrer"' if prev_it.get("isIndex") else ""
+    next_target = ' target="_blank" rel="noopener noreferrer"' if next_it.get("isIndex") else ""
+
+    return (
+        "<!-- COMPANY_SUBFOLDER_HUB_START -->\n"
+        f'      <nav class="co-hub-card" id="companySubfolderHub" data-co-key="{html_mod.escape(comp_folder)}" aria-label="Company Directory">\n'
+        '        <div class="co-hub-bar">\n'
+        '          <div class="co-hub-bar-left">\n'
+        f'            <span class="mui-chip mui-chip-primary mono">{html_mod.escape(comp_folder.upper())} · {cur_idx + 1:02d}/{len(comp_items):02d}</span>\n'
+        f'            <span class="co-hub-heading" data-i18n-zh="{html_mod.escape(cur_short)}" data-i18n-en="{html_mod.escape(cur_short_en)}">{html_mod.escape(cur_short)}</span>\n'
+        '          </div>\n'
+        '          <div class="co-hub-bar-right">\n'
+        f'            <a class="co-hub-btn" id="coHubPrevBtn" href="{html_mod.escape(prev_href)}"{prev_target} data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>\n'
+        f'            <a class="co-hub-btn" id="coHubNextBtn" href="{html_mod.escape(next_href)}"{next_target} data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>\n'
+        f'            <button type="button" class="co-hub-btn co-hub-btn-primary" id="coHubToggleBtn" aria-expanded="false" data-i18n-zh="全部目录 ({len(comp_items)}) ▾" data-i18n-en="Directory ({len(comp_items)}) ▾">全部目录 ({len(comp_items)}) ▾</button>\n'
+        '          </div>\n'
+        '        </div>\n'
+        '        <div class="co-hub-drawer" id="coHubDrawer">\n'
+        '          <div class="co-hub-pills">\n          ' + "\n          ".join(pills_html) + '\n        </div>\n'
+        '          <div class="co-hub-grid">\n          ' + "\n          ".join(cards_html) + '\n        </div>\n'
+        '        </div>\n'
+        '        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var d=document.getElementById("coHubDrawer"),tb=document.getElementById("coHubToggleBtn");var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}if(tb&&d){tb.addEventListener("click",function(){var open=d.classList.toggle("open");tb.setAttribute("aria-expanded",open?"true":"false");});}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>\n'
+        '      </nav>\n'
+        "<!-- COMPANY_SUBFOLDER_HUB_END -->"
+    )
+
+def build_mui_related_nav_block(
+    rel_to_index: str,
+    siblings: list[tuple[str, str, str]],
+    comp_folder: str = "",
+    cur_rel: str = "",
+    comp_items: list[dict] | None = None,
+) -> str:
+    """为 MUI 详情页左侧边栏生成『目录分类导航』（替代旧站点与关联导航，支持分类胶囊、上一篇/下一篇及原生链接跳转）。"""
+    items = comp_items or []
+    if not items:
+        return (
+            "<!-- SITE_RELATED_NAV_START -->\n"
+            '        <div class="co-side-nav" id="companySubfolderHub">\n'
+            '          <div class="co-side-head">\n'
+            '            <span class="co-side-title" data-i18n-zh="目录导航" data-i18n-en="Directory">目录导航</span>\n'
+            f'            <a href="{html_mod.escape(rel_to_index)}" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>\n'
+            '          </div>\n'
+            '        </div>\n'
+            "        <!-- SITE_RELATED_NAV_END -->"
+        )
+
+    cur_dir = os.path.dirname(cur_rel)
+    cat_zh = {
+        "Company": "公司深度", "SeniorExecutive": "高管人物", "CorporateCulture": "企业文化",
+        "software": "软件生态", "hardware": "硬件产品", "patent": "核心专利",
+    }
+    counts: dict[str, int] = {}
+    for it in items:
+        c = it["category"]
+        counts[c] = counts.get(c, 0) + 1
+    cats = sorted(counts.keys())
+
+    cur_idx = -1
+    for i, it in enumerate(items):
+        if it["relPath"] == cur_rel:
+            cur_idx = i
+            break
+    if cur_idx == -1:
+        for i, it in enumerate(items):
+            if it.get("isIndex") and os.path.dirname(it["relPath"]) == cur_dir:
+                cur_idx = i
+                break
+    if cur_idx == -1:
+        cur_idx = 0
+
+    prev_it = items[(cur_idx - 1) % len(items)]
+    next_it = items[(cur_idx + 1) % len(items)]
+
+    def _href(it):
+        return os.path.relpath(it["relPath"], cur_dir).replace(os.sep, "/") if cur_dir else it["relPath"]
+
+    prev_href = _href(prev_it)
+    next_href = _href(next_it)
+    prev_target = ' target="_blank" rel="noopener noreferrer"' if prev_it.get("isIndex") else ""
+    next_target = ' target="_blank" rel="noopener noreferrer"' if next_it.get("isIndex") else ""
+
+    pills_html = [
+        f'<button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 ({len(items)})" data-i18n-en="All ({len(items)})">全部 ({len(items)})</button>'
+    ]
+    for c in cats:
+        lbl = cat_zh.get(c, c)
+        pills_html.append(
+            f'<button type="button" class="co-hub-pill" data-co-cat="{html_mod.escape(c)}" data-i18n-zh="{html_mod.escape(lbl)} ({counts[c]})" data-i18n-en="{html_mod.escape(c)} ({counts[c]})">{html_mod.escape(lbl)} ({counts[c]})</button>'
+        )
+
+    cards_html = []
+    for idx, it in enumerate(items, 1):
+        rel_href = _href(it)
+        is_cur = (idx - 1 == cur_idx)
+        cls = "co-hub-item active" if is_cur else "co-hub-item"
+        target_attr = ' target="_blank" rel="noopener noreferrer"' if it.get("isIndex") else ""
+        idx_badge = " · index ↗" if it.get("isIndex") else ""
         t_zh = it.get("title") or it["subPath"]
         t_en = it.get("titleEn") or t_zh
         cards_html.append(
-            f'<a class="{cls}" data-co-item-cat="{html_mod.escape(it["category"])}" data-is-index="{"1" if it.get("isIndex") else "0"}" data-co-title="{html_mod.escape(t_zh)}" href="{html_mod.escape(rel_href)}"{target_attr} title="{html_mod.escape(t_zh)}">'
-            f'<span class="co-hub-ticker mono">{html_mod.escape((it.get("ticker") or comp_folder)[:6])}</span>'
+            f'<a class="{cls}" data-co-item-cat="{html_mod.escape(it["category"])}" href="{html_mod.escape(rel_href)}"{target_attr} title="{html_mod.escape(t_zh)}">'
+            f'<span class="co-hub-ticker mono">{idx:02d}</span>'
             f'<span class="co-hub-info">'
             f'<span class="co-hub-title" data-i18n-zh="{html_mod.escape(t_zh)}" data-i18n-en="{html_mod.escape(t_en)}">{html_mod.escape(t_zh)}</span>'
             f'<span class="co-hub-meta mono">{html_mod.escape(it["subPath"] + idx_badge)}</span>'
@@ -1898,63 +1992,22 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
         )
 
     return (
-        "<!-- COMPANY_SUBFOLDER_HUB_START -->\n"
-        '      <section class="co-hub-card" id="companySubfolderHub" aria-label="Company Directory">\n'
-        '        <div class="co-hub-head">\n'
-        f'          <span class="mui-chip mui-chip-primary mono">{html_mod.escape(comp_folder.upper())} · {len(comp_items)} FILES</span>\n'
-        '          <strong class="co-hub-heading" data-i18n-zh="本公司目录与研报切换中枢（按首个子目录分类）" data-i18n-en="Company Subfolder &amp; Report Directory (Grouped by First Subfolder)">本公司目录与研报切换中枢（按首个子目录分类）</strong>\n'
-        '        </div>\n'
-        '        <div class="co-hub-actions">\n'
-        f'          <a class="co-hub-btn" id="coHubPrevBtn" href="{html_mod.escape(prev_href)}" data-i18n-zh="← 上一公司" data-i18n-en="← Prev">← 上一公司</a>\n'
-        f'          <a class="co-hub-btn" id="coHubNextBtn" href="{html_mod.escape(next_href)}" data-i18n-zh="下一公司 →" data-i18n-en="Next →">下一公司 →</a>\n'
-        f'          <a class="co-hub-btn co-hub-btn-primary" id="coHubOpenBtn" href="{html_mod.escape(cur_href)}" target="_blank" rel="noopener noreferrer" data-i18n-zh="打开《{html_mod.escape(cur_short)}》独立网页 ↗" data-i18n-en="Open Standalone Page ↗">打开《{html_mod.escape(cur_short)}》独立网页 ↗</a>\n'
-        '          <button type="button" class="co-hub-btn" id="coHubExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>\n'
-        '        </div>\n'
-        '        <div class="co-hub-pills">\n          ' + "\n          ".join(pills_html) + '\n        </div>\n'
-        '        <div class="co-hub-grid">\n          ' + "\n          ".join(cards_html) + '\n        </div>\n'
-        '        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;function loadReportInPlace(href,titleTxt){var main=h.parentElement;if(!main)return;var openBtn=document.getElementById("coHubOpenBtn");if(openBtn){openBtn.setAttribute("href",href);if(titleTxt&&openBtn.textContent.indexOf("《")!==-1){openBtn.textContent="打开《"+titleTxt.slice(0,14)+(titleTxt.length>14?"…":"")+"》独立网页 ↗";}}fetch(href).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.text();}).then(function(txt){var doc=new DOMParser().parseFromString(txt,"text/html");var newMain=doc.querySelector("main");if(!newMain)throw new Error("no main");var oldHub=newMain.querySelector("#companySubfolderHub");if(oldHub)oldHub.remove();var oldFrame=document.getElementById("coHubInlineFrame");if(oldFrame)oldFrame.remove();while(h.nextSibling){main.removeChild(h.nextSibling);}var frag=document.createDocumentFragment();while(newMain.firstChild){frag.appendChild(newMain.firstChild);}main.appendChild(frag);if(doc.title)document.title=doc.title;var newSb=doc.getElementById("muiSidebar"),curSb=document.getElementById("muiSidebar");if(newSb&&curSb){curSb.innerHTML=newSb.innerHTML;}var scripts=doc.querySelectorAll("body script");for(var sIdx=0;sIdx<scripts.length;sIdx++){var sc=scripts[sIdx];if(sc.src)continue;var code=sc.textContent||"";if(!code||code.indexOf("companySubfolderHub")!==-1)continue;var ns=document.createElement("script");ns.textContent=code;document.body.appendChild(ns);}window.dispatchEvent(new Event("resize"));}).catch(function(){while(h.nextSibling){main.removeChild(h.nextSibling);}var fr=document.createElement("iframe");fr.id="coHubInlineFrame";fr.src=href+(href.indexOf("?")===-1?"?embed=1":"&embed=1");fr.style.cssText="width:100%;min-height:84vh;border:none;border-radius:14px;background:var(--mui-bg-paper,#fff);";main.appendChild(fr);});}h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(b){var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}return;}var pv=e.target.closest("#coHubPrevBtn,#coHubNextBtn");if(pv){e.preventDefault();var items=Array.prototype.slice.call(h.querySelectorAll(".co-hub-item")).filter(function(el){return el.style.display!=="none";});if(!items.length)return;var cur=0;for(var x=0;x<items.length;x++){if(items[x].classList.contains("active")){cur=x;break;}}var nxtIdx=pv.id==="coHubPrevBtn"?(cur-1+items.length)%items.length:(cur+1)%items.length;items[nxtIdx].click();return;}var item=e.target.closest(".co-hub-item");if(item&&item.getAttribute("data-is-index")!=="1"){e.preventDefault();var all=h.querySelectorAll(".co-hub-item");for(var k=0;k<all.length;k++)all[k].classList.remove("active");item.classList.add("active");loadReportInPlace(item.getAttribute("href"),item.getAttribute("data-co-title")||"");}});var ex=document.getElementById("coHubExportBtn");if(ex){ex.addEventListener("click",function(){try{var html="<!DOCTYPE html>"+String.fromCharCode(10)+document.documentElement.outerHTML;var blob=new Blob([html],{type:"text/html;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(document.title||"report").replace(/[^a-zA-Z0-9_\u4e00-\u9fff-]/g,"_")+"_"+new Date().toISOString().slice(0,10)+".html";document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},400);}catch(err){}});}})();</script>\n'
-        '      </section>\n'
-        "<!-- COMPANY_SUBFOLDER_HUB_END -->"
-    )
-
-
-def build_mui_related_nav_block(rel_to_index: str, siblings: list[tuple[str, str, str]]) -> str:
-    """为 MUI 架构详情页生成侧边栏『站点与关联导航』列表。"""
-    home_icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>'
-    doc_icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'
-
-    items_html = [
-        "          <li>\n"
-        f'            <a href="{html_mod.escape(rel_to_index)}" class="mui-ext-nav-link">\n'
-        '              <span class="mui-ext-nav-left">\n'
-        f'                <span class="mui-ext-nav-icon">{home_icon}</span>\n'
-        '                <span data-i18n-zh="返回数据中心首页" data-i18n-en="Back to Research Hub">返回数据中心首页</span>\n'
-        "              </span>\n"
-        '              <span class="mui-ext-nav-arrow">↩</span>\n'
-        "            </a>\n"
-        "          </li>"
-    ]
-    for href, zh_lbl, en_lbl in siblings:
-        items_html.append(
-            "          <li>\n"
-            f'            <a href="{html_mod.escape(href)}" class="mui-ext-nav-link">\n'
-            '              <span class="mui-ext-nav-left">\n'
-            f'                <span class="mui-ext-nav-icon">{doc_icon}</span>\n'
-            f'                <span data-i18n-zh="{html_mod.escape(zh_lbl)}" data-i18n-en="{html_mod.escape(en_lbl)}">{html_mod.escape(zh_lbl)}</span>\n'
-            "              </span>\n"
-            '              <span class="mui-ext-nav-arrow">↗</span>\n'
-            "            </a>\n"
-            "          </li>"
-        )
-    return (
         "<!-- SITE_RELATED_NAV_START -->\n"
-        '        <div class="nav-section-label" data-i18n-zh="站点与关联导航" data-i18n-en="Site &amp; Related Nav">站点与关联导航</div>\n'
-        '        <ul class="mui-nav-list">\n'
-        + "\n".join(items_html)
-        + "\n        </ul>\n"
+        f'        <div class="co-side-nav" id="companySubfolderHub" data-co-key="{html_mod.escape(comp_folder)}">\n'
+        '          <div class="co-side-head">\n'
+        f'            <span class="co-side-title mono">{html_mod.escape(comp_folder.upper())} · {cur_idx + 1:02d}/{len(items):02d}</span>\n'
+        f'            <a href="{html_mod.escape(rel_to_index)}" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>\n'
+        '          </div>\n'
+        '          <div class="co-side-actions">\n'
+        f'            <a class="co-hub-btn" id="coHubPrevBtn" href="{html_mod.escape(prev_href)}"{prev_target} data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>\n'
+        f'            <a class="co-hub-btn" id="coHubNextBtn" href="{html_mod.escape(next_href)}"{next_target} data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>\n'
+        '          </div>\n'
+        '          <div class="co-hub-pills">\n            ' + "\n            ".join(pills_html) + '\n          </div>\n'
+        '          <div class="co-side-list">\n            ' + "\n            ".join(cards_html) + '\n          </div>\n'
+        '          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>\n'
+        '        </div>\n'
         "        <!-- SITE_RELATED_NAV_END -->"
     )
-
 
 def build_classic_related_nav_block(rel_to_index: str, siblings: list[tuple[str, str, str]]) -> str:
     """为经典侧边栏详情页生成『站点与关联导航』模块。"""
@@ -2077,27 +2130,29 @@ def sync_all_detail_pages(
         is_mui_detail = 'id="muiSidebar"' in work_html
 
 
-        # 5. 为外部 CDN 脚本（如 Chart.js）自动添加 defer，避免阻塞详情页首屏渲染
+        # 5. 统一 Chart.js CDN 为固定版本并添加 defer + preconnect，消除 302 重定向并共享浏览器缓存
+        work_html = re.sub(
+            r'(<script\s+[^>]*\bsrc=["\'])https?://(?:cdn\.jsdelivr\.net/npm/chart\.js(?:@[0-9.]+(?:/dist/chart\.umd\.min\.js)?)?|unpkg\.com/chart\.js(?:@[0-9.]+)?(?:/dist/chart\.umd\.min\.js)?|cdnjs\.cloudflare\.com/ajax/libs/Chart\.js/[0-9.]+/chart\.umd\.min\.js)(["\'])',
+            r'\1https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\2',
+            work_html,
+            flags=re.IGNORECASE,
+        )
         def _defer_ext_script(m):
             tag = m.group(0)
             if re.search(r'\b(?:defer|async)\b', tag, flags=re.IGNORECASE):
                 return tag
             return tag.replace("<script ", "<script defer ", 1)
         work_html = re.sub(r'<script\s+[^>]*src=["\']https?://[^"\']+["\'][^>]*>', _defer_ext_script, work_html, flags=re.IGNORECASE)
+        if "https://cdn.jsdelivr.net" in work_html and 'rel="preconnect" href="https://cdn.jsdelivr.net"' not in work_html:
+            work_html = work_html.replace("<head>", '<head>\n  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">\n  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>', 1)
+        work_html = re.sub(r'<img\b(?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', work_html, flags=re.IGNORECASE)
 
 
-        # 6. 为每份详情页注入所属公司的『子目录分类切换面板』
-        co_hub_pat = re.compile(r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->")
-        has_folder_index = os.path.isfile(os.path.join(os.path.dirname(full_p), "index.html"))
-        comp_items = (subfolder_by_comp or {}).get(comp_folder, [])
-        co_hub_html = "" if has_folder_index else build_company_detail_hub_block(comp_folder, rel_p, comp_items)
+        # 6. 清除主内容区顶部的旧切换面板（现已统一整合进左侧边栏目录导航）
+        co_hub_pat = re.compile(r"\s*<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->")
         if co_hub_pat.search(work_html):
-            work_html = co_hub_pat.sub(lambda _: co_hub_html, work_html, count=1)
-        elif co_hub_html:
-            main_m = re.search(r"<main[^>]*>", work_html, flags=re.IGNORECASE)
-            if main_m:
-                pos = main_m.end()
-                work_html = work_html[:pos] + "\n" + co_hub_html + work_html[pos:]
+            work_html = co_hub_pat.sub("", work_html, count=1)
+        comp_items = (subfolder_by_comp or {}).get(comp_folder, [])
 
         nav_marker_pat = re.compile(r"<!--\s*SITE_RELATED_NAV_START\s*-->[\s\S]*?<!--\s*SITE_RELATED_NAV_END\s*-->")
         css_marker_pat = re.compile(r"<!--\s*PORTAL_DETAIL_SYNC_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_CSS_END\s*-->")
@@ -2106,7 +2161,7 @@ def sync_all_detail_pages(
 
         if is_mui_detail:
             # 1. 原地幂等更新 MUI 详情页的『站点与关联导航』块
-            mui_nav_block = build_mui_related_nav_block(rel_to_index, sibling_links)
+            mui_nav_block = build_mui_related_nav_block(rel_to_index, sibling_links, comp_folder=comp_folder, cur_rel=rel_p, comp_items=comp_items)
             if nav_marker_pat.search(work_html):
                 work_html = nav_marker_pat.sub(lambda _: mui_nav_block, work_html, count=1)
             else:
@@ -2142,15 +2197,15 @@ def sync_all_detail_pages(
             # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
             mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
             if mui_opt_pat.search(work_html):
-                work_html = mui_opt_pat.sub(lambda _: PORTAL_MUI_OPT_CSS_BLOCK, work_html, count=1)
+                work_html = mui_opt_pat.sub(lambda _: minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK), work_html, count=1)
             elif "</head>" in work_html:
-                work_html = work_html.replace("</head>", PORTAL_MUI_OPT_CSS_BLOCK + "\n</head>", 1)
+                work_html = work_html.replace("</head>", minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK) + "\n</head>", 1)
         else:
             # 经典详情页：1. 原地更新或首次注入无闪烁主题与 MUI 浅/深色样式
             if css_marker_pat.search(work_html):
-                work_html = css_marker_pat.sub(lambda _: DETAIL_SYNC_CSS_TEMPLATE, work_html, count=1)
+                work_html = css_marker_pat.sub(lambda _: minify_injected_style_block(DETAIL_SYNC_CSS_TEMPLATE), work_html, count=1)
             elif "</head>" in work_html:
-                work_html = work_html.replace("</head>", DETAIL_SYNC_CSS_TEMPLATE + "\n</head>", 1)
+                work_html = work_html.replace("</head>", minify_injected_style_block(DETAIL_SYNC_CSS_TEMPLATE) + "\n</head>", 1)
 
             # 2. 原地更新或首次注入左侧边栏『站点与关联导航』
             classic_nav = build_classic_related_nav_block(rel_to_index, sibling_links)
@@ -2269,7 +2324,7 @@ def inject_catalog_and_nav_into_html(
             break
 
     if nav_links is not None:
-        nav_json = json.dumps(nav_links, ensure_ascii=False, indent=2).replace("</script>", "<\\/script>")
+        nav_json = json.dumps(nav_links, ensure_ascii=False, separators=(",", ":")).replace("</script>", "<\\/script>")
         new_nav_block = (
             "<!-- NAV_CONFIG_START -->\n"
             '  <script id="docsNavConfig">\n'
@@ -2294,7 +2349,7 @@ def inject_catalog_and_nav_into_html(
                 1,
             )
 
-    search_script_tag = f'<script id="docsSearchIndexScript" src="./search_index.js?v={ver_tag}" defer></script>'
+    search_script_tag = f'<script id="docsSearchIndexScript" src="./search_index.js?v={ver_tag}" async></script>'
     existing_search_pat = (
         r'<script[^>]*(?:\bid=["\']docsSearchIndexScript["\']|\bsrc=["\'][^"\']*search_index\.js[^"\']*["\'])[^>]*>\s*</script>'
     )
