@@ -2257,9 +2257,14 @@
       font-size: 0.80rem !important;
     }
     main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
-    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Hero, Cards) */
+    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Mobile Drawer, Hero, Cards) */
     .mui-chip {
+      box-sizing: border-box !important;
+      display: inline-flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
       max-width: 100% !important;
+      min-width: 0 !important;
       white-space: normal !important;
       height: auto !important;
       min-height: 24px;
@@ -2267,9 +2272,11 @@
       padding: 3px 10px !important;
       overflow-wrap: anywhere !important;
       word-break: break-word !important;
+      text-align: left !important;
     }
     .appbar-left .mui-chip {
       white-space: nowrap !important;
+      flex-wrap: nowrap !important;
       max-width: 190px !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
@@ -2279,6 +2286,22 @@
       flex-wrap: wrap !important;
       gap: 6px !important;
       max-width: 100% !important;
+      min-width: 0 !important;
+    }
+    @media (max-width: 1023px) {
+      .mui-sidebar {
+        width: min(300px, 86vw) !important;
+        max-width: 86vw !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+      .mui-sidebar .sidebar-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
     }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
@@ -2636,6 +2659,456 @@
             </a>
           </li>
           <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/01_AAPL_Apple.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 苹果公司 Apple Inc. (AAPL…" data-i18n-en="[Deep Dive] Apple Inc">[公司深度] 苹果公司 Apple Inc. (AAPL…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/02_AXP_American_Express.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 美国运通 American Express…" data-i18n-en="[Deep Dive] American Express">[公司深度] 美国运通 American Express…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/03_GOOGL_Alphabet.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 谷歌 Alphabet Alphabet…" data-i18n-en="[Deep Dive] Alphabet Alphabet Inc">[公司深度] 谷歌 Alphabet Alphabet…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/04_KO_Coca_Cola.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 可口可乐 Coca-Cola Co. (K…" data-i18n-en="[Deep Dive] Coca-Cola Co">[公司深度] 可口可乐 Coca-Cola Co. (K…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/05_BAC_Bank_of_America.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 美国银行 Bank of America…" data-i18n-en="[Deep Dive] Bank of America">[公司深度] 美国银行 Bank of America…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/06_CVX_Chevron.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 雪佛龙 Chevron Corp. (CV…" data-i18n-en="[Deep Dive] Chevron Corp">[公司深度] 雪佛龙 Chevron Corp. (CV…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/07_OXY_Occidental_Petroleum.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 西方石油 Occidental Petro…" data-i18n-en="[Deep Dive] Occidental Petrol">[公司深度] 西方石油 Occidental Petro…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/08_MCO_Moodys.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 穆迪公司 Moody&#x27;s Corp. (M…" data-i18n-en="[Deep Dive] Moody&#x27;s Corp">[公司深度] 穆迪公司 Moody&#x27;s Corp. (M…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/09_CB_Chubb.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 安达保险 Chubb Limited (C…" data-i18n-en="[Deep Dive] Chubb Limited">[公司深度] 安达保险 Chubb Limited (C…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/10_KHC_Kraft_Heinz.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 卡夫亨氏 Kraft Heinz Co.…" data-i18n-en="[Deep Dive] Kraft Heinz Co">[公司深度] 卡夫亨氏 Kraft Heinz Co.…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/11_DAL_Delta_Air_Lines.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 达美航空 Delta Air Lines…" data-i18n-en="[Deep Dive] Delta Air Lines">[公司深度] 达美航空 Delta Air Lines…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/12_DVA_DaVita.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 达维塔保健 DaVita Inc. (DV…" data-i18n-en="[Deep Dive] DaVita Inc">[公司深度] 达维塔保健 DaVita Inc. (DV…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/13_SIRI_SiriusXM.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 天狼星XM SiriusXM Holdin…" data-i18n-en="[Deep Dive] XM SiriusXM Holdings">[公司深度] 天狼星XM SiriusXM Holdin…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/14_LEN_Lennar.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 莱纳房产 Lennar Corp. (LE…" data-i18n-en="[Deep Dive] Lennar Corp">[公司深度] 莱纳房产 Lennar Corp. (LE…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/15_KR_Kroger.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 克罗格 The Kroger Co. (K…" data-i18n-en="[Deep Dive] The Kroger Co">[公司深度] 克罗格 The Kroger Co. (K…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/16_VRSN_VeriSign.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 威瑞信 VeriSign, Inc. (V…" data-i18n-en="[Deep Dive] VeriSign">[公司深度] 威瑞信 VeriSign, Inc. (V…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/17_LLYVK_Liberty_Live.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 自由现场娱乐 Liberty Live G…" data-i18n-en="[Deep Dive] Liberty Live Group">[公司深度] 自由现场娱乐 Liberty Live G…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/18_ALLY_Ally_Financial.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 盟友金融 Ally Financial (…" data-i18n-en="[Deep Dive] Ally Financial">[公司深度] 盟友金融 Ally Financial (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/19_NYT_New_York_Times.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 纽约时报 New York Times (…" data-i18n-en="[Deep Dive] New York Times">[公司深度] 纽约时报 New York Times (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/20_BSP_Bending_Spoons.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Bending Spoons Bendin…" data-i18n-en="[Deep Dive] Bending Spoons Bending…">[公司深度] Bending Spoons Bendin…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/21_NUE_Nucor.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 纽柯钢铁 Nucor Corp. (NUE…" data-i18n-en="[Deep Dive] Nucor Corp">[公司深度] 纽柯钢铁 Nucor Corp. (NUE…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/22_LPX_Louisiana_Pacific.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 路易斯安那太平洋 Louisiana-Pa…" data-i18n-en="[Deep Dive] Louisiana-Pacific">[公司深度] 路易斯安那太平洋 Louisiana-Pa…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/23_COF_Capital_One.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 第一资本金融 Capital One (C…" data-i18n-en="[Deep Dive] Capital One">[公司深度] 第一资本金融 Capital One (C…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/24_M_Macys.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 梅西百货 Macy&#x27;s, Inc. (M)…" data-i18n-en="[Deep Dive] Macy&#x27;s">[公司深度] 梅西百货 Macy&#x27;s, Inc. (M)…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/25_NVR_NVR_Inc.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] NVR 房产 NVR, Inc. (NVR…" data-i18n-en="[Deep Dive] NVR)">[公司深度] NVR 房产 NVR, Inc. (NVR…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/26_JEF_Jefferies.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 杰富瑞集团 Jefferies Group…" data-i18n-en="[Deep Dive] Jefferies Group">[公司深度] 杰富瑞集团 Jefferies Group…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/27_DHI_DR_Horton.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 霍顿房屋 D.R. Horton (DHI…" data-i18n-en="[Deep Dive] D.R. Horton">[公司深度] 霍顿房屋 D.R. Horton (DHI…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/28_8058_Mitsubishi.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 三菱商事 Mitsubishi Corp.…" data-i18n-en="[Deep Dive] Mitsubishi Corp">[公司深度] 三菱商事 Mitsubishi Corp.…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/29_8031_Mitsui.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 三井物产 Mitsui &amp; Co. (80…" data-i18n-en="[Deep Dive] Mitsui &amp; Co">[公司深度] 三井物产 Mitsui &amp; Co. (80…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/30_8001_ITOCHU.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 伊藤忠商事 ITOCHU Corp. (8…" data-i18n-en="[Deep Dive] ITOCHU Corp">[公司深度] 伊藤忠商事 ITOCHU Corp. (8…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/31_8002_Marubeni.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 丸红商事 Marubeni Corp. (…" data-i18n-en="[Deep Dive] Marubeni Corp">[公司深度] 丸红商事 Marubeni Corp. (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/32_8053_Sumitomo.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 住友商事 Sumitomo Corp. (…" data-i18n-en="[Deep Dive] Sumitomo Corp">[公司深度] 住友商事 Sumitomo Corp. (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/33_BRK_GEICO.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] GEICO 保险 GEICO Insura…" data-i18n-en="[Deep Dive] GEICO Insurance">[公司深度] GEICO 保险 GEICO Insura…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/34_BRK_Sees_Candies.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 喜诗糖果 See&#x27;s Candies (S…" data-i18n-en="[Deep Dive] See&#x27;s Candies">[公司深度] 喜诗糖果 See&#x27;s Candies (S…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/35_BRK_BNSF_Railway.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] BNSF 铁路 BNSF Railway…" data-i18n-en="[Deep Dive] BNSF Railway">[公司深度] BNSF 铁路 BNSF Railway…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/36_BRK_Energy_BHE.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 伯克希尔能源 Berkshire Ener…" data-i18n-en="[Deep Dive] Berkshire Energy">[公司深度] 伯克希尔能源 Berkshire Ener…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/37_BRK_Precision_Castparts.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 精密机件 PCC Precision Ca…" data-i18n-en="[Deep Dive] PCC Precision Castparts">[公司深度] 精密机件 PCC Precision Ca…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/38_BRK_Dairy_Queen.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 冰雪皇后 DQ Dairy Queen (…" data-i18n-en="[Deep Dive] DQ Dairy Queen">[公司深度] 冰雪皇后 DQ Dairy Queen (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/39_HIST_BYD.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 比亚迪 BYD Co. Ltd. (121…" data-i18n-en="[Deep Dive] BYD Co. Ltd">[公司深度] 比亚迪 BYD Co. Ltd. (121…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/40_HIST_PetroChina.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 中国石油 PetroChina Co. (…" data-i18n-en="[Deep Dive] PetroChina Co">[公司深度] 中国石油 PetroChina Co. (…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/41_HIST_Washington_Post.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 华盛顿邮报 Washington Post…" data-i18n-en="[Deep Dive] Washington Post">[公司深度] 华盛顿邮报 Washington Post…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/42_HIST_Goldman_Sachs.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 高盛集团 Goldman Sachs (G…" data-i18n-en="[Deep Dive] Goldman Sachs">[公司深度] 高盛集团 Goldman Sachs (G…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/43_HIST_Capital_Cities_ABC.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 大都会/ABC Capital Citie…" data-i18n-en="[Deep Dive] ABC Capital Cities/ABC">[公司深度] 大都会/ABC Capital Citie…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/44_HIST_Gillette.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 吉列公司 The Gillette Co.…" data-i18n-en="[Deep Dive] The Gillette Co">[公司深度] 吉列公司 The Gillette Co.…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/45_HIST_Wells_Fargo.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 富国银行 Wells Fargo (WFC…" data-i18n-en="[Deep Dive] Wells Fargo">[公司深度] 富国银行 Wells Fargo (WFC…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/46_HIST_Visa_Mastercard.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 维萨与万事达 Visa &amp; Masterc…" data-i18n-en="[Deep Dive] Visa &amp; Mastercard">[公司深度] 维萨与万事达 Visa &amp; Masterc…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/47_HIST_Salomon_Brothers.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 所罗门兄弟 Salomon Brother…" data-i18n-en="[Deep Dive] Salomon Brothers">[公司深度] 所罗门兄弟 Salomon Brother…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/48_HIST_Dexter_Shoe.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 德克斯特鞋业 Dexter Shoe Co…" data-i18n-en="[Deep Dive] Dexter Shoe Co">[公司深度] 德克斯特鞋业 Dexter Shoe Co…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/48_warren_buffett_investments.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 巴菲特 48 家投资公司深度研报中枢（苹果…" data-i18n-en="[Deep Dive] 48 warren buffett inves…">[公司深度] 巴菲特 48 家投资公司深度研报中枢（苹果…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../Buffett_Investments/WarrenBuffett/index.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 巴菲特 48 家投资公司深度研报中枢（苹果…" data-i18n-en="[Deep Dive] index">[公司深度] 巴菲特 48 家投资公司深度研报中枢（苹果…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
             <a href="../../charlie_munger_1924_2023.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
@@ -2955,6 +3428,249 @@
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
                 <span data-i18n-zh="[公司深度] 李录·喜马拉雅资本 Himalaya Ca…" data-i18n-en="[Deep Dive] Himalaya Capital 2026Q3">[公司深度] 李录·喜马拉雅资本 Himalaya Ca…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_01_Alphabet_GOOGL_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #01" data-i18n-en="[Deep Dive] GOOGL / GOOG)">[公司深度] 李录被投企业深度研报 #01</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_02_PDD_Holdings_PDD_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #02" data-i18n-en="[Deep Dive] PDD)">[公司深度] 李录被投企业深度研报 #02</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_03_BerkshireHathaway_BRKB_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #03" data-i18n-en="[Deep Dive] BRK.B)">[公司深度] 李录被投企业深度研报 #03</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_04_EastWestBancorp_EWBC_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #04" data-i18n-en="[Deep Dive] EWBC)">[公司深度] 李录被投企业深度研报 #04</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_05_TencentMusic_TME_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #05" data-i18n-en="[Deep Dive] TME)">[公司深度] 李录被投企业深度研报 #05</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_06_Crocs_CROX_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #06" data-i18n-en="[Deep Dive] CROX)">[公司深度] 李录被投企业深度研报 #06</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_07_Apple_AAPL_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #07" data-i18n-en="[Deep Dive] AAPL)">[公司深度] 李录被投企业深度研报 #07</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_08_BankOfAmerica_BAC_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #08" data-i18n-en="[Deep Dive] BAC)">[公司深度] 李录被投企业深度研报 #08</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_09_MicronTechnology_MU_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #09" data-i18n-en="[Deep Dive] MU)">[公司深度] 李录被投企业深度研报 #09</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_10_MetaPlatforms_META_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #10" data-i18n-en="[Deep Dive] META)">[公司深度] 李录被投企业深度研报 #10</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_11_OccidentalPetroleum_OXY_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #11" data-i18n-en="[Deep Dive] OXY)">[公司深度] 李录被投企业深度研报 #11</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_12_SPGlobal_SPGI_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #12" data-i18n-en="[Deep Dive] SPGI)">[公司深度] 李录被投企业深度研报 #12</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_13_Moodys_MCO_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #13" data-i18n-en="[Deep Dive] MCO)">[公司深度] 李录被投企业深度研报 #13</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_14_HRBlock_HRB_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #14" data-i18n-en="[Deep Dive] HRB)">[公司深度] 李录被投企业深度研报 #14</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_15_MSCI_MSCI_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #15" data-i18n-en="[Deep Dive] MSCI)">[公司深度] 李录被投企业深度研报 #15</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_16_SableOffshore_SOC_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #16" data-i18n-en="[Deep Dive] SOC)">[公司深度] 李录被投企业深度研报 #16</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_17_Alibaba_BABA_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #17" data-i18n-en="[Deep Dive] BABA)">[公司深度] 李录被投企业深度研报 #17</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_18_Baidu_BIDU_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #18" data-i18n-en="[Deep Dive] BIDU)">[公司深度] 李录被投企业深度研报 #18</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_19_Sina_SINA_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #19" data-i18n-en="[Deep Dive] SINA)">[公司深度] 李录被投企业深度研报 #19</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_20_Weibo_WB_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #20" data-i18n-en="[Deep Dive] WB)">[公司深度] 李录被投企业深度研报 #20</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_21_BYD_1211HK_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #21" data-i18n-en="[Deep Dive] 1211.HK)">[公司深度] 李录被投企业深度研报 #21</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_22_PSBC_1658HK_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #22" data-i18n-en="[Deep Dive] 1658.HK)">[公司深度] 李录被投企业深度研报 #22</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_23_CRRC_1766HK_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #23" data-i18n-en="[Deep Dive] 1766.HK)">[公司深度] 李录被投企业深度研报 #23</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_24_Timberland_TBL_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #24" data-i18n-en="[Deep Dive] TBL / VFC)">[公司深度] 李录被投企业深度研报 #24</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_25_HyundaiDept_069960KS_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #25" data-i18n-en="[Deep Dive] 069960.KS)">[公司深度] 李录被投企业深度研报 #25</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_26_KweichowMoutai_600519SH_Analysis.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录被投企业深度研报 #26" data-i18n-en="[Deep Dive] 600519.SH)">[公司深度] 李录被投企业深度研报 #26</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../LiLu/LiLu_Himalaya_26_Companies_MUI_Suite/LiLu_Himalaya_All_Companies_MUI_Hub.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录与喜马拉雅资本全历史 26 家被投公司…" data-i18n-en="[Deep Dive] Alphabet">[公司深度] 李录与喜马拉雅资本全历史 26 家被投公司…</span>
               </span>
               <span class="mui-ext-nav-arrow">↗</span>
             </a>

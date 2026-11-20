@@ -1375,9 +1375,14 @@
       font-size: 0.80rem !important;
     }
     main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
-    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Hero, Cards) */
+    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Mobile Drawer, Hero, Cards) */
     .mui-chip {
+      box-sizing: border-box !important;
+      display: inline-flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
       max-width: 100% !important;
+      min-width: 0 !important;
       white-space: normal !important;
       height: auto !important;
       min-height: 24px;
@@ -1385,9 +1390,11 @@
       padding: 3px 10px !important;
       overflow-wrap: anywhere !important;
       word-break: break-word !important;
+      text-align: left !important;
     }
     .appbar-left .mui-chip {
       white-space: nowrap !important;
+      flex-wrap: nowrap !important;
       max-width: 190px !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
@@ -1397,6 +1404,22 @@
       flex-wrap: wrap !important;
       gap: 6px !important;
       max-width: 100% !important;
+      min-width: 0 !important;
+    }
+    @media (max-width: 1023px) {
+      .mui-sidebar {
+        width: min(300px, 86vw) !important;
+        max-width: 86vw !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+      .mui-sidebar .sidebar-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
     }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {

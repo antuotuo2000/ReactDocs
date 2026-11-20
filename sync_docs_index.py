@@ -205,9 +205,14 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       font-size: 0.80rem !important;
     }
     main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
-    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Hero, Cards) */
+    /* Detail Page Tag/Chip Wrapping Fix (Sidebar, Mobile Drawer, Hero, Cards) */
     .mui-chip {
+      box-sizing: border-box !important;
+      display: inline-flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
       max-width: 100% !important;
+      min-width: 0 !important;
       white-space: normal !important;
       height: auto !important;
       min-height: 24px;
@@ -215,9 +220,11 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       padding: 3px 10px !important;
       overflow-wrap: anywhere !important;
       word-break: break-word !important;
+      text-align: left !important;
     }
     .appbar-left .mui-chip {
       white-space: nowrap !important;
+      flex-wrap: nowrap !important;
       max-width: 190px !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
@@ -227,6 +234,22 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       flex-wrap: wrap !important;
       gap: 6px !important;
       max-width: 100% !important;
+      min-width: 0 !important;
+    }
+    @media (max-width: 1023px) {
+      .mui-sidebar {
+        width: min(300px, 86vw) !important;
+        max-width: 86vw !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+      .mui-sidebar .sidebar-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
     }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
@@ -301,6 +324,38 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
     )
     return idx_html
 
+
+
+def audit_detail_chip_wrapping(docs_dir: str) -> dict[str, int]:
+    """每次打包/同步时检查所有详情页 .mui-chip 标签换行与移动端抽屉防溢出规则是否到位。"""
+    scanned = 0
+    fixed_inline = 0
+    missing_opt = 0
+    for dp, dns, fns in os.walk(docs_dir):
+        dns[:] = [d for d in dns if not d.startswith(".")]
+        for fn in fns:
+            if not fn.lower().endswith(".html"):
+                continue
+            fp = os.path.join(dp, fn)
+            if os.path.abspath(fp) == os.path.abspath(os.path.join(docs_dir, "index.html")):
+                continue
+            scanned += 1
+            with open(fp, "r", encoding="utf-8", errors="ignore") as f:
+                txt = f.read()
+            if "mui-chip" in txt and "Detail Page Tag/Chip Wrapping Fix" not in txt:
+                missing_opt += 1
+            # Strip any inline white-space:nowrap on .mui-chip elements
+            patched = re.sub(
+                r'(<[^>]*class="[^"]*\bmui-chip\b[^"]*"[^>]*style="[^"]*?)white-space\s*:\s*nowrap\s*;?',
+                r'\1white-space:normal;',
+                txt,
+                flags=re.IGNORECASE,
+            )
+            if patched != txt:
+                fixed_inline += 1
+                with open(fp, "w", encoding="utf-8") as f:
+                    f.write(patched)
+    return {"scanned": scanned, "fixed_inline": fixed_inline, "missing_opt": missing_opt}
 
 def package_portal_zip(portal_root: Path, zip_path: Path) -> Path:
     """将整个 an/ 门户目录（含 docs/、sync_docs_index.py 及启动脚本）打包为可独立分发的 ZIP 归档。"""
@@ -2476,12 +2531,14 @@ def main() -> None:
             standalone_out=args.standalone_out,
             sync_details=not args.no_sync_details,
         )
+        chip_audit = audit_detail_chip_wrapping(docs_dir)
         index_uri = Path(str(stats["index_path"])).resolve().as_uri()
         print(
             f"✅ 索引与详情页同步完成 | 目录: {docs_dir}\n"
             f"   顶层分类: {stats['companies']} 个 · 子目录: {stats['subfolders']} 个 · 可检索文件: {stats['files']} 份\n"
             f"   本次新解析: {stats['parsed_new']} 份 · 命中增量缓存: {stats['reused_cache']} 份 · 全文总字数: {stats['total_chars']:,} 字\n"
             f"   详情页联动: 已扫描 {stats['detail_checked']} 份详情页 (本次更新 {stats['detail_updated']} 份 · 站点关联导航与浅深色/中英文已与首页对齐)\n"
+            f"   标签换行检查: 已扫描 {chip_audit['scanned']} 份详情页 · 修复内联不换行 {chip_audit['fixed_inline']} 处 · 缺失样式 {chip_audit['missing_opt']} 份\n"
             f"   主页地址: {index_uri}"
         )
 
