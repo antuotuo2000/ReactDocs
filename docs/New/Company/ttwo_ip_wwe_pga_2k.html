@@ -1530,6 +1530,107 @@
     .mui-paper { box-shadow: none !important; border: 1px solid #CBD5E1 !important; break-inside: avoid; }
   }
   </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script>
+    (function () {
+      try {
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">
+    /* Sidebar Height & Nav Optimization + Cross-Page Collapse */
+    @media (min-width: 1024px) {
+      .mui-sidebar {
+        top: 72px !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding-bottom: 24px !important;
+        gap: 10px !important;
+      }
+      html[data-sidebar-collapsed="1"] .mui-sidebar {
+        display: none !important;
+      }
+      html[data-sidebar-collapsed="1"] .layout-shell {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+    }
+    .sidebar-card {
+      padding: 12px 14px !important;
+      flex-shrink: 0 !important;
+    }
+    .sidebar-subtitle {
+      margin: 4px 0 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.4 !important;
+    }
+    .sidebar-mini-kpis {
+      gap: 4px !important;
+      padding-top: 8px !important;
+    }
+    .mui-sidebar .mui-nav-list {
+      gap: 2px !important;
+    }
+    .mui-sidebar .mui-nav-list:first-of-type {
+      max-height: 175px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      padding-right: 3px;
+    }
+    .mui-ext-nav-link {
+      padding: 4px 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.32 !important;
+    }
+    .mui-ext-nav-left > span:last-child {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .mui-nav-link {
+      padding: 5px 10px !important;
+      font-size: 0.80rem !important;
+    }
+    main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
+    /* Mobile Horizontal Overflow Fix */
+    @media (max-width: 720px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      .mui-chip, .mui-segmented button, .cite-link { white-space: normal !important; max-width: 100%; overflow-wrap: anywhere; }
+      .mui-input-outlined { max-width: 100%; min-width: 0; }
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'mui_portal_sidebar_collapsed_v1';
+      function syncFromStorage() {
+        try {
+          var collapsed = window.localStorage.getItem(KEY) === '1';
+          if (collapsed) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+        } catch (e) {}
+      }
+      document.addEventListener('click', function (ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest('#sidebarToggleBtn') : null;
+        if (!btn) return;
+        if (window.innerWidth >= 1024) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+          var next = document.documentElement.getAttribute('data-sidebar-collapsed') !== '1';
+          if (next) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+          try { window.localStorage.setItem(KEY, next ? '1' : '0'); } catch (e) {}
+          window.dispatchEvent(new Event('resize'));
+        }
+      }, true);
+      window.addEventListener('storage', function (ev) {
+        if (ev.key === KEY) syncFromStorage();
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
 </head>
 <body>
   <div id="readingProgressBar"></div>
@@ -1546,7 +1647,7 @@
         </button>
         <span class="brand-monogram mono">2KS</span>
         <nav class="breadcrumbs" aria-label="面包屑导航" data-aria-zh="面包屑导航" data-aria-en="Breadcrumb navigation">
-          <a class="crumb-link hide-sm" href="https://antuotuo2000.github.io/ReactDocs/" target="_blank" rel="noopener noreferrer">
+          <a class="crumb-link hide-sm" href="../../index.html">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
             <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
           </a>
@@ -1608,48 +1709,291 @@
         <div class="nav-section-label" data-i18n-zh="站点与关联导航" data-i18n-en="Site &amp; Related Nav">站点与关联导航</div>
         <ul class="mui-nav-list">
           <li>
-            <a href="https://antuotuo2000.github.io/ReactDocs/" target="_blank" rel="noopener noreferrer" class="mui-ext-nav-link">
+            <a href="../../index.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg></span>
                 <span data-i18n-zh="返回数据中心首页" data-i18n-en="Back to Research Hub">返回数据中心首页</span>
               </span>
-              <span class="mui-ext-nav-arrow">&#8617;</span>
+              <span class="mui-ext-nav-arrow">↩</span>
             </a>
           </li>
           <li>
-            <a href="https://www.take2games.com/ir" target="_blank" rel="noopener noreferrer" class="mui-ext-nav-link">
+            <a href="./6_grand_theft_auto_vi_gta_6.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                <span data-i18n-zh="Take-Two 投资者关系官网 (IR)" data-i18n-en="Take-Two Investor Relations">Take-Two 投资者关系官网 (IR)</span>
+                <span data-i18n-zh="[公司深度] 侠盗猎车手6 Grand Theft Au…" data-i18n-en="[Deep Dive] 6 Grand Theft Auto VI">[公司深度] 侠盗猎车手6 Grand Theft Au…</span>
               </span>
-              <span class="mui-ext-nav-arrow">&#8599;</span>
+              <span class="mui-ext-nav-arrow">↗</span>
             </a>
           </li>
           <li>
-            <a href="https://www.rockstargames.com/" target="_blank" rel="noopener noreferrer" class="mui-ext-nav-link">
+            <a href="./Altria_Corporate_Culture_Analysis.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                <span data-i18n-zh="Rockstar Games 官方网站" data-i18n-en="Rockstar Games Official">Rockstar Games 官方网站</span>
+                <span data-i18n-zh="[公司深度] 奥驰亚集团 Altria Group (M…" data-i18n-en="[Deep Dive] Altria Group">[公司深度] 奥驰亚集团 Altria Group (M…</span>
               </span>
-              <span class="mui-ext-nav-arrow">&#8599;</span>
+              <span class="mui-ext-nav-arrow">↗</span>
             </a>
           </li>
           <li>
-            <a href="https://2k.com/" target="_blank" rel="noopener noreferrer" class="mui-ext-nav-link">
+            <a href="./apple_airpods_h2.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                <span data-i18n-zh="2K Games 官方发行矩阵" data-i18n-en="2K Publishing Official">2K Games 官方发行矩阵</span>
+                <span data-i18n-zh="[公司深度] Apple AirPods 声学穿戴产品力…" data-i18n-en="[Deep Dive] Apple AirPods">[公司深度] Apple AirPods 声学穿戴产品力…</span>
               </span>
-              <span class="mui-ext-nav-arrow">&#8599;</span>
+              <span class="mui-ext-nav-arrow">↗</span>
             </a>
           </li>
           <li>
-            <a href="https://www.zynga.com/" target="_blank" rel="noopener noreferrer" class="mui-ext-nav-link">
+            <a href="./apple_home_homeview_ai.html" class="mui-ext-nav-link">
               <span class="mui-ext-nav-left">
                 <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                <span data-i18n-zh="Zynga 移动游戏矩阵官网" data-i18n-en="Zynga Mobile Portfolio">Zynga 移动游戏矩阵官网</span>
+                <span data-i18n-zh="[公司深度] Apple Home 智能家居产品力、Ho…" data-i18n-en="[Deep Dive] Apple Home">[公司深度] Apple Home 智能家居产品力、Ho…</span>
               </span>
-              <span class="mui-ext-nav-arrow">&#8599;</span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./apple_ipad_oled.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Apple iPad 平板产品力、串联 O…" data-i18n-en="[Deep Dive] Apple iPad">[公司深度] Apple iPad 平板产品力、串联 O…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./apple_iphone.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Apple iPhone 手机产品力、生态…" data-i18n-en="[Deep Dive] Apple iPhone">[公司深度] Apple iPhone 手机产品力、生态…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./apple_mac_apple_silicon.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Apple Mac 电脑产品力、Apple…" data-i18n-en="[Deep Dive] Apple Silicon">[公司深度] Apple Mac 电脑产品力、Apple…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./apple_vision_pro_m5_r1_b2b.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Apple Vision Pro 空间计算…" data-i18n-en="[Deep Dive] Apple Vision Pro">[公司深度] Apple Vision Pro 空间计算…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./apple_watch_iwatch.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Apple Watch (iWatch)…" data-i18n-en="[Deep Dive] Apple Watch">[公司深度] Apple Watch (iWatch)…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./berkshire_hathaway_brk_a_brk_b_2026q3.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 伯克希尔·哈撒韦 Berkshire Ha…" data-i18n-en="[Deep Dive] Berkshire Hathaway">[公司深度] 伯克希尔·哈撒韦 Berkshire Ha…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./charlie_munger_1924_2023.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 查理·芒格 Charlie Munger…" data-i18n-en="[Deep Dive] Charlie Munger">[公司深度] 查理·芒格 Charlie Munger…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./code_artifact.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 苹果无创生物传感与多光谱健康监测深度研究报告" data-i18n-en="[Deep Dive] code artifact">[公司深度] 苹果无创生物传感与多光谱健康监测深度研究报告</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./duan_yongping.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 段永平 (Duan Yongping ·…" data-i18n-en="[Deep Dive] Duan Yongping">[公司深度] 段永平 (Duan Yongping ·…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./h_h_international_investment_2026q3.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 段永平 (H&amp;H Internationa…" data-i18n-en="[Deep Dive] H&amp;H International Inves…">[公司深度] 段永平 (H&amp;H Internationa…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./himalaya_capital_2026q3.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 李录·喜马拉雅资本 Himalaya Ca…" data-i18n-en="[Deep Dive] Himalaya Capital 2026Q3">[公司深度] 李录·喜马拉雅资本 Himalaya Ca…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./nintendo_7974_t_ntdoy.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 任天堂株式会社 Nintendo (797…" data-i18n-en="[Deep Dive] 7974.T / NTDOY)">[公司深度] 任天堂株式会社 Nintendo (797…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./roblox_corporation_nyse_rblx.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Roblox Corporation (N…" data-i18n-en="[Deep Dive] Roblox Corporation">[公司深度] Roblox Corporation (N…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./roblox_ugc_nyse_rblx.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Roblox 游戏与 UGC 生态深度研究…" data-i18n-en="[Deep Dive] Roblox">[公司深度] Roblox 游戏与 UGC 生态深度研究…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./take_two_interactive_nasdaq_ttwo.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Take-Two Interactive…" data-i18n-en="[Deep Dive] Take-Two Interactive">[公司深度] Take-Two Interactive…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_bioshock.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《生化奇兵 BioShock》（含沉浸模拟…" data-i18n-en="[Deep Dive] BioShock">[公司深度] 《生化奇兵 BioShock》（含沉浸模拟…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_borderlands.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《无主之地 Borderlands》（含小…" data-i18n-en="[Deep Dive] Borderlands">[公司深度] 《无主之地 Borderlands》（含小…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_civilization.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《席德·梅尔的文明 Sid Meier&#x27;s…" data-i18n-en="[Deep Dive] Sid Meier&#x27;s Civilization">[公司深度] 《席德·梅尔的文明 Sid Meier&#x27;s…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_grand_theft_auto.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《侠盗猎车手 Grand Theft Au…" data-i18n-en="[Deep Dive] Grand Theft Auto">[公司深度] 《侠盗猎车手 Grand Theft Au…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_mafia.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《四海兄弟 Mafia》电影化黑帮叙事 I…" data-i18n-en="[Deep Dive] Hangar 13">[公司深度] 《四海兄弟 Mafia》电影化黑帮叙事 I…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_max_payne_rockstar_classics.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《马克思·佩恩 Max Payne》与 R…" data-i18n-en="[Deep Dive] Max Payne">[公司深度] 《马克思·佩恩 Max Payne》与 R…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_nba_2k.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《NBA 2K》篮球模拟与虚拟城市生态 I…" data-i18n-en="[Deep Dive] Visual Concepts">[公司深度] 《NBA 2K》篮球模拟与虚拟城市生态 I…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_red_dead_redemption.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《荒野大镖客 Red Dead Redem…" data-i18n-en="[Deep Dive] Red Dead Redemption">[公司深度] 《荒野大镖客 Red Dead Redem…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_xcom.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 《幽浮 XCOM》（含漫威暗夜之子）回合制…" data-i18n-en="[Deep Dive] Firaxis">[公司深度] 《幽浮 XCOM》（含漫威暗夜之子）回合制…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_zynga_evergreen_empires_poker.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Zynga 常青中重度与社交棋牌 IP（E…" data-i18n-en="[Deep Dive] Words With Friends">[公司深度] Zynga 常青中重度与社交棋牌 IP（E…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./ttwo_ip_zynga_puzzle_toon_blast.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] Zynga 消除与混合休闲王牌 IP（To…" data-i18n-en="[Deep Dive] Color Block Jam">[公司深度] Zynga 消除与混合休闲王牌 IP（To…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="./warren_buffett_1930.html" class="mui-ext-nav-link">
+              <span class="mui-ext-nav-left">
+                <span class="mui-ext-nav-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <span data-i18n-zh="[公司深度] 沃伦·巴菲特 Warren Buffett…" data-i18n-en="[Deep Dive] Warren Buffett">[公司深度] 沃伦·巴菲特 Warren Buffett…</span>
+              </span>
+              <span class="mui-ext-nav-arrow">↗</span>
             </a>
           </li>
         </ul>
