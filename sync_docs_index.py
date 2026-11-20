@@ -268,12 +268,30 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
     .co-hub-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
     .co-hub-heading { font-size: 0.90rem; color: var(--mui-text-primary, #0f172a); }
     [data-theme="dark"] .co-hub-heading, html.dark .co-hub-heading { color: #f1f5f9; }
-    .co-hub-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .co-hub-pill {
-      padding: 4px 11px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
-      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff); color: var(--mui-text-secondary, #475569);
+    .co-hub-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .co-hub-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+      height: 34px; padding: 0 13px; border-radius: 999px; font-size: 0.80rem; font-weight: 700;
+      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff);
+      color: var(--mui-text-primary, #0f172a); text-decoration: none !important; cursor: pointer;
+      transition: all 0.14s ease;
     }
-    .co-hub-pill.active { background: #1976d2; color: #fff; border-color: #1976d2; }
+    [data-theme="dark"] .co-hub-btn, html.dark .co-hub-btn { background: rgba(15,23,42,0.8); color: #e2e8f0; border-color: rgba(255,255,255,0.14); }
+    .co-hub-btn:hover { border-color: #1976d2; color: #1976d2; }
+    .co-hub-btn-primary { background: #0073e6 !important; color: #fff !important; border-color: #0073e6 !important; }
+    .co-hub-btn-primary:hover { background: #005bb5 !important; color: #fff !important; }
+    .co-hub-pills {
+      display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border-radius: 10px;
+      background: var(--mui-bg-subtle, #f1f5f9); border: 1px solid var(--mui-divider, #e2e8f0); margin-bottom: 10px;
+    }
+    [data-theme="dark"] .co-hub-pills, html.dark .co-hub-pills { background: rgba(15,23,42,0.65); border-color: rgba(255,255,255,0.10); }
+    .co-hub-pill {
+      padding: 5px 12px; border-radius: 8px; font-size: 0.77rem; font-weight: 700; cursor: pointer;
+      border: none; background: transparent; color: var(--mui-text-secondary, #475569); transition: all 0.14s ease;
+    }
+    [data-theme="dark"] .co-hub-pill, html.dark .co-hub-pill { color: #94a3b8; }
+    .co-hub-pill.active { background: #fff; color: #0073e6; box-shadow: 0 1px 3px rgba(15,23,42,0.10); }
+    [data-theme="dark"] .co-hub-pill.active, html.dark .co-hub-pill.active { background: #1e293b; color: #60a5fa; }
     .co-hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
     @media (max-width: 1120px) { .co-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 720px) { .co-hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -1796,7 +1814,7 @@ DETAIL_SYNC_JS_TEMPLATE = """<!-- PORTAL_DETAIL_SYNC_JS_START -->
 
 
 def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: list[dict]) -> str:
-    """为每个公司的详情页顶部生成该公司子目录分类切换面板（image_3d2e84 风格）：首个子目录为分类，有 index.html 仅读 index.html 并新页打开，无则扁平显示全层级。"""
+    """为每个公司的详情页顶部生成该公司子目录分类切换面板（含上一/下一公司、打开独立网页、导出HTML与分段标签栏）。"""
     if not comp_items:
         return ""
     cur_dir = os.path.dirname(cur_rel)
@@ -1810,18 +1828,36 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
         counts[c] = counts.get(c, 0) + 1
     cats = sorted(counts.keys())
 
+    # Resolve Prev / Next / Current hrefs
+    cur_idx = 0
+    for i, it in enumerate(comp_items):
+        if it["relPath"] == cur_rel:
+            cur_idx = i
+            break
+    prev_it = comp_items[(cur_idx - 1) % len(comp_items)]
+    next_it = comp_items[(cur_idx + 1) % len(comp_items)]
+    cur_it = comp_items[cur_idx]
+
+    def _href(it):
+        return os.path.relpath(it["relPath"], cur_dir).replace(os.sep, "/") if cur_dir else it["relPath"]
+
+    prev_href = _href(prev_it)
+    next_href = _href(next_it)
+    cur_href = _href(cur_it)
+    cur_short = (cur_it.get("companyLabel") or comp_folder).split()[0]
+
     pills_html = [
-        f'<button type="button" class="co-hub-pill active" data-co-cat="ALL">全部 ({len(comp_items)})</button>'
+        f'<button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 ({len(comp_items)})" data-i18n-en="All ({len(comp_items)})">全部 ({len(comp_items)})</button>'
     ]
     for c in cats:
         lbl = cat_zh.get(c, c)
         pills_html.append(
-            f'<button type="button" class="co-hub-pill" data-co-cat="{html_mod.escape(c)}" data-zh="{html_mod.escape(lbl)} ({counts[c]})" data-en="{html_mod.escape(c)} ({counts[c]})">{html_mod.escape(lbl)} ({counts[c]})</button>'
+            f'<button type="button" class="co-hub-pill" data-co-cat="{html_mod.escape(c)}" data-i18n-zh="{html_mod.escape(lbl)} ({counts[c]})" data-i18n-en="{html_mod.escape(c)} ({counts[c]})">{html_mod.escape(lbl)} ({counts[c]})</button>'
         )
 
     cards_html = []
-    for idx, it in enumerate(comp_items, 1):
-        rel_href = os.path.relpath(it["relPath"], cur_dir).replace(os.sep, "/") if cur_dir else it["relPath"]
+    for it in comp_items:
+        rel_href = _href(it)
         is_cur = (it["relPath"] == cur_rel)
         cls = "co-hub-item active" if is_cur else "co-hub-item"
         target_attr = ' target="_blank" rel="noopener noreferrer"' if it.get("isIndex") else ""
@@ -1844,12 +1880,19 @@ def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: l
         f'          <span class="mui-chip mui-chip-primary mono">{html_mod.escape(comp_folder.upper())} · {len(comp_items)} FILES</span>\n'
         '          <strong class="co-hub-heading" data-i18n-zh="本公司目录与研报切换中枢（按首个子目录分类）" data-i18n-en="Company Subfolder &amp; Report Directory (Grouped by First Subfolder)">本公司目录与研报切换中枢（按首个子目录分类）</strong>\n'
         '        </div>\n'
+        '        <div class="co-hub-actions">\n'
+        f'          <a class="co-hub-btn" id="coHubPrevBtn" href="{html_mod.escape(prev_href)}" data-i18n-zh="← 上一公司" data-i18n-en="← Prev">← 上一公司</a>\n'
+        f'          <a class="co-hub-btn" id="coHubNextBtn" href="{html_mod.escape(next_href)}" data-i18n-zh="下一公司 →" data-i18n-en="Next →">下一公司 →</a>\n'
+        f'          <a class="co-hub-btn co-hub-btn-primary" id="coHubOpenBtn" href="{html_mod.escape(cur_href)}" target="_blank" rel="noopener noreferrer" data-i18n-zh="打开《{html_mod.escape(cur_short)}》独立网页 ↗" data-i18n-en="Open Standalone Page ↗">打开《{html_mod.escape(cur_short)}》独立网页 ↗</a>\n'
+        '          <button type="button" class="co-hub-btn" id="coHubExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>\n'
+        '        </div>\n'
         '        <div class="co-hub-pills">\n          ' + "\n          ".join(pills_html) + '\n        </div>\n'
         '        <div class="co-hub-grid">\n          ' + "\n          ".join(cards_html) + '\n        </div>\n'
-        '        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});})();</script>\n'
+        '        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});var ex=document.getElementById("coHubExportBtn");if(ex){ex.addEventListener("click",function(){try{var html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;var blob=new Blob([html],{type:"text/html;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(document.title||"report").replace(/[\\/:*?"<>|]/g,"_")+"_"+new Date().toISOString().slice(0,10)+".html";document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},400);}catch(err){}});}})();</script>\n'
         '      </section>\n'
         "<!-- COMPANY_SUBFOLDER_HUB_END -->"
     )
+
 
 def build_mui_related_nav_block(rel_to_index: str, siblings: list[tuple[str, str, str]]) -> str:
     """为 MUI 架构详情页生成侧边栏『站点与关联导航』列表。"""
@@ -2021,8 +2064,9 @@ def sync_all_detail_pages(
 
         # 6. 为每份详情页注入所属公司的『子目录分类切换面板』
         co_hub_pat = re.compile(r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->")
+        has_folder_index = os.path.isfile(os.path.join(os.path.dirname(full_p), "index.html"))
         comp_items = (subfolder_by_comp or {}).get(comp_folder, [])
-        co_hub_html = build_company_detail_hub_block(comp_folder, rel_p, comp_items)
+        co_hub_html = "" if has_folder_index else build_company_detail_hub_block(comp_folder, rel_p, comp_items)
         if co_hub_pat.search(work_html):
             work_html = co_hub_pat.sub(lambda _: co_hub_html, work_html, count=1)
         elif co_hub_html:
@@ -2390,6 +2434,12 @@ def build_catalog_and_index(
             d for d in dns
             if not d.startswith(".") and d not in IGNORED_DIRS and not d.endswith("_files")
         )
+        if os.path.abspath(dp) != os.path.abspath(docs_dir) and "index.html" in fns:
+            idx_full = os.path.join(dp, "index.html")
+            idx_rel = os.path.relpath(idx_full, docs_dir).replace(os.sep, "/")
+            all_discovered_paths.append((idx_rel, idx_full))
+            dns[:] = []
+            continue
         for fn in sorted(fns):
             if fn.startswith(".") or fn.startswith("._") or fn.endswith(".tmp") or fn.lower() in IGNORED_NAMES:
                 continue

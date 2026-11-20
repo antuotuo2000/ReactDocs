@@ -1448,12 +1448,30 @@
     .co-hub-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
     .co-hub-heading { font-size: 0.90rem; color: var(--mui-text-primary, #0f172a); }
     [data-theme="dark"] .co-hub-heading, html.dark .co-hub-heading { color: #f1f5f9; }
-    .co-hub-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .co-hub-pill {
-      padding: 4px 11px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
-      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff); color: var(--mui-text-secondary, #475569);
+    .co-hub-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .co-hub-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+      height: 34px; padding: 0 13px; border-radius: 999px; font-size: 0.80rem; font-weight: 700;
+      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff);
+      color: var(--mui-text-primary, #0f172a); text-decoration: none !important; cursor: pointer;
+      transition: all 0.14s ease;
     }
-    .co-hub-pill.active { background: #1976d2; color: #fff; border-color: #1976d2; }
+    [data-theme="dark"] .co-hub-btn, html.dark .co-hub-btn { background: rgba(15,23,42,0.8); color: #e2e8f0; border-color: rgba(255,255,255,0.14); }
+    .co-hub-btn:hover { border-color: #1976d2; color: #1976d2; }
+    .co-hub-btn-primary { background: #0073e6 !important; color: #fff !important; border-color: #0073e6 !important; }
+    .co-hub-btn-primary:hover { background: #005bb5 !important; color: #fff !important; }
+    .co-hub-pills {
+      display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border-radius: 10px;
+      background: var(--mui-bg-subtle, #f1f5f9); border: 1px solid var(--mui-divider, #e2e8f0); margin-bottom: 10px;
+    }
+    [data-theme="dark"] .co-hub-pills, html.dark .co-hub-pills { background: rgba(15,23,42,0.65); border-color: rgba(255,255,255,0.10); }
+    .co-hub-pill {
+      padding: 5px 12px; border-radius: 8px; font-size: 0.77rem; font-weight: 700; cursor: pointer;
+      border: none; background: transparent; color: var(--mui-text-secondary, #475569); transition: all 0.14s ease;
+    }
+    [data-theme="dark"] .co-hub-pill, html.dark .co-hub-pill { color: #94a3b8; }
+    .co-hub-pill.active { background: #fff; color: #0073e6; box-shadow: 0 1px 3px rgba(15,23,42,0.10); }
+    [data-theme="dark"] .co-hub-pill.active, html.dark .co-hub-pill.active { background: #1e293b; color: #60a5fa; }
     .co-hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
     @media (max-width: 1120px) { .co-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 720px) { .co-hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -1642,14 +1660,21 @@
           <span class="mui-chip mui-chip-primary mono">CEREBRASSYSTEMS · 1 FILES</span>
           <strong class="co-hub-heading" data-i18n-zh="本公司目录与研报切换中枢（按首个子目录分类）" data-i18n-en="Company Subfolder &amp; Report Directory (Grouped by First Subfolder)">本公司目录与研报切换中枢（按首个子目录分类）</strong>
         </div>
+        <div class="co-hub-actions">
+          <a class="co-hub-btn" id="coHubPrevBtn" href="Cerebras_CEO_Andrew_Feldman_Analysis-v2.html" data-i18n-zh="← 上一公司" data-i18n-en="← Prev">← 上一公司</a>
+          <a class="co-hub-btn" id="coHubNextBtn" href="Cerebras_CEO_Andrew_Feldman_Analysis-v2.html" data-i18n-zh="下一公司 →" data-i18n-en="Next →">下一公司 →</a>
+          <a class="co-hub-btn co-hub-btn-primary" id="coHubOpenBtn" href="Cerebras_CEO_Andrew_Feldman_Analysis-v2.html" target="_blank" rel="noopener noreferrer" data-i18n-zh="打开《Cerebras》独立网页 ↗" data-i18n-en="Open Standalone Page ↗">打开《Cerebras》独立网页 ↗</a>
+          <button type="button" class="co-hub-btn" id="coHubExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+        </div>
         <div class="co-hub-pills">
-          <button type="button" class="co-hub-pill active" data-co-cat="ALL">全部 (1)</button>
-          <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-zh="高管人物 (1)" data-en="SeniorExecutive (1)">高管人物 (1)</button>
+          <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (1)" data-i18n-en="All (1)">全部 (1)</button>
+          <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (1)" data-i18n-en="SeniorExecutive (1)">高管人物 (1)</button>
         </div>
         <div class="co-hub-grid">
           <a class="co-hub-item active" data-co-item-cat="SeniorExecutive" href="Cerebras_CEO_Andrew_Feldman_Analysis-v2.html" title="安德鲁·费尔德曼 Andrew Feldman (Cerebras Systems CEO) 深度商业与算力架构研究报告：晶圆级芯片霸权、20倍营收跃迁与千亿美元推理重构"><span class="co-hub-ticker mono">CBRS</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安德鲁·费尔德曼 Andrew Feldman (Cerebras Systems CEO) 深度商业与算力架构研究报告：晶圆级芯片霸权、20倍营收跃迁与千亿美元推理重构" data-i18n-en="Andrew Feldman (Cerebras Systems CEO) Business &amp; Compute Architecture Deep Dive:, 20 Revenue &amp; 00M">安德鲁·费尔德曼 Andrew Feldman (Cerebras Systems CEO) 深度商业与算力架构研究报告：晶圆级芯片霸权、20倍营收跃迁与千亿美元推理重构</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
         </div>
-        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});})();</script>
+        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});var ex=document.getElementById("coHubExportBtn");if(ex){ex.addEventListener("click",function(){try{var html="<!DOCTYPE html>
+"+document.documentElement.outerHTML;var blob=new Blob([html],{type:"text/html;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(document.title||"report").replace(/[\/:*?"<>|]/g,"_")+"_"+new Date().toISOString().slice(0,10)+".html";document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},400);}catch(err){}});}})();</script>
       </section>
 <!-- COMPANY_SUBFOLDER_HUB_END -->
       <!-- =========================================================
