@@ -287,15 +287,18 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
         head, tail = idx_html[:pos], idx_html[pos:]
         tail = tail.replace("allHeads.length", "rHeads.length", 1)
         idx_html = head + tail
-    # Make all homepage Open buttons open in the same tab (no target="_blank")
-    idx_html = idx_html.replace('esc(href) + \'" target="_blank" rel="noopener noreferrer">', 'esc(href) + \'">')
-    idx_html = idx_html.replace("isEn() ? 'Open ↗' : '打开 ↗'", "isEn() ? 'Open' : '打开'")
-    idx_html = idx_html.replace("isEn() ? 'Open in New Tab ↗' : '新窗口打开文件 ↗'", "isEn() ? 'Open Page' : '打开页面'")
-    # Speed optimization: load 1.9MB search_index.js async and skip off-screen card layout
+    # Restore new-tab opening for homepage Open buttons so index stays warm and navigation is instant
+    idx_html = idx_html.replace('esc(href) + \'">\' + (isEn() ? \'Open\' : \'打开\')', 'esc(href) + \'" target="_blank" rel="noopener noreferrer">\' + (isEn() ? \'Open ↗\' : \'打开 ↗\')')
+    idx_html = idx_html.replace('esc(href) + \'">\' + (isEn() ? \'Open Page\' : \'打开页面\')', 'esc(href) + \'" target="_blank" rel="noopener noreferrer">\' + (isEn() ? \'Open in New Tab ↗\' : \'新窗口打开文件 ↗\')')
+    # Speed optimization: load 1.9MB search_index.js async, skip off-screen card layout, and defer FULLTEXT lowercasing to idle
     idx_html = re.sub(r'(<script\s+id="docsSearchIndexScript"[^>]*?)\s+defer(?=>)', r'\1 async', idx_html)
     if "contain-intrinsic-size: auto 260px" not in idx_html and "</style>" in idx_html:
         idx_html = idx_html.replace("</style>", "    .MuiCard { content-visibility: auto; contain-intrinsic-size: auto 260px; }\n  </style>", 1)
-
+    idx_html = idx_html.replace(
+        "contentItems.forEach(refreshItemSearchFields);",
+        "var _runIdx = function () { contentItems.forEach(refreshItemSearchFields); if (state.query.trim()) renderAll(); }; if (window.requestIdleCallback) requestIdleCallback(_runIdx, { timeout: 600 }); else setTimeout(_runIdx, 120);",
+        1,
+    )
     return idx_html
 
 
