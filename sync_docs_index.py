@@ -322,6 +322,15 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
         "var _runIdx = function () { contentItems.forEach(refreshItemSearchFields); if (state.query.trim()) renderAll(); }; if (window.requestIdleCallback) requestIdleCallback(_runIdx, { timeout: 600 }); else setTimeout(_runIdx, 120);",
         1,
     )
+    # Clicking card/list title opens the webpage directly instead of Preview drawer
+    idx_html = idx_html.replace('\'<div class="MuiCard-title" data-open-reader="\' + esc(it.id) + \'">\' + highlight(getTitle(it), tokens) + \'</div>\'', '\'<a class="MuiCard-title" href="\' + esc(href) + \'" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:inherit;">\' + highlight(getTitle(it), tokens) + \'</a>\'')
+    idx_html = idx_html.replace('\'<div style="font-weight:700;cursor:pointer;color:var(--mui-text-primary);overflow-wrap:anywhere;" data-open-reader="\' + esc(it.id) + \'">\' + highlight(getTitle(it), tokens) + \'</div>\'', '\'<a href="\' + esc(href) + \'" target="_blank" rel="noopener noreferrer" style="display:block;font-weight:700;text-decoration:none;color:var(--mui-text-primary);overflow-wrap:anywhere;">\' + highlight(getTitle(it), tokens) + \'</a>\'')
+    # Hide file relPath on homepage cards & list table
+    idx_html = idx_html.replace('\'<span style="flex:1 1 100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:0.85;">\' + highlight(it.relPath, tokens) + \'</span>\' +', "")
+    idx_html = idx_html.replace('\'<div class="mono" style="font-size:0.73rem;color:var(--mui-text-muted);margin-top:2px;overflow-wrap:anywhere;">\' + highlight(it.relPath, tokens) + \'</div>\' +', "")
+    # Restore original homepage card & AppBar CSS (remove temporary header/card-banner overrides)
+    idx_html = re.sub(r"\s*/\* Taller AppBar & Larger Header/Tab Fonts \*/[\s\S]*?(?=\s*</style>)", "", idx_html)
+    idx_html = re.sub(r"\s*/\* Enhanced File Card Header \(\.MuiCard-banner\)[\s\S]*?(?=\s*</style>)", "", idx_html)
     return idx_html
 
 
