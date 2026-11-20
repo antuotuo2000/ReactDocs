@@ -37,6 +37,8 @@ import html as html_mod
 from html.parser import HTMLParser
 import json
 import os
+import stat
+import zipfile
 from pathlib import Path
 import re
 import shutil
@@ -133,8 +135,114 @@ INJECTED_BLOCK_PATTERNS = (
     r"<!--\s*PORTAL_DETAIL_SYNC_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_CSS_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_TOPBAR_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_TOPBAR_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_SYNC_JS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_JS_END\s*-->",
+    r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->",
 )
 
+
+
+PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
+  <style id="portalMuiOptStyle">
+    /* Sidebar Height & Nav Optimization */
+    @media (min-width: 1024px) {
+      .mui-sidebar {
+        top: 72px !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding-bottom: 24px !important;
+        gap: 10px !important;
+      }
+    }
+    .sidebar-card {
+      padding: 12px 14px !important;
+      flex-shrink: 0 !important;
+    }
+    .sidebar-subtitle {
+      margin: 4px 0 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.4 !important;
+    }
+    .sidebar-mini-kpis {
+      gap: 4px !important;
+      padding-top: 8px !important;
+    }
+    .mui-sidebar .mui-nav-list {
+      gap: 2px !important;
+    }
+    .mui-sidebar .mui-nav-list:first-of-type {
+      max-height: 175px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      padding-right: 3px;
+    }
+    .mui-ext-nav-link {
+      padding: 4px 8px !important;
+      font-size: 0.77rem !important;
+      line-height: 1.32 !important;
+    }
+    .mui-ext-nav-left > span:last-child {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .mui-nav-link {
+      padding: 5px 10px !important;
+      font-size: 0.80rem !important;
+    }
+    /* Mobile Horizontal Overflow Fix */
+    @media (max-width: 720px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      .mui-chip, .mui-segmented button, .cite-link { white-space: normal !important; max-width: 100%; overflow-wrap: anywhere; }
+      .mui-input-outlined { max-width: 100%; min-width: 0; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_END -->"""
+
+
+def ensure_index_preview_and_bilingual(idx_html: str) -> str:
+    """确保首页 index.html 具备完整的英文 titleEn/summaryEn/headingsEn 切换与无报错速览弹窗。"""
+    if "function getTitle(it)" not in idx_html:
+        helpers = (
+            "      function getTitle(it) { return (isEn() && it.titleEn) ? it.titleEn : it.title; }\n"
+            "      function getSummary(it) { return (isEn() && it.summaryEn) ? it.summaryEn : (it.summary || ''); }\n"
+            "      function getHeadings(it) { return (isEn() && it.headingsEn && it.headingsEn.length) ? it.headingsEn : (it.headings || []); }\n"
+        )
+        idx_html = idx_html.replace("      function refreshItemSearchFields(it) {", helpers + "\n      function refreshItemSearchFields(it) {", 1)
+    idx_html = idx_html.replace("it._titleHay = [it.title, it.name,", "it._titleHay = [it.title, it.titleEn || '', it.name,")
+    idx_html = idx_html.replace("it._headingHay = (it.headings || []).join(' ').toLowerCase();", "it._headingHay = (it.headings || []).concat(it.headingsEn || []).join(' ').toLowerCase();")
+    idx_html = idx_html.replace("var heads = (it.headings || []).slice(0, 8);", "var allHeads = getHeadings(it); var heads = allHeads.slice(0, 8);")
+    idx_html = idx_html.replace("highlight(it.title, tokens)", "highlight(getTitle(it), tokens)")
+    idx_html = idx_html.replace("highlight(it.summary || '', tokens)", "highlight(getSummary(it), tokens)")
+    idx_html = idx_html.replace("document.getElementById('readerTitle').textContent = it.title;", "document.getElementById('readerTitle').textContent = getTitle(it);")
+    # Fix rHeads.length inside openReaderDrawer (prevent ReferenceError: allHeads is not defined)
+    pos = idx_html.find("document.getElementById('readerBody').innerHTML =")
+    if pos != -1:
+        head, tail = idx_html[:pos], idx_html[pos:]
+        tail = tail.replace("allHeads.length", "rHeads.length", 1)
+        idx_html = head + tail
+    return idx_html
+
+
+def package_portal_zip(portal_root: Path, zip_path: Path) -> Path:
+    """将整个 an/ 门户目录（含 docs/、sync_docs_index.py 及启动脚本）打包为可独立分发的 ZIP 归档。"""
+    zip_path.parent.mkdir(parents=True, exist_ok=True)
+    stage_parent = portal_root.parent
+    with zipfile.ZipFile(str(zip_path), "w", zipfile.ZIP_DEFLATED) as zf:
+        for dp, dns, fns in os.walk(str(portal_root)):
+            dns[:] = sorted(d for d in dns if d not in ("__MACOSX", "__pycache__", ".git"))
+            for fn in sorted(fns):
+                if fn.startswith("._") or fn == ".DS_Store" or fn.endswith(".tmp"):
+                    continue
+                fp = os.path.join(dp, fn)
+                if os.path.abspath(fp) == os.path.abspath(str(zip_path)):
+                    continue
+                rel = os.path.relpath(fp, str(stage_parent)).replace(os.sep, "/")
+                zi = zipfile.ZipInfo.from_file(fp, rel)
+                zi.compress_type = zipfile.ZIP_DEFLATED
+                zi.external_attr = ((stat.S_IFREG | 0o755) if fn.endswith((".command", ".py", ".sh")) else (stat.S_IFREG | 0o644)) << 16
+                with open(fp, "rb") as f:
+                    zf.writestr(zi, f.read())
+    return zip_path
 
 def strip_injected_detail_blocks(raw_html: str) -> str:
     """移除脚本注入的导航与顶栏块，保证正文摘要提取干净且重复执行幂等。"""
@@ -1622,6 +1730,13 @@ def sync_all_detail_pages(
                 "var STORAGE_LANG_KEY = 'mui_portal_lang_v1';",
                 work_html,
             )
+
+            # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
+            mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
+            if mui_opt_pat.search(work_html):
+                work_html = mui_opt_pat.sub(lambda _: PORTAL_MUI_OPT_CSS_BLOCK, work_html, count=1)
+            elif "</head>" in work_html:
+                work_html = work_html.replace("</head>", PORTAL_MUI_OPT_CSS_BLOCK + "\n</head>", 1)
         else:
             # 经典详情页：1. 原地更新或首次注入无闪烁主题与 MUI 浅/深色样式
             if css_marker_pat.search(work_html):
@@ -2237,6 +2352,7 @@ def main() -> None:
     parser.add_argument("--dir", help="指定 docs 目录（或其父目录）路径，默认自动识别")
     parser.add_argument("--rebuild", action="store_true", help="忽略增量缓存，强制全量重新解析")
     parser.add_argument("--watch", action="store_true", help="开启实时监听模式，上传/拖入新文件自动更新索引与关联导航")
+    parser.add_argument("--zip", nargs="?", const="an_mui_portal.zip", default=None, help="同步完成后将整个门户目录打包为 ZIP 压缩包")
     parser.add_argument("--open", action="store_true", help="索引更新完成后自动在默认浏览器打开 docs/index.html")
     parser.add_argument("--no-sync-details", action="store_true", help="仅更新首页索引，跳过详情页导航与外观同步")
     parser.add_argument("--interval", type=float, default=2.0, help="监听轮询间隔秒数（默认 2.0s）")
@@ -2269,6 +2385,13 @@ def main() -> None:
             f"   详情页联动: 已扫描 {stats['detail_checked']} 份详情页 (本次更新 {stats['detail_updated']} 份 · 站点关联导航与浅深色/中英文已与首页对齐)\n"
             f"   主页地址: {index_uri}"
         )
+
+        if args.zip:
+            zip_target = Path(args.zip)
+            if not zip_target.is_absolute():
+                zip_target = Path.cwd() / zip_target
+            out_zip = package_portal_zip(Path(docs_dir).parent, zip_target)
+            print(f"📦 已打包完整门户归档: {out_zip}")
 
         if args.open:
             try:
