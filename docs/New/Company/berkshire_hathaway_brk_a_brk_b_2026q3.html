@@ -2070,8 +2070,17 @@
     }
   </style>
 <!-- PORTAL_MUI_OPT_CSS_START -->
+  <script>
+    (function () {
+      try {
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style id="portalMuiOptStyle">
-    /* Sidebar Height & Nav Optimization */
+    /* Sidebar Height & Nav Optimization + Cross-Page Collapse */
     @media (min-width: 1024px) {
       .mui-sidebar {
         top: 72px !important;
@@ -2079,6 +2088,12 @@
         overflow-y: visible !important;
         padding-bottom: 24px !important;
         gap: 10px !important;
+      }
+      html[data-sidebar-collapsed="1"] .mui-sidebar {
+        display: none !important;
+      }
+      html[data-sidebar-collapsed="1"] .layout-shell {
+        grid-template-columns: minmax(0, 1fr) !important;
       }
     }
     .sidebar-card {
@@ -2125,6 +2140,34 @@
       .mui-input-outlined { max-width: 100%; min-width: 0; }
     }
   </style>
+  <script>
+    (function () {
+      var KEY = 'mui_portal_sidebar_collapsed_v1';
+      function syncFromStorage() {
+        try {
+          var collapsed = window.localStorage.getItem(KEY) === '1';
+          if (collapsed) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+        } catch (e) {}
+      }
+      document.addEventListener('click', function (ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest('#sidebarToggleBtn') : null;
+        if (!btn) return;
+        if (window.innerWidth >= 1024) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+          var next = document.documentElement.getAttribute('data-sidebar-collapsed') !== '1';
+          if (next) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+          try { window.localStorage.setItem(KEY, next ? '1' : '0'); } catch (e) {}
+          window.dispatchEvent(new Event('resize'));
+        }
+      }, true);
+      window.addEventListener('storage', function (ev) {
+        if (ev.key === KEY) syncFromStorage();
+      });
+    })();
+  </script>
 <!-- PORTAL_MUI_OPT_CSS_END -->
 </head>
 <body>
@@ -2142,7 +2185,7 @@
         </button>
         <span class="brand-monogram mono">BRK</span>
         <nav class="breadcrumbs" aria-label="面包屑导航">
-          <a class="crumb-link hide-sm" href="https://antuotuo2000.github.io/ReactDocs/" target="_blank" rel="noopener noreferrer">
+          <a class="crumb-link hide-sm" href="../../index.html">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
             <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
           </a>

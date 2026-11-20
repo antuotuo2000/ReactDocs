@@ -141,8 +141,17 @@ INJECTED_BLOCK_PATTERNS = (
 
 
 PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script>
+    (function () {
+      try {
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style id="portalMuiOptStyle">
-    /* Sidebar Height & Nav Optimization */
+    /* Sidebar Height & Nav Optimization + Cross-Page Collapse */
     @media (min-width: 1024px) {
       .mui-sidebar {
         top: 72px !important;
@@ -150,6 +159,12 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
         overflow-y: visible !important;
         padding-bottom: 24px !important;
         gap: 10px !important;
+      }
+      html[data-sidebar-collapsed="1"] .mui-sidebar {
+        display: none !important;
+      }
+      html[data-sidebar-collapsed="1"] .layout-shell {
+        grid-template-columns: minmax(0, 1fr) !important;
       }
     }
     .sidebar-card {
@@ -196,6 +211,34 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       .mui-input-outlined { max-width: 100%; min-width: 0; }
     }
   </style>
+  <script>
+    (function () {
+      var KEY = 'mui_portal_sidebar_collapsed_v1';
+      function syncFromStorage() {
+        try {
+          var collapsed = window.localStorage.getItem(KEY) === '1';
+          if (collapsed) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+        } catch (e) {}
+      }
+      document.addEventListener('click', function (ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest('#sidebarToggleBtn') : null;
+        if (!btn) return;
+        if (window.innerWidth >= 1024) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+          var next = document.documentElement.getAttribute('data-sidebar-collapsed') !== '1';
+          if (next) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          else document.documentElement.removeAttribute('data-sidebar-collapsed');
+          try { window.localStorage.setItem(KEY, next ? '1' : '0'); } catch (e) {}
+          window.dispatchEvent(new Event('resize'));
+        }
+      }, true);
+      window.addEventListener('storage', function (ev) {
+        if (ev.key === KEY) syncFromStorage();
+      });
+    })();
+  </script>
 <!-- PORTAL_MUI_OPT_CSS_END -->"""
 
 
@@ -1730,6 +1773,16 @@ def sync_all_detail_pages(
                 "var STORAGE_LANG_KEY = 'mui_portal_lang_v1';",
                 work_html,
             )
+
+            
+            # 4. 将顶栏『数据中心』面包屑链接统一指向本地首页并在当前页打开（不新开标签页）
+            def _rewrite_crumb(m):
+                tag = m.group(0)
+                tag = re.sub(r'href="[^"]*"', f'href="{html_mod.escape(rel_to_index)}"', tag)
+                tag = re.sub(r'\s+target="_blank"', '', tag)
+                tag = re.sub(r'\s+rel="noopener noreferrer"', '', tag)
+                return tag
+            work_html = re.sub(r'<a\s+class="crumb-link[^"]*"[^>]*>', _rewrite_crumb, work_html)
 
             # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
             mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
