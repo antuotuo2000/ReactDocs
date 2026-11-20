@@ -263,6 +263,10 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
         head, tail = idx_html[:pos], idx_html[pos:]
         tail = tail.replace("allHeads.length", "rHeads.length", 1)
         idx_html = head + tail
+    # Make all homepage Open buttons open in the same tab (no target="_blank")
+    idx_html = idx_html.replace('esc(href) + \'" target="_blank" rel="noopener noreferrer">', 'esc(href) + \'">')
+    idx_html = idx_html.replace("isEn() ? 'Open ↗' : '打开 ↗'", "isEn() ? 'Open' : '打开'")
+    idx_html = idx_html.replace("isEn() ? 'Open in New Tab ↗' : '新窗口打开文件 ↗'", "isEn() ? 'Open Page' : '打开页面'")
     return idx_html
 
 
@@ -2289,6 +2293,7 @@ def build_catalog_and_index(
             f"请确认 docs/index.html 未被单篇研报覆盖。"
         )
 
+    updated_html = ensure_index_preview_and_bilingual(updated_html)
     tmp_html = index_html_path + ".tmp"
     with open(tmp_html, "w", encoding="utf-8") as f:
         f.write(updated_html)
