@@ -204,6 +204,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       padding: 5px 10px !important;
       font-size: 0.80rem !important;
     }
+    main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
@@ -267,6 +268,11 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
     idx_html = idx_html.replace('esc(href) + \'" target="_blank" rel="noopener noreferrer">', 'esc(href) + \'">')
     idx_html = idx_html.replace("isEn() ? 'Open ↗' : '打开 ↗'", "isEn() ? 'Open' : '打开'")
     idx_html = idx_html.replace("isEn() ? 'Open in New Tab ↗' : '新窗口打开文件 ↗'", "isEn() ? 'Open Page' : '打开页面'")
+    # Speed optimization: load 1.9MB search_index.js async and skip off-screen card layout
+    idx_html = re.sub(r'(<script\s+id="docsSearchIndexScript"[^>]*?)\s+defer(?=>)', r'\1 async', idx_html)
+    if "contain-intrinsic-size: auto 260px" not in idx_html and "</style>" in idx_html:
+        idx_html = idx_html.replace("</style>", "    .MuiCard { content-visibility: auto; contain-intrinsic-size: auto 260px; }\n  </style>", 1)
+
     return idx_html
 
 
@@ -1747,6 +1753,15 @@ def sync_all_detail_pages(
 
         work_html = orig_html
         is_mui_detail = 'id="muiSidebar"' in work_html
+
+
+        # 5. 为外部 CDN 脚本（如 Chart.js）自动添加 defer，避免阻塞详情页首屏渲染
+        def _defer_ext_script(m):
+            tag = m.group(0)
+            if re.search(r'\b(?:defer|async)\b', tag, flags=re.IGNORECASE):
+                return tag
+            return tag.replace("<script ", "<script defer ", 1)
+        work_html = re.sub(r'<script\s+[^>]*src=["\']https?://[^"\']+["\'][^>]*>', _defer_ext_script, work_html, flags=re.IGNORECASE)
 
         nav_marker_pat = re.compile(r"<!--\s*SITE_RELATED_NAV_START\s*-->[\s\S]*?<!--\s*SITE_RELATED_NAV_END\s*-->")
         css_marker_pat = re.compile(r"<!--\s*PORTAL_DETAIL_SYNC_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_CSS_END\s*-->")

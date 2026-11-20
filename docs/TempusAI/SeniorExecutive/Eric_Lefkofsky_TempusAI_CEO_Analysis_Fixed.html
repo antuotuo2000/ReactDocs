@@ -17,7 +17,7 @@
       } catch (e) {}
     })();
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     /* ==========================================================================
        MUI Official Website Design System (https://mui.com/)
@@ -1385,6 +1385,7 @@
       padding: 5px 10px !important;
       font-size: 0.80rem !important;
     }
+    main > section, .section-block, .mui-section { content-visibility: auto; contain-intrinsic-size: auto 520px; }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
