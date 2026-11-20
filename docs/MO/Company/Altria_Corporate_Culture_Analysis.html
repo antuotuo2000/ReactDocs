@@ -2231,6 +2231,55 @@
         overflow-x: hidden !important;
       }
     }
+    /* Company Subfolder Hub on Detail Pages */
+    .co-hub-card {
+      margin: 0 0 18px; padding: 14px 16px; border-radius: 14px;
+      border: 1px solid var(--mui-divider, #e2e8f0);
+      background: linear-gradient(rgba(25, 118, 210, 0.03) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(25, 118, 210, 0.03) 1px, transparent 1px),
+                  var(--mui-bg-paper, #fff);
+      background-size: 20px 20px, 20px 20px, auto;
+    }
+    [data-theme="dark"] .co-hub-card, html.dark .co-hub-card {
+      background: var(--mui-bg-paper, #0f172a);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .co-hub-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .co-hub-heading { font-size: 0.90rem; color: var(--mui-text-primary, #0f172a); }
+    [data-theme="dark"] .co-hub-heading, html.dark .co-hub-heading { color: #f1f5f9; }
+    .co-hub-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .co-hub-pill {
+      padding: 4px 11px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff); color: var(--mui-text-secondary, #475569);
+    }
+    .co-hub-pill.active { background: #1976d2; color: #fff; border-color: #1976d2; }
+    .co-hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    @media (max-width: 1120px) { .co-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .co-hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 440px) { .co-hub-grid { grid-template-columns: minmax(0, 1fr); } }
+    .co-hub-item {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px;
+      border: 1px solid var(--mui-divider, #e2e8f0); background: var(--mui-bg-paper, #fff);
+      text-decoration: none !important; min-width: 0; transition: all 0.14s ease;
+    }
+    [data-theme="dark"] .co-hub-item, html.dark .co-hub-item { background: rgba(15,23,42,0.7); border-color: rgba(255,255,255,0.10); }
+    .co-hub-item:hover, .co-hub-item.active {
+      border-color: #1976d2; box-shadow: 0 0 0 1px #1976d2;
+    }
+    .co-hub-ticker {
+      flex-shrink: 0; min-width: 38px; padding: 4px 5px; border-radius: 6px; text-align: center;
+      font-size: 0.68rem; font-weight: 800; background: rgba(25,118,210,0.12); color: #1976d2;
+    }
+    .co-hub-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .co-hub-title {
+      font-size: 0.77rem; font-weight: 700; color: var(--mui-text-primary, #0f172a);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    [data-theme="dark"] .co-hub-title, html.dark .co-hub-title { color: #e2e8f0; }
+    .co-hub-meta {
+      font-size: 0.68rem; color: var(--mui-text-muted, #64748b);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
@@ -2411,6 +2460,26 @@
 
     <!-- Main Analytical Content -->
     <main class="main-content">
+<!-- COMPANY_SUBFOLDER_HUB_START -->
+      <section class="co-hub-card" id="companySubfolderHub" aria-label="Company Directory">
+        <div class="co-hub-head">
+          <span class="mui-chip mui-chip-primary mono">MO · 3 FILES</span>
+          <strong class="co-hub-heading" data-i18n-zh="本公司目录与研报切换中枢（按首个子目录分类）" data-i18n-en="Company Subfolder &amp; Report Directory (Grouped by First Subfolder)">本公司目录与研报切换中枢（按首个子目录分类）</strong>
+        </div>
+        <div class="co-hub-pills">
+          <button type="button" class="co-hub-pill active" data-co-cat="ALL">全部 (3)</button>
+          <button type="button" class="co-hub-pill" data-co-cat="Company" data-zh="公司深度 (1)" data-en="Company (1)">公司深度 (1)</button>
+          <button type="button" class="co-hub-pill" data-co-cat="CorporateCulture" data-zh="企业文化 (1)" data-en="CorporateCulture (1)">企业文化 (1)</button>
+          <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-zh="高管人物 (1)" data-en="SeniorExecutive (1)">高管人物 (1)</button>
+        </div>
+        <div class="co-hub-grid">
+          <a class="co-hub-item active" data-co-item-cat="Company" href="Altria_Corporate_Culture_Analysis.html" title="奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">MO</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告" data-i18n-en="Altria Group (MO) Corporate Culture &amp; Org Architecture Deep Dive">奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+          <a class="co-hub-item" data-co-item-cat="CorporateCulture" href="../CorporateCulture/Altria_Corporate_Culture_Analysis.html" title="奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">MO</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告" data-i18n-en="Altria Group (MO) Corporate Culture &amp; Org Architecture Deep Dive">奥驰亚集团 Altria Group (MO) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">CorporateCulture</span></span></a>
+          <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/Altria_CEO_Sal_Mancuso_Analysis.html" title="萨尔·曼库索 Salvatore &quot;Sal&quot; Mancuso 深度领导力与战略研究报告：奥驰亚（NYSE: MO）第十任掌舵人、36年内部嫡系老将、2.0x财务铁律与无烟转型操盘手"><span class="co-hub-ticker mono">MO</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="萨尔·曼库索 Salvatore &quot;Sal&quot; Mancuso 深度领导力与战略研究报告：奥驰亚（NYSE: MO）第十任掌舵人、36年内部嫡系老将、2.0x财务铁律与无烟转型操盘手" data-i18n-en="Sal Mancuso Salvatore &quot;Sal&quot; Mancuso Leadership &amp; Strategy Deep Dive: Altria (NYSE: MO) People, 36Y, 2.0x &amp;">萨尔·曼库索 Salvatore &quot;Sal&quot; Mancuso 深度领导力与战略研究报告：奥驰亚（NYSE: MO）第十任掌舵人、36年内部嫡系老将、2.0x财务铁律与无烟转型操盘手</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+        </div>
+        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});})();</script>
+      </section>
+<!-- COMPANY_SUBFOLDER_HUB_END -->
 
       <!-- ================================================================
            00 执行摘要与核心指标

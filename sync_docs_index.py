@@ -136,6 +136,7 @@ INJECTED_BLOCK_PATTERNS = (
     r"<!--\s*PORTAL_DETAIL_TOPBAR_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_TOPBAR_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_SYNC_JS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_JS_END\s*-->",
     r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->",
+    r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->",
 )
 
 
@@ -251,6 +252,55 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
         overflow-x: hidden !important;
       }
     }
+    /* Company Subfolder Hub on Detail Pages */
+    .co-hub-card {
+      margin: 0 0 18px; padding: 14px 16px; border-radius: 14px;
+      border: 1px solid var(--mui-divider, #e2e8f0);
+      background: linear-gradient(rgba(25, 118, 210, 0.03) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(25, 118, 210, 0.03) 1px, transparent 1px),
+                  var(--mui-bg-paper, #fff);
+      background-size: 20px 20px, 20px 20px, auto;
+    }
+    [data-theme="dark"] .co-hub-card, html.dark .co-hub-card {
+      background: var(--mui-bg-paper, #0f172a);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .co-hub-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .co-hub-heading { font-size: 0.90rem; color: var(--mui-text-primary, #0f172a); }
+    [data-theme="dark"] .co-hub-heading, html.dark .co-hub-heading { color: #f1f5f9; }
+    .co-hub-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .co-hub-pill {
+      padding: 4px 11px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+      border: 1px solid var(--mui-divider, #cbd5e1); background: var(--mui-bg-paper, #fff); color: var(--mui-text-secondary, #475569);
+    }
+    .co-hub-pill.active { background: #1976d2; color: #fff; border-color: #1976d2; }
+    .co-hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    @media (max-width: 1120px) { .co-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .co-hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 440px) { .co-hub-grid { grid-template-columns: minmax(0, 1fr); } }
+    .co-hub-item {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px;
+      border: 1px solid var(--mui-divider, #e2e8f0); background: var(--mui-bg-paper, #fff);
+      text-decoration: none !important; min-width: 0; transition: all 0.14s ease;
+    }
+    [data-theme="dark"] .co-hub-item, html.dark .co-hub-item { background: rgba(15,23,42,0.7); border-color: rgba(255,255,255,0.10); }
+    .co-hub-item:hover, .co-hub-item.active {
+      border-color: #1976d2; box-shadow: 0 0 0 1px #1976d2;
+    }
+    .co-hub-ticker {
+      flex-shrink: 0; min-width: 38px; padding: 4px 5px; border-radius: 6px; text-align: center;
+      font-size: 0.68rem; font-weight: 800; background: rgba(25,118,210,0.12); color: #1976d2;
+    }
+    .co-hub-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .co-hub-title {
+      font-size: 0.77rem; font-weight: 700; color: var(--mui-text-primary, #0f172a);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    [data-theme="dark"] .co-hub-title, html.dark .co-hub-title { color: #e2e8f0; }
+    .co-hub-meta {
+      font-size: 0.68rem; color: var(--mui-text-muted, #64748b);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
     /* Mobile Horizontal Overflow Fix */
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
@@ -288,6 +338,58 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
   </script>
 <!-- PORTAL_MUI_OPT_CSS_END -->"""
 
+
+
+def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) -> list[dict]:
+    """扫描每个公司目录下的首个子文件夹作为分类：有 index.html 则仅收录 index.html 并剪枝，否则递归扁平收录全部层级。"""
+    matrix: list[dict] = []
+    if not os.path.isdir(docs_dir):
+        return matrix
+    for comp in sorted(os.listdir(docs_dir)):
+        cpath = os.path.join(docs_dir, comp)
+        if not os.path.isdir(cpath) or comp.startswith("."):
+            continue
+        for sub in sorted(os.listdir(cpath)):
+            spath = os.path.join(cpath, sub)
+            if not os.path.isdir(spath) or sub.startswith("."):
+                continue
+            for dp, dns, fns in os.walk(spath):
+                dns[:] = sorted(d for d in dns if not d.startswith("."))
+                if "index.html" in fns:
+                    rel_p = os.path.relpath(os.path.join(dp, "index.html"), docs_dir).replace(os.sep, "/")
+                    meta = files_by_rel.get(rel_p, {})
+                    sub_rel = os.path.relpath(dp, cpath).replace(os.sep, "/")
+                    matrix.append({
+                        "company": comp,
+                        "companyLabel": meta.get("companyLabel", comp),
+                        "ticker": meta.get("ticker", comp[:6].upper()),
+                        "category": sub,
+                        "subPath": sub_rel,
+                        "relPath": rel_p,
+                        "title": meta.get("title") or f"{comp} · {sub_rel}",
+                        "titleEn": meta.get("titleEn") or f"{comp} · {sub_rel}",
+                        "isIndex": True,
+                    })
+                    dns[:] = []
+                else:
+                    for fn in sorted(fns):
+                        if not fn.lower().endswith(".html"):
+                            continue
+                        rel_p = os.path.relpath(os.path.join(dp, fn), docs_dir).replace(os.sep, "/")
+                        meta = files_by_rel.get(rel_p, {})
+                        sub_rel = os.path.relpath(dp, cpath).replace(os.sep, "/")
+                        matrix.append({
+                            "company": comp,
+                            "companyLabel": meta.get("companyLabel", comp),
+                            "ticker": meta.get("ticker", comp[:6].upper()),
+                            "category": sub,
+                            "subPath": sub_rel,
+                            "relPath": rel_p,
+                            "title": meta.get("title") or fn.replace(".html", ""),
+                            "titleEn": meta.get("titleEn") or fn.replace(".html", ""),
+                            "isIndex": False,
+                        })
+    return matrix
 
 def ensure_index_preview_and_bilingual(idx_html: str) -> str:
     """确保首页 index.html 具备完整的英文 titleEn/summaryEn/headingsEn 切换与无报错速览弹窗。"""
@@ -331,6 +433,11 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
     # Restore original homepage card & AppBar CSS (remove temporary header/card-banner overrides)
     idx_html = re.sub(r"\s*/\* Taller AppBar & Larger Header/Tab Fonts \*/[\s\S]*?(?=\s*</style>)", "", idx_html)
     idx_html = re.sub(r"\s*/\* Enhanced File Card Header \(\.MuiCard-banner\)[\s\S]*?(?=\s*</style>)", "", idx_html)
+
+    # Keep homepage clean (strip any temporary homepage subfolder matrix panel)
+    idx_html = re.sub(r"\s*/\* Company Subfolder Matrix Panel \*/[\s\S]*?(?=\s*</style>)", "", idx_html)
+    idx_html = re.sub(r"\s*<!--\s*SUBFOLDER_MATRIX_PANEL_START\s*-->[\s\S]*?<!--\s*SUBFOLDER_MATRIX_PANEL_END\s*-->", "", idx_html)
+    idx_html = re.sub(r"\s*<!--\s*SUBFOLDER_MATRIX_JS_START\s*-->[\s\S]*?<!--\s*SUBFOLDER_MATRIX_JS_END\s*-->", "", idx_html)
     return idx_html
 
 
@@ -1687,6 +1794,63 @@ DETAIL_SYNC_JS_TEMPLATE = """<!-- PORTAL_DETAIL_SYNC_JS_START -->
 <!-- PORTAL_DETAIL_SYNC_JS_END -->"""
 
 
+
+def build_company_detail_hub_block(comp_folder: str, cur_rel: str, comp_items: list[dict]) -> str:
+    """为每个公司的详情页顶部生成该公司子目录分类切换面板（image_3d2e84 风格）：首个子目录为分类，有 index.html 仅读 index.html 并新页打开，无则扁平显示全层级。"""
+    if not comp_items:
+        return ""
+    cur_dir = os.path.dirname(cur_rel)
+    cat_zh = {
+        "Company": "公司深度", "SeniorExecutive": "高管人物", "CorporateCulture": "企业文化",
+        "software": "软件生态", "hardware": "硬件产品", "patent": "核心专利",
+    }
+    counts: dict[str, int] = {}
+    for it in comp_items:
+        c = it["category"]
+        counts[c] = counts.get(c, 0) + 1
+    cats = sorted(counts.keys())
+
+    pills_html = [
+        f'<button type="button" class="co-hub-pill active" data-co-cat="ALL">全部 ({len(comp_items)})</button>'
+    ]
+    for c in cats:
+        lbl = cat_zh.get(c, c)
+        pills_html.append(
+            f'<button type="button" class="co-hub-pill" data-co-cat="{html_mod.escape(c)}" data-zh="{html_mod.escape(lbl)} ({counts[c]})" data-en="{html_mod.escape(c)} ({counts[c]})">{html_mod.escape(lbl)} ({counts[c]})</button>'
+        )
+
+    cards_html = []
+    for idx, it in enumerate(comp_items, 1):
+        rel_href = os.path.relpath(it["relPath"], cur_dir).replace(os.sep, "/") if cur_dir else it["relPath"]
+        is_cur = (it["relPath"] == cur_rel)
+        cls = "co-hub-item active" if is_cur else "co-hub-item"
+        target_attr = ' target="_blank" rel="noopener noreferrer"' if it.get("isIndex") else ""
+        idx_badge = " · index.html ↗" if it.get("isIndex") else ""
+        t_zh = it.get("title") or it["subPath"]
+        t_en = it.get("titleEn") or t_zh
+        cards_html.append(
+            f'<a class="{cls}" data-co-item-cat="{html_mod.escape(it["category"])}" href="{html_mod.escape(rel_href)}"{target_attr} title="{html_mod.escape(t_zh)}">'
+            f'<span class="co-hub-ticker mono">{html_mod.escape((it.get("ticker") or comp_folder)[:6])}</span>'
+            f'<span class="co-hub-info">'
+            f'<span class="co-hub-title" data-i18n-zh="{html_mod.escape(t_zh)}" data-i18n-en="{html_mod.escape(t_en)}">{html_mod.escape(t_zh)}</span>'
+            f'<span class="co-hub-meta mono">{html_mod.escape(it["subPath"] + idx_badge)}</span>'
+            f'</span></a>'
+        )
+
+    return (
+        "<!-- COMPANY_SUBFOLDER_HUB_START -->\n"
+        '      <section class="co-hub-card" id="companySubfolderHub" aria-label="Company Directory">\n'
+        '        <div class="co-hub-head">\n'
+        f'          <span class="mui-chip mui-chip-primary mono">{html_mod.escape(comp_folder.upper())} · {len(comp_items)} FILES</span>\n'
+        '          <strong class="co-hub-heading" data-i18n-zh="本公司目录与研报切换中枢（按首个子目录分类）" data-i18n-en="Company Subfolder &amp; Report Directory (Grouped by First Subfolder)">本公司目录与研报切换中枢（按首个子目录分类）</strong>\n'
+        '        </div>\n'
+        '        <div class="co-hub-pills">\n          ' + "\n          ".join(pills_html) + '\n        </div>\n'
+        '        <div class="co-hub-grid">\n          ' + "\n          ".join(cards_html) + '\n        </div>\n'
+        '        <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;h.addEventListener("click",function(e){var b=e.target.closest("[data-co-cat]");if(!b)return;var cat=b.getAttribute("data-co-cat");var ps=h.querySelectorAll("[data-co-cat]");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].style.display=(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat)?"":"none";}});})();</script>\n'
+        '      </section>\n'
+        "<!-- COMPANY_SUBFOLDER_HUB_END -->"
+    )
+
 def build_mui_related_nav_block(rel_to_index: str, siblings: list[tuple[str, str, str]]) -> str:
     """为 MUI 架构详情页生成侧边栏『站点与关联导航』列表。"""
     home_icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>'
@@ -1780,6 +1944,7 @@ def sync_all_detail_pages(
     docs_dir: str,
     content_files: list[dict],
     new_cache: dict[str, dict],
+    subfolder_by_comp: dict[str, list[dict]] | None = None,
 ) -> tuple[int, int]:
     """
     遍历全部 HTML 详情页，自动更新：
@@ -1852,6 +2017,19 @@ def sync_all_detail_pages(
                 return tag
             return tag.replace("<script ", "<script defer ", 1)
         work_html = re.sub(r'<script\s+[^>]*src=["\']https?://[^"\']+["\'][^>]*>', _defer_ext_script, work_html, flags=re.IGNORECASE)
+
+
+        # 6. 为每份详情页注入所属公司的『子目录分类切换面板』
+        co_hub_pat = re.compile(r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->")
+        comp_items = (subfolder_by_comp or {}).get(comp_folder, [])
+        co_hub_html = build_company_detail_hub_block(comp_folder, rel_p, comp_items)
+        if co_hub_pat.search(work_html):
+            work_html = co_hub_pat.sub(lambda _: co_hub_html, work_html, count=1)
+        elif co_hub_html:
+            main_m = re.search(r"<main[^>]*>", work_html, flags=re.IGNORECASE)
+            if main_m:
+                pos = main_m.end()
+                work_html = work_html[:pos] + "\n" + co_hub_html + work_html[pos:]
 
         nav_marker_pat = re.compile(r"<!--\s*SITE_RELATED_NAV_START\s*-->[\s\S]*?<!--\s*SITE_RELATED_NAV_END\s*-->")
         css_marker_pat = re.compile(r"<!--\s*PORTAL_DETAIL_SYNC_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_CSS_END\s*-->")
@@ -2325,7 +2503,13 @@ def build_catalog_and_index(
     detail_checked = 0
     detail_updated = 0
     if sync_details:
+        files_by_rel = {f["relPath"]: f for f in content_files if f.get("relPath")}
+        subfolder_matrix = build_subfolder_matrix_data(docs_dir, files_by_rel)
+        sub_by_comp: dict[str, list[dict]] = {}
+        for _it in subfolder_matrix:
+            sub_by_comp.setdefault(_it['company'], []).append(_it)
         detail_checked, detail_updated = sync_all_detail_pages(
+            subfolder_by_comp=sub_by_comp,
             docs_dir=docs_dir,
             content_files=content_files,
             new_cache=new_cache,
@@ -2398,6 +2582,11 @@ def build_catalog_and_index(
             f"请确认 docs/index.html 未被单篇研报覆盖。"
         )
 
+    files_by_rel = {f["relPath"]: f for f in content_files if f.get("relPath")}
+    subfolder_matrix = build_subfolder_matrix_data(docs_dir, files_by_rel)
+    matrix_script = '<script id="docsSubfolderMatrixData">window.DOCS_SUBFOLDER_MATRIX = ' + json.dumps(subfolder_matrix, ensure_ascii=False, separators=(",", ":")).replace("</script>", "<\\/script>") + ";</script>"
+    updated_html = re.sub(r'\s*<script\s+id="docsSubfolderMatrixData">[\s\S]*?</script>', "", updated_html)
+    updated_html = updated_html.replace("<!-- DOCS_CATALOG_END -->", "<!-- DOCS_CATALOG_END -->\n  " + matrix_script, 1)
     updated_html = ensure_index_preview_and_bilingual(updated_html)
     tmp_html = index_html_path + ".tmp"
     with open(tmp_html, "w", encoding="utf-8") as f:
