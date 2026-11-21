@@ -93,6 +93,8 @@ CATEGORY_KNOWN = {
     "hardware": "硬件产品",
     "patent": "核心专利",
     "PhysicalStores": "实体零售",
+    "CorporateIssues": "企业问题",
+    "Future": "未来战略",
 }
 
 CATEGORY_KNOWN_EN = {
@@ -103,6 +105,8 @@ CATEGORY_KNOWN_EN = {
     "hardware": "Hardware",
     "patent": "Patent",
     "PhysicalStores": "Retail",
+    "CorporateIssues": "Corporate Issues",
+    "Future": "Future Outlook",
     "RootFile": "Document",
 }
 
@@ -114,6 +118,8 @@ CATEGORY_SORT_ORDER = {
     "software": 5,
     "patent": 6,
     "PhysicalStores": 7,
+    "CorporateIssues": 8,
+    "Future": 9,
 }
 
 STANDARD_DIMS = [
@@ -124,6 +130,8 @@ STANDARD_DIMS = [
     "software",
     "patent",
     "PhysicalStores",
+    "CorporateIssues",
+    "Future",
 ]
 
 DEFAULT_ROOT_DRIVE_URL = "https://drive.google.com/drive/folders/1GEm-cxIC-tAvyiMlAs82b8QYzjUqhNBc"
@@ -2458,7 +2466,7 @@ def build_catalog_and_index(
                         "parentId": parent_id,
                         "path": rel_sub,
                         "company": comp_folder,
-                        "category": parts[1] if len(parts) >= 2 else "Company",
+                        "category": parts[1].strip() if len(parts) >= 2 else "Company",
                         "level": level,
                         "driveUrl": f_drive,
                     })
