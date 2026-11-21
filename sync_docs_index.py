@@ -85,6 +85,8 @@ TEXT_EXTENSIONS = {
     ".tsx", ".sql", ".sh", ".css", ".log", ".ini", ".toml",
 }
 
+OTHERS_FOLDER = "others"
+
 CATEGORY_KNOWN = {
     "Company": "公司深度",
     "SeniorExecutive": "高管人物",
@@ -93,6 +95,7 @@ CATEGORY_KNOWN = {
     "hardware": "硬件产品",
     "patent": "核心专利",
     "PhysicalStores": "实体零售",
+    "Other": "其他",
 }
 
 CATEGORY_KNOWN_EN = {
@@ -103,6 +106,7 @@ CATEGORY_KNOWN_EN = {
     "hardware": "Hardware",
     "patent": "Patent",
     "PhysicalStores": "Retail",
+    "Other": "Other",
     "RootFile": "Document",
 }
 
@@ -622,7 +626,8 @@ def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) ->
             continue
         for fn in sorted(os.listdir(cpath)):
             fpath = os.path.join(cpath, fn)
-            if os.path.isfile(fpath) and fn.lower().endswith(".html") and fn.lower() != "index.html":
+            if (os.path.isfile(fpath) and fn.lower().endswith(".html")
+                    and (fn.lower() != "index.html" or comp.casefold() == OTHERS_FOLDER)):
                 rel_p = f"{comp}/{fn}"
                 meta = files_by_rel.get(rel_p, {})
                 cat_root = meta.get("category") or "Company"
@@ -643,7 +648,7 @@ def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) ->
                 continue
             for dp, dns, fns in os.walk(spath):
                 dns[:] = sorted(d for d in dns if not d.startswith("."))
-                if "index.html" in fns:
+                if "index.html" in fns and os.path.basename(dp).casefold() != OTHERS_FOLDER:
                     rel_p = os.path.relpath(os.path.join(dp, "index.html"), docs_dir).replace(os.sep, "/")
                     meta = files_by_rel.get(rel_p, {})
                     sub_rel = os.path.relpath(dp, cpath).replace(os.sep, "/")
@@ -651,7 +656,7 @@ def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) ->
                         "company": comp,
                         "companyLabel": meta.get("companyLabel", comp),
                         "ticker": meta.get("ticker", comp[:6].upper()),
-                        "category": sub,
+                        "category": "Other" if meta.get("category") == "Other" else sub,
                         "subPath": sub_rel,
                         "relPath": rel_p,
                         "title": meta.get("title") or f"{comp} · {sub_rel}",
@@ -670,7 +675,7 @@ def build_subfolder_matrix_data(docs_dir: str, files_by_rel: dict[str, dict]) ->
                             "company": comp,
                             "companyLabel": meta.get("companyLabel", comp),
                             "ticker": meta.get("ticker", comp[:6].upper()),
-                            "category": sub,
+                            "category": "Other" if meta.get("category") == "Other" else sub,
                             "subPath": sub_rel,
                             "relPath": rel_p,
                             "title": meta.get("title") or fn.replace(".html", ""),
@@ -1336,6 +1341,10 @@ def extract_file_payload(full_path: str, file_name: str, max_chars: int) -> dict
 
 
 def infer_category(parts: list[str], ext_low: str) -> tuple[str, str]:
+    for folder in parts[:-1]:
+        if folder.casefold() == OTHERS_FOLDER:
+            return "Other", folder
+
     if len(parts) == 1:
         if parts[0].lower() == "index.html":
             return "Portal", "Root"
@@ -2922,7 +2931,8 @@ def build_catalog_and_index(
             d for d in dns
             if not d.startswith(".") and d not in IGNORED_DIRS and not d.endswith("_files")
         )
-        if os.path.abspath(dp) != os.path.abspath(docs_dir) and "index.html" in fns:
+        if (os.path.abspath(dp) != os.path.abspath(docs_dir) and "index.html" in fns
+                and os.path.basename(dp).casefold() != OTHERS_FOLDER):
             idx_full = os.path.join(dp, "index.html")
             idx_rel = os.path.relpath(idx_full, docs_dir).replace(os.sep, "/")
             all_discovered_paths.append((idx_rel, idx_full))
