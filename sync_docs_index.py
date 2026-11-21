@@ -393,8 +393,8 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
         grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;
         width:100%!important;max-width:var(--portal-detail-width)!important;
         margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}
-      #muiSidebar {position:sticky!important;top:72px!important;width:auto!important;transform:none!important;
-        max-height:calc(100dvh - 84px)!important;overflow-y:auto!important;overflow-x:hidden!important;z-index:auto!important}
+      #muiSidebar {position:static!important;align-self:start;width:auto!important;transform:none!important;
+        height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}
       html[data-sidebar-collapsed="1"] #muiSidebar {display:none!important}
     }
     @media(max-width:1023px) {
@@ -2346,7 +2346,9 @@ def sync_all_detail_pages(
 
         # 6. 清除主内容区顶部的旧切换面板（现已统一整合进左侧边栏目录导航）
         co_hub_pat = re.compile(r"\s*<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->")
-        if co_hub_pat.search(work_html):
+        # Some reports use this marker around their interactive product switcher.
+        old_hub = co_hub_pat.search(work_html)
+        if old_hub and not re.search(r'\bid=["\']ipHubSwitcher["\']', old_hub[0]):
             work_html = co_hub_pat.sub("", work_html, count=1)
         comp_items = (subfolder_by_comp or {}).get(comp_folder, [])
 
