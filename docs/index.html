@@ -11,9 +11,6 @@
         var rawT = window.localStorage.getItem('mui_portal_theme_v4');
         var t = rawT ? String(rawT).replace(/^"|"$/g, '') : 'light';
         document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
-        if (window.localStorage.getItem('mui_portal_home_sidebar_collapsed_v1') === '0') {
-          document.documentElement.removeAttribute('data-sidebar-collapsed');
-        }
       } catch (e) {}
     })();
   </script>
@@ -1326,6 +1323,17 @@
         gap: 14px;
       }
     }
+    .m-main { container: article-list / inline-size; }
+    @container article-list (min-width: 900px) {
+      body:not(.sim-narrow) .m-feed-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @container article-list (min-width: 1200px) {
+      body:not(.sim-narrow) .m-feed-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
 
     .m-doc-card {
       position: relative;
@@ -1865,13 +1873,13 @@
           <span data-ui-zh="观测舱矩阵 // DECKS" data-ui-en="OBSERVATORY // DECKS">观测舱矩阵 // DECKS</span>
           <span>v5.0</span>
         </div>
-        <button type="button" class="pc-nav-btn active" data-tab="discover">
+        <button type="button" class="pc-nav-btn" data-tab="discover">
           <span class="pc-nav-lhs">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
             <span data-ui-zh="全景战略观测台" data-ui-en="Command Deck">全景战略观测台</span>
           </span>
         </button>
-        <button type="button" class="pc-nav-btn" data-tab="feed">
+        <button type="button" class="pc-nav-btn active" data-tab="feed">
           <span class="pc-nav-lhs">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h11"/></svg>
             <span data-ui-zh="全量专著信号流" data-ui-en="Signal Stream">全量专著信号流</span>
@@ -1918,7 +1926,7 @@
       </div>
 
       <!-- TAB 1: DISCOVER -->
-      <section id="tabDiscover" style="display:flex;flex-direction:column;gap:20px;">
+      <section id="tabDiscover" class="hidden" style="display:flex;flex-direction:column;gap:20px;">
         <!-- PC 7:5 Split: Sci-Fi Observatory Hero (with 6-Axis Radar Scope) + 2x2 Blueprint Telemetry Pods -->
         <div class="m-hero-bento-split">
           <div class="m-vault-hero hud-corners">
@@ -2062,7 +2070,7 @@
       </section>
 
       <!-- TAB 2: FEED -->
-      <section id="tabFeed" class="hidden" style="display:flex;flex-direction:column;gap:14px;">
+      <section id="tabFeed" style="display:flex;flex-direction:column;gap:14px;">
         <div id="feedPillarGrid" class="m-pillar-grid"></div>
 
         <div class="m-filter-controls">
@@ -2111,12 +2119,12 @@
   <!-- Floating Holographic Capsule Bottom Dock (Mobile < 1024px) -->
   <nav class="m-bottom-dock-wrap" aria-label="移动端底部悬浮控制台">
     <div class="m-bottom-tabs">
-      <button type="button" class="m-nav-tab active" data-tab="discover">
+      <button type="button" class="m-nav-tab" data-tab="discover">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
         <span data-ui-zh="总览" data-ui-en="Deck">总览</span>
       </button>
 
-      <button type="button" class="m-nav-tab" data-tab="feed">
+      <button type="button" class="m-nav-tab active" data-tab="feed">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h11"/></svg>
         <span data-ui-zh="研报流" data-ui-en="Stream">研报流</span>
       </button>
@@ -2176,7 +2184,7 @@
 
       var THEME_KEY = 'mui_portal_theme_v4';
       var LANG_KEY = 'mui_portal_lang_v1';
-      var SIDEBAR_KEY = 'mui_portal_home_sidebar_collapsed_v1';
+      var DEFAULT_TAB = 'feed';
       var WATCH_KEY = 'mui_portal_watchlist_v1';
       var CONV_KEY = 'mui_portal_conviction_v1';
       var NOTES_KEY = 'mui_portal_notes_v1';
@@ -2308,7 +2316,7 @@
       var state = {
         lang: 'zh',
         theme: 'light',
-        tab: 'discover',
+        tab: DEFAULT_TAB,
         category: 'ALL',
         sector: 'ALL',
         company: 'ALL',
@@ -3585,7 +3593,6 @@
         if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
         else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
         sidebarToggle.setAttribute('aria-expanded', String(col));
-        try { localStorage.setItem(SIDEBAR_KEY, col ? '0' : '1'); } catch (e) {}
         if (state.tab === 'discover') {
           scheduleDiscoverCharts();
         }
@@ -3597,7 +3604,7 @@
       });
 
       document.getElementById('brandResetBtn').addEventListener('click', function () {
-        state.tab = 'discover';
+        state.tab = DEFAULT_TAB;
         state.category = 'ALL';
         state.sector = 'ALL';
         state.company = 'ALL';
