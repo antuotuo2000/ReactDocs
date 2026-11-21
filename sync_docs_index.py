@@ -132,13 +132,14 @@ STANDARD_DIMS = [
 
 DEFAULT_ROOT_DRIVE_URL = "https://drive.google.com/drive/folders/1GEm-cxIC-tAvyiMlAs82b8QYzjUqhNBc"
 SKIP_TAGS = {"script", "style", "svg", "noscript", "template", "header", "aside"}
+MUI_OPT_BLOCK_PATTERN = r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->"
 
 INJECTED_BLOCK_PATTERNS = (
     r"<!--\s*SITE_RELATED_NAV_START\s*-->[\s\S]*?<!--\s*SITE_RELATED_NAV_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_SYNC_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_CSS_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_TOPBAR_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_TOPBAR_END\s*-->",
     r"<!--\s*PORTAL_DETAIL_SYNC_JS_START\s*-->[\s\S]*?<!--\s*PORTAL_DETAIL_SYNC_JS_END\s*-->",
-    r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->",
+    MUI_OPT_BLOCK_PATTERN,
     r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->",
 )
 
@@ -219,9 +220,14 @@ PORTAL_REPORT_PROSE_SCRIPT = r"""
 
 
 PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
-  <script>
+  <script id="portalDetailPreferences">
     (function () {
       try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
         if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
           document.documentElement.setAttribute('data-sidebar-collapsed', '1');
         }
@@ -492,7 +498,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
     @media(max-width:760px) {.mui-appbar .quick-search-wrap {display:none!important}}
     @media print { .mui-appbar,#muiSidebar,#portalDetailBackdrop {display:none!important} }
   </style>
-  <script>
+  <script id="portalDetailMenu">
     (function () {
       var root = document.documentElement;
       var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
@@ -2445,16 +2451,49 @@ def normalize_mui_detail_menu(page: str, home_href: str) -> str:
 
     def complete_header(match: re.Match) -> str:
         header = match[0]
-        if 'class="crumb-link' not in header:
+        if not re.search(r'''<a\b[^>]*\sclass=["'][^"']*\bcrumb-link\b''', header):
             link = (f'<a class="crumb-link hide-sm" href="{html_mod.escape(home_href)}">'
                     '<span class="portal-menu-text" data-portal-zh="数据中心" '
                     'data-portal-en="Research Hub">数据中心</span></a>')
+            divider = '<span class="hide-sm" aria-hidden="true">/</span>'
             header = re.sub(r'(<(?:nav|div) class="(?:breadcrumbs|appbar-breadcrumb)"[^>]*>)',
-                            lambda part: part[0] + link, header, count=1)
+                            lambda part: part[0] + link + divider, header, count=1)
         return header
 
     return re.sub(r'<header\b[^>]*\bclass="mui-appbar"[^>]*>[\s\S]*?</header>',
                   complete_header, page, count=1)
+
+
+def sync_mui_detail_head(page: str) -> str:
+    """Replace generated chrome, including unwrapped remnants in browser exports."""
+    opt_pattern = re.compile(MUI_OPT_BLOCK_PATTERN)
+    block = minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK)
+    owned_ids = re.compile(r'''\bid=["'](?:portalMuiOptStyle|portalDetailChrome|portalDetailPreferences|portalDetailMenu|portalReportProse)["']''')
+    old_menu = re.compile(r'''var sidebarKey\s*=\s*['"]mui_portal_sidebar_collapsed_v1['"];''')
+    old_preferences = re.compile(r'''if \(window\.localStorage\.getItem\(['"]mui_portal_sidebar_collapsed_v1['"]\) === '1'\)''')
+
+    def keep_authored_tag(tag: re.Match) -> str:
+        if owned_ids.search(tag[2]):
+            return ""
+        if tag[1].lower() == "script" and (old_menu.search(tag[3]) or old_preferences.search(tag[3])):
+            return ""
+        return tag[0]
+
+    def clean_head(fragment: str) -> str:
+        fragment = opt_pattern.sub("", fragment)
+        return re.sub(r'<(script|style)\b([^>]*)>([\s\S]*?)</\1>', keep_authored_tag, fragment, flags=re.IGNORECASE)
+
+    def rebuild_head(head: re.Match) -> str:
+        contents = head[2]
+        existing = opt_pattern.search(contents)
+        if existing:
+            before = clean_head(contents[:existing.start()])
+            after = clean_head(contents[existing.end():])
+        else:
+            before, after = clean_head(contents), "\n"
+        return head[1] + before + block + after + head[3]
+
+    return re.sub(r'(<head\b[^>]*>)([\s\S]*?)(</head>)', rebuild_head, page, count=1, flags=re.IGNORECASE)
 
 
 def sync_all_detail_pages(
@@ -2603,12 +2642,7 @@ def sync_all_detail_pages(
             work_html = normalize_mui_detail_menu(work_html, rel_to_index)
             work_html = normalize_report_main_prose(work_html)
 
-            # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
-            mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
-            if mui_opt_pat.search(work_html):
-                work_html = mui_opt_pat.sub(lambda _: minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK), work_html, count=1)
-            elif "</head>" in work_html:
-                work_html = work_html.replace("</head>", minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK) + "\n</head>", 1)
+            work_html = sync_mui_detail_head(work_html)
         else:
             # 经典详情页：1. 原地更新或首次注入无闪烁主题与 MUI 浅/深色样式
             if css_marker_pat.search(work_html):
