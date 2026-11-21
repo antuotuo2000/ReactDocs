@@ -45,7 +45,7 @@ import shutil
 import subprocess
 import sys
 import time
-from urllib.parse import quote, unquote
+from urllib.parse import quote, unquote, urlsplit
 import webbrowser
 import xml.etree.ElementTree as ET
 
@@ -138,6 +138,80 @@ INJECTED_BLOCK_PATTERNS = (
     r"<!--\s*COMPANY_SUBFOLDER_HUB_START\s*-->[\s\S]*?<!--\s*COMPANY_SUBFOLDER_HUB_END\s*-->",
 )
 
+
+
+PORTAL_REPORT_PROSE_SCRIPT = r"""
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+"""
 
 
 PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
@@ -373,6 +447,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
     .mui-appbar .quick-search-input {width:100%;height:34px;border-radius:10px;
       background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}
     #appbarThemeLabel {display:none!important}
+    main code:not(pre code) {font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}
     #muiSidebar .sidebar-card {border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);
       background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}
     #muiSidebar .portal-reading-tools {display:flex;flex-direction:column;gap:8px}
@@ -532,7 +607,7 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       });
     })();
   </script>
-<!-- PORTAL_MUI_OPT_CSS_END -->"""
+""" + PORTAL_REPORT_PROSE_SCRIPT + "<!-- PORTAL_MUI_OPT_CSS_END -->"
 
 
 
@@ -1156,7 +1231,7 @@ def extract_file_payload(full_path: str, file_name: str, max_chars: int) -> dict
     meta_desc = ""
 
     if ext_low in (".html", ".htm"):
-        raw = strip_injected_detail_blocks(read_text_with_fallback(full_path))
+        raw = normalize_report_main_prose(strip_injected_detail_blocks(read_text_with_fallback(full_path)))
         parser = HTMLContentParser()
         try:
             parser.feed(raw)
@@ -2229,6 +2304,123 @@ PORTAL_MUI_READING_TOOLS = """<div class="sidebar-card sidebar-actions portal-re
 </div>"""
 
 
+_PROTECTED_REPORT_TAGS = {
+    "a", "code", "pre", "script", "style", "textarea", "template", "title", "xmp",
+}
+_ESCAPED_LT = r"(?:&(?:amp;)?lt;|&#0*60;|&#x0*3c;)"
+_ESCAPED_GT = r"(?:&(?:amp;)?gt;|&#0*62;|&#x0*3e;)"
+_REPORT_TOKEN = re.compile(
+    rf"(?P<cite>{_ESCAPED_LT}a\s[^<>\r\n]*?{_ESCAPED_GT}[^<>\r\n]*?{_ESCAPED_LT}/a{_ESCAPED_GT})"
+    rf"|{_ESCAPED_LT}(?P<inline>em|strong|code){_ESCAPED_GT}(?P<inline_text>[^<>\r\n]*?){_ESCAPED_LT}/(?P=inline){_ESCAPED_GT}"
+    r"|(?<!\*)\*\*(?P<bold>[^*\r\n]+)\*\*(?!\*)"
+    r"|(?<!`)`(?P<code>[^`\r\n]+)`(?!`)"
+    r"|(?<![\w*])\*(?P<italic>\S(?:[^*\r\n]*?\S)?)\*(?![\w*])",
+    re.I,
+)
+_CITE_ANCHOR = re.compile(r"<a\s([^<>]+)>([^<>]*)</a>", re.I)
+_CITE_CLASS = re.compile(r"""(?:^|\s)class\s*=\s*(['"])cite-link\1(?=\s|$)""", re.I)
+_CITE_HREF = re.compile(r"""(?:^|\s)href\s*=\s*(['"])(.*?)\1(?=\s|$)""", re.I)
+
+
+def _format_report_token(match):
+    if match["cite"]:
+        raw = html_mod.unescape(match[0])
+        if raw.startswith("&lt;"):
+            raw = html_mod.unescape(raw)
+        anchor = _CITE_ANCHOR.fullmatch(raw)
+        if not anchor or not _CITE_CLASS.search(anchor[1]):
+            return match[0]
+        attr = _CITE_HREF.search(anchor[1])
+        if not attr:
+            return match[0]
+        url = html_mod.unescape(attr[2])
+        try:
+            parsed = urlsplit(url)
+        except ValueError:
+            return match[0]
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc or any(c.isspace() or ord(c) < 32 for c in url):
+            return match[0]
+        return (f'<a class="cite-link" href="{html_mod.escape(url, quote=True)}" '
+                f'target="_blank" rel="noopener noreferrer">{html_mod.escape(html_mod.unescape(anchor[2]))}</a>')
+    if match["inline"]:
+        name = match["inline"].lower()
+        return f"<{name}>{html_mod.escape(html_mod.unescape(match['inline_text']))}</{name}>"
+    if match["bold"]:
+        return f"<strong>{html_mod.escape(html_mod.unescape(match['bold']))}</strong>"
+    if match["italic"]:
+        return f"<em>{html_mod.escape(html_mod.unescape(match['italic']))}</em>"
+    return html_mod.escape(html_mod.unescape(match["code"]))
+
+
+def normalize_report_prose_html(markup):
+    """Correct formatting in visible prose without parsing it as active HTML."""
+    class ProseParser(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.lines = [0, *(m.end() for m in re.finditer("\n", markup))]
+            self.protected = []
+            self.start = None
+            self.replacements = []
+
+        def raw_position(self):
+            line, column = self.getpos()
+            return self.lines[line - 1] + column
+
+        def finish_text(self, end=None):
+            if self.start is None:
+                return
+            end = self.raw_position() if end is None else end
+            raw = markup[self.start:end]
+            formatted = _REPORT_TOKEN.sub(_format_report_token, raw)
+            if raw != formatted:
+                self.replacements.append((self.start, end, formatted))
+            self.start = None
+
+        def handle_data(self, _):
+            if not self.protected and self.start is None:
+                self.start = self.raw_position()
+
+        def handle_starttag(self, tag, _):
+            self.finish_text()
+            if tag in _PROTECTED_REPORT_TAGS:
+                self.protected.append(tag)
+
+        def handle_endtag(self, tag):
+            self.finish_text()
+            if tag in self.protected:
+                while self.protected.pop() != tag:
+                    pass
+
+        def handle_startendtag(self, _tag, _attrs):
+            self.finish_text()
+
+        def handle_comment(self, _):
+            self.finish_text()
+
+        handle_decl = handle_pi = unknown_decl = handle_comment
+
+    parser = ProseParser()
+    parser.feed(markup)
+    parser.close()
+    parser.finish_text(len(markup))
+    parts = []
+    start = 0
+    for before, after, replacement in parser.replacements:
+        parts.extend((markup[start:before], replacement))
+        start = after
+    return "".join(parts) + markup[start:]
+
+
+def normalize_report_main_prose(page: str) -> str:
+    """Keep standalone previews and indexed excerpts consistent."""
+    return re.sub(
+        r"(<main\b[^>]*>)([\s\S]*?)(</main>)",
+        lambda match: match[1] + normalize_report_prose_html(match[2]) + match[3],
+        page,
+        count=1,
+    )
+
+
 def normalize_mui_detail_menu(page: str, home_href: str) -> str:
     """Keep the report's own controls, and fill the missing parts of the shared menu."""
     if 'id="portalDetailBackdrop"' not in page:
@@ -2400,6 +2592,7 @@ def sync_all_detail_pages(
             work_html = re.sub(r'<a\s+class="crumb-link[^"]*"[^>]*>', _rewrite_crumb, work_html)
 
             work_html = normalize_mui_detail_menu(work_html, rel_to_index)
+            work_html = normalize_report_main_prose(work_html)
 
             # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
             mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
