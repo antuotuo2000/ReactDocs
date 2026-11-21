@@ -341,33 +341,195 @@ PORTAL_MUI_OPT_CSS_BLOCK = """<!-- PORTAL_MUI_OPT_CSS_START -->
       .appbar-left .mui-chip { display: none !important; }
     }
   </style>
+  <style id="portalDetailChrome">
+    html {--portal-detail-width:1560px;--portal-detail-gutter:20px}
+    .mui-appbar {position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;
+      background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .mui-appbar .mui-appbar-inner {display:flex!important;justify-content:space-between;align-items:center;gap:12px;
+      box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);
+      height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}
+    .mui-appbar .appbar-left,.mui-appbar .appbar-right {display:flex;align-items:center;gap:8px;min-width:0}
+    .mui-appbar .appbar-left {flex:1}
+    .mui-appbar .appbar-right {flex-shrink:0}
+    .mui-appbar :is(.breadcrumbs,.appbar-breadcrumb) {display:flex;align-items:center;gap:6px;min-width:0;
+      overflow:hidden;white-space:nowrap;font-size:.85rem}
+    .mui-appbar :is(.crumb-current,.appbar-breadcrumb-cur) {overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}
+    .mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle) {
+      display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;
+      width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;
+      border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;
+      color:var(--text-secondary,#334155)!important;cursor:pointer}
+    .mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover {
+      color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}
+    .mui-appbar #langSwitchGroup {display:inline-flex!important;align-items:center;gap:2px;height:34px;
+      padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);
+      border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}
+    .mui-appbar #langSwitchGroup button {height:28px;padding:0 10px!important;border:0;border-radius:7px;
+      font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}
+    .mui-appbar #langSwitchGroup button.active {background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);
+      box-shadow:0 1px 3px rgba(15,25,36,.12)}
+    .mui-appbar .quick-search-wrap {position:relative;width:220px;flex-shrink:0}
+    .mui-appbar .quick-search-input {width:100%;height:34px;border-radius:10px;
+      background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}
+    #appbarThemeLabel {display:none!important}
+    #muiSidebar .sidebar-card {border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);
+      background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}
+    #muiSidebar .portal-reading-tools {display:flex;flex-direction:column;gap:8px}
+    #muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid {
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+    #muiSidebar .portal-reading-tools button {font:inherit;font-size:.76rem;min-height:30px;
+      color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);
+      border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}
+    #muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover {
+      color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}
+    #muiSidebar .portal-reading-tools button svg {margin-right:4px;vertical-align:middle}
+    .portal-detail-extras {display:flex;flex-wrap:wrap;gap:5px}
+    .portal-detail-extras:empty {display:none}
+    #portalDetailBackdrop {display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}
+    @media(min-width:1024px) {
+      html .layout-shell {grid-template-columns:280px minmax(0,1fr)!important}
+      html[data-sidebar-collapsed="1"] .layout-shell {
+        grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;
+        width:100%!important;max-width:var(--portal-detail-width)!important;
+        margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}
+      #muiSidebar {position:sticky!important;top:72px!important;width:auto!important;transform:none!important;
+        max-height:calc(100dvh - 84px)!important;overflow-y:auto!important;overflow-x:hidden!important;z-index:auto!important}
+      html[data-sidebar-collapsed="1"] #muiSidebar {display:none!important}
+    }
+    @media(max-width:1023px) {
+      html .layout-shell {grid-template-columns:minmax(0,1fr)!important}
+      #muiSidebar {position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;
+        max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;
+        background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;
+        visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}
+      body.portal-detail-drawer #muiSidebar {transform:translateX(0)!important;visibility:visible}
+      body.portal-detail-drawer #portalDetailBackdrop {display:block}
+    }
+    @media(max-width:850px) {
+      .mui-appbar .mui-appbar-inner {padding:0 12px!important}
+      .mui-appbar .appbar-left .mui-chip {display:none!important}
+    }
+    @media(max-width:760px) {.mui-appbar .quick-search-wrap {display:none!important}}
+    @media print { .mui-appbar,#muiSidebar,#portalDetailBackdrop {display:none!important} }
+  </style>
   <script>
     (function () {
-      var KEY = 'mui_portal_sidebar_collapsed_v1';
-      function syncFromStorage() {
-        try {
-          var collapsed = window.localStorage.getItem(KEY) === '1';
-          if (collapsed) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
-          else document.documentElement.removeAttribute('data-sidebar-collapsed');
-        } catch (e) {}
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
       }
-      document.addEventListener('click', function (ev) {
-        var btn = ev.target && ev.target.closest ? ev.target.closest('#sidebarToggleBtn') : null;
-        if (!btn) return;
-        if (window.innerWidth >= 1024) {
-          ev.preventDefault();
-          ev.stopImmediatePropagation();
-          var next = document.documentElement.getAttribute('data-sidebar-collapsed') !== '1';
-          if (next) document.documentElement.setAttribute('data-sidebar-collapsed', '1');
-          else document.documentElement.removeAttribute('data-sidebar-collapsed');
-          try { window.localStorage.setItem(KEY, next ? '1' : '0'); } catch (e) {}
-          window.dispatchEvent(new Event('resize'));
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
         }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
       }, true);
-      window.addEventListener('storage', function (ev) {
-        if (ev.key === KEY) syncFromStorage();
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
       });
-
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
     })();
   </script>
 <!-- PORTAL_MUI_OPT_CSS_END -->"""
@@ -2053,6 +2215,47 @@ def build_classic_topbar_block(rel_to_index: str, comp_zh: str, comp_en: str, ca
     )
 
 
+
+PORTAL_MUI_READING_TOOLS = """<div class="sidebar-card sidebar-actions portal-reading-tools" id="portalReadingTools">
+  <div class="nav-section-label" data-portal-zh="阅读与导出工具" data-portal-en="Appearance &amp; Export">阅读与导出工具</div>
+  <div class="side-theme-group" role="group" aria-label="Theme">
+    <button type="button" data-portal-theme="light" data-portal-zh="浅色外观" data-portal-en="Light">浅色外观</button>
+    <button type="button" data-portal-theme="dark" data-portal-zh="深色外观" data-portal-en="Dark">深色外观</button>
+  </div>
+  <div class="side-tool-grid">
+    <button type="button" data-portal-export data-portal-zh="导出 HTML" data-portal-en="Export HTML">导出 HTML</button>
+    <button type="button" data-portal-print data-portal-zh="打印 / PDF" data-portal-en="Print / PDF">打印 / PDF</button>
+  </div>
+</div>"""
+
+
+def normalize_mui_detail_menu(page: str, home_href: str) -> str:
+    """Keep the report's own controls, and fill the missing parts of the shared menu."""
+    if 'id="portalDetailBackdrop"' not in page:
+        page = re.sub(
+            r'(<body\b[^>]*>)',
+            r'\1' + '\n<div id="portalDetailBackdrop" aria-hidden="true"></div>',
+            page, count=1,
+        )
+    sidebar = re.search(r'<aside\b[^>]*\bid="muiSidebar"[^>]*>[\s\S]*?</aside>', page)
+    if sidebar and not re.search(r'\bid="(?:sideThemeLightBtn|portalReadingTools)"', sidebar[0]):
+        offset = sidebar.end() - len("</aside>")
+        page = page[:offset] + PORTAL_MUI_READING_TOOLS + "\n" + page[offset:]
+
+    def complete_header(match: re.Match) -> str:
+        header = match[0]
+        if 'class="crumb-link' not in header:
+            link = (f'<a class="crumb-link hide-sm" href="{html_mod.escape(home_href)}">'
+                    '<span class="portal-menu-text" data-portal-zh="数据中心" '
+                    'data-portal-en="Research Hub">数据中心</span></a>')
+            header = re.sub(r'(<(?:nav|div) class="(?:breadcrumbs|appbar-breadcrumb)"[^>]*>)',
+                            lambda part: part[0] + link, header, count=1)
+        return header
+
+    return re.sub(r'<header\b[^>]*\bclass="mui-appbar"[^>]*>[\s\S]*?</header>',
+                  complete_header, page, count=1)
+
+
 def sync_all_detail_pages(
     docs_dir: str,
     content_files: list[dict],
@@ -2165,6 +2368,13 @@ def sync_all_detail_pages(
                 if mui_nav_pat.search(work_html):
                     work_html = mui_nav_pat.sub(lambda _: mui_nav_block, work_html, count=1)
 
+                else:
+                    work_html = re.sub(
+                        r'(<aside\b[^>]*\bid="muiSidebar"[^>]*>[\s\S]*?<nav\b[^>]*\bclass="sidebar-card"[^>]*>)',
+                        lambda match: match[0] + "\n" + mui_nav_block,
+                        work_html, count=1,
+                    )
+
             # 2. 确保主题与语言存储键和首页一致
             work_html = re.sub(
                 r"var\s+STORAGE_THEME_KEY\s*=\s*'[^']+';",
@@ -2186,6 +2396,8 @@ def sync_all_detail_pages(
                 tag = re.sub(r'\s+rel="noopener noreferrer"', '', tag)
                 return tag
             work_html = re.sub(r'<a\s+class="crumb-link[^"]*"[^>]*>', _rewrite_crumb, work_html)
+
+            work_html = normalize_mui_detail_menu(work_html, rel_to_index)
 
             # 3. 原地幂等注入/更新左侧边栏高度与移动端零溢出优化样式
             mui_opt_pat = re.compile(r"<!--\s*PORTAL_MUI_OPT_CSS_START\s*-->[\s\S]*?<!--\s*PORTAL_MUI_OPT_CSS_END\s*-->")
