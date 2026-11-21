@@ -4939,7 +4939,53 @@
       }
     }
 
-    function applyLanguage(lang, silent) {
+    
+  // Repair citation markup that some bilingual fields supplied as plain text.
+  function formatReportText() {
+    var host = document.getElementById('ipSectionsHost');
+    if (!host) return;
+    var pattern = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|\*\*([^*\r\n]+)\*\*/gi;
+    var walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT);
+    var pending = [], node;
+    while ((node = walker.nextNode())) {
+      if (!node.parentElement.closest('a, code, pre, script, style, textarea')) pending.push(node);
+    }
+    pending.forEach(function (text) {
+      var value = text.nodeValue;
+      pattern.lastIndex = 0;
+      if (!pattern.test(value)) return;
+      var updated = document.createDocumentFragment(), end = 0;
+      pattern.lastIndex = 0;
+      for (var match; (match = pattern.exec(value));) {
+        var element;
+        if (match[3]) {
+          element = document.createElement('strong');
+          element.textContent = match[3];
+        } else {
+          var href = /\bhref=(?:"([^"]+)"|'([^']+)')/i.exec(match[1]);
+          if (!href) continue;
+          var url;
+          try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); } catch (error) { continue; }
+          if (url.protocol !== 'https:' && url.protocol !== 'http:') continue;
+          element = document.createElement('a');
+          element.className = 'cite-link';
+          element.href = url.href;
+          element.target = '_blank';
+          element.rel = 'noopener noreferrer';
+          element.textContent = match[2].replace(/&amp;/g, '&');
+        }
+        updated.append(value.slice(end, match.index), element);
+        end = pattern.lastIndex;
+      }
+      if (end) {
+        updated.append(value.slice(end));
+        text.replaceWith(updated);
+      }
+    });
+  }
+function applyLanguage(lang, silent) {
+    queueMicrotask(formatReportText);
+
       state.lang = lang === 'en' ? 'en' : 'zh';
       var en = isEn();
       var ip = curIp();
