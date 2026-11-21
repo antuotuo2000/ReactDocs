@@ -93,8 +93,6 @@ CATEGORY_KNOWN = {
     "hardware": "硬件产品",
     "patent": "核心专利",
     "PhysicalStores": "实体零售",
-    "CorporateIssues": "企业问题",
-    "Future": "未来战略",
 }
 
 CATEGORY_KNOWN_EN = {
@@ -105,8 +103,6 @@ CATEGORY_KNOWN_EN = {
     "hardware": "Hardware",
     "patent": "Patent",
     "PhysicalStores": "Retail",
-    "CorporateIssues": "Corporate Issues",
-    "Future": "Future Outlook",
     "RootFile": "Document",
 }
 
@@ -118,8 +114,6 @@ CATEGORY_SORT_ORDER = {
     "software": 5,
     "patent": 6,
     "PhysicalStores": 7,
-    "CorporateIssues": 8,
-    "Future": 9,
 }
 
 STANDARD_DIMS = [
@@ -130,8 +124,6 @@ STANDARD_DIMS = [
     "software",
     "patent",
     "PhysicalStores",
-    "CorporateIssues",
-    "Future",
 ]
 
 DEFAULT_ROOT_DRIVE_URL = "https://drive.google.com/drive/folders/1GEm-cxIC-tAvyiMlAs82b8QYzjUqhNBc"
@@ -474,15 +466,8 @@ def ensure_index_preview_and_bilingual(idx_html: str) -> str:
     # Restore new-tab opening for homepage Open buttons so index stays warm and navigation is instant
     idx_html = idx_html.replace('esc(href) + \'">\' + (isEn() ? \'Open\' : \'打开\')', 'esc(href) + \'" target="_blank" rel="noopener noreferrer">\' + (isEn() ? \'Open ↗\' : \'打开 ↗\')')
     idx_html = idx_html.replace('esc(href) + \'">\' + (isEn() ? \'Open Page\' : \'打开页面\')', 'esc(href) + \'" target="_blank" rel="noopener noreferrer">\' + (isEn() ? \'Open in New Tab ↗\' : \'新窗口打开文件 ↗\')')
-    # Speed optimization: load 1.9MB search_index.js async, skip off-screen card layout, and defer FULLTEXT lowercasing to idle
-    idx_html = re.sub(r'(<script\s+id="docsSearchIndexScript"[^>]*?)\s+defer(?=>)', r'\1 async', idx_html)
     if "contain-intrinsic-size: auto 260px" not in idx_html and "</style>" in idx_html:
         idx_html = idx_html.replace("</style>", "    .MuiCard { content-visibility: auto; contain-intrinsic-size: auto 260px; }\n  </style>", 1)
-    idx_html = idx_html.replace(
-        "contentItems.forEach(refreshItemSearchFields);",
-        "var _runIdx = function () { contentItems.forEach(refreshItemSearchFields); if (state.query.trim()) renderAll(); }; if (window.requestIdleCallback) requestIdleCallback(_runIdx, { timeout: 600 }); else setTimeout(_runIdx, 120);",
-        1,
-    )
     # Clicking card/list title opens the webpage directly instead of Preview drawer
     idx_html = idx_html.replace('\'<div class="MuiCard-title" data-open-reader="\' + esc(it.id) + \'">\' + highlight(getTitle(it), tokens) + \'</div>\'', '\'<a class="MuiCard-title" href="\' + esc(href) + \'" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:inherit;">\' + highlight(getTitle(it), tokens) + \'</a>\'')
     idx_html = idx_html.replace('\'<div style="font-weight:700;cursor:pointer;color:var(--mui-text-primary);overflow-wrap:anywhere;" data-open-reader="\' + esc(it.id) + \'">\' + highlight(getTitle(it), tokens) + \'</div>\'', '\'<a href="\' + esc(href) + \'" target="_blank" rel="noopener noreferrer" style="display:block;font-weight:700;text-decoration:none;color:var(--mui-text-primary);overflow-wrap:anywhere;">\' + highlight(getTitle(it), tokens) + \'</a>\'')
@@ -2357,7 +2342,16 @@ def inject_catalog_and_nav_into_html(
                 1,
             )
 
-    search_script_tag = f'<script id="docsSearchIndexScript" src="./search_index.js?v={ver_tag}" async></script>'
+    search_index_path = f"./search_index.js?v={ver_tag}"
+    if "function loadFullText()" in html_src:
+        search_script_tag = (
+            f'<script id="docsSearchIndexScript" type="application/json" '
+            f'data-src="{search_index_path}"></script>'
+        )
+    else:
+        search_script_tag = (
+            f'<script id="docsSearchIndexScript" src="{search_index_path}" async></script>'
+        )
     existing_search_pat = (
         r'<script[^>]*(?:\bid=["\']docsSearchIndexScript["\']|\bsrc=["\'][^"\']*search_index\.js[^"\']*["\'])[^>]*>\s*</script>'
     )
@@ -2466,7 +2460,7 @@ def build_catalog_and_index(
                         "parentId": parent_id,
                         "path": rel_sub,
                         "company": comp_folder,
-                        "category": parts[1].strip() if len(parts) >= 2 else "Company",
+                        "category": parts[1] if len(parts) >= 2 else "Company",
                         "level": level,
                         "driveUrl": f_drive,
                     })
@@ -2705,7 +2699,7 @@ def build_catalog_and_index(
 
     html_src = read_text_with_fallback(index_html_path)
     cat_json = json.dumps(catalog, ensure_ascii=False, separators=(",", ":")).replace("</script>", "<\\/script>")
-    ver_tag = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+    ver_tag = hashlib.sha256(js_payload.encode("utf-8")).hexdigest()[:12]
 
     updated_html, catalog_ok = inject_catalog_and_nav_into_html(
         html_src=html_src,
