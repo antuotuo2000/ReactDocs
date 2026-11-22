@@ -574,7 +574,7 @@
           var button = document.getElementById(id);
           if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
         }
-        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],#portalRelatedReports [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
           var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
             || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
           if (label && node.textContent !== label) node.textContent = label;
@@ -801,14 +801,14 @@
  <!-- Unified MUI Navigation Card: 12 Business Pillars + Report TOC -->
  <nav class="sidebar-card" aria-label="业务板块与章节目录">
 <!-- SITE_RELATED_NAV_START -->
-        <div class="co-side-nav" id="companySubfolderHub" data-co-key="TTWO">
+        <div class="co-side-nav" id="portalRelatedReports" data-co-key="TTWO">
           <div class="co-side-head">
             <span class="co-side-title mono">TTWO · 01/15</span>
             <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
           </div>
           <div class="co-side-actions">
-            <a class="co-hub-btn" id="coHubPrevBtn" href="../software/old/ttwo_ip_zynga_puzzle_toon_blast.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
-            <a class="co-hub-btn" id="coHubNextBtn" href="../software/old/6_grand_theft_auto_vi_gta_6.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+            <a class="co-hub-btn" id="portalRelatedPrevBtn" href="../software/old/ttwo_ip_zynga_puzzle_toon_blast.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="portalRelatedNextBtn" href="../software/old/6_grand_theft_auto_vi_gta_6.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
           </div>
           <div class="co-hub-pills">
             <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (15)" data-i18n-en="All (15)">全部 (15)</button>
@@ -832,7 +832,7 @@
             <a class="co-hub-item" data-co-item-cat="software" href="../software/old/ttwo_ip_zynga_evergreen_empires_poker.html" title="Zynga 常青中重度与社交棋牌 IP（Empires &amp; Puzzles · Zynga Poker · Words With Friends · CSR）深度研报"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Zynga 常青中重度与社交棋牌 IP（Empires &amp; Puzzles · Zynga Poker · Words With Friends · CSR）深度研报" data-i18n-en="Zynga &amp; IP (Empires &amp; Puzzles · Zynga Poker · Words With Friends · CSR)Deep DiveReport">Zynga 常青中重度与社交棋牌 IP（Empires &amp; Puzzles · Zynga Poker · Words With Friends · CSR）深度研报</span><span class="co-hub-meta mono">software/old</span></span></a>
             <a class="co-hub-item" data-co-item-cat="software" href="../software/old/ttwo_ip_zynga_puzzle_toon_blast.html" title="Zynga 消除与混合休闲王牌 IP（Toon Blast · Match Factory! · Color Block Jam）深度研报"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Zynga 消除与混合休闲王牌 IP（Toon Blast · Match Factory! · Color Block Jam）深度研报" data-i18n-en="Zynga &amp; IP (Toon Blast · Match Factory! · Color Block Jam)Deep DiveReport">Zynga 消除与混合休闲王牌 IP（Toon Blast · Match Factory! · Color Block Jam）深度研报</span><span class="co-hub-meta mono">software/old</span></span></a>
           </div>
-          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+          <script>(function(){var h=document.getElementById("portalRelatedReports");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("portalRelatedPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("portalRelatedNextBtn");if(nb)nb.click();}});})();</script>
         </div>
         <!-- SITE_RELATED_NAV_END -->
  <div class="co-side-nav" id="companySubfolderHub">

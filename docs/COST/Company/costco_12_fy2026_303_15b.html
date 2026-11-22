@@ -470,7 +470,7 @@
           var button = document.getElementById(id);
           if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
         }
-        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],#portalRelatedReports [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
           var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
             || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
           if (label && node.textContent !== label) node.textContent = label;
@@ -685,14 +685,14 @@
 
  <nav class="sidebar-card" aria-label="好市多板块导航与章节目录" data-aria-zh="好市多板块导航与章节目录" data-aria-en="Costco Pillars &amp; Table of Contents">
 <!-- SITE_RELATED_NAV_START -->
-        <div class="co-side-nav" id="companySubfolderHub" data-co-key="COST">
+        <div class="co-side-nav" id="portalRelatedReports" data-co-key="COST">
           <div class="co-side-head">
             <span class="co-side-title mono">COST · 01/02</span>
             <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
           </div>
           <div class="co-side-actions">
-            <a class="co-hub-btn" id="coHubPrevBtn" href="../SeniorExecutive/costco_wholesale_cost_24_vachris_millerchip_frates_adamo_polit_george_riel.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
-            <a class="co-hub-btn" id="coHubNextBtn" href="../SeniorExecutive/costco_wholesale_cost_24_vachris_millerchip_frates_adamo_polit_george_riel.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+            <a class="co-hub-btn" id="portalRelatedPrevBtn" href="../SeniorExecutive/costco_wholesale_cost_24_vachris_millerchip_frates_adamo_polit_george_riel.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="portalRelatedNextBtn" href="../SeniorExecutive/costco_wholesale_cost_24_vachris_millerchip_frates_adamo_polit_george_riel.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
           </div>
           <div class="co-hub-pills">
             <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (2)" data-i18n-en="All (2)">全部 (2)</button>
@@ -703,7 +703,7 @@
             <a class="co-hub-item active" data-co-item-cat="Company" href="costco_12_fy2026_303_15b.html" title="Costco 好市多全产品与服务 12 大板块深度研报中枢（FY2026 $303.15B 全景拆解）"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Costco 好市多全产品与服务 12 大板块深度研报中枢（FY2026 $303.15B 全景拆解）" data-i18n-en="Costco &amp; 12 Deep DiveReport (FY2026 $303.15B OverviewBreakdown)">Costco 好市多全产品与服务 12 大板块深度研报中枢（FY2026 $303.15B 全景拆解）</span><span class="co-hub-meta mono">Company</span></span></a>
             <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/costco_wholesale_cost_24_vachris_millerchip_frates_adamo_polit_george_riel.html" title="Costco Wholesale (COST) 24 位核心高管团队全景深度研报中枢（Vachris·Millerchip·Frates·Adamo·Polit·George·Riel 等）| 王安安数据中心"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Costco Wholesale (COST) 24 位核心高管团队全景深度研报中枢（Vachris·Millerchip·Frates·Adamo·Polit·George·Riel 等）| 王安安数据中心" data-i18n-en="Costco Wholesale (COST) 24 OverviewDeep DiveReport (Vachris·Millerchip·Frates·Adamo·Polit·George·Riel)| Data Center">Costco Wholesale (COST) 24 位核心高管团队全景深度研报中枢（Vachris·Millerchip·Frates·Adamo·Polit·George·Riel 等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
           </div>
-          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+          <script>(function(){var h=document.getElementById("portalRelatedReports");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("portalRelatedPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("portalRelatedNextBtn");if(nb)nb.click();}});})();</script>
         </div>
         <!-- SITE_RELATED_NAV_END -->
  <div class="co-side-nav" id="companySubfolderHub">

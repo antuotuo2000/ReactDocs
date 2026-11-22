@@ -1107,15 +1107,16 @@ def read_text_with_fallback(path: str) -> str:
     return ""
 
 
-def is_portal_html(path: str) -> bool:
-    if not os.path.isfile(path):
-        return False
-    head_chunk = read_text_with_fallback(path)
+def is_portal_markup(markup: str) -> bool:
     return (
-        "DOCS_CATALOG" in head_chunk
-        or "docsCatalogData" in head_chunk
-        or "globalSearchInput" in head_chunk
+        "DOCS_CATALOG" in markup
+        or "docsCatalogData" in markup
+        or "globalSearchInput" in markup
     )
+
+
+def is_portal_html(path: str) -> bool:
+    return os.path.isfile(path) and is_portal_markup(read_text_with_fallback(path))
 
 
 def extract_docx_content(path: str) -> tuple[str, list[str], str]:
@@ -2468,6 +2469,9 @@ def sync_mui_detail_head(page: str) -> str:
     """Replace generated chrome, including unwrapped remnants in browser exports."""
     opt_pattern = re.compile(MUI_OPT_BLOCK_PATTERN)
     block = minify_injected_style_block(PORTAL_MUI_OPT_CSS_BLOCK)
+    if 'id="portalRelatedReports"' in page:
+        selector = "#companySubfolderHub [data-i18n-zh]"
+        block = block.replace(selector, selector + ",#portalRelatedReports [data-i18n-zh]")
     owned_ids = re.compile(r'''\bid=["'](?:portalMuiOptStyle|portalDetailChrome|portalDetailPreferences|portalDetailMenu|portalReportProse)["']''')
     old_menu = re.compile(r'''var sidebarKey\s*=\s*['"]mui_portal_sidebar_collapsed_v1['"];''')
     old_preferences = re.compile(r'''if \(window\.localStorage\.getItem\(['"]mui_portal_sidebar_collapsed_v1['"]\) === '1'\)''')
@@ -2530,11 +2534,8 @@ def sync_all_detail_pages(
         if not rel_p.lower().endswith((".html", ".htm")):
             continue
         full_p = os.path.join(docs_dir, rel_p.replace("/", os.sep))
-        if not os.path.isfile(full_p) or is_portal_html(full_p):
-            continue
-
         orig_html = read_text_with_fallback(full_p)
-        if not orig_html or "<body" not in orig_html.lower():
+        if not orig_html or "<body" not in orig_html.lower() or is_portal_markup(orig_html):
             continue
 
         checked_count += 1
@@ -2600,6 +2601,15 @@ def sync_all_detail_pages(
         if is_mui_detail:
             # 1. 原地幂等更新 MUI 详情页的『站点与关联导航』块
             mui_nav_block = build_mui_related_nav_block(rel_to_index, sibling_links, comp_folder=comp_folder, cur_rel=rel_p, comp_items=comp_items)
+            authored_html = nav_marker_pat.sub("", work_html)
+            if re.search(r'''<[^>]+\sid=["'](?:companySubfolderHub|coHubPrevBtn|coHubNextBtn)["']''', authored_html):
+                # Some templates use these IDs for in-page product switching.
+                for old_id, new_id in (
+                    ("companySubfolderHub", "portalRelatedReports"),
+                    ("coHubPrevBtn", "portalRelatedPrevBtn"),
+                    ("coHubNextBtn", "portalRelatedNextBtn"),
+                ):
+                    mui_nav_block = mui_nav_block.replace(f'"{old_id}"', f'"{new_id}"')
             if nav_marker_pat.search(work_html):
                 work_html = nav_marker_pat.sub(lambda _: mui_nav_block, work_html, count=1)
             else:
@@ -2618,16 +2628,15 @@ def sync_all_detail_pages(
                     )
 
             # 2. 确保主题与语言存储键和首页一致
-            work_html = re.sub(
-                r"var\s+STORAGE_THEME_KEY\s*=\s*'[^']+';",
-                "var STORAGE_THEME_KEY = 'mui_portal_theme_v4';",
-                work_html,
-            )
-            work_html = re.sub(
-                r"var\s+STORAGE_LANG_KEY\s*=\s*'[^']+';",
-                "var STORAGE_LANG_KEY = 'mui_portal_lang_v1';",
-                work_html,
-            )
+            for storage_var, portal_key in (
+                ("STORAGE_THEME_KEY", "mui_portal_theme_v4"),
+                ("STORAGE_LANG_KEY", "mui_portal_lang_v1"),
+            ):
+                work_html = re.sub(
+                    rf'''(\bvar\s+{storage_var}\s*=\s*)(["'])[^"']+\2(?=\s*;)''',
+                    lambda match: f"{match[1]}{match[2]}{portal_key}{match[2]}",
+                    work_html,
+                )
 
             
             # 4. 将顶栏『数据中心』面包屑链接统一指向本地首页并在当前页打开（不新开标签页）
