@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="应用材料 Applied Materials (NASDAQ: AMAT) 2026–2032 未来战略与新增长曲线观测站：$5B EPIC 协同研发中心、GAA 全环绕栅极与背面供电 BSPDN、HBM 与 Besi 混合键合、High-NA EUV VeritySEM 20 量测及 AGS 智能服务年金。" />
+ <title>应用材料 2026–2032 未来战略与新增长曲线观测站 | 数据中心</title>
+<style>
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16; --bg-canvas-elevated: #0C1320; --bg-paper: rgba(15, 25, 36, 0.86);
+ --bg-paper-solid: #0F1924; --bg-subtle: rgba(19, 35, 55, 0.65); --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16); --bg-appbar: rgba(9, 13, 22, 0.82);
+ --border-subtle: rgba(51, 153, 255, 0.14); --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.44); --divider: rgba(148, 163, 184, 0.12);
+ --text-primary: #F3F6F9; --text-secondary: #B2BAC2; --text-muted: #7E8C9A;
+ --mui-primary-main: #0073E6; --mui-primary-light: #3399FF; --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.16); --mui-primary-border: rgba(51, 153, 255, 0.35);
+ --mui-success-main: #1AA251; --mui-success-text: #66BB6A; --mui-success-bg: rgba(26, 162, 81, 0.14); --mui-success-border: rgba(102, 187, 106, 0.34);
+ --mui-warning-main: #DEA500; --mui-warning-text: #FFB74D; --mui-warning-bg: rgba(255, 183, 77, 0.14); --mui-warning-border: rgba(255, 183, 77, 0.34);
+ --mui-error-main: #EB0014; --mui-error-text: #FF6B6B; --mui-error-bg: rgba(235, 0, 20, 0.14); --mui-error-border: rgba(255, 107, 107, 0.34);
+ --mui-violet-text: #A78BFA; --mui-violet-bg: rgba(139, 92, 246, 0.14); --mui-violet-border: rgba(167, 139, 250, 0.32);
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --blueprint-grid: linear-gradient(rgba(51, 153, 255, 0.065) 1px, transparent 1px), linear-gradient(90deg, rgba(51, 153, 255, 0.065) 1px, transparent 1px);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+ }
+ :root, html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC; --bg-canvas-elevated: #F1F5F9; --bg-paper: rgba(255, 255, 255, 0.95);
+ --bg-paper-solid: #FFFFFF; --bg-subtle: #F1F5F9; --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11); --bg-appbar: rgba(255, 255, 255, 0.86);
+ --border-subtle: #E2E8F0; --border-default: #CBD5E1; --border-strong: #0073E6; --divider: #E2E8F0;
+ --text-primary: #0F1924; --text-secondary: #334155; --text-muted: #5B6B7C;
+ --mui-primary-main: #0073E6; --mui-primary-light: #0059B2; --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09); --mui-primary-border: rgba(0, 115, 230, 0.28);
+ --mui-success-main: #15803D; --mui-success-text: #15803D; --mui-success-bg: rgba(21, 128, 61, 0.09); --mui-success-border: rgba(21, 128, 61, 0.26);
+ --mui-warning-main: #B45309; --mui-warning-text: #B45309; --mui-warning-bg: rgba(180, 83, 9, 0.09); --mui-warning-border: rgba(180, 83, 9, 0.26);
+ --mui-error-main: #C62828; --mui-error-text: #C62828; --mui-error-bg: rgba(198, 40, 40, 0.08); --mui-error-border: rgba(198, 40, 40, 0.26);
+ --mui-violet-text: #6D28D9; --mui-violet-bg: rgba(109, 40, 217, 0.08); --mui-violet-border: rgba(109, 40, 217, 0.25);
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --blueprint-grid: linear-gradient(rgba(0, 115, 230, 0.048) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 115, 230, 0.048) 1px, transparent 1px);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+ }
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body { font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif; background-color: var(--bg-canvas); background-image: var(--hero-glow); background-attachment: fixed; color: var(--text-primary); line-height: 1.65; overflow-x: hidden; min-height: 100vh; }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+ .cite-link { display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3; padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter); white-space: nowrap; text-decoration: none !important; }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+ #readingProgressBar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0073E6 0%, #6D28D9 50%, #16A34A 100%); z-index: 1300; transition: width 0.08s linear; }
+ #chartTooltip { position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px; padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong); box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45; }
+ #muiSnackbar { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none; z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF; border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+ #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ .mui-appbar { position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle); }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0; }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .brand-monogram { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32); color: #FFFFFF; font-weight: 800; font-size: 0.78rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 215px; }
+ .quick-search-input { width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease; }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700; padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none; }
+ .quick-jump-popover { position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto; border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250; }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px; border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit; }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch { display: inline-flex; align-items: center; padding: 2px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px; }
+ .mui-lang-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease; }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+ .mui-chip { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 10px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+ .mui-segmented { display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px; }
+ .mui-seg-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700; padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1); }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+ .layout-shell { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 26px; padding: 22px 20px 72px; align-items: start; }
+ html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+ .mui-sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 10px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 13px 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+ .mui-nav-link { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px; font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease; }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+ .side-theme-group, .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
+ .portal-reading-tools button { font: inherit; font-size: 0.76rem; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; }
+ .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); }
+
+ .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+ .drawer-backdrop.open { display: block; }
+ @media (max-width: 1023px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr); padding: 14px 14px 56px; }
+ .mui-sidebar { position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw); background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle); transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; }
+ .mui-sidebar.open { transform: translateX(0); }
+ .hide-sm { display: none !important; }
+ .quick-search-wrap { width: 140px; }
+ }
+
+ .ft-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+ .ft-hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1080px) { .ft-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+ .ft-manifesto { background-color: var(--bg-paper); background-image: var(--blueprint-grid); background-size: 28px 28px; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow-card); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+ .ft-manifesto::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0073E6 0%, #6D28D9 52%, #16A34A 100%); }
+ .ft-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+ .ft-h1 { font-size: clamp(1.48rem, 2.3vw, 2.08rem); font-weight: 800; line-height: 1.24; letter-spacing: -0.02em; margin-bottom: 10px; }
+ .ft-grad { background: linear-gradient(92deg, #0073E6 0%, #7C3AED 52%, #15803D 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+ html[data-theme="dark"] .ft-grad { background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 52%, #66BB6A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+ .ft-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
+ .ft-lead strong { color: var(--text-primary); }
+ .ft-ternus-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 640px) { .ft-ternus-strip { grid-template-columns: minmax(0, 1fr); } }
+ .ft-mini-pill { padding: 10px 12px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .ft-mini-pill b { display: block; font-size: 0.78rem; color: var(--mui-primary-lighter); margin-bottom: 2px; }
+ .ft-mini-pill span { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .ft-horizon-radar { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; }
+ .ft-hz-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+ .ft-hz-btn { padding: 9px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); font-family: inherit; font-size: 0.75rem; font-weight: 800; cursor: pointer; text-align: center; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1); }
+ .ft-hz-btn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+ .ft-hz-btn.active { background: var(--bg-active); border-color: #0073E6; color: var(--mui-primary-lighter); box-shadow: 0 0 0 1px #0073E6; }
+ .ft-hz-card { padding: 15px 16px; border-radius: 13px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between; }
+ .ft-hz-list { list-style: none; display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: var(--text-secondary); }
+ .ft-hz-list li { display: flex; align-items: flex-start; gap: 7px; }
+ .ft-hz-dot { width: 7px; height: 7px; border-radius: 50%; background: #0073E6; margin-top: 7px; flex-shrink: 0; }
+ .ft-hz-foot { display: flex; justify-content: space-between; padding-top: 9px; border-top: 1px dashed var(--border-default); font-size: 0.74rem; font-weight: 700; }
+
+ .ft-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+ .ft-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+ .ft-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+ html[data-theme="dark"] .ft-kicker { color: var(--mui-primary-light); }
+ .ft-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+ .ft-sub { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+ .ft-explorer { display: grid; grid-template-columns: 4.2fr 7.8fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-explorer { grid-template-columns: minmax(0, 1fr); } }
+ .ft-rail { display: flex; flex-direction: column; gap: 8px; }
+ .ft-rail-btn { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left; padding: 11px 13px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1); }
+ .ft-rail-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateX(2px); }
+ .ft-rail-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 4px 12px rgba(0, 115, 230, 0.14); }
+ .ft-rail-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+ .ft-rail-idx { width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0; }
+ .ft-rail-btn.active .ft-rail-idx { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .ft-rail-name { font-size: 0.82rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .ft-rail-tam { font-size: 0.69rem; font-weight: 700; color: var(--mui-primary-lighter); flex-shrink: 0; }
+
+ .ft-dossier { border-radius: 16px; border: 1px solid var(--border-subtle); background-color: var(--bg-paper-solid); background-image: var(--blueprint-grid); background-size: 26px 26px; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+ .ft-dossier h3 { font-size: 1.12rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+ .ft-dossier p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+ .ft-dossier-formula { padding: 10px 13px; border-radius: 10px; background: var(--bg-subtle); border-left: 3px solid #7C3AED; font-size: 0.79rem; font-weight: 600; color: var(--text-primary); }
+ .ft-gauge-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 680px) { .ft-gauge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ .ft-gauge-card { padding: 11px 12px; border-radius: 11px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+ .ft-gauge-card b { display: block; font-size: 1.05rem; color: var(--mui-primary-lighter); }
+ .ft-gauge-card span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+ .ft-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1040px) { .ft-split-75, .ft-split-57 { grid-template-columns: minmax(0, 1fr); } }
+ .ft-subbox { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+ .ft-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .ft-subhead h3 { font-size: 1.01rem; font-weight: 800; }
+ .ft-canvas-box { position: relative; width: 100%; height: 295px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+ .ft-canvas-box canvas { width: 100%; height: 100%; display: block; }
+ .ft-caption { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
+
+ .ft-thesis-stack { display: flex; flex-direction: column; gap: 9px; }
+ .ft-thesis-item { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-thesis-item b { display: block; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 3px; }
+ .ft-thesis-item p { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+ .ft-chip-matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-chip-box { padding: 11px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-chip-box .code { font-size: 0.73rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-chip-box h4 { font-size: 0.84rem; font-weight: 800; margin: 2px 0 4px; }
+ .ft-chip-box p { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.45; }
+
+ .ft-builder-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-builder-grid { grid-template-columns: minmax(0, 1fr); } }
+ .ft-switch-list { display: flex; flex-direction: column; gap: 8px; }
+ .ft-opt-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); cursor: pointer; transition: all 0.15s ease; }
+ .ft-opt-row:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+ .ft-opt-left { display: flex; align-items: center; gap: 9px; min-width: 0; }
+ .ft-opt-left input { width: 16px; height: 16px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .ft-opt-left b { font-size: 0.81rem; color: var(--text-primary); display: block; }
+ .ft-opt-left span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+ .ft-opt-add { font-size: 0.75rem; font-weight: 800; color: var(--mui-success-text); flex-shrink: 0; }
+ .ft-val-board { padding: 18px 20px; border-radius: 15px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; }
+ .ft-val-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-val-kpi { padding: 10px 12px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-val-kpi b { display: block; font-size: 1.16rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-val-kpi span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+ .ft-source-card { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease; }
+ .ft-source-card:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+ .ft-source-card b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+ .ft-source-card span { font-size: 0.72rem; color: var(--text-secondary); }
+ @media print { .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; } .layout-shell { display: block !important; padding: 0 !important; } }
+</style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <header class="mui-appbar">
+  <div class="mui-appbar-inner">
+   <div class="appbar-left">
+    <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+    </button>
+    <span class="brand-monogram mono">AMAT</span>
+    <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+     <span class="hide-sm" style="color:var(--text-muted);font-weight:600;" data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+     <span class="hide-sm" style="opacity:0.45;">/</span>
+     <span class="crumb-current" data-i18n-zh="应用材料 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="AMAT 2026–2032 Future Horizon Observatory">应用材料 2026–2032 未来战略与新增长曲线观测站</span>
+    </nav>
+    <span class="mui-chip mui-chip-violet mono hide-sm">$5B EPIC CENTER</span>
+    <span class="mui-chip mui-chip-success mono hide-sm">GAA × BSPDN × HBM</span>
+   </div>
+   <div class="appbar-right">
+    <div class="quick-search-wrap">
+     <span class="quick-search-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+     <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索未来引擎或2030估值…" aria-label="快速跳转模块" autocomplete="off" />
+     <span class="quick-search-kbd mono">⌘K</span>
+     <div id="quickJumpPopover" class="quick-jump-popover"></div>
+    </div>
+    <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+     <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+     <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+     <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></span>
+    </button>
+   </div>
+  </div>
+ </header>
+
+ <div class="layout-shell">
+  <aside id="muiSidebar" class="mui-sidebar" aria-label="未来战略模块导航">
+   <div class="sidebar-card">
+    <div class="sidebar-brand-top"><span class="mui-chip mui-chip-violet mono">AMAT · 2030 OBSERVATORY</span></div>
+    <div class="sidebar-title" data-i18n-zh="应用材料未来十年观测站" data-i18n-en="AMAT 2030 Strategic Observatory">应用材料未来十年观测站</div>
+    <p class="sidebar-subtitle" data-i18n-zh="$5B EPIC 协同研发中心 × GAA/BSPDN × HBM 与 3D DRAM × 混合键合 × High-NA 量测" data-i18n-en="$5B EPIC Center × GAA/BSPDN × HBM &amp; 3D DRAM × Hybrid Bonding × High-NA Metrology">$5B EPIC 协同研发中心 × GAA/BSPDN × HBM 与 3D DRAM × 混合键合 × High-NA 量测</p>
+    <div class="sidebar-mini-kpis">
+     <div class="sidebar-mini-row"><span class="sidebar-mini-label" data-i18n-zh="核心掌舵 (2013+)" data-i18n-en="CEO (2013+)">核心掌舵 (2013+)</span><span class="sidebar-mini-val mono">Gary Dickerson</span></div>
+     <div class="sidebar-mini-row"><span class="sidebar-mini-label" data-i18n-zh="CY26 设备增速指引" data-i18n-en="CY26 Systems Growth">CY26 设备增速指引</span><span class="sidebar-mini-val mono">&gt;40% YoY</span></div>
+     <div class="sidebar-mini-row"><span class="sidebar-mini-label" data-i18n-zh="EPIC 生态伙伴" data-i18n-en="EPIC Partners">EPIC 生态伙伴</span><span class="sidebar-mini-val mono">15 家 (台积电/Intel/三星等)</span></div>
+    </div>
+   </div>
+
+   <nav class="sidebar-card" aria-label="未来观测目录">
+<!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261126">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261126 · 22/44</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="applied_materials_amat2.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="asml_2026_2032.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (44)" data-i18n-en="All (44)">全部 (44)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (44)" data-i18n-en="Company (44)">公司深度 (44)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_12_fy2026e_50b.html" title="Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）" data-i18n-en="Abbott &amp; 12 Deep DiveReport (FY2026E ~$50B OverviewBreakdown)">Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）</span><span class="co-hub-meta mono">abbott_12_fy2026e_50b.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_20_2026_def_14a (1).html" title="Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）" data-i18n-en="Abbott &amp; 20 PeopleDeep DiveReport (2026 DEF 14A &amp;)">Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）</span><span class="co-hub-meta mono">abbott_20_2026_def_14a (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt (1).html" title="雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告" data-i18n-en="Abbott Laboratories (ABT) Corporate Culture &amp; Org Architecture Deep Dive">雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">abbott_laboratories_abt (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt.html" title="雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解" data-i18n-en="Abbott Laboratories (ABT) Business Model Deep DiveBreakdown">雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">abbott_laboratories_abt.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt2.html" title="雅培公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">雅培公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">abbott_laboratories_abt2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt3.html" title="雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承</span><span class="co-hub-meta mono">abbott_laboratories_abt3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_2026_2032.html" title="Adeia Inc. 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Adeia Inc. 2026–2032 &amp;">Adeia Inc. 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">adeia_inc_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_adea (1).html" title="Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告" data-i18n-en="Adeia Inc. (ADEA) Corporate Culture &amp; Org Architecture Deep Dive">Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">adeia_inc_adea (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_adea.html" title="Adeia Inc. (ADEA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. (ADEA) 商业模式架构深度拆解" data-i18n-en="Adeia Inc. (ADEA) Business Model Deep DiveBreakdown">Adeia Inc. (ADEA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">adeia_inc_adea.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_ip.html" title="Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承" data-i18n-en="Adeia Corporate Culture &amp;: IP, &amp;">Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承</span><span class="co-hub-meta mono">adeia_ip.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn (1).html" title="安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告" data-i18n-en="Amgen Inc. (AMGN) Corporate Culture &amp; Org Architecture Deep Dive">安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amgen_inc_amgn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn.html" title="安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解" data-i18n-en="Amgen Inc. (AMGN) Business Model Deep DiveBreakdown">安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amgen_inc_amgn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn2.html" title="安进公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">安进公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">amgen_inc_amgn2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn3.html" title="安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承</span><span class="co-hub-meta mono">amgen_inc_amgn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple1.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple1.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple2.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple3.html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple4.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat (1).html" title="应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告" data-i18n-en="Applied Materials (AMAT) Corporate Culture &amp; Org Architecture Deep Dive">应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">applied_materials_amat (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat.html" title="应用材料 Applied Materials (AMAT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料 Applied Materials (AMAT) 商业模式架构深度拆解" data-i18n-en="Applied Materials (AMAT) Business Model Deep DiveBreakdown">应用材料 Applied Materials (AMAT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">applied_materials_amat.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat2.html" title="应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承" data-i18n-en="Corporate Culture &amp;:, EPIC &amp;">应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承</span><span class="co-hub-meta mono">applied_materials_amat2.html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="applied_materials_amat3.html" title="应用材料 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">应用材料 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">applied_materials_amat3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_2026_2032.html" title="阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="ASML 2026–2032 &amp;">阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">asml_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_holding_n_v.html" title="阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告" data-i18n-en="ASML Holding N.V. Corporate Culture &amp; Org Architecture Deep Dive">阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">asml_holding_n_v.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_nasdaq_asml.html" title="阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解" data-i18n-en="ASML (NASDAQ: ASML) Business Model Deep DiveBreakdown">阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解</span><span class="co-hub-meta mono">asml_nasdaq_asml.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_nasdaq_asml2.html" title="阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承</span><span class="co-hub-meta mono">asml_nasdaq_asml2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo (1).html" title="博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告" data-i18n-en="Broadcom Inc. (AVGO) Corporate Culture &amp; Org Architecture Deep Dive">博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">broadcom_inc_avgo (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo.html" title="博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解" data-i18n-en="Broadcom Inc. (AVGO) Business Model Deep DiveBreakdown">博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解</span><span class="co-hub-meta mono">broadcom_inc_avgo.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo2.html" title="博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进" data-i18n-en="BroadcomCorporate Culture &amp;: 24, &amp; Trajectory">博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进</span><span class="co-hub-meta mono">broadcom_inc_avgo2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo3.html" title="博通公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Broadcom 2026–2032 &amp;">博通公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">broadcom_inc_avgo3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_2026_2032.html" title="Chewy 公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Chewy 2026–2032 &amp;">Chewy 公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">chewy_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_7_wow.html" title="Chewy 企业文化与组织操作系统：7大准则与WOW基因"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 企业文化与组织操作系统：7大准则与WOW基因" data-i18n-en="Chewy Corporate Culture &amp;: 7 &amp; WOW">Chewy 企业文化与组织操作系统：7大准则与WOW基因</span><span class="co-hub-meta mono">chewy_7_wow.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_chewy_inc.html" title="Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告" data-i18n-en="Chewy, Inc. Corporate Culture &amp; Org Architecture Deep Dive">Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">chewy_chewy_inc.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_chewy_inc_chwy.html" title="Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解" data-i18n-en="Chewy, Inc. (CHWY) Business Model Deep DiveBreakdown">Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解</span><span class="co-hub-meta mono">chewy_chewy_inc_chwy.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui (1).html" title="厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告" data-i18n-en="Ubiquiti Inc. (UI) Corporate Culture &amp; Org Architecture Deep Dive">厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">ubiquiti_inc_ui (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui.html" title="厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解" data-i18n-en="Ubiquiti Inc. (UI) Business Model Deep DiveBreakdown">厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解</span><span class="co-hub-meta mono">ubiquiti_inc_ui.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui2.html" title="厄比奎蒂企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂企业文化与组织操作系统图谱" data-i18n-en="Corporate Culture &amp;">厄比奎蒂企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">ubiquiti_inc_ui2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui3.html" title="厄比奎蒂 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">厄比奎蒂 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">ubiquiti_inc_ui3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_12_fy2025_1_66b_q3_2026_182_5m.html" title="VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）" data-i18n-en="VeriSign &amp; 12 Deep DiveReport (FY2025 $1.66B / Q3 2026 182.5M OverviewBreakdown)">VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）</span><span class="co-hub-meta mono">verisign_12_fy2025_1_66b_q3_2026_182_5m.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn (1).html" title="威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告" data-i18n-en="VeriSign, Inc. (VRSN) Corporate Culture &amp; Org Architecture Deep Dive">威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">verisign_inc_vrsn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn.html" title="威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解" data-i18n-en="VeriSign, Inc. (VRSN) Business Model Deep DiveBreakdown">威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">verisign_inc_vrsn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn2.html" title="威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手" data-i18n-en="Corporate Culture &amp;:, 928 People &amp; 26Y">威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手</span><span class="co-hub-meta mono">verisign_inc_vrsn2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn3.html" title="威瑞信 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">威瑞信 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">verisign_inc_vrsn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_nasdaq_vrsn_18_bidzos_calys_mcpherson_indelicarto_kaliski_kane_cote_gorelick.html" title="VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）" data-i18n-en="VeriSign (NASDAQ: VRSN) 18 &amp; OverviewDeep DiveReport (Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick)">VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）</span><span class="co-hub-meta mono">verisign_nasdaq_vrsn_18_bidzos_calys_mcpherson_indelicarto_kaliski_kane_cote_gorelick.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+    <div class="nav-section-label" data-i18n-zh="未来战略模块 (F0–F4)" data-i18n-en="Future Horizon (F0–F4)">未来战略模块 (F0–F4)</div>
+    <ul class="mui-nav-list">
+     <li><a href="#sec-f0" class="mui-nav-link active"><span class="nav-idx mono">F0</span><span data-i18n-zh="EPIC 新政与三阶时间窗" data-i18n-en="EPIC Era &amp; 3 Horizons">EPIC 新政与三阶时间窗</span></a></li>
+     <li><a href="#sec-f1" class="mui-nav-link"><span class="nav-idx mono">F1</span><span data-i18n-zh="六大增长引擎纵向深潜舱" data-i18n-en="6 Future Growth Engines">六大增长引擎纵向深潜舱</span></a></li>
+     <li><a href="#sec-f2" class="mui-nav-link"><span class="nav-idx mono">F2</span><span data-i18n-zh="80% WFE 增量与营收桥" data-i18n-en="80% WFE Drivers &amp; 2032 Bridge">80% WFE 增量与营收桥</span></a></li>
+     <li><a href="#sec-f3" class="mui-nav-link"><span class="nav-idx mono">F3</span><span data-i18n-zh="EPIC 15伙伴矩阵与 DRAM/封装" data-i18n-en="EPIC Ecosystem &amp; DRAM/Pkg">EPIC 15伙伴矩阵与 DRAM/封装</span></a></li>
+     <li><a href="#sec-f4" class="mui-nav-link"><span class="nav-idx mono">F4</span><span data-i18n-zh="2030 六千亿市值期权组装器" data-i18n-en="2030 $600B+ Optionality Lab">2030 六千亿市值期权组装器</span></a></li>
+    </ul>
+   </nav>
+
+   <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+    <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance &amp; Export">阅读与导出工具</div>
+    <div class="side-theme-group">
+     <button type="button" id="sideLightBtn" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+     <button type="button" id="sideDarkBtn" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+    </div>
+    <div class="side-tool-grid">
+     <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+     <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+    </div>
+   </div>
+  </aside>
+
+  <main class="ft-workspace">
+   <!-- F0: MANIFESTO + 3-HORIZON RADAR -->
+   <section id="sec-f0" class="ft-hero-grid">
+    <div class="ft-manifesto">
+     <div>
+      <div class="ft-badges">
+       <span class="mui-chip mui-chip-violet mono" data-i18n-zh="2026.10 里程碑：硅谷 $5B EPIC 中心正式揭幕" data-i18n-en="OCT 2026 MILESTONE: $5B EPIC CENTER UNVEILED">2026.10 里程碑：硅谷 $5B EPIC 中心正式揭幕</span>
+       <span class="mui-chip mui-chip-success mono">Q1 FY27 指引 $11.10B (+58% YoY)</span>
+      </div>
+      <h1 class="ft-h1" data-i18n-zh="应用材料未来十年（2026–2032）战略图谱：<span class='ft-grad'>不做孤立的单机卖铲人，做 AI 时代原子级工艺的协同总架构师</span>" data-i18n-en="Applied Materials' Next Decade (2026–2032): <span class='ft-grad'>Co-Architecting the Atomic-Level AI Computing Roadmap via EPIC</span>">
+       应用材料未来十年（2026–2032）战略图谱：<span class="ft-grad">不做孤立的单机卖铲人，做 AI 时代原子级工艺的协同总架构师</span>
+      </h1>
+      <p class="ft-lead">
+       站在 FY2026 <strong>$344.5亿 营收</strong>与 <strong>Q1 FY27 $111亿 季度指引</strong>的全新起跑线上
+       <a class="cite-link" href="https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-announces-fourth-quarter-and-fiscal-year-2026/" target="_blank" rel="noopener noreferrer">FY26 Q4 财报 ↗</a>，
+       CEO Gary Dickerson 正在重构半导体设备业的研发范式：2026 年 10 月，投资高达 <strong>$50亿的硅谷 EPIC 中心</strong>正式启用，首次把台积电、英特尔、三星、SK 海力士、美光、博通、Besi 及五所顶尖大学拉入同一洁净室<strong>“并行协同开发”</strong>，将材料到量产的周期压缩一半
+       <a class="cite-link" href="https://www.appliedmaterials.com/us/en/newsroom/press-releases/101226-applied-unveils-5b-epic-center-silicon-valley-accelerate-innovation-ai-era.html" target="_blank" rel="noopener noreferrer">EPIC 官方公报 ↗</a>。
+       当 AI 数据中心算力瓶颈从软件算法全面转向能效比（Tokens/s/Watt），GAA 晶体管、背面供电（BSPDN）、HBM 混合键合与 3D DRAM 正在把应用材料推向未来十年 WFE 增长的绝对中心。
+      </p>
+     </div>
+     <div class="ft-ternus-strip">
+      <div class="ft-mini-pill"><b>第一增长极：先进逻辑 GAA+BSPDN</b><span>晶体管全环绕栅极与背面供电双拐点，材料步骤密度翻倍</span></div>
+      <div class="ft-mini-pill"><b>第二增长极：HBM 与混合键合</b><span>Q4 DRAM 占比跃至 33%，增持 Besi ~20% 卡位 3D 芯粒封装</span></div>
+      <div class="ft-mini-pill"><b>第三增长极：EPIC 协同 + AGS</b><span>EPIC 目标至 2030 提升 +2% WFE 份额，AGS 迈向百亿年金</span></div>
+     </div>
+    </div>
+
+    <aside class="ft-horizon-radar" aria-label="三阶战略时间窗雷达">
+     <div><span class="ft-kicker mono">THREE-HORIZON S-CURVE RADAR</span><strong style="font-size:0.95rem;" data-i18n-zh="点击切换三大战略兑现时间窗" data-i18n-en="Select Strategic Horizon Window">点击切换三大战略兑现时间窗</strong></div>
+     <div class="ft-hz-tabs" id="hzTabs">
+      <button type="button" class="ft-hz-btn active" data-hz="0">H1 近程兑现<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2026–2027</span></button>
+      <button type="button" class="ft-hz-btn" data-hz="1">H2 中程放量<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2028–2029</span></button>
+      <button type="button" class="ft-hz-btn" data-hz="2">H3 远期奇点<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2030–2032</span></button>
+     </div>
+     <div class="ft-hz-card">
+      <div>
+       <span class="mui-chip mui-chip-primary mono" id="hzBadge">HORIZON 1 · 高确定性订单兑现期 (2026–2027)</span>
+       <h3 id="hzTitle" style="font-size:0.96rem;font-weight:800;margin:8px 0 6px;">Q1 FY27 $11.1B 爆发 × 先进封装 +70% × DRAM 扩产潮</h3>
+       <ul class="ft-hz-list" id="hzList">
+        <li><span class="ft-hz-dot"></span><span><strong>Semiconductor Systems &gt;40% 增速：</strong>2nm GAA 产线全面爬坡叠加 DRAM/HBM 扩产，驱动 CY26 设备大增。</span></li>
+        <li><span class="ft-hz-dot"></span><span><strong>先进封装迈向 $5B+：</strong>CY26 增速超 70%，受益于 AI 芯片 2.5D/3D 堆叠与混合键合渗透。</span></li>
+        <li><span class="ft-hz-dot"></span><span><strong>VeritySEM 20 切入 High-NA：</strong>新一代 eBeam CD-SEM 量测系统护航极紫外更薄光刻胶控制。</span></li>
+       </ul>
+      </div>
+      <div class="ft-hz-foot mono"><span id="hzProb" style="color:var(--mui-success-text);">兑现确定性：极高 (90%+)</span><span id="hzImpact" style="color:var(--mui-primary-lighter);">年化增量营收池：+$8B–$12B</span></div>
+     </div>
+    </aside>
+   </section>
+
+   <!-- F1: 6-ENGINE EXPLORER -->
+   <section id="sec-f1" class="ft-panel">
+    <div class="ft-panel-head">
+     <div><span class="ft-kicker mono">MODULE F1 · SIX NEXT-DECADE GROWTH ENGINES</span><h2 class="ft-h2" data-i18n-zh="六大未来增长引擎纵向深潜舱：技术支点、变现公式与商业化进度" data-i18n-en="6 Next-Decade Growth Engines: Tech Enablers &amp; Monetization Formulas">六大未来增长引擎纵向深潜舱：技术支点、变现公式与商业化进度</h2><p class="ft-sub" data-i18n-zh="点击左侧任一战略赛道，右侧实时切换其底层工艺抓手、潜在市场增量与关键路标。" data-i18n-en="Click any engine on the left rail to inspect its process architecture, TAM expansion, and milestones.">点击左侧任一战略赛道，右侧实时切换其底层工艺抓手、潜在市场增量与关键路标。</p></div>
+     <span class="mui-chip mui-chip-violet mono">6 S-CURVES · MASTER-DETAIL</span>
+    </div>
+    <div class="ft-explorer">
+     <div class="ft-rail" id="engineRail">
+      <button type="button" class="ft-rail-btn active" data-eng="0"><span class="ft-rail-left"><span class="ft-rail-idx mono">01</span><span class="ft-rail-name">$5B EPIC 协同研发中枢</span></span><span class="ft-rail-tam mono">+200bps WFE份额</span></button>
+      <button type="button" class="ft-rail-btn" data-eng="1"><span class="ft-rail-left"><span class="ft-rail-idx mono">02</span><span class="ft-rail-name">GAA 晶体管与背面供电 BSPDN</span></span><span class="ft-rail-tam mono">+$4B–$6B/年</span></button>
+      <button type="button" class="ft-rail-btn" data-eng="2"><span class="ft-rail-left"><span class="ft-rail-idx mono">03</span><span class="ft-rail-name">HBM 与 3D DRAM 架构跃迁</span></span><span class="ft-rail-tam mono">DRAM份额→23%+</span></button>
+      <button type="button" class="ft-rail-btn" data-eng="3"><span class="ft-rail-left"><span class="ft-rail-idx mono">04</span><span class="ft-rail-name">混合键合与先进封装平台</span></span><span class="ft-rail-tam mono">迈向 $5B+ 规模</span></button>
+      <button type="button" class="ft-rail-btn" data-eng="4"><span class="ft-rail-left"><span class="ft-rail-idx mono">05</span><span class="ft-rail-name">High-NA EUV 电子束量测控制</span></span><span class="ft-rail-tam mono">VeritySEM 20</span></button>
+      <button type="button" class="ft-rail-btn" data-eng="5"><span class="ft-rail-left"><span class="ft-rail-idx mono">06</span><span class="ft-rail-name">AGS AI 工厂自动化与百亿年金</span></span><span class="ft-rail-tam mono">$6.9B→$10B+</span></button>
+     </div>
+     <div class="ft-dossier">
+      <div>
+       <span class="mui-chip mui-chip-primary mono" id="engBadge">ENGINE 01 · $5B EPIC COLLABORATIVE R&amp;D CENTER</span>
+       <h3 id="engTitle">EPIC Center（硅谷桑尼维尔）：把“串联研发”改写为“并联协同”的产业操作系统</h3>
+       <p id="engDesc">2026 年 10 月揭幕的 EPIC 中心是全球最大的半导体工艺与设备协同研发基地。台积电、英特尔、三星、SK 海力士、美光五大芯片巨擘与博通、Besi、Advantest 等伙伴直接进驻应用材料洁净室，与 AMAT 科学家并行验证材料配方。机构测算，这种 2 倍速商业化将助力应用材料至 2030 年额外夺取约 2 个百分点的全球 WFE 市场份额。</p>
+       <div class="ft-dossier-formula mono" id="engFormula">变现飞轮：提前 3–5 年共创 POR 配方 → 锁死量产期高毛利集成设备订单 → 延续 15 年 AGS 订阅年金</div>
+      </div>
+      <div class="ft-gauge-grid" id="engGauges">
+       <div class="ft-gauge-card"><b class="mono">$5.0B</b><span>规划协同研发总投资</span></div>
+       <div class="ft-gauge-card"><b class="mono">15 家</b><span>首批芯片/设备/高校伙伴</span></div>
+       <div class="ft-gauge-card"><b class="mono">2x 提速</b><span>实验室到 HVM 量产周期</span></div>
+       <div class="ft-gauge-card"><b class="mono">+2% 份额</b><span>2030E 目标 WFE 份额增益</span></div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- F2: 7:5 SPLIT — WFE DRIVERS & 2032 BRIDGE -->
+   <section id="sec-f2" class="ft-split-75">
+    <div class="ft-subbox">
+     <div class="ft-subhead">
+      <div><span class="ft-kicker mono">MODULE F2A · WFE GROWTH DRIVERS &amp; 2032 REVENUE BRIDGE</span><h3 data-i18n-zh="为什么 80% 的 WFE 增量开支恰好落在应用材料的工具箱里？" data-i18n-en="Why 80% of WFE Growth Lands in AMAT's Core Toolbox">为什么 80% 的 WFE 增量开支恰好落在应用材料的工具箱里？</h3></div>
+      <div class="mui-segmented" id="fChartTabs">
+       <button type="button" class="mui-seg-btn active" data-fview="drivers">WFE 增量驱动拆解</button>
+       <button type="button" class="mui-seg-btn" data-fview="bridge">FY26→FY32E 营收桥</button>
+      </div>
+     </div>
+     <div class="ft-canvas-box"><canvas id="futureCanvas"></canvas></div>
+     <p class="ft-caption">管理层指引：2026–2027 年全球晶圆设备支出增长的 <strong>80%+</strong> 来自先进逻辑（GAA/BSPDN）、DRAM/HBM 与先进封装；叠加 AGS 中双位数（Mid-teens）持续增长，应用材料正稳步迈向 2032 年 $60B+ 营收蓝图。</p>
+    </div>
+
+    <div class="ft-subbox">
+     <div class="ft-subhead"><div><span class="ft-kicker mono">MODULE F2B · MATERIALS ENGINEERING THESIS</span><h3 data-i18n-zh="AI 算力瓶颈如何转化为材料工程的超级周期？" data-i18n-en="How AI Power Limits Fuel Materials Engineering">AI 算力瓶颈如何转化为材料工程的超级周期？</h3></div></div>
+     <div class="ft-thesis-stack">
+      <div class="ft-thesis-item"><b>① 光刻逼近物理极限，材料工程接棒“PPACt”</b><p>CEO Gary Dickerson 指出：AI 数据中心回报率取决于“每秒生成 Token 数与总拥有成本”。当光学微缩变贵，新材料（钌/钴金属互连、选择性外延、高介电常数薄膜）成为降功耗的核心杠杆。</p></div>
+      <div class="ft-thesis-item"><b>② 3D DRAM 迁移重构内存设备竞争格局</b><p>传统 NAND 偏重介质刻蚀（Lam Research 强项），而 DRAM 迈向 3D 架构与高深宽比电容后，导体刻蚀、外延与薄膜沉积比重激增，应用材料 DRAM 份额正从 19% 升向 23%+。</p></div>
+      <div class="ft-thesis-item"><b>③ 战略参股 Besi 20%，打通“前道+封装”真空边界</b><p>先进封装已从低毛利后道组装演变为前道级晶圆混合键合，AMAT 通过增持 Besi 至 ~20% 并纳入 EPIC，把芯片间微米级互联变成新的高毛利阵地。</p></div>
+     </div>
+    </div>
+   </section>
+
+   <!-- F3: 5:7 SPLIT — EPIC 15-PARTNER MATRIX & DRAM/PACKAGING TRAJECTORY -->
+   <section id="sec-f3" class="ft-split-57">
+    <div class="ft-subbox">
+     <div class="ft-subhead"><div><span class="ft-kicker mono">MODULE F3A · EPIC 15-PARTNER CO-INNOVATION MATRIX</span><h3 data-i18n-zh="EPIC 生态联盟：全球芯片巨头为何集体入驻桑尼维尔？" data-i18n-en="EPIC Ecosystem: 15 Founding, Innovation &amp; Research Partners">EPIC 生态联盟：全球芯片巨头为何集体入驻桑尼维尔？</h3></div></div>
+     <div class="ft-chip-matrix">
+      <div class="ft-chip-box"><span class="code mono">LOGIC FOUNDRY · 逻辑双雄</span><h4>TSMC &amp; Intel</h4><p>台积电与英特尔作为创始伙伴进驻，联手 EPIC 与俄勒冈研发中心加速 GAA、BSPDN 与下一代互连落地。</p></div>
+      <div class="ft-chip-box"><span class="code mono">MEMORY GIANTS · 存储三强</span><h4>Samsung, SK hynix, Micron</h4><p>全球三大 DRAM/HBM 巨头悉数签约，外加 KIOXIA 共同攻关 3D 存储单元结构与多层堆叠材料。</p></div>
+      <div class="ft-chip-box"><span class="code mono">SYSTEMS &amp; PACKAGING · 系统封装</span><h4>Broadcom, Besi, Advantest, SCREEN</h4><p>博通从 AI 系统架构反推封装需求，Besi 协同混合键合，Advantest 联调测试，形成异构集成闭环。</p></div>
+      <div class="ft-chip-box"><span class="code mono">ACADEMIA · 五大顶尖学府</span><h4>Stanford, UC Berkeley, UCLA, ASU, RPI</h4><p>打通高校基础材料发现到量产设备的“死亡之谷”，锁定未来十年 CFET 与新二维材料人才与专利。</p></div>
+     </div>
+    </div>
+
+    <div class="ft-subbox">
+     <div class="ft-subhead">
+      <div><span class="ft-kicker mono">MODULE F3B · DRAM &amp; ADVANCED PACKAGING ACCELERATION</span><h3 data-i18n-zh="2024–2030E DRAM 份额跃升与先进封装营收爬坡测算" data-i18n-en="2024–2030E DRAM Share Gain &amp; Packaging Ramp">2024–2030E DRAM 份额跃升与先进封装营收爬坡测算</h3></div>
+      <div class="mui-segmented" id="sChartTabs">
+       <button type="button" class="mui-seg-btn active" data-sview="dram">DRAM 设备占比 (%)</button>
+       <button type="button" class="mui-seg-btn" data-sview="pkg">先进封装营收 ($B)</button>
+      </div>
+     </div>
+     <div class="ft-canvas-box"><canvas id="siliconCanvas"></canvas></div>
+     <p class="ft-caption">商业推演：Q4 FY26 DRAM 在半导体设备中占比已达 <strong>33%</strong>（~$2.64B, +93% YoY），而先进封装业务正以 >70% 增速向管理层 <strong>$5B+</strong> 中期目标迈进。</p>
+    </div>
+   </section>
+
+   <!-- F4: INTERACTIVE 2030 VALUATION BUILDER -->
+   <section id="sec-f4" class="ft-panel">
+    <div class="ft-panel-head">
+     <div><span class="ft-kicker mono">MODULE F4 · INTERACTIVE 2030 OPTIONALITY &amp; VALUATION BUILDER</span><h2 class="ft-h2" data-i18n-zh="2030 迈向“$6,000亿+市值”期权组装实验室：勾选认可的增长极" data-i18n-en="2030 Path to $600B+ Market Cap: Toggle Growth Catalysts">2030 迈向“$6,000亿+市值”期权组装实验室：勾选认可的增长极</h2><p class="ft-sub" data-i18n-zh="自由开关五大未来业务期权并选择市场估值倍数，实时测算 FY2030E 营收、EPS 与目标总市值。" data-i18n-en="Toggle five future catalysts and select a P/E multiple to model AMAT's FY2030E EPS and market cap.">自由开关五大未来业务期权并选择市场估值倍数，实时测算 FY2030E 营收、EPS 与目标总市值。</p></div>
+     <div class="mui-segmented" id="peTabs">
+      <button type="button" class="mui-seg-btn" data-pe="22">周期 22x P/E</button>
+      <button type="button" class="mui-seg-btn active" data-pe="28">稳态 28x P/E</button>
+      <button type="button" class="mui-seg-btn" data-pe="34">平台溢价 34x P/E</button>
+     </div>
+    </div>
+    <div class="ft-builder-grid">
+     <div class="ft-switch-list">
+      <label class="ft-opt-row"><span class="ft-opt-left"><input type="checkbox" data-opt="gaa" checked /><span><b>期权 1：2nm GAA + 背面供电 BSPDN 全面量产</b><span>先进逻辑材料步骤密度翻倍，驱动高端沉积与外延放量</span></span></span><span class="ft-opt-add mono">+$6.5B 营收 · 58% GM</span></label>
+      <label class="ft-opt-row"><span class="ft-opt-left"><input type="checkbox" data-opt="hbm" checked /><span><b>期权 2：HBM4/5 与 3D DRAM 设备市占率升至 23%+</b><span>内存从平面向 3D 架构切换，AMAT 导体刻蚀与沉积受益</span></span></span><span class="ft-opt-add mono">+$5.5B 营收 · 56% GM</span></label>
+      <label class="ft-opt-row"><span class="ft-opt-left"><input type="checkbox" data-opt="pkg" checked /><span><b>期权 3：先进封装与 Besi 混合键合突破 $5B+</b><span>3D 芯粒堆叠成为 AI 算力标配，封装设备高毛利化</span></span></span><span class="ft-opt-add mono">+$4.2B 营收 · 52% GM</span></label>
+      <label class="ft-opt-row"><span class="ft-opt-left"><input type="checkbox" data-opt="ags" checked /><span><b>期权 4：AGS 服务年金迈向 $10B+（AI 预测维护）</b><span>装机基数扩大叠加软件订阅提价，营业利润率迈向 33%</span></span></span><span class="ft-opt-add mono">+$3.8B 营收 · 38% GM</span></label>
+      <label class="ft-opt-row"><span class="ft-opt-left"><input type="checkbox" data-opt="epic" /><span><b>期权 5：远期奇点 — EPIC 兑现 +2% WFE 份额与 CFET</b><span>默认未勾选，开启可观察 2030–2032 份额突破弹性</span></span></span><span class="ft-opt-add mono">+$4.5B 营收 · 58% GM</span></label>
+     </div>
+     <div class="ft-val-board">
+      <div class="ft-val-kpis">
+       <div class="ft-val-kpi"><b class="mono" id="optRevOut">$59.0B</b><span>FY2030E 推演总营收</span></div>
+       <div class="ft-val-kpi"><b class="mono" id="optNetOut">$18.1B</b><span>FY2030E 推演净利润</span></div>
+       <div class="ft-val-kpi"><b class="mono" id="optEpsOut">$24.63</b><span>FY2030E 摊薄 EPS (含缩股)</span></div>
+       <div class="ft-val-kpi"><b class="mono" id="optCapOut" style="color:var(--mui-success-text);">$507B</b><span>FY2030E 隐含目标总市值</span></div>
+      </div>
+      <div class="ft-canvas-box" style="height:155px;"><canvas id="optMiniCanvas"></canvas></div>
+     </div>
+    </div>
+   </section>
+
+   <section class="ft-panel" aria-label="权威公告与前瞻信源">
+    <div class="ft-panel-head" style="margin-bottom:14px;padding-bottom:10px;"><div><span class="ft-kicker mono">VERIFIED PRIMARY SOURCES</span><h2 class="bm-h2" data-i18n-zh="官方技术路线公报、EPIC 中心新闻稿与行业前瞻信源" data-i18n-en="Official Tech Releases, EPIC Announcements &amp; Roadmap Sources">官方技术路线公报、EPIC 中心新闻稿与行业前瞻信源</h2></div></div>
+    <div class="ft-sources-grid">
+     <a class="ft-source-card" href="https://www.appliedmaterials.com/us/en/newsroom/press-releases/101226-applied-unveils-5b-epic-center-silicon-valley-accelerate-innovation-ai-era.html" target="_blank" rel="noopener noreferrer"><b>AMAT Unveils $5B EPIC Center (Oct 2026) ↗</b><span>硅谷桑尼维尔全球最大半导体协同研发中心正式揭幕及 15 家伙伴名单</span></a>
+     <a class="ft-source-card" href="https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-announces-fourth-quarter-and-fiscal-year-2026/" target="_blank" rel="noopener noreferrer"><b>AMAT FY2026 Q4 Release: VeritySEM 20 &amp; Besi ↗</b><span>High-NA EUV 量测系统 VeritySEM 20 发布及增持 Besi 至 ~20% 股权披露</span></a>
+     <a class="bm-source-item ft-source-card" href="https://futurumgroup.com/insights/applied-materials-epic-center-ties-2x-faster-innovation-to-a-2-wfe-share-gain-by-2030/" target="_blank" rel="noopener noreferrer"><b>Futurum: EPIC Ties 2x R&amp;D Speed to +2% WFE Share ↗</b><span>分析 EPIC 并行研发模式如何推动应用材料至 2030 年夺取额外 2% WFE 份额</span></a>
+     <a class="ft-source-card" href="https://www.fool.com/earnings/call-transcripts/2026/05/15/applied-materials-amat-q2-2026-earnings-transcript/" target="_blank" rel="noopener noreferrer"><b>AMAT Q2 FY2026 Earnings Transcript ↗</b><span>管理层披露先进逻辑/DRAM/封装占据 80% WFE 增长及 AGS 中双位数目标</span></a>
+    </div>
+   </section>
+  </main>
+ </div>
+
+ <script>
+ (function () {
+  'use strict';
+  var STORAGE_THEME_KEY = 'amat_portal_theme_v1', STORAGE_LANG_KEY = 'amat_portal_lang_v1';
+  var state = { theme: 'light', lang: 'zh', fView: 'drivers', sView: 'dram', pe: 28 }, hits = { futureCanvas: [], siliconCanvas: [] };
+
+  function showToast(msg) { var bar = document.getElementById('muiSnackbar'); bar.textContent = msg; bar.classList.add('show'); clearTimeout(bar._t); bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2000); }
+  function getPalette() {
+   var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+   return { dark: dark, text: dark ? '#F3F6F9' : '#0F1924', sub: dark ? '#B2BAC2' : '#334155', tick: dark ? '#94A3B8' : '#475569', grid: dark ? 'rgba(148,163,184,0.14)' : 'rgba(100,116,139,0.15)', blue: dark ? '#3399FF' : '#0073E6', violet: dark ? '#A78BFA' : '#7C3AED', green: dark ? '#22C55E' : '#16A34A', amber: dark ? '#FFB74D' : '#D97706' };
+  }
+  function applyTheme(t, silent) {
+   state.theme = (t === 'dark') ? 'dark' : 'light'; document.documentElement.setAttribute('data-theme', state.theme);
+   var ic = document.getElementById('appbarThemeIcon');
+   if (ic) ic.innerHTML = state.theme === 'dark' ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+   drawAll(); if (!silent) showToast(state.theme === 'dark' ? '已切换至深色蓝图模式' : '已切换至 MUI 浅色模式');
+  }
+  function applyLang(lang, silent) {
+   state.lang = (lang === 'en') ? 'en' : 'zh'; document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+   document.getElementById('langZhBtn').classList.toggle('active', state.lang === 'zh'); document.getElementById('langEnBtn').classList.toggle('active', state.lang === 'en');
+   document.querySelectorAll('[data-i18n-zh]').forEach(function (n) { var v = n.getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh'); if (v !== null) { if (v.indexOf('<span') !== -1) n.innerHTML = v; else n.textContent = v; } });
+   drawAll(); if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+  }
+
+  var HORIZONS = [
+   { badge: 'HORIZON 1 · 高确定性订单兑现期 (2026–2027)', title: 'Q1 FY27 $11.1B 爆发 × 先进封装 +70% × DRAM 扩产潮', items: ['<strong>Semiconductor Systems &gt;40% 增速：</strong>2nm GAA 产线全面爬坡叠加 DRAM/HBM 扩产，驱动 CY26 设备大增。', '<strong>先进封装迈向 $5B+：</strong>CY26 增速超 70%，受益于 AI 芯片 2.5D/3D 堆叠与混合键合渗透。', '<strong>VeritySEM 20 切入 High-NA：</strong>新一代 eBeam CD-SEM 量测系统护航极紫外更薄光刻胶控制。'], prob: '兑现确定性：极高 (90%+)', impact: '年化增量营收池：+$8B–$12B' },
+   { badge: 'HORIZON 2 · 结构性份额扩张期 (2028–2029)', title: '背面供电 BSPDN 普及 × EPIC 并行研发成果量产 × AGS 破百亿', items: ['<strong>背面供电 BSPDN 全面导入：</strong>晶圆背面金属布线与抛光大幅增加 CMP、沉积与选择性刻蚀设备强度。', '<strong>EPIC 首批联合配方落地：</strong>与台积电/Intel/三星共研工艺进入高良率量产，目标夺取 +2% WFE 份额。', '<strong>AGS 软件与 AI 诊断放量：</strong>全球装机基数扩大驱动 AGS 向 $10B 年金与 33%+ 利润率迈进。'], prob: '兑现确定性：中高 (75%–80%)', impact: '年化增量营收池：+$15B–$20B' },
+   { badge: 'HORIZON 3 · 原子级架构奇点期 (2030–2032)', title: '3D DRAM 垂直堆叠 × CFET 互补场效应晶体管 × 碳化硅/光互连', items: ['<strong>3D DRAM 架构全面切换：</strong>存储行业告别平面微缩，转向多层堆叠大幅推高外延与导体刻蚀强度。', '<strong>CFET 与原子层沉积普及：</strong>N/P 型晶体管垂直堆叠，要求原子级精度薄膜与选择性移除工艺。', '<strong>玻璃基板与 CPO 光电共封：</strong>算力互连光进铜退，打开新型面板级封装与材料工艺蓝海。'], prob: '兑现确定性：远期期权 (50%–60%)', impact: '年化增量营收池：+$25B+' }
+  ];
+  document.getElementById('hzTabs').addEventListener('click', function (e) {
+   var b = e.target.closest('[data-hz]'); if (!b) return;
+   var idx = parseInt(b.getAttribute('data-hz'), 10) || 0;
+   document.querySelectorAll('#hzTabs .ft-hz-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+   var hz = HORIZONS[idx];
+   document.getElementById('hzBadge').textContent = hz.badge; document.getElementById('hzTitle').textContent = hz.title;
+   document.getElementById('hzList').innerHTML = hz.items.map(function (t) { return '<li><span class="ft-hz-dot"></span><span>' + t + '</span></li>'; }).join('');
+   document.getElementById('hzProb').textContent = hz.prob; document.getElementById('hzImpact').textContent = hz.impact;
+  });
+
+  var ENGINES = [
+   { badge: 'ENGINE 01 · $5B EPIC COLLABORATIVE R&D CENTER', title: 'EPIC Center（硅谷桑尼维尔）：把“串联研发”改写为“并联协同”的产业操作系统', desc: '2026 年 10 月揭幕的 EPIC 中心是全球最大的半导体工艺与设备协同研发基地。台积电、英特尔、三星、SK 海力士、美光五大芯片巨擘与博通、Besi、Advantest 等伙伴直接进驻应用材料洁净室，与 AMAT 科学家并行验证材料配方。机构测算，这种 2 倍速商业化将助力应用材料至 2030 年额外夺取约 2 个百分点的全球 WFE 市场份额。', formula: '变现飞轮：提前 3–5 年共创 POR 配方 → 锁死量产期高毛利集成设备订单 → 延续 15 年 AGS 订阅年金', gauges: [['$5.0B', '规划协同研发总投资'], ['15 家', '首批芯片/设备/高校伙伴'], ['2x 提速', '实验室到 HVM 量产周期'], ['+2% 份额', '2030E 目标 WFE 份额增益']] },
+   { badge: 'ENGINE 02 · GAA & BACKSIDE POWER DELIVERY (BSPDN)', title: '先进逻辑双拐点：从 FinFET 到 GAA 全环绕栅极与晶圆背面供电', desc: '2nm 以下逻辑芯片必须采用纳米片 GAA 晶体管与背面供电网络（BSPDN），这不仅需要全新的选择性外延与原子层沉积，更要求在晶圆背面进行超高精度减薄、CMP 平坦化与铜/钌互连——这正是应用材料全球市占率第一的绝对腹地。', formula: '利润传导：每一代逻辑节点材料工程步骤数增长 >30% → 直接转化为 AMAT 单厂设备价值量跃升', gauges: [['$16.47B', 'FY26 逻辑与代工设备营收'], ['#1 市占', '外延/CMP/注入工艺领先'], ['BSPDN', '新增晶圆背面全套工艺需求'], ['2026–2029', '2nm/A16 扩产主窗口']] },
+   { badge: 'ENGINE 03 · HBM & 3D DRAM SINGULARITY', title: '内存超级周期：HBM 高带宽内存与未来 3D DRAM 的材料红利', desc: 'AI 大模型推理对显存带宽的贪婪需求引爆 HBM 扩产，Q4 FY26 AMAT DRAM 营收同比暴涨 +93% 至 ~$2.64B。更深远的是，DRAM 未来向 3D 垂直架构演进将使工艺重心从 NAND 风格的介质刻蚀转向导体刻蚀与外延，全面利好应用材料。', formula: '变现逻辑：HBM 堆叠 TSV 工艺强度翻倍 + 3D DRAM 迁移驱动 AMAT 内存市占率由 19% 升向 23%+', gauges: [['+93% YoY', 'Q4 FY26 DRAM 营收暴增'], ['33%', 'Q4 DRAM 占设备营收比重'], ['22–23%', '2026–27E DRAM 市占目标'], ['3D DRAM', '远期材料工程更大弹性']] },
+   { badge: 'ENGINE 04 · HYBRID BONDING & ADVANCED PACKAGING', title: '异构集成浪潮：先进封装迈向 $5B+ 与战略持股 Besi 20%', desc: '随着单颗芯片光刻面积逼近光罩极限，2.5D/3D 芯粒（Chiplet）堆叠与无凸点混合键合（Hybrid Bonding）成为延续摩尔定律的唯一出路。应用材料先进封装营收 CY26 增速超 70%，并通过加速协议增持混合键合龙头 Besi 至约 20%。', formula: '变现逻辑：联合 Besi 提供“前道级清洗/沉积/CMP + 混合键合”交钥匙方案 → 切入 $5B+ 高毛利新赛道', gauges: [['>70%', 'CY26 先进封装预期增速'], ['$5.0B+', '中期先进封装营收目标'], ['~20%', '战略入股 Besi 持股比例'], ['Broadcom', '加入 EPIC 共研 AI 封装']] },
+   { badge: 'ENGINE 05 · HIGH-NA EUV EBEAM METROLOGY', title: 'High-NA EUV 时代的“火眼金睛”：VeritySEM 20 电子束量测', desc: '当极紫外光刻步入 High-NA 时代，光刻胶更薄、线宽进入埃米级，传统光学检测已无法精准分辨纳米级图形缺陷。2026 年 11 月发布的 VeritySEM 20 采用前沿电子束成像与 AI 算法加速配方生成，强力补齐 AMAT 在过程控制领域的版图。', formula: '战略定位：与沉积/刻蚀主设备形成“工艺+量测”闭环，提升整线良率调优话语权', gauges: [['VeritySEM 20', '2026 Q4 最新 CD-SEM 发布'], ['High-NA EUV', '专为更薄光刻胶窗口设计'], ['AI 配方', '大幅缩短量测建模时间'], ['工艺闭环', '联动刻蚀与沉积实时纠偏']] },
+   { badge: 'ENGINE 06 · AGS AI-DRIVEN RECURRING ANNUITY', title: 'Applied Global Services：从传统备件维修升级为 AI 智慧工厂底座', desc: 'AGS 营收已达 $6.90B，约三分之二为续约率超 90% 的多年期订阅合约，Q4 营业利润率创下 30.5% 新高。随着全球新建晶圆厂分布于美、欧、日、台、韩，高度自动化的远程诊断与智能排产软件正推动 AGS 向百亿美元级高利润年金跃升。', formula: '变现逻辑：设备装机量每年净增 + AI 自动化软件渗透 → 支撑 AGS 中双位数稳健复利', gauges: [['$6.90B', 'FY2026 AGS 营收 (+20.2%)'], ['>90%', '订阅服务合约续约率'], ['30.5%', 'Q4 FY26 营业利润率'], ['$10B+', '2030E AGS 年金规模目标']] }
+  ];
+  document.getElementById('engineRail').addEventListener('click', function (e) {
+   var b = e.target.closest('[data-eng]'); if (!b) return;
+   var idx = parseInt(b.getAttribute('data-eng'), 10) || 0;
+   document.querySelectorAll('#engineRail .ft-rail-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+   var eg = ENGINES[idx];
+   document.getElementById('engBadge').textContent = eg.badge; document.getElementById('engTitle').textContent = eg.title;
+   document.getElementById('engDesc').textContent = eg.desc; document.getElementById('engFormula').textContent = eg.formula;
+   document.getElementById('engGauges').innerHTML = eg.gauges.map(function (g) { return '<div class="ft-gauge-card"><b class="mono">' + g[0] + '</b><span>' + g[1] + '</span></div>'; }).join('');
+  });
+
+  function prepCanvas(id) {
+   var c = document.getElementById(id); if (!c) return null;
+   var rect = c.getBoundingClientRect(), w = Math.max(260, rect.width || 480), h = Math.max(135, rect.height || 260), dpr = Math.min(window.devicePixelRatio || 1, 2);
+   c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+   var ctx = c.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+   return { c: c, ctx: ctx, w: w, h: h };
+  }
+  function roundRect(ctx, x, y, w, h, r) { var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2); ctx.beginPath(); ctx.moveTo(x + rr, y); ctx.arcTo(x + w, y, x + w, y + h, rr); ctx.arcTo(x + w, y + h, x, y + h, rr); ctx.arcTo(x, y + h, x, y, rr); ctx.arcTo(x, y, x + w, y, rr); ctx.closePath(); }
+
+  function drawFutureCanvas() {
+   var env = prepCanvas('futureCanvas'); if (!env) return;
+   var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(); hits.futureCanvas = [];
+   var pad = { top: 28, right: 20, bottom: 42, left: 52 }, pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+   if (state.fView === 'drivers') {
+    var segs = [
+     { name: '先进逻辑 (GAA+BSPDN)', pct: 38, col: pal.blue, tip: '2nm GAA 与背面供电占 2026–2027 WFE 增量最大份额' },
+     { name: 'DRAM / HBM 内存', pct: 28, col: pal.violet, tip: 'AI 显存需求驱动 DRAM 扩产，Q4 AMAT DRAM 暴涨 +93%' },
+     { name: '先进封装 (2.5D/3D)', pct: 14, col: pal.green, tip: '三项合计贡献全球 WFE 支出增长的 80%+' },
+     { name: '成熟/ICAPS 与 NAND', pct: 20, col: pal.amber, tip: '功率/光学芯片与闪存温和复苏贡献约 20% 增量' }
+    ];
+    for (var g = 0; g <= 4; g++) { var gv = g * 10, gy = pad.top + ph - (gv / 42) * ph; ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke(); ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right'; ctx.fillText(gv + '%', pad.left - 8, gy + 4); }
+    var slot = pw / 4, bw = Math.min(48, slot * 0.56);
+    segs.forEach(function (s, i) {
+     var x = pad.left + i * slot + (slot - bw) / 2, bh = (s.pct / 42) * ph, yt = pad.top + ph - bh;
+     ctx.fillStyle = s.col; roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+     ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.fillText(s.pct + '%', x + bw / 2, yt - 6);
+     ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif'; ctx.fillText(s.name, x + bw / 2, pad.top + ph + 20);
+     hits.futureCanvas.push({ x: x, y: yt, w: bw, h: bh, title: s.name, body: s.tip });
+    });
+   } else {
+    var steps = [
+     { lbl: 'FY26基准', v: 34.45, b: 0, col: pal.blue, tip: 'FY2026 实际总营收: $34.45B' },
+     { lbl: '+GAA/BSPDN', v: 8.5, b: 34.45, col: pal.violet, tip: '先进逻辑 2nm/1.4nm 工艺步数扩容贡献 +$8.5B' },
+     { lbl: '+HBM/3D内存', v: 7.2, b: 42.95, col: pal.green, tip: 'HBM4/5 与 3D DRAM 架构切换贡献 +$7.2B' },
+     { lbl: '+先进封装', v: 5.0, b: 50.15, col: pal.amber, tip: '混合键合与芯粒堆叠跃升贡献 +$5.0B' },
+     { lbl: '+AGS百亿化', v: 6.2, b: 55.15, col: pal.green, tip: '装机基数与 AI 智慧工厂订阅贡献 +$6.2B' },
+     { lbl: 'FY32E蓝图', v: 61.35, b: 0, col: pal.blue, tip: 'FY2032E 远期营收蓝图: ~$61.4B (毛利率迈向 53%+)' }
+    ];
+    var maxB = 68;
+    for (var k = 0; k <= 4; k++) { var kv = Math.round((maxB / 4) * k), ky = pad.top + ph - (k / 4) * ph; ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke(); ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right'; ctx.fillText('$' + kv + 'B', pad.left - 8, ky + 4); }
+    var sW = pw / 6, bW = Math.min(44, sW * 0.58);
+    steps.forEach(function (s, i) {
+     var x = pad.left + i * sW + (sW - bW) / 2, yt = pad.top + ph - ((s.b + s.v) / maxB) * ph, yb = pad.top + ph - (s.b / maxB) * ph, bh = Math.max(5, yb - yt);
+     ctx.fillStyle = s.col; roundRect(ctx, x, yt, bW, bh, 5); ctx.fill();
+     ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.fillText((s.b > 0 ? '+' : '') + '$' + s.v.toFixed(1) + 'B', x + bW / 2, yt - 6);
+     ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif'; ctx.fillText(s.lbl, x + bW / 2, pad.top + ph + 20);
+     hits.futureCanvas.push({ x: x, y: yt, w: bW, h: bh, title: s.lbl, body: s.tip });
+    });
+   }
+  }
+
+  function drawSiliconCanvas() {
+   var env = prepCanvas('siliconCanvas'); if (!env) return;
+   var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(); hits.siliconCanvas = [];
+   var pad = { top: 28, right: 22, bottom: 40, left: 52 }, pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+   var yrs = ['FY24', 'FY25', 'FY26', 'Q4 FY26', '2028E', '2030E'];
+   if (state.sView === 'dram') {
+    var share = [22, 26, 30, 33, 35, 37];
+    for (var g = 0; g <= 4; g++) { var gv = g * 10, gy = pad.top + ph - (gv / 42) * ph; ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke(); ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right'; ctx.fillText(gv + '%', pad.left - 8, gy + 4); }
+    ctx.strokeStyle = pal.violet; ctx.lineWidth = 2.6; ctx.beginPath();
+    share.forEach(function (v, idx) { var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / 42) * ph; if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py); });
+    ctx.stroke();
+    share.forEach(function (v, idx) {
+     var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / 42) * ph;
+     ctx.fillStyle = idx === 3 ? pal.green : pal.violet; ctx.beginPath(); ctx.arc(px, py, 4.5, 0, Math.PI * 2); ctx.fill();
+     ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.fillText(v + '%', px, py - 9);
+     ctx.fillStyle = pal.tick; ctx.fillText(yrs[idx], px, pad.top + ph + 20);
+     hits.siliconCanvas.push({ x: px - 12, y: py - 12, w: 24, h: 24, title: yrs[idx] + ' DRAM 占比', body: 'DRAM 占半导体设备营收比重达 ' + v + '%' });
+    });
+   } else {
+    var pkg = [1.5, 2.1, 3.6, 4.4, 5.5, 6.8], maxP = 7.5;
+    for (var m = 0; m <= 3; m++) { var mv = m * 2.5, my = pad.top + ph - (mv / maxP) * ph; ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke(); ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right'; ctx.fillText('$' + mv.toFixed(1) + 'B', pad.left - 8, my + 4); }
+    var slot = pw / 6, bw = Math.min(40, slot * 0.54);
+    yrs.forEach(function (y, i) {
+     var x = pad.left + i * slot + (slot - bw) / 2, bh = (pkg[i] / maxP) * ph, yt = pad.top + ph - bh;
+     ctx.fillStyle = i >= 3 ? pal.green : pal.blue; roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+     ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.fillText('$' + pkg[i].toFixed(1) + 'B', x + bw / 2, yt - 6);
+     ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.fillText(y, x + bw / 2, pad.top + ph + 20);
+     hits.siliconCanvas.push({ x: x, y: yt, w: bw, h: bh, title: y + ' 先进封装规模', body: '预计先进封装及混合键合贡献约 $' + pkg[i].toFixed(1) + 'B' });
+    });
+   }
+  }
+
+  var OPT_DATA = { gaa: { rev: 6.5, net: 2.8 }, hbm: { rev: 5.5, net: 2.3 }, pkg: { rev: 4.2, net: 1.6 }, ags: { rev: 3.8, net: 1.1 }, epic: { rev: 4.5, net: 2.0 } };
+  var miniCaps = [304, 345, 507];
+  function drawOptMiniCanvas() {
+   var env = prepCanvas('optMiniCanvas'); if (!env) return;
+   var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+   var pad = { top: 22, right: 18, bottom: 24, left: 46 }, pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+   var lbls = ['当前市值', '2030基础盘', '2030含期权'], maxV = Math.max(650, Math.ceil(Math.max.apply(null, miniCaps) * 1.15));
+   ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+   var slot = pw / 3, bw = Math.min(54, slot * 0.5);
+   miniCaps.forEach(function (v, i) {
+    var x = pad.left + i * slot + (slot - bw) / 2, bh = (v / maxV) * ph, yt = pad.top + ph - bh;
+    ctx.fillStyle = i === 2 ? pal.green : (i === 1 ? pal.blue : pal.violet); roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+    ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.fillText('$' + Math.round(v) + 'B', x + bw / 2, yt - 6);
+    ctx.fillStyle = pal.tick; ctx.font = '10.5px sans-serif'; ctx.fillText(lbls[i], x + bw / 2, pad.top + ph + 16);
+   });
+  }
+  function recalcOptionality() {
+   var baseRev = 39.0, baseNet = 10.3, sh2030 = 0.735, addRev = 0, addNet = 0;
+   document.querySelectorAll('[data-opt]').forEach(function (chk) { if (chk.checked) { var d = OPT_DATA[chk.getAttribute('data-opt')]; if (d) { addRev += d.rev; addNet += d.net; } } });
+   var totRev = baseRev + addRev, totNet = baseNet + addNet, eps = totNet / sh2030, mcapB = totNet * state.pe, baseMcapB = baseNet * state.pe;
+   document.getElementById('optRevOut').textContent = '$' + totRev.toFixed(1) + 'B';
+   document.getElementById('optNetOut').textContent = '$' + totNet.toFixed(1) + 'B';
+   document.getElementById('optEpsOut').textContent = '$' + eps.toFixed(2);
+   document.getElementById('optCapOut').textContent = '$' + Math.round(mcapB) + 'B';
+   miniCaps = [304, baseMcapB, mcapB]; drawOptMiniCanvas();
+  }
+  document.querySelectorAll('[data-opt]').forEach(function (chk) { chk.addEventListener('change', recalcOptionality); });
+  document.getElementById('peTabs').addEventListener('click', function (e) {
+   var b = e.target.closest('[data-pe]'); if (!b) return;
+   state.pe = parseInt(b.getAttribute('data-pe'), 10) || 28;
+   document.querySelectorAll('#peTabs .mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+   recalcOptionality();
+  });
+
+  function bindSeg(gid, attr, skey, fn) {
+   document.getElementById(gid).addEventListener('click', function (e) {
+    var b = e.target.closest('[' + attr + ']'); if (!b) return;
+    state[skey] = b.getAttribute(attr);
+    document.querySelectorAll('#' + gid + ' .mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+    fn();
+   });
+  }
+  bindSeg('fChartTabs', 'data-fview', 'fView', drawFutureCanvas);
+  bindSeg('sChartTabs', 'data-sview', 'sView', drawSiliconCanvas);
+  ['futureCanvas', 'siliconCanvas'].forEach(function (cid) {
+   var c = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+   c.addEventListener('mousemove', function (ev) {
+    var r = c.getBoundingClientRect(), mx = ev.clientX - r.left, my = ev.clientY - r.top, arr = hits[cid] || [], hit = null;
+    for (var i = 0; i < arr.length; i++) { if (mx >= arr[i].x && mx <= arr[i].x + arr[i].w && my >= arr[i].y && my <= arr[i].y + arr[i].h) { hit = arr[i]; break; } }
+    if (hit) { tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>'; tip.style.display = 'block'; tip.style.left = Math.min(window.innerWidth - 300, ev.clientX + 14) + 'px'; tip.style.top = Math.max(12, ev.clientY - 28) + 'px'; }
+    else tip.style.display = 'none';
+   });
+   c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  });
+  function drawAll() { drawFutureCanvas(); drawSiliconCanvas(); drawOptMiniCanvas(); }
+
+  var QITEMS = [
+   { id: 'sec-f0', t: 'F0 EPIC 新政与三阶战略时间窗雷达', s: '2026–2032 近程/中程/远期三大兑现阶段' },
+   { id: 'sec-f1', t: 'F1 六大未来增长引擎纵向深潜舱', s: '$5B EPIC · GAA/BSPDN · HBM/3D DRAM · 混合键合 · VeritySEM 20' },
+   { id: 'sec-f2', t: 'F2 80% WFE 增量与 2032 营收桥', s: '先进逻辑+DRAM+封装驱动迈向 $61B+ 营收蓝图' },
+   { id: 'sec-f3', t: 'F3 EPIC 15伙伴矩阵与 DRAM/封装爬坡', s: '台积电/Intel/三星/SK海力士/美光 · 先进封装 $5B+ 目标' },
+   { id: 'sec-f4', t: 'F4 2030 冲击 $600B+ 市值期权组装器', s: '自由开关五大增长期权与估值倍数实时测算 EPS' }
+  ];
+  var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+  function renderQ(kw) {
+   var q = (kw || '').trim().toLowerCase(), m = QITEMS.filter(function (x) { return !q || x.t.toLowerCase().indexOf(q) !== -1 || x.s.toLowerCase().indexOf(q) !== -1; });
+   qPop.innerHTML = m.map(function (x) { return '<button type="button" class="quick-jump-item" data-jump="#' + x.id + '"><span class="quick-jump-item-title">' + x.t + '</span><span class="quick-jump-item-sub">' + x.s + '</span></button>'; }).join('');
+   qPop.classList.toggle('open', m.length > 0);
+  }
+  qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+  qIn.addEventListener('input', function () { renderQ(qIn.value); });
+  qPop.addEventListener('click', function (e) { var jb = e.target.closest('[data-jump]'); if (!jb) return; document.querySelector(jb.getAttribute('data-jump')).scrollIntoView({ behavior: 'smooth', block: 'start' }); qPop.classList.remove('open'); });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); qIn.focus(); } });
+
+  var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+  sbBtn.addEventListener('click', function () {
+   if (window.innerWidth < 1024) { var open = sb.classList.toggle('open'); bd.classList.toggle('open', open); }
+   else { document.documentElement.toggleAttribute('data-sidebar-collapsed'); setTimeout(drawAll, 60); }
+  });
+  bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+  window.addEventListener('scroll', function () { var dh = document.documentElement.scrollHeight - window.innerHeight; document.getElementById('readingProgressBar').style.width = (dh > 0 ? Math.min(100, (window.scrollY / dh) * 100) : 0) + '%'; }, { passive: true });
+
+  document.getElementById('sideLightBtn').addEventListener('click', function () { applyTheme('light', false); });
+  document.getElementById('sideDarkBtn').addEventListener('click', function () { applyTheme('dark', false); });
+  document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+  document.getElementById('sideExportBtn').addEventListener('click', function () {
+   var url = URL.createObjectURL(new Blob(['<!doctype html>\n', document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' }));
+   var a = document.createElement('a'); a.href = url; a.download = 'Applied_Materials_Future_Horizon_2030_Blueprint.html'; a.click();
+   setTimeout(function () { URL.revokeObjectURL(url); }, 1500); showToast('已导出独立网页文件');
+  });
+
+  try { applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true); applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true); } catch (e) {}
+  document.getElementById('appbarThemeBtn').addEventListener('click', function () { var nxt = state.theme === 'dark' ? 'light' : 'dark'; applyTheme(nxt, false); try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {} });
+  document.getElementById('langSwitchGroup').addEventListener('click', function (e) { var lb = e.target.closest('[data-lang]'); if (!lb) return; var nl = lb.getAttribute('data-lang'); applyLang(nl, false); try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {} });
+  var rt = null; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 90); });
+  recalcOptionality(); drawAll();
+ })();
+ </script>
+</body>
+</html>

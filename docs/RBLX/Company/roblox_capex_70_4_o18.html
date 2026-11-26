@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>罗布乐思 Roblox 商业模式解构：零内容CapEx长尾飞轮、$70.4亿预收浮存与O18变现剪刀差 | 数据中心</title>
+  <meta name="description" content="罗布乐思 Roblox Corporation (NYSE: RBLX) 商业模式深度解构工作台：非对称双栏指挥舱、五阶价值传导沙盘、FY25 $67.9亿预订额至$13.5亿自由现金流瀑布流、年龄分层单客经济与5年FCF复利推演实验室。" />
+  <script>
+    (function () {
+      try {
+        var t = (window.localStorage.getItem('mui_portal_theme_v4') || '').replace(/^"|"$/g, '');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg-canvas: #090D16;
+      --bg-paper: rgba(15, 25, 36, 0.88);
+      --bg-paper-solid: #0F1924;
+      --bg-subtle: rgba(19, 35, 55, 0.65);
+      --bg-hover: rgba(51, 153, 255, 0.08);
+      --bg-active: rgba(0, 115, 230, 0.16);
+      --bg-appbar: rgba(9, 13, 22, 0.82);
+      --border-subtle: rgba(51, 153, 255, 0.15);
+      --border-default: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(51, 153, 255, 0.44);
+      --divider: rgba(148, 163, 184, 0.12);
+      --text-primary: #F3F6F9;
+      --text-secondary: #B2BAC2;
+      --text-muted: #7E8C9A;
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #3399FF;
+      --mui-primary-lighter: #66B2FF;
+      --mui-primary-bg: rgba(0, 115, 230, 0.16);
+      --mui-primary-border: rgba(51, 153, 255, 0.35);
+      --mui-success-text: #66BB6A;
+      --mui-success-bg: rgba(26, 162, 81, 0.14);
+      --mui-success-border: rgba(102, 187, 106, 0.34);
+      --mui-warning-text: #FFB74D;
+      --mui-warning-bg: rgba(255, 183, 77, 0.14);
+      --mui-warning-border: rgba(255, 183, 77, 0.34);
+      --mui-error-text: #FF6B6B;
+      --mui-error-bg: rgba(235, 0, 20, 0.14);
+      --mui-error-border: rgba(255, 107, 107, 0.34);
+      --mui-violet-text: #A78BFA;
+      --mui-violet-bg: rgba(139, 92, 246, 0.14);
+      --mui-violet-border: rgba(167, 139, 250, 0.32);
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+      --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+      --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+      --chart-grid: rgba(148, 163, 184, 0.14);
+      --chart-tick: #94A3B8;
+    }
+
+    :root,
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg-canvas: #F8FAFC;
+      --bg-paper: #FFFFFF;
+      --bg-paper-solid: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-hover: rgba(0, 115, 230, 0.06);
+      --bg-active: rgba(0, 115, 230, 0.11);
+      --bg-appbar: rgba(255, 255, 255, 0.88);
+      --border-subtle: #E2E8F0;
+      --border-default: #CBD5E1;
+      --border-strong: #0073E6;
+      --divider: #E2E8F0;
+      --text-primary: #0F1924;
+      --text-secondary: #334155;
+      --text-muted: #5B6B7C;
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #0059B2;
+      --mui-primary-lighter: #0059B2;
+      --mui-primary-bg: rgba(0, 115, 230, 0.09);
+      --mui-primary-border: rgba(0, 115, 230, 0.28);
+      --mui-success-text: #15803D;
+      --mui-success-bg: rgba(21, 128, 61, 0.09);
+      --mui-success-border: rgba(21, 128, 61, 0.26);
+      --mui-warning-text: #B45309;
+      --mui-warning-bg: rgba(180, 83, 9, 0.09);
+      --mui-warning-border: rgba(180, 83, 9, 0.26);
+      --mui-error-text: #C62828;
+      --mui-error-bg: rgba(198, 40, 40, 0.08);
+      --mui-error-border: rgba(198, 40, 40, 0.26);
+      --mui-violet-text: #6D28D9;
+      --mui-violet-bg: rgba(109, 40, 217, 0.08);
+      --mui-violet-border: rgba(109, 40, 217, 0.25);
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+      --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+      --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+      --chart-grid: rgba(100, 116, 139, 0.16);
+      --chart-tick: #475569;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      background-color: var(--bg-canvas); background-image: var(--hero-glow); background-attachment: fixed;
+      color: var(--text-primary); line-height: 1.65; overflow-x: hidden; max-width: 100%; min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    a { color: var(--mui-primary-lighter); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .cite-link {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+      padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+      border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+      white-space: normal; word-break: break-word; text-decoration: none !important;
+    }
+
+    #readingProgressBar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0073E6 0%, #7C3AED 55%, #16A34A 100%); z-index: 1300; }
+    #chartTooltip {
+      position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+      padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+    }
+    #muiSnackbar {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+      z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+      border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600; transition: all 0.2s ease;
+    }
+    #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* AppBar */
+    .mui-appbar { position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle); }
+    .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+    .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mui-icon-btn, .mui-theme-icon-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); cursor: pointer;
+    }
+    .brand-monogram {
+      width: 42px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+      color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+    .quick-search-wrap { position: relative; width: 215px; }
+    .quick-search-input { width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; }
+    .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+    .quick-search-kbd { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700; padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); }
+    .quick-jump-popover { position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto; border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250; }
+    .quick-jump-popover.open { display: block; }
+    .quick-jump-item { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px; border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit; }
+    .quick-jump-item:hover { background: var(--bg-hover); }
+    .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+    .mui-lang-switch { display: inline-flex; align-items: center; padding: 2px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px; }
+    .mui-lang-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; }
+    .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+    .mui-chip { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); }
+    .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+    .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+    .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+    .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+    .mui-segmented { display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px; }
+    .mui-seg-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700; padding: 5px 11px; border-radius: 7px; cursor: pointer; }
+    .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+    /* Shell & Sidebar */
+    .layout-shell { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 26px; padding: 22px 20px 72px; align-items: start; }
+    body.sidebar-collapsed .layout-shell { grid-template-columns: minmax(0, 1fr); }
+    body.sidebar-collapsed .mui-sidebar { display: none; }
+    .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+    .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+    .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+    .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+    .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+    .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+    .sidebar-mini-label { color: var(--text-muted); }
+    .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); }
+    .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+    .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+    .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+    .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+    .co-hub-item { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); cursor: pointer; font-family: inherit; color: var(--text-primary); }
+    .co-hub-item.co-hub-hidden { display: none !important; }
+    .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+    .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); }
+    .co-hub-item.active .co-hub-ticker { background: #0073E6; color: #FFFFFF; }
+    .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+    .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+    .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+    .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+    .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+    .mui-nav-link { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 9px; font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; }
+    .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+
+    .sidebar-actions { display: flex; flex-direction: column; gap: 8px; }
+    .side-theme-group, .side-tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .side-theme-opt, .mui-tool-btn { height: 31px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); font-family: inherit; font-size: 0.76rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
+    .side-theme-opt.active, .side-theme-opt:hover, .mui-tool-btn:hover { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); border-color: var(--mui-primary-border); }
+    .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.5); z-index: 1150; display: none; }
+
+    /* Non-Linear Business Model Workbench */
+    .bm-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+    .bm-command-deck { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: stretch; }
+    .bm-thesis-deck {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+      padding: 26px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 18px; position: relative; overflow: hidden; min-width: 0;
+    }
+    .bm-thesis-deck::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0073E6, #7C3AED, #16A34A); }
+    .bm-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .bm-display-h1 { font-size: clamp(1.48rem, 2.3vw, 2.06rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .bm-gradient-txt { background: linear-gradient(92deg, #0073E6 0%, #7C3AED 52%, #15803D 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    html[data-theme="dark"] .bm-gradient-txt { background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 50%, #66BB6A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .bm-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.74; }
+    .bm-lead strong { color: var(--text-primary); }
+
+    .bm-lens-panel { background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+    .bm-lens-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-equation-bar { padding: 9px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border); font-size: 0.79rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .bm-lens-body { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.62; }
+
+    .bm-telemetry-ledger { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-width: 0; }
+    .bm-ledger-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--divider); }
+    .bm-ledger-title { font-size: 0.86rem; font-weight: 800; display: flex; align-items: center; gap: 7px; }
+    .bm-pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18); }
+    .bm-telemetry-rows { display: flex; flex-direction: column; gap: 10px; }
+    .bm-tel-item { padding: 10px 12px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+    .bm-tel-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .bm-tel-lbl { font-size: 0.76rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-tel-val { font-size: 1.12rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tel-bar-track { height: 5px; border-radius: 999px; background: var(--border-default); margin: 6px 0 5px; overflow: hidden; display: flex; }
+    .bm-tel-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #0073E6, #3399FF); }
+    .bm-tel-sub { display: flex; justify-content: space-between; font-size: 0.71rem; color: var(--text-muted); gap: 8px; flex-wrap: wrap; }
+
+    .bm-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); min-width: 0; }
+    .bm-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+    .bm-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-lighter); display: block; margin-bottom: 3px; }
+    .bm-h2 { font-size: 1.22rem; font-weight: 800; color: var(--text-primary); }
+    .bm-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+    /* 5-Node Pipeline */
+    .bm-pipeline-track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .bm-node-btn {
+      text-align: left; padding: 13px 14px; border-radius: 13px; border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit;
+      transition: all 0.18s ease; display: flex; flex-direction: column; gap: 6px;
+    }
+    .bm-node-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+    .bm-node-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6; }
+    .bm-node-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .bm-node-step { width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); }
+    .bm-node-btn.active .bm-node-step { background: #0073E6; color: #FFFFFF; }
+    .bm-node-tag { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+    .bm-node-title { font-size: 0.84rem; font-weight: 800; line-height: 1.32; }
+    .bm-node-kpi { font-size: 0.72rem; font-weight: 700; color: var(--mui-primary-lighter); }
+
+    .bm-node-inspector {
+      border-radius: 15px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+      padding: 20px 22px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: center;
+    }
+    .bm-ins-prose h3 { font-size: 1.05rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+    .bm-ins-prose p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+    .bm-ins-formula { margin-top: 12px; padding: 9px 12px; border-radius: 9px; background: var(--bg-paper); border-left: 3px solid var(--mui-primary-main); font-size: 0.79rem; color: var(--text-primary); font-weight: 600; }
+    .bm-ins-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-ins-card { padding: 12px 13px; border-radius: 11px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+    .bm-ins-card b { display: block; font-size: 1.08rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-ins-card span { font-size: 0.73rem; color: var(--text-muted); display: block; margin-top: 2px; }
+
+    /* Split Grids */
+    .bm-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+    .bm-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+    .bm-split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+    .bm-subpanel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; min-width: 0; }
+    .bm-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-subhead h3 { font-size: 1.01rem; font-weight: 800; color: var(--text-primary); }
+    .bm-canvas-box { position: relative; width: 100%; height: 305px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+    .bm-canvas-box canvas { width: 100%; height: 100%; display: block; }
+    .bm-chart-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.52; }
+
+    .bm-tier-list { display: flex; flex-direction: column; gap: 9px; }
+    .bm-tier-card { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+    .bm-tier-card.hidden-tier { display: none !important; }
+    .bm-tier-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+    .bm-tier-name { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tier-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .bm-cohort-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-cohort-stat { padding: 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+    .bm-cohort-stat .lbl { font-size: 0.72rem; color: var(--text-muted); }
+    .bm-cohort-stat .val { font-size: 1.12rem; font-weight: 800; color: var(--text-primary); margin: 2px 0; }
+    .bm-cohort-stat .delta { font-size: 0.71rem; font-weight: 700; color: var(--mui-success-text); }
+    .bm-ratchet-note { padding: 12px 14px; border-radius: 11px; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); font-size: 0.80rem; color: var(--text-secondary); line-height: 1.62; }
+
+    .bm-sim-sliders { display: flex; flex-direction: column; gap: 11px; }
+    .bm-slider-row { display: flex; flex-direction: column; gap: 4px; }
+    .bm-slider-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-slider-lbl b { color: var(--mui-primary-lighter); }
+    .bm-slider-row input[type="range"] { width: 100%; accent-color: #0073E6; cursor: pointer; }
+    .bm-sim-outputs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .bm-sim-out { padding: 10px 8px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-align: center; }
+    .bm-sim-out b { display: block; font-size: 0.98rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-sim-out span { font-size: 0.69rem; color: var(--text-muted); }
+
+    .bm-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-bottom: 18px; }
+    .bm-table { width: 100%; border-collapse: collapse; font-size: 0.80rem; min-width: 780px; background: var(--bg-paper-solid); }
+    .bm-table th { text-align: left; padding: 11px 13px; background: var(--bg-subtle); color: var(--text-muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; border-bottom: 1px solid var(--border-subtle); }
+    .bm-table td { padding: 11px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); }
+    .bm-table tr.is-rblx td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+
+    .bm-stress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .bm-stress-card { padding: 16px; border-radius: 13px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 10px; }
+    .bm-stress-card h4 { font-size: 0.89rem; font-weight: 800; color: var(--text-primary); margin-top: 6px; }
+    .bm-stress-card p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+    .bm-check-label { display: flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 700; color: var(--mui-primary-lighter); cursor: pointer; padding-top: 8px; border-top: 1px dashed var(--border-default); }
+    .bm-check-label input { accent-color: #0073E6; width: 15px; height: 15px; cursor: pointer; }
+
+    .bm-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+    .bm-source-item { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; }
+    .bm-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); }
+    .bm-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+    .bm-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+    @media (max-width: 1100px) {
+      .bm-command-deck, .bm-split-75, .bm-split-57, .bm-split-66, .bm-node-inspector, .bm-stress-grid { grid-template-columns: minmax(0, 1fr); }
+      .bm-pipeline-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 1023px) {
+      .layout-shell { grid-template-columns: minmax(0, 1fr); }
+      .mui-sidebar {
+        position: fixed; top: 60px; left: 0; bottom: 0; width: min(310px, 88vw);
+        background: var(--bg-paper-solid); padding: 16px 14px; z-index: 1200; transform: translateX(-105%);
+        transition: transform 0.24s ease; overflow-y: auto; display: flex !important; border-right: 1px solid var(--border-subtle);
+      }
+      body.drawer-open .mui-sidebar { transform: translateX(0); }
+      body.drawer-open .drawer-backdrop { display: block; }
+    }
+    @media (max-width: 680px) {
+      .quick-search-wrap, .hide-sm { display: none !important; }
+      .bm-pipeline-track, .bm-sim-outputs, .bm-cohort-metrics { grid-template-columns: minmax(0, 1fr); }
+      .bm-thesis-deck, .bm-panel, .bm-subpanel { padding: 18px; }
+    }
+    @media print {
+      .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+      .layout-shell { display: block !important; padding: 0 !important; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="展开或收起目录侧边栏" title="展开/收起侧边栏">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">RBLX</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <span class="hide-sm" style="font-weight:600;" data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="罗布乐思 (Roblox) 商业模式架构拆解" data-i18n-en="Roblox (RBLX) Business Model Architecture">罗布乐思 (Roblox) 商业模式架构拆解</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NYSE: RBLX</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">FY25 $6.79B Bkgs · $1.35B FCF</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索商业飞轮或指标…" aria-label="快速跳转模块" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="商业模式模块与站点导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">RBLX · BUSINESS MODEL</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="罗布乐思商业模式图谱" data-i18n-en="Roblox Business Model">罗布乐思商业模式图谱</div>
+        <p class="sidebar-subtitle" data-i18n-zh="零第一方立项CapEx × Robux 27个月$70.4亿递延现金浮存 × 直充渠道降费 × O18高分润剪刀差" data-i18n-en="Zero 1P Content CapEx × 27-Month $7.04B Deferred Float × Direct-Pay Mix × O18 DevEx Flywheel">零第一方立项CapEx × Robux 27个月$70.4亿递延现金浮存 × 直充渠道降费 × O18高分润剪刀差</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="商业原型" data-i18n-en="Archetype">商业原型</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="UGC云OS + 预收浮存池" data-i18n-en="UGC OS + Cash Float">UGC云OS + 预收浮存池</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Q3'26 渠道抽成率" data-i18n-en="Q3'26 COR % Rev">Q3'26 渠道抽成率</span>
+            <span class="sidebar-mini-val mono">20.2% (-160bps YoY)</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="递延营收池 / 摊销期" data-i18n-en="Deferred Rev / Life">递延营收池 / 摊销期</span>
+            <span class="sidebar-mini-val mono">$7.04B · 27个月</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="套件导航与架构目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="RBLX">
+          <div class="co-side-head">
+            <span class="co-side-title mono">RBLX · 03/08</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="roblox_builder.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="roblox_corporation_nyse_rblx.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (8)" data-i18n-en="All (8)">全部 (8)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (5)" data-i18n-en="Company (5)">公司深度 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (1)" data-i18n-en="SeniorExecutive (1)">高管人物 (1)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="software" data-i18n-zh="软件生态 (2)" data-i18n-en="software (2)">软件生态 (2)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="roblox_2026_2032_10_ai.html" title="罗布乐思 Roblox 未来十年（2026–2032）战略图谱：冲击全球游戏市场10%份额、AI全栈世界模型与跨端操作系统"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="罗布乐思 Roblox 未来十年（2026–2032）战略图谱：冲击全球游戏市场10%份额、AI全栈世界模型与跨端操作系统" data-i18n-en="Roblox Y (2026–2032): 10%, AIFull-Stack &amp;">罗布乐思 Roblox 未来十年（2026–2032）战略图谱：冲击全球游戏市场10%份额、AI全栈世界模型与跨端操作系统</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="roblox_builder.html" title="罗布乐思 Roblox 企业文化与组织操作系统图谱：零自研中立性、Builder自治与三代演进"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="罗布乐思 Roblox 企业文化与组织操作系统图谱：零自研中立性、Builder自治与三代演进" data-i18n-en="Roblox Corporate Culture &amp;:, Builder &amp; Trajectory">罗布乐思 Roblox 企业文化与组织操作系统图谱：零自研中立性、Builder自治与三代演进</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="roblox_capex_70_4_o18.html" title="罗布乐思 Roblox 商业模式解构：零内容CapEx长尾飞轮、$70.4亿预收浮存与O18变现剪刀差"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="罗布乐思 Roblox 商业模式解构：零内容CapEx长尾飞轮、$70.4亿预收浮存与O18变现剪刀差" data-i18n-en="Roblox Business Model: CapEx, $7.04B &amp; O18">罗布乐思 Roblox 商业模式解构：零内容CapEx长尾飞轮、$70.4亿预收浮存与O18变现剪刀差</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="roblox_corporation_nyse_rblx.html" title="Roblox Corporation (NYSE: RBLX) 公司基本面与投资价值深度研究报告"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Roblox Corporation (NYSE: RBLX) 公司基本面与投资价值深度研究报告" data-i18n-en="Roblox Corporation (NYSE: RBLX) &amp; Deep Dive Research Report">Roblox Corporation (NYSE: RBLX) 公司基本面与投资价值深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="roblox_corporation_rblx.html" title="罗布乐思 Roblox Corporation (RBLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="罗布乐思 Roblox Corporation (RBLX) 企业文化与组织架构深度研究报告" data-i18n-en="Roblox Corporation (RBLX) Corporate Culture &amp; Org Architecture Deep Dive">罗布乐思 Roblox Corporation (RBLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/Roblox_18_Senior_Executives.single.html" title="Roblox Corporation (NYSE: RBLX) 全量 18 大核心高管与董事会全景深度研报中枢（Baszucki·Chopra·Loktev·Barrios·Ciancutti·D&#x27;Angelo·Tornow·Singh·Kaufman等）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Roblox Corporation (NYSE: RBLX) 全量 18 大核心高管与董事会全景深度研报中枢（Baszucki·Chopra·Loktev·Barrios·Ciancutti·D&#x27;Angelo·Tornow·Singh·Kaufman等）| 王安安数据中心" data-i18n-en="Roblox Corporation (NYSE: RBLX) 18 &amp; OverviewDeep DiveReport (Baszucki·Chopra·Loktev·Barrios·Ciancutti·D&#x27;Angelo·Tornow·Singh·Kaufman)| Data Center">Roblox Corporation (NYSE: RBLX) 全量 18 大核心高管与董事会全景深度研报中枢（Baszucki·Chopra·Loktev·Barrios·Ciancutti·D&#x27;Angelo·Tornow·Singh·Kaufman等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="software" href="../software/rblx_hit_12_pet_simulator.html" title="Roblox 12 大现象级爆款游戏深度研报中枢（当前：布鲁克海文 Brookhaven）| 王安安数据中心"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Roblox 12 大现象级爆款游戏深度研报中枢（当前：布鲁克海文 Brookhaven）| 王安安数据中心" data-i18n-en="Roblox 12 Deep DiveReport (: Brookhaven)| Data Center">Roblox 12 大现象级爆款游戏深度研报中枢（当前：布鲁克海文 Brookhaven）| 王安安数据中心</span><span class="co-hub-meta mono">software</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="software" href="../software/roblox_ugc_nyse_rblx.html" title="Roblox 游戏与 UGC 生态深度研究报告 (NYSE: RBLX)"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Roblox 游戏与 UGC 生态深度研究报告 (NYSE: RBLX)" data-i18n-en="Roblox &amp; UGC Deep Dive Research Report (NYSE: RBLX)">Roblox 游戏与 UGC 生态深度研究报告 (NYSE: RBLX)</span><span class="co-hub-meta mono">software</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" data-i18n-zh="商业架构工作台 (M0–M5)" data-i18n-en="Workbench Modules (M0–M5)">商业架构工作台 (M0–M5)</div>
+        <ul class="mui-nav-list">
+          <li><a href="#mod-deck" class="mui-nav-link active"><span class="nav-idx mono">M0</span><span data-i18n-zh="双栏指挥舱与核心公式" data-i18n-en="Command Deck &amp; Formula">双栏指挥舱与核心公式</span></a></li>
+          <li><a href="#mod-pipeline" class="mui-nav-link"><span class="nav-idx mono">M1</span><span data-i18n-zh="五阶价值链传导沙盘" data-i18n-en="5-Node Value Pipeline">五阶价值链传导沙盘</span></a></li>
+          <li><a href="#mod-profit-pool" class="mui-nav-link"><span class="nav-idx mono">M2</span><span data-i18n-zh="现金流瀑布与四级变现栈" data-i18n-en="Cash Waterfall &amp; 4-Tier Stack">现金流瀑布与四级变现栈</span></a></li>
+          <li><a href="#mod-cohort" class="mui-nav-link"><span class="nav-idx mono">M3</span><span data-i18n-zh="年龄分层LTV与去爆款化" data-i18n-en="Age Cohort LTV &amp; Dispersion">年龄分层LTV与去爆款化</span></a></li>
+          <li><a href="#mod-capital" class="mui-nav-link"><span class="nav-idx mono">M4</span><span data-i18n-zh="$70.4亿预收浮存与FCF推演" data-i18n-en="$7.04B Float &amp; FCF Lab">$70.4亿预收浮存与FCF推演</span></a></li>
+          <li><a href="#mod-matrix" class="mui-nav-link"><span class="nav-idx mono">M5</span><span data-i18n-zh="游戏巨头矩阵与三大压测" data-i18n-en="Peer Matrix &amp; Stress Audits">游戏巨头矩阵与三大压测</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card sidebar-actions">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance &amp; Export">阅读与导出工具</div>
+        <div class="side-theme-group" role="group">
+          <button type="button" id="sideThemeLightBtn" class="side-theme-opt active" data-i18n-zh="☀ 浅色外观" data-i18n-en="☀ Light">☀ 浅色外观</button>
+          <button type="button" id="sideThemeDarkBtn" class="side-theme-opt" data-i18n-zh="🌙 深色外观" data-i18n-en="🌙 Dark">🌙 深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="sideExportBtn" class="mui-tool-btn" data-i18n-zh="⬇ 下载 HTML" data-i18n-en="⬇ Save HTML">⬇ 下载 HTML</button>
+          <button type="button" id="sidePrintBtn" class="mui-tool-btn" data-i18n-zh="🖨 打印 / PDF" data-i18n-en="🖨 Print / PDF">🖨 打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Distinct Non-Linear Workspace -->
+    <main class="bm-workspace">
+
+      <!-- MODULE 0: ASYMMETRIC COMMAND DECK -->
+      <section id="mod-deck" class="bm-command-deck">
+        <div class="bm-thesis-deck">
+          <div>
+            <div class="bm-badge-row">
+              <span class="mui-chip mui-chip-primary mono" data-i18n-zh="商业范式：零立项CapEx创作网络 × 27个月预收现金浮存机" data-i18n-en="ARCHETYPE: Zero-1P-CapEx UGC Network × 27-Month Cash Float Engine">商业范式：零立项CapEx创作网络 × 27个月预收现金浮存机</span>
+              <span class="mui-chip mui-chip-success mono">FY25 10-K · Q3 2026 股东信</span>
+              <span class="mui-chip mui-chip-violet mono">净现金 +$5.23B · O18 变现 +50%</span>
+            </div>
+
+            <h1 class="bm-display-h1" data-i18n-zh="罗布乐思商业模式解构：<span class='bm-gradient-txt'>表观 GAAP 亏损 $10.7 亿背后，年产 $13.5 亿自由现金流的三阶飞轮</span>" data-i18n-en="Deconstructing Roblox's Business Model: <span class='bm-gradient-txt'>How a $1.07B GAAP Loss Masks a $1.35B Free Cash Flow Compounding Machine</span>">
+              罗布乐思商业模式解构：<span class="bm-gradient-txt">表观 GAAP 亏损 $10.7 亿背后，年产 $13.5 亿自由现金流的三阶飞轮</span>
+            </h1>
+
+            <p class="bm-lead" data-i18n-zh="传统财报筛选器常因 Roblox 账面 GAAP 净亏损（FY2025 为 <strong>$(10.72)亿</strong>、Q3 2026 为 <strong>$(2.30)亿</strong>）将其误判为“烧钱元宇宙概念股”；实则这是一台兼具<strong>软件网络效应与类保险预收浮存金</strong>的现金机器：第一阶以<strong>零第一方游戏立项资本开支</strong>撬动数百万创作者与 ~400 个 AI 模型供给无限长尾内容（Q4'25 排名前十以外体验贡献超 50% 消费增量，同比增长 +53%）<a class='cite-link' href='https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf' target='_blank' rel='noopener noreferrer'>Q4'25 股东信 ↗</a>；第二阶在玩家购买 Robux 当刻<strong>100% 收取真金白银</strong>，而会计准则强制按付费用户平均 <strong>27 个月生命周期</strong>递延确认收入，沉淀出高达 <strong>$70.40 亿递延营收浮存池</strong>，推动 FY2025 自由现金流暴涨 +111% 至 <strong>$13.53 亿</strong>；第三阶通过引导网页/礼品卡直充将 Q3'26 渠道成本率压降至 <strong>20%（同比省 160bps）</strong>，叠加变现能力高出 50%+ 的美国 18 岁以上（O18）成人破圈，持续张开经营杠杆剪刀差 <a class='cite-link' href='https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf' target='_blank' rel='noopener noreferrer'>Q3'26 股东信 ↗</a>。" data-i18n-en="Conventional stock screens misread Roblox due to its GAAP net loss ($(1,071.6)M in FY25; $(230)M in Q3'26), overlooking a three-stage cash engine: (1) Zero first-party game studio CapEx, empowering millions of creators & ~400 AI models (non-Top-10 games grew Robux spend +53% in Q4'25, driving >50% of spend growth) <a class='cite-link' href='https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf' target='_blank' rel='noopener noreferrer'>Q4'25 Letter ↗</a>; (2) 100% upfront cash collection upon Robux purchase while GAAP amortizes durable virtual items over a 27-month average user lifetime, building a $7,040M deferred revenue float and $1,352.9M FY25 FCF (+111% YoY); (3) Steering 'Buy Robux' to direct channels cut Q3'26 Cost of Revenue to 20% (-160 bps YoY) alongside US O18 users monetizing 50%+ higher <a class='cite-link' href='https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf' target='_blank' rel='noopener noreferrer'>Q3'26 Letter ↗</a>.">
+              传统财报筛选器常因 Roblox 账面 GAAP 净亏损（FY2025 为 <strong>$(10.72)亿</strong>、Q3 2026 为 <strong>$(2.30)亿</strong>）将其误判为“烧钱元宇宙概念股”；实则这是一台兼具<strong>软件网络效应与类保险预收浮存金</strong>的现金机器：第一阶以<strong>零第一方游戏立项资本开支</strong>撬动数百万创作者与 ~400 个 AI 模型供给无限长尾内容（Q4'25 排名前十以外体验贡献超 50% 消费增量，同比增长 +53%）
+              <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">Q4'25 股东信 ↗</a>；第二阶在玩家购买 Robux 当刻<strong>100% 收取真金白银</strong>，而会计准则强制按付费用户平均 <strong>27 个月生命周期</strong>递延确认收入，沉淀出高达 <strong>$70.40 亿递延营收浮存池</strong>，推动 FY2025 自由现金流暴涨 +111% 至 <strong>$13.53 亿</strong>；第三阶通过引导网页/礼品卡直充将 Q3'26 渠道成本率压降至 <strong>20%（同比省 160bps）</strong>，叠加变现能力高出 50%+ 的美国 18 岁以上（O18）成人破圈，持续张开经营杠杆剪刀差
+              <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">Q3'26 股东信 ↗</a>。
+            </p>
+          </div>
+
+          <div class="bm-lens-panel">
+            <div class="bm-lens-head">
+              <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换商业本质透镜：" data-i18n-en="Switch Economic Lens:">切换商业本质透镜：</span>
+              <div class="mui-segmented" id="lensTabs">
+                <button type="button" class="mui-seg-btn active" data-lens="0" data-i18n-zh="① 零立项CapEx长尾飞轮" data-i18n-en="① Zero-CapEx UGC Funnel">① 零立项CapEx长尾飞轮</button>
+                <button type="button" class="mui-seg-btn" data-lens="1" data-i18n-zh="② 直充降费×O18高变现剪刀差" data-i18n-en="② Direct-Pay × O18 Scissors">② 直充降费×O18高变现剪刀差</button>
+                <button type="button" class="mui-seg-btn" data-lens="2" data-i18n-zh="③ 27个月$70.4亿现金浮存" data-i18n-en="③ 27-Mo $7.04B Cash Float">③ 27个月$70.4亿现金浮存</button>
+              </div>
+            </div>
+            <div class="bm-equation-bar mono" id="lensFormula">
+              内容风险豁免 = $0 自研3A立项沉没成本 + 玩家成功消费后才按 22%–24% 比例向创作者结算 DevEx
+            </div>
+            <div class="bm-lens-body" id="lensBody">
+              传统 3A 发行商（如 Take-Two、EA）单款旗舰需前置投入 $2亿–$5亿研发费与数年周期，一旦口碑翻车即面临巨额减值；Roblox 把内容试错完全交给全球去中心化创作者与 Build AI 工具，平台仅在玩家真金白银花掉 Robux 后才按既定汇率支付 DevEx 分润，彻底消除了“立项押宝失败”风险。
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Financial Telemetry Ledger -->
+        <aside class="bm-telemetry-ledger" aria-label="FY2025 与 Q3 2026 核心经济遥测">
+          <div class="bm-ledger-head">
+            <div class="bm-ledger-title">
+              <span class="bm-pulse-dot"></span>
+              <span data-i18n-zh="RBLX 商业模型核心遥测账本" data-i18n-en="RBLX Live Unit Telemetry">RBLX 商业模型核心遥测账本</span>
+            </div>
+            <a class="cite-link mono" href="https://www.sec.gov/Archives/edgar/data/1315098/000131509826000024/rblx-20251231.htm" target="_blank" rel="noopener noreferrer">10-K &amp; Q3'26 ↗</a>
+          </div>
+
+          <div class="bm-telemetry-rows">
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="FY25 预订额 Bookings vs GAAP 营收" data-i18n-en="FY25 Bookings vs GAAP Revenue">FY25 预订额 Bookings vs GAAP 营收</span>
+                <span class="bm-tel-val mono">$6,788.4M <small style="font-size:0.74rem;color:var(--mui-success-text);">+55%</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:72%;"></div>
+                <div style="width:28%;background:#7C3AED;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>GAAP Rev $4,890.6M (+36%)</span><span>净增递延 +$1,934M</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="FY25 自由现金流 FCF vs 经营现金流" data-i18n-en="FY25 Free Cash Flow vs OCF">FY25 自由现金流 FCF vs 经营现金流</span>
+                <span class="bm-tel-val mono">$1,352.9M <small style="font-size:0.74rem;color:var(--mui-success-text);">+111%</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:80%;background:linear-gradient(90deg,#16A34A,#22C55E);"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>OCF $1,796.4M (+118%)</span><span>Q3'26 单季 FCF $364M</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="Q3'26 渠道成本率 COR vs DevEx 分润率" data-i18n-en="Q3'26 COR % Rev vs DevEx % Bkgs">Q3'26 渠道成本率 COR vs DevEx 分润率</span>
+                <span class="bm-tel-val mono">20.2% / 23.6%</span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:46%;"></div>
+                <div style="width:54%;background:#0099FF;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>直充引导降费 -160bps YoY</span><span>TTM 创作者收入 ~$1.7B</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="Q3'26 递延营收池 × 净流动性现金" data-i18n-en="Q3'26 Deferred Float × Net Cash">Q3'26 递延营收池 × 净流动性现金</span>
+                <span class="bm-tel-val mono">$7,040M / +$5,229M</span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:86%;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>现金及投资 $6.24B vs 债 $1.01B</span><span>Q3 回购 $200M (4.4M股)</span></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- MODULE 1: HORIZONTAL 5-NODE VALUE-CHAIN PIPELINE -->
+      <section id="mod-pipeline" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 01 · END-TO-END VALUE CAPTURE PIPELINE</span>
+            <h2 class="bm-h2" data-i18n-zh="五阶商业价值传导沙盘：从 AI 零门槛创作到 $70.4亿 递延现金浮存复利" data-i18n-en="5-Node Value Capture Pipeline: From Zero-CapEx AI Creation to $7.04B Cash Float">五阶商业价值传导沙盘：从 AI 零门槛创作到 $70.4亿 递延现金浮存复利</h2>
+            <p class="bm-head-desc" data-i18n-zh="点击下方任一价值链节点，拆解该环节的护城河机制、单位经济结构与量化传导公式。" data-i18n-en="Click any node below to inspect its moat mechanism, unit economics, and cash conversion formula.">点击下方任一价值链节点，拆解该环节的护城河机制、单位经济结构与量化传导公式。</p>
+          </div>
+          <span class="mui-chip mui-chip-primary mono" data-i18n-zh="点击节点交互拆解 (01 → 05)" data-i18n-en="Interactive Inspector (01 → 05)">点击节点交互拆解 (01 → 05)</span>
+        </div>
+
+        <div class="bm-pipeline-track" id="pipelineTrack">
+          <button type="button" class="bm-node-btn active" data-node="0">
+            <div class="bm-node-top"><span class="bm-node-step mono">01</span><span class="bm-node-tag mono">AI + STUDIO</span></div>
+            <div class="bm-node-title" data-i18n-zh="零立项CapEx共创与Build引擎" data-i18n-en="Zero-CapEx Studio &amp; Build AI">零立项CapEx共创与Build引擎</div>
+            <div class="bm-node-kpi mono">&gt;80% Top100 用AI · 零库存减值</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="1">
+            <div class="bm-node-top"><span class="bm-node-step mono">02</span><span class="bm-node-tag mono">SOCIAL GRAPH</span></div>
+            <div class="bm-node-title" data-i18n-zh="年龄分层RFY算法与社交裂变" data-i18n-en="Age-Aware RFY &amp; Social Graph">年龄分层RFY算法与社交裂变</div>
+            <div class="bm-node-kpi mono">138M DAU · 40%百强诞生&lt;3个月</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="2">
+            <div class="bm-node-top"><span class="bm-node-step mono">03</span><span class="bm-node-tag mono">ROBUX &amp; PAY</span></div>
+            <div class="bm-node-title" data-i18n-zh="Robux预付储值与第一方直充" data-i18n-en="Pre-Paid Robux &amp; Direct Pay">Robux预付储值与第一方直充</div>
+            <div class="bm-node-kpi mono">COR降至20% · S&amp;M仅占营收5%</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="3">
+            <div class="bm-node-top"><span class="bm-node-step mono">04</span><span class="bm-node-tag mono">TIERED DEVEX</span></div>
+            <div class="bm-node-title" data-i18n-zh="双轨DevEx分润与日结钱包" data-i18n-en="Tiered DevEx &amp; Daily Wallet">双轨DevEx分润与日结钱包</div>
+            <div class="bm-node-kpi mono">$0.0038基础 / $0.0054美区O18</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="4">
+            <div class="bm-node-top"><span class="bm-node-step mono">05</span><span class="bm-node-tag mono">FLOAT &amp; FCF</span></div>
+            <div class="bm-node-title" data-i18n-zh="27个月浮存生息与回购缩股" data-i18n-en="27-Mo Float &amp; Share Buyback">27个月浮存生息与回购缩股</div>
+            <div class="bm-node-kpi mono">$7.04B递延池 · $2.4B剩余回购</div>
+          </button>
+        </div>
+
+        <div class="bm-node-inspector" id="nodeInspector">
+          <div class="bm-ins-prose">
+            <span class="mui-chip mui-chip-primary mono" id="nodeBadge">NODE 01 · ZERO-1P-CAPEX AI CREATION ENGINE</span>
+            <h3 id="nodeTitle">免费云原生工具链 + Build 一句话造游：把游戏业最重的“研发豪赌”变成零边际成本</h3>
+            <p id="nodeDesc">
+              Roblox 免费向全球开发者提供 Roblox Studio、全球多活服务器托管、物理同步引擎与 ~400 个生产级 AI 模型（含 Cube 4D 与 Studio MCP）。2026 年推出的 Build 自然语言造游工具在 Alpha 阶段即吸引超 50 万用户发布 70,000+ 款可玩游戏，其中逾 75% 从未用过传统 Studio——平台无需承担一分钱游戏立项失败成本，却坐享指数级爆发的内容库。
+            </p>
+            <div class="bm-ins-formula mono" id="nodeFormula">
+              商业传导：免费云托管 + AI 生成降本 → 供给端呈幂律高频试错 → 平台零内容减值锁定全部长尾爆款分成
+            </div>
+          </div>
+          <div class="bm-ins-kpis" id="nodeKpis">
+            <div class="bm-ins-card"><b class="mono">0 自研工作室</b><span>100% 游戏内容由第三方社区共创</span></div>
+            <div class="bm-ins-card"><b class="mono">&gt;80%</b><span>Top 100 头部体验已接入官方 AI 工具</span></div>
+            <div class="bm-ins-card"><b class="mono">70,000+ 款</b><span>Build Alpha 用户用自然语言发布新作</span></div>
+            <div class="bm-ins-card"><b class="mono">+53% YoY</b><span>Q4'25 非前十名长尾体验消费增速</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 2: 7:5 SPLIT — CASH WATERFALL + 4-TIER MONETIZATION ARCHITECTURE -->
+      <section id="mod-profit-pool" class="bm-split-75">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02A · BOOKINGS-TO-FCF VS GAAP RECONCILIATION</span>
+              <h3 data-i18n-zh="FY2025 $67.88亿 预订额现金流桥接 vs GAAP 亏损会计错配" data-i18n-en="FY2025 $6.79B Bookings-to-FCF Waterfall vs GAAP Loss Bridge">FY2025 $67.88亿 预订额现金流桥接 vs GAAP 亏损会计错配</h3>
+            </div>
+            <div class="mui-segmented" id="pChartTabs">
+              <button type="button" class="mui-seg-btn active" data-pview="waterfall" data-i18n-zh="预订额→FCF现金桥" data-i18n-en="Bookings→FCF Bridge">预订额→FCF现金桥</button>
+              <button type="button" class="mui-seg-btn" data-pview="scissors" data-i18n-zh="核心成本率演变 (%)" data-i18n-en="Cost Ratio Trajectory (%)">核心成本率演变 (%)</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="profitCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            数据核验：<a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">FY2025 股东信 ↗</a> 与
+            <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">Q3 2026 股东信 ↗</a>。
+            解构关键：FY25 账面净亏损 $(1,071.6)M 主要源于两项非当期现金流出——<strong>净增递延收入 $1,934.0M（现金已入袋但会计未确认）</strong>与<strong>股权激励 SBC $1,129.0M</strong>，还原后自由现金流高达 <strong>$1,352.9M（占预订额 19.9%）</strong>。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02B · FOUR-LAYER MONETIZATION STACK</span>
+              <h3 data-i18n-zh="同一云平台上的四级变现矩阵（内购 × 订阅 × 视频广告 × 电商）" data-i18n-en="4-Tier Monetization Architecture (IAP × Plus × Video Ads × Commerce)">同一云平台上的四级变现矩阵（内购 × 订阅 × 视频广告 × 电商）</h3>
+            </div>
+            <div class="mui-segmented" id="tierFilter">
+              <button type="button" class="mui-seg-btn active" data-tcat="all" data-i18n-zh="全部" data-i18n-en="All">全部</button>
+              <button type="button" class="mui-seg-btn" data-tcat="core" data-i18n-zh="Robux与订阅" data-i18n-en="Robux &amp; Sub">Robux与订阅</button>
+              <button type="button" class="mui-seg-btn" data-tcat="elev" data-i18n-zh="高毛利广告电商" data-i18n-en="Ads &amp; Commerce">高毛利广告电商</button>
+            </div>
+          </div>
+
+          <div class="bm-tier-list" id="tierList">
+            <div class="bm-tier-card" data-tier="core">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name">① 现金牛底座：Robux 体验内购与 UGC 虚拟形象商城</span>
+                <span class="mui-chip mui-chip-primary mono">30.3M MUPs · ABPDAU $12.29</span>
+              </div>
+              <div class="bm-tier-desc">覆盖游戏通行证（永久耐用品按 27 个月摊销）、复活加速消耗品及跨全平台通用的 3D 虚拟潮牌服饰，单付费用户平均预订额（ABPMP）在 Q3'26 逆势同比增长 +5%。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="core">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name">② 经常性锁定层：Roblox Plus 会员订阅（2026年4月上线）</span>
+                <span class="mui-chip mui-chip-success mono">2x 游戏时长 · 7x Robux消费</span>
+              </div>
+              <div class="bm-tier-desc">上线数月即突破数百万订阅会员；Plus 订户游玩时长达非订户 2 倍、Robux 消费高达 7 倍，且大量经由低费率第一方渠道续费 <a class="cite-link" href="https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play" target="_blank" rel="noopener noreferrer">RDC 2026 披露 ↗</a>。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="elev">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name">③ 零渠道税增量层：Sponsored 原生买量与激励视频广告</span>
+                <span class="mui-chip mui-chip-violet mono">&gt;70% 百强投放 · &gt;90% 完播率</span>
+              </div>
+              <div class="bm-tier-desc">超 70% Top 100 体验使用内生 Sponsored Ads 获客；激励视频已吸引 1,000+ 品牌投放（95% 可视率），逾 20% 接入游戏已有超 10% 收入来自广告，可跳过前贴片视频即将上线。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="elev">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name">④ 导流与交易闭环层：Moments 短视频即看即买与实景商务</span>
+                <span class="mui-chip mui-chip-warning mono">Tap-to-Buy · 1.6B 日消息</span>
+              </div>
+              <div class="bm-tier-desc">美区已上线类 TikTok 游戏高光信息流 Moments，支持视频内一键购买同款 Avatar 装扮与直接试玩 Build 微游戏，打通“刷视频种草 → 进房社交 → 即时交易”闭环。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 3: 5:7 REVERSED SPLIT — AGE COHORT UNIT ECONOMICS & HIT DISPERSION -->
+      <section id="mod-cohort" class="bm-split-57">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03A · VERIFIED AGE-COHORT UNIT ECONOMICS</span>
+              <h3 data-i18n-zh="年龄分层单客经济模型：为什么美国 O18 成人是利润放大器？" data-i18n-en="Age-Checked Cohort Economics: Why US 18+ Users Drive Margin Expansion">年龄分层单客经济模型：为什么美国 O18 成人是利润放大器？</h3>
+            </div>
+          </div>
+
+          <div class="mui-segmented" id="cohortTabs">
+            <button type="button" class="mui-seg-btn" data-cohort="u13">U13 启蒙基本盘 (34%)</button>
+            <button type="button" class="mui-seg-btn" data-cohort="teen">13–17 社交主力盘 (37%)</button>
+            <button type="button" class="mui-seg-btn active" data-cohort="o18">O18 成人高变现盘 (美区37%)</button>
+          </div>
+
+          <div class="bm-cohort-metrics" id="cohortMetrics">
+            <div class="bm-cohort-stat">
+              <div class="lbl">美区已核验 DAU 占比 / 增速</div>
+              <div class="val mono">37% (全球 29%)</div>
+              <div class="delta">美区 18–34 岁 DAU 两年暴涨 +114%</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">单日活变现溢价 (vs U18)</div>
+              <div class="val mono">+50% 以上</div>
+              <div class="delta">自主信用卡/网页直充比例显著更高</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">专属创作者分润汇率 (2026.06起)</div>
+              <div class="val mono">$0.0054 / Robux</div>
+              <div class="delta">较基础汇率 $0.0038 溢价 +42%</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">高分润激励首批验证成效</div>
+              <div class="val mono">2,000+ 款体验</div>
+              <div class="delta">成人向新游实现 10%+ 收入直接跃升</div>
+            </div>
+          </div>
+
+          <div class="bm-ratchet-note" id="cohortNote">
+            <strong>“随用户长大而升级”的棘轮效应（Cohort Aging Ratchet）：</strong>过去十年玩着 Roblox 长大的千万级少年并未在成年后流失，而是带着已有数百位好友的社交关系链进入大学与职场。2026 年全球 64% 日活（美英 75%、澳洲 80%）完成年龄核验后，平台将美区 O18 合规消费的 DevEx 汇率直接拉升 42% 至 <strong>$0.0054/Robux</strong>，倒逼全球顶尖工作室全力开发高画质射击、RPG 与竞技体育新作 <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">Q3'26 核验数据 ↗</a>。
+          </div>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03B · COHORT SPEND CURVE &amp; ANTI-HIT-RISK DISPERSION</span>
+              <h3 data-i18n-zh="三大年龄客群年均贡献对比 vs 平台去单一爆款依赖度演进" data-i18n-en="Age-Cohort Monetization Index vs Long-Tail Spend Dispersion">三大年龄客群年均贡献对比 vs 平台去单一爆款依赖度演进</h3>
+            </div>
+            <div class="mui-segmented" id="cChartTabs">
+              <button type="button" class="mui-seg-btn active" data-cview="ltv" data-i18n-zh="单用户5年累计预订额指数" data-i18n-en="5Y Cumulative Spend Index">单用户5年累计预订额指数</button>
+              <button type="button" class="mui-seg-btn" data-cview="mkt" data-i18n-zh="非Top10长尾生态占比与增速" data-i18n-en="Long-Tail Ecosystem Dispersion">非Top10长尾生态占比与增速</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="cohortCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            反脆弱实证：尽管 Q3 2026 因高基数对比 2025 年现象级爆款《Steal a Brainrot》（峰值 2,587 万同时在线）与《Grow a Garden》导致单季预订额同比微调 -12%，但<strong>两年复合增速仍超 +50%</strong>，且每周“为你推荐（RFY）”前 100 名游戏中约 <strong>40% 诞生于最近 3 个月内</strong>，证明造血机制在于底层分发系统而非押注单一神作。
+          </p>
+        </div>
+      </section>
+
+      <!-- MODULE 4: 6:6 DUAL WORKBENCH — $7.04B DEFERRED FLOAT & 5-YEAR FCF SIMULATOR -->
+      <section id="mod-capital" class="bm-split-66">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04A · $7.04B DEFERRED REVENUE FLOAT &amp; NET CASH</span>
+              <h3 data-i18n-zh="负营运资本奇迹：$70.4亿 递延收入浮存池与现金流爆发曲线" data-i18n-en="Negative Working Capital Float: $7.04B Deferred Revenue &amp; FCF Surge">负营运资本奇迹：$70.4亿 递延收入浮存池与现金流爆发曲线</h3>
+            </div>
+            <div class="mui-segmented" id="kChartTabs">
+              <button type="button" class="mui-seg-btn active" data-kview="float" data-i18n-zh="递延收入池 vs 自由现金流" data-i18n-en="Deferred Float vs FCF">递延收入池 vs 自由现金流</button>
+              <button type="button" class="mui-seg-btn" data-kview="liq" data-i18n-zh="Q3'26 资产负债表净流动性" data-i18n-en="Q3'26 Net Cash &amp; Float">Q3'26 资产负债表净流动性</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="capitalCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            资产负债表透视（截至 2026.09.30）：总递延收入达 <strong>$7,040M</strong>（流动 $4,781M + 非流动 $2,259M），扣除递延收入成本 $1,304M 后净递延毛利池高达 <strong>`$5,736M`</strong>；账上现金与长短期投资合计 <strong>$6,238M</strong>（对比长期债务仅 $1,009M），支撑 Q3 启动 <strong>$200M（440万股）</strong>股票回购对冲 SBC 摊薄 <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">Q3'26 资产负债表 ↗</a>。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04B · 5-YEAR BOOKINGS-TO-FCF COMPOUNDER LAB</span>
+              <h3 data-i18n-zh="交互式 5 年自由现金流与每股 FCF 复利推演实验室" data-i18n-en="Interactive 5-Year Bookings-to-FCF &amp; FCF/Share Simulator">交互式 5 年自由现金流与每股 FCF 复利推演实验室</h3>
+            </div>
+            <span class="mui-chip mui-chip-success mono" id="simScenarioChip">基准重估推演</span>
+          </div>
+
+          <div class="bm-sim-sliders">
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl">
+                <span>5年预订额复合增速 (Bookings CAGR · 长期锚 ~20%)</span>
+                <b class="mono" id="lblBkgsCagr">19%</b>
+              </div>
+              <input type="range" id="rngBkgsCagr" min="10" max="28" step="1" value="19" aria-label="预订额5年复合增速" />
+            </div>
+
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl">
+                <span>直充与高毛利视频广告驱动 FCF 利润率 (FY25 基数 19.9%)</span>
+                <b class="mono" id="lblFcfMgn">25%</b>
+              </div>
+              <input type="range" id="rngFcfMgn" min="18" max="32" step="1" value="25" aria-label="远期自由现金流占预订额比例" />
+            </div>
+
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl">
+                <span>回购抵消 SBC 后年均净股本变动率 (Q3'26 摊薄股数 755M)</span>
+                <b class="mono" id="lblDilution">+0.5% / 年</b>
+              </div>
+              <input type="range" id="rngDilution" min="-2.0" max="3.0" step="0.5" value="0.5" aria-label="年均净股本摊薄或缩股率" />
+            </div>
+          </div>
+
+          <div class="bm-sim-outputs">
+            <div class="bm-sim-out"><b class="mono" id="simOutBkgs">$16.2B</b><span>第5年预订额</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simOutFcf">$4.05B</b><span>第5年自由现金流</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simOutShr">774M</b><span>第5年摊薄总股数</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simOutFcfPs" style="color:var(--mui-success-text);">$5.23</b><span>第5年每股 FCF</span></div>
+          </div>
+
+          <div class="bm-canvas-box" style="height:142px;">
+            <canvas id="simMiniCanvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 5: GLOBAL GAMING ARCHETYPE MATRIX & 3 STRESS AUDITS -->
+      <section id="mod-matrix" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 05 · PEER ECONOMICS MATRIX &amp; RISK STRESS AUDITS</span>
+            <h2 class="bm-h2" data-i18n-zh="全球游戏与引擎巨头商业范式横向矩阵及三大核心脆弱性压测" data-i18n-en="Global Gaming Archetype Matrix &amp; Three Structural Risk Stress Audits">全球游戏与引擎巨头商业范式横向矩阵及三大核心脆弱性压测</h2>
+            <p class="bm-head-desc" data-i18n-zh="对比纯平台 UGC 生态、软硬一体自研神作与重资产多工作室并购集团的底层资本效率。" data-i18n-en="Comparing pure UGC cloud OS economics against first-party hardware-IP ecosystems and multi-studio AAA publishers.">对比纯平台 UGC 生态、软硬一体自研神作与重资产多工作室并购集团的底层资本效率。</p>
+          </div>
+          <span class="mui-chip mui-chip-warning mono" id="stressDoneChip">压测复核：0 / 3 已阅</span>
+        </div>
+
+        <div class="bm-table-wrap">
+          <table class="bm-table">
+            <thead>
+              <tr>
+                <th>公司 / 代码</th>
+                <th>商业原型</th>
+                <th>最新年度营收 / 预订额</th>
+                <th>员工规模 / 人均产出</th>
+                <th>内容研发风险承担方</th>
+                <th>核心现金流与护城河特征</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-rblx">
+                <td class="mono"><strong>Roblox (RBLX)</strong></td>
+                <td>零自研 UGC 云游戏 OS</td>
+                <td class="mono">$6.79B Bkgs / $4.89B Rev</td>
+                <td class="mono">3,065人 · <strong>$2.21M/人</strong></td>
+                <td>数百万外部创作者共担</td>
+                <td>$7.04B 递延预收浮存 · FY25 FCF $1.35B (+111%) <a class="cite-link" href="https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">10-K ↗</a></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Nintendo (7974.T)</strong></td>
+                <td>软硬一体第一方神作帝国</td>
+                <td class="mono">¥2,313B (~$14.6B FY26)</td>
+                <td class="mono">8,666人 · ~$1.68M/人</td>
+                <td>总部 EPD 内部立项把关</td>
+                <td>Switch 2 首年近 2,000 万台驱动百年超级 IP 长青变现 <a class="cite-link" href="https://www.gamesindustry.biz/nintendo-fy-sales-soar-986-to-146bn-following-launch-of-switch-2" target="_blank" rel="noopener noreferrer">FY26 ↗</a></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Electronic Arts (EA)</strong></td>
+                <td>年货体育特许经营矩阵</td>
+                <td class="mono">$7.53B 净营收 (FY26)</td>
+                <td class="mono">14,600人 · ~$0.52M/人</td>
+                <td>自营工作室 + 昂贵体育版权</td>
+                <td>约 79% 毛利率，FC / Madden 终极球队贡献稳定现金流 <a class="cite-link" href="https://wnhub.io/news/other/item-50768" target="_blank" rel="noopener noreferrer">FY26 ↗</a></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Take-Two (TTWO)</strong></td>
+                <td>超长周期旗舰 3A 发行商</td>
+                <td class="mono">$6.72B 净预订额 (FY26)</td>
+                <td class="mono">12,909人 · ~$0.52M/人</td>
+                <td>Rockstar / 2K 巨额前置研发</td>
+                <td>高度依赖 GTA / NBA 2K 超级产品周期，FY26 净亏 $(298)M <a class="cite-link" href="https://bullfincher.io/companies/take-two-interactive-software/revenue" target="_blank" rel="noopener noreferrer">10-K ↗</a></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Epic Games (未上市)</strong></td>
+                <td>自研爆款 + 虚幻引擎 + UEFN</td>
+                <td class="mono">~$4.4B–$5.7B 营收体量</td>
+                <td class="mono">~4,000+人 · 混合架构</td>
+                <td>第一方 Fortnite 与第三方共舞</td>
+                <td>UE 5% 引擎分成 + UEFN 40% 创作者池，自研与第三方同台竞争 <a class="cite-link" href="https://sacra.com/c/epic-games/" target="_blank" rel="noopener noreferrer">Sacra ↗</a></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Unity Software (U)</strong></td>
+                <td>跨平台引擎订阅 + 广告网</td>
+                <td class="mono">$1.85B 营收 (FY25)</td>
+                <td class="mono">~4,400人 · ~$0.42M/人</td>
+                <td>纯工具卖水人（无统一社交池）</td>
+                <td>74.2% 毛利率，不掌握终端玩家账号体系与支付闭环 <a class="cite-link" href="https://bullfincher.io/companies/unity-software/overview" target="_blank" rel="noopener noreferrer">FY25 ↗</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bm-stress-grid">
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-error mono">STRESS 01 · 未成年安全诉讼与合规摩擦</span>
+              <h4>多州总检察长诉讼与强制年龄核验的短期转化阵痛</h4>
+              <p>2025 年底得州、佛州、肯塔基州及洛杉矶县相继就青少年安全提起诉讼 <a class="cite-link" href="https://www.texasattorneygeneral.gov/sites/default/files/images/press/Petition_0.pdf" target="_blank" rel="noopener noreferrer">TX AG 起诉书 ↗</a>。Roblox 全面推行面部年龄估算与分层聊天限制（全球 64% 日活已核验），短期虽对未核验用户社交时长形成摩擦，但长期构筑起后来者极难复制的合规护盾。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress="s1" /> 标记已完成未成年合规风险复核</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-warning mono">STRESS 02 · 爆款高基数波动与取消年度指引</span>
+              <h4>2025 现象级神作高基数消化（Q3'26 预订额同比 -12%）</h4>
+              <p>2025 年《Grow a Garden》与《Steal a Brainrot》创下历史级病毒传播（FY25 预订额暴涨 +55%），导致 2026 下半年面临严苛同比基数（两年复合仍超 +50%）。管理层已宣布 2026 为最后一年提供全年指引，2027 起改为单季指引以避免短期噪音绑架长期基建。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress="s2" /> 标记已完成高基数周期波动复核</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-violet mono">STRESS 03 · 每年超 $11亿 SBC 股权摊薄纪律</span>
+              <h4>高额工程师股权激励（FY25 $11.29亿）对每股价值的稀释</h4>
+              <p>为争夺圣马特奥顶尖 AI 与分布式系统人才，Roblox 年度 SBC 约占预订额 16.6%，摊薄股数在 Q3'26 同比微增 +2% 至 7.55 亿股。投资者需紧盯管理层能否借强劲自由现金流持续执行剩余 $24 亿回购授权，实现“净零摊薄”拐点。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress="s3" /> 标记已完成 SBC 摊薄与回购复核</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- VERIFIED PRIMARY SOURCES -->
+      <section class="bm-panel" aria-label="权威信源索引">
+        <div class="bm-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+          <div>
+            <span class="bm-kicker mono">VERIFIED PRIMARY SOURCES</span>
+            <h2 class="bm-h2" data-i18n-zh="SEC 法定财报、股东信与开发者经济官方信源" data-i18n-en="Verified SEC Filings, Shareholder Letters &amp; Official Documentation">SEC 法定财报、股东信与开发者经济官方信源</h2>
+          </div>
+          <span class="mui-chip mui-chip-success mono">100% 原始文件直连</span>
+        </div>
+
+        <div class="bm-sources-grid">
+          <a class="bm-source-item" href="https://s27.q4cdn.com/984876518/files/doc_financials/2026/q3/Q3-2026-Earnings-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[01] Roblox Q3 2026 Shareholder Letter (2026-10-29) ↗</b>
+            <span>核验 Q3'26 营收 $1.57B、预订额 $1.71B、138M DAU、$7.04B 递延收入、20% COR 与 $200M 回购。</span>
+          </a>
+          <a class="bm-source-item" href="https://s27.q4cdn.com/984876518/files/doc_financials/2025/q4/Q4-2025-Shareholder-Letter.pdf" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[02] Roblox Q4 &amp; Full-Year 2025 Shareholder Letter ↗</b>
+            <span>核验 FY25 预订额 $6,788.4M (+55%)、FCF $1,352.9M (+111%)、DevEx $1,503.1M 与 3.4% 全球游戏市占率。</span>
+          </a>
+          <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1315098/000131509826000024/rblx-20251231.htm" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[03] SEC Form 10-K Annual Report (FY2025) ↗</b>
+            <span>核验 3,065 名全职员工、27 个月平均付费用户摊销期、SBC 结构与递延收入会计政策。</span>
+          </a>
+          <a class="bm-source-item" href="https://create.roblox.com/docs/production/monetization/developer-exchange" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[04] Roblox Official Developer Exchange (DevEx) Docs ↗</b>
+            <span>核验 $0.0038/Robux 标准分润汇率、美区 O18 $0.0054/Robux (+42%) 溢价机制与提现规则。</span>
+          </a>
+          <a class="bm-source-item" href="https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[05] Official RDC 2026 Keynote Newsroom Post ↗</b>
+            <span>核验 Roblox Plus 2x 时长/7x 消费、TTM ~$1.7B 创作者收入、Roblox Wallet 日结与 Build 创作数据。</span>
+          </a>
+          <a class="bm-source-item" href="https://www.texasattorneygeneral.gov/sites/default/files/images/press/Petition_0.pdf" target="_blank" rel="noopener noreferrer">
+            <b class="mono">[06] State AG Youth-Safety Litigation Filing ↗</b>
+            <span>核验州总检察长青少年安全合规诉讼背景及平台年龄核验改革外部监管压力。</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+      var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+      var STORAGE_STRESS_KEY = 'rblx_bm_stress_v1';
+
+      var state = {
+        theme: document.documentElement.getAttribute('data-theme') || 'light',
+        lang: 'zh',
+        lens: 0,
+        node: 0,
+        pView: 'waterfall',
+        cView: 'ltv',
+        kView: 'float',
+        cohort: 'o18'
+      };
+
+      var hits = { profitCanvas: [], cohortCanvas: [], capitalCanvas: [] };
+
+      function showToast(msg) {
+        var el = document.getElementById('muiSnackbar');
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(function () { el.classList.remove('show'); }, 2400);
+      }
+
+      function applyTheme(theme, silent) {
+        state.theme = theme === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', state.theme);
+        try { localStorage.setItem(STORAGE_THEME_KEY, state.theme); } catch (e) {}
+        document.getElementById('sideThemeLightBtn').classList.toggle('active', state.theme === 'light');
+        document.getElementById('sideThemeDarkBtn').classList.toggle('active', state.theme === 'dark');
+        document.getElementById('appbarThemeIcon').innerHTML = state.theme === 'dark'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+        drawAll();
+        if (!silent) showToast(state.theme === 'dark' ? '已切换至深色外观' : '已切换至浅色高清晰度外观');
+      }
+
+      function applyLang(lang, silent) {
+        state.lang = lang === 'en' ? 'en' : 'zh';
+        document.documentElement.setAttribute('lang', state.lang === 'en' ? 'en' : 'zh-CN');
+        try { localStorage.setItem(STORAGE_LANG_KEY, state.lang); } catch (e) {}
+        document.getElementById('langZhBtn').classList.toggle('active', state.lang === 'zh');
+        document.getElementById('langEnBtn').classList.toggle('active', state.lang === 'en');
+        var nodes = document.querySelectorAll('[data-i18n-zh]');
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          var val = state.lang === 'en' ? el.getAttribute('data-i18n-en') : el.getAttribute('data-i18n-zh');
+          if (val !== null) el.innerHTML = val;
+        }
+        renderLens();
+        renderNode();
+        renderCohort();
+        drawAll();
+        if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文界面');
+      }
+
+      /* M0 Lens Switcher */
+      var LENSES = [
+        {
+          fZh: '内容风险豁免 = $0 自研3A立项沉没成本 + 玩家成功消费后才按 22%–24% 比例向创作者结算 DevEx',
+          fEn: 'Zero Hit-Risk = $0 First-Party Studio CapEx + Success-Based 22%–24% DevEx Payout Only After Spend',
+          bZh: '传统 3A 发行商（如 Take-Two、EA）单款旗舰需前置投入 $2亿–$5亿研发费与数年周期，一旦口碑翻车即面临巨额减值；Roblox 把内容试错完全交给全球去中心化创作者与 Build AI 工具，平台仅在玩家真金白银花掉 Robux 后才按既定汇率支付 DevEx 分润，彻底消除了“立项押宝失败”风险。',
+          bEn: 'Traditional AAA publishers commit $200M–$500M upfront per flagship title with multi-year flop risk; Roblox crowdsources game creation across millions of AI-enabled builders and pays DevEx only after players actually spend Robux.'
+        },
+        {
+          fZh: '边际利润剪刀差 = 第一方网页/礼品卡直充降费 (Q3 COR 降至 20.2%) + 美区 O18 高客单 (+50% 变现溢价)',
+          fEn: 'Margin Scissors = Direct Web/Prepaid Mix (Q3 COR Down to 20.2%, -160bps YoY) + US O18 (+50% Monetization)',
+          bZh: '过去移动端 Apple/Google 高达 30% 的应用商店渠道税吞噬了大量毛利；Roblox 通过在买币界面强化第一方直充激励与发行海量零售礼品卡，把 Q3 2026 渠道成本率压至 20.2%（同比大降 160bps），配合无需家长代付的美国 18+ 成人用户占比升至 37%，持续释放经营杠杆。',
+          bEn: 'By steering Robux purchases toward lower-fee direct web checkout and prepaid cards, Roblox cut Q3 2026 Cost of Revenue to 20.2% (-160 bps YoY), amplified by US 18+ verified users reaching 37% of DAUs and monetizing 50%+ higher.'
+        },
+        {
+          fZh: '自由现金流放大器 = 当期全额收现 Bookings ($6.79B) - 27个月递延摊销差额 → 沉淀 $7.04B 无息预收浮存池',
+          fEn: 'Cash Float Amplifier = Upfront Cash Bookings ($6.79B) vs 27-Month GAAP Deferral → $7.04B Deferred Revenue Pool',
+          bZh: '玩家充值购买虚拟耐用品时现金当日到账，但 GAAP 会计准则要求在 27 个月平均生命周期内分期确认营收。只要平台规模扩张，经营现金流便大幅领先账面利润——FY2025 经营现金流达 $17.96亿，加之 $62.38亿现金储备产生丰厚利息收入，反哺 AI 算力与股票回购。',
+          bEn: 'Cash arrives immediately when Robux are purchased, while GAAP defers durable item revenue over 27 months—generating $1,796.4M FY25 operating cash flow, a $7,040M deferred revenue float, and $6,238M in cash & investments.'
+        }
+      ];
+
+      function renderLens() {
+        var d = LENSES[state.lens];
+        document.getElementById('lensFormula').textContent = state.lang === 'en' ? d.fEn : d.fZh;
+        document.getElementById('lensBody').textContent = state.lang === 'en' ? d.bEn : d.bZh;
+      }
+
+      document.getElementById('lensTabs').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-lens]');
+        if (!btn) return;
+        state.lens = parseInt(btn.getAttribute('data-lens'), 10);
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === btn);
+        renderLens();
+      });
+
+      /* M1 5-Node Pipeline Inspector */
+      var NODES = [
+        {
+          badge: 'NODE 01 · ZERO-1P-CAPEX AI CREATION ENGINE',
+          tZh: '免费云原生工具链 + Build 一句话造游：把游戏业最重的“研发豪赌”变成零边际成本',
+          tEn: 'Free Cloud Studio + Prompt-to-Game Build: Eliminating First-Party R&D Hit Risk',
+          dZh: 'Roblox 免费向全球开发者提供 Roblox Studio、全球多活服务器托管、物理同步引擎与 ~400 个生产级 AI 模型（含 Cube 4D 与 Studio MCP）。2026 年推出的 Build 自然语言造游工具在 Alpha 阶段即吸引超 50 万用户发布 70,000+ 款可玩游戏，其中逾 75% 从未用过传统 Studio——平台无需承担一分钱游戏立项失败成本，却坐享指数级爆发的内容库。',
+          dEn: 'Roblox provides free Studio tooling, global multiplayer hosting, and ~400 AI models. Its prompt-to-game Build alpha attracted 500K+ users publishing 70K+ playable experiences (>75% brand-new to creation) at zero 1P studio CapEx.',
+          fZh: '商业传导：免费云托管 + AI 生成降本 → 供给端呈幂律高频试错 → 平台零内容减值锁定全部长尾爆款分成',
+          fEn: 'Mechanics: Free Cloud Hosting + AI Tooling → Infinite Creator Experiments → Zero Title Write-Offs',
+          kpis: [
+            ['0 自研工作室', '100% 游戏内容由第三方社区共创'],
+            ['>80%', 'Top 100 头部体验已接入官方 AI 工具'],
+            ['70,000+ 款', 'Build Alpha 用户用自然语言发布新作'],
+            ['+53% YoY', 'Q4\'25 非前十名长尾体验消费增速']
+          ]
+        },
+        {
+          badge: 'NODE 02 · AGE-CHECKED SOCIAL GRAPH & RFY DISCOVERY',
+          tZh: '零外部买量获客：1.38亿日活好友关系链与“千人千面”推荐流自发冷启动',
+          tEn: 'Zero Paid UA Tax: 138M DAU Social Graph & Personalized RFY Discovery',
+          dZh: '普通手游厂商必须将流水 30%–50% 交给外部广告平台买量，而 Roblox 全年销售与营销费用（S&M）仅 $2.46 亿（占预订额仅 3.6%）。玩家因现实同学与好友在线而一键“Join Friend”同玩（日均发送 16 亿条游戏内消息），每周“为你推荐（RFY）”前 100 强体验中约 40% 创建不到 3 个月，新爆款冷启动速度冠绝全球。',
+          dEn: 'While mobile publishers spend 30%–50% of revenue on user acquisition, Roblox spent just $246.2M on S&M in FY25 (3.6% of bookings). Social co-play (1.6B daily chat messages) and RFY discovery surface fresh hits organically (~40% of weekly RFY Top 100 created <3 months ago).',
+          fZh: '商业传导：现实好友同玩邀请 + RFY 实时算法分发 → 获客费率仅 3.6% → 省下的买量税反哺算力与创作者',
+          fEn: 'Mechanics: Co-Play Friend Invites + Real-Time RFY Feed → 3.6% S&M Ratio → Structural CAC Advantage',
+          kpis: [
+            ['138M DAU', 'Q3 2026 日活（两年累计增长 +55%）'],
+            ['~34B 小时', 'Q3 单季总沉浸时长（日均超 3.5亿小时）'],
+            ['~40%', '每周 RFY 百强中近 3 个月内新建新游占比'],
+            ['3.6%', 'FY25 销售与营销费占预订额极低比例']
+          ]
+        },
+        {
+          badge: 'NODE 03 · PRE-PAID ROBUX ECONOMY & DIRECT-PAY STEERING',
+          tZh: '统一央行货币 Robux × 第一方网页/礼品卡直充：系统性削减 30% 应用商店过路费',
+          tEn: 'Unified Robux Currency × Direct Checkout Steering: Compressing App Store Fees to 20%',
+          dZh: '玩家充值兑换通用虚拟货币 Robux，可在数百万款体验与 Avatar 商城间无缝流转。针对苹果/谷歌高达 30% 的内购抽成，Roblox 在“Buy Robux”流程中为网页端、PC 与线下预付卡提供额外赠币激励，推动 Q3 2026 营业成本（支付与渠道费）占营收比降至 20.2%（同比下降 160 个基点），每降 100bps 即释放逾 $6,000 万纯利。',
+          dEn: 'Robux functions as a universal cross-experience currency. By rewarding direct web, PC, and prepaid gift-card purchases with bonus Robux, Roblox compressed Q3 2026 Cost of Revenue to 20.2% of revenue (-160 bps YoY).',
+          fZh: '商业传导：网页/预付卡赠币导流 → 绕开移动端 30% 渠道重税 → Q3\'26 渠道成本率降至 20.2% (-160bps)',
+          fEn: 'Mechanics: Bonus Robux on Direct Web/Prepaid → Lower App Store Mix → 20.2% Cost of Revenue (-160bps)',
+          kpis: [
+            ['20.2%', 'Q3 2026 渠道支付成本占营收比（-160bps）'],
+            ['30.3M 人', 'Q3 月度独立付费用户 MUPs（客单 +5% YoY）'],
+            ['7x 消费', 'Roblox Plus 订阅会员较普通玩家消费倍数'],
+            ['$12.29', 'Q3 2026 单日活平均预订额 ABPDAU']
+          ]
+        },
+        {
+          badge: 'NODE 04 · TIERED DEVEX ($0.0038 / $0.0054) & DAILY PAYOUTS',
+          tZh: '双轨制 DevEx 分润与日结金融基建：精准指挥全球工作室猛攻成人高毛利赛道',
+          tEn: 'Dual-Rate DevEx ($0.0038 / $0.0054) & Airwallex Daily Wallet: Incentivizing O18 Genres',
+          dZh: 'Roblox 自 2013 年累计向创作者分润超 $50 亿（截至 2026 年中 TTM 约 $17 亿，FY25 前 1,000 名创作者均赚 $130 万）。2025 年 9 月平台将基础 DevEx 汇率上调 8.5% 至 $0.0038/Robux，并于 2026 年 6 月对经核验美国 18+ 成人用户的合规消费给予 $0.0054/Robux（+42% 溢价），同时联合 Airwallex 推出工作日日结 Roblox Wallet。',
+          dEn: 'With >$5B paid to creators cumulatively (~$1.7B TTM; Top 1,000 averaging $1.3M in FY25), Roblox raised base DevEx +8.5% to $0.0038/Robux and introduced a $0.0054/Robux (+42%) rate on verified US 18+ spend alongside daily Roblox Wallet payouts.',
+          fZh: '商业传导：美区 O18 消费分润溢价 +42% → 吸引专业团队开发硬核射击/RPG → 反哺平台更高成人 ARPPU',
+          fEn: 'Mechanics: +42% US O18 DevEx Rate → Attracts Hardcore Studios → Lifts Platform O18 Engagement & Spend',
+          kpis: [
+            ['~$1.7B', '过去12个月（TTM）创作者总收入规模'],
+            ['$0.0038', '标准 DevEx 兑现汇率（2025.09 上调 +8.5%）'],
+            ['$0.0054', '美区 18+ 核验用户合格消费专属溢价汇率'],
+            ['$1.3M / 年', 'FY2025 前 1,000 名创作者平均年收入']
+          ]
+        },
+        {
+          badge: 'NODE 05 · 27-MONTH DEFERRED FLOAT, NET LIQUIDITY & BUYBACKS',
+          tZh: '$70.4亿 递延收入浮存池 + $52.3亿 净现金：负营运资本驱动自由现金流倍增',
+          tEn: '$7.04B Deferred Revenue Float + $5.23B Net Cash: Compounding Free Cash Flow per Share',
+          dZh: '由于现金在充值瞬间入账，而会计营收按 27 个月分摊，截至 2026 年 9 月底 Roblox 账面递延收入总额高达 $70.40 亿，现金及长短期投资达 $62.38 亿（净现金 +$52.29 亿）。充沛现金流不仅全额覆盖自建裸金属 GPU 机房资本开支，更支撑公司在 Q3 2026 斥资约 $2 亿回购 440 万股（剩余回购授权约 $24 亿）。',
+          dEn: 'Upfront cash collection paired with 27-month GAAP amortization built a $7,040M deferred revenue balance and $6,238M in cash & investments (+$5,229M net of $1,009M debt), funding bare-metal AI servers and $200M in Q3\'26 share buybacks (~$2.4B remaining).',
+          fZh: '商业传导：预收浮存金生息 + 自建裸金属服务器摊薄单小时成本 → FCF 复利增长并回购对冲 SBC',
+          fEn: 'Mechanics: Upfront Cash Float + Bare-Metal Infra Leverage → Compounding FCF Funding Buybacks',
+          kpis: [
+            ['$7,040M', 'Q3 2026 末总递延收入余额（流动+非流动）'],
+            ['$6,238M', '现金、短期及长期国债投资总储备'],
+            ['$1,352.9M', 'FY2025 全年自由现金流（同比 +111%）'],
+            ['~$2.4B', '截至 Q3\'26 末剩余可用股票回购授权额度']
+          ]
+        }
+      ];
+
+      function renderNode() {
+        var n = NODES[state.node];
+        document.getElementById('nodeBadge').textContent = n.badge;
+        document.getElementById('nodeTitle').textContent = state.lang === 'en' ? n.tEn : n.tZh;
+        document.getElementById('nodeDesc').textContent = state.lang === 'en' ? n.dEn : n.dZh;
+        document.getElementById('nodeFormula').textContent = state.lang === 'en' ? n.fEn : n.fZh;
+        document.getElementById('nodeKpis').innerHTML = n.kpis.map(function (k) {
+          return '<div class="bm-ins-card"><b class="mono">' + k[0] + '</b><span>' + k[1] + '</span></div>';
+        }).join('');
+      }
+
+      document.getElementById('pipelineTrack').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-node]');
+        if (!btn) return;
+        state.node = parseInt(btn.getAttribute('data-node'), 10);
+        var bs = this.querySelectorAll('.bm-node-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === btn);
+        renderNode();
+      });
+
+      /* M2B Tier Filter */
+      document.getElementById('tierFilter').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-tcat]');
+        if (!b) return;
+        var cat = b.getAttribute('data-tcat');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        var cards = document.querySelectorAll('#tierList .bm-tier-card');
+        for (var j = 0; j < cards.length; j++) {
+          cards[j].classList.toggle('hidden-tier', !(cat === 'all' || cards[j].getAttribute('data-tier') === cat));
+        }
+      });
+
+      /* M3A Age Cohort Switcher */
+      var COHORTS = {
+        u13: {
+          stats: [
+            ['全球已核验 DAU 占比', '34%', '美国 U18 游戏市场渗透率约 20%'],
+            ['核心支付与入口特征', '家长管控 + 礼品卡', '圣诞与暑期线下零售预付卡高峰明显'],
+            ['安全与社交默认权限', 'RM3 严苛过滤', '受年龄核验分层保护，限制跨龄私聊'],
+            ['长期战略漏斗价值', '零获客费种子池', '伴随年龄增长自然过渡为 13–17 与 O18 客群']
+          ],
+          note: '<strong>U13 青少年种子漏斗（占全球已核验 DAU 34%）：</strong>这是 Roblox 最难被竞争对手复刻的国民级心智入口。虽然单客短期消费受家长额度约束，但其以近乎零买量成本完成了下一代全球玩家的“数字社交启蒙”，并在实名年龄核验与开源 Sentinel 安全模型守护下持续留存。'
+        },
+        teen: {
+          stats: [
+            ['全球已核验 DAU 占比', '37% (最大群体)', '美国 13–17 岁人群日活渗透率高达 ~30%'],
+            ['年龄核验完成覆盖率', '>80% 已核验', 'Q3 2026 日均聊天与语音互动环比大增 +24%'],
+            ['核心消费驱动力', 'UGC 潮牌与联机通行证', '高频同玩驱动 Roblox Plus 会员快速渗透'],
+            ['创作者供给匹配度', '病毒爆款发源地', 'Dress to Impress 与竞技塔防高频破圈人群']
+          ],
+          note: '<strong>13–17 岁社交中坚层（占全球已核验 DAU 37%）：</strong>在美国每三个青少年中就有一人每天打开 Roblox。超过 80% 的该年龄段活跃用户已完成年龄核验，日均收发 16 亿条游戏内消息，兼具极高的放学后组队粘性与虚拟身份审美消费意愿。'
+        },
+        o18: {
+          stats: [
+            ['美区已核验 DAU 占比 / 增速', '37% (全球 29%)', '美区 18–34 岁 DAU 两年暴涨 +114%'],
+            ['单日活变现溢价 (vs U18)', '+50% 以上', '自主信用卡/网页直充比例显著更高'],
+            ['专属创作者分润汇率 (2026.06起)', '$0.0054 / Robux', '较基础汇率 $0.0038 溢价 +42%'],
+            ['高分润激励首批验证成效', '2,000+ 款体验', '成人向新游实现 10%+ 收入直接跃升']
+          ],
+          note: '<strong>“随用户长大而升级”的棘轮效应（Cohort Aging Ratchet）：</strong>过去十年玩着 Roblox 长大的千万级少年并未在成年后流失，而是带着已有数百位好友的社交关系链进入大学与职场。2026 年全球 64% 日活完成年龄核验后，平台将美区 O18 合规消费的 DevEx 汇率拉升 42% 至 <strong>$0.0054/Robux</strong>，倒逼顶尖工作室开发硬核射击、RPG 与体育新作。'
+        }
+      };
+
+      function renderCohort() {
+        var c = COHORTS[state.cohort];
+        document.getElementById('cohortMetrics').innerHTML = c.stats.map(function (s) {
+          return '<div class="bm-cohort-stat"><div class="lbl">' + s[0] + '</div><div class="val mono">' + s[1] + '</div><div class="delta">' + s[2] + '</div></div>';
+        }).join('');
+        document.getElementById('cohortNote').innerHTML = c.note;
+      }
+
+      document.getElementById('cohortTabs').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-cohort]');
+        if (!b) return;
+        state.cohort = b.getAttribute('data-cohort');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        renderCohort();
+      });
+
+      /* Canvas Setup & Theme Palette */
+      function prepCanvas(id) {
+        var c = document.getElementById(id);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var r = c.parentElement.getBoundingClientRect();
+        var w = Math.max(260, r.width - 20);
+        var h = Math.max(120, r.height - 20);
+        c.width = w * dpr;
+        c.height = h * dpr;
+        c.style.width = w + 'px';
+        c.style.height = h + 'px';
+        var ctx = c.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        return { ctx: ctx, w: w, h: h };
+      }
+
+      function pal() {
+        var dark = state.theme === 'dark';
+        return {
+          text: dark ? '#F3F6F9' : '#0F1924',
+          sub: dark ? '#94A3B8' : '#475569',
+          grid: dark ? 'rgba(148,163,184,0.14)' : 'rgba(100,116,139,0.16)',
+          blue: '#0073E6',
+          cyan: '#00A3FF',
+          green: dark ? '#66BB6A' : '#16A34A',
+          violet: dark ? '#A78BFA' : '#7C3AED',
+          amber: dark ? '#FFB74D' : '#D97706',
+          red: dark ? '#FF6B6B' : '#DC2626'
+        };
+      }
+
+      /* Chart 1: profitCanvas */
+      function drawProfitCanvas() {
+        var o = prepCanvas('profitCanvas'), ctx = o.ctx, w = o.w, h = o.h, p = pal();
+        hits.profitCanvas = [];
+        var pad = { l: 54, r: 22, t: 30, b: 46 };
+        var pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+
+        if (state.pView === 'waterfall') {
+          var items = [
+            { lbl: 'FY25 预订额', val: 6788, col: p.blue, tip: 'FY2025 总预订额 $6,788.4M (+55% YoY)，现金当期全额入账' },
+            { lbl: '渠道与基建/研发现金', val: -4992, col: p.amber, tip: '当期现金付现：渠道费、DevEx $1,503M、基建安全及现金薪酬研发（剔除SBC）' },
+            { lbl: '经营现金流 OCF', val: 1796, col: p.cyan, tip: 'FY2025 经营活动现金流 $1,796.4M (+118% YoY)' },
+            { lbl: '资本开支 CapEx', val: -443, col: p.violet, tip: '自建裸金属 GPU 服务器与无形资产投入 $(443.5)M' },
+            { lbl: '自由现金流 FCF', val: 1353, col: p.green, tip: 'FY2025 自由现金流 $1,352.9M (+111% YoY，占预订额 19.9%)' },
+            { lbl: 'GAAP 净亏损', val: -1072, col: p.red, tip: '账面净亏损 $(1,071.6)M：主因 $1,934M 净递延收入未确认及 $1,129M 非现金 SBC' }
+          ];
+          var maxV = 7200, minV = -1600, span = maxV - minV;
+          var zeroY = pad.t + (maxV / span) * ph;
+
+          for (var g = 0; g <= 4; g++) {
+            var gv = minV + (span / 4) * g;
+            var gy = pad.t + ((maxV - gv) / span) * ph;
+            ctx.strokeStyle = p.grid;
+            ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(w - pad.r, gy); ctx.stroke();
+            ctx.fillStyle = p.sub; ctx.font = '600 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + Math.round(gv) + 'M', pad.l - 6, gy + 3);
+          }
+          ctx.strokeStyle = p.sub; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(pad.l, zeroY); ctx.lineTo(w - pad.r, zeroY); ctx.stroke();
+
+          var bw = Math.min(58, (pw / items.length) * 0.62);
+          for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            var cx = pad.l + (pw / items.length) * (i + 0.5);
+            var yTop = it.val >= 0 ? pad.t + ((maxV - it.val) / span) * ph : zeroY;
+            var bh = Math.max(4, (Math.abs(it.val) / span) * ph);
+            ctx.fillStyle = it.col;
+            ctx.beginPath(); ctx.roundRect(cx - bw / 2, yTop, bw, bh, 5); ctx.fill();
+
+            ctx.fillStyle = p.text; ctx.font = '700 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            var lblTxt = (it.val > 0 ? '$' : '-$') + Math.abs(it.val) + 'M';
+            ctx.fillText(lblTxt, cx, it.val >= 0 ? yTop - 6 : yTop + bh + 13);
+
+            ctx.fillStyle = p.sub; ctx.font = '600 10.5px system-ui, sans-serif';
+            ctx.fillText(it.lbl, cx, h - 14);
+            hits.profitCanvas.push({ x: cx - bw / 2, y: yTop, w: bw, h: bh, title: it.lbl, body: it.tip });
+          }
+        } else {
+          var periods = ['FY2023', 'FY2024', 'FY2025', 'Q3 2026'];
+          var corPct = [23.5, 22.4, 21.9, 20.2];
+          var devPct = [21.0, 21.1, 22.1, 23.6];
+          var fcfPct = [3.5, 14.7, 19.9, 21.3];
+          var maxP = 30;
+
+          for (var k = 0; k <= 3; k++) {
+            var pv = (maxP / 3) * k;
+            var py = pad.t + ph - (pv / maxP) * ph;
+            ctx.strokeStyle = p.grid;
+            ctx.beginPath(); ctx.moveTo(pad.l, py); ctx.lineTo(w - pad.r, py); ctx.stroke();
+            ctx.fillStyle = p.sub; ctx.font = '600 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText(Math.round(pv) + '%', pad.l - 6, py + 3);
+          }
+
+          var series = [
+            { name: '渠道成本 COR/营收', data: corPct, col: p.amber },
+            { name: 'DevEx/预订额', data: devPct, col: p.blue },
+            { name: '自由现金流 FCF/预订额', data: fcfPct, col: p.green }
+          ];
+          series.forEach(function (sr) {
+            ctx.strokeStyle = sr.col; ctx.lineWidth = 2.6; ctx.beginPath();
+            sr.data.forEach(function (v, idx) {
+              var x = pad.l + (pw / (periods.length - 1)) * idx;
+              var y = pad.t + ph - (v / maxP) * ph;
+              if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            sr.data.forEach(function (v, idx) {
+              var x = pad.l + (pw / (periods.length - 1)) * idx;
+              var y = pad.t + ph - (v / maxP) * ph;
+              ctx.fillStyle = sr.col; ctx.beginPath(); ctx.arc(x, y, 4.5, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = p.text; ctx.font = '700 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+              ctx.fillText(v.toFixed(1) + '%', x, y - 8);
+              hits.profitCanvas.push({ x: x - 12, y: y - 12, w: 24, h: 24, title: periods[idx] + ' · ' + sr.name, body: '比率：' + v.toFixed(1) + '%' });
+            });
+          });
+          periods.forEach(function (pr, idx) {
+            var x = pad.l + (pw / (periods.length - 1)) * idx;
+            ctx.fillStyle = p.sub; ctx.font = '600 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText(pr, x, h - 14);
+          });
+        }
+      }
+
+      /* Chart 2: cohortCanvas */
+      function drawCohortCanvas() {
+        var o = prepCanvas('cohortCanvas'), ctx = o.ctx, w = o.w, h = o.h, p = pal();
+        hits.cohortCanvas = [];
+        var pad = { l: 52, r: 22, t: 28, b: 44 };
+        var pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+
+        if (state.cView === 'ltv') {
+          var yrs = ['第1年', '第2年', '第3年', '第4年', '第5年'];
+          var u13 = [100, 195, 295, 405, 525];
+          var teen = [125, 255, 395, 545, 710];
+          var o18 = [155, 325, 515, 725, 960];
+          var maxL = 1050;
+
+          for (var g = 0; g <= 4; g++) {
+            var gv = (maxL / 4) * g;
+            var gy = pad.t + ph - (gv / maxL) * ph;
+            ctx.strokeStyle = p.grid; ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(w - pad.r, gy); ctx.stroke();
+            ctx.fillStyle = p.sub; ctx.font = '600 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText(Math.round(gv), pad.l - 6, gy + 3);
+          }
+
+          [
+            { n: '美区 O18 成人客群 (+50%+ 溢价)', d: o18, c: p.green },
+            { n: '13–17 社交主力客群', d: teen, c: p.blue },
+            { n: 'U13 启蒙客群 (基准=100)', d: u13, c: p.violet }
+          ].forEach(function (s) {
+            ctx.strokeStyle = s.c; ctx.lineWidth = 2.6; ctx.beginPath();
+            s.d.forEach(function (v, idx) {
+              var x = pad.l + (pw / (yrs.length - 1)) * idx;
+              var y = pad.t + ph - (v / maxL) * ph;
+              if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            s.d.forEach(function (v, idx) {
+              var x = pad.l + (pw / (yrs.length - 1)) * idx;
+              var y = pad.t + ph - (v / maxL) * ph;
+              ctx.fillStyle = s.c; ctx.beginPath(); ctx.arc(x, y, 4.2, 0, Math.PI * 2); ctx.fill();
+              if (idx === 4) {
+                ctx.fillStyle = p.text; ctx.font = '700 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+                ctx.fillText(v + ' idx', x - 6, y - 7);
+              }
+              hits.cohortCanvas.push({ x: x - 12, y: y - 12, w: 24, h: 24, title: yrs[idx] + ' · ' + s.n, body: '累计变现指数：' + v + '（以 U13 首年=100 计，基于官方 O18 +50%+ 变现能力披露建模）' });
+            });
+          });
+          yrs.forEach(function (yr, idx) {
+            var x = pad.l + (pw / (yrs.length - 1)) * idx;
+            ctx.fillStyle = p.sub; ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(yr, x, h - 14);
+          });
+        } else {
+          var metrics = [
+            { l: 'Q4\'25 非Top10长尾增速', v: 53, c: p.blue, t: 'Q4 2025 排名前10以外体验的 Robux 消费同比增长 +53%，贡献超一半总消费增量' },
+            { l: 'RFY百强近3月新游占比', v: 40, c: p.violet, t: '每周“为你推荐”Top 100 体验中约 40% 创建于最近 3 个月内' },
+            { l: 'Top100 接入Sponsored广告', v: 70, c: p.green, t: '超过 70% 的百强头部体验通过平台原生 Sponsored Ads 持续买量扩圈' },
+            { l: 'Top100 接入官方AI比例', v: 80, c: p.cyan, t: '超过 80% 的百强游戏在生产或实时运行中使用 Roblox AI 模型' }
+          ];
+          var maxM = 100;
+          var bh = 28;
+          metrics.forEach(function (m, i) {
+            var y = pad.t + i * ((ph - 10) / metrics.length) + 8;
+            var wBar = (m.v / maxM) * (pw - 95);
+            ctx.fillStyle = p.grid;
+            ctx.beginPath(); ctx.roundRect(pad.l + 95, y, pw - 95, bh, 6); ctx.fill();
+            ctx.fillStyle = m.c;
+            ctx.beginPath(); ctx.roundRect(pad.l + 95, y, wBar, bh, 6); ctx.fill();
+            ctx.fillStyle = p.text; ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'right';
+            ctx.fillText(m.l, pad.l + 88, y + 18);
+            ctx.fillStyle = '#FFFFFF'; ctx.font = '700 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'left';
+            ctx.fillText(m.v + '%+', pad.l + 105, y + 18);
+            hits.cohortCanvas.push({ x: pad.l + 95, y: y, w: wBar, h: bh, title: m.l, body: m.t });
+          });
+        }
+      }
+
+      /* Chart 3: capitalCanvas */
+      function drawCapitalCanvas() {
+        var o = prepCanvas('capitalCanvas'), ctx = o.ctx, w = o.w, h = o.h, p = pal();
+        hits.capitalCanvas = [];
+        var pad = { l: 54, r: 24, t: 28, b: 44 };
+        var pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+
+        if (state.kView === 'float') {
+          var labels = ['FY2022', 'FY2023', 'FY2024', 'FY2025', 'Q3 2026'];
+          var defRev = [3039, 3780, 4630, 6564, 7040];
+          var fcfArr = [-58, 124, 641, 1353, 1520]; // Q3'26 annualized / TTM run-rate note
+          var maxD = 8000;
+
+          for (var g = 0; g <= 4; g++) {
+            var gv = (maxD / 4) * g;
+            var gy = pad.t + ph - (gv / maxD) * ph;
+            ctx.strokeStyle = p.grid; ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(w - pad.r, gy); ctx.stroke();
+            ctx.fillStyle = p.sub; ctx.font = '600 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + (gv / 1000).toFixed(1) + 'B', pad.l - 6, gy + 3);
+          }
+
+          var bw = Math.min(46, (pw / labels.length) * 0.48);
+          labels.forEach(function (lb, idx) {
+            var cx = pad.l + (pw / labels.length) * (idx + 0.5);
+            var bh = (defRev[idx] / maxD) * ph;
+            var y = pad.t + ph - bh;
+            ctx.fillStyle = p.blue;
+            ctx.beginPath(); ctx.roundRect(cx - bw / 2, y, bw, bh, 5); ctx.fill();
+            ctx.fillStyle = p.text; ctx.font = '700 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText('$' + (defRev[idx] / 1000).toFixed(2) + 'B', cx, y - 6);
+            ctx.fillStyle = p.sub; ctx.fillText(lb, cx, h - 14);
+            hits.capitalCanvas.push({
+              x: cx - bw / 2, y: y, w: bw, h: bh,
+              title: lb + ' 递延收入浮存池',
+              body: '总递延收入余额：$' + defRev[idx].toLocaleString() + 'M' + (idx < 4 ? ' · 当年自由现金流：$' + fcfArr[idx] + 'M' : '（流动 $4,781M + 非流动 $2,259M；Q3 单季 FCF $364M）')
+            });
+          });
+        } else {
+          var rows = [
+            { l: '现金及长短期投资', v: 6238, c: p.green, t: '现金 $1,093M + 短期投资 $2,103M + 长期投资 $3,042M = $6,238M' },
+            { l: '总递延收入浮存池', v: 7040, c: p.blue, t: '流动递延收入 $4,781M + 非流动递延收入 $2,259M = $7,040M' },
+            { l: '长期有息债务净额', v: 1009, c: p.amber, t: '长期债务仅 $1,009M，净现金流动性高达 +$5,229M' },
+            { l: '剩余股票回购授权', v: 2400, c: p.violet, t: 'Q3 2026 已回购 $200M (4.4M股)，剩余授权约 $2,400M' }
+          ];
+          var maxR = 7500;
+          var bh2 = 28;
+          rows.forEach(function (r, idx) {
+            var y = pad.t + idx * ((ph - 10) / rows.length) + 8;
+            var wb = (r.v / maxR) * (pw - 110);
+            ctx.fillStyle = p.grid; ctx.beginPath(); ctx.roundRect(pad.l + 100, y, pw - 100, bh2, 6); ctx.fill();
+            ctx.fillStyle = r.c; ctx.beginPath(); ctx.roundRect(pad.l + 100, y, wb, bh2, 6); ctx.fill();
+            ctx.fillStyle = p.text; ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'right';
+            ctx.fillText(r.l, pad.l + 92, y + 18);
+            ctx.fillStyle = p.text; ctx.font = '700 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'left';
+            ctx.fillText('$' + (r.v / 1000).toFixed(2) + 'B', pad.l + 106 + wb, y + 18);
+            hits.capitalCanvas.push({ x: pad.l + 100, y: y, w: wb, h: bh2, title: r.l, body: r.t });
+          });
+        }
+      }
+
+      /* Chart 4: simMiniCanvas & Simulator */
+      var simFcfSeries = [1.35, 1.70, 2.15, 2.72, 3.44, 4.05];
+      function drawSimMini() {
+        var o = prepCanvas('simMiniCanvas'), ctx = o.ctx, w = o.w, h = o.h, p = pal();
+        var pad = { l: 38, r: 16, t: 18, b: 24 };
+        var pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+        var maxV = Math.max(5.0, Math.max.apply(null, simFcfSeries) * 1.15);
+        var yrs = ['FY25', 'Y1', 'Y2', 'Y3', 'Y4', 'Y5'];
+        var bw = Math.min(34, (pw / yrs.length) * 0.56);
+
+        simFcfSeries.forEach(function (v, i) {
+          var cx = pad.l + (pw / yrs.length) * (i + 0.5);
+          var bh = (v / maxV) * ph;
+          var y = pad.t + ph - bh;
+          ctx.fillStyle = i === 0 ? p.blue : p.green;
+          ctx.beginPath(); ctx.roundRect(cx - bw / 2, y, bw, bh, 4); ctx.fill();
+          ctx.fillStyle = p.text; ctx.font = '700 9.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + v.toFixed(2) + 'B', cx, y - 4);
+          ctx.fillStyle = p.sub; ctx.fillText(yrs[i], cx, h - 6);
+        });
+      }
+
+      function updateSim() {
+        var cagr = parseFloat(document.getElementById('rngBkgsCagr').value) / 100;
+        var mgn = parseFloat(document.getElementById('rngFcfMgn').value) / 100;
+        var dil = parseFloat(document.getElementById('rngDilution').value) / 100;
+
+        document.getElementById('lblBkgsCagr').textContent = Math.round(cagr * 100) + '%';
+        document.getElementById('lblFcfMgn').textContent = Math.round(mgn * 100) + '%';
+        document.getElementById('lblDilution').textContent = (dil > 0 ? '+' : '') + (dil * 100).toFixed(1) + '% / 年';
+
+        var baseBkgs = 6.7884; // FY25 $B
+        var baseShr = 755; // Q3'26 diluted shares M
+        simFcfSeries = [1.353];
+        for (var y = 1; y <= 5; y++) {
+          var b = baseBkgs * Math.pow(1 + cagr, y);
+          var curMgn = 0.199 + ((mgn - 0.199) * (y / 5));
+          simFcfSeries.push(b * curMgn);
+        }
+        var y5Bkgs = baseBkgs * Math.pow(1 + cagr, 5);
+        var y5Fcf = simFcfSeries[5];
+        var y5Shr = Math.round(baseShr * Math.pow(1 + dil, 5));
+        var fcfPs = y5Fcf * 1000 / y5Shr;
+
+        document.getElementById('simOutBkgs').textContent = '$' + y5Bkgs.toFixed(1) + 'B';
+        document.getElementById('simOutFcf').textContent = '$' + y5Fcf.toFixed(2) + 'B';
+        document.getElementById('simOutShr').textContent = y5Shr + 'M';
+        document.getElementById('simOutFcfPs').textContent = '$' + fcfPs.toFixed(2);
+        document.getElementById('simScenarioChip').textContent = cagr >= 0.22 ? '牛市高增推演' : (cagr <= 0.14 ? '保守压力推演' : '基准重估推演');
+        drawSimMini();
+      }
+      ['rngBkgsCagr', 'rngFcfMgn', 'rngDilution'].forEach(function (id) {
+        document.getElementById(id).addEventListener('input', updateSim);
+      });
+
+      function bindSeg(gid, attr, skey, fn) {
+        var g = document.getElementById(gid);
+        g.addEventListener('click', function (e) {
+          var b = e.target.closest('[' + attr + ']');
+          if (!b) return;
+          state[skey] = b.getAttribute(attr);
+          var bs = g.querySelectorAll('.mui-seg-btn');
+          for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+          fn();
+        });
+      }
+      bindSeg('pChartTabs', 'data-pview', 'pView', drawProfitCanvas);
+      bindSeg('cChartTabs', 'data-cview', 'cView', drawCohortCanvas);
+      bindSeg('kChartTabs', 'data-kview', 'kView', drawCapitalCanvas);
+
+      function bindTip(cid) {
+        var c = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+        c.addEventListener('mousemove', function (ev) {
+          var r = c.getBoundingClientRect();
+          var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+          var arr = hits[cid] || [], hit = null;
+          for (var i = 0; i < arr.length; i++) {
+            var rg = arr[i];
+            if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+          }
+          if (hit) {
+            tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+            tip.style.display = 'block';
+            tip.style.left = Math.min(window.innerWidth - 300, ev.clientX + 14) + 'px';
+            tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+          } else tip.style.display = 'none';
+        });
+        c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+      }
+      ['profitCanvas', 'cohortCanvas', 'capitalCanvas'].forEach(bindTip);
+
+      function drawAll() {
+        drawProfitCanvas();
+        drawCohortCanvas();
+        drawCapitalCanvas();
+        drawSimMini();
+      }
+
+      /* Export HTML */
+      function exportHtml() {
+        var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = '罗布乐思 Roblox 商业模式解构.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+        showToast('已下载《罗布乐思 Roblox 商业模式解构.html》');
+      }
+
+      /* Suite Hub & Quick Jump */
+      var hub = document.getElementById('companySubfolderHub');
+      hub.addEventListener('click', function (e) {
+        var catBtn = e.target.closest('[data-co-cat]');
+        if (catBtn) {
+          var cat = catBtn.getAttribute('data-co-cat');
+          var ps = hub.querySelectorAll('[data-co-cat]');
+          for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === catBtn);
+          var its = hub.querySelectorAll('[data-co-item-cat]');
+          for (var j = 0; j < its.length; j++) its[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || its[j].getAttribute('data-co-item-cat') === cat));
+          return;
+        }
+        var jb = e.target.closest('[data-suite-jump]');
+        if (jb) showToast('请在画布列表或下载文件夹中打开《' + jb.getAttribute('data-suite-jump') + '》');
+        else if (e.target.closest('[data-suite-current]')) window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      var QITEMS = [
+        { id: 'mod-deck', t: 'M0 非对称指挥舱与三透镜公式', s: '零CapEx长尾 × 直充降费 × 27个月递延现金浮存' },
+        { id: 'mod-pipeline', t: 'M1 五阶商业价值传导沙盘', s: 'Studio/Build → RFY分发 → 直充 → 双轨DevEx → 回购' },
+        { id: 'mod-profit-pool', t: 'M2 $67.9亿预订额瀑布流与四级变现栈', s: 'FY25 FCF $1.35B 还原桥与 Roblox Plus / 视频广告' },
+        { id: 'mod-cohort', t: 'M3 年龄分层单客经济与去爆款依赖', s: '美区 O18 +50% 变现溢价与 $0.0054 DevEx' },
+        { id: 'mod-capital', t: 'M4 $70.4亿预收浮存池与 5年FCF推演器', s: '净现金 +$5.23B 与交互式每股 FCF 复利实验室' },
+        { id: 'mod-matrix', t: 'M5 游戏巨头商业范式矩阵与三大压测', s: '对比任天堂 / EA / Take-Two / Epic / Unity' }
+      ];
+      var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+      function renderQ(kw) {
+        var q = (kw || '').trim().toLowerCase();
+        var m = QITEMS.filter(function (x) { return !q || (x.t + ' ' + x.s).toLowerCase().indexOf(q) !== -1; });
+        qPop.innerHTML = m.map(function (x) {
+          return '<button type="button" class="quick-jump-item" data-jump="#' + x.id + '"><span class="quick-jump-item-title">' + x.t + '</span><span class="quick-jump-item-sub">' + x.s + '</span></button>';
+        }).join('');
+        qPop.classList.toggle('open', m.length > 0);
+      }
+      qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+      qIn.addEventListener('input', function () { renderQ(qIn.value); });
+      qPop.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-jump]');
+        if (!b) return;
+        var el = document.querySelector(b.getAttribute('data-jump'));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        qPop.classList.remove('open');
+      });
+      document.addEventListener('click', function (e) { if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); qIn.focus(); }
+      });
+
+      /* Stress Checkboxes */
+      function refreshStress() {
+        var boxes = document.querySelectorAll('[data-stress]'), done = 0;
+        for (var i = 0; i < boxes.length; i++) if (boxes[i].checked) done++;
+        document.getElementById('stressDoneChip').textContent = '压测复核：' + done + ' / ' + boxes.length + ' 已阅';
+      }
+      try {
+        var savedS = JSON.parse(localStorage.getItem(STORAGE_STRESS_KEY) || '{}');
+        document.querySelectorAll('[data-stress]').forEach(function (chk) {
+          var k = chk.getAttribute('data-stress');
+          chk.checked = !!savedS[k];
+          chk.addEventListener('change', function () {
+            savedS[k] = chk.checked;
+            try { localStorage.setItem(STORAGE_STRESS_KEY, JSON.stringify(savedS)); } catch (err) {}
+            refreshStress();
+          });
+        });
+        refreshStress();
+      } catch (e) {}
+
+      document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
+        if (window.innerWidth <= 1023) document.body.classList.toggle('drawer-open');
+        else { document.body.classList.toggle('sidebar-collapsed'); setTimeout(drawAll, 60); }
+      });
+      document.getElementById('drawerBackdrop').addEventListener('click', function () { document.body.classList.remove('drawer-open'); });
+      document.getElementById('appbarThemeBtn').addEventListener('click', function () { applyTheme(state.theme === 'dark' ? 'light' : 'dark', false); });
+      document.getElementById('sideThemeLightBtn').addEventListener('click', function () { applyTheme('light', false); });
+      document.getElementById('sideThemeDarkBtn').addEventListener('click', function () { applyTheme('dark', false); });
+      document.getElementById('sideExportBtn').addEventListener('click', exportHtml);
+      document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+      document.getElementById('langZhBtn').addEventListener('click', function () { applyLang('zh', false); });
+      document.getElementById('langEnBtn').addEventListener('click', function () { applyLang('en', false); });
+
+      window.addEventListener('scroll', function () {
+        var dh = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        document.getElementById('readingProgressBar').style.width = Math.min(100, (window.scrollY / dh) * 100) + '%';
+      }, { passive: true });
+
+      try {
+        applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+        applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+      } catch (e) {}
+
+      var rt = null;
+      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 80); });
+      updateSim();
+      drawAll();
+    })();
+  </script>
+</body>
+</html>

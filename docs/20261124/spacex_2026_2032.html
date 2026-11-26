@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="SpaceX (NASDAQ: SPCX) 2026–2032 未来战略与第二增长曲线全景推演：星舰 Flight 15 筷子捕获二级飞船后的全复用纪元、StarMind 百万颗轨道太阳能 AI 数据中心、2GHz+800MHz 全球手机直连、Cursor+Grok 超级智能与地月火深空物流（基于 S-1 $28.5T TAM 披露）。" />
+ <title>SpaceX 2026–2032 未来战略与新增长曲线观测站 | 数据中心</title>
+<style>
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.86);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.65);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.82);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.44);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.16);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: rgba(255, 255, 255, 0.96);
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.88);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas); background-image: var(--hero-glow); background-attachment: fixed;
+ color: var(--text-primary); line-height: 1.65; overflow-x: hidden; min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar {
+ position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 50%, #16A34A 100%); z-index: 1300; transition: width 0.08s linear;
+ }
+ #chartTooltip {
+ position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+ padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+ box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+ }
+ #muiSnackbar {
+ position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+ z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+ border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ .mui-appbar {
+ position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+ }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn {
+ display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+ border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+ color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+ }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .brand-monogram {
+ width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #003A75 100%);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+ color: #FFFFFF; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .breadcrumbs .crumb-link { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+ .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 215px; }
+ .quick-search-input {
+ width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+ }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd {
+ position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+ padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+ }
+ .quick-jump-popover {
+ position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+ border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+ }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item {
+ display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+ border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+ }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch {
+ display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+ }
+ .mui-lang-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+ font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+ }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+ .mui-chip {
+ display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px;
+ font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+ }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ .mui-segmented {
+ display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+ }
+ .mui-seg-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+ padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+ .layout-shell {
+ max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+ gap: 26px; padding: 22px 20px 72px; align-items: start;
+ }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+ html[data-sidebar-collapsed="1"] #muiSidebar { display: none; }
+
+ .mui-sidebar { display: flex; flex-direction: column; gap: 10px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42; margin: 4px 0 8px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; padding-top: 8px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+ .mui-nav-link {
+ display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+ font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+ .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+ .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+ .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+ .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+ .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+ .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+ .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+ .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+ .co-hub-item {
+ display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+ }
+ .co-hub-item:hover { border-color: #3399FF; background: var(--bg-hover); transform: translateY(-1px); }
+ .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+ .co-hub-item.co-hub-hidden { display: none !important; }
+ .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; }
+ .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+ .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+ .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+ .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+ .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+ .portal-reading-tools button { font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+ .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-paper-solid); }
+
+ .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+ .drawer-backdrop.open { display: block; }
+ @media (max-width: 1023px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+ .mui-sidebar {
+ position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+ background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+ transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+ }
+ .mui-sidebar.open { transform: translateX(0); }
+ .hide-sm { display: none !important; }
+ .quick-search-wrap { width: 148px; }
+ }
+ @media (max-width: 760px) { .quick-search-wrap { display: none; } }
+
+ /* ==========================================================================
+ BESPOKE 2026–2032 STRATEGIC OBSERVATORY LAYOUT (F0–F4)
+ ========================================================================== */
+ .ft-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+
+ .ft-hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1080px) { .ft-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+ .ft-manifesto {
+ background-color: var(--bg-paper);
+ border: 1px solid var(--border-subtle); border-radius: 18px; padding: 26px 28px;
+ box-shadow: var(--shadow-card); position: relative; overflow: hidden;
+ display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-manifesto::before {
+ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 52%, #16A34A 100%);
+ }
+ .ft-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+ .ft-h1 { font-size: clamp(1.46rem, 2.28vw, 2.06rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px; }
+ .ft-grad {
+ background: linear-gradient(92deg, #0073E6 0%, #7C3AED 52%, #15803D 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ html[data-theme="dark"] .ft-grad {
+ background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 52%, #66BB6A 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ .ft-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
+ .ft-lead strong { color: var(--text-primary); }
+
+ .ft-ternus-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 640px) { .ft-ternus-strip { grid-template-columns: minmax(0, 1fr); } }
+ .ft-mini-pill { padding: 10px 12px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .ft-mini-pill b { display: block; font-size: 0.78rem; color: var(--mui-primary-lighter); margin-bottom: 2px; }
+ .ft-mini-pill span { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .ft-horizon-radar {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+ padding: 20px 22px; box-shadow: var(--shadow-card);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .ft-hz-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+ .ft-hz-btn {
+ padding: 9px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-secondary); font-family: inherit; font-size: 0.75rem; font-weight: 800; cursor: pointer; text-align: center;
+ transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-hz-btn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+ .ft-hz-btn.active { background: var(--bg-active); border-color: #0073E6; color: var(--mui-primary-lighter); box-shadow: 0 0 0 1px #0073E6; }
+ .ft-hz-card {
+ padding: 15px 16px; border-radius: 13px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle);
+ display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between;
+ }
+ .ft-hz-list { list-style: none; display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: var(--text-secondary); }
+ .ft-hz-list li { display: flex; align-items: flex-start; gap: 7px; }
+ .ft-hz-dot { width: 7px; height: 7px; border-radius: 50%; background: #0073E6; margin-top: 7px; flex-shrink: 0; }
+ .ft-hz-foot { display: flex; justify-content: space-between; padding-top: 9px; border-top: 1px dashed var(--border-default); font-size: 0.74rem; font-weight: 700; gap: 6px; flex-wrap: wrap; }
+
+ .ft-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+ .ft-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+ .ft-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+ html[data-theme="dark"] .ft-kicker { color: var(--mui-primary-light); }
+ .ft-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+ .ft-sub { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+ .ft-explorer { display: grid; grid-template-columns: 4.2fr 7.8fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-explorer { grid-template-columns: minmax(0, 1fr); } }
+ .ft-rail { display: flex; flex-direction: column; gap: 8px; }
+ .ft-rail-btn {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left;
+ padding: 11px 13px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-rail-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateX(2px); }
+ .ft-rail-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 4px 12px rgba(0, 115, 230, 0.14); }
+ .ft-rail-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+ .ft-rail-idx { width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0; }
+ .ft-rail-btn.active .ft-rail-idx { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .ft-rail-name { font-size: 0.82rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .ft-rail-tam { font-size: 0.69rem; font-weight: 700; color: var(--mui-primary-lighter); flex-shrink: 0; }
+
+ .ft-dossier {
+ border-radius: 16px; border: 1px solid var(--border-subtle);
+ background-color: var(--bg-paper-solid); padding: 22px 24px;
+ display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-dossier h3 { font-size: 1.12rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+ .ft-dossier p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+ .ft-dossier-formula { padding: 10px 13px; border-radius: 10px; background: var(--bg-subtle); border-left: 3px solid #7C3AED; font-size: 0.79rem; font-weight: 600; color: var(--text-primary); }
+ .ft-gauge-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 680px) { .ft-gauge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ .ft-gauge-card { padding: 11px 12px; border-radius: 11px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+ .ft-gauge-card b { display: block; font-size: 1.05rem; color: var(--mui-primary-lighter); }
+ .ft-gauge-card span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+ .ft-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1040px) { .ft-split-75, .ft-split-57 { grid-template-columns: minmax(0, 1fr); } }
+ .ft-subbox {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px;
+ padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+ }
+ .ft-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .ft-subhead h3 { font-size: 1.01rem; font-weight: 800; }
+ .ft-canvas-box { position: relative; width: 100%; height: 295px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+ .ft-canvas-box canvas { width: 100%; height: 100%; display: block; }
+ .ft-caption { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
+
+ .ft-thesis-stack { display: flex; flex-direction: column; gap: 9px; }
+ .ft-thesis-item { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-thesis-item b { display: block; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 3px; }
+ .ft-thesis-item p { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .ft-chip-matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-chip-box { padding: 11px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-chip-box .code { font-size: 0.73rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-chip-box h4 { font-size: 0.84rem; font-weight: 800; margin: 2px 0 4px; }
+ .ft-chip-box p { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.45; }
+
+ .ft-builder-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-builder-grid { grid-template-columns: minmax(0, 1fr); } }
+ .ft-switch-list { display: flex; flex-direction: column; gap: 8px; }
+ .ft-opt-row {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px;
+ padding: 10px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+ cursor: pointer; transition: all 0.15s ease;
+ }
+ .ft-opt-row:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+ .ft-opt-left { display: flex; align-items: center; gap: 9px; min-width: 0; }
+ .ft-opt-left input { width: 16px; height: 16px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .ft-opt-left b { font-size: 0.81rem; color: var(--text-primary); display: block; }
+ .ft-opt-left span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+ .ft-opt-add { font-size: 0.75rem; font-weight: 800; color: var(--mui-success-text); flex-shrink: 0; }
+
+ .ft-val-board {
+ padding: 18px 20px; border-radius: 15px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .ft-val-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-val-kpi { padding: 10px 12px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-val-kpi b { display: block; font-size: 1.16rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-val-kpi span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+ .ft-source-card {
+ display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .ft-source-card:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+ .ft-source-card b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+ .ft-source-card span { font-size: 0.72rem; color: var(--text-secondary); }
+
+ @media print {
+ .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+ .layout-shell { display: block !important; padding: 0 !important; }
+ }
+</style>
+
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">SPCX</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航">
+ <a class="crumb-link hide-sm" href="../index.html">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </a>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="SpaceX 2026–2032 未来战略与第二曲线观测站" data-i18n-en="SpaceX 2026–2032 Future Horizon Observatory">SpaceX 2026–2032 未来战略与第二曲线观测站</span>
+ </nav>
+ <span class="mui-chip mui-chip-violet mono hide-sm">FLIGHT 15 ERA · 2030+</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">STARMIND × STARSHIP V3</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索未来引擎或2030估值…" aria-label="快速跳转模块" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+ </span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="未来战略模块与套件导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-violet mono">SPCX · 2030 OBSERVATORY</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="SpaceX 未来十年战略观测站" data-i18n-en="SpaceX 2030 Strategic Observatory">SpaceX 未来十年战略观测站</div>
+ <p class="sidebar-subtitle" data-i18n-zh="星舰 Flight 15 全复用奇点 × StarMind 百万颗太空AI卫星 × 2GHz+800MHz 全球直连 × 地月火文明船票" data-i18n-en="Starship Flight 15 Catch × StarMind 1M Orbital AI Satellites × 2GHz/800MHz Direct-to-Cell × Moon & Mars">星舰 Flight 15 全复用奇点 × StarMind 百万颗太空AI卫星 × 2GHz+800MHz 全球直连 × 地月火文明船票</p>
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="S-1 披露总潜在市场" data-i18n-en="S-1 Disclosed TAM">S-1 披露总潜在市场</span>
+ <span class="sidebar-mini-val mono">$28.5 Trillion</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="太空算力时间锚" data-i18n-en="Orbital AI Scale">太空算力时间锚</span>
+ <span class="sidebar-mini-val mono">2027Q4首发 · 2028放量</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="星舰突破节点" data-i18n-en="Starship Milestone">星舰突破节点</span>
+ <span class="sidebar-mini-val mono">Flight 15 筷子捕获飞船</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="套件导航与未来观测目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261124">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261124 · 47/53</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="spacex.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="spacex_nasdaq_spcx (1).html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (53)" data-i18n-en="All (53)">全部 (53)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (53)" data-i18n-en="Company (53)">公司深度 (53)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="Meta未来十年（2026–2032）战略图谱.html" title="Meta META 2026–2032 战略与增长曲线"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta META 2026–2032 战略与增长曲线" data-i18n-en="Meta 2026–2032 &amp;">Meta META 2026–2032 战略与增长曲线</span><span class="co-hub-meta mono">Meta未来十年（2026–2032）战略图谱.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">alphabet_inc_googl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">alphabet_inc_googl (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">alphabet_inc_googl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">alphabet_inc_googl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amazon_com_amzn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amazon_com_amzn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">amazon_com_amzn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">amazon_com_amzn4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic.html" title="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动" data-i18n-en="Anthropic Corporate Culture &amp;:, &amp;">Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动</span><span class="co-hub-meta mono">anthropic.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_2026_2032.html" title="Anthropic 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Anthropic 2026–2032 &amp;">Anthropic 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">anthropic_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant (1).html" title="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告" data-i18n-en="Anthropic, PBC (ANT) Corporate Culture &amp; Org Architecture Deep Dive">Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">anthropic_pbc_ant (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant.html" title="Anthropic, PBC (ANT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 商业模式架构深度拆解" data-i18n-en="Anthropic, PBC (ANT) Business Model Deep DiveBreakdown">Anthropic, PBC (ANT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">anthropic_pbc_ant.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl (1).html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple_inc_aapl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple_inc_aapl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl2.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple_inc_aapl2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl3.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple_inc_aapl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_2026_2032.html" title="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Arm Holdings Arm 2026–2032 &amp;">安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">arm_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (1).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp; Org Architecture Deep Dive">安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">arm_holdings_arm (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (2).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp;">安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">arm_holdings_arm (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm.html" title="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解" data-i18n-en="Arm Holdings (ARM) Business Model Deep DiveBreakdown">安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解</span><span class="co-hub-meta mono">arm_holdings_arm.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle.html" title="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理" data-i18n-en="Circle Corporate Culture &amp;:, &amp;">Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理</span><span class="co-hub-meta mono">circle.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_2026_2032.html" title="Circle 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Circle 2026–2032 &amp;">Circle 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">circle_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl (1).html" title="Circle Internet Group (CRCL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 商业模式架构深度拆解" data-i18n-en="Circle Internet Group (CRCL) Business Model Deep DiveBreakdown">Circle Internet Group (CRCL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">circle_internet_group_crcl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl.html" title="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告" data-i18n-en="Circle Internet Group (CRCL) Corporate Culture &amp; Org Architecture Deep Dive">Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">circle_internet_group_crcl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta.html" title="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力" data-i18n-en="MetaCorporate Culture &amp;: People, &amp; Compute">Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力</span><span class="co-hub-meta mono">meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_2026_2032.html" title="Meta公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Meta 2026–2032 &amp;">Meta公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">meta_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta (1).html" title="Meta公司 Meta Platforms (META) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 商业模式架构深度拆解" data-i18n-en="Meta Platforms (META) Business Model Deep DiveBreakdown">Meta公司 Meta Platforms (META) 商业模式架构深度拆解</span><span class="co-hub-meta mono">meta_meta_platforms_meta (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta.html" title="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告" data-i18n-en="Meta Platforms (META) Corporate Culture &amp; Org Architecture Deep Dive">Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">meta_meta_platforms_meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">microsoft_msft (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">microsoft_msft.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">microsoft_msft2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">microsoft_msft3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx (1).html" title="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解" data-i18n-en="Netflix (NFLX) Business Model Deep DiveBreakdown">奈飞公司 Netflix (NFLX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">netflix_nflx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx.html" title="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告" data-i18n-en="Netflix (NFLX) Corporate Culture &amp; Org Architecture Deep Dive">奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">netflix_nflx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx2.html" title="奈飞公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Netflix 2026–2032 &amp;">奈飞公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">netflix_nflx2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx3.html" title="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承" data-i18n-en="NetflixCorporate Culture &amp;:, &amp;">奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承</span><span class="co-hub-meta mono">netflix_nflx3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_2032.html" title="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="On Holding AG 2026–2032 &amp;">昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">on_holding_ag_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_20323.html" title="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治" data-i18n-en="On HoldingCorporate Culture &amp;:, &amp; People">昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治</span><span class="co-hub-meta mono">on_holding_ag_2026_20323.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon (1).html" title="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告" data-i18n-en="On Holding AG (ONON) Corporate Culture &amp; Org Architecture Deep Dive">昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">on_holding_ag_onon (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon.html" title="昂跑 On Holding AG (ONON) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 商业模式架构深度拆解" data-i18n-en="On Holding AG (ONON) Business Model Deep DiveBreakdown">昂跑 On Holding AG (ONON) 商业模式架构深度拆解</span><span class="co-hub-meta mono">on_holding_ag_onon.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">rocket_lab (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">rocket_lab.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">rocket_lab_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">45</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">rocket_lab_rklb.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex.html" title="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承"><span class="co-hub-ticker mono">46</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承" data-i18n-en="SpaceX Corporate Culture &amp;:, &amp;">SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承</span><span class="co-hub-meta mono">spacex.html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="spacex_2026_2032.html" title="SpaceX 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">47</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="SpaceX 2026–2032 &amp;">SpaceX 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">spacex_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx (1).html" title="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">48</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解" data-i18n-en="SpaceX (NASDAQ: SPCX) Business Model Deep DiveBreakdown">SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">spacex_nasdaq_spcx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx.html" title="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">49</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX (NASDAQ: SPCX) Corporate Culture &amp; Org Architecture Deep Dive">SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">spacex_nasdaq_spcx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla (1).html" title="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">50</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告" data-i18n-en="Tesla, Inc. (TSLA) Corporate Culture &amp; Org Architecture Deep Dive">特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">tesla_inc_tsla (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla.html" title="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">51</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解" data-i18n-en="Tesla, Inc. (TSLA) Business Model Deep DiveBreakdown">特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">tesla_inc_tsla.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla2.html" title="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站"><span class="co-hub-ticker mono">52</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站" data-i18n-en="Tesla 2026–2032 &amp; AI">特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站</span><span class="co-hub-meta mono">tesla_inc_tsla2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla3.html" title="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军"><span class="co-hub-ticker mono">53</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军" data-i18n-en="TeslaCorporate Culture &amp;: First Principles, &amp; COO">特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军</span><span class="co-hub-meta mono">tesla_inc_tsla3.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-section-label" style="margin-top:8px;" data-i18n-zh="未来战略模块 (F0–F4)" data-i18n-en="Future Horizon (F0–F4)">未来战略模块 (F0–F4)</div>
+ <ul class="mui-nav-list">
+ <li><a href="#sec-f0" class="mui-nav-link active"><span class="nav-idx mono">F0</span><span data-i18n-zh="全复用奇点与三阶时间窗" data-i18n-en="Flight 15 Era &amp; 3 Horizons">全复用奇点与三阶时间窗</span></a></li>
+ <li><a href="#sec-f1" class="mui-nav-link"><span class="nav-idx mono">F1</span><span data-i18n-zh="六大增长引擎纵向深潜舱" data-i18n-en="6 Future Growth Engines">六大增长引擎纵向深潜舱</span></a></li>
+ <li><a href="#sec-f2" class="mui-nav-link"><span class="nav-idx mono">F2</span><span data-i18n-zh="太空算力套利与2032营收桥" data-i18n-en="Space AI CapEx &amp; 2032 Bridge">太空算力套利与2032营收桥</span></a></li>
+ <li><a href="#sec-f3" class="mui-nav-link"><span class="nav-idx mono">F3</span><span data-i18n-zh="天地全栈主权：V3与频谱合围" data-i18n-en="Starship V3 &amp; Spectrum Stack">天地全栈主权：V3与频谱合围</span></a></li>
+ <li><a href="#sec-f4" class="mui-nav-link"><span class="nav-idx mono">F4</span><span data-i18n-zh="2030五万亿市值期权组装器" data-i18n-en="2030 $5T+ Optionality Lab">2030五万亿市值期权组装器</span></a></li>
+ </ul>
+ </nav>
+
+ <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+ <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance & Export">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="Theme">
+ <button type="button" id="sideLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+ <button type="button" id="sideDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" id="exportHtmlBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+ <button type="button" id="printPdfBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+ </div>
+ </div>
+ </aside>
+
+ <main class="ft-workspace">
+ <!-- MODULE F0: MANIFESTO + INTERACTIVE 3-HORIZON RADAR -->
+ <section id="sec-f0" class="ft-hero-grid">
+ <div class="ft-manifesto">
+ <div>
+ <div class="ft-badges">
+ <span class="mui-chip mui-chip-violet mono" data-i18n-zh="2026.11.14 历史奇点：星舰 Flight 15 成功用机械臂捕获轨道返回飞船" data-i18n-en="NOV 14, 2026 MILESTONE: FLIGHT 15 MECHAZILLA SHIP CATCH">2026.11.14 历史奇点：星舰 Flight 15 成功用机械臂捕获轨道返回飞船</span>
+ <span class="mui-chip mui-chip-success mono">S-1 总潜在市场 $28.5T</span>
+ </div>
+
+ <h1 class="ft-h1" data-i18n-zh="SpaceX 未来十年（2026–2032）战略图谱：<span class='ft-grad'>从垄断地球近地轨道通信，走向太阳同步轨道 AI 算力霸主与多行星文明</span>" data-i18n-en="SpaceX's Next Decade (2026–2032): <span class='ft-grad'>From LEO Broadband Monopoly to Orbital AI Compute &amp; Multiplanetary Logistics</span>">
+ SpaceX 未来十年（2026–2032）战略图谱：<span class="ft-grad">从垄断地球近地轨道通信，走向太阳同步轨道 AI 算力霸主与多行星文明</span>
+ </h1>
+
+ <p class="ft-lead">
+ 站在 Q3 2026 年化营收 <strong>$583亿</strong> 与 <strong>~$1.90万亿市值</strong>的新起点，SpaceX 在 2026 年完成了商业史上最大胆的三连跳：合并 xAI 与收购 <strong>Cursor</strong> 组建 <strong>Super Intelligence（SI）</strong>、完成 <strong>$862.5亿创纪录 IPO</strong>、并在 2026 年 11 月 14 日 <strong>Starship Flight 15</strong> 任务中历史性实现<strong>发射塔筷子机械臂陆地捕获轨道返回的二级飞船 Ship 42（同时部署 23 颗星链 V3 卫星）</strong>
+ <a class="cite-link" href="https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch" target="_blank" rel="noopener noreferrer">Flight 15 捕获纪实 ↗</a>。
+ 当地面云巨头在 2026–2030 年纷纷撞上<strong>地球电网变压器排队 5 年与淡水冷却枯竭</strong>的物理硬墙时，SpaceX 在 S-1 招股书中亮出了直指 <strong>$28.5万亿 TAM</strong> 的终极底牌
+ <a class="cite-link" href="https://payloadspace.com/spacex-reveals-financial-data-ahead-of-ipo/" target="_blank" rel="noopener noreferrer">S-1 $28.5T 蓝图 ↗</a>：用完全可复用的星舰将单颗功率达 <strong>250kW+ 的太阳能 AI 数据中心卫星（StarMind）</strong>批量送入晨昏太阳同步轨道（2027Q4 启动，2028 规模放量）
+ <a class="cite-link" href="https://www.spacex.com/spacexai/starmind" target="_blank" rel="noopener noreferrer">StarMind 官方页 ↗</a>，同时借 <strong>EchoStar 2GHz + Grain 800MHz 频谱</strong>把星链变成覆盖全球数十亿部存量手机的无死角电信运营商
+ <a class="cite-link" href="https://en.wikipedia.org/wiki/SpaceX" target="_blank" rel="noopener noreferrer">频谱合围 ↗</a>。
+ </p>
+ </div>
+
+ <div class="ft-ternus-strip">
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第一增长极：Starlink Mobile 直连" data-i18n-en="Pillar 1: Starlink Mobile D2C">第一增长极：Starlink Mobile 直连</b>
+ <span data-i18n-zh="2GHz 卫星频段 + 800MHz 穿墙低频，直接切入全球万亿级移动通信账单" data-i18n-en="2GHz satellite + 800MHz indoor spectrum targeting global mobile carrier TAM">2GHz 卫星频段 + 800MHz 穿墙低频，直接切入全球万亿级移动通信账单</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第二增长极：StarMind 轨道 AI 算力" data-i18n-en="Pillar 2: StarMind Orbital AI">第二增长极：StarMind 轨道 AI 算力</b>
+ <span data-i18n-zh="24小时太空日照供电 + 深空辐射散热，绕开地面电网审批锁死算力上限" data-i18n-en="24/7 sun-synchronous solar + vacuum radiative cooling bypassing terrestrial grids">24小时太空日照供电 + 深空辐射散热，绕开地面电网审批锁死算力上限</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第三增长极：星舰航班化与地月火" data-i18n-en="Pillar 3: Starship & Deep Space">第三增长极：星舰航班化与地月火</b>
+ <span data-i18n-zh="一二级双捕获 + 在轨低温推进剂加注，兑现 Artemis 登月与火星货运窗口" data-i18n-en="Dual-stage tower catch + orbital refueling unlocking Artemis HLS & Mars cargo">一二级双捕获 + 在轨低温推进剂加注，兑现 Artemis 登月与火星货运窗口</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Right: Interactive 3-Horizon Radar -->
+ <aside class="ft-horizon-radar" aria-label="三阶战略时间窗雷达">
+ <div>
+ <span class="ft-kicker mono">THREE-HORIZON S-CURVE RADAR</span>
+ <strong style="font-size:0.95rem;" data-i18n-zh="点击切换三大战略兑现时间窗" data-i18n-en="Select Strategic Horizon Window">点击切换三大战略兑现时间窗</strong>
+ </div>
+
+ <div class="ft-hz-tabs" id="hzTabs">
+ <button type="button" class="ft-hz-btn active" data-hz="0">H1 近程兑现<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2026–2027</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="1">H2 中程放量<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2028–2029</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="2">H3 远期奇点<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2030–2032</span></button>
+ </div>
+
+ <div class="ft-hz-card" id="hzCard">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="hzBadge">HORIZON 1 · 高确定性工程兑现期 (2026–2027)</span>
+ <h3 id="hzTitle" style="font-size:0.96rem;font-weight:800;margin:8px 0 6px;">星舰一二级同发双捕获 × 星链 V3 批产 × 全美手机直连商用</h3>
+ <ul class="ft-hz-list" id="hzList">
+ <li><span class="ft-hz-dot"></span><span><strong>星舰全复用闭环：</strong>继 Flight 15 捕获 Ship 42 后，攻克单次任务一二级双筷子捕获与在轨低温推进剂转移（Orbital Refueling）。</span></li>
+ <li><span class="ft-hz-dot"></span><span><strong>Starlink V3 规模换代：</strong>每发星舰投送数十颗 Tbps 级 V3 大卫星，推动星链订户突破 2,200 万并完成 EchoStar/800MHz 频谱过户。</span></li>
+ <li><span class="ft-hz-dot"></span><span><strong>StarMind 轨道算力首发：</strong>搭载 Nvidia 芯片的首批轨道 AI 试验星于 2027Q4 升空，地面 SI 装机迈向 3.5GW+。</span></li>
+ </ul>
+ </div>
+ <div class="ft-hz-foot mono">
+ <span id="hzProb" style="color:var(--mui-success-text);">兑现确定性：极高 (85%+)</span>
+ <span id="hzImpact" style="color:var(--mui-primary-lighter);">年化增量营收池：+$30B–$48B</span>
+ </div>
+ </div>
+ </aside>
+ </section>
+
+ <!-- MODULE F1: 4:8 VERTICAL MASTER-DETAIL 6-ENGINE OBSERVATORY -->
+ <section id="sec-f1" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F1 · SIX NEXT-DECADE GROWTH ENGINES ($28.5T S-1 TAM)</span>
+ <h2 class="ft-h2" data-i18n-zh="六大未来增长引擎纵向深潜舱：物理支点、变现公式与商业化进度" data-i18n-en="6 Next-Decade Growth Engines: Physics Enablers & Monetization Formulas">六大未来增长引擎纵向深潜舱：物理支点、变现公式与商业化进度</h2>
+ <p class="ft-sub" data-i18n-zh="点击左侧任一战略赛道，右侧实时切换其底层推进/频谱/算力支点、潜在利润空间与关键里程碑。" data-i18n-en="Click any engine on the left rail to inspect its technical architecture, margin accretion, and milestones.">点击左侧任一战略赛道，右侧实时切换其底层推进/频谱/算力支点、潜在利润空间与关键里程碑。</p>
+ </div>
+ <span class="mui-chip mui-chip-violet mono">6 S-CURVES · MASTER-DETAIL</span>
+ </div>
+
+ <div class="ft-explorer">
+ <div class="ft-rail" id="engineRail">
+ <button type="button" class="ft-rail-btn active" data-eng="0">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">01</span><span class="ft-rail-name" data-i18n-zh="星舰全复用与百吨级太空物流" data-i18n-en="Starship Full Reuse & Logistics">星舰全复用与百吨级太空物流</span></span>
+ <span class="ft-rail-tam mono">&lt;$200/kg 奇点</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="1">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">02</span><span class="ft-rail-name" data-i18n-zh="StarMind 轨道太阳能 AI 数据中心" data-i18n-en="StarMind Orbital AI Compute">StarMind 轨道太阳能 AI 数据中心</span></span>
+ <span class="ft-rail-tam mono">+$45B–$80B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="2">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">03</span><span class="ft-rail-name" data-i18n-zh="Starlink Mobile 全球手机直连网" data-i18n-en="Starlink Mobile Direct-to-Cell">Starlink Mobile 全球手机直连网</span></span>
+ <span class="ft-rail-tam mono">+$25B–$45B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="3">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">04</span><span class="ft-rail-name" data-i18n-zh="SpaceXSI：Grok × Cursor 智能体生态" data-i18n-en="SpaceXSI: Grok × Cursor Stack">SpaceXSI：Grok × Cursor 智能体生态</span></span>
+ <span class="ft-rail-tam mono">+$35B–$65B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="4">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">05</span><span class="ft-rail-name" data-i18n-zh="Starshield 与天基导弹预警/国防网" data-i18n-en="Starshield & Sovereign Defense">Starshield 与天基导弹预警/国防网</span></span>
+ <span class="ft-rail-tam mono">+$15B–$30B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="5">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">06</span><span class="ft-rail-name" data-i18n-zh="Artemis 登月舱与火星多行星基建" data-i18n-en="Artemis HLS Lunar & Mars Base">Artemis 登月舱与火星多行星基建</span></span>
+ <span class="ft-rail-tam mono">文明级远期期权</span>
+ </button>
+ </div>
+
+ <div class="ft-dossier" id="engineDossier">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="engBadge">ENGINE 01 · STARSHIP FULL REUSABILITY &amp; ORBITAL REFUELING</span>
+ <h3 id="engTitle">星舰（Starship V3）全复用闭环：把人类进入太空的边际成本再砍一个数量级</h3>
+ <p id="engDesc">
+ 猎鹰 9 号仅复用了约占箭体成本 70% 的一级助推器与整流罩，每次仍需报废数千万美元的二级火箭；而星舰是人类历史上首款一二级 100% 全复用超重型运载系统。2026 年 11 月 14 日 Flight 15 成功用发射塔机械臂捕获轨道级再入的 Ship 42，验证了免着陆腿减重与发射台原位快速周转路线。一旦星舰 V3（单发近地轨道运力 150–200 吨+）跑通一天多发，SpaceX 每年送入轨道的载荷吨位将从数千吨跃升至十万吨级。
+ </p>
+ <div class="ft-dossier-formula mono" id="engFormula">
+ 物理乘数：单发运力提升 ~10x（对比猎鹰9）× 二级零报废全复用 = 独占星链 V3 巨型卫星与百万颗太空 AI 算力节点的唯一运输船票
+ </div>
+ </div>
+
+ <div class="ft-gauge-grid" id="engGauges">
+ <div class="ft-gauge-card"><b class="mono">Flight 15</b><span>2026.11 首现轨道飞船机械臂捕获</span></div>
+ <div class="ft-gauge-card"><b class="mono">150–200t</b><span>Starship V3 近地轨道复用运力目标</span></div>
+ <div class="ft-gauge-card"><b class="mono">~$3M–$5M</b><span>远期单次发射推进剂与周转边际成本</span></div>
+ <div class="ft-gauge-card"><b class="mono">400 发/4年</b><span>管理层规划星舰四年累计发射节奏</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F2: 7:5 SPLIT — AI/ORBITAL CAPEX VS PEERS & 2025-2032 REVENUE BRIDGE -->
+ <section id="sec-f2" class="ft-split-75">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2A · HYPERSCALE CAPEX RACE &amp; 2032 BRIDGE</span>
+ <h3 data-i18n-zh="从地面电网争夺战到太空算力：2026 年化 CapEx 对标与 2032 营收阶梯桥" data-i18n-en="From Terrestrial Grid Bottlenecks to Space Compute: CapEx & 2032 Revenue Bridge">从地面电网争夺战到太空算力：2026 年化 CapEx 对标与 2032 营收阶梯桥</h3>
+ </div>
+ <div class="mui-segmented" id="fChartTabs">
+ <button type="button" class="mui-seg-btn active" data-fview="capex" data-i18n-zh="2026年化 CapEx 对比 ($B)" data-i18n-en="2026 CapEx Pace ($B)">2026年化 CapEx 对比 ($B)</button>
+ <button type="button" class="mui-seg-btn" data-fview="bridge" data-i18n-zh="25A→32E 营收阶梯桥" data-i18n-en="2032E Revenue Bridge">25A→32E 营收阶梯桥</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="futureCanvas"></canvas>
+ </div>
+
+ <p class="ft-caption">
+ 资本密度洞察：SpaceX 在 2026 年前 9 个月资本开支已达 <strong>$480.7亿</strong>（Q3 单季 $195.9亿，年化强度直逼微软/谷歌/Meta），短期重投地面 1.7GW+ SI 数据中心抢占商业合同，中长期则通过 2028 年启动的轨道太阳能 AI 星座将算力能源成本结构性打穿
+ <a class="cite-link" href="https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue" target="_blank" rel="noopener noreferrer">10-Q CapEx 披露 ↗</a>。
+ </p>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2B · WHY ORBITAL AI COMPUTE (STARMIND)?</span>
+ <h3 data-i18n-zh="为什么马斯克断言“36个月内太空将是部署 AI 最具经济性的地方”？" data-i18n-en="Why Orbital AI Data Centers Can Beat Terrestrial Grids">为什么马斯克断言“36个月内太空将是部署 AI 最具经济性的地方”？</h3>
+ </div>
+ </div>
+
+ <div class="ft-thesis-stack">
+ <div class="ft-thesis-item">
+ <b>① 突破地球电网变压器与环评审批死结（Zero Grid Queue）</b>
+ <p>北美新建吉瓦级地面 AI 数据中心需排队等待 4–7 年高压并网与燃气轮机交付；而晨昏太阳同步轨道（Dawn-Dusk SSO）无大气遮挡与昼夜交替，250kW 级大面积太阳翼可享受近乎 24/7 连续高通量光照。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b>② 真空深空 3K 背景辐射散热 + 星间激光直传</b>
+ <p>无需消耗数百万吨市政淡水冷却，直接向接近绝对零度的深空背景辐射排热；推理结果经星链光学激光骨干网以低延迟直达全球任一城市用户终端。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b>③ 唯有星舰拥有把每瓦特算力送入轨道的经济账本</b>
+ <p>其他云巨头即便造出太空服务器，也买不起高昂商业火箭运力；唯有 SpaceX 将星舰运力成本内化，形成“火箭 + 太阳翼卫星总线 + 激光通信 + Grok/Cursor 模型”四位一体闭环
+ <a class="cite-link" href="https://www.lightreading.com/satellite/with-nvidia-on-board-spacex-orbital-data-centers-to-hit-significant-scale-in-2028" target="_blank" rel="noopener noreferrer">Light Reading 报道 ↗</a>。</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F3: 5:7 REVERSED SPLIT — FULL HARDWARE/SPECTRUM STACK -->
+ <section id="sec-f3" class="ft-split-57">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3A · TOTAL ORBITAL &amp; SPECTRUM SOVEREIGNTY</span>
+ <h3 data-i18n-zh="四大底层基础设施合拢：重塑太空运输、移动通信与边缘推理" data-i18n-en="Four Foundational Pillars: Launch, V3 Bus, Spectrum & AI">四大底层基础设施合拢：重塑太空运输、移动通信与边缘推理</h3>
+ </div>
+ </div>
+
+ <div class="ft-chip-matrix">
+ <div class="ft-chip-box">
+ <span class="code mono">PROPULSION · RAPTOR 3</span>
+ <h4>全流量分级燃烧引擎</h4>
+ <p>取消外部繁杂隔热罩、管路内嵌化，推重比与海平面推力再创新高，支撑星舰无翻修快速复飞。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">BUS · STARLINK V3 (250kW)</span>
+ <h4>Tbps 级单星吞吐跃升</h4>
+ <p>专为星舰载荷舱定制，Flight 14/15 已连续完成在轨批量部署
+ <a class="cite-link" href="https://www.friendsofnasa.org/2026/11/spacex-starship-back-on-earth-after.html" target="_blank" rel="noopener noreferrer">V3 部署核验 ↗</a>，单星容量较 V2 Mini 跃升数倍。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">SPECTRUM · 2GHz + 800MHz</span>
+ <h4>天地融合全覆盖频谱墙</h4>
+ <p>EchoStar $19.6B 卫星频段配合 Grain 800MHz 室内穿墙低频，补齐直连普通存量手机最后拼图。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">AI STACK · STARMIND + CURSOR</span>
+ <h4>代码数据护城河与轨道云</h4>
+ <p>Cursor 实时开发者工作流反哺 Grok 编码推理，搭载 Nvidia 加速器的轨道算力星 2028 放量。</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3B · COMPUTE GW &amp; CONSTELLATION BANDWIDTH RAMP</span>
+ <h3 data-i18n-zh="2025–2030 总装机 AI 算力 (GW) 与星链全球活跃订户爬坡推演" data-i18n-en="2025–2030 Total AI Compute (GW) & Starlink Subscriber Ramp">2025–2030 总装机 AI 算力 (GW) 与星链全球活跃订户爬坡推演</h3>
+ </div>
+ <div class="mui-segmented" id="sChartTabs">
+ <button type="button" class="mui-seg-btn active" data-sview="gw" data-i18n-zh="地面+轨道 AI 算力 (GW)" data-i18n-en="Total AI Compute (GW)">地面+轨道 AI 算力 (GW)</button>
+ <button type="button" class="mui-seg-btn" data-sview="subs" data-i18n-zh="星链订户规模 (百万户)" data-i18n-en="Starlink Subs (M)">星链订户规模 (百万户)</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="siliconCanvas"></canvas>
+ </div>
+
+ <p class="ft-caption">
+ 增长斜率核验：据 Q3 2026 10-Q，SpaceX 已装机 GPU 铭牌算力在短短一年内从 <strong>0.6 GW 跃升至 1.7 GW</strong>，星链消费级订户从 <strong>720 万跃升至 1,360 万</strong>；随着 2027–2028 星舰高密度发射 V3 与 StarMind 卫星，两大底座将进入指数级复利共振。
+ </p>
+ </div>
+ </section>
+
+ <!-- MODULE F4: INTERACTIVE 2030 "$5T+ MARKET CAP" OPTIONALITY BUILDER -->
+ <section id="sec-f4" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F4 · INTERACTIVE 2030 OPTIONALITY &amp; VALUATION BUILDER</span>
+ <h2 class="ft-h2" data-i18n-zh="2030 迈向“$5万亿+市值”期权组装实验室：勾选你认可的新增长极" data-i18n-en="2030 Path to $5T+ Market Cap: Toggle Growth Optionality Switches">2030 迈向“$5万亿+市值”期权组装实验室：勾选你认可的新增长极</h2>
+ <p class="ft-sub" data-i18n-zh="基于 2026 年化基础盘，自由开关五大远期业务期权并选择 EV/EBITDA 估值倍数，实时测算 2030E 营收、EBITDA 与隐含总市值。" data-i18n-en="Toggle five next-decade catalysts and select an EV/EBITDA multiple to model SpaceX's 2030E revenue, EBITDA, and market cap.">基于 2026 年化基础盘，自由开关五大远期业务期权并选择 EV/EBITDA 估值倍数，实时测算 2030E 营收、EBITDA 与隐含总市值。</p>
+ </div>
+ <div class="mui-segmented" id="peTabs">
+ <button type="button" class="mui-seg-btn" data-pe="24">审慎 24x EBITDA</button>
+ <button type="button" class="mui-seg-btn active" data-pe="32">基准 32x EBITDA</button>
+ <button type="button" class="mui-seg-btn" data-pe="40">稀缺溢价 40x EBITDA</button>
+ </div>
+ </div>
+
+ <div class="ft-builder-grid">
+ <div class="ft-switch-list" id="optSwitchList">
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="d2c" checked />
+ <span><b>期权 1：Starlink Mobile (2GHz+800MHz) 全球手机直连包</b><span>渗透 1.5亿+ 移动漫游与无信号覆盖增强用户</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$28B 营收 · 65% EBITDA</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="starmind" checked />
+ <span><b>期权 2：StarMind 太阳同步轨道 AI 数据中心集群 (2028+)</b><span>星舰批量投送太空推理节点，摆脱地面电网瓶颈</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$46B 营收 · 58% EBITDA</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="cursor" checked />
+ <span><b>期权 3：Cursor 企业级软件自动工程与 Grok API 生态</b><span>AI 替代全球研发人力预算，高粘性 SaaS 与 Token 变现</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$32B 营收 · 55% EBITDA</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="shield" checked />
+ <span><b>期权 4：Starshield 美盟天基防御网与重型深空运输</b><span>承接太空军导弹跟踪网（Golden Dome）与商业空间站物流</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$19B 营收 · 50% EBITDA</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="mars" />
+ <span><b>期权 5：远期奇点 — 月球基地常态化货运与地球点对点极速客运</b><span>高赔率远期期权（默认未勾选，可手动开启观察弹性）</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$25B 营收 · 44% EBITDA</span>
+ </label>
+ </div>
+
+ <div class="ft-val-board">
+ <div class="ft-val-kpis">
+ <div class="ft-val-kpi"><b class="mono" id="optRevOut">$215B</b><span>2030E 推演总营收</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optNetOut">$119.8B</b><span>2030E Adjusted EBITDA</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optEpsOut">55.7%</b><span>2030E 综合 EBITDA 利润率</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optCapOut" style="color:var(--mui-success-text);">$3.88T</b><span>2030E 隐含目标总市值</span></div>
+ </div>
+
+ <div class="ft-canvas-box" style="height:155px;">
+ <canvas id="optMiniCanvas"></canvas>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VERIFIED PRIMARY SOURCES -->
+ <section class="ft-panel" aria-label="权威公告与前瞻信源">
+ <div class="ft-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+ <div>
+ <span class="ft-kicker mono">VERIFIED PRIMARY SOURCES</span>
+ <h2 class="ft-h2" data-i18n-zh="官方试飞公报、FCC 轨道算力申报与 S-1 战略信源" data-i18n-en="Official Flight Releases, FCC Orbital Compute Filings & S-1 Sources">官方试飞公报、FCC 轨道算力申报与 S-1 战略信源</h2>
+ </div>
+ </div>
+ <div class="ft-sources-grid">
+ <a class="ft-source-card" href="https://www.spacex.com/launches/starship-flight-15" target="_blank" rel="noopener noreferrer">
+ <b>SpaceX Official: Starship Flight 15 Mission (Nov 2026) ↗</b>
+ <span>2026 年 11 月 13–14 日星舰第 15 次试飞入轨部署 23 颗星链 V3 并首次由发射塔机械臂成功捕获返回飞船 Ship 42</span>
+ </a>
+ <a class="ft-source-card" href="https://www.spacex.com/spacexai/starmind" target="_blank" rel="noopener noreferrer">
+ <b>SpaceXAI Official: StarMind Space-Based AI Compute ↗</b>
+ <span>官方架构说明：利用太阳同步低延迟轨道部署搭载本地 AI 算力的卫星并经光学链路回传推理结果</span>
+ </a>
+ <a class="ft-source-card" href="https://www.lightreading.com/satellite/with-nvidia-on-board-spacex-orbital-data-centers-to-hit-significant-scale-in-2028" target="_blank" rel="noopener noreferrer">
+ <b>Light Reading: Orbital AI Data Centers Scale in 2028 ↗</b>
+ <span>搭载 Nvidia 芯片的 SpaceX 轨道 AI 数据中心将于 2027Q4 启动发射并在 2028 年进入规模化部署阶段</span>
+ </a>
+ <a class="ft-source-card" href="https://payloadspace.com/spacex-reveals-financial-data-ahead-of-ipo/" target="_blank" rel="noopener noreferrer">
+ <b>Payload Space: S-1 $28.5T TAM &amp; Orbital Roadmap ↗</b>
+ <span>S-1 招股书披露横跨航天、全球连接与人工智能的 $28.5万亿总潜在市场及 2028 轨道算力规划</span>
+ </a>
+ <a class="ft-source-card" href="https://spacenexus.us/blog/spacex-starlink-everything-you-need-to-know-2026" target="_blank" rel="noopener noreferrer">
+ <b>SpaceNexus: Starlink 2026 Constellation &amp; D2C Guide ↗</b>
+ <span>约 11,100 颗活跃在轨卫星、手机直连（Direct-to-Cell）商用进展与下一代 V3 容量拆解</span>
+ </a>
+ <a class="ft-source-card" href="https://www.basenor.com/blogs/news/musk-explains-spacexs-60b-cursor-acquisition-data-is-the-moat" target="_blank" rel="noopener noreferrer">
+ <b>Strategic Analysis: SpaceX's $60B Cursor Acquisition ↗</b>
+ <span>拆解 2026 年 8 月全股票并购 Cursor 背后的实时软件工程数据护城河与 SpaceXSI 协同逻辑</span>
+ </a>
+ </div>
+ </section>
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+ var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+
+ var state = { theme: 'light', lang: 'zh', hz: 0, eng: 0, fView: 'capex', sView: 'gw', pe: 32 };
+ var hits = { futureCanvas: [], siliconCanvas: [] };
+
+ function showToast(msg) {
+ var bar = document.getElementById('muiSnackbar');
+ if (!bar) return;
+ bar.textContent = msg;
+ bar.classList.add('show');
+ clearTimeout(bar._t);
+ bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2200);
+ }
+
+ function getPalette() {
+ var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+ return {
+ dark: dark,
+ text: dark ? '#F3F6F9' : '#0F1924',
+ sub: dark ? '#B2BAC2' : '#334155',
+ tick: dark ? '#94A3B8' : '#475569',
+ grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+ blue: dark ? '#3399FF' : '#0073E6',
+ violet: dark ? '#A78BFA' : '#7C3AED',
+ green: dark ? '#22C55E' : '#16A34A',
+ amber: dark ? '#FFB74D' : '#D97706',
+ red: dark ? '#FF6B6B' : '#DC2626'
+ };
+ }
+
+ var HORIZONS = {
+ zh: [
+ {
+ badge: 'HORIZON 1 · 高确定性工程兑现期 (2026–2027)',
+ title: '星舰一二级同发双捕获 × 星链 V3 批产 × 全美手机直连商用',
+ items: [
+ '<strong>星舰全复用闭环：</strong>继 Flight 15 捕获 Ship 42 后，攻克单次任务一二级双筷子捕获与在轨低温推进剂转移（Orbital Refueling）。',
+ '<strong>Starlink V3 规模换代：</strong>每发星舰投送数十颗 Tbps 级 V3 大卫星，推动星链订户突破 2,200 万并完成 EchoStar/800MHz 频谱过户。',
+ '<strong>StarMind 轨道算力首发：</strong>搭载 Nvidia 芯片的首批轨道 AI 试验星于 2027Q4 升空，地面 SI 装机迈向 3.5GW+。'
+ ],
+ prob: '兑现确定性：极高 (85%+)',
+ impact: '年化增量营收池：+$30B–$48B'
+ },
+ {
+ badge: 'HORIZON 2 · 太空算力与移动运营商放量期 (2028–2029)',
+ title: 'StarMind 轨道 AI 数据中心成网 × 全球手机直连漫游 × 无人登月验证',
+ items: [
+ '<strong>轨道 AI 算力规模化：</strong>2028 年起星舰高密度部署 250kW 级太阳同步轨道 AI 算力星，承接地面电网受限的推理洪峰。',
+ '<strong>Starlink Mobile 颠覆传统电信：</strong>融合卫星 2GHz 与地面 800MHz 频谱，为全球主流智能手机提供室内外无缝数据语音服务。',
+ '<strong>Artemis 登月与火星无人探路：</strong>兑现 NASA 载人登月舱（HLS）在轨加注任务，并趁火星冲日窗口发射首批无人货运星舰。'
+ ],
+ prob: '兑现确定性：中高 (70%)',
+ impact: '年化增量营收池：+$75B–$115B'
+ },
+ {
+ badge: 'HORIZON 3 · 多行星与吉瓦级天基文明奇点期 (2030–2032)',
+ title: '多吉瓦太空超算网络 × 月球常驻科考物流 × 载人火星探险启航',
+ items: [
+ '<strong>太空新增算力超越地面：</strong>轨道太阳能 AI 星座迈向数万颗级规模，构建环绕地球的零水耗、全天候天基超级智能网。',
+ '<strong>太空工业与深空干线：</strong>以 <$150/kg 极低入轨成本催生商业空间站、太空制药晶圆与地月常态化重型货运班列。',
+ '<strong>多行星物种愿景落地：</strong>在无人货运星舰验证火星地表就地制取推进剂（ISRU）后，启动人类首次载人火星航行窗口。'
+ ],
+ prob: '兑现确定性：远期高赔率期权 (50%)',
+ impact: '年化增量营收池：+$150B+'
+ }
+ ],
+ en: [
+ {
+ badge: 'HORIZON 1 · HIGH-CONVICTION EXECUTION (2026–2027)',
+ title: 'Dual Booster+Ship Catch × Starlink V3 Ramp × U.S. Direct-to-Cell Launch',
+ items: [
+ '<strong>Full Starship Reusability:</strong> Following Flight 15\'s Ship 42 tower catch, demonstrate dual chopsticks recovery and cryogenic orbital refueling.',
+ '<strong>Starlink V3 & Spectrum Close:</strong> Deploy Tbps-class V3 satellites via Starship, surpass 22M subscribers, and close EchoStar 2GHz + Grain 800MHz spectrum.',
+ '<strong>Initial StarMind Deployment:</strong> Launch initial Nvidia-powered orbital AI compute satellites in Q4 2027 while scaling terrestrial SI past 3.5GW.'
+ ],
+ prob: 'Conviction: Very High (85%+)',
+ impact: 'Incremental Annual Revenue: +$30B–$48B'
+ },
+ {
+ badge: 'HORIZON 2 · ORBITAL AI & MOBILE CARRIER SCALE (2028–2029)',
+ title: 'StarMind Orbital Compute Mesh × Global Handset Carrier × Lunar HLS',
+ items: [
+ '<strong>Orbital Data Centers at Scale:</strong> High-cadence Starship flights deploy 250kW sun-synchronous AI satellites in 2028, bypassing terrestrial power queues.',
+ '<strong>Starlink Mobile Carrier Disruption:</strong> Combine 2GHz space beams with 800MHz indoor spectrum to deliver full voice/data to unmodified phones.',
+ '<strong>Artemis HLS & Uncrewed Mars Windows:</strong> Execute NASA Artemis lunar landings and dispatch initial uncrewed Starship cargo missions to Mars.'
+ ],
+ prob: 'Conviction: Medium-High (70%)',
+ impact: 'Incremental Annual Revenue: +$75B–$115B'
+ },
+ {
+ badge: 'HORIZON 3 · MULTIPLANETARY & MULTI-GW SPACE AI (2030–2032)',
+ title: 'Multi-GW Orbital Superintelligence × Cislunar Economy × Crewed Mars',
+ items: [
+ '<strong>Space Compute Surpasses Terrestrial Additions:</strong> Scale tens of thousands of solar-powered AI compute nodes in sun-synchronous orbit.',
+ '<strong>Cislunar Heavy Freight:</strong> Sub-$150/kg orbit economics unlock commercial space stations, orbital manufacturing, and permanent lunar base supply.',
+ '<strong>Crewed Mars Architecture:</strong> Validate Mars in-situ propellant production (ISRU) and open early crewed interplanetary transport.'
+ ],
+ prob: 'Conviction: Long-Term Asymmetric Option (50%)',
+ impact: 'Incremental Annual Revenue: +$150B+'
+ }
+ ]
+ };
+
+ var ENGINES = {
+ zh: [
+ {
+ badge: 'ENGINE 01 · STARSHIP FULL REUSABILITY & ORBITAL REFUELING',
+ title: '星舰（Starship V3）全复用闭环：把人类进入太空的边际成本再砍一个数量级',
+ desc: '猎鹰 9 号仅复用了约占箭体成本 70% 的一级助推器与整流罩，每次仍需报废数千万美元的二级火箭；而星舰是人类历史上首款一二级 100% 全复用超重型运载系统。2026 年 11 月 14 日 Flight 15 成功用发射塔机械臂捕获轨道级再入的 Ship 42，验证了免着陆腿减重与发射台原位快速周转路线。一旦星舰 V3（单发近地轨道运力 150–200 吨+）跑通一天多发，SpaceX 每年送入轨道的载荷吨位将从数千吨跃升至十万吨级。',
+ formula: '物理乘数：单发运力提升 ~10x（对比猎鹰9）× 二级零报废全复用 = 独占星链 V3 巨型卫星与百万颗太空 AI 算力节点的唯一运输船票',
+ gauges: [['Flight 15', '2026.11 首现轨道飞船机械臂捕获'], ['150–200t', 'Starship V3 近地轨道复用运力目标'], ['~$3M–$5M', '远期单次发射推进剂与周转边际成本'], ['400 发/4年', '管理层规划星舰四年累计发射节奏']]
+ },
+ {
+ badge: 'ENGINE 02 · STARMIND ORBITAL SOLAR AI DATA CENTERS',
+ title: 'StarMind 轨道 AI 数据中心：向 FCC 申报百万颗卫星，用太空阳光破解地球电荒',
+ desc: '2026 年 1 月 SpaceX 向 FCC 提交重磅申请，并于 5 月 S-1 招股书中正式确认将于 2027Q4 启动、2028 年规模化部署轨道 AI 计算卫星（StarMind）。每颗下一代卫星规划高达 250kW 太阳翼发电能力并搭载定制高算力 AI 芯片，运行于晨昏太阳同步轨道（几乎永不进入地球阴影），通过真空深空辐射排热，并由激光链路将推理 Token 毫秒级投送回地面用户。',
+ formula: '套利公式：太空 0 电费/0 水耗/0 电网排队 + 星舰内部地板价发射成本 = 改写全球 AI 推理基础设施边际成本曲线',
+ gauges: [['100万颗', '2026.01 FCC 申报远期轨道算力上限'], ['250 kW', '下一代大功率太阳能卫星单星电功率'], ['2028 放量', 'S-1 明确轨道算力商业规模化节点'], ['0 电网排队', '彻底绕开地面 5–7 年变压器并网瓶颈']]
+ },
+ {
+ badge: 'ENGINE 03 · STARLINK MOBILE & DUAL-BAND SPECTRUM',
+ title: 'Starlink Mobile 全球手机直连：从“农村宽带补充”升级为“全球无死角移动运营商”',
+ desc: '早期星链必须安装锅盖天线，受限于家庭屋顶与车载场景；通过与 T-Mobile 等多国运营商合作直连（Direct-to-Cell），并重金锁定 EchoStar $196亿 2GHz S波段卫星频谱与 2026 年 10 月收购的 Grain 全美 800MHz 低频段，SpaceX 构建起“高空卫星广域覆盖 + 低频段室内穿墙”的完整移动通信网，直接面向全球数十亿存量普通手机收费。',
+ formula: '变现双轮：(1) 全球运营商批发漫游分成 + (2) 自有频谱高溢价全覆盖移动套餐（毛利率 >70%）',
+ gauges: [['$19.6B', '协议收购 EchoStar 2GHz 核心频谱'], ['800 MHz', '2026.10 补齐室内穿墙黄金低频段'], ['无需换手机', '存量 LTE/5G 智能手机原生直连'], ['80亿人口', 'Shotwell 锚定的全球潜在覆盖基数']]
+ },
+ {
+ badge: 'ENGINE 04 · SPACEX SI: GROK × CURSOR × 1.7GW+ SUPERCLUSTERS',
+ title: 'SpaceXSI 软件与基础设施：以 $600亿 Cursor 卡位全球 AI 自动编程最高频入口',
+ desc: '2026 年合并 xAI 并收购 AI 编程霸主 Cursor（并表仅半季即创收 $6.08亿）绝非财务拼凑：Cursor 掌握全球数百万顶尖工程师的实时代码演进与调试上下文，为 Grok 基座大模型提供了最稀缺的高质量强化学习闭环；同时 1.7GW 已装机超算集群（及 Apollo $400亿租赁扩容）向超大企业客户提供算力与智能体平台服务，Q3 单季收入已达 $75.6亿。',
+ formula: '飞轮闭环：Cursor 独家开发者数据 → 训练最强代码/工程推理模型 Grok → 反哺星舰/星链自研软件并对外变现',
+ gauges: [['$7.56B/季', 'Q3 2026 SI 跃居第一大营收分部'], ['$608M', 'Cursor 2026.08.14 并表后半季收入'], ['1.7 GW', '截至 Q3 2026 已投产 GPU 算力规模'], ['$40B 租赁', '2026.10 签署 Apollo GPU 算力扩容']]
+ },
+ {
+ badge: 'ENGINE 05 · STARSHIELD & PROLIFERATED DEFENSE CONSTELLATIONS',
+ title: 'Starshield（星盾）与主权天基防务：重构现代大国分布式太空安全底座',
+ desc: '传统数亿美元一颗的大型高轨军用侦察/通信卫星在反卫星武器面前极其脆弱。SpaceX 依托每周 60+ 颗商业化卫星产线，为美国太空军、国家侦察局（NRO）及盟国定制成百上千颗低轨分布式加密遥感、导弹跟踪（如美军新型天基防御架构）与抗干扰战术通信网，正逐步切走传统军工五巨头最肥美的天基预算。',
+ formula: '竞争代差：批产成本低 70% + 发射交付快 4 倍 + 激光组网高抗毁性 → 锁定多年期高利润主权订单',
+ gauges: [['$2.13B/季', 'Q3 2026 政企与政府连接收入 (+91%)'], ['NSSL 主力', '猎鹰9/重型猎鹰包揽高机密军用发射'], ['抗毁网格', '百颗级低轨分布式节点替代单颗大星'], ['高续约粘性', '国家级安全基础设施零替代风险']]
+ },
+ {
+ badge: 'ENGINE 06 · ARTEMIS HLS LUNAR LANDER & MARS INTERPLANETARY',
+ title: '地月经济圈与火星殖民：把人类推向多行星物种的终极创立使命',
+ desc: 'SpaceX 在 S-1 开篇直言公司存在的终极理由：“我们不希望人类重蹈恐龙灭绝的覆辙。”通过 NASA 阿尔忒弥斯（Artemis）数十亿美元载人登月舱（Starship HLS）合同打磨在轨低温甲烷/液氧加注与深空生命保障系统，SpaceX 不仅包揽重返月球的核心干线运输，更在为每 26 个月一次的地球-火星发射窗口储备百吨级星际运力。',
+ formula: '战略定位：以 NASA 政府登月合同补贴深空前沿研发 → 孵化本世纪下半叶地月资源开发与火星城市基建',
+ gauges: [['Artemis HLS', 'NASA 选定载人重返月球着陆器平台'], ['在轨加注', '深空百吨级载荷跨引力井核心钥匙'], ['26个月/次', '地火霍曼转移轨道批量发射窗口'], ['$28.5T TAM', 'S-1 锚定天地算力与太空经济总空间']]
+ }
+ ],
+ en: [
+ {
+ badge: 'ENGINE 01 · STARSHIP FULL REUSABILITY & ORBITAL REFUELING',
+ title: 'Starship V3 Full Reusability: Cutting Access-to-Orbit Marginal Cost by Another Order of Magnitude',
+ desc: 'Falcon 9 reuses its booster and fairings (~70% of vehicle cost) while expending its upper stage; Starship is history\'s first 100% fully reusable super-heavy system. On Nov 14, 2026, Flight 15 caught the returning orbital Ship 42 with Starbase\'s Mechazilla chopsticks, validating legless weight savings and rapid pad turnaround toward 150–200t+ V3 orbital payloads.',
+ formula: 'Physics multiplier: ~10x payload per flight vs Falcon 9 × zero upper-stage expendability = exclusive carrier for Starlink V3 & StarMind AI',
+ gauges: [['Flight 15', 'Nov 2026 first orbital Ship tower catch'], ['150–200t', 'Starship V3 reusable LEO payload target'], ['~$3M–$5M', 'Long-term marginal propellant/ops target'], ['400 / 4Yrs', 'Management 4-year Starship flight target']]
+ },
+ {
+ badge: 'ENGINE 02 · STARMIND ORBITAL SOLAR AI DATA CENTERS',
+ title: 'StarMind Orbital AI Compute: 1M-Satellite FCC Filing Bypassing Terrestrial Power Bottlenecks',
+ desc: 'Following its Jan 2026 FCC filing for up to 1M orbital AI data-center satellites, SpaceX\'s May 2026 S-1 confirmed plans to launch AI-compute satellites starting Q4 2027 and scaling in 2028. Operating in dawn-dusk sun-synchronous orbits with 250kW solar arrays and vacuum radiative cooling, StarMind beams low-latency inference back via optical lasers.',
+ formula: 'Arbitrage equation: 24/7 space solar + zero water cooling + internal Starship lift = structural cost & speed advantage over grid-locked clouds',
+ gauges: [['Up to 1M', 'Jan 2026 FCC orbital AI constellation cap'], ['250 kW', 'Next-gen solar satellite bus power target'], ['2028 Scale', 'S-1 target for commercial orbital AI scale'], ['Zero Grid Lag', 'Bypasses 5–7 yr utility transformer queues']]
+ },
+ {
+ badge: 'ENGINE 03 · STARLINK MOBILE & DUAL-BAND SPECTRUM',
+ title: 'Starlink Mobile Direct-to-Cell: Evolving from Rural Dish Broadband into a Global Wireless Carrier',
+ desc: 'Combining T-Mobile and international MNO partnerships with its $19.6B EchoStar 2GHz spectrum agreement and Oct 2026 Grain nationwide 800MHz indoor-penetrating spectrum acquisition, SpaceX is building a hybrid space-terrestrial wireless network serving billions of unmodified LTE/5G smartphones globally.',
+ formula: 'Dual monetization: (1) Global MNO wholesale roaming share + (2) High-margin direct Starlink Mobile all-coverage plans (>70% GM)',
+ gauges: [['$19.6B', 'Pending EchoStar 2GHz spectrum purchase'], ['800 MHz', 'Oct 2026 indoor-penetrating low-band deal'], ['Unmodified', 'Works directly with standard smartphones'], ['8B People', 'Global addressable handset population']]
+ },
+ {
+ badge: 'ENGINE 04 · SPACEX SI: GROK × CURSOR × 1.7GW+ SUPERCLUSTERS',
+ title: 'SpaceXSI Stack: Owning the Developer Coding Moat ($60B Cursor) & Multi-GW Compute',
+ desc: 'Merging xAI (Feb 2026) and acquiring AI coding leader Cursor for ~$60B (Aug 2026, adding $608M revenue in ~6 weeks) pairs real-time software engineering telemetry with Grok frontier models and 1.7GW of installed GPU compute (backed by a ~$40B Apollo GPU lease commitment)—generating $7.56B in Q3 2026 revenue.',
+ formula: 'Flywheel: Cursor real-world coding workflows → superior Grok reasoning/coding models → enterprise SaaS & SI cloud monetization',
+ gauges: [['$7.56B/qtr', 'Q3 2026 SI became #1 revenue segment'], ['$608M', 'Cursor partial-Q3 revenue post-Aug 14'], ['1.7 GW', 'Installed nameplate GPU compute (Q3 26)'], ['~$40B Lease', 'Oct 2026 Apollo GPU expansion commitment']]
+ },
+ {
+ badge: 'ENGINE 05 · STARSHIELD & PROLIFERATED DEFENSE CONSTELLATIONS',
+ title: 'Starshield Sovereign Defense: Proliferated LEO Architecture for Tracking & Secure Comms',
+ desc: 'Replacing vulnerable billion-dollar GEO defense satellites, Starshield leverages SpaceX\'s 60+/week satellite assembly line and optical inter-satellite links to deploy resilient proliferated LEO sensing, missile-tracking, and encrypted battle-management networks for the U.S. Space Force, NRO, and allied governments.',
+ formula: 'Competitive edge: 70% lower unit bus cost + 4x faster launch deployment + mesh resilience → multi-year sovereign backlog',
+ gauges: [['$2.13B/qtr', 'Q3 2026 Enterprise & Gov Starlink (+91%)'], ['NSSL Prime', 'Falcon 9/Heavy lead classified launches'], ['Mesh Resilience', 'Proliferated LEO beats exquisite GEO'], ['Sovereign Lock', 'Mission-critical multi-year defense contracts']]
+ },
+ {
+ badge: 'ENGINE 06 · ARTEMIS HLS LUNAR LANDER & MARS INTERPLANETARY',
+ title: 'Cislunar Economy & Mars Colonization: Backing Humanity\'s Multiplanetary Insurance Policy',
+ desc: 'SpaceX\'s S-1 states its foundational mission succinctly: "We do not want humans to have the same fate as dinosaurs." NASA\'s multi-billion-dollar Artemis Human Landing System (HLS) contracts co-fund orbital cryogenic refueling and deep-space life support—paving the highway for lunar bases and Mars cargo windows.',
+ formula: 'Strategic logic: NASA HLS milestones co-fund deep-space R&D → unlocking cislunar logistics & interplanetary civilization transport',
+ gauges: [['Artemis HLS', 'Selected NASA crewed lunar lander'], ['Orbital Refuel', 'Key to 100t+ deep-space payload delivery'], ['26-Mo Sync', 'Earth-Mars Hohmann transfer launch windows'], ['$28.5T TAM', 'S-1 total space, connectivity & AI market']]
+ }
+ ]
+ };
+
+ function renderHorizon() {
+ var arr = HORIZONS[state.lang] || HORIZONS.zh;
+ var hz = arr[state.hz] || arr[0];
+ document.getElementById('hzBadge').textContent = hz.badge;
+ document.getElementById('hzTitle').textContent = hz.title;
+ document.getElementById('hzList').innerHTML = hz.items.map(function (t) {
+ return '<li><span class="ft-hz-dot"></span><span>' + t + '</span></li>';
+ }).join('');
+ document.getElementById('hzProb').textContent = hz.prob;
+ document.getElementById('hzImpact').textContent = hz.impact;
+ }
+
+ function renderEngine() {
+ var arr = ENGINES[state.lang] || ENGINES.zh;
+ var eg = arr[state.eng] || arr[0];
+ document.getElementById('engBadge').textContent = eg.badge;
+ document.getElementById('engTitle').textContent = eg.title;
+ document.getElementById('engDesc').textContent = eg.desc;
+ document.getElementById('engFormula').textContent = eg.formula;
+ document.getElementById('engGauges').innerHTML = eg.gauges.map(function (g) {
+ return '<div class="ft-gauge-card"><b class="mono">' + g[0] + '</b><span>' + g[1] + '</span></div>';
+ }).join('');
+ }
+
+ function applyTheme(t, silent) {
+ state.theme = (t === 'dark') ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var ic = document.getElementById('appbarThemeIcon');
+ if (ic) {
+ ic.innerHTML = state.theme === 'dark'
+ ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+ : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+ }
+ var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+ if (sl) sl.setAttribute('aria-pressed', state.theme === 'light' ? 'true' : 'false');
+ if (sd) sd.setAttribute('aria-pressed', state.theme === 'dark' ? 'true' : 'false');
+ drawAll();
+ if (!silent) showToast(state.theme === 'dark' ? '已切换至深色蓝图模式' : '已切换至 MUI 浅色模式');
+ }
+
+ function applyLang(lang, silent) {
+ state.lang = (lang === 'en') ? 'en' : 'zh';
+ document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+ var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+ if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', state.lang === 'zh' ? 'true' : 'false'); }
+ if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', state.lang === 'en' ? 'true' : 'false'); }
+ var nodes = document.querySelectorAll('[data-i18n-zh]');
+ for (var i = 0; i < nodes.length; i++) {
+ var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+ else nodes[i].textContent = val;
+ }
+ }
+ renderHorizon();
+ renderEngine();
+ drawAll();
+ if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+ }
+
+ document.getElementById('hzTabs').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-hz]');
+ if (!b) return;
+ state.hz = parseInt(b.getAttribute('data-hz'), 10) || 0;
+ var bs = this.querySelectorAll('.ft-hz-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderHorizon();
+ });
+
+ document.getElementById('engineRail').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-eng]');
+ if (!b) return;
+ state.eng = parseInt(b.getAttribute('data-eng'), 10) || 0;
+ var bs = this.querySelectorAll('.ft-rail-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderEngine();
+ });
+
+ // Suite Hub Filter & Navigation
+ var hubPills = document.getElementById('coHubPills');
+ if (hubPills) {
+ hubPills.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-co-cat]');
+ if (!b) return;
+ var cat = b.getAttribute('data-co-cat');
+ var ps = hubPills.querySelectorAll('.co-hub-pill');
+ for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === b);
+ var items = document.querySelectorAll('#coHubList [data-co-item-cat]');
+ for (var j = 0; j < items.length; j++) {
+ items[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || items[j].getAttribute('data-co-item-cat') === cat));
+ }
+ });
+ }
+ document.getElementById('coHubList').addEventListener('click', function (e) {
+ var item = e.target.closest('[data-suite-page]');
+ if (!item) return;
+ var targetFile = item.getAttribute('data-suite-page');
+ if (targetFile === 'SpaceX未来十年（2026–2032）战略图谱.html') {
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+ return;
+ }
+ if (window.location.protocol === 'file:') {
+ window.location.href = targetFile;
+ } else {
+ showToast(state.lang === 'en' ? ('Download suite files to open: ' + targetFile) : ('请在聊天文件列表中切换或下载同目录打开：' + targetFile));
+ }
+ });
+
+ function prepCanvas(id) {
+ var c = document.getElementById(id);
+ if (!c) return null;
+ var rect = c.getBoundingClientRect();
+ var w = Math.max(260, rect.width || 480), h = Math.max(135, rect.height || 260);
+ var dpr = Math.min(window.devicePixelRatio || 1, 2);
+ c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+ var ctx = c.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { c: c, ctx: ctx, w: w, h: h };
+ }
+
+ function roundRect(ctx, x, y, w, h, r) {
+ var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rr, y);
+ ctx.arcTo(x + w, y, x + w, y + h, rr);
+ ctx.arcTo(x + w, y + h, x, y + h, rr);
+ ctx.arcTo(x, y + h, x, y, rr);
+ ctx.arcTo(x, y, x + w, y, rr);
+ ctx.closePath();
+ }
+
+ function drawFutureCanvas() {
+ var env = prepCanvas('futureCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hits.futureCanvas = [];
+ var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.fView === 'capex') {
+ var peers = [
+ { name: 'Amazon', cap: 105.0, col: pal.amber, tip: 'AWS 与地面数据中心重度扩张，受制于北美电网排队' },
+ { name: 'Microsoft', cap: 88.0, col: pal.blue, tip: '全球地面 AI 超算资本开支高位运行' },
+ { name: 'Alphabet', cap: 76.0, col: pal.violet, tip: 'TPU 集群与云基础设施地面投入' },
+ { name: 'SpaceX (9M年化)', cap: 64.1, col: pal.green, tip: '9M26 实际 CapEx $48.07B（年化 ~$64.1B；Q3单季 $19.59B），唯一兼具地面超算与星舰太空算力通道' },
+ { name: 'Tesla (26E指引)', cap: 20.0, col: pal.red, tip: '2026 年 10 月更新全年 CapEx 指引约 ~$20B（AI 算力、电池与 Terafab）' }
+ ];
+ var maxC = 120;
+ for (var g = 0; g <= 4; g++) {
+ var gv = Math.round((maxC / 4) * g), gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv + 'B', pad.left - 8, gy + 4);
+ }
+ var slot = pw / peers.length, bw = Math.min(44, slot * 0.56);
+ peers.forEach(function (p, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var bh = Math.max(6, (p.cap / maxC) * ph), yt = pad.top + ph - bh;
+ ctx.fillStyle = p.col;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + p.cap.toFixed(1) + 'B', x + bw / 2, yt - 6);
+ ctx.fillStyle = i === 3 ? pal.green : pal.sub; ctx.font = (i === 3 ? 'bold ' : '600 ') + '10.5px sans-serif';
+ ctx.fillText(p.name, x + bw / 2, pad.top + ph + 20);
+ hits.futureCanvas.push({ x: x, y: yt, w: bw, h: bh, title: p.name, body: p.tip });
+ });
+ } else {
+ var steps = [
+ { lbl: '2025基准', v: 18.7, b: 0, col: pal.blue, tip: 'FY2025 S-1 实际营收: $18.67B (星链 $11.39B + 航天 $4.09B + AI $3.20B)' },
+ { lbl: '+26年跃迁', v: 39.6, b: 18.7, col: pal.violet, tip: 'Q3 2026 年化运行率达 $58.3B (+$39.6B 净增，SI 与星链双轮爆发)' },
+ { lbl: '+宽带/星盾', v: 44.0, b: 58.3, col: pal.green, tip: '星链 V3 全球宽带、航空海事与 Starshield 国防扩张贡献 +$44B' },
+ { lbl: '+手机直连', v: 35.0, b: 102.3, col: pal.amber, tip: 'EchoStar 2GHz + 800MHz Starlink Mobile 全球直连贡献 +$35B' },
+ { lbl: '+轨道AI/Cursor', v: 78.0, b: 137.3, col: pal.violet, tip: 'StarMind 轨道数据中心 (2028+) 与 Cursor/Grok 生态贡献 +$78B' },
+ { lbl: '2032E蓝图', v: 215.3, b: 0, col: pal.green, tip: '2032E 远期营收蓝图: ~$215B+（横跨连接、轨道算力与深空物流）' }
+ ];
+ var maxB = 240;
+ for (var k = 0; k <= 4; k++) {
+ var kv = Math.round((maxB / 4) * k), ky = pad.top + ph - (k / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + kv + 'B', pad.left - 8, ky + 4);
+ }
+ var sW = pw / steps.length, bW = Math.min(44, sW * 0.58);
+ steps.forEach(function (s, i) {
+ var x = pad.left + i * sW + (sW - bW) / 2;
+ var yt = pad.top + ph - ((s.b + s.v) / maxB) * ph;
+ var yb = pad.top + ph - (s.b / maxB) * ph;
+ var bh = Math.max(5, yb - yt);
+ ctx.fillStyle = s.col;
+ roundRect(ctx, x, yt, bW, bh, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText((s.b > 0 ? '+' : '') + '$' + s.v.toFixed(0) + 'B', x + bW / 2, yt - 6);
+ ctx.fillStyle = pal.sub; ctx.font = '600 10px sans-serif';
+ ctx.fillText(s.lbl, x + bW / 2, pad.top + ph + 20);
+ hits.futureCanvas.push({ x: x, y: yt, w: bW, h: bh, title: s.lbl, body: s.tip });
+ });
+ }
+ }
+
+ function drawSiliconCanvas() {
+ var env = prepCanvas('siliconCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hits.siliconCanvas = [];
+ var pad = { top: 28, right: 22, bottom: 40, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var yrs = ['Q3 25A', 'Q3 26A', '2027E', '2028E(轨道)', '2029E', '2030E'];
+
+ if (state.sView === 'gw') {
+ var terrGw = [0.6, 1.7, 3.2, 4.5, 5.5, 6.5];
+ var orbGw = [0.0, 0.0, 0.1, 1.2, 3.8, 8.5];
+ var maxG = 16.0;
+ for (var g = 0; g <= 4; g++) {
+ var gv = g * 4, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(gv + 'GW', pad.left - 8, gy + 4);
+ }
+ var slot = pw / yrs.length, bw = Math.min(38, slot * 0.54);
+ yrs.forEach(function (y, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var hT = (terrGw[i] / maxG) * ph, hO = (orbGw[i] / maxG) * ph;
+ var yT = pad.top + ph - hT, yO = yT - hO;
+ ctx.fillStyle = pal.blue;
+ roundRect(ctx, x, yT, bw, Math.max(3, hT), 4); ctx.fill();
+ if (orbGw[i] > 0) {
+ ctx.fillStyle = pal.violet;
+ roundRect(ctx, x, yO, bw, Math.max(3, hO), 4); ctx.fill();
+ }
+ var tot = terrGw[i] + orbGw[i];
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(tot.toFixed(1) + 'GW', x + bw / 2, (orbGw[i] > 0 ? yO : yT) - 6);
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+ ctx.fillText(y, x + bw / 2, pad.top + ph + 20);
+ hits.siliconCanvas.push({ x: x, y: orbGw[i] > 0 ? yO : yT, w: bw, h: hT + hO, title: y + ' AI 算力底座', body: '地面装机 ' + terrGw[i].toFixed(1) + ' GW + StarMind 轨道算力 ' + orbGw[i].toFixed(1) + ' GW (Q3 25/26 为 10-Q 实际值)' });
+ });
+ } else {
+ var subs = [7.2, 13.6, 22.0, 34.0, 48.0, 65.0];
+ var maxS = 72;
+ for (var m = 0; m <= 3; m++) {
+ var mv = m * 24, my = pad.top + ph - (mv / maxS) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(mv + 'M', pad.left - 8, my + 4);
+ }
+ ctx.strokeStyle = pal.green; ctx.lineWidth = 2.6; ctx.beginPath();
+ subs.forEach(function (v, idx) {
+ var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / maxS) * ph;
+ if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ });
+ ctx.stroke();
+ subs.forEach(function (v, idx) {
+ var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / maxS) * ph;
+ ctx.fillStyle = idx <= 1 ? pal.blue : pal.green;
+ ctx.beginPath(); ctx.arc(px, py, 4.4, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(v.toFixed(1) + 'M', px, py - 8);
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+ ctx.fillText(yrs[idx], px, pad.top + ph + 20);
+ hits.siliconCanvas.push({ x: px - 12, y: py - 12, w: 24, h: 24, title: yrs[idx] + ' 星链订户', body: v.toFixed(1) + 'M 活跃订户（Q3 25A 7.2M 与 Q3 26A 13.6M 为 10-Q 披露值）' });
+ });
+ }
+ }
+
+ // F4: Interactive 2030 Optionality Builder
+ var OPT_DATA = {
+ d2c: { rev: 28, ebitda: 18.2 },
+ starmind: { rev: 46, ebitda: 26.7 },
+ cursor: { rev: 32, ebitda: 17.6 },
+ shield: { rev: 19, ebitda: 9.5 },
+ mars: { rev: 25, ebitda: 11.0 }
+ };
+ var miniCaps = [1.90, 1.58, 3.88];
+
+ function drawOptMiniCanvas() {
+ var env = prepCanvas('optMiniCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ var pad = { top: 22, right: 18, bottom: 24, left: 46 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var lbls = state.lang === 'en' ? ['Nov 2026 Cap', '2030 Core Only', '2030 + Options'] : ['当前市值', '2030基础盘', '2030含期权'];
+ var maxV = Math.max(4.5, Math.ceil(Math.max.apply(null, miniCaps) * 1.18));
+ ctx.strokeStyle = pal.grid;
+ ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+ var slot = pw / 3, bw = Math.min(54, slot * 0.5);
+ miniCaps.forEach(function (v, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var bh = (v / maxV) * ph, yt = pad.top + ph - bh;
+ ctx.fillStyle = i === 2 ? pal.green : (i === 1 ? pal.blue : pal.violet);
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + v.toFixed(2) + 'T', x + bw / 2, yt - 6);
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px sans-serif';
+ ctx.fillText(lbls[i], x + bw / 2, pad.top + ph + 16);
+ });
+ }
+
+ function recalcOptionality() {
+ // Core organic 2030E base (existing residential/enterprise Starlink + core Falcon/Starship + existing SI contracts): $90B Rev, $47.8B EBITDA, +$51.8B net cash
+ var baseRev = 90.0, baseEb = 47.8, netCashB = 51.8;
+ var addRev = 0, addEb = 0;
+ document.querySelectorAll('[data-opt]').forEach(function (chk) {
+ if (chk.checked) {
+ var d = OPT_DATA[chk.getAttribute('data-opt')];
+ if (d) { addRev += d.rev; addEb += d.ebitda; }
+ }
+ });
+ var totRev = baseRev + addRev;
+ var totEb = baseEb + addEb;
+ var ebMargin = (totEb / totRev) * 100;
+ var mcapT = (totEb * state.pe + netCashB) / 1000;
+ var baseMcapT = (baseEb * state.pe + netCashB) / 1000;
+
+ document.getElementById('optRevOut').textContent = '$' + Math.round(totRev) + 'B';
+ document.getElementById('optNetOut').textContent = '$' + totEb.toFixed(1) + 'B';
+ document.getElementById('optEpsOut').textContent = ebMargin.toFixed(1) + '%';
+ document.getElementById('optCapOut').textContent = '$' + mcapT.toFixed(2) + 'T';
+
+ miniCaps = [1.90, baseMcapT, mcapT];
+ drawOptMiniCanvas();
+ }
+
+ document.querySelectorAll('[data-opt]').forEach(function (chk) {
+ chk.addEventListener('change', recalcOptionality);
+ });
+ document.getElementById('peTabs').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-pe]');
+ if (!b) return;
+ state.pe = parseInt(b.getAttribute('data-pe'), 10) || 32;
+ var bs = this.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ recalcOptionality();
+ });
+
+ function bindSeg(gid, attr, skey, fn) {
+ var g = document.getElementById(gid);
+ if (!g) return;
+ g.addEventListener('click', function (e) {
+ var b = e.target.closest('[' + attr + ']');
+ if (!b) return;
+ state[skey] = b.getAttribute(attr);
+ var bs = g.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ fn();
+ });
+ }
+ bindSeg('fChartTabs', 'data-fview', 'fView', drawFutureCanvas);
+ bindSeg('sChartTabs', 'data-sview', 'sView', drawSiliconCanvas);
+
+ function bindTip(cid) {
+ var c = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+ if (!c || !tip) return;
+ c.addEventListener('mousemove', function (ev) {
+ var r = c.getBoundingClientRect();
+ var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+ var arr = hits[cid] || [], hit = null;
+ for (var i = 0; i < arr.length; i++) {
+ var rg = arr[i];
+ if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+ }
+ if (hit) {
+ tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 305, ev.clientX + 14) + 'px';
+ tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ });
+ c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+ }
+ ['futureCanvas', 'siliconCanvas'].forEach(bindTip);
+
+ function drawAll() {
+ drawFutureCanvas();
+ drawSiliconCanvas();
+ drawOptMiniCanvas();
+ }
+
+ // Quick Jump ⌘K
+ var QITEMS = [
+ { id: 'sec-f0', t: 'F0 Flight 15 奇点与三阶战略时间窗', s: '2026–2032 近程/中程/远期三大兑现阶段与 $28.5T TAM' },
+ { id: 'sec-f1', t: 'F1 六大未来增长引擎纵向深潜舱', s: '星舰全复用 · StarMind轨道AI · 手机直连 · Cursor/Grok · 星盾 · 登月火星' },
+ { id: 'sec-f2', t: 'F2 太空算力套利与 2032 营收阶梯桥', s: '年化 $64B CapEx 对标云巨头 · $18.7B→$215B 营收桥' },
+ { id: 'sec-f3', t: 'F3 猛禽3、V3卫星与双频谱合围路线图', s: '1.7GW→15GW 地面+轨道算力爬坡与 6,500万订户推演' },
+ { id: 'sec-f4', t: 'F4 2030 冲击 $5万亿+市值期权组装器', s: '自由开关五大新业务期权与 EV/EBITDA 倍数实时测算' }
+ ];
+ var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+ function renderQ(kw) {
+ if (!qPop) return;
+ var q = (kw || '').trim().toLowerCase();
+ var m = QITEMS.filter(function (x) { return !q || x.t.toLowerCase().indexOf(q) !== -1 || x.s.toLowerCase().indexOf(q) !== -1; });
+ qPop.innerHTML = m.map(function (x) {
+ return '<button type="button" class="quick-jump-item" data-jump="#' + x.id + '"><span class="quick-jump-item-title">' + x.t + '</span><span class="quick-jump-item-sub">' + x.s + '</span></button>';
+ }).join('');
+ qPop.classList.toggle('open', m.length > 0);
+ }
+ if (qIn && qPop) {
+ qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+ qIn.addEventListener('input', function () { renderQ(qIn.value); });
+ qPop.addEventListener('click', function (e) {
+ var jb = e.target.closest('[data-jump]');
+ if (!jb) return;
+ var target = document.querySelector(jb.getAttribute('data-jump'));
+ if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ qPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) {
+ if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+ });
+ }
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (qIn) qIn.focus(); }
+ if (e.key === 'Escape') {
+ if (qPop) qPop.classList.remove('open');
+ document.getElementById('muiSidebar').classList.remove('open');
+ document.getElementById('drawerBackdrop').classList.remove('open');
+ }
+ });
+
+ var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ sbBtn.addEventListener('click', function () {
+ if (window.innerWidth >= 1024) {
+ var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+ if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+ else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+ try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (err) {}
+ setTimeout(drawAll, 60);
+ } else {
+ var open = sb.classList.toggle('open');
+ bd.classList.toggle('open', open);
+ }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+ document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+ var tb = e.target.closest('[data-portal-theme]');
+ if (tb) {
+ var nt = tb.getAttribute('data-portal-theme');
+ applyTheme(nt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nt); } catch (err) {}
+ }
+ });
+ document.getElementById('exportHtmlBtn').addEventListener('click', function () {
+ var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+ var url = URL.createObjectURL(blob);
+ var a = document.createElement('a');
+ a.href = url;
+ a.download = 'SpaceX未来十年（2026–2032）战略图谱.html';
+ a.click();
+ setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+ showToast('已触发下载：SpaceX未来十年（2026–2032）战略图谱.html');
+ });
+ document.getElementById('printPdfBtn').addEventListener('click', function () { window.print(); });
+
+ window.addEventListener('scroll', function () {
+ var bar = document.getElementById('readingProgressBar');
+ if (bar) {
+ var dh = document.documentElement.scrollHeight - window.innerHeight;
+ bar.style.width = (dh > 0 ? Math.min(100, (window.scrollY / dh) * 100) : 0) + '%';
+ }
+ }, { passive: true });
+
+ try {
+ applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+ applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+ } catch (e) {}
+
+ document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+ var nxt = state.theme === 'dark' ? 'light' : 'dark';
+ applyTheme(nxt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+ });
+ document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+ var lb = e.target.closest('[data-lang]');
+ if (!lb) return;
+ var nl = lb.getAttribute('data-lang');
+ applyLang(nl, false);
+ try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+ });
+
+ var rt = null;
+ window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 90); });
+ recalcOptionality();
+ drawAll();
+ })();
+ </script>
+</body>
+</html>

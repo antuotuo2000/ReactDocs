@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="微软公司 Microsoft Corporation (NASDAQ: MSFT) 2026–2032 未来战略与第二增长曲线全景推演：纳德拉技术回归与商业CEO双核分治、Agents & Infra 新双分部纪元、Agent 365 与 Work IQ 企业智能体底座、Maia 200 (3nm) 与 Cobalt 200 自研硅片主权、Majorana 1 拓扑量子计算。" />
+ <title>微软公司 2026–2032 未来战略与新增长曲线观测站 | 数据中心</title>
+ 
+ <style>
+ /* ==========================================================================
+ MUI Official Branding Design System (https://mui.com/)
+ Bespoke 2030 Observatory Layout: 3-Horizon Radar · 4:8 Vertical Explorer · Optionality Builder
+ ========================================================================== */
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.92);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.65);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.86);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.44);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.16);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: #FFFFFF;
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.90);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas);
+ background-image: var(--hero-glow);
+ background-attachment: fixed;
+ color: var(--text-primary);
+ line-height: 1.65;
+ overflow-x: hidden;
+ min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar {
+ position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 50%, #16A34A 100%); z-index: 1300; transition: width 0.08s linear;
+ }
+ #chartTooltip {
+ position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+ padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+ box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+ }
+ #muiSnackbar {
+ position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+ z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+ border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ /* AppBar */
+ .mui-appbar {
+ position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+ }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn {
+ display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+ border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+ color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+ }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .mui-dl-btn {
+ display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px;
+ border-radius: 10px; border: 1px solid var(--mui-primary-border); background: var(--mui-primary-bg);
+ color: var(--mui-primary-lighter); font-family: inherit; font-size: 0.76rem; font-weight: 700;
+ cursor: pointer; transition: all 0.16s ease; white-space: nowrap;
+ }
+ .mui-dl-btn:hover { background: var(--bg-active); border-color: var(--mui-primary-main); transform: translateY(-0.5px); }
+ .brand-monogram {
+ width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+ color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .breadcrumbs .crumb-label { display: inline-flex; align-items: center; gap: 5px; padding: 3px 6px; color: var(--text-secondary); font-weight: 600; }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 210px; }
+ .quick-search-input {
+ width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+ }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd {
+ position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+ padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+ }
+ .quick-jump-popover {
+ position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+ border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+ }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item {
+ display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+ border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+ }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch {
+ display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+ }
+ .mui-lang-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+ font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+ }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+ .mui-chip {
+ display: inline-flex; flex-wrap: wrap; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px;
+ font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+ }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ .mui-segmented {
+ display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+ }
+ .mui-seg-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+ padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+ /* Shell & Sidebar */
+ .layout-shell {
+ max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+ gap: 26px; padding: 22px 20px 72px; align-items: start;
+ }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+ html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+ .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+ .mui-nav-link {
+ display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+ font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+ .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+ .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+ .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+ .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 9px; }
+ .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+ .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+ .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .co-hub-pill.active { color: var(--mui-primary-lighter); }
+ .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+ .co-hub-item {
+ display: flex; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); width: 100%; text-align: left; font-family: inherit; cursor: pointer; transition: all 0.15s ease;
+ }
+ .co-hub-item.co-hub-hidden { display: none !important; }
+ .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+ .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+ .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+ .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+ .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+ .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+ .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+ .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+ .portal-reading-tools button { font: inherit; font-size: 0.75rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+ .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-hover); }
+
+ .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+ .drawer-backdrop.open { display: block; }
+ @media (max-width: 1023px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+ .mui-sidebar {
+ position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+ background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+ transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+ }
+ .mui-sidebar.open { transform: translateX(0); }
+ .hide-sm { display: none !important; }
+ .quick-search-wrap { width: 145px; }
+ }
+ @media (max-width: 680px) { .quick-search-wrap { display: none; } }
+
+ /* ==========================================================================
+ BESPOKE 2026–2032 STRATEGIC OBSERVATORY LAYOUT
+ ========================================================================== */
+ .ft-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+ .ft-hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1080px) { .ft-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+ .ft-manifesto {
+ background-color: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+ padding: 26px 28px; box-shadow: var(--shadow-card); position: relative; overflow: hidden;
+ display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-manifesto::before {
+ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 52%, #16A34A 100%);
+ }
+ .ft-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+ .ft-h1 { font-size: clamp(1.46rem, 2.3vw, 2.05rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px; }
+ .ft-grad {
+ background: linear-gradient(92deg, #0073E6 0%, #7C3AED 52%, #15803D 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ html[data-theme="dark"] .ft-grad {
+ background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 52%, #66BB6A 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ .ft-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
+ .ft-lead strong { color: var(--text-primary); }
+
+ .ft-ternus-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 640px) { .ft-ternus-strip { grid-template-columns: minmax(0, 1fr); } }
+ .ft-mini-pill { padding: 10px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-mini-pill b { display: block; font-size: 0.78rem; color: var(--mui-primary-lighter); margin-bottom: 2px; }
+ .ft-mini-pill span { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .ft-horizon-radar {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+ padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .ft-hz-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+ .ft-hz-btn {
+ padding: 9px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-secondary); font-family: inherit; font-size: 0.75rem; font-weight: 800; cursor: pointer; text-align: center;
+ transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-hz-btn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+ .ft-hz-btn.active { background: var(--bg-active); border-color: #0073E6; color: var(--mui-primary-lighter); box-shadow: 0 0 0 1px #0073E6; }
+ .ft-hz-card {
+ padding: 15px 16px; border-radius: 13px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+ display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between;
+ }
+ .ft-hz-list { list-style: none; display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: var(--text-secondary); }
+ .ft-hz-list li { display: flex; align-items: flex-start; gap: 7px; }
+ .ft-hz-dot { width: 7px; height: 7px; border-radius: 50%; background: #0073E6; margin-top: 7px; flex-shrink: 0; }
+ .ft-hz-foot { display: flex; justify-content: space-between; padding-top: 9px; border-top: 1px dashed var(--border-default); font-size: 0.73rem; font-weight: 700; flex-wrap: wrap; gap: 6px; }
+
+ .ft-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+ .ft-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+ .ft-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+ html[data-theme="dark"] .ft-kicker { color: var(--mui-primary-light); }
+ .ft-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+ .ft-sub { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+ /* F1: 4:8 Vertical Master-Detail 6-Engine Observatory */
+ .ft-explorer { display: grid; grid-template-columns: 4.2fr 7.8fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-explorer { grid-template-columns: minmax(0, 1fr); } }
+ .ft-rail { display: flex; flex-direction: column; gap: 8px; }
+ .ft-rail-btn {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left;
+ padding: 11px 13px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-rail-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateX(2px); }
+ .ft-rail-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 4px 12px rgba(0, 115, 230, 0.14); }
+ .ft-rail-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+ .ft-rail-idx { width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0; }
+ .ft-rail-btn.active .ft-rail-idx { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .ft-rail-name { font-size: 0.82rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .ft-rail-tam { font-size: 0.69rem; font-weight: 700; color: var(--mui-primary-lighter); flex-shrink: 0; }
+
+ .ft-dossier {
+ border-radius: 16px; border: 1px solid var(--border-subtle); background-color: var(--bg-subtle);
+ padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-dossier h3 { font-size: 1.12rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+ .ft-dossier p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+ .ft-dossier-formula { padding: 10px 13px; border-radius: 10px; background: var(--bg-paper-solid); border-left: 3px solid #7C3AED; font-size: 0.79rem; font-weight: 600; color: var(--text-primary); }
+ .ft-gauge-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 680px) { .ft-gauge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ .ft-gauge-card { padding: 11px 12px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .ft-gauge-card b { display: block; font-size: 1.04rem; color: var(--mui-primary-lighter); }
+ .ft-gauge-card span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+ .ft-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1040px) { .ft-split-75, .ft-split-57 { grid-template-columns: minmax(0, 1fr); } }
+ .ft-subbox {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px;
+ padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+ }
+ .ft-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .ft-subhead h3 { font-size: 1.01rem; font-weight: 800; }
+ .ft-canvas-box { position: relative; width: 100%; height: 295px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); padding: 10px; }
+ .ft-canvas-box canvas { width: 100%; height: 100%; display: block; }
+ .ft-caption { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
+
+ .ft-thesis-stack { display: flex; flex-direction: column; gap: 9px; }
+ .ft-thesis-item { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-thesis-item b { display: block; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 3px; }
+ .ft-thesis-item p { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .ft-chip-matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ @media (max-width: 560px) { .ft-chip-matrix { grid-template-columns: minmax(0, 1fr); } }
+ .ft-chip-box { padding: 11px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-chip-box .code { font-size: 0.72rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-chip-box h4 { font-size: 0.84rem; font-weight: 800; margin: 2px 0 4px; }
+ .ft-chip-box p { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.45; }
+
+ .ft-builder-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-builder-grid { grid-template-columns: minmax(0, 1fr); } }
+ .ft-switch-list { display: flex; flex-direction: column; gap: 8px; }
+ .ft-opt-row {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px;
+ padding: 10px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+ cursor: pointer; transition: all 0.15s ease;
+ }
+ .ft-opt-row:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+ .ft-opt-left { display: flex; align-items: center; gap: 9px; min-width: 0; }
+ .ft-opt-left input { width: 16px; height: 16px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .ft-opt-left b { font-size: 0.81rem; color: var(--text-primary); display: block; }
+ .ft-opt-left span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+ .ft-opt-add { font-size: 0.74rem; font-weight: 800; color: var(--mui-success-text); flex-shrink: 0; }
+
+ .ft-val-board { padding: 18px 20px; border-radius: 15px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; }
+ .ft-val-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-val-kpi { padding: 10px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .ft-val-kpi b { display: block; font-size: 1.14rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-val-kpi span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+ .ft-source-card { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease; }
+ .ft-source-card:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+ .ft-source-card b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+ .ft-source-card span { font-size: 0.72rem; color: var(--text-secondary); }
+
+ @media print {
+ .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+ .layout-shell { display: block !important; padding: 0 !important; }
+ }
+ </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <!-- Sticky Frosted AppBar -->
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">MSFT</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+ <span class="crumb-label hide-sm">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </span>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="微软 2026–2032 未来战略与第二曲线观测站" data-i18n-en="Microsoft 2026–2032 Future Horizon Observatory">微软 2026–2032 未来战略与第二曲线观测站</span>
+ </nav>
+ <span class="mui-chip mui-chip-violet mono hide-sm">AGENTS &amp; INFRA ERA</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">MAIA 200 × COBALT 200</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索未来引擎或2030估值…" aria-label="快速跳转模块" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="exportHtmlBtn" class="mui-dl-btn" title="下载独立 HTML 文件">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ <span class="hide-sm" data-i18n-zh="下载 HTML" data-i18n-en="Download .html">下载 HTML</span>
+ </button>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+ </span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <!-- Left Sidebar -->
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="未来战略模块与套系导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-violet mono">MSFT · 2030 OBSERVATORY</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="微软未来十年战略观测站" data-i18n-en="Microsoft 2030 Strategic Observatory">微软未来十年战略观测站</div>
+ <p class="sidebar-subtitle" data-i18n-zh="纳德拉深耕技术/Althoff统管商业 × Agent 365 智能体工厂 × Maia 200/Cobalt 200 自研硅片 × Majorana 1 拓扑量子" data-i18n-en="Nadella Technical Pivot × Agent 365 &amp; Work IQ × Maia 200/Cobalt 200 Silicon × Majorana 1 Quantum">纳德拉深耕技术/Althoff统管商业 × Agent 365 智能体工厂 × Maia 200/Cobalt 200 自研硅片 × Majorana 1 拓扑量子</p>
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="双核权力架构" data-i18n-en="Dual-Core Leadership">双核权力架构</span>
+ <span class="sidebar-mini-val mono">Nadella + J. Althoff</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="新核心分部占比" data-i18n-en="Agents &amp; Infra Share">新核心分部占比</span>
+ <span class="sidebar-mini-val mono">83.2% ($76.8B/季)</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="自研云双芯 + 量子" data-i18n-en="Custom Silicon Triad">自研云双芯 + 量子</span>
+ <span class="sidebar-mini-val mono">Maia 200 · Cobalt 200</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="套系导航与未来观测目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="MSFT">
+          <div class="co-side-head">
+            <span class="co-side-title mono">MSFT · 03/05</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="microsoft_msft.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="microsoft_msft3.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (5)" data-i18n-en="All (5)">全部 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (5)" data-i18n-en="Company (5)">公司深度 (5)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft_12_azure_copilot_github_m365_dynamics_linkedin_security_windows_bing_xbox_surface_quantum.html" title="Microsoft (MSFT) 全线 12 大核心业务深度商业研报中枢（Azure·Copilot·GitHub·M365·Dynamics·LinkedIn·Security·Windows·Bing·Xbox·Surface·Quantum）| 王安安数据中心"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Microsoft (MSFT) 全线 12 大核心业务深度商业研报中枢（Azure·Copilot·GitHub·M365·Dynamics·LinkedIn·Security·Windows·Bing·Xbox·Surface·Quantum）| 王安安数据中心" data-i18n-en="Microsoft (MSFT) 12 Deep Dive Report (Azure·Copilot·GitHub·M365·Dynamics·LinkedIn·Security·Windows·Bing·Xbox·Surface·Quantum)| Data Center">Microsoft (MSFT) 全线 12 大核心业务深度商业研报中枢（Azure·Copilot·GitHub·M365·Dynamics·LinkedIn·Security·Windows·Bing·Xbox·Surface·Quantum）| 王安安数据中心</span><span class="co-hub-meta mono">Company</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-section-label" style="margin-top:8px;" data-i18n-zh="未来战略模块 (F0–F4)" data-i18n-en="Future Horizon (F0–F4)">未来战略模块 (F0–F4)</div>
+ <ul class="mui-nav-list">
+ <li><a href="#sec-f0" class="mui-nav-link active"><span class="nav-idx mono">F0</span><span data-i18n-zh="双核新政与三阶战略时间窗" data-i18n-en="Dual-Core &amp; 3 Horizons">双核新政与三阶战略时间窗</span></a></li>
+ <li><a href="#sec-f1" class="mui-nav-link"><span class="nav-idx mono">F1</span><span data-i18n-zh="六大增长引擎纵向深潜舱" data-i18n-en="6 Future Growth Engines">六大增长引擎纵向深潜舱</span></a></li>
+ <li><a href="#sec-f2" class="mui-nav-link"><span class="nav-idx mono">F2</span><span data-i18n-zh="算力基建收获期与2032营收桥" data-i18n-en="CapEx Harvest &amp; 2032 Bridge">算力基建收获期与2032营收桥</span></a></li>
+ <li><a href="#sec-f3" class="mui-nav-link"><span class="nav-idx mono">F3</span><span data-i18n-zh="硅片主权：Maia/Cobalt/量子" data-i18n-en="Maia/Cobalt/Quantum Silicon">硅片主权：Maia/Cobalt/量子</span></a></li>
+ <li><a href="#sec-f4" class="mui-nav-link"><span class="nav-idx mono">F4</span><span data-i18n-zh="2030迈向$6.8T市值期权实验室" data-i18n-en="2030 $6.8T Optionality Lab">2030迈向$6.8T市值期权实验室</span></a></li>
+ </ul>
+ </nav>
+
+ <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+ <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance &amp; Export">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="Theme">
+ <button type="button" id="sideThemeLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+ <button type="button" id="sideThemeDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+ <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+ </div>
+ </div>
+ </aside>
+
+ <!-- Main Bespoke 2030 Observatory Workspace -->
+ <main class="ft-workspace">
+
+ <!-- MODULE F0: MANIFESTO + INTERACTIVE 3-HORIZON RADAR -->
+ <section id="sec-f0" class="ft-hero-grid">
+ <div class="ft-manifesto">
+ <div>
+ <div class="ft-badges">
+ <span class="mui-chip mui-chip-violet mono" data-i18n-zh="2026 架构巨变：合并设立 Agents &amp; Infra 核心分部（占总营收 83.2%）" data-i18n-en="FY27 REALIGNMENT: AGENTS &amp; INFRA = 83.2% OF REVENUE">2026 架构巨变：合并设立 Agents &amp; Infra 核心分部（占总营收 83.2%）</span>
+ <span class="mui-chip mui-chip-success mono">从“卖给单打独斗的模型”进化为“主权智能工厂”</span>
+ </div>
+
+ <h1 class="ft-h1" data-i18n-zh="微软未来十年（2026–2032）战略图谱：<span class='ft-grad'>做把 Token 转化为商业结果的“全球智能体操作系统与算力电网”</span>" data-i18n-en="Microsoft's Next Decade (2026–2032): <span class='ft-grad'>Turning Tokens into Enterprise Outcomes via Agent 365 &amp; Custom Silicon</span>">
+ 微软未来十年（2026–2032）战略图谱：<span class="ft-grad">做把 Token 转化为商业结果的“全球智能体操作系统与算力电网”</span>
+ </h1>
+
+ <p class="ft-lead">
+ 站在 FY2026 营收 <strong>$3,318.4亿</strong> 与 Q1 FY2027 <strong>Azure 单季暴增 +48%（$331.7亿）</strong> 的新起点，萨提亚·纳德拉启动了十年来最激进的战略变阵：任命老将 <strong>Judson Althoff 出任微软商业 CEO</strong> 统揽全球销售与市场，将自己彻底解放出来，直管由约 35 名核心工程领袖组成的“创业型技术核心组”
+ <a class="cite-link" href="https://www.businessinsider.com/satya-nadella-microsoft-ai-leadership-reset-2026-5" target="_blank" rel="noopener noreferrer">2026 AI 架构重构 ↗</a>；同时自 FY27 起将财报彻底重构为 <strong>Agents and Infra（智能体与基础设施）</strong> 与 Devices and Consumer 两大板块
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm" target="_blank" rel="noopener noreferrer">SEC Q1 FY27 ↗</a>。
+ 当市场争论谁家单一基础大模型跑分更高时，微软通过 2026 年 4 月修订 OpenAI 协议（锁定 <strong>$2,500亿 Azure 订单 + 直至 2032 年模型 IP + 27% 股权</strong>，同时松绑排他性引入 Anthropic、Llama 与 Mustafa Suleyman 领衔的自研 MAI 模型），叠加台积电 3nm <strong>Maia 200 推理芯片</strong>
+ <a class="cite-link" href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/" target="_blank" rel="noopener noreferrer">Maia 200 发布 ↗</a>、<strong>Cobalt 200 Arm CPU</strong>
+ <a class="cite-link" href="https://newsroom.arm.com/news/arm-microsoft-azure-cobalt-200" target="_blank" rel="noopener noreferrer">Cobalt 200 GA ↗</a> 与 Ignite 2026 重磅推出的 <strong>Agent 365 + Work IQ</strong>
+ <a class="cite-link" href="https://news.microsoft.com/source/2026/11/17/microsoft-ignite-2026-empowering-human-ambition-intelligence-and-trust/" target="_blank" rel="noopener noreferrer">Ignite 2026 公报 ↗</a>，把战略终局锚定在<strong>“企业智能体治理层 + 最低单位 Token 成本底座”</strong>。
+ </p>
+ </div>
+
+ <div class="ft-ternus-strip">
+ <div class="ft-mini-pill">
+ <b>第一增长极：Agent 365 数字员工税</b>
+ <span>从“按人头卖 Copilot 席位”迈向“为数亿企业自主智能体发身份证并按量计费”</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b>第二增长极：自研云双芯压降成本</b>
+ <span>Maia 200 推理芯片（1.7x 每瓦 Token）+ Cobalt 200 重塑云 AI 毛利率</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b>第三增长极：模型中立与拓扑量子</b>
+ <span>Foundry 汇聚全球前沿模型 + Majorana 1 拓扑量子卡位百万量子比特终局</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Right: Interactive 3-Horizon Radar -->
+ <aside class="ft-horizon-radar" aria-label="三阶战略时间窗雷达">
+ <div>
+ <span class="ft-kicker mono">THREE-HORIZON S-CURVE RADAR</span>
+ <strong style="font-size:0.95rem;" data-i18n-zh="点击切换三大战略兑现时间窗" data-i18n-en="Select Strategic Horizon Window">点击切换三大战略兑现时间窗</strong>
+ </div>
+
+ <div class="ft-hz-tabs" id="hzTabs">
+ <button type="button" class="ft-hz-btn active" data-hz="0">H1 近程加速<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2026–2027</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="1">H2 中程收获<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2028–2029</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="2">H3 远期奇点<br><span class="mono" style="font-weight:600;font-size:0.68rem;">2030–2032</span></button>
+ </div>
+
+ <div class="ft-hz-card" id="hzCard">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="hzBadge">HORIZON 1 · 算力爆发与智能体落地期 (2026–2027)</span>
+ <h3 id="hzTitle" style="font-size:0.96rem;font-weight:800;margin:8px 0 6px;">Azure 冲击 48%–50% 超高增速 × Agent 365 全面商用 × Cobalt 200 规模上云</h3>
+ <ul class="ft-hz-list" id="hzList">
+ <li><span class="ft-hz-dot"></span><span><strong>Azure 千亿基数再提速：</strong>随着新增吉瓦级算力机房并网，Q1 FY27 Azure 增长 48%，Q2 指引固定汇率增速达 49%–50%。</span></li>
+ <li><span class="ft-hz-dot"></span><span><strong>Ignite 2026 智能体全家桶：</strong>Agent 365、Work IQ 与 Dynamics 365 内嵌智能体打通 CRM/ERP 跨系统闭环执行。</span></li>
+ <li><span class="ft-hz-dot"></span><span><strong>Xbox 新统帅与组织瘦身：</strong>CoreAI 出身的 Asha Sharma 重塑游戏盈利纪律；6万人自愿离职计划（VEO）压缩层级释放利润率。</span></li>
+ </ul>
+ </div>
+ <div class="ft-hz-foot mono">
+ <span id="hzProb" style="color:var(--mui-success-text);">兑现确定性：极高 (90%+)</span>
+ <span id="hzImpact" style="color:var(--mui-primary-lighter);">年化增量营收池：+$65B–$95B</span>
+ </div>
+ </div>
+ </aside>
+ </section>
+
+ <!-- MODULE F1: 4:8 VERTICAL MASTER-DETAIL 6-ENGINE OBSERVATORY -->
+ <section id="sec-f1" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F1 · SIX NEXT-DECADE GROWTH ENGINES</span>
+ <h2 class="ft-h2" data-i18n-zh="六大未来增长引擎纵向深潜舱：技术抓手、变现公式与商业化进度" data-i18n-en="6 Next-Decade Growth Engines: Tech Enablers &amp; Monetization Formulas">六大未来增长引擎纵向深潜舱：技术抓手、变现公式与商业化进度</h2>
+ <p class="ft-sub" data-i18n-zh="点击左侧任一战略赛道，右侧实时切换其底层硅片/平台支点、利润池测算与关键跟踪路标。" data-i18n-en="Click any engine on the left rail to inspect its technical architecture, margin profile, and milestones.">点击左侧任一战略赛道，右侧实时切换其底层硅片/平台支点、利润池测算与关键跟踪路标。</p>
+ </div>
+ <span class="mui-chip mui-chip-violet mono">6 S-CURVES · MASTER-DETAIL</span>
+ </div>
+
+ <div class="ft-explorer">
+ <div class="ft-rail" id="engineRail">
+ <button type="button" class="ft-rail-btn active" data-eng="0">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">01</span><span class="ft-rail-name" data-i18n-zh="Agent 365 与 Work IQ 智能体底座" data-i18n-en="Agent 365 &amp; Work IQ Control Plane">Agent 365 与 Work IQ 智能体底座</span></span>
+ <span class="ft-rail-tam mono">+$45B–$70B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="1">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">02</span><span class="ft-rail-name" data-i18n-zh="Azure 多模型 Foundry 与主权 AI 云" data-i18n-en="Azure Multi-Model Foundry &amp; Cloud">Azure 多模型 Foundry 与主权 AI 云</span></span>
+ <span class="ft-rail-tam mono">+$120B–$160B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="2">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">03</span><span class="ft-rail-name" data-i18n-zh="Maia 200 + Cobalt 200 硅片经济学" data-i18n-en="Maia 200 &amp; Cobalt 200 Custom Silicon">Maia 200 + Cobalt 200 硅片经济学</span></span>
+ <span class="ft-rail-tam mono">+250–400bps 云GM</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="3">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">04</span><span class="ft-rail-name" data-i18n-zh="零信任安全帝国与自主安全智能体" data-i18n-en="Zero-Trust Security &amp; Cyber Agents">零信任安全帝国与自主安全智能体</span></span>
+ <span class="ft-rail-tam mono">+$20B–$35B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="4">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">05</span><span class="ft-rail-name" data-i18n-zh="GitHub Copilot 与 CoreAI 研发工厂" data-i18n-en="GitHub Copilot &amp; CoreAI Dev Factory">GitHub Copilot 与 CoreAI 研发工厂</span></span>
+ <span class="ft-rail-tam mono">+$15B–$25B/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="5">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">06</span><span class="ft-rail-name" data-i18n-zh="Majorana 1 拓扑量子与科学发现平台" data-i18n-en="Majorana 1 Quantum &amp; Discovery">Majorana 1 拓扑量子与科学发现平台</span></span>
+ <span class="ft-rail-tam mono">2030+ 工业级奇点</span>
+ </button>
+ </div>
+
+ <div class="ft-dossier" id="engineDossier">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="engBadge">ENGINE 01 · AGENT 365 &amp; WORK IQ ENTERPRISE CONTROL PLANE</span>
+ <h3 id="engTitle">Microsoft Agent 365 × Work IQ：从“聊天副驾驶”跨入“可审计的企业数字劳动力”</h3>
+ <p id="engDesc">
+ 第一阶段生成式 AI 只是帮员工写邮件总结（M365 Copilot 已突破 3,000 万付费席位）；而在 Ignite 2026 发布的第二阶段，Charles Lamanna 领衔推出的 Agent 365 联合 Work IQ 组织上下文层，让销售、财务、供应链与 IT 运维智能体直接在后台跨 Dynamics 365、SharePoint、ServiceNow 与 SAP 异步完成多步工作流，并由 Entra 统一赋予每个 Agent 独立身份与零信任权限围栏。
+ </p>
+ <div class="ft-dossier-formula mono" id="engFormula">
+ 变现双轮：(1) M365 Copilot 席位向 4亿存量商业用户纵深渗透 + (2) Copilot Studio / Agent 365 按任务与消息消耗计费（毛利率 ~75%+）
+ </div>
+ </div>
+
+ <div class="ft-gauge-grid" id="engGauges">
+ <div class="ft-gauge-card"><b class="mono">30M+ 席位</b><span>M365 Copilot 已验证付费底座</span></div>
+ <div class="ft-gauge-card"><b class="mono">Work IQ</b><span>跨邮件/会议/ERP实时组织记忆图谱</span></div>
+ <div class="ft-gauge-card"><b class="mono">Agent 365</b><span>企业级多智能体身份治理与安全中心</span></div>
+ <div class="ft-gauge-card"><b class="mono">2026–2029</b><span>企业商业化放量黄金窗口</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F2: 7:5 SPLIT — HYPERSCALER CAPEX VS POSITIVE FCF & 2026-2032 REVENUE BRIDGE -->
+ <section id="sec-f2" class="ft-split-75">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2A · HYPERSCALER CAPEX FLEET &amp; 2032 BRIDGE</span>
+ <h3 data-i18n-zh="超算军备竞赛大分野：千亿 CapEx 投入下谁仍握有丰厚正自由现金流？" data-i18n-en="Hyperscaler Divide: Positive FCF Resilience Amid $116B+ AI CapEx">超算军备竞赛大分野：千亿 CapEx 投入下谁仍握有丰厚正自由现金流？</h3>
+ </div>
+ <div class="mui-segmented" id="fChartTabs">
+ <button type="button" class="mui-seg-btn active" data-fview="capex" data-i18n-zh="巨头 CapEx vs FCF ($B)" data-i18n-en="CapEx vs FCF ($B)">巨头 CapEx vs FCF ($B)</button>
+ <button type="button" class="mui-seg-btn" data-fview="bridge" data-i18n-zh="FY26→FY32E 营收阶梯桥" data-i18n-en="2032E Revenue Bridge">FY26→FY32E 营收阶梯桥</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="futureCanvas"></canvas>
+ </div>
+
+ <p class="ft-caption" data-i18n-zh="战略对照：与苹果走“轻资产端侧套利（CapEx $9.0B）”截然不同，微软选择正面主导全球云端算力底座（FY26 现金 CapEx $115.9B），但凭借 $182.9B 经营现金流依然保留 $67.0B 正向自由现金流，且全部扩建有 $678B 商业履约合同背书。" data-i18n-en="Strategic contrast: While Apple runs asset-light edge AI ($9.0B CapEx), Microsoft commands the global enterprise AI grid ($115.9B cash CapEx) while generating $182.9B OCF—retaining $67.0B in positive FCF backed by $678B in RPO.">
+ 战略对照：与苹果走“轻资产端侧套利（CapEx $9.0B）”截然不同，微软选择正面主导全球云端算力底座（FY26 现金 CapEx $115.9B），但凭借 $182.9B 经营现金流依然保留 $67.0B 正向自由现金流，且全部扩建有 $678B 商业履约合同背书。
+ </p>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2B · COST-TO-OUTCOME CURVE LOGIC</span>
+ <h3 data-i18n-zh="为什么纳德拉反复强调“单位成本产出曲线”与“模型去魅”？" data-i18n-en="Why Nadella Bets on the Cost-to-Outcome Curve &amp; Model Commoditization">为什么纳德拉反复强调“单位成本产出曲线”与“模型去魅”？</h3>
+ </div>
+ </div>
+
+ <div class="ft-thesis-stack">
+ <div class="ft-thesis-item">
+ <b>① 单一前沿大模型终将商品化，系统与数据上下文才是皇冠</b>
+ <p>正如纳德拉在 2026 股东信所言：“下一章不会被任何单一模型定义。”微软果断解除对单一模型商的排他依赖，左手握有 OpenAI 2032 IP 授权，右手扶植 Mustafa Suleyman 自研 MAI 小参数高效模型并引入 Anthropic（Q4 FY26 录得 $32亿投资收益）。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b>② 先锁定机房土地电力外壳，按需敏捷填充最新芯片</b>
+ <p>数据中心土建与变电站周期长达 3–5 年（折旧 15–20 年），而机柜内服务器仅在客户合同（RPO）确认前夕才上架采购——有效规避算力闲置风险
+ <a class="cite-link" href="https://convexityos.com/blog/microsoft-q1-fy2027-azure-capex" target="_blank" rel="noopener noreferrer">CapEx 节奏拆解 ↗</a>。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b>③ 内部率先实现“人效与规模脱钩”验证 AI ROI</b>
+ <p>微软自己就是全球最大的企业 AI 试验田：FY26 总营收大增 $501亿（+18%），全职员工反而净减 5,000 人至 22.3 万人，向全球 CEO 证明了 AI 提效的真实损益表威力。</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F3: 5:7 SPLIT — CUSTOM CLOUD & QUANTUM SILICON SOVEREIGNTY -->
+ <section id="sec-f3" class="ft-split-57">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3A · CLOUD &amp; QUANTUM SILICON SOVEREIGNTY</span>
+ <h3 data-i18n-zh="从“纯买卡大户”走向全栈系统自研：Maia 200 × Cobalt 200 × Majorana 1" data-i18n-en="From GPU Buyer to Systems Architect: Maia 200 × Cobalt 200 × Majorana 1">从“纯买卡大户”走向全栈系统自研：Maia 200 × Cobalt 200 × Majorana 1</h3>
+ </div>
+ </div>
+
+ <div class="ft-chip-matrix">
+ <div class="ft-chip-box">
+ <span class="code mono">AI INFERENCE · MAIA 200 (3nm)</span>
+ <h4>专为超大规模推理而生</h4>
+ <p>台积电 3nm 工艺、超 1,400 亿晶体管，原生支持 FP4/FP8 低精度推理，每瓦特 Token 吞吐提升高达 1.7 倍，直接承载 Copilot 与 MAI 超级智能推理负载
+ <a class="cite-link" href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/" target="_blank" rel="noopener noreferrer">Maia 200 ↗</a>。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">CLOUD CPU · COBALT 200 (GA)</span>
+ <h4>Arm Neoverse CSS V3 云原生核</h4>
+ <p>2026 年 11 月 Ignite 正式全面商用（GA），针对云原生微服务与 Agentic AI 编排深度定制，将在 2027+ 承担大比例新增通用计算产能
+ <a class="cite-link" href="https://newsroom.arm.com/news/arm-microsoft-azure-cobalt-200" target="_blank" rel="noopener noreferrer">Cobalt 200 ↗</a>。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">NETWORK &amp; DPU · AZURE BOOST</span>
+ <h4>空芯光纤 + 自研存储/网络卸载</h4>
+ <p>部署自研 Azure Boost DPU 与光速提升 47% 的空芯光纤（Hollow Core Fiber），将跨数据中心分布式 AI 集群通信延迟压至极限。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">QUANTUM · MAJORANA 1</span>
+ <h4>拓扑导体百万量子比特路线</h4>
+ <p>全球首款基于拓扑核心（Topoconductor）的量子芯片并入选美国 DARPA US2QC 终选阶段，瞄准材料化学与生物制药工业级模拟奇点
+ <a class="cite-link" href="https://blofin.com/academy/education/msft/why-microsoft-makes-its-own-ai-chips" target="_blank" rel="noopener noreferrer">Majorana 1 ↗</a>。</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3B · CUSTOM SILICON SHARE &amp; TOKEN ECONOMICS</span>
+ <h3 data-i18n-zh="2024–2030E 自研云硅片部署占比与每百万 Token 推理成本下降曲线" data-i18n-en="2024–2030E Custom Silicon Fleet Mix &amp; Token Cost Deflation">2024–2030E 自研云硅片部署占比与每百万 Token 推理成本下降曲线</h3>
+ </div>
+ <div class="mui-segmented" id="sChartTabs">
+ <button type="button" class="mui-seg-btn active" data-sview="pen" data-i18n-zh="自研硅片新增算力占比 (%)" data-i18n-en="Custom Silicon Share (%)">自研硅片新增算力占比 (%)</button>
+ <button type="button" class="mui-seg-btn" data-sview="save" data-i18n-zh="年化推理与主机节流 ($B)" data-i18n-en="Annual Infra Saved ($B)">年化推理与主机节流 ($B)</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="siliconCanvas"></canvas>
+ </div>
+
+ <p class="ft-caption" data-i18n-zh="商业推演：训练阶段客户高度依赖英伟达旗舰 GPU，而一旦进入占长期算力消耗 75%+ 的高频企业推理与 Copilot 响应阶段，Maia 200/300 与 Cobalt 200 的规模化切入有望在 2028–2030 年每年为微软节省逾 $100亿–$150亿 外部芯片溢价与电费成本。" data-i18n-en="Economic logic: As enterprise workloads shift >75% toward high-volume inference, scaling Maia 200/300 and Cobalt 200 across internal Copilot and Azure tiers can save $10B–$15B+ annually in external merchant silicon markups and power.">
+ 商业推演：训练阶段客户高度依赖英伟达旗舰 GPU，而一旦进入占长期算力消耗 75%+ 的高频企业推理与 Copilot 响应阶段，Maia 200/300 与 Cobalt 200 的规模化切入有望在 2028–2030 年每年为微软节省逾 <strong>$100亿–$150亿</strong> 外部芯片溢价与电费成本。
+ </p>
+ </div>
+ </section>
+
+ <!-- MODULE F4: INTERACTIVE 2030 "$6.5T–$7.5T MARKET CAP" OPTIONALITY BUILDER -->
+ <section id="sec-f4" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F4 · INTERACTIVE 2030 OPTIONALITY &amp; VALUATION BUILDER</span>
+ <h2 class="ft-h2" data-i18n-zh="2030 迈向“$6.5T–$7.5T 市值”期权组装实验室：勾选你认可的新增长极" data-i18n-en="2030 Path to $6.5T–$7.5T Market Cap: Toggle Growth Optionality Switches">2030 迈向“$6.5T–$7.5T 市值”期权组装实验室：勾选你认可的新增长极</h2>
+ <p class="ft-sub" data-i18n-zh="基于当前约 $3.60T 市值（Nov 2026），自由开关五大未来业务期权并选择市场估值倍数，实时推演 FY2030E 微软净利润、EPS 与目标总市值。" data-i18n-en="Starting from ~$3.60T market cap (Nov 2026), toggle five future catalysts and select a P/E multiple to model FY2030E EPS and valuation.">基于当前约 $3.60T 市值（Nov 2026），自由开关五大未来业务期权并选择市场估值倍数，实时推演 FY2030E 微软净利润、EPS 与目标总市值。</p>
+ </div>
+ <div class="mui-segmented" id="peTabs">
+ <button type="button" class="mui-seg-btn" data-pe="28">保守 28x P/E</button>
+ <button type="button" class="mui-seg-btn active" data-pe="32">稳态 32x P/E</button>
+ <button type="button" class="mui-seg-btn" data-pe="36">溢价 36x P/E</button>
+ </div>
+ </div>
+
+ <div class="ft-builder-grid">
+ <div class="ft-switch-list" id="optSwitchList">
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="agent" checked />
+ <span><b>期权 1：M365 Copilot 破亿席位 + Agent 365 按量计费爆发</b><span>企业知识工作者席位渗透率升至 25%+ 并叠加智能体任务流消耗</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$52B 营收 · 75% GM</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="azure" checked />
+ <span><b>期权 2：$678B RPO 加速转化为 Azure AI 与 Fabric 高黏性算力</b><span>全球企业数据与多模型推理全面向 Azure Foundry 汇聚</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$95B 营收 · 58% GM</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="silicon" checked />
+ <span><b>期权 3：Maia + Cobalt 自研云双芯规模替代外部溢价</b><span>内化第一方 Copilot 推理与通用虚拟机 BOM 及电力成本</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$11.5B 税前利润增厚</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="sec" checked />
+ <span><b>期权 4：Security Copilot 与零信任安全套件统一企业预算</b><span>清退碎片化安全小厂，安全与合规年营收迈向 $45B+</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$22B 营收 · 76% GM</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="quantum" />
+ <span><b>期权 5：远期奇点 — Microsoft Discovery 科学 AI + 拓扑量子云商用</b><span>高赔率期权（默认未勾选，可手动开启观察新材料/制药算力弹性）</span></span>
+ </span>
+ <span class="ft-opt-add mono">+$28B 营收 · 65% GM</span>
+ </label>
+ </div>
+
+ <div class="ft-val-board">
+ <div class="ft-val-kpis">
+ <div class="ft-val-kpi"><b class="mono" id="optRevOut">$619B</b><span data-i18n-zh="FY2030E 推演总营收" data-i18n-en="FY2030E Projected Revenue">FY2030E 推演总营收</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optNetOut">$221.8B</b><span data-i18n-zh="FY2030E 推演净利润" data-i18n-en="FY2030E Projected Net Income">FY2030E 推演净利润</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optEpsOut">$30.30</b><span data-i18n-zh="FY2030E 稀释 EPS" data-i18n-en="FY2030E Diluted EPS">FY2030E 稀释 EPS</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optCapOut" style="color:var(--mui-success-text);">$7.10T</b><span data-i18n-zh="FY2030E 隐含目标总市值" data-i18n-en="FY2030E Implied Market Cap">FY2030E 隐含目标总市值</span></div>
+ </div>
+
+ <div class="ft-canvas-box" style="height:155px;">
+ <canvas id="optMiniCanvas"></canvas>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VERIFIED PRIMARY SOURCES -->
+ <section class="ft-panel" aria-label="权威公告与前瞻信源">
+ <div class="ft-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+ <div>
+ <span class="ft-kicker mono">VERIFIED PRIMARY SOURCES</span>
+ <h2 class="ft-h2" data-i18n-zh="官方架构重组公报、新一代自研芯片文档与 Ignite 2026 信源" data-i18n-en="Official Realignment Filings, Custom Silicon Blogs &amp; Ignite 2026 Sources">官方架构重组公报、新一代自研芯片文档与 Ignite 2026 信源</h2>
+ </div>
+ </div>
+ <div class="ft-sources-grid">
+ <a class="ft-source-card" href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm" target="_blank" rel="noopener noreferrer">
+ <b>SEC Q1 FY2027 Release: Agents &amp; Infra Realignment ↗</b>
+ <span>官方确立 Agents &amp; Infra ($76.8B, +25%) 新分部、Azure 单季 $33.17B (+48%) 与商业 RPO $677B</span>
+ </a>
+ <a class="ft-source-card" href="https://news.microsoft.com/source/2026/11/17/microsoft-ignite-2026-empowering-human-ambition-intelligence-and-trust/" target="_blank" rel="noopener noreferrer">
+ <b>Microsoft Ignite 2026 Official Keynote &amp; Book of News ↗</b>
+ <span>正式发布 Microsoft Agent 365、Work IQ 组织上下文图谱、Dynamics 365 内嵌智能体与 Windows 系统级 Agent 安全</span>
+ </a>
+ <a class="ft-source-card" href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/" target="_blank" rel="noopener noreferrer">
+ <b>Microsoft Official Blog: Maia 200 AI Inference Chip ↗</b>
+ <span>台积电 3nm 制程、1,400亿+晶体管、FP4/FP8 原生推理架构与每瓦特 Token 性能跃升 1.7 倍官方技术解析</span>
+ </a>
+ <a class="ft-source-card" href="https://newsroom.arm.com/news/arm-microsoft-azure-cobalt-200" target="_blank" rel="noopener noreferrer">
+ <b>Azure Cobalt 200 VMs Reach General Availability (Nov 2026) ↗</b>
+ <span>基于 Arm Neoverse CSS V3 打造的下一代云原生自研 CPU 在 Ignite 2026 全面商用并挑大梁支撑 2027 算力扩容</span>
+ </a>
+ <a class="ft-source-card" href="https://www.businessinsider.com/satya-nadella-microsoft-ai-leadership-reset-2026-5" target="_blank" rel="noopener noreferrer">
+ <b>Nadella's 2025–2026 AI Leadership &amp; Org Reboot ↗</b>
+ <span>Judson Althoff 出任商业 CEO、退役传统 SLT 层级、组建 35 人创业型工程核心组与每周 Copilot 站会机制</span>
+ </a>
+ <a class="ft-source-card" href="https://blogs.microsoft.com/blog/2026/02/20/asha-sharma-named-evp-and-ceo-microsoft-gaming/" target="_blank" rel="noopener noreferrer">
+ <b>Asha Sharma Named EVP &amp; CEO of Xbox (Feb 2026) ↗</b>
+ <span>Phil Spencer 荣休后由前 CoreAI 产品总裁 Asha Sharma 执掌游戏业务，推进内容纪律与跨终端复兴</span>
+ </a>
+ </div>
+ </section>
+
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+ var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+
+ var state = { theme: 'light', lang: 'zh', fView: 'capex', sView: 'pen', pe: 32, hzIdx: 0, engIdx: 0 };
+ var hits = { futureCanvas: [], siliconCanvas: [] };
+
+ function showToast(msg) {
+ var bar = document.getElementById('muiSnackbar');
+ if (!bar) return;
+ bar.textContent = msg;
+ bar.classList.add('show');
+ clearTimeout(bar._t);
+ bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2200);
+ }
+
+ function downloadSelfHtml() {
+ try {
+ var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+ var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+ var url = URL.createObjectURL(blob);
+ var a = document.createElement('a');
+ a.href = url;
+ a.download = '微软未来十年（2026–2032）战略图谱.html';
+ document.body.appendChild(a);
+ a.click();
+ document.body.removeChild(a);
+ setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+ showToast(state.lang === 'en' ? 'Downloaded standalone HTML file' : '已开始下载独立网页：微软未来十年（2026–2032）战略图谱.html');
+ } catch (e) {
+ showToast('导出失败，请使用浏览器保存网页功能');
+ }
+ }
+
+ function getPalette() {
+ var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+ return {
+ dark: dark,
+ text: dark ? '#F3F6F9' : '#0F1924',
+ sub: dark ? '#B2BAC2' : '#334155',
+ tick: dark ? '#94A3B8' : '#475569',
+ grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+ blue: dark ? '#3399FF' : '#0073E6',
+ violet: dark ? '#A78BFA' : '#7C3AED',
+ green: dark ? '#22C55E' : '#16A34A',
+ amber: dark ? '#FFB74D' : '#D97706',
+ red: dark ? '#FF6B6B' : '#DC2626'
+ };
+ }
+
+ function applyTheme(t, silent) {
+ state.theme = (t === 'dark') ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var ic = document.getElementById('appbarThemeIcon');
+ if (ic) {
+ ic.innerHTML = state.theme === 'dark'
+ ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+ : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+ }
+ var sl = document.getElementById('sideThemeLightBtn');
+ var sd = document.getElementById('sideThemeDarkBtn');
+ if (sl) sl.setAttribute('aria-pressed', String(state.theme === 'light'));
+ if (sd) sd.setAttribute('aria-pressed', String(state.theme === 'dark'));
+ drawAll();
+ if (!silent) showToast(state.theme === 'dark' ? '已切换至深色外观' : '已切换至清晰浅色外观');
+ }
+
+ var HORIZONS = [
+ {
+ badge: 'HORIZON 1 · 算力爆发与智能体落地期 (2026–2027)',
+ enBadge: 'HORIZON 1 · AZURE ACCELERATION & AGENT 365 GA (2026–2027)',
+ zhT: 'Azure 冲击 48%–50% 超高增速 × Agent 365 全面商用 × Cobalt 200 规模上云',
+ enT: 'Azure 48%–50% Surge × Agent 365 Enterprise Rollout × Cobalt 200 GA',
+ zhItems: [
+ '<strong>Azure 千亿基数再提速：</strong>随着新增吉瓦级算力机房并网，Q1 FY27 Azure 增长 48%，Q2 指引固定汇率增速达 49%–50%。',
+ '<strong>Ignite 2026 智能体全家桶：</strong>Agent 365、Work IQ 与 Dynamics 365 内嵌智能体打通 CRM/ERP 跨系统闭环执行。',
+ '<strong>Xbox 新统帅与组织瘦身：</strong>CoreAI 出身的 Asha Sharma 重塑游戏盈利纪律；6万人自愿离职计划（VEO）压缩层级释放利润率。'
+ ],
+ enItems: [
+ '<strong>Azure Accelerating at $133B+ Scale:</strong> Q1 FY27 Azure surged +48% YoY with Q2 guided at 49%–50% CC as new capacity comes online.',
+ '<strong>Ignite 2026 Agentic Stack:</strong> Agent 365, Work IQ, and Dynamics 365 embedded agents automate multi-step CRM/ERP workflows.',
+ '<strong>Leaner Execution:</strong> Xbox CEO Asha Sharma sharpens gaming ROI while flattening management layers drives ~50% operating margins.'
+ ],
+ zhP: '兑现确定性：极高 (90%+)', enP: 'Conviction: Very High (90%+)',
+ zhI: '年化增量营收池：+$65B–$95B', enI: 'Annual Incremental Pool: +$65B–$95B'
+ },
+ {
+ badge: 'HORIZON 2 · 自研硅片放量与现金流收获期 (2028–2029)',
+ enBadge: 'HORIZON 2 · CUSTOM SILICON & FCF HARVEST (2028–2029)',
+ zhT: 'Maia 200/300 接管高频推理 × CapEx 强度高位回落 × 自由现金流二次井喷',
+ enT: 'Maia 200/300 Inference Takeover × Moderating CapEx Intensity × FCF Inflection',
+ zhItems: [
+ '<strong>推理成本断崖下降：</strong>自研 Maia 与 Cobalt 芯片承担超四成内部 Copilot 与标准推理负载，修复 Microsoft Cloud 毛利率。',
+ '<strong>数字员工预算渗透：</strong>全球财富 500 强普遍形成“1名员工调度 5–10 个专职 Agent”常态，按量 Token 收入反超席位收入增量。',
+ '<strong>CapEx 占收比回归稳态：</strong>前期长寿命机房外壳建成投产，资本开支/营收比由 ~35% 向 ~20%–23% 回落，FCF 爆发式释放。'
+ ],
+ enItems: [
+ '<strong>Inference Margin Recovery:</strong> Custom Maia & Cobalt chips handle >40% of internal Copilot & standard inference, lifting cloud gross margins.',
+ '<strong>Metered Digital Labor:</strong> Enterprises standardize on human-plus-agent teams, making consumption growth outpace seat additions.',
+ '<strong>CapEx Intensity Normalization:</strong> As long-lived datacenter shells fill out, CapEx/revenue moderates toward ~20%–23%, unlocking massive FCF.'
+ ],
+ zhP: '兑现确定性：中高 (78%)', enP: 'Conviction: High (78%)',
+ zhI: '年化增量营收池：+$130B–$180B', enI: 'Annual Incremental Pool: +$130B–$180B'
+ },
+ {
+ badge: 'HORIZON 3 · 工业超算与拓扑量子奇点期 (2030–2032)',
+ enBadge: 'HORIZON 3 · AUTONOMOUS ENTERPRISE & QUANTUM ERA (2030–2032)',
+ zhT: 'Majorana 拓扑量子云商用 × Microsoft Discovery 科学研发范式革命',
+ enT: 'Majorana Topological Quantum Cloud × Microsoft Discovery R&D Revolution',
+ zhItems: [
+ '<strong>百万量子比特路线兑现：</strong>基于拓扑导体的容错量子处理器与 Azure AI 超算混合编排，攻克固氮催化、固态电池与新药分子模拟。',
+ '<strong>核能与零碳算力护城河：</strong>三哩岛核电重启（2028 并网）及小型模块化反应堆（SMR）/聚变购电协议构筑竞争对手难以复制的清洁电力壁垒。',
+ '<strong>直至 2032 的双保险 IP 池：</strong>无论外部 AGI 由谁率先突破，微软同时握有自研 MAI 超级智能团队与 OpenAI 直至 2032 年完整模型 IP。'
+ ],
+ enItems: [
+ '<strong>Fault-Tolerant Quantum + AI Hybrid:</strong> Topological qubits co-process chemistry, materials, and drug discovery simulations on Azure.',
+ '<strong>Nuclear & Clean Power Moat:</strong> Dedicated nuclear PPAs and SMRs secure multi-gigawatt carbon-free baseload power.',
+ '<strong>Dual Superintelligence Hedge:</strong> Combines in-house MAI frontier models with OpenAI IP rights locked through 2032.'
+ ],
+ zhP: '兑现确定性：远期高赔率期权 (50%–60%)', enP: 'Conviction: Strategic Option (50%–60%)',
+ zhI: '年化增量营收池：+$220B+', enI: 'Annual Incremental Pool: +$220B+'
+ }
+ ];
+
+ var ENGINES = [
+ {
+ badge: 'ENGINE 01 · AGENT 365 & WORK IQ ENTERPRISE CONTROL PLANE',
+ zhT: 'Microsoft Agent 365 × Work IQ：从“聊天副驾驶”跨入“可审计的企业数字劳动力”',
+ enT: 'Microsoft Agent 365 × Work IQ: From Chat Assistant to Auditable Digital Labor',
+ zhD: '第一阶段生成式 AI 只是帮员工写邮件总结（M365 Copilot 已突破 3,000 万付费席位）；而在 Ignite 2026 发布的第二阶段，Charles Lamanna 领衔推出的 Agent 365 联合 Work IQ 组织上下文层，让销售、财务、供应链与 IT 运维智能体直接在后台跨 Dynamics 365、SharePoint、ServiceNow 与 SAP 异步完成多步工作流，并由 Entra 统一赋予每个 Agent 独立身份与零信任权限围栏。',
+ enD: 'Building on >30M paid M365 Copilot seats, Ignite 2026 introduced Agent 365 and Work IQ—enabling persistent autonomous agents across Dynamics 365, SharePoint, and third-party ERPs with full Entra identity governance.',
+ zhF: '变现双轮：(1) M365 Copilot 席位向 4亿存量商业用户纵深渗透 + (2) Copilot Studio / Agent 365 按任务与消息消耗计费（毛利率 ~75%+）',
+ enF: 'Monetization: (1) Per-seat Copilot expansion across 400M+ M365 users + (2) Metered Agent 365 / Copilot Studio autonomous task execution',
+ gauges: [['30M+ 席位', 'M365 Copilot 已验证付费底座', 'Verified M365 Copilot Seats'], ['Work IQ', '跨邮件/会议/ERP组织记忆图谱', 'Enterprise Context Graph'], ['Agent 365', '企业多智能体身份治理中心', 'Agent Governance Control Plane'], ['2026–2029', '企业商业化放量黄金窗口', 'Primary Monetization Window']]
+ },
+ {
+ badge: 'ENGINE 02 · AZURE MULTI-MODEL FOUNDRY & $678B RPO',
+ zhT: 'Azure AI Foundry × Fabric：坐拥 $6,780亿 履约合同的模型中立超级电网',
+ enT: 'Azure AI Foundry × Fabric: Model-Neutral Cloud Grid Backed by $678B RPO',
+ zhD: 'Q1 FY27 Azure 单季营收高达 $331.7亿（+48% YoY）。通过 Microsoft Foundry，企业无需绑定单一模型，即可在同一套安全合规 API 下自由调用 OpenAI、Anthropic Claude、Meta Llama 及微软自研 MAI 模型，并无缝连接高速增长的 Microsoft Fabric 统一数据湖——数据在哪里，AI 推理消耗就留在哪里。',
+ enD: 'With Q1 FY27 Azure revenue surging +48% YoY to $33.17B, Microsoft Foundry lets enterprises route across OpenAI, Anthropic, Llama, and MAI models directly atop unified Microsoft Fabric data estates.',
+ zhF: '利润传导：$678B 已签约商业 RPO (含 $250B OpenAI 增量承诺) 按 2–4 年履约节奏持续释放为高确定性云收入',
+ enF: 'Monetization: $678B contracted commercial RPO (+$250B OpenAI Azure pact) converting steadily into high-utilization cloud revenue',
+ gauges: [['$33.17B', 'Q1 FY27 单季 Azure 美元营收', 'Q1 FY27 Standalone Azure Rev'], ['+48% YoY', '千亿体量上惊人加速增长', 'Accelerating YoY Growth'], ['$678B', 'FY26 末已签约商业 RPO', 'FY26-End Commercial RPO'], ['1,800+ 模型', 'Foundry 模型目录生态广度', 'Models in Azure Foundry']]
+ },
+ {
+ badge: 'ENGINE 03 · MAIA 200 (3NM) & COBALT 200 SILICON AUTONOMY',
+ zhT: '自研云双芯破局：用台积电 3nm Maia 200 与 Arm Cobalt 200 夺回云毛利率定价权',
+ enT: 'Custom Cloud Silicon: TSMC 3nm Maia 200 & Arm Cobalt 200 Reclaiming Cloud Gross Margin',
+ zhD: '面对外部 GPU 采购高溢价对云毛利的挤压，微软双管齐下：2026 年 1 月发布的 Maia 200 集成超 1,400 亿晶体管，专为 FP4/FP8 超大规模推理与强化学习后训练优化，每瓦特 Token 产出提升 1.7 倍；2026 年 11 月全面商用的 Cobalt 200 基于 Arm CSS V3 架构重构通用计算性价比，直接压降内部服务与外部云租户底层 BOM 成本。',
+ enD: 'Maia 200 (3nm, 140B+ transistors, 1.7x tokens/watt in FP4/FP8) and Cobalt 200 (Arm CSS V3, GA Nov 2026) systematically lower TCO per token across Copilot and Azure workloads.',
+ zhF: '利润传导：内部推理与通用算力向自研双芯迁移 → 预计中期修复 Microsoft Cloud 毛利率 +250–400bps',
+ enF: 'Margin Accretion: Shifting internal Copilot & core compute to Maia/Cobalt defends and expands Cloud gross margins by +250–400bps',
+ gauges: [['3nm · 140B+', 'Maia 200 先进制程晶体管规模', 'Maia 200 Transistor Count'], ['1.7x 提效', 'Maia 200 每瓦特 Token 推理比', 'Maia 200 Tokens/Watt Gain'], ['Cobalt 200 GA', '2026.11 全面商用上云', 'Cobalt 200 General Availability'], ['+$10B–$15B', '2030E 年化软硬协同节流潜力', 'Est. 2030E Annual TCO Savings']]
+ },
+ {
+ badge: 'ENGINE 04 · SECURE FUTURE INITIATIVE (SFI) & CYBER AGENTS',
+ zhT: '10,000 人安全军团与 Security Copilot：把“智能体时代最大痛点”变成最强捆绑包',
+ enT: '10,000-Engineer SFI & Security Copilot: Turning Enterprise Agent Risk into Moat',
+ zhD: '当企业部署成千上万自主 AI 智能体时，最大的恐惧是数据泄露与权限失控。在新任安全统帅 Hayete Gallot 带领下，微软逾万人安全工程团队将零信任防护（Entra + Defender + Purview + Sentinel）直接嵌入 Windows 内核与 Agent 365，使微软成为全球唯一能同时提供“生产力底座 + 算力 + 原生智能体安防”的供应商。',
+ enD: 'Led by EVP Hayete Gallot across 10,000 security engineers, Microsoft embeds Entra, Defender, Purview, and Security Copilot directly into Windows and Agent 365 to secure autonomous enterprise fleets.',
+ zhF: '变现逻辑：E5 安全套件渗透率提升 + Security Copilot 按计算单元（SCU）弹性计费',
+ enF: 'Monetization: E5 security suite attach rate + metered Security Copilot compute units (SCUs)',
+ gauges: [['10,000+ 人', '专职安全研发工程军团规模', 'Dedicated Security Engineers'], ['全员 KPI 挂钩', 'SFI 安全考核一票否决机制', 'Comp-Linked SFI Mandate'], ['65万亿+/日', '全球每日实时威胁信号感知量', 'Daily Threat Signals Analyzed'], ['~$25B+', '安全板块独立估算年化营收级', 'Estimated Annual Security Run-Rate']]
+ },
+ {
+ badge: 'ENGINE 05 · GITHUB COPILOT & COREAI DEVELOPER FACTORY',
+ zhT: 'GitHub + VS Code + CoreAI：垄断全球软件工程师的“AI 原生开发工作台”',
+ enT: 'GitHub + VS Code + CoreAI: Owning the Global AI Software Factory',
+ zhD: '由前 Meta 工程统帅 Jay Parikh 掌舵的 CoreAI 部门，将 GitHub（超 1.5 亿开发者）、VS Code 与 Azure AI 工具链整合为端到端“智能体软件工厂”。从代码自动补全进化为自主修复 Bug、编写测试并触发 Azure 部署的异步 Coding Agent，直接把全球每一家企业的软件工程团队转化为 Azure 算力的天然上游漏斗。',
+ enD: 'Under EVP Jay Parikh, CoreAI unifies GitHub, VS Code, and Azure Foundry into an end-to-end agentic software factory—turning developer workflows directly into downstream Azure cloud deployments.',
+ zhF: '变现逻辑：GitHub Copilot Pro/Enterprise 席位高增 + 异步 Coding Agent 云端沙盒算力消耗',
+ enF: 'Monetization: GitHub Copilot Enterprise seats + cloud-hosted asynchronous coding agent compute minutes',
+ gauges: [['CoreAI 整合', 'Jay Parikh 统管开发者与平台栈', 'Unified CoreAI Platform Org'], ['#1 市场份额', 'AI 辅助软件工程绝对领跑者', 'Category-Leading Coding AI'], ['多模型自选', '支持 Claude / GPT / o系列切换', 'Multi-Model Developer Choice'], ['天然漏斗', '开发即默认一键部署至 Azure', 'Seamless Azure Deployment Funnel']]
+ },
+ {
+ badge: 'ENGINE 06 · MAJORANA 1 TOPOLOGICAL QUANTUM & DISCOVERY',
+ zhT: 'Majorana 1 × Microsoft Discovery：瞄准物理与化学模拟极限的二十年长线王牌',
+ enT: 'Majorana 1 × Microsoft Discovery: Topological Quantum & Scientific Supercomputing',
+ zhD: '由资深高管 Jason Zander 统领的 Microsoft Discovery & Quantum 团队，一方面用科学智能体平台将新材料研发周期从数年缩短至数天，另一方面凭借历时近二十年攻关的砷化铟-铝“拓扑导体（Topoconductor）”推出 Majorana 1 量子芯片，天然具备硬件级抗噪纠错优势，剑指单芯片容纳百万量子比特的工业实用化终局。',
+ enD: 'Led by EVP Jason Zander, Microsoft pairs its Microsoft Discovery scientific AI platform with Majorana 1—the world\'s first topological-core quantum processor architected to scale to one million qubits on a single chip.',
+ zhF: '战略定位：研发费用已在当期全额费用化，一旦容错量子云率先突破，将开辟零竞争对手的工业模拟高毛利新大陆',
+ enF: 'Strategic Option: Fully expensed inside current R&D; unlocks an unassailable moat in chemical, material, and pharma simulation post-2030',
+ gauges: [['Majorana 1', '全球首款拓扑核心量子处理器', 'First Topological Quantum Chip'], ['DARPA US2QC', '入选美国防部实用量子终选阶段', 'Selected for DARPA Final Phase'], ['100万 Qubits', '单晶圆可扩展架构设计目标', 'Single-Chip Scaling Target'], ['2030–2033', '工业级容错量子混合云窗口', 'Commercial Hybrid Quantum Window']]
+ }
+ ];
+
+ function renderHorizon() {
+ var hz = HORIZONS[state.hzIdx] || HORIZONS[0];
+ var en = state.lang === 'en';
+ document.getElementById('hzBadge').textContent = en ? hz.enBadge : hz.badge;
+ document.getElementById('hzTitle').textContent = en ? hz.enT : hz.zhT;
+ var items = en ? hz.enItems : hz.zhItems;
+ document.getElementById('hzList').innerHTML = items.map(function (t) {
+ return '<li><span class="ft-hz-dot"></span><span>' + t + '</span></li>';
+ }).join('');
+ document.getElementById('hzProb').textContent = en ? hz.enP : hz.zhP;
+ document.getElementById('hzImpact').textContent = en ? hz.enI : hz.zhI;
+ }
+
+ function renderEngine() {
+ var eg = ENGINES[state.engIdx] || ENGINES[0];
+ var en = state.lang === 'en';
+ document.getElementById('engBadge').textContent = eg.badge;
+ document.getElementById('engTitle').textContent = en ? eg.enT : eg.zhT;
+ document.getElementById('engDesc').textContent = en ? eg.enD : eg.zhD;
+ document.getElementById('engFormula').textContent = en ? eg.enF : eg.zhF;
+ document.getElementById('engGauges').innerHTML = eg.gauges.map(function (g) {
+ return '<div class="ft-gauge-card"><b class="mono">' + g[0] + '</b><span>' + (en ? g[2] : g[1]) + '</span></div>';
+ }).join('');
+ }
+
+ function applyLang(lang, silent) {
+ state.lang = (lang === 'en') ? 'en' : 'zh';
+ document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+ var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+ if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+ if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+ var nodes = document.querySelectorAll('[data-i18n-zh]');
+ for (var i = 0; i < nodes.length; i++) {
+ var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+ else nodes[i].textContent = val;
+ }
+ }
+ renderHorizon();
+ renderEngine();
+ drawAll();
+ if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+ }
+
+ document.getElementById('hzTabs').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-hz]');
+ if (!b) return;
+ state.hzIdx = parseInt(b.getAttribute('data-hz'), 10) || 0;
+ var bs = this.querySelectorAll('.ft-hz-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderHorizon();
+ });
+
+ document.getElementById('engineRail').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-eng]');
+ if (!b) return;
+ state.engIdx = parseInt(b.getAttribute('data-eng'), 10) || 0;
+ var bs = this.querySelectorAll('.ft-rail-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderEngine();
+ });
+
+ var hub = document.getElementById('companySubfolderHub');
+ if (hub) {
+ hub.addEventListener('click', function (e) {
+ var pill = e.target.closest('[data-co-cat]');
+ if (pill) {
+ var cat = pill.getAttribute('data-co-cat');
+ var ps = hub.querySelectorAll('[data-co-cat]');
+ for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === pill);
+ var its = hub.querySelectorAll('[data-co-item-cat]');
+ for (var j = 0; j < its.length; j++) {
+ its[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || its[j].getAttribute('data-co-item-cat') === cat));
+ }
+ return;
+ }
+ var item = e.target.closest('.co-hub-item');
+ if (item) {
+ var jump = item.getAttribute('data-suite-jump');
+ var msg = item.getAttribute('data-suite-msg');
+ if (jump) {
+ var el = document.querySelector(jump);
+ if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ } else if (msg) {
+ showToast(msg);
+ }
+ }
+ });
+ }
+
+ function prepCanvas(id) {
+ var c = document.getElementById(id);
+ if (!c) return null;
+ var rect = c.getBoundingClientRect();
+ var w = Math.max(260, rect.width || 480), h = Math.max(135, rect.height || 260);
+ var dpr = Math.min(window.devicePixelRatio || 1, 2);
+ c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+ var ctx = c.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { c: c, ctx: ctx, w: w, h: h };
+ }
+
+ function roundRect(ctx, x, y, w, h, r) {
+ var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rr, y);
+ ctx.arcTo(x + w, y, x + w, y + h, rr);
+ ctx.arcTo(x + w, y + h, x, y + h, rr);
+ ctx.arcTo(x, y + h, x, y, rr);
+ ctx.arcTo(x, y, x + w, y, rr);
+ ctx.closePath();
+ }
+
+ function drawFutureCanvas() {
+ var env = prepCanvas('futureCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hits.futureCanvas = [];
+ var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.fView === 'capex') {
+ var peers = [
+ { name: 'Microsoft', cap: 115.9, fcf: 67.0, tip: 'FY26 现金 CapEx $115.95B，依托 $182.9B OCF 仍净赚 $67.0B 正向自由现金流（且有 $678B RPO 背书）' },
+ { name: 'Amazon', cap: 125.0, fcf: 18.0, tip: 'AWS 与电商履约双线重资本开支，自由现金流阶段性显著收窄' },
+ { name: 'Alphabet', cap: 85.0, fcf: 62.0, tip: 'TPU 与数据中心高强度扩张，依赖搜索广告现金流支撑' },
+ { name: 'Meta', cap: 70.0, fcf: 42.0, tip: '开源模型与社交推荐算力集群投入，无外部公有云直接出租回血' },
+ { name: 'Apple', cap: 9.0, fcf: 136.1, tip: '端侧推理轻资产路线：全年 CapEx 仅 $9.0B，FCF 高达 $136.1B' }
+ ];
+ var maxC = 145;
+ for (var g = 0; g <= 4; g++) {
+ var gv = Math.round((maxC / 4) * g), gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv + 'B', pad.left - 8, gy + 4);
+ }
+ var slot = pw / peers.length, bw = 22;
+ peers.forEach(function (p, i) {
+ var cx = pad.left + i * slot + slot / 2;
+ var ch = Math.max(5, (p.cap / maxC) * ph), fh = Math.max(5, (p.fcf / maxC) * ph);
+ ctx.fillStyle = i === 0 ? pal.blue : pal.amber;
+ roundRect(ctx, cx - bw - 3, pad.top + ph - ch, bw, ch, 5); ctx.fill();
+ ctx.fillStyle = pal.green;
+ roundRect(ctx, cx + 3, pad.top + ph - fh, bw, fh, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + p.cap.toFixed(0), cx - bw / 2 - 3, pad.top + ph - ch - 5);
+ ctx.fillText('$' + p.fcf.toFixed(0), cx + bw / 2 + 3, pad.top + ph - fh - 5);
+ ctx.fillStyle = i === 0 ? pal.blue : pal.sub; ctx.font = (i === 0 ? 'bold ' : '600 ') + '11px sans-serif';
+ ctx.fillText(p.name, cx, pad.top + ph + 20);
+ hits.futureCanvas.push({ x: cx - bw - 6, y: pad.top, w: bw * 2 + 12, h: ph, title: p.name + ' (左:CapEx / 右:FCF)', body: p.tip });
+ });
+ } else {
+ var steps = [
+ { lbl: 'FY26基准', v: 331.8, b: 0, col: pal.blue, tip: 'FY2026 实际总营收: $331.84B' },
+ { lbl: '+Azure算力/数据', v: 185.0, b: 331.8, col: pal.green, tip: '$678B RPO 释放与企业核心云/Fabric/Foundry 推理贡献 +$185B' },
+ { lbl: '+Copilot/Agent', v: 88.0, b: 516.8, col: pal.violet, tip: 'M365 Copilot 席位扩容与 Agent 365 按量数字员工税贡献 +$88B' },
+ { lbl: '+安全/GitHub', v: 46.0, b: 604.8, col: pal.amber, tip: '零信任安全整合、Security Copilot 与 CoreAI 开发者平台贡献 +$46B' },
+ { lbl: '+行业云/量子/游戏', v: 35.0, b: 650.8, col: pal.green, tip: '医疗/金融行业云、Discovery 科学平台与跨端游戏贡献 +$35B' },
+ { lbl: 'FY32E蓝图', v: 685.8, b: 0, col: pal.blue, tip: 'FY2032E 远期营收蓝图: ~$686B（较 FY26 翻倍以上）' }
+ ];
+ var maxB = 760;
+ for (var k = 0; k <= 4; k++) {
+ var kv = Math.round((maxB / 4) * k), ky = pad.top + ph - (k / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + kv + 'B', pad.left - 8, ky + 4);
+ }
+ var sW = pw / steps.length, bW = Math.min(44, sW * 0.58);
+ steps.forEach(function (s, i) {
+ var x = pad.left + i * sW + (sW - bW) / 2;
+ var yt = pad.top + ph - ((s.b + s.v) / maxB) * ph;
+ var yb = pad.top + ph - (s.b / maxB) * ph;
+ var bh = Math.max(5, yb - yt);
+ ctx.fillStyle = s.col;
+ roundRect(ctx, x, yt, bW, bh, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText((s.b > 0 ? '+' : '') + '$' + s.v.toFixed(0) + 'B', x + bW / 2, yt - 6);
+ ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif';
+ ctx.fillText(s.lbl, x + bW / 2, pad.top + ph + 20);
+ hits.futureCanvas.push({ x: x, y: yt, w: bW, h: bh, title: s.lbl, body: s.tip });
+ });
+ }
+ }
+
+ function drawSiliconCanvas() {
+ var env = prepCanvas('siliconCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hits.siliconCanvas = [];
+ var pad = { top: 28, right: 22, bottom: 40, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var yrs = ['2024 (Gen1)', '2025', '2026 (200系)', '2027E', '2028E', '2030E'];
+
+ if (state.sView === 'pen') {
+ var maiaPen = [4, 10, 22, 34, 44, 55];
+ var cobPen = [8, 18, 32, 46, 56, 65];
+ for (var g = 0; g <= 4; g++) {
+ var gv = g * 20, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(gv + '%', pad.left - 8, gy + 4);
+ }
+ function plotP(arr, col, label) {
+ ctx.strokeStyle = col; ctx.lineWidth = 2.6; ctx.beginPath();
+ arr.forEach(function (v, idx) {
+ var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / 80) * ph;
+ if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ });
+ ctx.stroke();
+ arr.forEach(function (v, idx) {
+ var px = pad.left + (idx / 5) * pw, py = pad.top + ph - (v / 80) * ph;
+ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py, 4.2, 0, Math.PI * 2); ctx.fill();
+ if (idx === 2 || idx === 5) {
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(v + '%', px, py - 8);
+ }
+ hits.siliconCanvas.push({ x: px - 10, y: py - 10, w: 20, h: 20, title: yrs[idx] + ' · ' + label, body: '预计占新增对应工作负载算力比重约 ' + v + '%' });
+ });
+ }
+ yrs.forEach(function (y, idx) {
+ var px = pad.left + (idx / 5) * pw;
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(y, px, pad.top + ph + 20);
+ });
+ plotP(cobPen, pal.blue, 'Cobalt Arm CPU 新增通用算力占比');
+ plotP(maiaPen, pal.violet, 'Maia 加速器 内部及标准推理占比');
+ } else {
+ var saved = [0.5, 1.4, 3.2, 6.4, 9.8, 13.5];
+ var maxS = 15.5;
+ for (var m = 0; m <= 3; m++) {
+ var mv = (m * 5).toFixed(0), my = pad.top + ph - ((m * 5) / maxS) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + mv + 'B', pad.left - 8, my + 4);
+ }
+ var slot = pw / yrs.length, bw = Math.min(40, slot * 0.54);
+ yrs.forEach(function (y, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var bh = (saved[i] / maxS) * ph, yt = pad.top + ph - bh;
+ ctx.fillStyle = i >= 3 ? pal.green : pal.blue;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + saved[i].toFixed(1) + 'B', x + bw / 2, yt - 6);
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace';
+ ctx.fillText(y, x + bw / 2, pad.top + ph + 20);
+ hits.siliconCanvas.push({ x: x, y: yt, w: bw, h: bh, title: y + ' 自研硅片年化 TCO 节省', body: '预计全年节省外部芯片采购溢价与机房能耗约 $' + saved[i].toFixed(1) + 'B' });
+ });
+ }
+ }
+
+ // F4: Interactive 2030 Optionality Builder
+ var OPT_DATA = {
+ agent: { rev: 52, net: 26.5 },
+ azure: { rev: 95, net: 34.2 },
+ silicon: { rev: 0, net: 9.2 },
+ sec: { rev: 22, net: 11.4 },
+ quantum: { rev: 28, net: 12.0 }
+ };
+ var miniCaps = [3.60, 4.49, 7.10];
+
+ function drawOptMiniCanvas() {
+ var env = prepCanvas('optMiniCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(), en = state.lang === 'en';
+ var pad = { top: 22, right: 18, bottom: 24, left: 46 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var lbls = en ? ['Current (~$3.6T)', '2030 Base', '2030 + Options'] : ['当前市值', '2030基础盘', '2030含期权'];
+ var maxV = Math.max(8.5, Math.ceil(Math.max.apply(null, miniCaps) * 1.15));
+ ctx.strokeStyle = pal.grid;
+ ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+ var slot = pw / 3, bw = Math.min(54, slot * 0.5);
+ miniCaps.forEach(function (v, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var bh = (v / maxV) * ph, yt = pad.top + ph - bh;
+ ctx.fillStyle = i === 2 ? pal.green : (i === 1 ? pal.blue : pal.violet);
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + v.toFixed(2) + 'T', x + bw / 2, yt - 6);
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px sans-serif';
+ ctx.fillText(lbls[i], x + bw / 2, pad.top + ph + 16);
+ });
+ }
+
+ function recalcOptionality() {
+ // Baseline organic FY2030E (core cloud/M365 compounding ex-major incremental agent/silicon breakthroughs; ~7.32B shares)
+ var baseRev = 450.0, baseNet = 140.5, sh2030 = 7.32;
+ var addRev = 0, addNet = 0;
+ document.querySelectorAll('[data-opt]').forEach(function (chk) {
+ if (chk.checked) {
+ var d = OPT_DATA[chk.getAttribute('data-opt')];
+ if (d) { addRev += d.rev; addNet += d.net; }
+ }
+ });
+ var totRev = baseRev + addRev;
+ var totNet = baseNet + addNet;
+ var eps = totNet / sh2030;
+ var mcapT = (totNet * state.pe) / 1000;
+ var baseMcapT = (baseNet * state.pe) / 1000;
+
+ document.getElementById('optRevOut').textContent = '$' + Math.round(totRev) + 'B';
+ document.getElementById('optNetOut').textContent = '$' + totNet.toFixed(1) + 'B';
+ document.getElementById('optEpsOut').textContent = '$' + eps.toFixed(2);
+ document.getElementById('optCapOut').textContent = '$' + mcapT.toFixed(2) + 'T';
+
+ miniCaps = [3.60, baseMcapT, mcapT];
+ drawOptMiniCanvas();
+ }
+
+ document.querySelectorAll('[data-opt]').forEach(function (chk) {
+ chk.addEventListener('change', recalcOptionality);
+ });
+ document.getElementById('peTabs').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-pe]');
+ if (!b) return;
+ state.pe = parseInt(b.getAttribute('data-pe'), 10) || 32;
+ var bs = this.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ recalcOptionality();
+ });
+
+ function bindSeg(gid, attr, skey, fn) {
+ var g = document.getElementById(gid);
+ if (!g) return;
+ g.addEventListener('click', function (e) {
+ var b = e.target.closest('[' + attr + ']');
+ if (!b) return;
+ state[skey] = b.getAttribute(attr);
+ var bs = g.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ fn();
+ });
+ }
+ bindSeg('fChartTabs', 'data-fview', 'fView', drawFutureCanvas);
+ bindSeg('sChartTabs', 'data-sview', 'sView', drawSiliconCanvas);
+
+ function bindTip(cid) {
+ var c = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+ if (!c || !tip) return;
+ c.addEventListener('mousemove', function (ev) {
+ var r = c.getBoundingClientRect();
+ var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+ var arr = hits[cid] || [], hit = null;
+ for (var i = 0; i < arr.length; i++) {
+ var rg = arr[i];
+ if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+ }
+ if (hit) {
+ tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 300, ev.clientX + 14) + 'px';
+ tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ });
+ c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+ }
+ ['futureCanvas', 'siliconCanvas'].forEach(bindTip);
+
+ function drawAll() {
+ drawFutureCanvas();
+ drawSiliconCanvas();
+ drawOptMiniCanvas();
+ }
+
+ // Quick Jump ⌘K
+ var QITEMS = [
+ { id: 'sec-f0', t: 'F0 双核新政与三阶战略时间窗雷达', s: 'Agents & Infra 新分部 · 2026–2032 近程/中程/远期路线图' },
+ { id: 'sec-f1', t: 'F1 六大未来增长引擎纵向深潜舱', s: 'Agent 365 · Azure Foundry · Maia/Cobalt · SFI安全 · CoreAI · 拓扑量子' },
+ { id: 'sec-f2', t: 'F2 算力基建收获期与 2032 营收桥', s: '$115.9B CapEx vs $67.0B 正 FCF · 迈向 $686B 营收阶梯' },
+ { id: 'sec-f3', t: 'F3 自研云硅片与量子主权路线图', s: 'Maia 200 (3nm) + Cobalt 200 (GA) + Majorana 1 拓扑导体' },
+ { id: 'sec-f4', t: 'F4 2030 冲击 $7万亿市值期权组装器', s: '自由开关五大新业务期权与估值倍数实时测算 EPS' }
+ ];
+ var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+ function renderQ(kw) {
+ if (!qPop) return;
+ var q = (kw || '').trim().toLowerCase();
+ var m = QITEMS.filter(function (x) { return !q || x.t.toLowerCase().indexOf(q) !== -1 || x.s.toLowerCase().indexOf(q) !== -1; });
+ qPop.innerHTML = m.map(function (x) {
+ return '<button type="button" class="quick-jump-item" data-jump="#' + x.id + '"><span class="quick-jump-item-title">' + x.t + '</span><span class="quick-jump-item-sub">' + x.s + '</span></button>';
+ }).join('');
+ qPop.classList.toggle('open', m.length > 0);
+ }
+ if (qIn && qPop) {
+ qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+ qIn.addEventListener('input', function () { renderQ(qIn.value); });
+ qPop.addEventListener('click', function (e) {
+ var jb = e.target.closest('[data-jump]');
+ if (!jb) return;
+ var target = document.querySelector(jb.getAttribute('data-jump'));
+ if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ qPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) {
+ if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+ });
+ }
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (qIn) qIn.focus(); }
+ if (e.key === 'Escape') {
+ if (qPop) qPop.classList.remove('open');
+ document.getElementById('muiSidebar').classList.remove('open');
+ document.getElementById('drawerBackdrop').classList.remove('open');
+ }
+ });
+
+ var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ sbBtn.addEventListener('click', function () {
+ if (window.innerWidth < 1024) {
+ var open = sb.classList.toggle('open');
+ bd.classList.toggle('open', open);
+ } else {
+ var root = document.documentElement;
+ var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+ if (collapsed) root.setAttribute('data-sidebar-collapsed', '1');
+ else root.removeAttribute('data-sidebar-collapsed');
+ try { localStorage.setItem(STORAGE_SIDEBAR_KEY, collapsed ? '1' : '0'); } catch (err) {}
+ setTimeout(drawAll, 60);
+ }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+ document.getElementById('exportHtmlBtn').addEventListener('click', downloadSelfHtml);
+ document.getElementById('sideExportBtn').addEventListener('click', downloadSelfHtml);
+ document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+ document.getElementById('sideThemeLightBtn').addEventListener('click', function () {
+ applyTheme('light', false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, 'light'); } catch (e) {}
+ });
+ document.getElementById('sideThemeDarkBtn').addEventListener('click', function () {
+ applyTheme('dark', false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, 'dark'); } catch (e) {}
+ });
+ document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+ var nxt = state.theme === 'dark' ? 'light' : 'dark';
+ applyTheme(nxt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+ });
+ document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+ var lb = e.target.closest('[data-lang]');
+ if (!lb) return;
+ var nl = lb.getAttribute('data-lang');
+ applyLang(nl, false);
+ try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+ });
+
+ window.addEventListener('scroll', function () {
+ var bar = document.getElementById('readingProgressBar');
+ if (bar) {
+ var dh = document.documentElement.scrollHeight - window.innerHeight;
+ bar.style.width = (dh > 0 ? Math.min(100, (window.scrollY / dh) * 100) : 0) + '%';
+ }
+ }, { passive: true });
+
+ try {
+ applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+ applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+ } catch (e) {}
+
+ var rt = null;
+ window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 90); });
+ recalcOptionality();
+ drawAll();
+ })();
+ </script>
+</body>
+</html>

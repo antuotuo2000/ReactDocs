@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="亚马逊 Amazon.com, Inc. (NASDAQ: AMZN) 企业文化与组织操作系统图谱：1997 Day 1 宪章、2002 Bezos API 法令与双披萨团队、单线程领导者(STL)、逆向工作法(PR/FAQ)、六页纸叙事备忘录、抬杆者(Bar Raiser)及 Andy Jassy 反官僚扁平化重塑。" />
+  <title>亚马逊企业文化与组织操作系统 | 数据中心</title>
+  
+  <style>
+  /* ==========================================================================
+     MUI Official Branding Design System (https://mui.com/)
+     High-Clarity Light Mode Default (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16)
+     Organizational Operating System Blueprint Layout (C0–C4)
+     ========================================================================== */
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-canvas: #090D16;
+    --bg-canvas-elevated: #0C1320;
+    --bg-paper: rgba(15, 25, 36, 0.88);
+    --bg-paper-solid: #0F1924;
+    --bg-subtle: rgba(19, 35, 55, 0.65);
+    --bg-hover: rgba(51, 153, 255, 0.08);
+    --bg-active: rgba(0, 115, 230, 0.16);
+    --bg-appbar: rgba(9, 13, 22, 0.86);
+
+    --border-subtle: rgba(51, 153, 255, 0.14);
+    --border-default: rgba(148, 163, 184, 0.18);
+    --border-strong: rgba(51, 153, 255, 0.44);
+    --divider: rgba(148, 163, 184, 0.12);
+
+    --text-primary: #F3F6F9;
+    --text-secondary: #B2BAC2;
+    --text-muted: #7E8C9A;
+
+    --mui-primary-main: #0073E6;
+    --mui-primary-light: #3399FF;
+    --mui-primary-lighter: #66B2FF;
+    --mui-primary-bg: rgba(0, 115, 230, 0.16);
+    --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+    --mui-success-main: #1AA251;
+    --mui-success-text: #66BB6A;
+    --mui-success-bg: rgba(26, 162, 81, 0.14);
+    --mui-success-border: rgba(102, 187, 106, 0.34);
+
+    --mui-warning-main: #DEA500;
+    --mui-warning-text: #FFB74D;
+    --mui-warning-bg: rgba(255, 183, 77, 0.14);
+    --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+    --mui-error-main: #EB0014;
+    --mui-error-text: #FF6B6B;
+    --mui-error-bg: rgba(235, 0, 20, 0.14);
+    --mui-error-border: rgba(255, 107, 107, 0.34);
+
+    --mui-violet-text: #A78BFA;
+    --mui-violet-bg: rgba(139, 92, 246, 0.14);
+    --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+    --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+    --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+    --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+  }
+
+  :root,
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg-canvas: #F8FAFC;
+    --bg-canvas-elevated: #F1F5F9;
+    --bg-paper: rgba(255, 255, 255, 0.96);
+    --bg-paper-solid: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+    --bg-hover: rgba(0, 115, 230, 0.06);
+    --bg-active: rgba(0, 115, 230, 0.11);
+    --bg-appbar: rgba(255, 255, 255, 0.90);
+
+    --border-subtle: #E2E8F0;
+    --border-default: #CBD5E1;
+    --border-strong: #0073E6;
+    --divider: #E2E8F0;
+
+    --text-primary: #0F1924;
+    --text-secondary: #334155;
+    --text-muted: #5B6B7C;
+
+    --mui-primary-main: #0073E6;
+    --mui-primary-light: #0059B2;
+    --mui-primary-lighter: #0059B2;
+    --mui-primary-bg: rgba(0, 115, 230, 0.09);
+    --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+    --mui-success-main: #15803D;
+    --mui-success-text: #15803D;
+    --mui-success-bg: rgba(21, 128, 61, 0.09);
+    --mui-success-border: rgba(21, 128, 61, 0.26);
+
+    --mui-warning-main: #B45309;
+    --mui-warning-text: #B45309;
+    --mui-warning-bg: rgba(180, 83, 9, 0.09);
+    --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+    --mui-error-main: #C62828;
+    --mui-error-text: #C62828;
+    --mui-error-bg: rgba(198, 40, 40, 0.08);
+    --mui-error-border: rgba(198, 40, 40, 0.26);
+
+    --mui-violet-text: #6D28D9;
+    --mui-violet-bg: rgba(109, 40, 217, 0.08);
+    --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+    --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+    --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+    --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    background-color: var(--bg-canvas);
+    background-image: var(--hero-glow);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.65;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+  a:hover { text-decoration: underline; }
+
+  .cite-link {
+    display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+    padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+    border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+    white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+  }
+  .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+  #readingProgressBar {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, #0073E6 0%, #16A34A 60%, #D97706 100%); z-index: 1300; transition: width 0.08s linear;
+  }
+  #chartTooltip {
+    position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 190px; max-width: 300px;
+    padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+  }
+  #muiSnackbar {
+    position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+    z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+    border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* AppBar */
+  .mui-appbar {
+    position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+  }
+  .mui-appbar-inner {
+    max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+  .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .mui-icon-btn, .mui-theme-icon-btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+    border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+    color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+  }
+  .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+  .mui-dl-btn {
+    display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px;
+    border-radius: 10px; border: 1px solid #0073E6; background: linear-gradient(180deg, #1985F1 0%, #0073E6 100%);
+    color: #FFFFFF; font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.16s ease; white-space: nowrap;
+  }
+  .mui-dl-btn:hover { background: linear-gradient(180deg, #3399FF 0%, #0059B2 100%); transform: translateY(-0.5px); }
+  .brand-monogram {
+    width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #0D9488 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+    color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .breadcrumbs .crumb-link {
+    display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px;
+    color: var(--text-secondary); font-weight: 600; text-decoration: none; border: none; background: transparent; cursor: pointer; font-family: inherit; font-size: 0.85rem;
+  }
+  .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+  .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+  .quick-search-wrap { position: relative; width: 210px; }
+  .quick-search-input {
+    width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+    border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+  }
+  .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+  .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+  .quick-search-kbd {
+    position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+    padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+  }
+  .quick-jump-popover {
+    position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+    border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+  }
+  .quick-jump-popover.open { display: block; }
+  .quick-jump-item {
+    display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+    border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+  }
+  .quick-jump-item:hover { background: var(--bg-hover); }
+  .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+  .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+  .mui-lang-switch {
+    display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+    border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+  }
+  .mui-lang-btn {
+    border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+    font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+  .mui-chip {
+    display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 10px; border-radius: 999px;
+    font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+  }
+  .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+  .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+  .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+  .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+  .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+  .mui-segmented {
+    display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+    background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+  }
+  .mui-seg-btn {
+    border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+    padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mui-seg-btn:hover { color: var(--text-primary); }
+  .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+  /* Layout Shell & Sidebar */
+  .layout-shell {
+    max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+    gap: 26px; padding: 22px 20px 72px; align-items: start;
+  }
+  html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+  html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+  .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+  .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+  .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+  .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+  .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+  .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+  .sidebar-mini-label { color: var(--text-muted); }
+  .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+  .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+  .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .mui-nav-link {
+    display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+    font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+  }
+  .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+  .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+  .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+  .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+  /* Suite Hub Navigation */
+  .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+  .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+  .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+  .co-side-home {
+    display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 6px;
+    font-size: 0.70rem; font-weight: 700; color: var(--mui-primary-lighter); background: var(--mui-primary-bg);
+    border: 1px solid var(--mui-primary-border); cursor: pointer; font-family: inherit;
+  }
+  .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+  .co-hub-pill {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px;
+    border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+  }
+  .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+  .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+  .co-hub-item {
+    display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px;
+    border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid);
+    cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+  }
+  .co-hub-item.co-hub-hidden { display: none !important; }
+  .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+  .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+  .co-hub-ticker {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.68rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border);
+  }
+  .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+  .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+  .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+  .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+  .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+  .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .portal-reading-tools button {
+    font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 31px; color: var(--text-secondary);
+    border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease;
+  }
+  .portal-reading-tools button.active, .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--border-strong); background: var(--bg-paper-solid); }
+
+  .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+  .drawer-backdrop.open { display: block; }
+  @media (max-width: 1023px) {
+    .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+    .mui-sidebar {
+      position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+      background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+      transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+    }
+    .mui-sidebar.open { transform: translateX(0); }
+    .hide-sm { display: none !important; }
+    .quick-search-wrap { width: 145px; }
+  }
+  @media (max-width: 680px) { .quick-search-wrap { display: none; } }
+
+  /* ==========================================================================
+     ORGANIZATIONAL OPERATING SYSTEM BLUEPRINT LAYOUT (C0–C4)
+     ========================================================================== */
+  .os-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .os-hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 1080px) { .os-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .os-hero-card {
+    background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 26px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; position: relative; overflow: hidden;
+  }
+  .os-hero-card::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #0073E6 0%, #0D9488 55%, #D97706 100%);
+  }
+  .os-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .os-h1 { font-size: clamp(1.48rem, 2.28vw, 2.06rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .os-grad { background: linear-gradient(92deg, #0073E6 0%, #0D9488 52%, #B45309 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  html[data-theme="dark"] .os-grad { background: linear-gradient(92deg, #66B2FF 0%, #2DD4BF 52%, #FFB74D 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .os-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.74; }
+  .os-lead strong { color: var(--text-primary); }
+
+  .os-topo-switcher { background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 9px; }
+  .os-topo-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .os-topo-rule { padding: 8px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border); font-size: 0.79rem; font-weight: 700; color: var(--mui-primary-lighter); }
+  .os-topo-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+  .os-topo-card {
+    background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  }
+  .os-canvas-box { position: relative; width: 100%; height: 295px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+  .os-canvas-box canvas { width: 100%; height: 100%; display: block; }
+  .os-kpi-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  @media (max-width: 640px) { .os-kpi-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .os-kpi-mini { padding: 9px 9px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .os-kpi-mini b { display: block; font-size: 0.96rem; font-weight: 800; color: var(--mui-primary-lighter); }
+  .os-kpi-mini span { font-size: 0.68rem; color: var(--text-muted); }
+
+  .os-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+  .os-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+  .os-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+  html[data-theme="dark"] .os-kicker { color: var(--mui-primary-light); }
+  .os-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+  .os-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+  /* C1: 2x2 Operating Code Bento + Bandwidth Dial */
+  .os-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+  .os-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+  .os-split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+  @media (max-width: 1040px) { .os-split-75, .os-split-57, .os-split-66 { grid-template-columns: minmax(0, 1fr); } }
+
+  .os-bento-22 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 720px) { .os-bento-22 { grid-template-columns: minmax(0, 1fr); } }
+  .os-code-card {
+    padding: 16px 17px; border-radius: 14px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+    display: flex; flex-direction: column; justify-content: space-between; gap: 9px; transition: all 0.16s ease;
+  }
+  .os-code-card:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); transform: translateY(-1px); }
+  .os-code-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .os-code-card h3 { font-size: 0.92rem; font-weight: 800; color: var(--text-primary); line-height: 1.32; }
+  .os-code-card p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+  .os-code-foot { font-size: 0.72rem; font-weight: 700; color: var(--mui-primary-lighter); padding-top: 7px; border-top: 1px dashed var(--border-default); }
+
+  .os-subcard { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+  .os-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .os-subhead h3 { font-size: 1.02rem; font-weight: 800; color: var(--text-primary); }
+  .os-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.52; }
+
+  /* C2: 3-Era Governance Timeline Scrubber */
+  .os-era-bar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+  @media (max-width: 780px) { .os-era-bar { grid-template-columns: minmax(0, 1fr); } }
+  .os-era-btn {
+    text-align: left; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);
+    background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+  }
+  .os-era-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+  .os-era-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6; }
+  .os-era-yr { font-size: 0.71rem; font-weight: 800; color: var(--mui-primary-lighter); display: block; }
+  .os-era-name { font-size: 0.85rem; font-weight: 800; margin-top: 2px; display: block; }
+  .os-era-detail { padding: 16px 18px; border-radius: 13px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 10px; }
+  .os-era-detail h4 { font-size: 0.96rem; font-weight: 800; color: var(--text-primary); }
+  .os-era-detail p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.68; }
+  .os-era-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* C3: Mega-Cap Cultural Genome Table */
+  .os-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-top: 16px; }
+  .os-table { width: 100%; border-collapse: collapse; font-size: 0.80rem; min-width: 800px; background: var(--bg-paper-solid); }
+  .os-table th { text-align: left; padding: 11px 13px; background: var(--bg-subtle); color: var(--text-muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-subtle); }
+  .os-table td { padding: 11px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: middle; }
+  .os-table tr:last-child td { border-bottom: none; }
+  .os-table tr.is-amzn td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+  .os-table tr:hover td { background: var(--bg-hover); }
+
+  /* C4: Entropy Simulator & 6-Law Audit */
+  .os-sim-sliders { display: flex; flex-direction: column; gap: 12px; }
+  .os-slider-row { display: flex; flex-direction: column; gap: 4px; }
+  .os-slider-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+  .os-slider-lbl b { color: var(--mui-primary-lighter); }
+  .os-slider-row input[type="range"] { width: 100%; accent-color: #0073E6; cursor: pointer; }
+  .os-sim-out4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 6px; }
+  .os-sim-box { padding: 11px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .os-sim-box b { display: block; font-size: 1.12rem; font-weight: 800; color: var(--mui-primary-lighter); }
+  .os-sim-box span { font-size: 0.71rem; color: var(--text-muted); }
+
+  .os-audit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  @media (max-width: 680px) { .os-audit-grid { grid-template-columns: minmax(0, 1fr); } }
+  .os-audit-chk {
+    display: flex; align-items: flex-start; gap: 9px; padding: 11px 12px; border-radius: 11px;
+    background: var(--bg-subtle); border: 1px solid var(--border-subtle); cursor: pointer; transition: all 0.15s ease;
+  }
+  .os-audit-chk:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+  .os-audit-chk input { width: 16px; height: 16px; accent-color: #0073E6; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+  .os-audit-chk b { display: block; font-size: 0.79rem; font-weight: 800; color: var(--text-primary); }
+  .os-audit-chk span { display: block; font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.45; }
+
+  .os-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--divider); }
+  .os-source-item { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease; }
+  .os-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+  .os-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+  .os-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+  @media print {
+    .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+    .layout-shell { display: block !important; padding: 0 !important; }
+  }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body id="top">
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">AMZN</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <button type="button" class="crumb-link hide-sm" id="crumbTopBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </button>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="Amazon Cultural & Org Operating System">亚马逊企业文化与组织操作系统</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: AMZN</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">Q3'26 G&amp;A 1.34%</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索API法令、双披萨…" aria-label="快速跳转组织机制" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <button type="button" id="exportHtmlBtn" class="mui-dl-btn" title="下载独立 HTML 网页文件">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n-zh="下载 HTML" data-i18n-en="Download">下载 HTML</span>
+        </button>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left MUI Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="组织操作系统模块与站点导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">AMZN · ORG OS BLUEPRINT</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="Amazon Cultural & Org OS">亚马逊企业文化与组织操作系统</div>
+        <p class="sidebar-subtitle" data-i18n-zh="解耦服务 API × 双披萨团队 × 单线程领导者(STL) × 六页纸叙事 × 抬杆者 × Jassy“全球最大初创企业”反熵增重塑" data-i18n-en="Decoupled APIs × Two-Pizza Teams × Single-Threaded Leaders × 6-Pagers × Bar Raisers × Jassy Startup Reset">解耦服务 API × 双披萨团队 × 单线程领导者(STL) × 六页纸叙事 × 抬杆者 × Jassy“全球最大初创企业”反熵增重塑</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="组织拓扑原型" data-i18n-en="Org Topology">组织拓扑原型</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="API解耦微内核联邦" data-i18n-en="API-Decoupled Federation">API解耦微内核联邦</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="全球员工 / TTM人均营收" data-i18n-en="Headcount / Rev/Emp">全球员工 / TTM人均营收</span>
+            <span class="sidebar-mini-val mono">1.638M · $487K</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Q3'26 G&A管理费率" data-i18n-en="Q3'26 G&A % of Sales">Q3'26 G&amp;A管理费率</span>
+            <span class="sidebar-mini-val mono">1.34% (-6.1% YoY)</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="站点导航与系统目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="AMZN">
+          <div class="co-side-head">
+            <span class="co-side-title mono">AMZN · 05/06</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="amazon_com_amzn3.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="../SeniorExecutive/amazon_nasdaq_amzn_20_jassy_olsavsky_garman_herrington_desantis_bezos.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (6)" data-i18n-en="All (6)">全部 (6)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (5)" data-i18n-en="Company (5)">公司深度 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (1)" data-i18n-en="SeniorExecutive (1)">高管人物 (1)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_amzn_12_1p_3p_fba_prime_ads_aws_bedrock_video_alexa_ring_eero_leo_zoox.html" title="Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心" data-i18n-en="Amazon (AMZN) 12 &amp; Deep Dive Report (1P ·3P/FBA·Prime·Ads·AWS·Bedrock/ ·Video· · ·Alexa+·Ring/eero·Leo/Zoox)| Data Center">Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/amazon_nasdaq_amzn_20_jassy_olsavsky_garman_herrington_desantis_bezos.html" title="Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心" data-i18n-en="Amazon (NASDAQ: AMZN) 20 &amp; OverviewDeep DiveReport (Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos)| Data Center">Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" style="margin-top:8px;" data-i18n-zh="组织操作系统模块 (C0–C4)" data-i18n-en="OS Blueprint Modules (C0–C4)">组织操作系统模块 (C0–C4)</div>
+        <ul class="mui-nav-list" id="tocList">
+          <li><a href="#mod-c0" class="mui-nav-link active"><span class="nav-idx mono">C0</span><span data-i18n-zh="API解耦拓扑与双披萨沙盘" data-i18n-en="API Topology & Two-Pizza OS">API解耦拓扑与双披萨沙盘</span></a></li>
+          <li><a href="#mod-c1" class="mui-nav-link"><span class="nav-idx mono">C1</span><span data-i18n-zh="四大文化内核与创造者带宽盘" data-i18n-en="4 Mechanisms & Builder Dial">四大文化内核与创造者带宽盘</span></a></li>
+          <li><a href="#mod-c2" class="mui-nav-link"><span class="nav-idx mono">C2</span><span data-i18n-zh="三代治理演进与费用杠杆曲线" data-i18n-en="3-Era Governance & Leverage">三代治理演进与费用杠杆曲线</span></a></li>
+          <li><a href="#mod-c3" class="mui-nav-link"><span class="nav-idx mono">C3</span><span data-i18n-zh="全球巨头文化基因组镜像竞技场" data-i18n-en="Mega-Cap Cultural Genome">全球巨头文化基因组镜像竞技场</span></a></li>
+          <li><a href="#mod-c4" class="mui-nav-link"><span class="nav-idx mono">C4</span><span data-i18n-zh="组织熵增推演器与Day 1体检表" data-i18n-en="Entropy Lab & Day 1 Audit">组织熵增推演器与Day 1体检表</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card sidebar-actions portal-reading-tools" id="portalReadingTools">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance & Export">阅读与导出工具</div>
+        <div class="side-theme-group" role="group" aria-label="外观切换">
+          <button type="button" id="sideLightBtn" class="active" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+          <button type="button" id="sideDarkBtn" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Organizational OS Blueprint -->
+    <main class="os-workspace">
+
+      <!-- C0: TOPOLOGY HERO & INTERACTIVE API ARCHITECTURE SWITCHER -->
+      <section id="mod-c0" class="os-hero-grid">
+        <div class="os-hero-card">
+          <div>
+            <div class="os-badge-row">
+              <span class="mui-chip mui-chip-primary mono" data-i18n-zh="组织操作系统：API 解耦微内核 × 单线程双披萨自治联邦" data-i18n-en="ORG OS: Decoupled Service APIs × Single-Threaded Two-Pizza Teams">组织操作系统：API 解耦微内核 × 单线程双披萨自治联邦</span>
+              <span class="mui-chip mui-chip-success mono" data-i18n-zh="世界最大初创企业 (World's Largest Startup)" data-i18n-en="World's Largest Startup Mandate">世界最大初创企业 (World's Largest Startup)</span>
+            </div>
+
+            <h1 class="os-h1" data-i18n-zh="亚马逊企业文化与组织操作系统：<span class='os-grad'>用制度化“好机制（Good Mechanisms）”对抗 163.8 万人帝国的科层熵增</span>" data-i18n-en="Amazon Cultural & Organizational Operating System: <span class='os-grad'>Defeating Bureaucratic Entropy Across 1.638M Employees via Codified Mechanisms</span>">
+              亚马逊企业文化与组织操作系统：<span class="os-grad">用制度化“好机制（Good Mechanisms）”对抗 163.8 万人帝国的科层熵增</span>
+            </h1>
+
+            <p class="os-lead">
+              如果说苹果的组织灵魂是<strong>“全公司共用一张损益表的职能集权精密钟表（Unitary Functional Form）”</strong>，那么亚马逊则是人类商业史上它的<strong>完美镜像对立面——“彻底接口化、模块化、高并发试错的分布式微服务操作系统”</strong>。面对横跨全球零售、百万机器人履约、AWS 云计算、自研芯片、低轨卫星与无人驾驶的 <strong>163.8 万名员工</strong>，亚马逊不靠温情口号（Good Intentions），而靠冷峻可复用的<strong>“机制（Mechanisms）”</strong>：从 1997 年每年重印的 <strong>Day 1 股东信</strong>、2002 年 <strong>Bezos API 法令</strong>、<strong>双披萨团队与单线程领导者（STL）</strong>，到 Andy Jassy 自 2024 年 9 月发起的<strong>“像全球最大初创企业一样运转”</strong>组织扁平化手术（提升 IC/管理者比例 +15%、设立反官僚邮箱砍掉 150+ 冗余规章），直接推动 Q3 2026 一般及行政管理费用（G&amp;A）同比下降 <strong>-6.1% 至仅占营收的 1.34%</strong>，助力集团营业利润率创下 <strong>13.9%</strong> 历史最高纪录
+              <a class="cite-link" href="https://www.aboutamazon.com/news/company-news/ceo-andy-jassy-latest-update-on-amazon-return-to-office-manager-team-ratio" target="_blank" rel="noopener noreferrer">Jassy 扁平化备忘录 ↗</a>
+              <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">Q3 2026 季报 ↗</a>。
+            </p>
+          </div>
+
+          <div class="os-topo-switcher">
+            <div class="os-topo-head">
+              <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换组织拓扑模式（联动右侧画布）：" data-i18n-en="SWITCH TOPOLOGY MODE:">切换组织拓扑模式（联动右侧画布）：</span>
+              <div class="mui-segmented" id="topoTabs">
+                <button type="button" class="mui-seg-btn active" data-topo="amzn" data-i18n-zh="① 亚马逊解耦 API + 双披萨网络" data-i18n-en="① Amazon API + Two-Pizza Mesh">① 亚马逊解耦 API + 双披萨网络</button>
+                <button type="button" class="mui-seg-btn" data-topo="silo" data-i18n-zh="② 传统科层审批墙 (Day 2 熵增态)" data-i18n-en="② Legacy Siloed Hierarchy">② 传统科层审批墙 (Day 2 熵增态)</button>
+              </div>
+            </div>
+            <div class="os-topo-rule mono" id="topoRule">康威定律正向工程：所有团队只允许通过标准化服务 API 通信，禁止跨部门会议拉扯 → 催生 FBA 与 AWS</div>
+            <p class="os-topo-desc" id="topoDesc">在亚马逊拓扑中，S-Team 仅设定资本分配、16条领导力准则与安全护栏；每个不超 10 人的双披萨团队由一名 100% 专注的单线程领导者（STL）统领，直接调用内部标准 API 极速上线——典型战例如 2025 年仅 6 名工程师用 76 天便从零写出 Bedrock Mantle 核心推理引擎。</p>
+          </div>
+        </div>
+
+        <div class="os-topo-card">
+          <div class="os-subhead">
+            <h3 data-i18n-zh="组织通信拓扑实时对比画布" data-i18n-en="Live Org Communication Topology">组织通信拓扑实时对比画布</h3>
+            <span class="mui-chip mui-chip-primary mono" id="topoChip">O(1) API Calls</span>
+          </div>
+          <div class="os-canvas-box">
+            <canvas id="topologyCanvas" aria-label="亚马逊API解耦拓扑对比图"></canvas>
+          </div>
+          <div class="os-kpi-grid4">
+            <div class="os-kpi-mini"><b class="mono">1.638M</b><span data-i18n-zh="Q3'26 全球员工数" data-i18n-en="Q3'26 Employees">Q3'26 全球员工数</span></div>
+            <div class="os-kpi-mini"><b class="mono">$486.8K</b><span data-i18n-zh="TTM 人均创收新高" data-i18n-en="TTM Rev / Employee">TTM 人均创收新高</span></div>
+            <div class="os-kpi-mini"><b class="mono">1.34%</b><span data-i18n-zh="Q3 G&A/营收极低费率" data-i18n-en="Q3 G&A % of Sales">Q3 G&amp;A/营收极低费率</span></div>
+            <div class="os-kpi-mini"><b class="mono">+15%</b><span data-i18n-zh="IC/管理者扁平化目标" data-i18n-en="IC-to-Manager Target">IC/管理者扁平化目标</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- C1: 2x2 CULTURAL OPERATING CODE BENTO & BUILDER BANDWIDTH DIAL -->
+      <section id="mod-c1" class="os-panel">
+        <div class="os-panel-head">
+          <div>
+            <span class="os-kicker mono">MODULE C1 · FOUR CODIFIED MECHANISMS &amp; BUILDER BANDWIDTH</span>
+            <h2 class="os-h2" data-i18n-zh="四大文化操作系统内核与“创造者有效带宽”分配盘" data-i18n-en="Four Codified OS Mechanisms & Builder Bandwidth Allocation">四大文化操作系统内核与“创造者有效带宽”分配盘</h2>
+            <p class="os-head-desc" data-i18n-zh="把抽象的 16 条领导力准则（Leadership Principles）编译为每天强制执行的四套输入-输出机器，最大限度把工程师时间还给客户发明。" data-i18n-en="How Amazon compiles its 16 Leadership Principles into daily enforceable rituals that maximize builder invention hours.">把抽象的 16 条领导力准则（Leadership Principles）编译为每天强制执行的四套输入-输出机器，最大限度把工程师时间还给客户发明。</p>
+          </div>
+          <a class="cite-link" href="https://andrewclark.co.uk/all-media/working-backwards" target="_blank" rel="noopener noreferrer">Working Backwards 机制详考 ↗</a>
+        </div>
+
+        <div class="os-split-75">
+          <div class="os-bento-22">
+            <div class="os-code-card">
+              <div>
+                <div class="os-code-top"><span class="mui-chip mui-chip-primary mono">KERNEL 01 · PR / FAQ</span><span class="mono" style="font-size:0.71rem;color:var(--text-muted);">Customer Obsession</span></div>
+                <h3 style="margin-top:8px;" data-i18n-zh="逆向工作法（1页未来新闻稿 + 5页高压FAQ）" data-i18n-en="Working Backwards (1-Page PR + 5-Page FAQ)">逆向工作法（1页未来新闻稿 + 5页高压FAQ）</h3>
+                <p style="margin-top:6px;">严禁在没想清楚客户尖叫点前分配任何一行研发预算。任何新产品必须先写出一页面向终端顾客的发布日新闻稿（PR）与五页包含财务单位模型、致命技术瓶颈的问答录（FAQ）——若新闻稿读起来平庸，项目当场枪毙。</p>
+              </div>
+              <div class="os-code-foot mono">代表产物：AWS S3/EC2 · Prime 会员 · Kindle · Echo · Amazon Go</div>
+            </div>
+
+            <div class="os-code-card">
+              <div>
+                <div class="os-code-top"><span class="mui-chip mui-chip-violet mono">KERNEL 02 · 6-PAGER</span><span class="mono" style="font-size:0.71rem;color:var(--text-muted);">Are Right, A Lot</span></div>
+                <h3 style="margin-top:8px;" data-i18n-zh="六页纸叙事备忘录 + 开场15分钟静默阅读" data-i18n-en="6-Page Narrative Memos & Silent Study Hall">六页纸叙事备忘录 + 开场15分钟静默阅读</h3>
+                <p style="margin-top:6px;">自 2004 年起全面禁用 PowerPoint 要点幻灯片。完整主谓宾长句与附录表格迫使作者无法用华丽口才掩盖逻辑断层；高管会议前 15–20 分钟全员安静默读批注，彻底消除“谁职级高、口才好谁赢”的政治博弈。</p>
+              </div>
+              <div class="os-code-foot mono">反熵增价值：把会议从“推销表演”还原为“高密度真理求证”</div>
+            </div>
+
+            <div class="os-code-card">
+              <div>
+                <div class="os-code-top"><span class="mui-chip mui-chip-success mono">KERNEL 03 · STL &amp; API</span><span class="mono" style="font-size:0.71rem;color:var(--text-muted);">Ownership &amp; Speed</span></div>
+                <h3 style="margin-top:8px;" data-i18n-zh="单线程领导者（STL）+ 双披萨自治小队" data-i18n-en="Single-Threaded Leaders & Two-Pizza Autonomy">单线程领导者（STL）+ 双披萨自治小队</h3>
+                <p style="margin-top:6px;">亚马逊发现项目延期最大的元凶不是人不努力，而是负责人同时兼管五件事并陷入跨部门排期乞讨。STL 制度要求关键创新由一名全职高管 100% 独立拥有全部工程、产品与数据资源，无需向兄弟部门申请排期。</p>
+              </div>
+              <div class="os-code-foot mono">实战战例：6 名工程师用 Kiro 在 76 天内建成 Bedrock Mantle</div>
+            </div>
+
+            <div class="os-code-card">
+              <div>
+                <div class="os-code-top"><span class="mui-chip mui-chip-warning mono">KERNEL 04 · TYPE 2 &amp; WHY</span><span class="mono" style="font-size:0.71rem;color:var(--text-muted);">Bias for Action</span></div>
+                <h3 style="margin-top:8px;" data-i18n-zh="单/双向门分流 × 抬杆者一票否决 × “Why”文化" data-i18n-en="Type 1/2 Doors × Bar Raiser Veto × 'Why' Culture">单/双向门分流 × 抬杆者一票否决 × “Why”文化</h3>
+                <p style="margin-top:6px;">将 85%+ 可逆决策定义为“双向门（Type 2）”下放一线秒级拍板；招聘引入跨部门独立 Bar Raiser 一票否决权确保新员工胜过现有 50% 同级；AWS CEO Matt Garman 力推把“为什么不行”扭转为“为什么不干”，使 Strands 开源在 24 小时内拍板
+                  <a class="cite-link" href="https://siliconangle.com/2025/07/13/exclusive-amazon-web-services-ceo-matt-garman-bets-agentic-future/" target="_blank" rel="noopener noreferrer">Garman 访谈 ↗</a>。</p>
+              </div>
+              <div class="os-code-foot mono">反官僚信箱成果：收到 500+ 一线举报，废除 150+ 繁文缛节</div>
+            </div>
+          </div>
+
+          <div class="os-subcard">
+            <div class="os-subhead">
+              <h3 data-i18n-zh="研发与产品团队“周度时间带宽”对比" data-i18n-en="Weekly Builder Bandwidth Allocation">研发与产品团队“周度时间带宽”对比</h3>
+              <div class="mui-segmented" id="bwTabs">
+                <button type="button" class="mui-seg-btn active" data-bw="startup" data-i18n-zh="2026 初创重塑态" data-i18n-en="2026 Startup Reset">2026 初创重塑态</button>
+                <button type="button" class="mui-seg-btn" data-bw="bloat" data-i18n-zh="2021 扩张臃肿期" data-i18n-en="2021 Expansion Bloat">2021 扩张臃肿期</button>
+              </div>
+            </div>
+            <div class="os-canvas-box" style="height:285px;">
+              <canvas id="bandwidthCanvas" aria-label="创造者时间带宽分配对比图"></canvas>
+            </div>
+            <p class="os-caption" data-i18n-zh="Jassy 在文化公开信中直指要害：2020–2022 大扩招期间滋生了“会前预备会（Pre-meetings before meetings）”与多层中层传声筒；砍掉冗余汇报层级与搭配 Kiro AI 编程工具后，一线 Builder 直接面向客户交付的有效工时占比大幅回升。" data-i18n-en="Eliminating 'pre-meetings for the pre-meeting', raising IC-to-manager ratio by +15%, and deploying Kiro AI coding agents restores builder bandwidth to customer-facing shipping.">Jassy 在文化公开信中直指要害：2020–2022 大扩招期间滋生了“会前预备会（Pre-meetings before meetings）”与多层中层传声筒；砍掉冗余汇报层级与搭配 Kiro AI 编程工具后，一线 Builder 直接面向客户交付的有效工时占比大幅回升。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- C2: 3-ERA GOVERNANCE TIMELINE SCRUBBER & LEVERAGE CANVAS -->
+      <section id="mod-c2" class="os-panel">
+        <div class="os-panel-head">
+          <div>
+            <span class="os-kicker mono">MODULE C2 · THREE-ERA GOVERNANCE EVOLUTION &amp; OPERATING LEVERAGE</span>
+            <h2 class="os-h2" data-i18n-zh="三代组织治理演进与“人均创收 × 管理费率”剪刀差验证" data-i18n-en="3-Era Governance Evolution & Revenue-per-Employee Leverage">三代组织治理演进与“人均创收 × 管理费率”剪刀差验证</h2>
+            <p class="os-head-desc" data-i18n-zh="检验一套企业文化是空谈还是真护城河，最硬核的标尺是看它在经历外部宏观冲击与 CEO 交接后能否自我纠偏并创出利润率新高。" data-i18n-en="Financial proof of organizational surgery: how Amazon expanded operating margin from 2.4% (FY22) to a record 13.9% (Q3'26).">检验一套企业文化是空谈还是真护城河，最硬核的标尺是看它在经历外部宏观冲击与 CEO 交接后能否自我纠偏并创出利润率新高。</p>
+          </div>
+          <a class="cite-link" href="https://fortune.com/2024/11/08/amazon-ceo-andy-jassy-hates-bureaucracy-employee-to-manager-ratio/" target="_blank" rel="noopener noreferrer">Fortune 反官僚改革报道 ↗</a>
+        </div>
+
+        <div class="os-split-57">
+          <div>
+            <div class="os-era-bar" id="eraBar">
+              <button type="button" class="os-era-btn" data-era="0">
+                <span class="os-era-yr mono">ERA I · 1994–2005</span>
+                <span class="os-era-name" data-i18n-zh="Day 1 创世与 API 解耦" data-i18n-en="Day 1 Charter & API Mandate">Day 1 创世与 API 解耦</span>
+              </button>
+              <button type="button" class="os-era-btn" data-era="1">
+                <span class="os-era-yr mono">ERA II · 2006–2021</span>
+                <span class="os-era-name" data-i18n-zh="三大支柱裂变与百万扩军" data-i18n-en="AWS/Prime Scale & 1.6M Surge">三大支柱裂变与百万扩军</span>
+              </button>
+              <button type="button" class="os-era-btn active" data-era="2">
+                <span class="os-era-yr mono">ERA III · 2022–2026+</span>
+                <span class="os-era-name" data-i18n-zh="Jassy 反官僚与 AI 原生跃迁" data-i18n-en="Jassy Flattening & AI Reset">Jassy 反官僚与 AI 原生跃迁</span>
+              </button>
+            </div>
+
+            <div class="os-era-detail" id="eraDetail">
+              <h4 id="eraTitle">Era III（2022–2026+）：Andy Jassy 刀刃向内——从疫情过剩回归“全球最大初创企业”</h4>
+              <p id="eraBody">2022 年高通胀与疫后增速放缓曾令亚马逊营业利润率一度跌至 2.4%（净亏损 $27.2亿）。接任 CEO 的 Andy Jassy 展现出极强战略定力：先将全美履约网重构为 8 大区域并关停缺乏规模前景的边缘项目；继而在 2024 年 9 月颁布组织重塑令——要求 2025 Q1 底前将个人贡献者（IC）与管理者比例提高至少 15%、恢复每周 5 天办公室现场敏捷共创、设立直通高管的“反官僚信箱（Bureaucracy Mailbox）”。成效立竿见影：TTM 人均创收从 FY22 的 $33.4万 飙升 +46% 至 Q3 2026 的 $48.7万，G&amp;A 费率压降至 1.34%，集团单季营业利润率飙至史无前例的 13.9%。</p>
+              <div class="os-era-pills" id="eraPills">
+                <span class="mui-chip mui-chip-primary mono">IC/Manager +15%</span>
+                <span class="mui-chip mui-chip-success mono">Rev/Emp $334K → $487K</span>
+                <span class="mui-chip mui-chip-violet mono">OpM 2.4% → 13.9%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="os-subcard">
+            <div class="os-subhead">
+              <h3 data-i18n-zh="FY2021–TTM Q3'26 组织人效与费用杠杆轨迹" data-i18n-en="FY21–TTM Q3'26 Org Productivity & Margin Trajectory">FY2021–TTM Q3'26 组织人效与费用杠杆轨迹</h3>
+              <div class="mui-segmented" id="c2Tabs">
+                <button type="button" class="mui-seg-btn active" data-c2="revemp" data-i18n-zh="人均营收 ($K) vs 营业利润率" data-i18n-en="Rev/Emp vs Op Margin">人均营收 ($K) vs 营业利润率</button>
+                <button type="button" class="mui-seg-btn" data-c2="opex" data-i18n-zh="研发基建 vs G&A 管理费率 (%)" data-i18n-en="Tech & Infra vs G&A %">研发基建 vs G&amp;A 管理费率 (%)</button>
+              </div>
+            </div>
+            <div class="os-canvas-box" style="height:290px;">
+              <canvas id="leverageCanvas" aria-label="亚马逊人均营收与管理费用杠杆图"></canvas>
+            </div>
+            <p class="os-caption" data-i18n-zh="最震撼的财务对比：Q3 2026 亚马逊单季投入 $348.1亿 于技术与基础设施（占营收 17.2%），而整个 163.8 万人帝国的 G&A 行政管理开支仅 $27.0亿（占营收 1.34%）——每一分钱都花在算力、机器人与工程师刀刃上。" data-i18n-en="In Q3 2026, Amazon spent $34.81B on Technology & Infrastructure (17.2% of sales) while spending just $2.70B on G&A (1.34% of sales, down 6.1% YoY).">最震撼的财务对比：Q3 2026 亚马逊单季投入 $348.1亿 于技术与基础设施（占营收 17.2%），而整个 163.8 万人帝国的 G&amp;A 行政管理开支仅 $27.0亿（占营收 1.34%）——每一分钱都花在算力、机器人与工程师刀刃上。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- C3: GLOBAL MEGA-CAP CULTURAL GENOME ARENA -->
+      <section id="mod-c3" class="os-panel">
+        <div class="os-panel-head">
+          <div>
+            <span class="os-kicker mono">MODULE C3 · MEGA-CAP CULTURAL GENOME ARENA (AMAZON VS APPLE &amp; PEERS)</span>
+            <h2 class="os-h2" data-i18n-zh="全球五大商业巨头组织基因组镜像对标：为什么亚马逊与苹果恰成“阴阳两极”？" data-i18n-en="Mega-Cap Cultural Genome Arena: Why Amazon & Apple Form Perfect Yin-Yang Opposites">全球五大商业巨头组织基因组镜像对标：为什么亚马逊与苹果恰成“阴阳两极”？</h2>
+            <p class="os-head-desc" data-i18n-zh="点击切换对比标杆，在六维组织雷达上直观透视亚马逊（分布式接口联邦）与苹果（职能集权单一精品）、微软、沃尔玛、伯克希尔的底层分野。" data-i18n-en="Compare Amazon's six-axis organizational genome against Apple, Microsoft, Walmart, and Berkshire Hathaway.">点击切换对比标杆，在六维组织雷达上直观透视亚马逊（分布式接口联邦）与苹果（职能集权单一精品）、微软、沃尔玛、伯克希尔的底层分野。</p>
+          </div>
+          <div class="mui-segmented" id="peerTabs">
+            <button type="button" class="mui-seg-btn active" data-peer="aapl">vs Apple (AAPL)</button>
+            <button type="button" class="mui-seg-btn" data-peer="msft">vs Microsoft (MSFT)</button>
+            <button type="button" class="mui-seg-btn" data-peer="wmt">vs Walmart (WMT)</button>
+            <button type="button" class="mui-seg-btn" data-peer="brk">vs Berkshire (BRK)</button>
+          </div>
+        </div>
+
+        <div class="os-split-57">
+          <div class="os-subcard">
+            <div class="os-subhead">
+              <h3 data-i18n-zh="六维组织基因雷达（蓝：AMZN · 紫：对标巨头）" data-i18n-en="6-Axis Cultural Genome Radar">六维组织基因雷达（蓝：AMZN · 紫：对标巨头）</h3>
+            </div>
+            <div class="os-canvas-box" style="height:290px;">
+              <canvas id="genomeCanvas" aria-label="六维企业文化基因雷达图"></canvas>
+            </div>
+            <p class="os-caption" id="peerSummary"><strong>AMZN vs AAPL 核心镜像：</strong>苹果追求“千次说不、全公司押注唯一最优解”，靠职能专家制打磨出 47%+ 毛利的极致硬件；亚马逊则信奉“2 &gt; 0 并行探索 + 双向门快速试错”，允许 Fire Phone 失败但孵化出 AWS、FBA、Prime、Alexa+ 与 Leo 多条千亿级新物种。</p>
+          </div>
+
+          <div class="os-table-wrap" style="margin-top:0;">
+            <table class="os-table" aria-label="全球五大巨头组织操作系统对标矩阵">
+              <thead>
+                <tr>
+                  <th data-i18n-zh="企业 / 组织原型" data-i18n-en="Company / OS Archetype">企业 / 组织原型</th>
+                  <th data-i18n-zh="权力与损益表单元" data-i18n-en="P&L & Decision Unit">权力与损益表单元</th>
+                  <th data-i18n-zh="核心会议与创新机制" data-i18n-en="Signature Mechanism">核心会议与创新机制</th>
+                  <th data-i18n-zh="规模与人效验证" data-i18n-en="Scale & Productivity">规模与人效验证</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-amzn">
+                  <td><strong>Amazon (AMZN)</strong><br/><span class="mono" style="font-size:0.72rem;">API解耦双披萨联邦</span></td>
+                  <td>高度自治单线程团队 (STL) + 分部独立核算</td>
+                  <td>6页纸静默阅读 · PR/FAQ 逆向法 · 抬杆者 · 反官僚信箱</td>
+                  <td class="mono">1.638M 人 · TTM $487K/人 · Q3 G&amp;A 1.34%
+                    <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">Q3'26 ↗</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Apple (AAPL)</strong><br/><span class="mono" style="font-size:0.72rem;">职能集权U型精密钟表</span></td>
+                  <td>仅 CEO 持唯一全公司 P&amp;L；SVP 按硬件/芯片/软件职能划分</td>
+                  <td>DRI 直接责任人 · 周一高管评审 · 严苛工业设计像素级签批</td>
+                  <td class="mono">~164K 人 · &gt;$2.4M/人 · 极少SKU超高单品毛利</td>
+                </tr>
+                <tr>
+                  <td><strong>Microsoft (MSFT)</strong><br/><span class="mono" style="font-size:0.72rem;">成长型思维企业矩阵</span></td>
+                  <td>三大云与企业事业群 + 全球企业直销铁军协同</td>
+                  <td>Growth Mindset · One Microsoft 跨云捆绑 · 外部联盟投资</td>
+                  <td class="mono">~228K 人 · ~$1.2M/人 · 商用云与Office高利润率</td>
+                </tr>
+                <tr>
+                  <td><strong>Walmart (WMT)</strong><br/><span class="mono" style="font-size:0.72rem;">门店买手与干线运营网</span></td>
+                  <td>区域门店运营官 + 品类采购集权压价体系</td>
+                  <td>周六晨会检视同店周转 · EDLP 天天平价供应链倒逼</td>
+                  <td class="mono">~2.10M 人 · ~$330K/人 · 门店自提履约转化
+                    <a class="cite-link" href="https://mitsloan.mit.edu/sites/default/files/2026-07/24-229.AmazonvsWalmart_0.pdf" target="_blank" rel="noopener noreferrer">MIT Sloan ↗</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Berkshire (BRK)</strong><br/><span class="mono" style="font-size:0.72rem;">极致分权控股母舰</span></td>
+                  <td>总部仅约 25–30 人管资本配置；子公司 CEO 100% 经营自治</td>
+                  <td>零总部运营干预 · 保险浮存金跨周期复利配置</td>
+                  <td class="mono">~392K 人（含子公司）· 极致低总部管理费</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- C4: INTERACTIVE ENTROPY & FLATTENING SIMULATOR + 6-LAW DAY 1 AUDIT -->
+      <section id="mod-c4" class="os-panel">
+        <div class="os-panel-head">
+          <div>
+            <span class="os-kicker mono">MODULE C4 · ORGANIZATIONAL ENTROPY SIMULATOR &amp; DAY 1 AUDIT</span>
+            <h2 class="os-h2" data-i18n-zh="组织熵增与反官僚扁平化推演沙盘 + Day 1 六大铁律持久体检表" data-i18n-en="Bureaucracy Entropy Simulator & 6-Law Persistent Day 1 Audit">组织熵增与反官僚扁平化推演沙盘 + Day 1 六大铁律持久体检表</h2>
+            <p class="os-head-desc" data-i18n-zh="调节“IC/管理者比例、双向门下放率与 AI 研发工具渗透率”，观察决策延迟与利润率敏感度；右侧勾选保存季度文化跟踪项。" data-i18n-en="Simulate how IC-to-manager flattening, Type 2 decision velocity, and AI tooling impact latency and margin.">调节“IC/管理者比例、双向门下放率与 AI 研发工具渗透率”，观察决策延迟与利润率敏感度；右侧勾选保存季度文化跟踪项。</p>
+          </div>
+        </div>
+
+        <div class="os-split-66">
+          <div class="os-subcard">
+            <div class="os-subhead">
+              <h3 data-i18n-zh="管理跨度与敏捷速度交互模拟器" data-i18n-en="Span-of-Control & Velocity Simulator">管理跨度与敏捷速度交互模拟器</h3>
+              <span class="mui-chip mui-chip-primary mono" id="entropyStatusChip">Day 1 High-Velocity</span>
+            </div>
+            <div class="os-sim-sliders">
+              <div class="os-slider-row">
+                <div class="os-slider-lbl"><span data-i18n-zh="IC 与管理者比例提升幅度 (Jassy 目标 ≥ +15%)" data-i18n-en="IC-to-Manager Ratio Uplift (Target +15%)">IC 与管理者比例提升幅度 (Jassy 目标 ≥ +15%)</span><b class="mono" id="lblIcRatio">+15%</b></div>
+                <input type="range" id="inpIcRatio" min="0" max="25" step="1" value="15" />
+              </div>
+              <div class="os-slider-row">
+                <div class="os-slider-lbl"><span data-i18n-zh="一线双向门 (Type 2) 免审批自主决策占比" data-i18n-en="Type 2 Autonomous Decision Share">一线双向门 (Type 2) 免审批自主决策占比</span><b class="mono" id="lblType2">82%</b></div>
+                <input type="range" id="inpType2" min="40" max="92" step="2" value="82" />
+              </div>
+              <div class="os-slider-row">
+                <div class="os-slider-lbl"><span data-i18n-zh="Kiro / Quick 等内部 AI 协同与编码渗透率" data-i18n-en="Kiro / Internal AI Builder Penetration">Kiro / Quick 等内部 AI 协同与编码渗透率</span><b class="mono" id="lblAiTool">70%</b></div>
+                <input type="range" id="inpAiTool" min="15" max="95" step="5" value="70" />
+              </div>
+            </div>
+
+            <div class="os-sim-out4">
+              <div class="os-sim-box"><b class="mono" id="outLatency">1.8 天</b><span data-i18n-zh="新特性立项平均决策延迟" data-i18n-en="Avg Feature Decision Latency">新特性立项平均决策延迟</span></div>
+              <div class="os-sim-box"><b class="mono" id="outShipIdx">1.46x</b><span data-i18n-zh="单双披萨团队年交付产出乘数" data-i18n-en="Two-Pizza Shipping Multiplier">单双披萨团队年交付产出乘数</span></div>
+              <div class="os-sim-box"><b class="mono" id="outGaPct">1.34%</b><span data-i18n-zh="隐含 G&A 行政管理费用率" data-i18n-en="Implied G&A % of Net Sales">隐含 G&amp;A 行政管理费用率</span></div>
+              <div class="os-sim-box"><b class="mono" id="outMarginBps">+118 bps</b><span data-i18n-zh="组织提效增厚集团营业利润率" data-i18n-en="Operating Margin Uplift">组织提效增厚集团营业利润率</span></div>
+            </div>
+          </div>
+
+          <div class="os-subcard">
+            <div class="os-subhead">
+              <h3 data-i18n-zh="Day 1 反腐化六大信号长期跟踪清单" data-i18n-en="6-Point Day 1 Anti-Entropy Watchlist">Day 1 反腐化六大信号长期跟踪清单</h3>
+              <span class="mui-chip mui-chip-success mono" id="chkCountBadge">0 / 6 已核验</span>
+            </div>
+            <div class="os-audit-grid" id="osAuditGrid">
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c1" />
+                <div>
+                  <b data-i18n-zh="1. G&A 费率是否严守 <1.6% 红线" data-i18n-en="1. G&A Ratio Held Below 1.6%">1. G&amp;A 费率是否严守 &lt;1.6% 红线</b>
+                  <span>Q3'26 降至 1.34%；若反弹超 2% 预示中后台官僚复辟。</span>
+                </div>
+              </label>
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c2" />
+                <div>
+                  <b data-i18n-zh="2. 顶级 AI 科学家与芯片人才留存" data-i18n-en="2. AI & Annapurna Talent Retention">2. 顶级 AI 科学家与芯片人才留存</b>
+                  <span>跟踪 5 天 RTO 下 Annapurna Labs 与 AGI 核心团队稳定性。</span>
+                </div>
+              </label>
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c3" />
+                <div>
+                  <b data-i18n-zh="3. 小团队极速交付案例是否持续涌现" data-i18n-en="3. Small-Team Fast Launches">3. 小团队极速交付案例是否持续涌现</b>
+                  <span>观察类似“6人76天造出 Mantle”的高密度工程奇迹。</span>
+                </div>
+              </label>
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c4" />
+                <div>
+                  <b data-i18n-zh="4. 失败实验果断止损不恋战" data-i18n-en="4. Disciplined Sunset of Misses">4. 失败实验果断止损不恋战</b>
+                  <span>敢于快速关停低 ROI 试点并将人员转投 AWS/生鲜/机器人。</span>
+                </div>
+              </label>
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c5" />
+                <div>
+                  <b data-i18n-zh="5. 资本配置坚持长久期现金流贴现" data-i18n-en="5. Long-Term Cash Flow Allocation">5. 资本配置坚持长久期现金流贴现</b>
+                  <span>不为迎合短期季度 FCF 外观而削减高回报算力与硅片投入。</span>
+                </div>
+              </label>
+              <label class="os-audit-chk">
+                <input type="checkbox" data-oschk="c6" />
+                <div>
+                  <b data-i18n-zh="6. 一线履约自动化与安全双改善" data-i18n-en="6. Frontline Robotics & Safety">6. 一线履约自动化与安全双改善</b>
+                  <span>百万机器人与 $20/时起薪同步降低工伤率与人员流失率。</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Grounded Sources -->
+        <div class="os-sources-grid">
+          <a class="os-source-item" href="https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Andy Jassy 2025 Letter + Reprinted 1997 Letter ↗</b>
+            <span>Day 1 核心信条、“Why”文化、并行押注（2&gt;0）与 6人76天研发 Mantle 一手纪实</span>
+          </a>
+          <a class="os-source-item" href="https://www.aboutamazon.com/news/company-news/ceo-andy-jassy-latest-update-on-amazon-return-to-office-manager-team-ratio" target="_blank" rel="noopener noreferrer">
+            <b class="mono">CEO Andy Jassy Memo on Culture &amp; Org Structure ↗</b>
+            <span>“像全球最大初创企业一样运作”、IC/管理者比例提升 15%、5天返岗与反官僚信箱原文</span>
+          </a>
+          <a class="os-source-item" href="https://fortune.com/2024/11/08/amazon-ceo-andy-jassy-hates-bureaucracy-employee-to-manager-ratio/" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Fortune · Bureaucracy Mailbox &amp; Flattening Report ↗</b>
+            <span>反官僚邮箱超 500 封一线反馈、150+ 项冗余流程清理与中层去臃肿追踪</span>
+          </a>
+          <a class="os-source-item" href="https://siliconangle.com/2025/07/13/exclusive-amazon-web-services-ceo-matt-garman-bets-agentic-future/" target="_blank" rel="noopener noreferrer">
+            <b class="mono">SiliconANGLE · AWS CEO Matt Garman Exclusive ↗</b>
+            <span>AWS 内部“Why / Why not”速度文化重塑与 Strands Agent 极速开源决策过程</span>
+          </a>
+          <a class="os-source-item" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Amazon Q3 2026 Financial Results (Oct 29, 2026) ↗</b>
+            <span>1,638,000 全球员工、Q3 G&amp;A $2,701M (1.34%)、研发基建 $34,814M 与 13.9% 营业利润率</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+    var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+    var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+    var STORAGE_OS_CHK_KEY = 'amzn_org_os_audit_v1';
+
+    var state = {
+      theme: document.documentElement.getAttribute('data-theme') || 'light',
+      lang: 'zh',
+      topo: 'amzn',
+      bw: 'startup',
+      era: 2,
+      c2View: 'revemp',
+      peer: 'aapl'
+    };
+
+    var hitRegions = { topologyCanvas: [], bandwidthCanvas: [], leverageCanvas: [], genomeCanvas: [] };
+
+    function showToast(msg) {
+      var el = document.getElementById('muiSnackbar');
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(function () { el.classList.remove('show'); }, 2200);
+    }
+
+    function getPalette() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      return {
+        dark: dark,
+        text: dark ? '#F3F6F9' : '#0F1924',
+        sub: dark ? '#B2BAC2' : '#334155',
+        tick: dark ? '#94A3B8' : '#475569',
+        grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+        blue: dark ? '#3399FF' : '#0073E6',
+        blueSoft: dark ? 'rgba(51, 153, 255, 0.20)' : 'rgba(0, 115, 230, 0.14)',
+        green: dark ? '#22C55E' : '#16A34A',
+        amber: dark ? '#FFB74D' : '#D97706',
+        violet: dark ? '#A78BFA' : '#7C3AED',
+        red: dark ? '#FF6B6B' : '#DC2626'
+      };
+    }
+
+    function prepCanvas(id) {
+      var c = document.getElementById(id);
+      if (!c) return null;
+      var rect = c.getBoundingClientRect();
+      var w = Math.max(260, rect.width || 500);
+      var h = Math.max(180, rect.height || 275);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      c.width = Math.round(w * dpr);
+      c.height = Math.round(h * dpr);
+      var ctx = c.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      return { ctx: ctx, w: w, h: h };
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      var rr = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + rr, y);
+      ctx.arcTo(x + w, y, x + w, y + h, rr);
+      ctx.arcTo(x + w, y + h, x, y + h, rr);
+      ctx.arcTo(x, y + h, x, y, rr);
+      ctx.arcTo(x, y, x + w, y, rr);
+      ctx.closePath();
+    }
+
+    // C0 Topology Switcher & Canvas
+    var TOPO_COPY = {
+      amzn: {
+        rule: '康威定律正向工程：所有团队只允许通过标准化服务 API 通信，禁止跨部门会议拉扯 → 催生 FBA 与 AWS',
+        desc: '在亚马逊拓扑中，S-Team 仅设定资本分配、16条领导力准则与安全护栏；每个不超 10 人的双披萨团队由一名 100% 专注的单线程领导者（STL）统领，直接调用内部标准 API 极速上线——典型战例如 2025 年仅 6 名工程师用 76 天便从零写出 Bedrock Mantle 核心推理引擎。',
+        chip: 'O(1) API Calls'
+      },
+      silo: {
+        rule: '传统科层反面教材：N 个职能孤岛两两协调产生 N(N-1)/2 条会议审批链 → 陷入“会前预备会”泥潭',
+        desc: '在传统巨型企业的层级矩阵中，上线一个新功能需要跨越产品、前端、底层数据库、物流与法务五个副总裁部门层层签字排期；任何一个中层经理基于风险厌恶说“No”，创新就会在无休止的对齐周会中慢性死亡（Bezos 称之为 Day 2 停滞）。',
+        chip: 'O(N²) Approval Bottleneck'
+      }
+    };
+
+    var topoTabs = document.getElementById('topoTabs');
+    if (topoTabs) {
+      topoTabs.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-topo]');
+        if (!b) return;
+        state.topo = b.getAttribute('data-topo');
+        topoTabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        var cp = TOPO_COPY[state.topo];
+        document.getElementById('topoRule').textContent = cp.rule;
+        document.getElementById('topoDesc').textContent = cp.desc;
+        document.getElementById('topoChip').textContent = cp.chip;
+        drawTopologyCanvas();
+      });
+    }
+
+    function drawTopologyCanvas() {
+      var env = prepCanvas('topologyCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.topologyCanvas = [];
+
+      if (state.topo === 'amzn') {
+        var cx = w / 2, cy = h / 2 + 6;
+        // Central API Bus Ring
+        ctx.strokeStyle = pal.blue; ctx.lineWidth = 2.2; ctx.setLineDash([5, 4]);
+        ctx.beginPath(); ctx.arc(cx, cy, Math.min(w, h) * 0.31, 0, Math.PI * 2); ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Center Bus Hub
+        ctx.fillStyle = pal.blueSoft;
+        roundRect(ctx, cx - 64, cy - 22, 128, 44, 10); ctx.fill();
+        ctx.strokeStyle = pal.blue; ctx.lineWidth = 1.6; ctx.stroke();
+        ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+        ctx.fillText('STANDARD SERVICE', cx, cy - 4);
+        ctx.fillText('API BUS (S-Team)', cx, cy + 12);
+
+        var pods = [
+          { n: 'STL · AWS Bedrock', a: -Math.PI / 2, c: pal.blue, tip: '双披萨团队通过标准 API 独立迭代，6名工程师76天交付 Mantle' },
+          { n: 'STL · Trainium 硅片', a: -Math.PI / 6, c: pal.violet, tip: 'Annapurna Labs 单线程硬件/编译器一体自治小队' },
+          { n: 'STL · 当日达机器人', a: Math.PI / 6, c: pal.green, tip: '独立掌控仓储机器人算法与微仓补货接口' },
+          { n: 'STL · Rufus / Alexa+', a: Math.PI / 2, c: pal.green, tip: '直接调用商品目录与结账 API，无需跨部门排期审批' },
+          { n: 'STL · 闭环广告竞价', a: 5 * Math.PI / 6, c: pal.amber, tip: '毫秒级广告竞价引擎以 API 嵌入搜索与 Prime Video' },
+          { n: 'STL · Leo / Zoox', a: -5 * Math.PI / 6, c: pal.violet, tip: '前沿新物种单线程隔离保护，避免被成熟主业短期KPI扼杀' }
+        ];
+        var rx = Math.min(w * 0.37, 175), ry = Math.min(h * 0.37, 104);
+        pods.forEach(function (p) {
+          var px = cx + Math.cos(p.a) * rx;
+          var py = cy + Math.sin(p.a) * ry;
+          ctx.strokeStyle = p.c; ctx.lineWidth = 1.8;
+          ctx.beginPath(); ctx.moveTo(cx + Math.cos(p.a) * 56, cy + Math.sin(p.a) * 24); ctx.lineTo(px, py); ctx.stroke();
+          ctx.fillStyle = pal.dark ? '#132337' : '#FFFFFF';
+          roundRect(ctx, px - 58, py - 15, 116, 30, 8); ctx.fill();
+          ctx.strokeStyle = p.c; ctx.lineWidth = 1.5; ctx.stroke();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'center';
+          ctx.fillText(p.n, px, py + 4);
+          hitRegions.topologyCanvas.push({ x: px - 58, y: py - 15, w: 116, h: 30, title: p.n, body: p.tip });
+        });
+      } else {
+        // Hierarchical Bottleneck Pyramid
+        var levels = [
+          { y: 34, boxes: ['集团委员会审批 (HQ Committee)'], col: pal.amber },
+          { y: 98, boxes: ['VP 部门墙 A', 'VP 部门墙 B', 'VP 部门墙 C'], col: pal.red },
+          { y: 164, boxes: ['中层协调会 1', '中层协调会 2', '预备对齐会 3', '排期评审会 4'], col: pal.amber },
+          { y: 232, boxes: ['一线工程师等待排期與签字 (Blocked Builders)'], col: pal.tick }
+        ];
+        levels.forEach(function (lv, li) {
+          var cnt = lv.boxes.length;
+          var slot = (w - 32) / cnt;
+          lv.boxes.forEach(function (txt, bi) {
+            var bx = 16 + bi * slot + 6;
+            var bw = slot - 12;
+            ctx.fillStyle = pal.dark ? '#172030' : '#F8FAFC';
+            roundRect(ctx, bx, lv.y - 15, bw, 30, 7); ctx.fill();
+            ctx.strokeStyle = lv.col; ctx.lineWidth = 1.5; ctx.stroke();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(txt, bx + bw / 2, lv.y + 4);
+            if (li < levels.length - 1) {
+              ctx.strokeStyle = pal.red; ctx.lineWidth = 1.1; ctx.setLineDash([3, 3]);
+              ctx.beginPath(); ctx.moveTo(bx + bw / 2, lv.y + 15); ctx.lineTo(w / 2, levels[li + 1].y - 15); ctx.stroke();
+              ctx.setLineDash([]);
+            }
+            hitRegions.topologyCanvas.push({
+              x: bx, y: lv.y - 15, w: bw, h: 30,
+              title: txt,
+              body: 'Day 2 科层熵增症状：多层传声筒与跨部门否决权吞噬一线创新速度'
+            });
+          });
+        });
+      }
+    }
+
+    // C1 Builder Bandwidth Canvas
+    var bwTabs = document.getElementById('bwTabs');
+    if (bwTabs) {
+      bwTabs.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-bw]');
+        if (!b) return;
+        state.bw = b.getAttribute('data-bw');
+        bwTabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        drawBandwidthCanvas();
+      });
+    }
+
+    function drawBandwidthCanvas() {
+      var env = prepCanvas('bandwidthCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.bandwidthCanvas = [];
+      var rows = state.bw === 'startup'
+        ? [
+            { n: '直接面向客户的编码、实验与产品交付 (Shipping)', v: 68, col: pal.green, tip: 'STL 单线程自治 + Kiro AI 编程将近七成带宽聚焦于客户价值创造' },
+            { n: '6页纸深度思考、PR/FAQ 架构推演与指标复盘 (WBR)', v: 18, col: pal.blue, tip: '高信噪比书面异步推演替代低效PPT口水会' },
+            { n: '跨团队标准 API 契约对齐与运维守卫 (API SLA)', v: 9, col: pal.violet, tip: '通过服务等级协议（SLA）而非人工拉群对齐依赖' },
+            { n: '行政汇报、层级审批与预备会损耗 (Bureaucracy)', v: 5, col: pal.amber, tip: '反官僚信箱废除 150+ 规章并压减中层传声筒后的极低损耗' }
+          ]
+        : [
+            { n: '直接面向客户的编码、实验与产品交付 (Shipping)', v: 41, col: pal.blue, tip: '2020–2022 员工翻倍期，沟通协调摩擦显著挤压有效产出时间' },
+            { n: '6页纸深度思考、PR/FAQ 架构推演与指标复盘 (WBR)', v: 16, col: pal.violet, tip: '核心书面机制仍在，但衍生出冗余的会前对表' },
+            { n: '跨部门排期拉扯与依赖等待 (Cross-Silo Friction)', v: 24, col: pal.amber, tip: '团队边界膨胀导致多部门排期博弈加剧' },
+            { n: '行政汇报、层级审批与“会前预备会” (Pre-Meetings)', v: 19, col: pal.red, tip: '正是触发 Andy Jassy 2024.09 组织扁平化改革的核心痛点' }
+          ];
+      var pad = { top: 18, right: 48, bottom: 14, left: 16 };
+      var rH = (h - pad.top - pad.bottom) / rows.length;
+      rows.forEach(function (r, idx) {
+        var y = pad.top + idx * rH;
+        ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'left';
+        ctx.fillText(r.n, pad.left, y + 15);
+        var trackW = w - pad.left - pad.right;
+        ctx.fillStyle = pal.grid;
+        roundRect(ctx, pad.left, y + 23, trackW, 16, 5); ctx.fill();
+        var fillW = (r.v / 100) * trackW;
+        ctx.fillStyle = r.col;
+        roundRect(ctx, pad.left, y + 23, fillW, 16, 5); ctx.fill();
+        ctx.fillStyle = pal.text; ctx.font = 'bold 11.5px "IBM Plex Mono", monospace';
+        ctx.fillText(r.v + '%', pad.left + trackW + 7, y + 35);
+        hitRegions.bandwidthCanvas.push({ x: pad.left, y: y + 4, w: w - 24, h: rH - 6, title: r.n, body: r.tip });
+      });
+    }
+
+    // C2 3-Era Scrubber & Leverage Canvas
+    var ERAS = [
+      {
+        title: 'Era I（1994–2005）：车库门办公桌、1997 Day 1 宪章与 2002 API 法令奠基',
+        body: 'Jeff Bezos 用一扇旧木门加四条腿钉成办公桌（Door Desk），确立“只在客户体验处花钱、不在门面排场花钱”的节俭基因；1997 年首封致股东信写下“永远聚焦长期自由现金流折现而非短期会计利润”与“股权绑定主人翁”铁律；2002 年颁布传奇 API 法令，强制将内部单体电商拆解为面向服务架构（SOA），直接埋下 AWS 云帝国的种子。',
+        pills: ['1997 Day 1 宪章', '2002 Bezos API 法令', '2004 禁用 PPT 改 6页纸']
+      },
+      {
+        title: 'Era II（2006–2021）：AWS / Prime / FBA 三大引擎裂变与全球百万员工扩张',
+        body: '逆向工作法（PR/FAQ）与单线程领导者（STL）进入全面丰收期：S3 与 EC2 开创现代公有云，FBA 让第三方卖家件数占比历史性超越自营，Prime 视频与 Echo/Alexa 走进亿万家庭。2020–2021 疫情期间亚马逊为承接暴增需求在两年内把物流与研发规模扩充近一倍至 160.8 万人，但也伴生了管理层级变厚与成本超调。',
+        pills: ['AWS & FBA 爆发', '2021 新增完美雇主/地球责任准则', '员工突破 160.8 万人']
+      },
+      {
+        title: 'Era III（2022–2026+）：Andy Jassy 刀刃向内——从疫情过剩回归“全球最大初创企业”',
+        body: '2022 年高通胀与疫后增速放缓曾令亚马逊营业利润率一度跌至 2.4%（净亏损 $27.2亿）。接任 CEO 的 Andy Jassy 展现出极强战略定力：先将全美履约网重构为 8 大区域并关停缺乏规模前景的边缘项目；继而在 2024 年 9 月颁布组织重塑令——要求 2025 Q1 底前将个人贡献者（IC）与管理者比例提高至少 15%、恢复每周 5 天办公室现场敏捷共创、设立直通高管的“反官僚信箱（Bureaucracy Mailbox）”。成效立竿见影：TTM 人均创收从 FY22 的 $33.4万 飙升 +46% 至 Q3 2026 的 $48.7万，G&A 费率压降至 1.34%，集团单季营业利润率飙至史无前例的 13.9%。',
+        pills: ['IC/Manager +15%', 'Rev/Emp $334K → $487K', 'OpM 2.4% → 13.9%']
+      }
+    ];
+
+    var eraBar = document.getElementById('eraBar');
+    if (eraBar) {
+      eraBar.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-era]');
+        if (!b) return;
+        state.era = parseInt(b.getAttribute('data-era'), 10) || 0;
+        eraBar.querySelectorAll('.os-era-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        var ed = ERAS[state.era];
+        document.getElementById('eraTitle').textContent = ed.title;
+        document.getElementById('eraBody').textContent = ed.body;
+        document.getElementById('eraPills').innerHTML = ed.pills.map(function (p, i) {
+          var cls = ['mui-chip-primary', 'mui-chip-success', 'mui-chip-violet'][i % 3];
+          return '<span class="mui-chip ' + cls + ' mono">' + p + '</span>';
+        }).join('');
+      });
+    }
+
+    var c2Tabs = document.getElementById('c2Tabs');
+    if (c2Tabs) {
+      c2Tabs.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-c2]');
+        if (!b) return;
+        state.c2View = b.getAttribute('data-c2');
+        c2Tabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        drawLeverageCanvas();
+      });
+    }
+
+    function drawLeverageCanvas() {
+      var env = prepCanvas('leverageCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.leverageCanvas = [];
+      var pad = { top: 28, right: 42, bottom: 40, left: 50 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+      var yrs = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', "TTM Q3'26"];
+
+      if (state.c2View === 'revemp') {
+        var revEmp = [292, 334, 377, 410, 455, 487]; // $K per employee
+        var opm = [5.3, 2.4, 6.4, 10.8, 11.2, 13.1]; // % (Q3 single quarter 13.9%)
+        var maxR = 540;
+        for (var g = 0; g <= 4; g++) {
+          var sv = (maxR / 4) * g;
+          var gy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + Math.round(sv) + 'K', pad.left - 6, gy + 4);
+          ctx.textAlign = 'left';
+          ctx.fillText((g * 4) + '%', pad.left + pw + 6, gy + 4);
+        }
+        var slot = pw / yrs.length, bw = Math.min(36, slot * 0.52);
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var bh = (revEmp[i] / maxR) * ph;
+          var by = pad.top + ph - bh;
+          ctx.fillStyle = i === 5 ? pal.blue : pal.blueSoft;
+          roundRect(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+          if (i < 5) { ctx.strokeStyle = pal.blue; ctx.lineWidth = 1.2; ctx.stroke(); }
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + revEmp[i] + 'K', cx, by - 6);
+          ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+          ctx.fillText(y, cx, pad.top + ph + 18);
+          hitRegions.leverageCanvas.push({
+            x: cx - bw / 2, y: by, w: bw, h: bh,
+            title: y + ' 人均创收与利润率',
+            body: '人均年营收 $' + revEmp[i] + 'K · 营业利润率 ' + opm[i] + '%（Q3\'26 单季更达 13.9% 历史极值）'
+          });
+        });
+        ctx.strokeStyle = pal.green; ctx.lineWidth = 2.6; ctx.beginPath();
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var py = pad.top + ph - (opm[i] / 16) * ph;
+          if (i === 0) ctx.moveTo(cx, py); else ctx.lineTo(cx, py);
+        });
+        ctx.stroke();
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var py = pad.top + ph - (opm[i] / 16) * ph;
+          ctx.fillStyle = pal.green; ctx.beginPath(); ctx.arc(cx, py, 4.2, 0, Math.PI * 2); ctx.fill();
+        });
+      } else {
+        var periods = ['FY22', 'FY23', 'FY24', 'FY25', "Q3'26 单季"];
+        var techPct = [14.2, 14.9, 13.9, 15.1, 17.2]; // Tech & Infra % of sales
+        var gaPct = [2.31, 2.06, 1.78, 1.56, 1.34];   // G&A % of sales
+        var maxP = 20;
+        for (var k = 0; k <= 4; k++) {
+          var pv = (maxP / 4) * k;
+          var pgy = pad.top + ph - (k / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, pgy); ctx.lineTo(pad.left + pw, pgy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText(pv + '%', pad.left - 6, pgy + 4);
+        }
+        var pSlot = pw / periods.length, pBw = Math.min(28, pSlot * 0.34);
+        periods.forEach(function (p, i) {
+          var cx = pad.left + i * pSlot + pSlot / 2;
+          var hT = (techPct[i] / maxP) * ph;
+          var hG = (gaPct[i] / maxP) * ph;
+          ctx.fillStyle = pal.violet;
+          roundRect(ctx, cx - pBw - 2, pad.top + ph - hT, pBw, hT, 4); ctx.fill();
+          ctx.fillStyle = pal.amber;
+          roundRect(ctx, cx + 2, pad.top + ph - hG, pBw, Math.max(4, hG), 4); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText(techPct[i] + '%', cx - pBw / 2 - 2, pad.top + ph - hT - 5);
+          ctx.fillText(gaPct[i] + '%', cx + pBw / 2 + 2, pad.top + ph - hG - 5);
+          ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+          ctx.fillText(p, cx, pad.top + ph + 18);
+          hitRegions.leverageCanvas.push({
+            x: cx - pBw - 4, y: pad.top, w: pBw * 2 + 8, h: ph,
+            title: p + ' 技术投入 vs 行政损耗',
+            body: '技术与基础设施占比 ' + techPct[i] + '% vs 一般及行政管理 (G&A) 仅 ' + gaPct[i] + '%'
+          });
+        });
+      }
+    }
+
+    // C3 6-Axis Cultural Genome Radar
+    var PEERS = {
+      aapl: {
+        name: 'Apple (AAPL)',
+        scores: [22, 98, 25, 92, 55, 86],
+        summary: '<strong>AMZN vs AAPL 核心镜像：</strong>苹果追求“千次说不、全公司押注唯一最优解”，靠职能专家制打磨出 47%+ 毛利的极致硬件；亚马逊则信奉“2 > 0 并行探索 + 双向门快速试错”，允许 Fire Phone 失败但孵化出 AWS、FBA、Prime、Alexa+ 与 Leo 多条千亿级新物种。'
+      },
+      msft: {
+        name: 'Microsoft (MSFT)',
+        scores: [64, 72, 68, 76, 80, 74],
+        summary: '<strong>AMZN vs MSFT 对比：</strong>纳德拉治下的微软擅长“企业级套装捆绑（Teams/M365/Azure）与战略投资结盟（OpenAI）”；亚马逊则更强调底层原语自研（Annapurna 芯片 + Bedrock 多模型中立）与书面的 6页纸工程严谨度。'
+      },
+      wmt: {
+        name: 'Walmart (WMT)',
+        scores: [45, 78, 38, 62, 74, 88],
+        summary: '<strong>AMZN vs WMT 对比：</strong>两者同享“天天平价 + 极度节俭”基因，但沃尔玛是以 4,600+ 大卖场店长为支点的零售运营机器，而亚马逊是以 API 解耦软件工程师为核心、将仓库与服务器外溢变现的科技基建平台。'
+      },
+      brk: {
+        name: 'Berkshire (BRK)',
+        scores: [96, 35, 30, 88, 95, 97],
+        summary: '<strong>AMZN vs BRK 对比：</strong>伯克希尔将分权推向极致（收购成熟现金牛后完全放手）；亚马逊则通过统一 API 总线、16条领导力准则与周度 WBR 指标仪表盘，在分权敏捷的同时保持内部飞轮紧密咬合。'
+      }
+    };
+    var AMZN_SCORES = [94, 62, 96, 95, 94, 93];
+    var AXES = ['API分权自治', '职能中央集权', '并行试错(2>0)', '书面工程严谨', '长久期现金流', '反排场节俭度'];
+
+    var peerTabs = document.getElementById('peerTabs');
+    if (peerTabs) {
+      peerTabs.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-peer]');
+        if (!b) return;
+        state.peer = b.getAttribute('data-peer');
+        peerTabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        document.getElementById('peerSummary').innerHTML = PEERS[state.peer].summary;
+        drawGenomeCanvas();
+      });
+    }
+
+    function drawGenomeCanvas() {
+      var env = prepCanvas('genomeCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      var cx = w / 2, cy = h / 2 + 4;
+      var radius = Math.min(w * 0.34, h * 0.38);
+
+      for (var ring = 1; ring <= 4; ring++) {
+        var rr = (radius / 4) * ring;
+        ctx.strokeStyle = pal.grid; ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (var a = 0; a < 6; a++) {
+          var ang = -Math.PI / 2 + (a * Math.PI * 2) / 6;
+          var rx = cx + Math.cos(ang) * rr, ry = cy + Math.sin(ang) * rr;
+          if (a === 0) ctx.moveTo(rx, ry); else ctx.lineTo(rx, ry);
+        }
+        ctx.closePath(); ctx.stroke();
+      }
+
+      for (var k = 0; k < 6; k++) {
+        var angK = -Math.PI / 2 + (k * Math.PI * 2) / 6;
+        var ex = cx + Math.cos(angK) * radius, ey = cy + Math.sin(angK) * radius;
+        ctx.strokeStyle = pal.grid;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ex, ey); ctx.stroke();
+        var lx = cx + Math.cos(angK) * (radius + 22), ly = cy + Math.sin(angK) * (radius + 16);
+        ctx.fillStyle = pal.sub; ctx.font = 'bold 10.5px sans-serif'; ctx.textAlign = 'center';
+        ctx.fillText(AXES[k], lx, ly + 4);
+      }
+
+      function drawPoly(vals, strokeCol, fillCol) {
+        ctx.beginPath();
+        vals.forEach(function (v, idx) {
+          var ang = -Math.PI / 2 + (idx * Math.PI * 2) / 6;
+          var px = cx + Math.cos(ang) * (v / 100) * radius;
+          var py = cy + Math.sin(ang) * (v / 100) * radius;
+          if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.closePath();
+        ctx.fillStyle = fillCol; ctx.fill();
+        ctx.strokeStyle = strokeCol; ctx.lineWidth = 2.3; ctx.stroke();
+      }
+
+      var pr = PEERS[state.peer] || PEERS.aapl;
+      drawPoly(pr.scores, pal.violet, pal.dark ? 'rgba(167,139,250,0.18)' : 'rgba(124,58,237,0.14)');
+      drawPoly(AMZN_SCORES, pal.blue, pal.blueSoft);
+    }
+
+    // C4 Entropy Simulator & Persistent Checklist
+    function runEntropySim() {
+      var ic = parseFloat(document.getElementById('inpIcRatio').value) || 0;
+      var t2 = parseFloat(document.getElementById('inpType2').value) || 80;
+      var ai = parseFloat(document.getElementById('inpAiTool').value) || 70;
+
+      document.getElementById('lblIcRatio').textContent = '+' + ic + '%';
+      document.getElementById('lblType2').textContent = t2 + '%';
+      document.getElementById('lblAiTool').textContent = ai + '%';
+
+      var latency = Math.max(0.8, 7.6 - ic * 0.14 - (t2 - 40) * 0.068 - (ai - 15) * 0.015);
+      var shipMult = 0.88 + ic * 0.014 + (t2 - 40) * 0.0045 + (ai - 15) * 0.0035;
+      var gaPct = Math.max(1.12, 2.05 - ic * 0.032 - (ai - 15) * 0.0042);
+      var bps = Math.round((2.05 - gaPct) * 100 + (shipMult - 1.0) * 105);
+
+      document.getElementById('outLatency').textContent = latency.toFixed(1) + (state.lang === 'en' ? ' days' : ' 天');
+      document.getElementById('outShipIdx').textContent = shipMult.toFixed(2) + 'x';
+      document.getElementById('outGaPct').textContent = gaPct.toFixed(2) + '%';
+      document.getElementById('outMarginBps').textContent = (bps >= 0 ? '+' : '') + bps + ' bps';
+
+      var chip = document.getElementById('entropyStatusChip');
+      if (latency <= 2.4) {
+        chip.textContent = 'Day 1 High-Velocity';
+        chip.className = 'mui-chip mui-chip-success mono';
+      } else if (latency <= 4.5) {
+        chip.textContent = 'Hybrid Transition';
+        chip.className = 'mui-chip mui-chip-primary mono';
+      } else {
+        chip.textContent = 'Day 2 Bureaucracy Risk';
+        chip.className = 'mui-chip mui-chip-warning mono';
+      }
+    }
+
+    ['inpIcRatio', 'inpType2', 'inpAiTool'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', runEntropySim);
+    });
+
+    function updateChkCount() {
+      var all = document.querySelectorAll('[data-oschk]');
+      var done = 0;
+      all.forEach(function (c) { if (c.checked) done++; });
+      var b = document.getElementById('chkCountBadge');
+      if (b) b.textContent = done + ' / ' + all.length + (state.lang === 'en' ? ' Verified' : ' 已核验');
+    }
+    try {
+      var savedOs = JSON.parse(localStorage.getItem(STORAGE_OS_CHK_KEY) || '{}');
+      document.querySelectorAll('[data-oschk]').forEach(function (chk) {
+        var k = chk.getAttribute('data-oschk');
+        chk.checked = !!savedOs[k];
+        chk.addEventListener('change', function () {
+          savedOs[k] = chk.checked;
+          try { localStorage.setItem(STORAGE_OS_CHK_KEY, JSON.stringify(savedOs)); } catch (err) {}
+          updateChkCount();
+          showToast(chk.checked ? '已记录 Day 1 组织体检项' : '已取消勾选');
+        });
+      });
+      updateChkCount();
+    } catch (e) {}
+
+    function bindHoverTooltip(canvasId) {
+      var c = document.getElementById(canvasId);
+      var tip = document.getElementById('chartTooltip');
+      if (!c || !tip) return;
+      c.addEventListener('mousemove', function (ev) {
+        var r = c.getBoundingClientRect();
+        var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+        var list = hitRegions[canvasId] || [];
+        var hit = null;
+        for (var i = 0; i < list.length; i++) {
+          var rg = list[i];
+          if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+        }
+        if (hit) {
+          tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+          tip.style.display = 'block';
+          tip.style.left = Math.min(window.innerWidth - 305, ev.clientX + 14) + 'px';
+          tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+        } else {
+          tip.style.display = 'none';
+        }
+      });
+      c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    }
+    ['topologyCanvas', 'bandwidthCanvas', 'leverageCanvas'].forEach(bindHoverTooltip);
+
+    function drawAllCharts() {
+      drawTopologyCanvas();
+      drawBandwidthCanvas();
+      drawLeverageCanvas();
+      drawGenomeCanvas();
+    }
+
+    function applyTheme(t, silent) {
+      state.theme = (t === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', state.theme);
+      var ic = document.getElementById('appbarThemeIcon');
+      if (ic) {
+        ic.innerHTML = state.theme === 'dark'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+      }
+      var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+      if (sl) sl.classList.toggle('active', state.theme === 'light');
+      if (sd) sd.classList.toggle('active', state.theme === 'dark');
+      drawAllCharts();
+      if (!silent) showToast(state.theme === 'dark' ? '已切换至深色护眼模式' : '已切换至 MUI 浅色模式');
+    }
+
+    function applyLang(lang, silent) {
+      state.lang = (lang === 'en') ? 'en' : 'zh';
+      document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+      var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+      if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+      if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+      var nodes = document.querySelectorAll('[data-i18n-zh]');
+      for (var i = 0; i < nodes.length; i++) {
+        var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+        if (val !== null) {
+          if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+          else nodes[i].textContent = val;
+        }
+      }
+      runEntropySim();
+      updateChkCount();
+      drawAllCharts();
+      if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+    }
+
+    function exportStandaloneHtml() {
+      try {
+        var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = '亚马逊企业文化与组织操作系统.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+        showToast(state.lang === 'en' ? 'Downloaded standalone HTML file' : '已开始下载《亚马逊企业文化与组织操作系统.html》');
+      } catch (e) {
+        showToast('导出失败，请使用浏览器保存网页功能');
+      }
+    }
+
+    // Quick Jump Search (⌘K)
+    var QUICK_ITEMS = [
+      { id: 'mod-c0', t: 'C0 API解耦拓扑与双披萨沙盘', s: '163.8万员工 · TTM 人均营收 $487K · G&A 费率仅 1.34%' },
+      { id: 'mod-c1', t: 'C1 四大文化内核与创造者带宽盘', s: '逆向工作法 PR/FAQ · 6页纸静默阅读 · STL 单线程 · 抬杆者' },
+      { id: 'mod-c2', t: 'C2 三代治理演进与费用杠杆曲线', s: '1997 Day 1 → 2002 API → Jassy 扁平化改革 (+15% IC/Manager)' },
+      { id: 'mod-c3', t: 'C3 全球巨头文化基因组镜像竞技场', s: 'Amazon 分布式接口联邦 vs Apple 职能集权钟表 / MSFT / WMT / BRK' },
+      { id: 'mod-c4', t: 'C4 组织熵增推演器与 Day 1 体检表', s: '模拟管理跨度与 AI 编码提效对利润率贡献 · 6大反腐化清单' }
+    ];
+    var qInput = document.getElementById('quickJumpInput');
+    var qPop = document.getElementById('quickJumpPopover');
+    function renderQuick(q) {
+      if (!qPop) return;
+      var kw = (q || '').trim().toLowerCase();
+      var matched = QUICK_ITEMS.filter(function (it) {
+        return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+      });
+      qPop.innerHTML = matched.map(function (it) {
+        return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+      }).join('');
+      qPop.classList.toggle('open', matched.length > 0);
+    }
+    if (qInput && qPop) {
+      qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+      qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+      qPop.addEventListener('click', function (e) {
+        var jb = e.target.closest('[data-jump]');
+        if (!jb) return;
+        var el = document.querySelector(jb.getAttribute('data-jump'));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        qPop.classList.remove('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (qInput) qInput.focus();
+      }
+      if (e.key === 'Escape') {
+        if (qPop) qPop.classList.remove('open');
+        document.getElementById('muiSidebar').classList.remove('open');
+        document.getElementById('drawerBackdrop').classList.remove('open');
+      }
+    });
+
+    // Suite Hub Navigation
+    var hub = document.getElementById('companySubfolderHub');
+    if (hub) {
+      hub.addEventListener('click', function (e) {
+        var pill = e.target.closest('[data-co-cat]');
+        if (pill) {
+          var cat = pill.getAttribute('data-co-cat');
+          hub.querySelectorAll('[data-co-cat]').forEach(function (p) { p.classList.toggle('active', p === pill); });
+          hub.querySelectorAll('[data-co-item-cat]').forEach(function (it) {
+            it.classList.toggle('co-hub-hidden', !(cat === 'ALL' || it.getAttribute('data-co-item-cat') === cat));
+          });
+          return;
+        }
+        var item = e.target.closest('.co-hub-item');
+        if (item) {
+          var jump = item.getAttribute('data-suite-jump');
+          var docName = item.getAttribute('data-suite-Doc');
+          if (jump) {
+            var sec = document.querySelector(jump);
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+          } else if (docName) {
+            showToast('请在配套四页式套件中打开《' + docName + '》');
+          }
+        }
+      });
+    }
+
+    document.getElementById('crumbTopBtn').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.getElementById('sideTopBtn').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    var sbBtn = document.getElementById('sidebarToggleBtn');
+    var sb = document.getElementById('muiSidebar');
+    var bd = document.getElementById('drawerBackdrop');
+    if (sbBtn && sb && bd) {
+      sbBtn.addEventListener('click', function () {
+        if (window.innerWidth < 1024) {
+          var open = sb.classList.toggle('open');
+          bd.classList.toggle('open', open);
+        } else {
+          var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+          if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+          else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (err) {}
+          setTimeout(drawAllCharts, 60);
+        }
+      });
+      bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+    }
+
+    var tocLinks = document.querySelectorAll('#tocList .mui-nav-link');
+    window.addEventListener('scroll', function () {
+      var bar = document.getElementById('readingProgressBar');
+      if (bar) {
+        var docH = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+      }
+    }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            var id = '#' + en.target.id;
+            tocLinks.forEach(function (lk) { lk.classList.toggle('active', lk.getAttribute('href') === id); });
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      ['mod-c0', 'mod-c1', 'mod-c2', 'mod-c3', 'mod-c4'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    }
+
+    document.getElementById('exportHtmlBtn').addEventListener('click', exportStandaloneHtml);
+    document.getElementById('sideExportBtn').addEventListener('click', exportStandaloneHtml);
+    document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+    document.getElementById('sideLightBtn').addEventListener('click', function () {
+      applyTheme('light', false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, 'light'); } catch (e) {}
+    });
+    document.getElementById('sideDarkBtn').addEventListener('click', function () {
+      applyTheme('dark', false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, 'dark'); } catch (e) {}
+    });
+
+    try {
+      var initT = (localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, '');
+      applyTheme(initT, true);
+      var initL = (localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, '');
+      applyLang(initL, true);
+    } catch (e) {}
+
+    document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+      var nxt = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nxt, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+    });
+    document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+      var lb = e.target.closest('[data-lang]');
+      if (!lb) return;
+      var nl = lb.getAttribute('data-lang');
+      applyLang(nl, false);
+      try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+    });
+    window.addEventListener('storage', function (ev) {
+      if (ev.key === STORAGE_THEME_KEY && ev.newValue) applyTheme(ev.newValue.replace(/^"|"$/g, ''), true);
+      if (ev.key === STORAGE_LANG_KEY && ev.newValue) applyLang(ev.newValue.replace(/^"|"$/g, ''), true);
+    });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(drawAllCharts, 80);
+    });
+
+    runEntropySim();
+    drawAllCharts();
+  })();
+  </script>
+</body>
+</html>

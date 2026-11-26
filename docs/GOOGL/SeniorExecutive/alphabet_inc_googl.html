@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="谷歌母公司 Alphabet Inc. (NASDAQ: GOOGL) 商业模式全景架构拆解：七大20亿+用户免费入口漏斗、毫秒级搜索意图拍卖、YouTube双引擎、$307亿/季高增Google Cloud与TPU算力系统外售、$2,000亿AI资本开支与反垄断压测（基于 FY2025 10-K 与 Q3 2026 10-Q 最新财报）。" />
+  <title>谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解 | 数据中心</title>
+  
+  <style>
+    /* ==========================================================================
+       MUI Official Branding Design System (https://mui.com/)
+       Light Mode First (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16) + Sapphire (#0073E6)
+       Distinct Architectural Layout: Command Deck · 5-Node Pipeline · Dual Workbenches
+       ========================================================================== */
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg-canvas: #090D16;
+      --bg-canvas-elevated: #0C1320;
+      --bg-paper: rgba(15, 25, 36, 0.92);
+      --bg-paper-solid: #0F1924;
+      --bg-subtle: rgba(19, 35, 55, 0.68);
+      --bg-hover: rgba(51, 153, 255, 0.08);
+      --bg-active: rgba(0, 115, 230, 0.16);
+      --bg-appbar: rgba(9, 13, 22, 0.86);
+
+      --border-subtle: rgba(51, 153, 255, 0.14);
+      --border-default: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(51, 153, 255, 0.44);
+      --divider: rgba(148, 163, 184, 0.12);
+
+      --text-primary: #F3F6F9;
+      --text-secondary: #B2BAC2;
+      --text-muted: #7E8C9A;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #3399FF;
+      --mui-primary-lighter: #66B2FF;
+      --mui-primary-bg: rgba(0, 115, 230, 0.16);
+      --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+      --mui-success-main: #1AA251;
+      --mui-success-text: #66BB6A;
+      --mui-success-bg: rgba(26, 162, 81, 0.14);
+      --mui-success-border: rgba(102, 187, 106, 0.34);
+
+      --mui-warning-main: #DEA500;
+      --mui-warning-text: #FFB74D;
+      --mui-warning-bg: rgba(255, 183, 77, 0.14);
+      --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+      --mui-error-main: #EB0014;
+      --mui-error-text: #FF6B6B;
+      --mui-error-bg: rgba(235, 0, 20, 0.14);
+      --mui-error-border: rgba(255, 107, 107, 0.34);
+
+      --mui-violet-text: #A78BFA;
+      --mui-violet-bg: rgba(139, 92, 246, 0.14);
+      --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+      --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+      --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+    }
+
+    :root,
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg-canvas: #F8FAFC;
+      --bg-canvas-elevated: #F1F5F9;
+      --bg-paper: rgba(255, 255, 255, 0.96);
+      --bg-paper-solid: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-hover: rgba(0, 115, 230, 0.06);
+      --bg-active: rgba(0, 115, 230, 0.11);
+      --bg-appbar: rgba(255, 255, 255, 0.88);
+
+      --border-subtle: #E2E8F0;
+      --border-default: #CBD5E1;
+      --border-strong: #0073E6;
+      --divider: #E2E8F0;
+
+      --text-primary: #0F1924;
+      --text-secondary: #334155;
+      --text-muted: #5B6B7C;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #0059B2;
+      --mui-primary-lighter: #0059B2;
+      --mui-primary-bg: rgba(0, 115, 230, 0.09);
+      --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+      --mui-success-main: #15803D;
+      --mui-success-text: #15803D;
+      --mui-success-bg: rgba(21, 128, 61, 0.09);
+      --mui-success-border: rgba(21, 128, 61, 0.26);
+
+      --mui-warning-main: #B45309;
+      --mui-warning-text: #B45309;
+      --mui-warning-bg: rgba(180, 83, 9, 0.09);
+      --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+      --mui-error-main: #C62828;
+      --mui-error-text: #C62828;
+      --mui-error-bg: rgba(198, 40, 40, 0.08);
+      --mui-error-border: rgba(198, 40, 40, 0.26);
+
+      --mui-violet-text: #6D28D9;
+      --mui-violet-bg: rgba(109, 40, 217, 0.08);
+      --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+      --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+      --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      background-color: var(--bg-canvas);
+      background-image: var(--hero-glow);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+    a:hover { text-decoration: underline; }
+
+    .cite-link {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+      padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+      border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+      white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+    }
+    .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+    #readingProgressBar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #4285F4 0%, #34A853 50%, #FBBC05 80%, #EA4335 100%);
+      z-index: 1300; transition: width 0.08s linear;
+    }
+    #chartTooltip {
+      position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+      padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+    }
+    #muiSnackbar {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+      z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+      border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Sticky Frosted Glass MUI AppBar */
+    .mui-appbar {
+      position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+    }
+    .mui-appbar-inner {
+      max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+    .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mui-icon-btn, .mui-theme-icon-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+      color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+    }
+    .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+    .brand-monogram {
+      width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #15803D 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.28);
+      color: #FFFFFF; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breadcrumbs .crumb-label { display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); font-weight: 600; }
+    .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+    .quick-search-wrap { position: relative; width: 215px; flex-shrink: 0; }
+    .quick-search-input {
+      width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+    }
+    .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+    .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+    .quick-search-kbd {
+      position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+      padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+    }
+    .quick-jump-popover {
+      position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+      border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+    }
+    .quick-jump-popover.open { display: block; }
+    .quick-jump-item {
+      display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+      border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+    }
+    .quick-jump-item:hover { background: var(--bg-hover); }
+    .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+    .mui-lang-switch {
+      display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+    }
+    .mui-lang-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+      font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+    }
+    .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+    .mui-chip {
+      display: inline-flex; flex-wrap: wrap; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px;
+      font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+    }
+    .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+    .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+    .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+    .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+    .mui-segmented {
+      display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+    }
+    .mui-seg-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+      padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mui-seg-btn:hover { color: var(--text-primary); }
+    .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+    /* Layout Shell & Sidebar */
+    .layout-shell {
+      max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+      gap: 26px; padding: 22px 20px 72px; align-items: start;
+    }
+    @media (min-width: 1024px) {
+      html[data-sidebar-collapsed="1"] .mui-sidebar { display: none !important; }
+      html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr) !important; }
+    }
+    .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+    .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 13px 14px; box-shadow: var(--shadow-card); }
+    .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+    .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+    .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42; margin: 4px 0 8px; }
+    .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; padding-top: 8px; border-top: 1px solid var(--divider); }
+    .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+    .sidebar-mini-label { color: var(--text-muted); }
+    .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+    .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 4px; }
+    .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+    .mui-nav-link {
+      display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+      font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+    }
+    .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+    .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+    .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+    /* Suite Hub inside Sidebar */
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+    .co-hub-pills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 8px; }
+    .co-hub-pill { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.72rem; font-weight: 700; padding: 5px 6px; border-radius: 7px; cursor: pointer; }
+    .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+    html[data-theme="dark"] .co-hub-pill.active { color: var(--mui-primary-lighter); }
+    .co-side-list { display: flex; flex-direction: column; gap: 5px; }
+    .co-hub-item {
+      display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid);
+      cursor: pointer; font-family: inherit; color: var(--text-primary); transition: all 0.15s ease;
+    }
+    .co-hub-item.co-hub-hidden { display: none !important; }
+    .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+    .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+    .co-hub-ticker { width: 25px; height: 25px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0; }
+    .co-hub-item.active .co-hub-ticker { background: #0073E6; color: #FFFFFF; }
+    .co-hub-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; }
+    .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+    .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+    .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .portal-reading-tools button { font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+    .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-paper-solid); }
+
+    .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.5); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+    .drawer-backdrop.open { display: block; }
+    @media (max-width: 1023px) {
+      .layout-shell { grid-template-columns: minmax(0, 1fr); padding: 14px 14px 56px; }
+      .mui-sidebar {
+        position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+        background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+        transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto;
+      }
+      .mui-sidebar.open { transform: translateX(0); }
+      .hide-sm { display: none !important; }
+      .quick-search-wrap { width: 150px; }
+    }
+    @media (max-width: 720px) { .quick-search-wrap { display: none; } }
+
+    /* ==========================================================================
+       DISTINCT BUSINESS MODEL ARCHITECTURE LAYOUT (Non-Linear Workbench Design)
+       ========================================================================== */
+    .bm-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+
+    .bm-command-deck { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: stretch; }
+    @media (max-width: 1080px) { .bm-command-deck { grid-template-columns: minmax(0, 1fr); } }
+
+    .bm-thesis-deck {
+      background-color: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+      padding: 26px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+      position: relative; overflow: hidden;
+    }
+    .bm-thesis-deck::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4285F4 0%, #34A853 45%, #FBBC05 75%, #EA4335 100%);
+    }
+    .bm-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .bm-display-h1 { font-size: clamp(1.50rem, 2.35vw, 2.10rem); font-weight: 800; line-height: 1.24; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .bm-gradient-txt {
+      background: linear-gradient(92deg, #0073E6 0%, #15803D 55%, #D97706 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    html[data-theme="dark"] .bm-gradient-txt {
+      background: linear-gradient(92deg, #66B2FF 0%, #66BB6A 55%, #FFB74D 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .bm-lead { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.74; }
+    .bm-lead strong { color: var(--text-primary); }
+
+    .bm-lens-panel {
+      background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .bm-lens-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-equation-bar {
+      padding: 9px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border);
+      font-size: 0.80rem; font-weight: 700; color: var(--mui-primary-lighter);
+    }
+    .bm-lens-body { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.62; }
+
+    .bm-telemetry-ledger {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+      padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: flex-start; gap: 14px;
+    }
+    .bm-ledger-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--divider); }
+    .bm-ledger-title { font-size: 0.86rem; font-weight: 800; letter-spacing: 0.02em; display: flex; align-items: center; gap: 7px; }
+    .bm-pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18); }
+    .bm-telemetry-rows { display: flex; flex-direction: column; gap: 10px; }
+    .bm-tel-item {
+      padding: 10px 12px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .bm-tel-item:hover { border-color: var(--mui-primary-border); transform: translateX(2px); }
+    .bm-tel-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .bm-tel-lbl { font-size: 0.76rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-tel-val { font-size: 1.14rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tel-bar-track { height: 5px; border-radius: 999px; background: var(--border-subtle); margin: 6px 0 5px; overflow: hidden; display: flex; }
+    .bm-tel-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #0073E6, #3399FF); }
+    .bm-tel-sub { display: flex; justify-content: space-between; font-size: 0.71rem; color: var(--text-muted); gap: 6px; flex-wrap: wrap; }
+
+    .bm-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+    .bm-panel-head {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+      padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider);
+    }
+    .bm-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+    html[data-theme="dark"] .bm-kicker { color: var(--mui-primary-light); }
+    .bm-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+    .bm-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+    /* 5-Node Value-Chain Pipeline */
+    .bm-pipeline-track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+    @media (max-width: 1120px) { .bm-pipeline-track { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 680px) { .bm-pipeline-track { grid-template-columns: minmax(0, 1fr); } }
+    .bm-node-btn {
+      position: relative; text-align: left; padding: 13px 14px; border-radius: 13px;
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-primary);
+      cursor: pointer; font-family: inherit; transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .bm-node-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateY(-2px); }
+    .bm-node-btn.active {
+      border-color: #0073E6; background: var(--bg-active);
+      box-shadow: 0 0 0 1px #0073E6, 0 6px 16px rgba(0, 115, 230, 0.14);
+    }
+    .bm-node-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .bm-node-step {
+      width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border);
+    }
+    .bm-node-btn.active .bm-node-step { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+    .bm-node-tag { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+    .bm-node-title { font-size: 0.85rem; font-weight: 800; line-height: 1.3; }
+    .bm-node-kpi { font-size: 0.74rem; font-weight: 700; color: var(--mui-primary-lighter); }
+
+    .bm-node-inspector {
+      border-radius: 15px; border: 1px solid var(--border-subtle); background-color: var(--bg-paper-solid);
+      padding: 20px 22px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: center;
+    }
+    @media (max-width: 900px) { .bm-node-inspector { grid-template-columns: minmax(0, 1fr); } }
+    .bm-ins-prose h3 { font-size: 1.05rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+    .bm-ins-prose p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.72; }
+    .bm-ins-formula {
+      margin-top: 12px; padding: 9px 12px; border-radius: 9px; background: var(--bg-subtle);
+      border-left: 3px solid var(--mui-primary-main); font-size: 0.79rem; color: var(--text-primary); font-weight: 600;
+    }
+    .bm-ins-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-ins-card { padding: 12px 13px; border-radius: 11px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+    .bm-ins-card b { display: block; font-size: 1.12rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-ins-card span { font-size: 0.73rem; color: var(--text-muted); display: block; margin-top: 2px; }
+
+    /* Asymmetric Split Grids */
+    .bm-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+    .bm-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+    .bm-split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+    @media (max-width: 1040px) { .bm-split-75, .bm-split-57, .bm-split-66 { grid-template-columns: minmax(0, 1fr); } }
+
+    .bm-subpanel {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px;
+      padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .bm-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-subhead h3 { font-size: 1.02rem; font-weight: 800; color: var(--text-primary); }
+    .bm-canvas-box {
+      position: relative; width: 100%; height: 310px; border-radius: 12px;
+      background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px;
+    }
+    .bm-canvas-box canvas { width: 100%; height: 100%; display: block; }
+    .bm-chart-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; }
+
+    .bm-tier-list { display: flex; flex-direction: column; gap: 9px; }
+    .bm-tier-card { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); transition: all 0.15s ease; }
+    .bm-tier-card:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+    .bm-tier-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+    .bm-tier-name { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tier-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .bm-cohort-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-cohort-stat { padding: 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+    .bm-cohort-stat .lbl { font-size: 0.72rem; color: var(--text-muted); }
+    .bm-cohort-stat .val { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 2px 0; }
+    .bm-cohort-stat .delta { font-size: 0.71rem; font-weight: 700; color: var(--mui-success-text); }
+    .bm-ratchet-note {
+      padding: 12px 14px; border-radius: 11px; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border);
+      font-size: 0.80rem; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    .bm-sim-sliders { display: flex; flex-direction: column; gap: 11px; }
+    .bm-slider-row { display: flex; flex-direction: column; gap: 4px; }
+    .bm-slider-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-slider-lbl b { color: var(--mui-primary-lighter); }
+    .bm-slider-row input[type="range"] { width: 100%; accent-color: #0073E6; height: 6px; cursor: pointer; }
+    .bm-sim-outputs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    @media (max-width: 640px) { .bm-sim-outputs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .bm-sim-out { padding: 10px 8px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-align: center; }
+    .bm-sim-out b { display: block; font-size: 1.00rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-sim-out span { font-size: 0.69rem; color: var(--text-muted); }
+
+    .bm-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-bottom: 18px; }
+    .bm-table { width: 100%; border-collapse: collapse; font-size: 0.81rem; min-width: 780px; background: var(--bg-paper-solid); }
+    .bm-table th {
+      text-align: left; padding: 11px 13px; background: var(--bg-subtle); color: var(--text-muted);
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-subtle);
+    }
+    .bm-table td { padding: 11px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: middle; }
+    .bm-table tr:last-child td { border-bottom: none; }
+    .bm-table tr.is-googl td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+    .bm-table tr:hover td { background: var(--bg-hover); }
+
+    .bm-stress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    @media (max-width: 960px) { .bm-stress-grid { grid-template-columns: minmax(0, 1fr); } }
+    .bm-stress-card {
+      padding: 16px; border-radius: 13px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+    }
+    .bm-stress-card h4 { font-size: 0.89rem; font-weight: 800; color: var(--text-primary); margin-top: 6px; }
+    .bm-stress-card p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+    .bm-check-label {
+      display: flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 700; color: var(--mui-primary-lighter);
+      cursor: pointer; padding-top: 8px; border-top: 1px dashed var(--border-default);
+    }
+    .bm-check-label input { accent-color: #0073E6; width: 15px; height: 15px; cursor: pointer; }
+
+    .bm-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+    .bm-source-item {
+      display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease;
+    }
+    .bm-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+    .bm-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+    .bm-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+    @media print {
+      .mui-appbar, .mui-sidebar, #readingProgressBar, #drawerBackdrop { display: none !important; }
+      .layout-shell { display: block !important; padding: 0 !important; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky Frosted Glass MUI AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">GOOGL</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <span class="crumb-label hide-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </span>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="谷歌 Alphabet (GOOGL) 商业模式架构拆解" data-i18n-en="Alphabet Inc. (GOOGL) Business Model Architecture">谷歌 Alphabet (GOOGL) 商业模式架构拆解</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: GOOGL</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">Q3'26 $127.6B · Cloud +103%</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索飞轮或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left MUI Documentation Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="商业模式模块与套件导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">GOOGL · BUSINESS MODEL</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="谷歌商业模式架构图谱" data-i18n-en="Google Business Model Blueprint">谷歌商业模式架构图谱</div>
+        <p class="sidebar-subtitle" data-i18n-zh="7大20亿+入口意图拍卖 × YouTube双引擎 × 36.2%利润率Cloud与TPU系统军火商 × $2,000亿算力基建" data-i18n-en="7× 2B-User Intent Auction × YouTube Dual Engine × 36.2% OPM Cloud & TPU Systems × $200B AI CapEx">7大20亿+入口意图拍卖 × YouTube双引擎 × 36.2%利润率Cloud与TPU系统军火商 × $2,000亿算力基建</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="商业原型" data-i18n-en="Archetype">商业原型</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="意图拍卖 + 全栈AI云" data-i18n-en="Intent Auction + AI Cloud">意图拍卖 + 全栈AI云</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Services / Cloud 利润率" data-i18n-en="Svc / Cloud OPM">Services / Cloud 利润率</span>
+            <span class="sidebar-mini-val mono">40.7% vs 36.2%</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Cloud RPO / 2026 CapEx" data-i18n-en="Cloud RPO / CapEx">Cloud RPO / 2026 CapEx</span>
+            <span class="sidebar-mini-val mono">$560.8B · ~$200B</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="套件索引与架构目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="GOOGL">
+          <div class="co-side-head">
+            <span class="co-side-title mono">GOOGL · 04/06</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="alphabet_inc_googl (2).html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="alphabet_inc_googl3.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (6)" data-i18n-en="All (6)">全部 (6)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (5)" data-i18n-en="SeniorExecutive (5)">高管人物 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="software" data-i18n-zh="软件生态 (1)" data-i18n-en="software (1)">软件生态 (1)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="Google_20_Senior_Executives.single.html" title="Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心" data-i18n-en="Alphabet &amp; Google 20 OverviewDeep DiveReport (Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin)| Data Center">Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="software" href="../software/Google_12_Products.compressed.html" title="Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心" data-i18n-en="Alphabet &amp; Google 12 Deep Dive Report (Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo)| Data Center">Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心</span><span class="co-hub-meta mono">software</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" data-i18n-zh="商业架构工作台 (M0–M5)" data-i18n-en="Workbench Modules (M0–M5)">商业架构工作台 (M0–M5)</div>
+        <ul class="mui-nav-list" id="tocList">
+          <li><a href="#mod-deck" class="mui-nav-link active"><span class="nav-idx mono">M0</span><span data-i18n-zh="双栏指挥舱与核心公式" data-i18n-en="Command Deck & Formula">双栏指挥舱与核心公式</span></a></li>
+          <li><a href="#mod-pipeline" class="mui-nav-link"><span class="nav-idx mono">M1</span><span data-i18n-zh="五阶价值链传导沙盘" data-i18n-en="5-Node Value Pipeline">五阶价值链传导沙盘</span></a></li>
+          <li><a href="#mod-profit-pool" class="mui-nav-link"><span class="nav-idx mono">M2</span><span data-i18n-zh="利润池瀑布流与变现拆解" data-i18n-en="Profit Waterfall & Stack">利润池瀑布流与变现拆解</span></a></li>
+          <li><a href="#mod-cohort" class="mui-nav-link"><span class="nav-idx mono">M3</span><span data-i18n-zh="多极客户粘性与广告统治" data-i18n-en="Cohort LTV & Ad Dominance">多极客户粘性与广告统治</span></a></li>
+          <li><a href="#mod-capital" class="mui-nav-link"><span class="nav-idx mono">M4</span><span data-i18n-zh="AI重资本周期与复利推演" data-i18n-en="AI CapEx & EPS Simulator">AI重资本周期与复利推演</span></a></li>
+          <li><a href="#mod-matrix" class="mui-nav-link"><span class="nav-idx mono">M5</span><span data-i18n-zh="巨头范式矩阵与监管压测" data-i18n-en="Peer Matrix & Stress Audit">巨头范式矩阵与监管压测</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance & Export">阅读与导出工具</div>
+        <div class="side-theme-group" role="group" aria-label="外观切换">
+          <button type="button" id="sideLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+          <button type="button" id="sideDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="exportHtmlBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" id="printPdfBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Distinct Non-Linear Workspace -->
+    <main class="bm-workspace">
+
+      <!-- MODULE 0: ASYMMETRIC COMMAND DECK -->
+      <section id="mod-deck" class="bm-command-deck">
+        <div class="bm-thesis-deck">
+          <div>
+            <div class="bm-badge-row">
+              <span class="mui-chip mui-chip-primary mono" data-i18n-zh="商业范式：7大20亿级免费入口漏斗 × 意图竞价印钞机 × 全栈AI云与TPU军火商" data-i18n-en="ARCHETYPE: 7× 2B-User Free Funnel × Intent Auction × Full-Stack AI Cloud & TPU">商业范式：7大20亿级免费入口漏斗 × 意图竞价印钞机 × 全栈AI云与TPU军火商</span>
+              <span class="mui-chip mui-chip-success mono">FY2025 10-K + Q3'26 10-Q</span>
+              <span class="mui-chip mui-chip-violet mono">道指成分股 · 总资产 $1.003T</span>
+            </div>
+
+            <h1 class="bm-display-h1" data-i18n-zh="谷歌公司商业模式解构：<span class='bm-gradient-txt'>以免费超级产品垄断全球注意力入口，靠毫秒级意图竞价与36%利润率AI云双轮复利</span>" data-i18n-en="Deconstructing Alphabet's Business Model: <span class='bm-gradient-txt'>Monopolize Global Attention via Free Utility, Compound via Intent Auctions & 36% OPM AI Cloud</span>">
+              谷歌公司商业模式解构：<span class="bm-gradient-txt">以免费超级产品垄断全球注意力入口，靠毫秒级意图竞价与36%利润率AI云双轮复利</span>
+            </h1>
+
+            <p class="bm-lead" id="heroLeadText">
+              如果说苹果是“向消费者卖高溢价硬件门票、再收生态过路费”，谷歌（Alphabet Inc.）则代表人类商业史上另一极终极范式——<strong>对全球数十亿消费者完全免费提供数字水电煤，向全球数千万商户与企业征收“商业意图税”与“AI算力税”</strong>。第一重引擎依托 Search、Chrome（68.8% 份额）、Android（30亿+ 终端）、YouTube、Maps、Gmail 与 Google Play 构建起全球<strong>91.1% 搜索份额</strong>，在 FY2025 首破 <strong>$4,028.4亿总营收</strong>（其中广告 <strong>$2,946.9亿</strong>，扣除 20.3% 流量获取成本 TAC 后净享近 80% 广告留存）
+              <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">FY25 8-K ↗</a>
+              <a class="cite-link" href="https://sqmagazine.co.uk/google-ads-statistics/" target="_blank" rel="noopener noreferrer">SQ Ads 统计 ↗</a>；第二重引擎在 2026 年迎来历史性奇点：<strong>Google Cloud 单季营收翻倍暴增 +103% 至 $307.1亿（年化超 $1,228亿，营业利润率跃升至 36.2%，在手积压订单 RPO 高达 $5,608亿）</strong>，推动 Q3 2026 集团单季营收达 <strong>$1,275.8亿（+25% YoY，年化破 $5,100亿）</strong>
+              <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3'26 10-Q 拆解 ↗</a>；第三重引擎则将每年超 $1,796亿 经营现金流加上千亿级多元债权/股权融资（含伯克希尔 $100亿 定向入股），饱和注入 <strong>2026 全年 $1,950亿–$2,050亿 AI 算力基建与自研 TPU 8t/8i 系统</strong>，构筑全栈不可复制的重资本算力壁垒
+              <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/" target="_blank" rel="noopener noreferrer">CEO Q3 致辞 ↗</a>。
+            </p>
+          </div>
+
+          <!-- Interactive 3-Lens Business Formula Switcher -->
+          <div class="bm-lens-panel">
+            <div class="bm-lens-head">
+              <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换商业本质透镜：" data-i18n-en="SWITCH ECONOMIC LENS:">切换商业本质透镜：</span>
+              <div class="mui-segmented" id="lensTabs">
+                <button type="button" class="mui-seg-btn active" data-lens="0" data-i18n-zh="① 意图竞价印钞机" data-i18n-en="① Intent Auction Engine">① 意图竞价印钞机</button>
+                <button type="button" class="mui-seg-btn" data-lens="1" data-i18n-zh="② AI云与TPU第二曲线" data-i18n-en="② Cloud & TPU Inflection">② AI云与TPU第二曲线</button>
+                <button type="button" class="mui-seg-btn" data-lens="2" data-i18n-zh="③ 重算力资本周期转换" data-i18n-en="③ Heavy AI CapEx Arbitrage">③ 重算力资本周期转换</button>
+              </div>
+            </div>
+            <div class="bm-equation-bar mono" id="lensFormula">
+              广告净毛利池 = [全球查询量 × 商业意图率 × 付费点击率 × 实时竞价 CPC ($5.42均值)] × (1 - 20.0% TAC 渠道分成)
+            </div>
+            <div class="bm-lens-body" id="lensBody">
+              不同于社交平台靠“打断用户刷视频”推送展示广告，谷歌搜索与 AI Mode 捕捉的是用户<strong>主动表达购买或决策意图的黄金一秒</strong>（平均转化率高达 8.18%）。广义第二价格与 AI Max 拍卖机制让全球广告主自动相互竞价，把商户的超额利润精准转化为 Google Services 高达 <strong>40.7% 的分部营业利润率</strong>。
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Financial Telemetry Ledger -->
+        <aside class="bm-telemetry-ledger" aria-label="FY2025–Q3 2026 核心经济遥测">
+          <div class="bm-ledger-head">
+            <div class="bm-ledger-title">
+              <span class="bm-pulse-dot"></span>
+              <span data-i18n-zh="Q3 2026 / TTM 商业模型遥测账本" data-i18n-en="Q3 2026 / TTM Financial Telemetry">Q3 2026 / TTM 商业模型遥测账本</span>
+            </div>
+            <a class="cite-link mono" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm" target="_blank" rel="noopener noreferrer">Q3'26 8-K ↗</a>
+          </div>
+
+          <div class="bm-telemetry-rows">
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="Q3 单季营收 (Services 75.5% / Cloud 24.1%)" data-i18n-en="Q3 Revenue (75.5% Services / 24.1% Cloud)">Q3 单季营收 (Services 75.5% / Cloud 24.1%)</span>
+                <span class="bm-tel-val mono">$127.58B <small style="font-size:0.74rem;color:var(--mui-success-text);">+25%</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:75.5%;"></div>
+                <div style="width:24.1%;background:#16A34A;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>TTM $471.1B (FY25 $402.8B)</span><span>Cloud $30.71B (+103% YoY)</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="综合毛利率 &amp; 双主业营业利润率" data-i18n-en="Gross Margin &amp; Dual-Engine Operating Margin">综合毛利率 &amp; 双主业营业利润率</span>
+                <span class="bm-tel-val mono">59.7% / 31.8%</span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:59.7%;"></div>
+                <div style="width:31.8%;background:#7C3AED;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>Services OPM 40.7% ($39.2B)</span><span>Cloud OPM 36.2% ($11.1B)</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="合同积压订单 (RPO) &amp; 2026 AI 资本开支" data-i18n-en="Revenue Backlog (RPO) &amp; 2026 AI CapEx">合同积压订单 (RPO) &amp; 2026 AI 资本开支</span>
+                <span class="bm-tel-val mono">$567.7B <small style="font-size:0.74rem;color:var(--mui-primary-lighter);">RPO</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:94%;background:linear-gradient(90deg,#0073E6,#16A34A);"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>Cloud RPO $560.8B</span><span>2026E CapEx $195B–$205B</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="Gemini 月活 × 消费级付费订阅矩阵" data-i18n-en="Gemini MAUs × Consumer Paid Subscriptions">Gemini 月活 × 消费级付费订阅矩阵</span>
+                <span class="bm-tel-val mono">1B+ / 350M+</span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:90%;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>YouTube Premium 150M+</span><span>总资产 $1.003T · 现金证券 $265.1B</span></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- MODULE 1: HORIZONTAL 5-NODE VALUE-CHAIN PIPELINE -->
+      <section id="mod-pipeline" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 01 · END-TO-END VALUE CAPTURE PIPELINE</span>
+            <h2 class="bm-h2" data-i18n-zh="五阶商业价值传导沙盘：从免费操作系统漏斗到 TPU 算力帝国" data-i18n-en="5-Node Value-Chain Pipeline: From Free OS Utility to TPU Compute Empire">五阶商业价值传导沙盘：从免费操作系统漏斗到 TPU 算力帝国</h2>
+            <p class="bm-head-desc" data-i18n-zh="点击下方任一价值链节点，拆解谷歌如何将免费公共产品转化为高利润率广告、订阅与企业云现金流。" data-i18n-en="Click any node in the horizontal value chain to inspect its distribution moat, unit economics, and financial metrics.">点击下方任一价值链节点，拆解谷歌如何将免费公共产品转化为高利润率广告、订阅与企业云现金流。</p>
+          </div>
+          <span class="mui-chip mui-chip-primary mono" data-i18n-zh="点击节点交互拆解 (01 → 05)" data-i18n-en="Interactive 5-Stage Flow">点击节点交互拆解 (01 → 05)</span>
+        </div>
+
+        <div class="bm-pipeline-track" id="pipelineTrack">
+          <button type="button" class="bm-node-btn active" data-node="0">
+            <div class="bm-node-top"><span class="bm-node-step mono">01</span><span class="bm-node-tag mono">TRAFFIC MOAT</span></div>
+            <div class="bm-node-title" data-i18n-zh="七大20亿+入口与TAC分润墙" data-i18n-en="7× 2B+ Portals & TAC Moat">七大20亿+入口与TAC分润墙</div>
+            <div class="bm-node-kpi mono">Search 91.1% · TAC率 20.0%</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="1">
+            <div class="bm-node-top"><span class="bm-node-step mono">02</span><span class="bm-node-tag mono">INTENT AUCTION</span></div>
+            <div class="bm-node-title" data-i18n-zh="AI 搜索重构与 PMax 竞价" data-i18n-en="AI Mode & PMax Ad Auction">AI 搜索重构与 PMax 竞价</div>
+            <div class="bm-node-kpi mono">Q3 搜索 $63.35B (+12%)</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="2">
+            <div class="bm-node-top"><span class="bm-node-step mono">03</span><span class="bm-node-tag mono">DUAL FLYWHEEL</span></div>
+            <div class="bm-node-title" data-i18n-zh="YouTube 客厅霸权与订阅池" data-i18n-en="YouTube TV & Subscriptions">YouTube 客厅霸权与订阅池</div>
+            <div class="bm-node-kpi mono">年收 &gt;$60B · 订阅 3.5亿+</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="3">
+            <div class="bm-node-top"><span class="bm-node-step mono">04</span><span class="bm-node-tag mono">CLOUD &amp; TPU</span></div>
+            <div class="bm-node-title" data-i18n-zh="Google Cloud 与 TPU 系统外售" data-i18n-en="Cloud, Wiz & TPU Systems">Google Cloud 与 TPU 系统外售</div>
+            <div class="bm-node-kpi mono">Q3 $30.71B (+103%) · 36.2% OPM</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="4">
+            <div class="bm-node-top"><span class="bm-node-step mono">05</span><span class="bm-node-tag mono">INFRA &amp; BETS</span></div>
+            <div class="bm-node-title" data-i18n-zh="重算力再投资与物理世界期权" data-i18n-en="AI CapEx & Waymo Moonshots">重算力再投资与物理世界期权</div>
+            <div class="bm-node-kpi mono">CapEx ~$200B · Waymo 3亿英里</div>
+          </button>
+        </div>
+
+        <div class="bm-node-inspector" id="nodeInspector">
+          <div class="bm-ins-prose">
+            <span class="mui-chip mui-chip-primary mono" id="nodeBadge">NODE 01 · SEVEN 2B+ USER PORTALS &amp; DISTRIBUTION LOCK</span>
+            <h3 id="nodeTitle">自有系统（Chrome + Android）与付费默认入口（Safari TAC）双保险锁死全球流量</h3>
+            <p id="nodeDesc">
+              谷歌的底层商业智慧是用开源 Android（覆盖超 30 亿活跃设备）和免费 Chrome 浏览器（全球 68.8% 份额）把超过三分之二的互联网请求保留在免过路费的自有管道内；对剩余最赚钱的 iOS 高净值人群，则通过每年向苹果及 OEM 支付约 $599 亿流量获取成本（TAC）租下默认搜索框。随自有入口与直连 Gemini App（月活破 10 亿）占比提升，Q3 2026 综合 TAC 率已稳步压降至 20.0%。
+            </p>
+            <div class="bm-ins-formula mono" id="nodeFormula">
+              商业传导：Chrome/Android 自有零分成入口 + 非排他默认分发协议 → 守住全球 91.1% 搜索份额并将综合 TAC 率控制在 20.0%
+            </div>
+          </div>
+          <div class="bm-ins-kpis" id="nodeKpis">
+            <div class="bm-ins-card"><b class="mono">91.1%</b><span>全球搜索引擎市场份额 (2026)</span></div>
+            <div class="bm-ins-card"><b class="mono">20.0%</b><span>Q3 2026 综合流量获取成本率 (TAC)</span></div>
+            <div class="bm-ins-card"><b class="mono">7 款</b><span>月活超 20 亿的免费国民级产品</span></div>
+            <div class="bm-ins-card"><b class="mono">10亿+</b><span>Gemini App 月活跃用户里程碑</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 2: DUAL-ENGINE PROFIT POOL (7:5 ASYMMETRIC SPLIT) -->
+      <section id="mod-profit-pool" class="bm-split-75">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02A · P&amp;L WATERFALL &amp; CLOUD MARGIN INFLECTION</span>
+              <h3 data-i18n-zh="TTM $4,711亿 价值瀑布流与 Google Cloud 营业利润率J型反转" data-i18n-en="TTM $471.1B Cash Waterfall & Google Cloud J-Curve Margin">TTM $4,711亿 价值瀑布流与 Google Cloud 营业利润率J型反转</h3>
+            </div>
+            <div class="mui-segmented" id="pChartTabs">
+              <button type="button" class="mui-seg-btn active" data-pview="waterfall" data-i18n-zh="TTM 营收→FCF 瀑布流" data-i18n-en="TTM Rev → FCF">TTM 营收→FCF 瀑布流</button>
+              <button type="button" class="mui-seg-btn" data-pview="scissors" data-i18n-zh="Cloud vs Services 利润率" data-i18n-en="Segment OPM Curve">Cloud vs Services 利润率</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="profitCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            数据核验：<a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3 2026 10-Q 与财报演示稿 ↗</a> 及
+            <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">FY2025 8-K ↗</a>。
+            与苹果“1.9% 极低 CapEx”形成鲜明镜像：谷歌过去 12 个月创造 <strong>$1,796亿 经营现金流</strong>，但主动将 <strong>$1,598亿 投入 AI 基建 CapEx</strong>，换取 Google Cloud 营业利润率从亏损飙升至 <strong>36.2%</strong>。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02B · FOUR MONETIZATION PILLARS</span>
+              <h3 data-i18n-zh="谷歌四大核心变现柱（广告占比已由 81% 降至 ~64%）" data-i18n-en="4 Core Monetization Pillars (Ad Mix Shifted to ~64%)">谷歌四大核心变现柱（广告占比已由 81% 降至 ~64%）</h3>
+            </div>
+            <div class="mui-segmented" id="tierFilter">
+              <button type="button" class="mui-seg-btn active" data-tcat="all" data-i18n-zh="全部" data-i18n-en="All">全部</button>
+              <button type="button" class="mui-seg-btn" data-tcat="ads" data-i18n-zh="意图广告" data-i18n-en="Ads">意图广告</button>
+              <button type="button" class="mui-seg-btn" data-tcat="ent" data-i18n-zh="云与订阅" data-i18n-en="Cloud & Subs">云与订阅</button>
+            </div>
+          </div>
+
+          <div class="bm-tier-list" id="tierList">
+            <div class="bm-tier-card" data-tier="ads">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="① Google Search &amp; AI Mode 商业意图竞价" data-i18n-en="① Search &amp; AI Mode Commercial Auctions">① Google Search &amp; AI Mode 商业意图竞价</span>
+                <span class="mui-chip mui-chip-primary mono">Q3 $63.35B (+12%)</span>
+              </div>
+              <div class="bm-tier-desc">每月处理超 500 亿次视觉搜索，AI Mode 查询长度达传统搜索 3 倍，配合 AI Max 与通用商务协议（UCP）将高意图对话直接转化为直购佣金与竞价点击。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="ent">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="② Google Cloud × TPU 系统 × Wiz 企业安全" data-i18n-en="② Google Cloud, TPU Systems &amp; Wiz Security">② Google Cloud × TPU 系统 × Wiz 企业安全</span>
+                <span class="mui-chip mui-chip-success mono">Q3 $30.71B (+103%)</span>
+              </div>
+              <div class="bm-tier-desc">贡献 Q3 全集团 62% 的新增营收！近 90% 财富百强采用 Gemini Enterprise，18 条云产品线年收破 $10亿，并向 Anthropic、Apple 等百余家大客户直接交付自研 TPU 算力集群。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="ads">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="③ YouTube 客厅流媒体广告与创作者分成" data-i18n-en="③ YouTube Living Room Ads &amp; Creator Economy">③ YouTube 客厅流媒体广告与创作者分成</span>
+                <span class="mui-chip mui-chip-warning mono">Q3 广告 $11.20B (+9%)</span>
+              </div>
+              <div class="bm-tier-desc">稳居全美电视流媒体观看时长第一，客厅大屏贡献超 1/3 广告收入；通过 55% 创作者广告分成实现“零自制影视剧库存风险”的无限 UGC 内容供给。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="ent">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="④ 订阅、平台与硬件 (YouTube Premium / One / Play)" data-i18n-en="④ Subscriptions, Platforms &amp; Pixel Devices">④ 订阅、平台与硬件 (YouTube Premium / One / Play)</span>
+                <span class="mui-chip mui-chip-violet mono">Q3 $14.29B (+11%)</span>
+              </div>
+              <div class="bm-tier-desc">YouTube Music &amp; Premium 突破 1.5 亿订户，Google One AI Pro/Ultra 高阶算力包成为增速最快消费订阅，叠加 Pixel 11 与 Play 商店构建非广告经常性现金流。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 3: REVERSED 5:7 SPLIT — CUSTOMER COHORT ECONOMICS & AD MARKET SHARE -->
+      <section id="mod-cohort" class="bm-split-57">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03A · CONSUMER &amp; ENTERPRISE COHORT FLYWHEEL</span>
+              <h3 data-i18n-zh="三级客户变现阶梯：从免费流量户到“支出翻四倍”的企业 AI 席位" data-i18n-en="3-Tier Cohort Economics: From Free Searcher to 4x Enterprise AI Spend">三级客户变现阶梯：从免费流量户到“支出翻四倍”的企业 AI 席位</h3>
+            </div>
+          </div>
+
+          <div class="mui-segmented" id="cohortTabs">
+            <button type="button" class="mui-seg-btn" data-cohort="free" data-i18n-zh="大众免费流量层" data-i18n-en="Free Ad User">大众免费流量层</button>
+            <button type="button" class="mui-seg-btn active" data-cohort="prosumer" data-i18n-zh="AI 超级订阅户" data-i18n-en="AI Pro Subscriber">AI 超级订阅户</button>
+            <button type="button" class="mui-seg-btn" data-cohort="enterprise" data-i18n-zh="财富百强云客户" data-i18n-en="Fortune 100 Cloud">财富百强云客户</button>
+          </div>
+
+          <div class="bm-cohort-metrics" id="cohortMetrics">
+            <div class="bm-cohort-stat">
+              <div class="lbl">典型产品绑定组合</div>
+              <div class="val" style="font-size:0.94rem;">Search + YouTube Premium + Google One AI Pro</div>
+              <div class="delta">照片库 9万亿+ 资产与 Gmail 深度锁死</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">年均生态流失率</div>
+              <div class="val mono">~3.5%</div>
+              <div class="delta">邮箱身份与云端相册迁移摩擦极高</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">年度综合 ARPU (广告+订阅)</div>
+              <div class="val mono">$420 / 年</div>
+              <div class="delta">$19.99/月 AI Pro + 搜索广告净变现</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">5年累计单客净毛利 LTV</div>
+              <div class="val mono">$1,520</div>
+              <div class="delta">约为纯免费广告用户的 3.6 倍</div>
+            </div>
+          </div>
+
+          <div class="bm-ratchet-note" id="cohortNote">
+            <strong>数据与工作流复利锁死（Data Gravity Lock-In）：</strong>个人用户在 Google Photos 沉淀逾十年家庭影像、以 Gmail 作为全网数字通行证；而在 B 端，Q3 2026 财报披露<strong>早期采用 Gemini Enterprise 的企业客户一年内云支出翻了 4 倍以上</strong>，BigQuery 数据湖 + Wiz 安全底座使跨云迁移成本高不可攀
+            <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Thomas Kurian 披露 ↗</a>。
+          </div>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03B · ENTERPRISE NET DOLLAR EXPANSION &amp; GLOBAL AD SHARE</span>
+              <h3 data-i18n-zh="企业 AI 云客户 5 年支出扩张曲线与全球数字广告双寡头格局" data-i18n-en="Enterprise Cloud 5Y Spend Curve & Global Digital Ad Duopoly">企业 AI 云客户 5 年支出扩张曲线与全球数字广告双寡头格局</h3>
+            </div>
+            <div class="mui-segmented" id="cChartTabs">
+              <button type="button" class="mui-seg-btn active" data-cview="ltv" data-i18n-zh="企业云AI支出裂变" data-i18n-en="Enterprise Spend">企业云AI支出裂变</button>
+              <button type="button" class="mui-seg-btn" data-cview="share" data-i18n-zh="全球广告收入池对比" data-i18n-en="Global Ad Pool">全球广告收入池对比</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="cohortCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            行业对标参考：<a class="cite-link" href="https://colorlib.com/wp/search-engine-statistics/" target="_blank" rel="noopener noreferrer">2026 全球搜索引擎与广告统计 ↗</a> 与
+            <a class="cite-link" href="https://sqmagazine.co.uk/google-ads-statistics/" target="_blank" rel="noopener noreferrer">SQ Magazine Google vs Meta 对标 ↗</a>。FY2025 谷歌广告收入达 <strong>$2,947亿</strong>，超过 Meta（$1,960亿）与 Amazon（$690亿）广告之和。
+          </p>
+        </div>
+      </section>
+
+      <!-- MODULE 4: 6:6 DUAL WORKBENCH — AI CAPEX VS OCF CYCLE + LIVE 5Y EPS & FCF COMPOUNDER -->
+      <section id="mod-capital" class="bm-split-66">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04A · $200B AI CAPEX CYCLE &amp; WAR CHEST</span>
+              <h3 data-i18n-zh="从“每年回购 $620亿”转向“年砸 $2,000亿 筑算力护城河”" data-i18n-en="Capital Pivot: From $62B Buybacks to $200B/Yr AI Infrastructure">从“每年回购 $620亿”转向“年砸 $2,000亿 筑算力护城河”</h3>
+            </div>
+            <div class="mui-segmented" id="kChartTabs">
+              <button type="button" class="mui-seg-btn active" data-kview="capex" data-i18n-zh="OCF vs CapEx 剪刀差" data-i18n-en="OCF vs CapEx">OCF vs CapEx 剪刀差</button>
+              <button type="button" class="mui-seg-btn" data-kview="funding" data-i18n-zh="2026 千亿融资弹药库" data-i18n-en="2026 Funding Mix">2026 千亿融资弹药库</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="capitalCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            资本配置大转向：CFO Anat Ashkenazi 在 2026 年暂停股票回购（保留 $695亿 授权），将 <strong>$1,950–$2,050亿 CapEx</strong>（65% 投向 6年折旧服务器/TPU、35% 投向 40年寿命数据中心）优先用于消化 $5,608亿 云积压订单，并引入 <strong>伯克希尔·哈撒韦 $100亿 私募入股</strong>
+            <a class="cite-link" href="https://www.fool.com/investing/2026/11/21/prediction-heres-where-alphabet-stock-will-be-in-5-years/" target="_blank" rel="noopener noreferrer">2026–2029 FCF 周期分析 ↗</a>。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04B · INTERACTIVE 5-YEAR CLOUD &amp; FCF RECOVERY LAB</span>
+              <h3 data-i18n-zh="2027–2031 算力收获期：自由现金流反转与 EPS 推演器" data-i18n-en="2027–2031 Harvest Phase: FCF Inflection & EPS Simulator">2027–2031 算力收获期：自由现金流反转与 EPS 推演器</h3>
+            </div>
+            <div class="mui-segmented" id="simPresets">
+              <button type="button" class="mui-seg-btn" data-preset="bear" data-i18n-zh="折旧承压" data-i18n-en="Bear">折旧承压</button>
+              <button type="button" class="mui-seg-btn active" data-preset="base" data-i18n-zh="基准收获" data-i18n-en="Base">基准收获</button>
+              <button type="button" class="mui-seg-btn" data-preset="bull" data-i18n-zh="TPU超周期" data-i18n-en="Bull">TPU超周期</button>
+            </div>
+          </div>
+
+          <div class="bm-sim-sliders">
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="Google Cloud 年化增速 (2026–2031 CAGR)" data-i18n-en="Google Cloud 5Y CAGR">Google Cloud 年化增速 (2026–2031 CAGR)</span><b class="mono" id="lblCloudCagr">26.0%</b></div>
+              <input type="range" id="inpCloudCagr" min="14" max="38" step="1" value="26" />
+            </div>
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="Google Services 年化增速 (搜索/YouTube/订阅)" data-i18n-en="Google Services 5Y CAGR">Google Services 年化增速 (搜索/YouTube/订阅)</span><b class="mono" id="lblSvcCagr">9.5%</b></div>
+              <input type="range" id="inpSvcCagr" min="4" max="15" step="0.5" value="9.5" />
+            </div>
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="2031E 稳态 CapEx / 营收强度 (由 40% 回落)" data-i18n-en="2031E Terminal CapEx / Revenue">2031E 稳态 CapEx / 营收强度 (由 40% 回落)</span><b class="mono" id="lblCapexRatio">18.0%</b></div>
+              <input type="range" id="inpCapexRatio" min="12" max="28" step="1" value="18" />
+            </div>
+          </div>
+
+          <div class="bm-sim-outputs">
+            <div class="bm-sim-out"><b class="mono" id="simRevOut">$968B</b><span data-i18n-zh="FY31E 总营收" data-i18n-en="FY31E Revenue">FY31E 总营收</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simOpmOut">35.1%</b><span data-i18n-zh="FY31E 营业利润率" data-i18n-en="FY31E Op Margin">FY31E 营业利润率</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simFcfOut">$182B</b><span data-i18n-zh="FY31E 自由现金流" data-i18n-en="FY31E Free Cash Flow">FY31E 自由现金流</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simEpsOut">$21.85</b><span data-i18n-zh="FY31E 核心摊薄 EPS" data-i18n-en="FY31E Core EPS">FY31E 核心摊薄 EPS</span></div>
+          </div>
+
+          <div class="bm-canvas-box" style="height:175px;">
+            <canvas id="simMiniCanvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 5: GLOBAL MEGA-CAP ARCHETYPE MATRIX & REGULATORY STRESS AUDIT -->
+      <section id="mod-matrix" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 05 · ARCHETYPE BENCHMARKING &amp; STRESS AUDIT</span>
+            <h2 class="bm-h2" data-i18n-zh="全球科技巨头商业模型对标矩阵与三大结构性逆风压测" data-i18n-en="Global Mega-Cap Business Model Matrix & Structural Stress Audit">全球科技巨头商业模型对标矩阵与三大结构性逆风压测</h2>
+            <p class="bm-head-desc" data-i18n-zh="横向对比谷歌与苹果、微软、Meta、亚马逊及英伟达的利润结构与资本强度，并深度拆解反垄断与折旧洪峰冲击。" data-i18n-en="Benchmarking Alphabet against mega-cap peers across margins and CapEx intensity, plus antitrust & AI CapEx stress tests.">横向对比谷歌与苹果、微软、Meta、亚马逊及英伟达的利润结构与资本强度，并深度拆解反垄断与折旧洪峰冲击。</p>
+          </div>
+          <div class="mui-segmented" id="peerFilter">
+            <button type="button" class="mui-seg-btn active" data-pcat="all" data-i18n-zh="全部巨头 (6)" data-i18n-en="All Peers (6)">全部巨头 (6)</button>
+            <button type="button" class="mui-seg-btn" data-pcat="ads" data-i18n-zh="注意力与平台税" data-i18n-en="Attention & Platform">注意力与平台税</button>
+            <button type="button" class="mui-seg-btn" data-pcat="infra" data-i18n-zh="云与AI算力基建" data-i18n-en="Cloud & AI Silicon">云与AI算力基建</button>
+          </div>
+        </div>
+
+        <div class="bm-table-wrap">
+          <table class="bm-table" id="peerTable">
+            <thead>
+              <tr>
+                <th>公司与代码</th>
+                <th>核心商业模式原型</th>
+                <th>综合毛利率</th>
+                <th>2026 CapEx / 营收强度</th>
+                <th>核心利润护城河</th>
+                <th>主要商业模式脆弱点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-googl" data-row-cat="ads infra">
+                <td><strong>Alphabet (GOOGL)</strong> <span class="mui-chip mui-chip-primary mono">本研究标的</span></td>
+                <td>搜索/YouTube意图拍卖 + 全栈AI云与TPU外售</td>
+                <td class="mono">59.7% (OPM 31.8%)</td>
+                <td class="mono" style="color:var(--mui-warning-text);">~39% ($195–205B 洪峰)</td>
+                <td>7大20亿+用户入口 + 自研TPU降本 + $561B云订单</td>
+                <td>AI问答稀释传统搜索点击；重资产折旧短期压制FCF</td>
+              </tr>
+              <tr data-row-cat="ads">
+                <td><strong>Apple (AAPL)</strong></td>
+                <td>自研硅片旗舰硬件漏斗 + 零CAC服务过路费</td>
+                <td class="mono">48.8% (服务 76.2%)</td>
+                <td class="mono" style="color:var(--mui-success-text);">1.9% ($9.0B 极致轻资产)</td>
+                <td>25亿存量终端锁死 + -58天负营运资本 + 千亿缩股</td>
+                <td>欧盟DMA/DOJ应用商店监管与硬件供应链关税周期</td>
+              </tr>
+              <tr data-row-cat="infra">
+                <td><strong>Microsoft (MSFT)</strong></td>
+                <td>M365企业生产力席位税 + Azure企业云基建</td>
+                <td class="mono">~68%–69%</td>
+                <td class="mono" style="color:var(--mui-warning-text);">~25%–28% (~$86B)</td>
+                <td>全球企业IT工作流深度锁定 + Copilot席位提价</td>
+                <td>对外部大模型伙伴依赖与高昂GPU采购折旧</td>
+              </tr>
+              <tr data-row-cat="ads">
+                <td><strong>Meta (META)</strong></td>
+                <td>36亿日活社交信息流推荐算法 + AI广告自动投放</td>
+                <td class="mono">~81%</td>
+                <td class="mono" style="color:var(--mui-warning-text);">~30% (~$66B)</td>
+                <td>社交关系链时长垄断 + Advantage+ 极高广告ROI</td>
+                <td>缺乏自有云出租回血渠道，硬件OS受制于苹果与谷歌</td>
+              </tr>
+              <tr data-row-cat="ads infra">
+                <td><strong>Amazon (AMZN)</strong></td>
+                <td>全球电商履约网络 + AWS云现金牛 + 零售站内广告</td>
+                <td class="mono">~49%–50%</td>
+                <td class="mono" style="color:var(--mui-warning-text);">~14% (~$102B)</td>
+                <td>Prime物流重资产规模壁垒 + AWS生态先发优势</td>
+                <td>AWS在生成式AI原生模型层面临Google Cloud猛烈追赶</td>
+              </tr>
+              <tr data-row-cat="infra">
+                <td><strong>NVIDIA (NVDA)</strong></td>
+                <td>CUDA软件生态锁死 + 数据中心GPU算力军火商</td>
+                <td class="mono">~71%–75%</td>
+                <td class="mono" style="color:var(--mui-success-text);">~2%–3% (Fabless代工)</td>
+                <td>全球AI训练算力事实标准与NVLink机柜级互联</td>
+                <td>谷歌TPU 8t/8i等超大规模云厂自研ASIC加速分流</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bm-stress-grid">
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-error mono">STRESS 01 · DOJ SEARCH &amp; ADTECH</span>
+              <h4>美欧反垄断裁决：保住 Chrome 与分润权，但排他护城河松动</h4>
+              <p>2025 年 9 月 Mehta 法官搜索救济裁决与 2026 年 9 月 AdTech 裁决均<strong>驳回了强制分拆 Chrome、Android 与 AdX 的极端诉求</strong>，且允许继续向苹果支付默认搜索分成；但禁止排他性默认合同、要求向合格对手共享部分搜索索引并与 Prebid 互通，意味着未来默认入口将面临年度竞价博弈
+                <a class="cite-link" href="https://www.searchenginejournal.com/googles-antitrust-ruling-what-the-remedies-mean-for-search-seo-and-ai-assistants/555086/" target="_blank" rel="noopener noreferrer">DOJ 救济裁决 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s1" /> 纳入季度跟踪：Safari 非排他续约 TAC 率与 DOJ 上诉进展</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-warning mono">STRESS 02 · AI MODE MONETIZATION GAP</span>
+              <h4>生成式 AI 回答直接满足需求，“十条蓝链”点击率是否塌陷？</h4>
+              <p>Q3 2026 搜索营收增速由 Q2 的 17% 放缓至 12%，管理层坦言 AI Mode 目前单次查询变现率仍低于传统搜索。谷歌的对冲解药是：AI Overview / AI Mode 使总查询量创 5 年最快增速，且多轮对话广告（Multi-turn Ads）与通用购物车（UCP）的赞助商点击率已逼近自然结果
+                <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Schindler 问答拆解 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s2" /> 纳入季度跟踪：Search 付费点击增速 (+8%) 与 CPC (+4%) 剪刀差</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-violet mono">STRESS 03 · $200B CAPEX &amp; $924B COMMITMENTS</span>
+              <h4>$2,000亿 资本开支与 $9,244亿 采购承诺下的折旧与负 FCF 压力</h4>
+              <p>Q3 2026 单季折旧已同比激增 45%，自由现金流连续两季转负（Q3 -$9.1B）。但关键缓冲在于：所有外售 TPU 库存（$13.3B）均严格对应已签约客户订单，且 $5,608亿 Google Cloud 合同积压（超 55% 在 24 个月内确认营收）锁定了高确定性现金回流
+                <a class="cite-link" href="https://finance.biggo.com/news/US_GOOGL_2026-10-28" target="_blank" rel="noopener noreferrer">Q3 电话会纪要 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s3" /> 纳入季度跟踪：Cloud 36%+ 营业利润率能否消化新机房折旧</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIMARY SOURCES FOOTER -->
+      <section class="bm-panel" aria-label="权威财报与行业信源">
+        <div class="bm-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+          <div>
+            <span class="bm-kicker mono">VERIFIED PRIMARY SOURCES</span>
+            <h2 class="bm-h2" data-i18n-zh="权威 SEC 财报、电话会实录与司法监管核验信源" data-i18n-en="Verified SEC Filings, Earnings Transcripts & Regulatory Sources">权威 SEC 财报、电话会实录与司法监管核验信源</h2>
+          </div>
+        </div>
+        <div class="bm-sources-grid">
+          <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm" target="_blank" rel="noopener noreferrer">
+            <b>Alphabet Q3 2026 SEC Form 8-K Release ↗</b>
+            <span>官方披露 Q3 2026 营收 $127.58B (+25%)、营业利润 $40.58B 及 Google Cloud 翻倍至 $30.71B</span>
+          </a>
+          <a class="bm-source-item" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">
+            <b>Q3 2026 Form 10-Q &amp; Slides Full Breakdown ↗</b>
+            <span>完整核验 $567.7B 积压订单、TPU 系统销售模式、$51.4B 单季 CapEx、$1.003T 总资产与分部利润率</span>
+          </a>
+          <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">
+            <b>Alphabet FY2025 Full-Year SEC 8-K Release ↗</b>
+            <span>官方披露 FY2025 全年营收首破 $4,028.36亿、GAAP 净利润 $1,321.70亿、FCF $732.66亿与 190,820 员工</span>
+          </a>
+          <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm" target="_blank" rel="noopener noreferrer">
+            <b>Alphabet Inc. FY2025 Form 10-K Annual Report ↗</b>
+            <span>Google Services、Google Cloud 与 Other Bets 分部会计准则、TAC 构成与全球司法诉讼披露</span>
+          </a>
+          <a class="bm-source-item" href="https://sqmagazine.co.uk/google-ads-statistics/" target="_blank" rel="noopener noreferrer">
+            <b>Google Ads &amp; TAC 2021–2026 Benchmark Data ↗</b>
+            <span>2021–2025 搜索/YouTube/Network 精确收入序列、付费点击与 CPC 增速、8.18% 转化率与 AdTech 救济时间线</span>
+          </a>
+          <a class="bm-source-item" href="https://www.searchenginejournal.com/googles-antitrust-ruling-what-the-remedies-mean-for-search-seo-and-ai-assistants/555086/" target="_blank" rel="noopener noreferrer">
+            <b>U.S. DOJ Search Antitrust Remedies Analysis ↗</b>
+            <span>Mehta 法官救济裁决核心条款：驳回 Chrome/Android 剥离、保留分成支付但禁止排他性默认合同</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+      var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+      var STORAGE_STRESS_KEY = 'googl_bm_stress_v1';
+
+      var state = {
+        theme: 'light',
+        lang: 'zh',
+        lensIdx: 0,
+        nodeIdx: 0,
+        cohortKey: 'prosumer',
+        pView: 'waterfall',
+        cView: 'ltv',
+        kView: 'capex'
+      };
+
+      var hitRegions = { profitCanvas: [], cohortCanvas: [], capitalCanvas: [] };
+
+      function showToast(msg) {
+        var bar = document.getElementById('muiSnackbar');
+        if (!bar) return;
+        bar.textContent = msg;
+        bar.classList.add('show');
+        clearTimeout(bar._t);
+        bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2200);
+      }
+
+      function getPalette() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        return {
+          dark: dark,
+          text: dark ? '#F3F6F9' : '#0F1924',
+          sub: dark ? '#B2BAC2' : '#334155',
+          tick: dark ? '#94A3B8' : '#475569',
+          grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+          blue: dark ? '#3399FF' : '#0073E6',
+          blueSoft: dark ? 'rgba(51, 153, 255, 0.24)' : 'rgba(0, 115, 230, 0.16)',
+          green: dark ? '#22C55E' : '#16A34A',
+          amber: dark ? '#FFB74D' : '#D97706',
+          violet: dark ? '#A78BFA' : '#7C3AED',
+          red: dark ? '#FF6B6B' : '#DC2626'
+        };
+      }
+
+      var HERO_LEAD = {
+        zh: '如果说苹果是“向消费者卖高溢价硬件门票、再收生态过路费”，谷歌（Alphabet Inc.）则代表人类商业史上另一极终极范式——<strong>对全球数十亿消费者完全免费提供数字水电煤，向全球数千万商户与企业征收“商业意图税”与“AI算力税”</strong>。第一重引擎依托 Search、Chrome（68.8% 份额）、Android（30亿+ 终端）、YouTube、Maps、Gmail 与 Google Play 构建起全球<strong>91.1% 搜索份额</strong>，在 FY2025 首破 <strong>$4,028.4亿总营收</strong>（其中广告 <strong>$2,946.9亿</strong>，扣除 20.3% 流量获取成本 TAC 后净享近 80% 广告留存） <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">FY25 8-K ↗</a> <a class="cite-link" href="https://sqmagazine.co.uk/google-ads-statistics/" target="_blank" rel="noopener noreferrer">SQ Ads 统计 ↗</a>；第二重引擎在 2026 年迎来历史性奇点：<strong>Google Cloud 单季营收翻倍暴增 +103% 至 $307.1亿（年化超 $1,228亿，营业利润率跃升至 36.2%，在手积压订单 RPO 高达 $5,608亿）</strong>，推动 Q3 2026 集团单季营收达 <strong>$1,275.8亿（+25% YoY，年化破 $5,100亿）</strong> <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3\'26 10-Q 拆解 ↗</a>；第三重引擎则将每年超 $1,796亿 经营现金流加上千亿级多元债权/股权融资（含伯克希尔 $100亿 定向入股），饱和注入 <strong>2026 全年 $1,950亿–$2,050亿 AI 算力基建与自研 TPU 8t/8i 系统</strong>，构筑全栈不可复制的重资本算力壁垒 <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/" target="_blank" rel="noopener noreferrer">CEO Q3 致辞 ↗</a>。',
+        en: 'Whereas Apple sells luxury hardware tickets to fund a digital tollbooth, <strong>Alphabet Inc. (NASDAQ: GOOGL)</strong> embodies the opposite apex archetype: <strong>providing free digital utilities to billions of consumers while taxing global commercial intent and enterprise AI compute</strong>. Engine 1 spans Search, Chrome (68.8% share), Android (3B+ devices), YouTube, Maps, Gmail, and Play—commanding <strong>91.1% global search share</strong> and driving FY2025 revenue past <strong>$402.84B</strong> ($294.69B in ads, retaining ~80% net of 20.3% TAC) <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">FY25 8-K ↗</a> <a class="cite-link" href="https://sqmagazine.co.uk/google-ads-statistics/" target="_blank" rel="noopener noreferrer">SQ Ads Stats ↗</a>. Engine 2 hit a historic inflection in Q3 2026: <strong>Google Cloud surged +103% YoY to $30.71B ($122.8B+ run rate, 36.2% operating margin, $560.8B backlog)</strong>, lifting Q3 consolidated revenue +25% YoY to <strong>$127.58B (&gt;$510B run rate)</strong> <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3\'26 10-Q Brief ↗</a>. Engine 3 redeploys $179.6B TTM operating cash flow plus multi-currency debt &amp; Berkshire\'s $10B equity placement into <strong>$195B–$205B of 2026 AI CapEx and custom TPU 8t/8i systems</strong> <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/" target="_blank" rel="noopener noreferrer">CEO Q3 Remarks ↗</a>.'
+      };
+
+      var LENSES = [
+        {
+          zhF: '广告净毛利池 = [全球查询量 × 商业意图率 × 付费点击率 × 实时竞价 CPC ($5.42均值)] × (1 - 20.0% TAC 渠道分成)',
+          enF: 'Net Ad Profit Pool = [Global Queries × Commercial Intent × Paid CTR × Auction CPC ($5.42 avg)] × (1 - 20.0% TAC)',
+          zhB: '不同于社交平台靠“打断用户刷视频”推送展示广告，谷歌搜索与 AI Mode 捕捉的是用户<strong>主动表达购买或决策意图的黄金一秒</strong>（平均转化率高达 8.18%）。广义第二价格与 AI Max 拍卖机制让全球广告主自动相互竞价，把商户的超额利润精准转化为 Google Services 高达 <strong>40.7% 的分部营业利润率</strong>。',
+          enB: 'Unlike social feeds that interrupt passive scrolling, Google Search and AI Mode capture the <strong>exact second a user declares commercial intent</strong> (8.18% average conversion rate). Real-time second-price and AI Max auctions pit millions of advertisers against each other, converting merchant surplus into a <strong>40.7% Google Services operating margin</strong>.'
+        },
+        {
+          zhF: '企业云与算力飞轮 = $560.8B 合同积压 × [Gemini Enterprise 席位扩张 + 自研 TPU 8t/8i 系统外售] → 36.2% 营业利润率',
+          enF: 'Cloud & Silicon Flywheel = $560.8B RPO × [Gemini Enterprise Seats + External TPU 8t/8i Systems] → 36.2% Op Margin',
+          zhB: '过去市场曾质疑云计算是低毛利苦生意，但 Q3 2026 Google Cloud 以 <strong>$307.1亿单季营收（+103% YoY）与 $111亿营业利润（利润率较去年同期暴增 12.5 个百分点至 36.2%）</strong>彻底证伪：自研 TPU 规避了昂贵的“英伟达税”，并开始作为整机柜系统向 Anthropic、Apple、Oracle 等百余家客户直接创收。',
+          enB: 'Google Cloud shattered low-margin cloud skepticism in Q3 2026, doubling revenue <strong>+103% YoY to $30.71B with $11.1B in operating income (margin up +1,250 bps YoY to 36.2%)</strong>. Custom TPUs bypass external GPU markups while generating direct system-sale revenue across 100+ customers including Anthropic and Apple.'
+        },
+        {
+          zhF: '跨周期现金流转换：短期自由现金流承压 (2026E CapEx ~$200B) → 锁定 40年数据中心电力与 $567.7B 确定性订单回款',
+          enF: 'Intertemporal Arbitrage: Near-Term FCF Compression (~$200B CapEx) → Locks 40-Yr Power/Sites & $567.7B Contracted Backlog',
+          zhB: '与苹果“把端侧芯片成本转嫁给购机消费者”相反，谷歌选择亲自扛下 <strong>$1,950–$2,050亿 年度 AI 基建洪峰</strong>（65% 为直接创收服务器、35% 为 40年寿命数据中心与核聚变/绿电资产）。短期 FCF 虽被压缩，却筑起初创公司永远无法跨越的物理算力与能源高墙。',
+          enB: 'In stark contrast to Apple\'s asset-light device model, Alphabet is front-loading <strong>$195B–$205B in 2026 CapEx</strong> (65% 6-yr servers/TPUs, 35% 40-yr data centers &amp; Intersect power assets)—trading temporary FCF compression for an unassailable compute moat.'
+        }
+      ];
+
+      var NODES = [
+        {
+          badge: 'NODE 01 · SEVEN 2B+ USER PORTALS & DISTRIBUTION LOCK',
+          zhT: '自有系统（Chrome + Android）与付费默认入口（Safari TAC）双保险锁死全球流量',
+          enT: 'Owned OS/Browser (Android + Chrome) + Paid Safari Default (TAC) Lock Global Traffic',
+          zhD: '谷歌的底层商业智慧是用开源 Android（覆盖超 30 亿活跃设备）和免费 Chrome 浏览器（全球 68.8% 份额）把超过三分之二的互联网请求保留在免过路费的自有管道内；对剩余最赚钱的 iOS 高净值人群，则通过每年向苹果及 OEM 支付约 $599 亿流量获取成本（TAC）租下默认搜索框。随自有入口与直连 Gemini App（月活破 10 亿）占比提升，Q3 2026 综合 TAC 率已稳步压降至 20.0%。',
+          enD: 'Google keeps over two-thirds of web traffic inside zero-TAC owned funnels via Android (3B+ active devices) and Chrome (68.8% browser share), while paying ~$59.9B/yr in Traffic Acquisition Costs (TAC) to secure default placement on iOS Safari and OEMs. Direct Gemini App habits (1B+ MAU) helped trim Q3 2026 TAC rate to 20.0%.',
+          zhF: '商业传导：Chrome/Android 自有零分成入口 + 非排他默认分发协议 → 守住全球 91.1% 搜索份额并将综合 TAC 率控制在 20.0%',
+          enF: 'Flow: Owned Chrome/Android funnels + default placements → 91.1% global search share at a controlled 20.0% TAC rate',
+          kpis: [['91.1%', '全球搜索引擎份额', 'Global Search Share'], ['20.0%', 'Q3 2026 综合 TAC 率', 'Q3 2026 TAC Rate'], ['7 款', '20亿+月活免费超级入口', '2B+ MAU Products'], ['10亿+', 'Gemini App 月活跃用户', 'Gemini App MAUs']]
+        },
+        {
+          badge: 'NODE 02 · MILLISECOND INTENT AUCTION & AI MAX',
+          zhT: 'AI Overviews + AI Mode 扩容查询边界：量升价稳的实时竞价印钞机',
+          enT: 'AI Overviews & AI Mode Expand Query Volume: Real-Time Intent Auction Engine',
+          zhD: '面对生成式 AI 冲击，谷歌将 Gemini 直接嵌入搜索顶部（AI Overviews 覆盖超 25 亿用户）并推出多模态 AI Mode（查询长度增至 3 倍，每月超 500 亿次视觉搜索），推动 Q3 2026 总查询量创五年最快增速。广告侧通过 AI Max 与 Performance Max 自动生成 15 亿+ 创意素材，实现付费点击量同比增长 +8%~+13%，单季搜索收入达 $633.5亿。',
+          enD: 'Embedding Gemini into Search (2.5B+ AI Overviews users; 50B+ monthly visual searches; 3x longer AI Mode prompts) drove the fastest query growth in five years in Q3 2026. AI Max generated 1.5B+ ad assets, lifting paid clicks +8% YoY and Search revenue to $63.35B/quarter.',
+          zhF: '商业传导：多模态 AI 激发增量长尾商业提问 → AI Max 精准匹配转化 (均值 8.18%) → FY25 搜索净入 $2,245.3亿',
+          enF: 'Flow: Multimodal AI expands upper-funnel queries → AI Max 8.18% conversion → $63.35B Q3 Search revenue (+12% YoY)',
+          kpis: [['$63.35B', 'Q3 2026 搜索及其他营收', 'Q3 Search Revenue'], ['+8% / +4%', 'Q3 付费点击 / CPC 增速', 'Paid Clicks / CPC YoY'], ['8.18%', '搜索广告跨行业平均转化率', 'Avg Search Conv. Rate'], ['50B+/月', 'Google Lens 视觉多模态搜索', 'Monthly Visual Searches']]
+        },
+        {
+          badge: 'NODE 03 · YOUTUBE LIVING-ROOM & SUBSCRIPTION FLYWHEEL',
+          zhT: 'YouTube 双引擎飞轮：零内容赌博风险的流媒体之王（年营收破 $600亿）',
+          enT: 'YouTube Dual Engine: Zero-Content-Risk Streaming Leader (>$60B Annual Run Rate)',
+          zhD: '不同于奈飞和迪士尼每年斥资百亿赌自制剧爆款，YouTube 依靠与全球 300 万+ 创作者共享 55% 广告分成，每天自动获得超 2,000 万条新增视频。如今 YouTube 稳坐美国电视大屏流媒体时长冠军（客厅大屏贡献超 1/3 广告额），同时 YouTube Music & Premium 突破 1.5 亿订户，叠加 Amazon 视频带货联盟，形成“广告+订阅+电商”三栖印钞机。',
+          enD: 'Unlike Netflix\'s upfront studio slate risk, YouTube shares 55% of ad revenue with 3M+ creators to fuel 20M+ daily video uploads. Now #1 in U.S. TV streaming watch time (>1/3 of YouTube ad dollars from connected TVs) with 150M+ Music & Premium subscribers, YouTube surpasses $60B/yr.',
+          zhF: '商业传导：55% 创作者分成驱动日均 2,000万条上传 → 霸占客厅电视第一时长 → 广告 ($404亿) + 订阅破 $600亿/年',
+          enF: 'Flow: 55% creator rev-share → #1 U.S. TV watch time → >$60B combined annual YouTube Ads + Subscriptions',
+          kpis: [['>$60B', 'YouTube 广告+订阅年总营收', 'YouTube Annual Total'], ['150M+', 'YouTube Music & Premium 订户', 'YT Premium Subscribers'], ['350M+', 'Google 全系消费付费订阅数', 'Total Consumer Subs'], ['#1 时长', '全美客厅流媒体电视收视份额', 'U.S. Streaming TV Rank']]
+        },
+        {
+          badge: 'NODE 04 · GOOGLE CLOUD, WIZ CYBER & TPU SYSTEM SALES',
+          zhT: 'Google Cloud 狂飙 +103%：从追赶者蜕变为“模型+安全+自研TPU整机”全栈赢家',
+          enT: 'Google Cloud Doubles (+103% YoY): Full-Stack Models + Wiz Cyber + External TPU Systems',
+          zhD: 'Thomas Kurian 统领的 Google Cloud 在 Q3 2026 实现单季营收 $307.1亿（同比翻倍 +103%）、营业利润 $111亿（利润率 36.2%）。三大胜负手合龙：(1) Gemini 4 Carbon 领跑企业 Agent，已售出超 1 亿知识工作席位；(2) 2026 年 3 月以 $295亿 净现金完成收购云安全龙头 Wiz；(3) 自研 TPU 8t/8i 不仅内用，更作为整机系统向 Anthropic、Apple、Oracle 等百余家客户直接出售。',
+          enD: 'Google Cloud hit $30.71B in Q3 2026 (+103% YoY) with $11.1B operating profit (36.2% margin), powered by 100M+ AI seats sold, the $29.5B Wiz cloud-security acquisition (closed Mar 2026), and direct TPU 8t/8i system sales to 100+ customers including Anthropic and Apple.',
+          zhF: '商业传导：$5,608亿 云积压订单 + TPU 系统级交付 + Wiz 多云安全 → 贡献集团 Q3 达 62% 的净增营收',
+          enF: 'Flow: $560.8B Cloud RPO + TPU system deliveries + Wiz cyber → 62% of Alphabet\'s Q3 incremental revenue',
+          kpis: [['$30.71B', 'Q3 2026 Cloud 营收 (+103%)', 'Q3 Cloud Revenue'], ['36.2%', 'Q3 Cloud 分部营业利润率', 'Q3 Cloud Op Margin'], ['$560.8B', 'Google Cloud 剩余履约积压订单', 'Cloud Backlog (RPO)'], ['$29.5B', '2026.03 完成收购 Wiz 净对价', 'Wiz Net Cash Deal']]
+        },
+        {
+          badge: 'NODE 05 · HEAVY AI CAPEX, CAPITAL ALLOCATION & PHYSICAL AI BETS',
+          zhT: '万亿资产负债表重配：以短期负自由现金流换取未来十年算力与无人驾驶垄断',
+          enT: '$1T Balance Sheet Pivot: Deploying $200B CapEx & Scaling Waymo Physical AI',
+          zhD: '截至 2026Q3 末，Alphabet 总资产突破 $1.003万亿，手握 $2,651亿 现金及有价证券（含 $752亿 SpaceX 股权），并在 2026 年通过多币种债券（$808亿）、普通股与可转优先股及伯克希尔 $100亿 私募构筑超级资金池，全力支撑全年 $1,950–$2,050亿 CapEx 及 $59亿 收购绿电开发商 Intersect；同时 Waymo 累积超 3 亿全无人驾驶英里，在 15 座美国大城开启商业化规模扩张。',
+          enD: 'Crossing $1.003T in total assets with $265.1B in cash & marketable securities (including $75.2B in SpaceX) plus $10B from Berkshire Hathaway, Alphabet is funding $195–$205B in 2026 AI CapEx, the $5.9B Intersect clean-power acquisition, and Waymo\'s 300M+ autonomous miles across 15 U.S. cities.',
+          zhF: '商业传导：$1,796亿 TTM 经营现金流 + 战略融资 → 饱和锁定数据中心电力与 TPU 库存 → 2027–2029 算力收获期释放',
+          enF: 'Flow: $179.6B TTM OCF + strategic capital → locks power, sites & TPU inventory → 2027–2029 monetization ramp',
+          kpis: [['$1.003T', '2026Q3 末集团总资产规模', 'Total Assets (Sep 2026)'], ['$195–205B', '2026 全年资本开支官方指引', '2026 CapEx Guidance'], ['300M+ 英里', 'Waymo 全无人驾驶累计里程', 'Waymo Autonomous Miles'], ['$0.22/股', '季度普通股现金分红持续派发', 'Quarterly Cash Dividend']]
+        }
+      ];
+
+      var COHORTS = {
+        free: {
+          zhS: [
+            ['典型产品组合', 'Chrome + Search + 免费 YouTube', '零付费门槛，由广告主买单'],
+            ['年均流失率', '~6.5%', 'AI 聊天工具存在局部问答分流'],
+            ['年度广告净 ARPU', '~$84 / 年 (全球均值)', '北美地区单用户超 $260/年'],
+            ['5年累计净毛利 LTV', '$420', '边际服务器履约成本极低']
+          ],
+          enS: [
+            ['Product Bundle', 'Chrome + Search + Free YouTube', 'Zero user fee; merchant-funded'],
+            ['Annual Churn', '~6.5%', 'Partial query competition from AI chatbots'],
+            ['Annual Net Ad ARPU', '~$84 / yr (Global Avg)', '>$260/yr in North America'],
+            ['5Y Cumulative Profit LTV', '$420', 'Near-zero marginal serving cost']
+          ],
+          zhN: '<strong>大众免费流量底座：</strong>超过 40 亿全球互联网用户无需花一分钱即可享用搜索、地图导航与海量视频，其每一次商业点击都在实时竞价池中变现，构成谷歌每年近 $3,000亿 广告现金牛的广阔分母。',
+          enN: '<strong>Global Free Attention Funnel:</strong> Over 4B users access Search, Maps, and YouTube for free, generating nearly $300B/yr in high-margin auction ad revenue.'
+        },
+        prosumer: {
+          zhS: [
+            ['典型产品组合', 'Search + YouTube Premium + Google One AI Pro', '照片库 9万亿+ 资产与 Gmail 深度锁死'],
+            ['年均生态流失率', '~3.5%', '邮箱身份与云端相册迁移摩擦极高'],
+            ['年度综合 ARPU (广告+订阅)', '$420 / 年', '$19.99/月 AI Pro + 搜索广告净变现'],
+            ['5年累计单客净毛利 LTV', '$1,520', '约为纯免费广告用户的 3.6 倍']
+          ],
+          enS: [
+            ['Product Bundle', 'Search + YT Premium + Google One AI Pro', '9T+ Photos & Gmail identity lock-in'],
+            ['Annual Churn', '~3.5%', 'High switching friction on cloud storage'],
+            ['Annual Blended ARPU', '$420 / yr', '$19.99/mo AI Pro + net Search ad value'],
+            ['5Y Cumulative Profit LTV', '$1,520', '3.6x LTV vs. ad-only free user']
+          ],
+          zhN: '<strong>数据与工作流复利锁死（Data Gravity Lock-In）：</strong>个人用户在 Google Photos 沉淀逾十年家庭影像、以 Gmail 作为全网数字通行证；而在 B 端，Q3 2026 财报披露<strong>早期采用 Gemini Enterprise 的企业客户一年内云支出翻了 4 倍以上</strong>，BigQuery 数据湖 + Wiz 安全底座使跨云迁移成本高不可攀。',
+          enN: '<strong>Data Gravity Lock-In:</strong> Consumers store decades of memories in Google Photos (150M+ Google One &amp; 150M+ YT Premium subs), while early enterprise Gemini adopters more than quadrupled annual spend.'
+        },
+        enterprise: {
+          zhS: [
+            ['典型企业栈组合', 'GCP + BigQuery + Gemini Enterprise + Wiz + TPU', '覆盖近 90% 财富 100 强企业'],
+            ['净金额留存与扩张率', '> 140% NRR (AI客户 >4x)', 'Q3 25 采纳 Gemini 客户次年支出翻4倍+'],
+            ['大客户年均合同额 (ACV)', '$12M – $250M+ / 年', '2,600+ 家客户年消耗超 1,000亿 Tokens'],
+            ['积压合同履约可见度', '$560.8B 总 RPO', '>55% 将在未来 24 个月内确认为营收']
+          ],
+          enS: [
+            ['Enterprise Stack', 'GCP + BigQuery + Gemini + Wiz + TPU', '~90% of Fortune 100 on Gemini Enterprise'],
+            ['Net Dollar Expansion', '> 140% NRR (AI >4x)', 'Q3\'25 Gemini cohort quadrupled spend YoY'],
+            ['Enterprise ACV Range', '$12M – $250M+ / yr', '2,600+ customers using 100B+ tokens'],
+            ['Contracted Visibility', '$560.8B Cloud RPO', '>55% recognized within 24 months']
+          ],
+          zhN: '<strong>企业级全栈算力飞轮：</strong>一旦跨国银行（如法国巴黎银行 6.5 万席位）或电信巨头（德国电信 40+ 核心系统上云）将数据仓库迁入 BigQuery 并部署 Wiz 多云安全与 Gemini Agent，Google Cloud 便成为其不可卸载的企业级数字大脑。',
+          enN: '<strong>Enterprise AI Compounding:</strong> Once Fortune 500 enterprises unify petabyte lakes on BigQuery, secure multi-cloud workloads via Wiz, and deploy Gemini Agents, Cloud becomes sticky mission-critical infrastructure.'
+        }
+      };
+
+      function renderLens() {
+        var l = LENSES[state.lensIdx] || LENSES[0];
+        document.getElementById('lensFormula').textContent = state.lang === 'en' ? l.enF : l.zhF;
+        document.getElementById('lensBody').innerHTML = state.lang === 'en' ? l.enB : l.zhB;
+      }
+
+      function renderNode() {
+        var nd = NODES[state.nodeIdx] || NODES[0];
+        document.getElementById('nodeBadge').textContent = nd.badge;
+        document.getElementById('nodeTitle').textContent = state.lang === 'en' ? nd.enT : nd.zhT;
+        document.getElementById('nodeDesc').textContent = state.lang === 'en' ? nd.enD : nd.zhD;
+        document.getElementById('nodeFormula').textContent = state.lang === 'en' ? nd.enF : nd.zhF;
+        document.getElementById('nodeKpis').innerHTML = nd.kpis.map(function (k) {
+          return '<div class="bm-ins-card"><b class="mono">' + k[0] + '</b><span>' + (state.lang === 'en' ? k[2] : k[1]) + '</span></div>';
+        }).join('');
+      }
+
+      function renderCohort() {
+        var c = COHORTS[state.cohortKey] || COHORTS.prosumer;
+        var arr = state.lang === 'en' ? c.enS : c.zhS;
+        document.getElementById('cohortMetrics').innerHTML = arr.map(function (s, idx) {
+          var isMono = idx > 0 ? ' mono' : '';
+          var fz = idx === 0 ? ' style="font-size:0.90rem;"' : '';
+          return '<div class="bm-cohort-stat"><div class="lbl">' + s[0] + '</div><div class="val' + isMono + '"' + fz + '>' + s[1] + '</div><div class="delta">' + s[2] + '</div></div>';
+        }).join('');
+        document.getElementById('cohortNote').innerHTML = state.lang === 'en' ? c.enN : c.zhN;
+      }
+
+      function applyTheme(t, silent) {
+        state.theme = (t === 'dark') ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', state.theme);
+        var ic = document.getElementById('appbarThemeIcon');
+        if (ic) {
+          ic.innerHTML = state.theme === 'dark'
+            ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+            : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+        }
+        var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+        if (sl) sl.setAttribute('aria-pressed', String(state.theme === 'light'));
+        if (sd) sd.setAttribute('aria-pressed', String(state.theme === 'dark'));
+        drawAllCharts();
+        if (!silent) showToast(state.theme === 'dark' ? '已切换至深色模式' : '已切换至浅色模式');
+      }
+
+      function applyLang(lang, silent) {
+        state.lang = (lang === 'en') ? 'en' : 'zh';
+        document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+        var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+        if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+        if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+        var lead = document.getElementById('heroLeadText');
+        if (lead) lead.innerHTML = HERO_LEAD[state.lang];
+        var nodes = document.querySelectorAll('[data-i18n-zh]');
+        for (var i = 0; i < nodes.length; i++) {
+          var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+          if (val !== null) {
+            if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+            else nodes[i].textContent = val;
+          }
+        }
+        renderLens();
+        renderNode();
+        renderCohort();
+        drawAllCharts();
+        if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+      }
+
+      // Event Wiring
+      document.getElementById('lensTabs').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-lens]');
+        if (!b) return;
+        state.lensIdx = parseInt(b.getAttribute('data-lens'), 10) || 0;
+        var all = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < all.length; i++) all[i].classList.toggle('active', all[i] === b);
+        renderLens();
+      });
+
+      document.getElementById('pipelineTrack').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-node]');
+        if (!btn) return;
+        state.nodeIdx = parseInt(btn.getAttribute('data-node'), 10) || 0;
+        var bs = this.querySelectorAll('.bm-node-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === btn);
+        renderNode();
+      });
+
+      document.getElementById('tierFilter').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-tcat]');
+        if (!b) return;
+        var cat = b.getAttribute('data-tcat');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        var cards = document.querySelectorAll('#tierList [data-tier]');
+        for (var j = 0; j < cards.length; j++) {
+          cards[j].style.display = (cat === 'all' || cards[j].getAttribute('data-tier') === cat) ? '' : 'none';
+        }
+      });
+
+      document.getElementById('cohortTabs').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-cohort]');
+        if (!b) return;
+        state.cohortKey = b.getAttribute('data-cohort');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        renderCohort();
+      });
+
+      document.getElementById('peerFilter').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-pcat]');
+        if (!b) return;
+        var cat = b.getAttribute('data-pcat');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        var rows = document.querySelectorAll('#peerTable tbody tr');
+        for (var j = 0; j < rows.length; j++) {
+          var rc = rows[j].getAttribute('data-row-cat') || '';
+          rows[j].style.display = (cat === 'all' || rc.indexOf(cat) !== -1) ? '' : 'none';
+        }
+      });
+
+      // Sidebar Suite Hub Filter & Toast
+      var hub = document.getElementById('companySubfolderHub');
+      if (hub) {
+        hub.addEventListener('click', function (e) {
+          var pill = e.target.closest('[data-co-cat]');
+          if (pill) {
+            var cat = pill.getAttribute('data-co-cat');
+            var ps = hub.querySelectorAll('[data-co-cat]');
+            for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === pill);
+            var its = hub.querySelectorAll('[data-co-item-cat]');
+            for (var j = 0; j < its.length; j++) {
+              its[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || its[j].getAttribute('data-co-item-cat') === cat));
+            }
+            return;
+          }
+          var item = e.target.closest('.co-hub-item');
+          if (item) {
+            var jp = item.getAttribute('data-suite-jump');
+            var ts = item.getAttribute('data-suite-toast');
+            if (jp) {
+              var el = document.querySelector(jp);
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (ts) {
+              showToast(ts);
+            }
+          }
+        });
+      }
+
+      // High-DPI Retina Canvas Engine
+      function prepCanvas(id) {
+        var c = document.getElementById(id);
+        if (!c) return null;
+        var rect = c.getBoundingClientRect();
+        var w = Math.max(260, rect.width || 500);
+        var h = Math.max(140, rect.height || 280);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        c.width = Math.round(w * dpr);
+        c.height = Math.round(h * dpr);
+        var ctx = c.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        return { c: c, ctx: ctx, w: w, h: h };
+      }
+
+      function roundRect(ctx, x, y, w, h, r) {
+        var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + rr, y);
+        ctx.arcTo(x + w, y, x + w, y + h, rr);
+        ctx.arcTo(x + w, y + h, x, y + h, rr);
+        ctx.arcTo(x, y + h, x, y, rr);
+        ctx.arcTo(x, y, x + w, y, rr);
+        ctx.closePath();
+      }
+
+      function drawProfitCanvas() {
+        var env = prepCanvas('profitCanvas');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.profitCanvas = [];
+        var pad = { top: 28, right: 20, bottom: 42, left: 54 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+        if (state.pView === 'waterfall') {
+          var en = state.lang === 'en';
+          var steps = [
+            { lbl: en ? 'Services' : 'Services营收', val: 376.3, base: 0, col: pal.blue, tip: 'TTM Q3\'26 Google Services 营收: $376.3B (搜索、YouTube、Android/Play 与消费订阅)' },
+            { lbl: en ? '+Cloud' : '+Cloud营收', val: 93.2, base: 376.3, col: pal.green, tip: 'TTM Q3\'26 Google Cloud 营收: +$93.2B (Q3单季年化已达 $122.8B)，推升 TTM 总营收至 $471.1B' },
+            { lbl: en ? 'Gross Prof' : '=综合毛利', val: 281.2, base: 0, col: pal.violet, tip: 'TTM 综合毛利额约 $281.2B (综合毛利率 ~59.7%，已扣除 TAC 与数据中心成本)' },
+            { lbl: en ? 'Op Income' : '营业利润', val: 157.0, base: 0, col: pal.blue, tip: 'TTM 营业利润: $156.98B (营业利润率 33.3%)' },
+            { lbl: en ? 'Op Cash' : '经营现金流', val: 179.6, base: 0, col: pal.amber, tip: 'TTM 经营活动现金流 (OCF): $179.6B (强大的内生造血机器)' },
+            { lbl: en ? 'TTM FCF' : '自由现金流', val: 19.7, base: 0, col: pal.red, tip: '扣除 TTM $159.8B 巨额 AI 基建 CapEx 后，TTM 自由现金流阶段性压缩至 $19.7B' }
+          ];
+          var maxV = 520;
+          for (var g = 0; g <= 4; g++) {
+            var gv = (maxV / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+            ctx.strokeStyle = pal.grid; ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + gv.toFixed(0) + 'B', pad.left - 8, gy + 4);
+          }
+          var slotW = pw / steps.length, barW = Math.min(46, slotW * 0.58);
+          steps.forEach(function (s, i) {
+            var x = pad.left + i * slotW + (slotW - barW) / 2;
+            var yTop = pad.top + ph - ((s.base + s.val) / maxV) * ph;
+            var yBot = pad.top + ph - (s.base / maxV) * ph;
+            var bh = Math.max(5, yBot - yTop);
+            ctx.fillStyle = s.col;
+            roundRect(ctx, x, yTop, barW, bh, 6); ctx.fill();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText('$' + s.val.toFixed(1) + 'B', x + barW / 2, yTop - 7);
+            ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif';
+            ctx.fillText(s.lbl, x + barW / 2, pad.top + ph + 20);
+            hitRegions.profitCanvas.push({ x: x, y: yTop, w: barW, h: bh, title: s.lbl, body: s.tip });
+          });
+        } else {
+          var yrs = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'Q3\'26'];
+          var svcOpm = [39.0, 34.8, 35.2, 39.8, 40.7, 40.7];
+          var cldOpm = [-4.6, -11.3, 5.2, 14.2, 24.0, 36.2];
+          var minM = -15, maxM = 48;
+          for (var m = 0; m <= 4; m++) {
+            var mv = minM + ((maxM - minM) / 4) * m;
+            var my = pad.top + ph - (m / 4) * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText(mv.toFixed(0) + '%', pad.left - 8, my + 4);
+          }
+          function plotLine(arr, col, name) {
+            ctx.strokeStyle = col; ctx.lineWidth = 2.6; ctx.beginPath();
+            arr.forEach(function (v, idx) {
+              var px = pad.left + (idx / (yrs.length - 1)) * pw;
+              var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+              if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+            });
+            ctx.stroke();
+            arr.forEach(function (v, idx) {
+              var px = pad.left + (idx / (yrs.length - 1)) * pw;
+              var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+              ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py, 4.2, 0, Math.PI * 2); ctx.fill();
+              if (idx === 0 || idx === yrs.length - 1 || idx === 2) {
+                ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+                ctx.fillText(v.toFixed(1) + '%', px, py - 9);
+              }
+              hitRegions.profitCanvas.push({ x: px - 10, y: py - 10, w: 20, h: 20, title: yrs[idx] + ' · ' + name, body: name + ': ' + v.toFixed(1) + '%' });
+            });
+          }
+          yrs.forEach(function (y, idx) {
+            var px = pad.left + (idx / (yrs.length - 1)) * pw;
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText(y, px, pad.top + ph + 20);
+          });
+          plotLine(svcOpm, pal.blue, 'Google Services 营业利润率');
+          plotLine(cldOpm, pal.green, 'Google Cloud 营业利润率 (规模效应爆发)');
+        }
+      }
+
+      function drawCohortCanvas() {
+        var env = prepCanvas('cohortCanvas');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.cohortCanvas = [];
+        var pad = { top: 28, right: 22, bottom: 42, left: 54 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+        if (state.cView === 'ltv') {
+          var xLbls = ['Y1 初始上云', 'Y2 数据入湖', 'Y3 接入Gemini', 'Y4 部署Agent', 'Y5 全栈+TPU'];
+          var aiEnt = [100, 165, 310, 460, 620];
+          var stdEnt = [100, 122, 148, 175, 205];
+          var maxL = 680;
+          for (var g = 0; g <= 4; g++) {
+            var gv = (maxL / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText(gv.toFixed(0) + 'x%', pad.left - 8, gy + 4);
+          }
+          function drawCurve(arr, col, label) {
+            ctx.strokeStyle = col; ctx.lineWidth = 2.6; ctx.beginPath();
+            arr.forEach(function (v, idx) {
+              var px = pad.left + (idx / 4) * pw, py = pad.top + ph - (v / maxL) * ph;
+              if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+            });
+            ctx.stroke();
+            arr.forEach(function (v, idx) {
+              var px = pad.left + (idx / 4) * pw, py = pad.top + ph - (v / maxL) * ph;
+              ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py, 4.2, 0, Math.PI * 2); ctx.fill();
+              if (idx === 4 || idx === 2) {
+                ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+                ctx.fillText((v / 100).toFixed(1) + 'x', px, py - 8);
+              }
+              hitRegions.cohortCanvas.push({ x: px - 10, y: py - 10, w: 20, h: 20, title: xLbls[idx] + ' · ' + label, body: '首年支出基准指数: ' + v + '% (' + (v / 100).toFixed(2) + '倍)' });
+            });
+          }
+          xLbls.forEach(function (lb, idx) {
+            var px = pad.left + (idx / 4) * pw;
+            ctx.fillStyle = pal.tick; ctx.font = '10.5px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(lb, px, pad.top + ph + 20);
+          });
+          drawCurve(aiEnt, pal.green, '采纳 Gemini Enterprise + Wiz 全栈企业客户');
+          drawCurve(stdEnt, pal.blue, '传统仅使用基础 IaaS 存储/虚拟机客户');
+        } else {
+          var platforms = [
+            { name: 'Google Ads (FY25)', rev: 294.7, col: pal.blue, tip: 'FY2025 谷歌广告总收入 $294.69B（Search $224.5B + YouTube $40.4B + Network $29.8B），全球第一' },
+            { name: 'Meta Platforms', rev: 196.0, col: pal.violet, tip: 'FY2025 Meta 社交广告收入约 $196B，位居全球第二' },
+            { name: 'Amazon Ads', rev: 69.0, col: pal.amber, tip: 'FY2025 亚马逊零售站内与 Prime Video 广告约 $69B' }
+          ];
+          var maxR = 330;
+          for (var k = 0; k <= 3; k++) {
+            var kv = k * 100, ky = pad.top + ph - (kv / maxR) * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + kv + 'B', pad.left - 8, ky + 4);
+          }
+          var slot = pw / platforms.length, bw = Math.min(58, slot * 0.5);
+          platforms.forEach(function (p, idx) {
+            var x = pad.left + idx * slot + (slot - bw) / 2;
+            var bh = (p.rev / maxR) * ph, yt = pad.top + ph - bh;
+            ctx.fillStyle = p.col;
+            roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText('$' + p.rev.toFixed(1) + 'B', x + bw / 2, yt - 6);
+            ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif';
+            ctx.fillText(p.name, x + bw / 2, pad.top + ph + 20);
+            hitRegions.cohortCanvas.push({ x: x, y: yt, w: bw, h: bh, title: p.name, body: p.tip });
+          });
+        }
+      }
+
+      function drawCapitalCanvas() {
+        var env = prepCanvas('capitalCanvas');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.capitalCanvas = [];
+        var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+        if (state.kView === 'capex') {
+          var yrs = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'FY26E'];
+          var ocf = [91.7, 91.5, 101.7, 125.3, 164.7, 182.0];
+          var cap = [24.6, 31.5, 32.3, 52.5, 91.4, 200.0];
+          var maxC = 220;
+          for (var g = 0; g <= 4; g++) {
+            var cv = (maxC / 4) * g, cy = pad.top + ph - (g / 4) * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, cy); ctx.lineTo(pad.left + pw, cy); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + cv.toFixed(0) + 'B', pad.left - 8, cy + 4);
+          }
+          var slot = pw / yrs.length, bw = Math.min(22, slot * 0.34);
+          yrs.forEach(function (y, i) {
+            var cx = pad.left + i * slot + slot / 2;
+            var h1 = (ocf[i] / maxC) * ph, h2 = (cap[i] / maxC) * ph;
+            ctx.fillStyle = pal.blue;
+            roundRect(ctx, cx - bw - 2, pad.top + ph - h1, bw, h1, 4); ctx.fill();
+            ctx.fillStyle = i === 5 ? pal.amber : pal.green;
+            roundRect(ctx, cx + 2, pad.top + ph - h2, bw, h2, 4); ctx.fill();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 9.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+            ctx.fillText('$' + Math.round(cap[i]) + 'B', cx + bw / 2 + 2, pad.top + ph - h2 - 5);
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace';
+            ctx.fillText(y, cx, pad.top + ph + 20);
+            var fcf = (ocf[i] - cap[i]).toFixed(1);
+            hitRegions.capitalCanvas.push({ x: cx - bw - 4, y: pad.top, w: bw * 2 + 8, h: ph, title: y + ' 现金流与算力投入', body: '经营现金流 $' + ocf[i] + 'B vs 资本开支 $' + cap[i] + 'B → 自由现金流 $' + fcf + 'B' });
+          });
+        } else {
+          var tranches = [
+            { name: '美元与六币种高级债券', val: 80.8, col: pal.blue, tip: '2026 年发行 $45.0B 美元债与 $35.8B 英镑/欧元/瑞郎/加元/日元/澳元债（最长至 2126 年百年债）' },
+            { name: '公开普通股增发 (6月)', val: 20.5, col: pal.green, tip: '2026 年 6 月发行 2,900 万股 A 类与 2,900 万股 C 类普通股净募资 $20.5B' },
+            { name: '6.25% 强制可转优先股', val: 19.0, col: pal.violet, tip: '2026 年 6 月发行优先股净募资 $19.0B，并配 $1.0B 看涨期权上限对冲稀释' },
+            { name: 'ATM 市场计划已售份额', val: 12.4, col: pal.amber, tip: '$40B ATM 计划中已执行 $12.4B（主要用于员工股权税款净结算）' },
+            { name: '伯克希尔定向私募入股', val: 10.0, col: pal.red, tip: '2026 年 6 月伯克希尔·哈撒韦关联实体斥资 $10.0B 认购 A/C 类股战略背书' }
+          ];
+          var maxT = 92;
+          var rH = ph / tranches.length;
+          tranches.forEach(function (t, idx) {
+            var cy = pad.top + idx * rH + rH / 2;
+            var bh = 20, bl = (t.val / maxT) * (pw * 0.62);
+            var bx = pad.left + pw * 0.34;
+            ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'right';
+            ctx.fillText(t.name, bx - 10, cy + 4);
+            ctx.fillStyle = t.col;
+            roundRect(ctx, bx, cy - bh / 2, bl, bh, 5); ctx.fill();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'left';
+            ctx.fillText('$' + t.val.toFixed(1) + 'B', bx + bl + 7, cy + 4);
+            hitRegions.capitalCanvas.push({ x: pad.left, y: cy - 14, w: pw, h: 28, title: t.name, body: t.tip });
+          });
+        }
+      }
+
+      // Interactive 5-Year Cloud & FCF Recovery Simulator
+      var simSeries = [19.7, -25, 22, 78, 132, 182];
+      function drawSimMiniCanvas() {
+        var env = prepCanvas('simMiniCanvas');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        var pad = { top: 24, right: 18, bottom: 26, left: 48 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+        var yrs = ['TTM26', '27E', '28E', '29E', '30E', '31E'];
+        var minV = Math.min(-45, Math.min.apply(null, simSeries) - 10);
+        var maxV = Math.max(210, Math.max.apply(null, simSeries) * 1.15);
+        var zeroY = pad.top + ph - ((0 - minV) / (maxV - minV)) * ph;
+        ctx.strokeStyle = pal.grid;
+        ctx.beginPath(); ctx.moveTo(pad.left, zeroY); ctx.lineTo(pad.left + pw, zeroY); ctx.stroke();
+        ctx.strokeStyle = pal.green; ctx.lineWidth = 2.6; ctx.beginPath();
+        simSeries.forEach(function (v, i) {
+          var px = pad.left + (i / 5) * pw;
+          var py = pad.top + ph - ((v - minV) / (maxV - minV)) * ph;
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.stroke();
+        simSeries.forEach(function (v, i) {
+          var px = pad.left + (i / 5) * pw;
+          var py = pad.top + ph - ((v - minV) / (maxV - minV)) * ph;
+          ctx.fillStyle = v < 0 ? pal.red : pal.green;
+          ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText((v < 0 ? '-' : '') + '$' + Math.abs(Math.round(v)) + 'B', px, py - 8);
+          ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+          ctx.fillText(yrs[i], px, pad.top + ph + 16);
+        });
+      }
+
+      function runSimulator() {
+        var gC = parseFloat(document.getElementById('inpCloudCagr').value) / 100;
+        var gS = parseFloat(document.getElementById('inpSvcCagr').value) / 100;
+        var termCap = parseFloat(document.getElementById('inpCapexRatio').value) / 100;
+        document.getElementById('lblCloudCagr').textContent = (gC * 100).toFixed(1) + '%';
+        document.getElementById('lblSvcCagr').textContent = (gS * 100).toFixed(1) + '%';
+        document.getElementById('lblCapexRatio').textContent = (termCap * 100).toFixed(1) + '%';
+
+        // 2026 annualized base: Services ~$385B, Cloud ~$112B, Other ~$1.5B -> ~$498.5B
+        var svc = 385.0, cld = 112.0, shares = 12.35;
+        var capRates = [0.40, 0.37, 0.30, 0.24, 0.205, termCap];
+        var fcfArr = [19.7];
+        var opm31 = 33.0, eps31 = 18.0, rev31 = 800;
+        for (var y = 1; y <= 5; y++) {
+          svc *= (1 + gS);
+          cld *= (1 + gC);
+          var totRev = svc + cld + 2.5;
+          var opInc = svc * 0.408 + cld * 0.375 - 36.0;
+          var netInc = opInc * 0.81;
+          var ocf = netInc + totRev * 0.085;
+          var capex = totRev * capRates[y];
+          var fcf = ocf - capex;
+          fcfArr.push(fcf);
+          if (y >= 4 && fcf > 40) shares *= 0.985;
+          if (y === 5) {
+            rev31 = totRev;
+            opm31 = (opInc / totRev) * 100;
+            eps31 = netInc / shares;
+          }
+        }
+        document.getElementById('simRevOut').textContent = '$' + Math.round(rev31) + 'B';
+        document.getElementById('simOpmOut').textContent = opm31.toFixed(1) + '%';
+        document.getElementById('simFcfOut').textContent = '$' + Math.round(fcfArr[5]) + 'B';
+        document.getElementById('simEpsOut').textContent = '$' + eps31.toFixed(2);
+        simSeries = fcfArr;
+        drawSimMiniCanvas();
+      }
+
+      ['inpCloudCagr', 'inpSvcCagr', 'inpCapexRatio'].forEach(function (id) {
+        document.getElementById(id).addEventListener('input', runSimulator);
+      });
+
+      var PRESETS = {
+        bear: { c: 19, s: 6.5, r: 23 },
+        base: { c: 26, s: 9.5, r: 18 },
+        bull: { c: 33, s: 12.0, r: 15 }
+      };
+      document.getElementById('simPresets').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-preset]');
+        if (!b) return;
+        var k = b.getAttribute('data-preset');
+        var bs = this.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        var pr = PRESETS[k] || PRESETS.base;
+        document.getElementById('inpCloudCagr').value = pr.c;
+        document.getElementById('inpSvcCagr').value = pr.s;
+        document.getElementById('inpCapexRatio').value = pr.r;
+        runSimulator();
+      });
+
+      function bindChartTab(groupId, attr, stateKey, drawFn) {
+        var g = document.getElementById(groupId);
+        if (!g) return;
+        g.addEventListener('click', function (e) {
+          var b = e.target.closest('[' + attr + ']');
+          if (!b) return;
+          state[stateKey] = b.getAttribute(attr);
+          var bs = g.querySelectorAll('.mui-seg-btn');
+          for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+          drawFn();
+        });
+      }
+      bindChartTab('pChartTabs', 'data-pview', 'pView', drawProfitCanvas);
+      bindChartTab('cChartTabs', 'data-cview', 'cView', drawCohortCanvas);
+      bindChartTab('kChartTabs', 'data-kview', 'kView', drawCapitalCanvas);
+
+      function bindHoverTooltip(canvasId) {
+        var c = document.getElementById(canvasId), tip = document.getElementById('chartTooltip');
+        if (!c || !tip) return;
+        c.addEventListener('mousemove', function (ev) {
+          var r = c.getBoundingClientRect();
+          var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+          var list = hitRegions[canvasId] || [], hit = null;
+          for (var i = 0; i < list.length; i++) {
+            var rg = list[i];
+            if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+          }
+          if (hit) {
+            tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+            tip.style.display = 'block';
+            tip.style.left = Math.min(window.innerWidth - 300, ev.clientX + 14) + 'px';
+            tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+          } else {
+            tip.style.display = 'none';
+          }
+        });
+        c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+      }
+      ['profitCanvas', 'cohortCanvas', 'capitalCanvas'].forEach(bindHoverTooltip);
+
+      function drawAllCharts() {
+        drawProfitCanvas();
+        drawCohortCanvas();
+        drawCapitalCanvas();
+        drawSimMiniCanvas();
+      }
+
+      // Quick Jump Search (⌘K)
+      var QUICK_ITEMS = [
+        { id: 'mod-deck', t: 'M0 双栏指挥舱与核心公式', s: 'Q3 $127.6B 营收 (+25%) · Cloud +103% · 意图拍卖公式' },
+        { id: 'mod-pipeline', t: 'M1 五阶商业价值传导沙盘', s: '7大入口 → 意图竞价 → YouTube双轮 → Cloud/TPU → $200B基建' },
+        { id: 'mod-profit-pool', t: 'M2 利润池瀑布流与四大变现柱', s: 'TTM $179.6B OCF · Cloud 营业利润率跃升至 36.2%' },
+        { id: 'mod-cohort', t: 'M3 三级客户分层与全球广告格局', s: 'Gemini 企业客户支出翻 4 倍+ · $294.7B 全球第一广告盘' },
+        { id: 'mod-capital', t: 'M4 $2,000亿 AI 资本周期与 FCF 反转模拟', s: '伯克希尔 $10B 私募入股 · 2027–2031 现金流收获推演' },
+        { id: 'mod-matrix', t: 'M5 六大科技巨头范式矩阵与监管压测', s: 'GOOGL vs AAPL / MSFT / META / AMZN / NVDA 及 DOJ 救济' }
+      ];
+      var qInput = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+      function renderQuick(q) {
+        if (!qPop) return;
+        var kw = (q || '').trim().toLowerCase();
+        var matched = QUICK_ITEMS.filter(function (it) {
+          return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+        });
+        qPop.innerHTML = matched.map(function (it) {
+          return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+        }).join('');
+        qPop.classList.toggle('open', matched.length > 0);
+      }
+      if (qInput && qPop) {
+        qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+        qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+        qPop.addEventListener('click', function (e) {
+          var jb = e.target.closest('[data-jump]');
+          if (!jb) return;
+          var el = document.querySelector(jb.getAttribute('data-jump'));
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          qPop.classList.remove('open');
+        });
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+        });
+      }
+      document.addEventListener('keydown', function (e) {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          if (qInput) qInput.focus();
+        }
+      });
+
+      // Sidebar Toggle, Export & Print
+      var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+      sbBtn.addEventListener('click', function () {
+        if (window.innerWidth >= 1024) {
+          var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+          if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+          else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          try { localStorage.setItem('mui_portal_sidebar_collapsed_v1', col ? '0' : '1'); } catch (e) {}
+          setTimeout(drawAllCharts, 60);
+        } else {
+          var open = sb.classList.toggle('open');
+          bd.classList.toggle('open', open);
+        }
+      });
+      bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+      document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+        var tb = e.target.closest('[data-portal-theme]');
+        if (tb) {
+          var nt = tb.getAttribute('data-portal-theme');
+          applyTheme(nt, false);
+          try { localStorage.setItem(STORAGE_THEME_KEY, nt); } catch (err) {}
+        }
+      });
+      document.getElementById('exportHtmlBtn').addEventListener('click', function () {
+        var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = '谷歌公司商业模式解构.html'; a.click();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+        showToast('已导出 HTML 文件供本地保存');
+      });
+      document.getElementById('printPdfBtn').addEventListener('click', function () { window.print(); });
+
+      window.addEventListener('scroll', function () {
+        var bar = document.getElementById('readingProgressBar');
+        if (bar) {
+          var docH = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+        }
+      }, { passive: true });
+
+      try {
+        var savedChk = JSON.parse(localStorage.getItem(STORAGE_STRESS_KEY) || '{}');
+        document.querySelectorAll('[data-stress-chk]').forEach(function (chk) {
+          var k = chk.getAttribute('data-stress-chk');
+          chk.checked = !!savedChk[k];
+          chk.addEventListener('change', function () {
+            savedChk[k] = chk.checked;
+            try { localStorage.setItem(STORAGE_STRESS_KEY, JSON.stringify(savedChk)); } catch (err) {}
+            showToast(chk.checked ? '已加入重点跟踪清单' : '已取消跟踪标记');
+          });
+        });
+      } catch (e) {}
+
+      try {
+        applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+        applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+      } catch (e) {}
+
+      document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+        var nxt = state.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(nxt, false);
+        try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+      });
+      document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+        var lb = e.target.closest('[data-lang]');
+        if (!lb) return;
+        var nl = lb.getAttribute('data-lang');
+        applyLang(nl, false);
+        try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+      });
+
+      var resizeTimer = null;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(drawAllCharts, 90);
+      });
+
+      runSimulator();
+      drawAllCharts();
+    })();
+  </script>
+</body>
+</html>

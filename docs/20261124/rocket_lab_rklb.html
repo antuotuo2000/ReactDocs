@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="火箭实验室 Rocket Lab Corporation (NASDAQ: RKLB) 商业模式全景架构拆解：高频发射入口漏斗、80%营收占比太空系统主承包商、$35.7亿在手订单与$4.24亿客户预收浮存金、拟$80亿并购Iridium构建端到端太空应用现金牛（基于 FY2025 10-K 与 Q3 2026 10-Q）。" />
+  <title>火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解 | 数据中心</title>
+  
+  <style>
+    /* ==========================================================================
+       MUI Official Branding Design System (https://mui.com/)
+       Light Mode First (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16) + Sapphire (#0073E6)
+       Distinct Architectural Layout: Command Deck · 5-Node Pipeline · Dual Workbenches
+       ========================================================================== */
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg-canvas: #090D16;
+      --bg-canvas-elevated: #0C1320;
+      --bg-paper: rgba(15, 25, 36, 0.92);
+      --bg-paper-solid: #0F1924;
+      --bg-subtle: rgba(19, 35, 55, 0.65);
+      --bg-hover: rgba(51, 153, 255, 0.08);
+      --bg-active: rgba(0, 115, 230, 0.16);
+      --bg-appbar: rgba(9, 13, 22, 0.86);
+
+      --border-subtle: rgba(51, 153, 255, 0.14);
+      --border-default: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(51, 153, 255, 0.44);
+      --divider: rgba(148, 163, 184, 0.12);
+
+      --text-primary: #F3F6F9;
+      --text-secondary: #B2BAC2;
+      --text-muted: #7E8C9A;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #3399FF;
+      --mui-primary-lighter: #66B2FF;
+      --mui-primary-bg: rgba(0, 115, 230, 0.16);
+      --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+      --mui-success-text: #66BB6A;
+      --mui-success-bg: rgba(26, 162, 81, 0.14);
+      --mui-success-border: rgba(102, 187, 106, 0.34);
+
+      --mui-warning-text: #FFB74D;
+      --mui-warning-bg: rgba(255, 183, 77, 0.14);
+      --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+      --mui-error-text: #FF6B6B;
+      --mui-error-bg: rgba(235, 0, 20, 0.14);
+      --mui-error-border: rgba(255, 107, 107, 0.34);
+
+      --mui-violet-text: #A78BFA;
+      --mui-violet-bg: rgba(139, 92, 246, 0.14);
+      --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+      --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+      --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+    }
+
+    :root,
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg-canvas: #F8FAFC;
+      --bg-canvas-elevated: #F1F5F9;
+      --bg-paper: #FFFFFF;
+      --bg-paper-solid: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-hover: rgba(0, 115, 230, 0.06);
+      --bg-active: rgba(0, 115, 230, 0.11);
+      --bg-appbar: rgba(255, 255, 255, 0.88);
+
+      --border-subtle: #E2E8F0;
+      --border-default: #CBD5E1;
+      --border-strong: #0073E6;
+      --divider: #E2E8F0;
+
+      --text-primary: #0F1924;
+      --text-secondary: #334155;
+      --text-muted: #5B6B7C;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #0059B2;
+      --mui-primary-lighter: #0059B2;
+      --mui-primary-bg: rgba(0, 115, 230, 0.09);
+      --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+      --mui-success-text: #15803D;
+      --mui-success-bg: rgba(21, 128, 61, 0.09);
+      --mui-success-border: rgba(21, 128, 61, 0.26);
+
+      --mui-warning-text: #B45309;
+      --mui-warning-bg: rgba(180, 83, 9, 0.09);
+      --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+      --mui-error-text: #C62828;
+      --mui-error-bg: rgba(198, 40, 40, 0.08);
+      --mui-error-border: rgba(198, 40, 40, 0.26);
+
+      --mui-violet-text: #6D28D9;
+      --mui-violet-bg: rgba(109, 40, 217, 0.08);
+      --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+      --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+      --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      background-color: var(--bg-canvas);
+      background-image: var(--hero-glow);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+    a:hover { text-decoration: underline; }
+
+    .cite-link {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+      padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+      border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+      white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+    }
+    .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+    #readingProgressBar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); z-index: 1300; transition: width 0.08s linear;
+    }
+    #chartTooltip {
+      position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+      padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+    }
+    #muiSnackbar {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+      z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+      border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Sticky Frosted Glass MUI AppBar */
+    .mui-appbar {
+      position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+    }
+    .mui-appbar-inner {
+      max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+    .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mui-icon-btn, .mui-theme-icon-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+      color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+    }
+    .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+    .mui-dl-btn {
+      display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px;
+      border-radius: 10px; border: 1px solid #0073E6; background: linear-gradient(180deg, #1985F1 0%, #0073E6 100%);
+      color: #FFFFFF; font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.16s ease; white-space: nowrap;
+    }
+    .mui-dl-btn:hover { background: linear-gradient(180deg, #3399FF 0%, #0059B2 100%); }
+    .brand-monogram {
+      width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+      color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breadcrumbs .crumb-label { display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); font-weight: 600; }
+    .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+    .quick-search-wrap { position: relative; width: 210px; }
+    .quick-search-input {
+      width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+    }
+    .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+    .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+    .quick-search-kbd {
+      position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+      padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+    }
+    .quick-jump-popover {
+      position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+      border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+    }
+    .quick-jump-popover.open { display: block; }
+    .quick-jump-item {
+      display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+      border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+    }
+    .quick-jump-item:hover { background: var(--bg-hover); }
+    .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+    .mui-lang-switch {
+      display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+    }
+    .mui-lang-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+      font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+    }
+    .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+    .mui-chip {
+      display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px;
+      font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+    }
+    .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+    .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+    .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+    .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+    .mui-segmented {
+      display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+    }
+    .mui-seg-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+      padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mui-seg-btn:hover { color: var(--text-primary); }
+    .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+    /* Layout Shell & Sidebar */
+    .layout-shell {
+      max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+      gap: 26px; padding: 22px 20px 72px; align-items: start;
+    }
+    html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+    html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+    .mui-sidebar { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 13px 14px; box-shadow: var(--shadow-card); }
+    .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+    .sidebar-title { font-size: 0.96rem; font-weight: 800; color: var(--text-primary); }
+    .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42; margin: 4px 0 8px; }
+    .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; padding-top: 8px; border-top: 1px solid var(--divider); }
+    .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+    .sidebar-mini-label { color: var(--text-muted); }
+    .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+    .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 4px; }
+    .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .mui-nav-link {
+      display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+      font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+    }
+    .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+    .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+    .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+    /* Subfolder Hub inside Sidebar */
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+    .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 9px; }
+    .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+    .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+    .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+    .co-hub-item {
+      display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; font-family: inherit; cursor: pointer;
+      padding: 7px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); transition: all 0.16s ease;
+    }
+    .co-hub-item.co-hub-hidden { display: none !important; }
+    .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateY(-1px); }
+    .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+    .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+    .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+    .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+    .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+    .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+    .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+    .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .portal-reading-tools button {
+      font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 31px; color: var(--text-secondary);
+      border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease;
+    }
+    .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-hover); }
+
+    #portalDetailBackdrop { display: none; position: fixed; inset: 0; z-index: 1150; background: rgba(9, 13, 22, 0.5); backdrop-filter: blur(3px); }
+    @media (max-width: 1023px) {
+      .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+      .mui-sidebar {
+        position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+        background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+        transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+      }
+      body.portal-detail-drawer .mui-sidebar { transform: translateX(0); }
+      body.portal-detail-drawer #portalDetailBackdrop { display: block; }
+      .hide-sm { display: none !important; }
+      .quick-search-wrap { display: none; }
+    }
+
+    /* ==========================================================================
+       DISTINCT BUSINESS MODEL ARCHITECTURE LAYOUT (M0–M5 Workbench)
+       ========================================================================== */
+    .bm-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+    .bm-command-deck { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: stretch; }
+    @media (max-width: 1080px) { .bm-command-deck { grid-template-columns: minmax(0, 1fr); } }
+
+    .bm-thesis-deck {
+      background-color: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+      padding: 26px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+      position: relative; overflow: hidden;
+    }
+    .bm-thesis-deck::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #0073E6 0%, #3399FF 55%, #16A34A 100%);
+    }
+    .bm-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .bm-display-h1 { font-size: clamp(1.48rem, 2.3vw, 2.08rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .bm-gradient-txt {
+      background: linear-gradient(92deg, #0073E6 0%, #0099FF 52%, #15803D 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    html[data-theme="dark"] .bm-gradient-txt {
+      background: linear-gradient(92deg, #66B2FF 0%, #3399FF 50%, #66BB6A 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .bm-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
+    .bm-lead strong { color: var(--text-primary); }
+
+    .bm-lens-panel {
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .bm-lens-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-equation-bar {
+      padding: 9px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border);
+      font-size: 0.79rem; font-weight: 700; color: var(--mui-primary-lighter);
+    }
+    .bm-lens-body { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.62; }
+
+    .bm-telemetry-ledger {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+      padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+    }
+    .bm-ledger-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--divider); }
+    .bm-ledger-title { font-size: 0.86rem; font-weight: 800; display: flex; align-items: center; gap: 7px; }
+    .bm-pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18); }
+    .bm-telemetry-rows { display: flex; flex-direction: column; gap: 10px; }
+    .bm-tel-item { padding: 10px 12px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); transition: all 0.15s ease; }
+    .bm-tel-item:hover { border-color: var(--mui-primary-border); transform: translateX(2px); }
+    .bm-tel-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .bm-tel-lbl { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-tel-val { font-size: 1.12rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tel-bar-track { height: 5px; border-radius: 999px; background: var(--border-subtle); margin: 6px 0 5px; overflow: hidden; display: flex; }
+    .bm-tel-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #0073E6, #3399FF); }
+    .bm-tel-sub { display: flex; justify-content: space-between; font-size: 0.71rem; color: var(--text-muted); gap: 6px; }
+
+    .bm-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+    .bm-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+    .bm-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+    html[data-theme="dark"] .bm-kicker { color: var(--mui-primary-light); }
+    .bm-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+    .bm-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+    /* Horizontal 5-Node Pipeline */
+    .bm-pipeline-track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+    @media (max-width: 1120px) { .bm-pipeline-track { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 680px) { .bm-pipeline-track { grid-template-columns: minmax(0, 1fr); } }
+    .bm-node-btn {
+      text-align: left; padding: 13px 14px; border-radius: 13px; border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit;
+      transition: all 0.18s ease; display: flex; flex-direction: column; gap: 6px;
+    }
+    .bm-node-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateY(-2px); }
+    .bm-node-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 6px 16px rgba(0, 115, 230, 0.14); }
+    .bm-node-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .bm-node-step {
+      width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border);
+    }
+    .bm-node-btn.active .bm-node-step { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+    .bm-node-tag { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+    .bm-node-title { font-size: 0.85rem; font-weight: 800; line-height: 1.3; }
+    .bm-node-kpi { font-size: 0.74rem; font-weight: 700; color: var(--mui-primary-lighter); }
+
+    .bm-node-inspector {
+      border-radius: 15px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+      padding: 20px 22px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: center;
+    }
+    @media (max-width: 900px) { .bm-node-inspector { grid-template-columns: minmax(0, 1fr); } }
+    .bm-ins-prose h3 { font-size: 1.05rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+    .bm-ins-prose p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+    .bm-ins-formula {
+      margin-top: 12px; padding: 9px 12px; border-radius: 9px; background: var(--bg-paper-solid);
+      border-left: 3px solid var(--mui-primary-main); font-size: 0.79rem; color: var(--text-primary); font-weight: 600;
+    }
+    .bm-ins-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-ins-card { padding: 12px 13px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+    .bm-ins-card b { display: block; font-size: 1.12rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-ins-card span { font-size: 0.73rem; color: var(--text-muted); display: block; margin-top: 2px; }
+
+    /* Asymmetric Splits */
+    .bm-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+    .bm-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+    .bm-split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+    @media (max-width: 1040px) { .bm-split-75, .bm-split-57, .bm-split-66 { grid-template-columns: minmax(0, 1fr); } }
+
+    .bm-subpanel {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px;
+      padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .bm-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bm-subhead h3 { font-size: 1.02rem; font-weight: 800; color: var(--text-primary); }
+    .bm-canvas-box { position: relative; width: 100%; height: 305px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+    .bm-canvas-box canvas { width: 100%; height: 100%; display: block; }
+    .bm-chart-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; }
+
+    .bm-tier-list { display: flex; flex-direction: column; gap: 9px; }
+    .bm-tier-card { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); transition: all 0.15s ease; }
+    .bm-tier-card:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+    .bm-tier-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+    .bm-tier-name { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); }
+    .bm-tier-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .bm-cohort-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bm-cohort-stat { padding: 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+    .bm-cohort-stat .lbl { font-size: 0.72rem; color: var(--text-muted); }
+    .bm-cohort-stat .val { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 2px 0; }
+    .bm-cohort-stat .delta { font-size: 0.71rem; font-weight: 700; color: var(--mui-success-text); }
+    .bm-ratchet-note {
+      padding: 12px 14px; border-radius: 11px; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border);
+      font-size: 0.80rem; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    .bm-sim-sliders { display: flex; flex-direction: column; gap: 11px; }
+    .bm-slider-row { display: flex; flex-direction: column; gap: 4px; }
+    .bm-slider-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+    .bm-slider-lbl b { color: var(--mui-primary-lighter); }
+    .bm-slider-row input[type="range"] { width: 100%; accent-color: #0073E6; height: 6px; cursor: pointer; }
+    .bm-sim-outputs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    @media (max-width: 640px) { .bm-sim-outputs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .bm-sim-out { padding: 10px 8px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-align: center; }
+    .bm-sim-out b { display: block; font-size: 1.02rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .bm-sim-out span { font-size: 0.69rem; color: var(--text-muted); }
+
+    .bm-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-bottom: 18px; }
+    .bm-table { width: 100%; border-collapse: collapse; font-size: 0.81rem; min-width: 780px; background: var(--bg-paper-solid); }
+    .bm-table th {
+      text-align: left; padding: 11px 13px; background: var(--bg-subtle); color: var(--text-muted);
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-subtle);
+    }
+    .bm-table td { padding: 11px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: middle; }
+    .bm-table tr:last-child td { border-bottom: none; }
+    .bm-table tr.is-rklb td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+    .bm-table tr:hover td { background: var(--bg-hover); }
+
+    .bm-stress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    @media (max-width: 960px) { .bm-stress-grid { grid-template-columns: minmax(0, 1fr); } }
+    .bm-stress-card {
+      padding: 16px; border-radius: 13px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+    }
+    .bm-stress-card h4 { font-size: 0.89rem; font-weight: 800; color: var(--text-primary); margin-top: 6px; }
+    .bm-stress-card p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+    .bm-check-label {
+      display: flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 700; color: var(--mui-primary-lighter);
+      cursor: pointer; padding-top: 8px; border-top: 1px dashed var(--border-default);
+    }
+    .bm-check-label input { accent-color: #0073E6; width: 15px; height: 15px; cursor: pointer; }
+
+    .bm-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+    .bm-source-item {
+      display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease;
+    }
+    .bm-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+    .bm-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+    .bm-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+    @media print {
+      .mui-appbar, .mui-sidebar, #readingProgressBar, #portalDetailBackdrop { display: none !important; }
+      .layout-shell { display: block !important; padding: 0 !important; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+  <div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky Frosted Glass MUI AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">RKLB</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <span class="crumb-label hide-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </span>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="火箭实验室 (Rocket Lab) 商业模式架构拆解" data-i18n-en="Rocket Lab Business Model Architecture">火箭实验室 (Rocket Lab) 商业模式架构拆解</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: RKLB</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">Q3 2026 10-Q · Backlog $3.57B</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索飞轮或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <button type="button" id="topDownloadBtn" class="mui-dl-btn" title="下载独立 HTML 网页">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n-zh="下载 HTML" data-i18n-en="Download">下载 HTML</span>
+        </button>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left MUI Documentation Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="商业模式模块与套件导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">RKLB · BUSINESS MODEL</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="Rocket Lab 商业模式图谱" data-i18n-en="Rocket Lab Business Model">Rocket Lab 商业模式图谱</div>
+        <p class="sidebar-subtitle" data-i18n-zh="100次高频发射入口 × 80%营收占比太空系统主承包商 × $4.24亿客户预收浮存金 × 拟$80亿并购Iridium卫星通信现金牛" data-i18n-en="100-Launch Orbital Funnel × 80% Space Systems Prime × $424M Customer Float × Pending $8B Iridium Cash Engine">100次高频发射入口 × 80%营收占比太空系统主承包商 × $4.24亿客户预收浮存金 × 拟$80亿并购Iridium卫星通信现金牛</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="商业原型" data-i18n-en="Archetype">商业原型</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="火箭引流 + 星网复利" data-i18n-en="Launch + Space Prime">火箭引流 + 星网复利</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Q3营收 / 同比增速" data-i18n-en="Q3 Rev / YoY">Q3营收 / 同比增速</span>
+            <span class="sidebar-mini-val mono">$267.8M · +72.7%</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="在手订单 / 净现金" data-i18n-en="Backlog / Net Cash">在手订单 / 净现金</span>
+            <span class="sidebar-mini-val mono">$3.57B · +$4.70B</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="套件导航与架构目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261124">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261124 · 45/53</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="rocket_lab_2026_2032.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="spacex.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (53)" data-i18n-en="All (53)">全部 (53)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (53)" data-i18n-en="Company (53)">公司深度 (53)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="Meta未来十年（2026–2032）战略图谱.html" title="Meta META 2026–2032 战略与增长曲线"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta META 2026–2032 战略与增长曲线" data-i18n-en="Meta 2026–2032 &amp;">Meta META 2026–2032 战略与增长曲线</span><span class="co-hub-meta mono">Meta未来十年（2026–2032）战略图谱.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">alphabet_inc_googl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">alphabet_inc_googl (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">alphabet_inc_googl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">alphabet_inc_googl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amazon_com_amzn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amazon_com_amzn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">amazon_com_amzn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">amazon_com_amzn4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic.html" title="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动" data-i18n-en="Anthropic Corporate Culture &amp;:, &amp;">Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动</span><span class="co-hub-meta mono">anthropic.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_2026_2032.html" title="Anthropic 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Anthropic 2026–2032 &amp;">Anthropic 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">anthropic_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant (1).html" title="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告" data-i18n-en="Anthropic, PBC (ANT) Corporate Culture &amp; Org Architecture Deep Dive">Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">anthropic_pbc_ant (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant.html" title="Anthropic, PBC (ANT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 商业模式架构深度拆解" data-i18n-en="Anthropic, PBC (ANT) Business Model Deep DiveBreakdown">Anthropic, PBC (ANT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">anthropic_pbc_ant.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl (1).html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple_inc_aapl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple_inc_aapl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl2.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple_inc_aapl2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl3.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple_inc_aapl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_2026_2032.html" title="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Arm Holdings Arm 2026–2032 &amp;">安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">arm_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (1).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp; Org Architecture Deep Dive">安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">arm_holdings_arm (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (2).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp;">安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">arm_holdings_arm (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm.html" title="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解" data-i18n-en="Arm Holdings (ARM) Business Model Deep DiveBreakdown">安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解</span><span class="co-hub-meta mono">arm_holdings_arm.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle.html" title="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理" data-i18n-en="Circle Corporate Culture &amp;:, &amp;">Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理</span><span class="co-hub-meta mono">circle.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_2026_2032.html" title="Circle 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Circle 2026–2032 &amp;">Circle 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">circle_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl (1).html" title="Circle Internet Group (CRCL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 商业模式架构深度拆解" data-i18n-en="Circle Internet Group (CRCL) Business Model Deep DiveBreakdown">Circle Internet Group (CRCL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">circle_internet_group_crcl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl.html" title="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告" data-i18n-en="Circle Internet Group (CRCL) Corporate Culture &amp; Org Architecture Deep Dive">Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">circle_internet_group_crcl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta.html" title="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力" data-i18n-en="MetaCorporate Culture &amp;: People, &amp; Compute">Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力</span><span class="co-hub-meta mono">meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_2026_2032.html" title="Meta公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Meta 2026–2032 &amp;">Meta公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">meta_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta (1).html" title="Meta公司 Meta Platforms (META) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 商业模式架构深度拆解" data-i18n-en="Meta Platforms (META) Business Model Deep DiveBreakdown">Meta公司 Meta Platforms (META) 商业模式架构深度拆解</span><span class="co-hub-meta mono">meta_meta_platforms_meta (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta.html" title="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告" data-i18n-en="Meta Platforms (META) Corporate Culture &amp; Org Architecture Deep Dive">Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">meta_meta_platforms_meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">microsoft_msft (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">microsoft_msft.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">microsoft_msft2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">microsoft_msft3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx (1).html" title="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解" data-i18n-en="Netflix (NFLX) Business Model Deep DiveBreakdown">奈飞公司 Netflix (NFLX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">netflix_nflx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx.html" title="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告" data-i18n-en="Netflix (NFLX) Corporate Culture &amp; Org Architecture Deep Dive">奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">netflix_nflx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx2.html" title="奈飞公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Netflix 2026–2032 &amp;">奈飞公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">netflix_nflx2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx3.html" title="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承" data-i18n-en="NetflixCorporate Culture &amp;:, &amp;">奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承</span><span class="co-hub-meta mono">netflix_nflx3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_2032.html" title="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="On Holding AG 2026–2032 &amp;">昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">on_holding_ag_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_20323.html" title="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治" data-i18n-en="On HoldingCorporate Culture &amp;:, &amp; People">昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治</span><span class="co-hub-meta mono">on_holding_ag_2026_20323.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon (1).html" title="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告" data-i18n-en="On Holding AG (ONON) Corporate Culture &amp; Org Architecture Deep Dive">昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">on_holding_ag_onon (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon.html" title="昂跑 On Holding AG (ONON) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 商业模式架构深度拆解" data-i18n-en="On Holding AG (ONON) Business Model Deep DiveBreakdown">昂跑 On Holding AG (ONON) 商业模式架构深度拆解</span><span class="co-hub-meta mono">on_holding_ag_onon.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">rocket_lab (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">rocket_lab.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">rocket_lab_2026_2032.html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">45</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">rocket_lab_rklb.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex.html" title="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承"><span class="co-hub-ticker mono">46</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承" data-i18n-en="SpaceX Corporate Culture &amp;:, &amp;">SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承</span><span class="co-hub-meta mono">spacex.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_2026_2032.html" title="SpaceX 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">47</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="SpaceX 2026–2032 &amp;">SpaceX 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">spacex_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx (1).html" title="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">48</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解" data-i18n-en="SpaceX (NASDAQ: SPCX) Business Model Deep DiveBreakdown">SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">spacex_nasdaq_spcx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx.html" title="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">49</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX (NASDAQ: SPCX) Corporate Culture &amp; Org Architecture Deep Dive">SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">spacex_nasdaq_spcx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla (1).html" title="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">50</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告" data-i18n-en="Tesla, Inc. (TSLA) Corporate Culture &amp; Org Architecture Deep Dive">特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">tesla_inc_tsla (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla.html" title="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">51</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解" data-i18n-en="Tesla, Inc. (TSLA) Business Model Deep DiveBreakdown">特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">tesla_inc_tsla.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla2.html" title="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站"><span class="co-hub-ticker mono">52</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站" data-i18n-en="Tesla 2026–2032 &amp; AI">特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站</span><span class="co-hub-meta mono">tesla_inc_tsla2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla3.html" title="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军"><span class="co-hub-ticker mono">53</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军" data-i18n-en="TeslaCorporate Culture &amp;: First Principles, &amp; COO">特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军</span><span class="co-hub-meta mono">tesla_inc_tsla3.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" data-i18n-zh="商业架构工作台 (M0–M5)" data-i18n-en="Workbench Modules (M0–M5)">商业架构工作台 (M0–M5)</div>
+        <ul class="mui-nav-list" id="tocList">
+          <li><a href="#mod-deck" class="mui-nav-link active"><span class="nav-idx mono">M0</span><span data-i18n-zh="双栏指挥舱与三阶公式" data-i18n-en="Command Deck &amp; Formula">双栏指挥舱与三阶公式</span></a></li>
+          <li><a href="#mod-pipeline" class="mui-nav-link"><span class="nav-idx mono">M1</span><span data-i18n-zh="五阶端到端价值链沙盘" data-i18n-en="5-Node End-to-End Pipeline">五阶端到端价值链沙盘</span></a></li>
+          <li><a href="#mod-profit-pool" class="mui-nav-link"><span class="nav-idx mono">M2</span><span data-i18n-zh="营收毛利瀑布与系统四层塔" data-i18n-en="P&amp;L Waterfall &amp; 4-Tier Stack">营收毛利瀑布与系统四层塔</span></a></li>
+          <li><a href="#mod-cohort" class="mui-nav-link"><span class="nav-idx mono">M3</span><span data-i18n-zh="全栈搭售棘轮与合同LTV" data-i18n-en="Cross-Sell Ratchet &amp; LTV">全栈搭售棘轮与合同LTV</span></a></li>
+          <li><a href="#mod-capital" class="mui-nav-link"><span class="nav-idx mono">M4</span><span data-i18n-zh="预收浮存金与并表推演器" data-i18n-en="Customer Float &amp; 5Y Lab">预收浮存金与并表推演器</span></a></li>
+          <li><a href="#mod-matrix" class="mui-nav-link"><span class="nav-idx mono">M5</span><span data-i18n-zh="商业航天对标矩阵与压测" data-i18n-en="Space Peer Matrix &amp; Stress">商业航天对标矩阵与压测</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance &amp; Export">阅读与导出工具</div>
+        <div class="side-theme-group" role="group" aria-label="Theme">
+          <button type="button" id="sideThemeLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+          <button type="button" id="sideThemeDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Distinct Non-Linear Workspace -->
+    <main class="bm-workspace">
+
+      <!-- MODULE 0: ASYMMETRIC COMMAND DECK -->
+      <section id="mod-deck" class="bm-command-deck">
+        <div class="bm-thesis-deck">
+          <div>
+            <div class="bm-badge-row">
+              <span class="mui-chip mui-chip-primary mono" data-i18n-zh="商业范式：高频入轨运载入口 × 垂直整星国防主承包商 × L波段星座年金" data-i18n-en="ARCHETYPE: Orbital Launch Funnel × Space Systems Prime × L-Band Constellation Annuity">商业范式：高频入轨运载入口 × 垂直整星国防主承包商 × L波段星座年金</span>
+              <span class="mui-chip mui-chip-success mono">Q3 2026 10-Q 审计核验</span>
+              <span class="mui-chip mui-chip-violet mono">100 次 Electron 发射 · 59 连胜</span>
+            </div>
+
+            <h1 class="bm-display-h1" data-i18n-zh="Rocket Lab 商业模式解构：<span class='bm-gradient-txt'>以火箭高频发射卡位稀缺入口，靠 80% 占比的太空系统与 $80亿 铱星网络收割全栈复利</span>" data-i18n-en="Deconstructing Rocket Lab's Business Model: <span class='bm-gradient-txt'>Capture Access via Cadence Launch, Compound via 80% Space Systems &amp; $8B Iridium Network</span>">
+              Rocket Lab 商业模式解构：<span class="bm-gradient-txt">以火箭高频发射卡位稀缺入口，靠 80% 占比的太空系统与 $80亿 铱星网络收割全栈复利</span>
+            </h1>
+
+            <p class="bm-lead" id="heroLeadText">
+              资本市场早年常将 <strong>Rocket Lab (NASDAQ: RKLB)</strong> 简单归类为“小型火箭发射商”，但翻开其 2026 年三季报，这实质上是一台沿袭 SpaceX 终局路径、唯一在美股公开交易的<strong>“三级端到端太空复利机器”</strong>：第一级凭借全球商业发射频次第二的 <strong>Electron 与 HASTE 高超音速火箭</strong>（2026 年 11 月 14 日达成历史性第 100 次发射、连续 59 发成功，每 8 天下线一枚）垄断专车入轨信用入口，Q3 发射营收 <strong>$53.1M（分部毛利率 35.3%，发射积压订单暴涨至 $18.5亿 / 117 发）</strong>
+              <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">Q3 2026 财报 ↗</a>；
+              第二级将发射信任顺势转化为整星制造与核心部组件垄断，推动 <strong>Space Systems（太空系统）</strong>在 Q3 贡献 <strong>$214.8M 营收（占总营收 80.2%，同比激增 +88.1%）</strong>，豪取美国太空发展局（SDA）逾 <strong>$13.3亿</strong> 星座主承包大单
+              <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000012/rklb-02262026ex991.htm" target="_blank" rel="noopener noreferrer">FY25 年报公报 ↗</a>；
+              第三级通过现金对价已全额募资到位的 <strong>~$80亿美元并购 Iridium（铱星通信）</strong>，一步跨入拥有 <strong>255万+ 订阅用户、66 颗在轨卫星、全球 L 波段频谱与 57% OEBITDA 利润率（$4.95亿/年）</strong>的太空通信经常性现金牛
+              <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully" target="_blank" rel="noopener noreferrer">Iridium 并购公报 ↗</a>。
+            </p>
+          </div>
+
+          <!-- Interactive 3-Lens Business Formula Switcher -->
+          <div class="bm-lens-panel">
+            <div class="bm-lens-head">
+              <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换商业本质透镜：" data-i18n-en="SWITCH ECONOMIC LENS:">切换商业本质透镜：</span>
+              <div class="mui-segmented" id="lensTabs">
+                <button type="button" class="mui-seg-btn active" data-lens="0" data-i18n-zh="① 火箭引流×整星放大器" data-i18n-en="① Launch-to-Bus Multiplier">① 火箭引流×整星放大器</button>
+                <button type="button" class="mui-seg-btn" data-lens="1" data-i18n-zh="② 垂直整合毛利跃迁" data-i18n-en="② Vertical BOM Margin">② 垂直整合毛利跃迁</button>
+                <button type="button" class="mui-seg-btn" data-lens="2" data-i18n-zh="③ 预收浮存×铱星现金牛" data-i18n-en="③ Customer Float &amp; Iridium">③ 预收浮存×铱星现金牛</button>
+              </div>
+            </div>
+            <div class="bm-equation-bar mono" id="lensFormula">
+              单任务全栈价值 = 专车发射费 ($7.8M–$70M) + 整星平台与载荷合同 ($25M–$45M/颗) + 在轨L波段通信订阅年金 (57% OEBITDA)
+            </div>
+            <div class="bm-lens-body" id="lensBody">
+              纯火箭初创公司困于单次运费天花板与发射窗口波动（过去十年逾 60 家小型火箭商折戟），而 Rocket Lab 把火箭变成<strong>“零获客成本的信任漏斗”</strong>——先为全球逾 1,700 次太空任务供应太阳翼、反作用飞轮、分离环与激光终端，再以整星总包商身份承接百亿级国防星座。
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Financial Telemetry Ledger -->
+        <aside class="bm-telemetry-ledger" aria-label="Q3 2026 核心经济遥测">
+          <div class="bm-ledger-head">
+            <div class="bm-ledger-title">
+              <span class="bm-pulse-dot"></span>
+              <span data-i18n-zh="Q3 2026 商业模型核心遥测账本" data-i18n-en="Q3 2026 Business Model Telemetry">Q3 2026 商业模型核心遥测账本</span>
+            </div>
+            <a class="cite-link mono" href="https://sec-api.io/insights/rocket-lab-rklb-q3-2026-earnings-3-57bn-backlog-neutron-moved-to-2027-and-the-pending-iridium-deal-sec-filing-analysis" target="_blank" rel="noopener noreferrer">10-Q 拆解 ↗</a>
+          </div>
+
+          <div class="bm-telemetry-rows">
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="Q3 单季总营收 (系统 80.2% / 发射 19.8%)" data-i18n-en="Q3 Total Revenue (80.2% Sys / 19.8% Launch)">Q3 单季总营收 (系统 80.2% / 发射 19.8%)</span>
+                <span class="bm-tel-val mono">$267.83M <small style="font-size:0.73rem;color:var(--mui-success-text);">+72.7%</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:80.2%;"></div>
+                <div style="width:19.8%;background:#16A34A;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>Space Systems $214.8M (+88%)</span><span>Launch $53.1M (+30%)</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="在手订单储备 Backlog (单季净增 $12.1亿)" data-i18n-en="Total Backlog (+$1.21B QoQ Surge)">在手订单储备 Backlog (单季净增 $12.1亿)</span>
+                <span class="bm-tel-val mono">$3.57B <small style="font-size:0.73rem;color:var(--mui-success-text);">+51.7% QoQ</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:51.8%;"></div>
+                <div style="width:48.2%;background:#7C3AED;"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>发射 $1.85B (117发/16发Neutron)</span><span>太空系统 $1.72B (55+在研星)</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="毛利率扩张阶梯 (FY21 -3.0% → 9M26)" data-i18n-en="Gross Margin Trajectory (9M26 Non-GAAP)">毛利率扩张阶梯 (FY21 -3.0% → 9M26)</span>
+                <span class="bm-tel-val mono">38.4% <small style="font-size:0.73rem;color:var(--mui-primary-lighter);">Non-GAAP</small></span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:76%;background:linear-gradient(90deg,#0073E6,#16A34A);"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>Q3 GAAP GM 33.6% (超指引)</span><span>9M26 Non-GAAP GM 40.7%</span></div>
+            </div>
+
+            <div class="bm-tel-item">
+              <div class="bm-tel-top">
+                <span class="bm-tel-lbl" data-i18n-zh="资产负债表净现金 &amp; 客户预收浮存金" data-i18n-en="Net Cash Fortress &amp; Customer Float">资产负债表净现金 &amp; 客户预收浮存金</span>
+                <span class="bm-tel-val mono">$4.70B / $424M</span>
+              </div>
+              <div class="bm-tel-bar-track">
+                <div class="bm-tel-bar-fill" style="width:94%;background:linear-gradient(90deg,#16A34A,#22C55E);"></div>
+              </div>
+              <div class="bm-tel-sub mono"><span>有息负债仅 $3.0M · Q3 OCF +$7.2M</span><span>Iridium 现金对价已全额到位</span></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- MODULE 1: HORIZONTAL 5-NODE VALUE-CHAIN PIPELINE -->
+      <section id="mod-pipeline" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 01 · END-TO-END SPACE VALUE CAPTURE PIPELINE</span>
+            <h2 class="bm-h2" data-i18n-zh="五阶太空价值链传导沙盘：从底层宇航级部组件到在轨通信订阅年金" data-i18n-en="5-Node Space Value Pipeline: From Merchant Components to Orbital Subscription Annuity">五阶太空价值链传导沙盘：从底层宇航级部组件到在轨通信订阅年金</h2>
+            <p class="bm-head-desc" data-i18n-zh="点击下方任一价值链环节，拆解 Rocket Lab 如何内化供应商毛利、打破传统军工成本加成潜规则并锁死全周期现金流。" data-i18n-en="Click any node in the horizontal pipeline to inspect Rocket Lab's vertical BOM control, pricing power, and unit economics.">点击下方任一价值链环节，拆解 Rocket Lab 如何内化供应商毛利、打破传统军工成本加成潜规则并锁死全周期现金流。</p>
+          </div>
+          <span class="mui-chip mui-chip-primary mono" data-i18n-zh="点击节点交互拆解 (01 → 05)" data-i18n-en="Interactive 5-Stage Flow">点击节点交互拆解 (01 → 05)</span>
+        </div>
+
+        <div class="bm-pipeline-track" id="pipelineTrack">
+          <button type="button" class="bm-node-btn active" data-node="0">
+            <div class="bm-node-top"><span class="bm-node-step mono">01</span><span class="bm-node-tag mono">SUBSYSTEMS</span></div>
+            <div class="bm-node-title" data-i18n-zh="宇航级核心部组件军火商" data-i18n-en="Merchant Component Arsenal">宇航级核心部组件军火商</div>
+            <div class="bm-node-kpi mono">赋能全球 1,700+ 次太空任务</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="1">
+            <div class="bm-node-top"><span class="bm-node-step mono">02</span><span class="bm-node-tag mono">PRIME BUS</span></div>
+            <div class="bm-node-title" data-i18n-zh="整星平台与光电载荷总包" data-i18n-en="Spacecraft &amp; EO/IR Prime">整星平台与光电载荷总包</div>
+            <div class="bm-node-kpi mono">SDA &gt;$1.33B · 55+颗在造卫星</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="2">
+            <div class="bm-node-top"><span class="bm-node-step mono">03</span><span class="bm-node-tag mono">CADENCE LAUNCH</span></div>
+            <div class="bm-node-title" data-i18n-zh="高频专车入轨与高超音速靶机" data-i18n-en="Electron &amp; HASTE Cadence">高频专车入轨与高超音速靶机</div>
+            <div class="bm-node-kpi mono">100次发射 · 8天造1枚火箭</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="3">
+            <div class="bm-node-top"><span class="bm-node-step mono">04</span><span class="bm-node-tag mono">MEDIUM REUSE</span></div>
+            <div class="bm-node-title" data-i18n-zh="Neutron 可复用中型星座运力" data-i18n-en="Neutron Medium-Lift Fleet">Neutron 可复用中型星座运力</div>
+            <div class="bm-node-kpi mono">首飞前已锁 16 发 · $70M/发</div>
+          </button>
+
+          <button type="button" class="bm-node-btn" data-node="4">
+            <div class="bm-node-top"><span class="bm-node-step mono">05</span><span class="bm-node-tag mono">SPACE APPS</span></div>
+            <div class="bm-node-title" data-i18n-zh="Iridium 频谱与全球在轨订阅网" data-i18n-en="Iridium L-Band Annuity">Iridium 频谱与全球在轨订阅网</div>
+            <div class="bm-node-kpi mono">255万+订户 · $495M OEBITDA</div>
+          </button>
+        </div>
+
+        <div class="bm-node-inspector" id="nodeInspector">
+          <div class="bm-ins-prose">
+            <span class="mui-chip mui-chip-primary mono" id="nodeBadge">NODE 01 · MERCHANT SPACECRAFT SUBSYSTEMS</span>
+            <h3 id="nodeTitle">底层宇航部组件“卖铲人”：竞争对手每造一颗卫星，都在给 Rocket Lab 交过路费</h3>
+            <p id="nodeDesc">
+              通过精准并购整合 Sinclair（飞轮与星敏）、PSC（Lightband 星箭分离装置）、SolAero（全球稀缺空间级三结砷化镓太阳电池）、ASI（飞行软件）、Mynaric（激光通信终端）与 Motiv（空间机械臂），Rocket Lab 把行业最卡脖子的供应链瓶颈全部收归麾下。对外赚取高毛利部组件现货现金流，对内消除自身星座造星的三级供应商加价与交期延误。
+            </p>
+            <div class="bm-ins-formula mono" id="nodeFormula">
+              商业传导：掌控空间太阳能、激光终端与姿控飞轮 → Q3 产品类营收达 $197.5M（+89.8% YoY），直接推动毛利率超预期突破 38.4% (Non-GAAP)
+            </div>
+          </div>
+          <div class="bm-ins-kpis" id="nodeKpis">
+            <div class="bm-ins-card"><b class="mono">1,700+</b><span>搭载 RKLB 部件的全球航天任务</span></div>
+            <div class="bm-ins-card"><b class="mono">$26.0M</b><span>Mynaric 激光终端 Q3 单季并表贡献</span></div>
+            <div class="bm-ins-card"><b class="mono">$197.5M</b><span>Q3 2026 产品收入 (+89.8% YoY)</span></div>
+            <div class="bm-ins-card"><b class="mono">40%–50%+</b><span>成熟宇航级核心部件稳态毛利带</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 2: 7:5 ASYMMETRIC SPLIT (REVENUE/MARGIN WATERFALL + 4-TIER SPACE SYSTEMS STACK) -->
+      <section id="mod-profit-pool" class="bm-split-75">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02A · SCALE INFLECTION &amp; MARGIN SCISSORS</span>
+              <h3 data-i18n-zh="TTM $8.82亿 / 2026E ~$9.82亿 损益结构与六年毛利率大反转" data-i18n-en="TTM $881.9M P&amp;L Structure &amp; 6-Year Margin Inflection">TTM $8.82亿 / 2026E ~$9.82亿 损益结构与六年毛利率大反转</h3>
+            </div>
+            <div class="mui-segmented" id="pChartTabs">
+              <button type="button" class="mui-seg-btn active" data-pview="waterfall" data-i18n-zh="9M26 损益与现金桥" data-i18n-en="9M26 P&amp;L Bridge">9M26 损益与现金桥</button>
+              <button type="button" class="mui-seg-btn" data-pview="scissors" data-i18n-zh="6年毛利与亏损收敛曲线" data-i18n-en="6Y Margin Inflection">6年毛利与亏损收敛曲线</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="profitCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption" data-i18n-zh="数据核验：源自 Q3 2026 Form 10-Q 与 FY2025 Form 10-K。GAAP 毛利率已从 FY21 的 -3.0% 跃升至 TTM Q3 2026 的 36.2%（9M26 Non-GAAP 毛利率达 40.7%）；当前会计亏损主要源于 Neutron 研发峰值投入（9M26 研发 $261.3M），一旦 2027 年转入商业发射，研发费用率将迎来断崖式下行。" data-i18n-zh-raw="1" data-i18n-en="Verified per Q3 2026 Form 10-Q &amp; FY2025 Form 10-K. GAAP Gross Margin surged from -3.0% (FY21) to 36.2% TTM Q3 2026 (40.7% Non-GAAP in 9M26); current operating loss is intentionally driven by peak Neutron R&amp;D ($261.3M in 9M26) ahead of 2027 commercial flight.">
+            数据核验：源自
+            <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">Q3 2026 10-Q ↗</a> 与
+            <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000013/rklb-20251231.htm" target="_blank" rel="noopener noreferrer">FY2025 10-K ↗</a>。
+            GAAP 毛利率已从 FY21 的 -3.0% 跃升至 TTM Q3 2026 的 <strong>36.2%</strong>（9M26 Non-GAAP 毛利率达 <strong>40.7%</strong>）；当前会计营业亏损主要源于 Neutron 研发峰值投入（9M26 研发 $261.3M）。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 02B · $1.72B SPACE SYSTEMS &amp; PRIME STACK</span>
+              <h3 data-i18n-zh="太空系统四层变现金字塔（占 Q3 营收 80.2%）" data-i18n-en="4-Tier Space Systems Stack (80.2% of Q3 Revenue)">太空系统四层变现金字塔（占 Q3 营收 80.2%）</h3>
+            </div>
+            <div class="mui-segmented" id="tierFilter">
+              <button type="button" class="mui-seg-btn active" data-tcat="all" data-i18n-zh="全部" data-i18n-en="All">全部</button>
+              <button type="button" class="mui-seg-btn" data-tcat="prime" data-i18n-zh="整星总包" data-i18n-en="Prime Bus">整星总包</button>
+              <button type="button" class="mui-seg-btn" data-tcat="comp" data-i18n-zh="高毛利部件" data-i18n-en="Subsystems">高毛利部件</button>
+            </div>
+          </div>
+
+          <div class="bm-tier-list" id="tierList">
+            <div class="bm-tier-card" data-tier="prime">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="① 国防导弹预警与传输层星座主承包 (SDA Prime)" data-i18n-en="① Defense Missile-Tracking &amp; Transport Prime">① 国防导弹预警与传输层星座主承包 (SDA Prime)</span>
+                <span class="mui-chip mui-chip-primary mono">&gt;$1.33B 合同额</span>
+              </div>
+              <div class="bm-tier-desc">直接击败传统军工五巨头，连夺 SDA Tranche 2（$5.15亿/18颗）与 Tranche 3（$8.16亿/18颗）导弹跟踪主承包合同，外加太空军 SB-AMTI（$3.97亿 Flatellite 星座）。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="comp">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="② 空间太阳能与吉瓦级轨道 AI 算力阵列 (SolAero)" data-i18n-en="② Space Solar &amp; Orbital AI Power Arrays">② 空间太阳能与吉瓦级轨道 AI 算力阵列 (SolAero)</span>
+                <span class="mui-chip mui-chip-success mono">全球唯二美系产能</span>
+              </div>
+              <div class="bm-tier-desc">掌握高效率抗辐射空间级太阳电池片核心产能，并于 2025–2026 推出面向千米级太空数据中心的硅基高功率太阳翼，卡位天基 AI 能源底座。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="comp">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="③ 星间激光通信与光电红外载荷 (Mynaric + GEOST)" data-i18n-en="③ Laser Comms &amp; EO/IR Payloads">③ 星间激光通信与光电红外载荷 (Mynaric + GEOST)</span>
+                <span class="mui-chip mui-chip-violet mono">$453M 并购合龙</span>
+              </div>
+              <div class="bm-tier-desc">收购 GEOST（$2.92亿，光电/红外导弹预警载荷）与德国 Mynaric（$1.61亿，CONDOR 激光终端），完成从“卖卫星底盘”向“高附加值传感器载荷”的惊险一跃。</div>
+            </div>
+
+            <div class="bm-tier-card" data-tier="prime">
+              <div class="bm-tier-top">
+                <span class="bm-tier-name" data-i18n-zh="④ 商业星座代工与深空探测平台 (Photon / Explorer)" data-i18n-en="④ Commercial Constellations &amp; Deep-Space">④ 商业星座代工与深空探测平台 (Photon / Explorer)</span>
+                <span class="mui-chip mui-chip-warning mono">55+ 颗在造航天器</span>
+              </div>
+              <div class="bm-tier-desc">为 Globalstar 交付 8 颗手机直连卫星底盘，并以传统深空任务约十分之一的低成本成功交付 NASA 双星火星探测任务 ESCAPADE。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 3: REVERSED 5:7 SPLIT — MISSION COHORT ECONOMICS & ORBITAL MONOPOLY -->
+      <section id="mod-cohort" class="bm-split-57">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03A · END-TO-END RATCHET ECONOMICS</span>
+              <h3 data-i18n-zh="客户分层单项目经济模型：从单发专车到十亿级全栈总包" data-i18n-en="Customer Tier Unit Economics: From Single Launch to $1B+ Prime">客户分层单项目经济模型：从单发专车到十亿级全栈总包</h3>
+            </div>
+          </div>
+
+          <div class="mui-segmented" id="cohortTabs">
+            <button type="button" class="mui-seg-btn" data-cohort="solo" data-i18n-zh="单次专车客户 (Electron)" data-i18n-en="Dedicated Launch">单次专车客户 (Electron)</button>
+            <button type="button" class="mui-seg-btn active" data-cohort="constellation" data-i18n-zh="商业星座包船户 (Neutron)" data-i18n-en="Constellation Multi-Launch">商业星座包船户 (Neutron)</button>
+            <button type="button" class="mui-seg-btn" data-cohort="defense" data-i18n-zh="国防端到端主承包 (U.S. Gov)" data-i18n-en="Defense End-to-End Prime">国防端到端主承包 (U.S. Gov)</button>
+          </div>
+
+          <div class="bm-cohort-metrics" id="cohortMetrics">
+            <div class="bm-cohort-stat">
+              <div class="lbl">典型合同标的</div>
+              <div class="val" style="font-size:0.95rem;">Neutron 多发星座部署 + 分离机构</div>
+              <div class="delta">首飞前已获 5 家星座商连签 8 发</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">单发/单合同基准规模</div>
+              <div class="val mono">$70M / 发</div>
+              <div class="delta">Q3 新签 8 发总额超 $515M</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">目标复飞稳态毛利率</div>
+              <div class="val mono">40% – 50%+</div>
+              <div class="delta">一子级海上/陆地复用 + 整流罩连体回收</div>
+            </div>
+            <div class="bm-cohort-stat">
+              <div class="lbl">5年单客全栈潜力 LTV</div>
+              <div class="val mono">$350M – $600M</div>
+              <div class="delta">叠加太阳翼、激光终端与补网发射</div>
+            </div>
+          </div>
+
+          <div class="bm-ratchet-note" id="cohortNote">
+            <strong>全栈搭售棘轮（One-Stop Orbital Ratchet）：</strong>随着 SpaceX 逐步将重心转向巨型 Starship 并缩减外部猎鹰 9 号拼车排期，商业与国防星座运营商极度渴求<strong>第二家可靠中大型运载商</strong>；而一旦客户采用 Rocket Lab 的 Flatellite 扁平卫星平台与 Mynaric 激光终端，其构型天然适配 Neutron“河马嘴”整流罩，从而把造星、发射与在轨管理锁死在同一张合同中
+            <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-lands-over-515m-neutron-launch-deals-constellation" target="_blank" rel="noopener noreferrer">Neutron $515M 公告 ↗</a>。
+          </div>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 03B · LAUNCH CADENCE &amp; BACKLOG MIX</span>
+              <h3 data-i18n-zh="全球小型入轨垄断度与五大季度 Backlog 爆发曲线" data-i18n-en="Small-Launch Cadence Dominance &amp; 5-Quarter Backlog Explosion">全球小型入轨垄断度与五大季度 Backlog 爆发曲线</h3>
+            </div>
+            <div class="mui-segmented" id="cChartTabs">
+              <button type="button" class="mui-seg-btn active" data-cview="backlog" data-i18n-zh="5季度在手订单跃升 ($B)" data-i18n-en="5Q Backlog Surge ($B)">5季度在手订单跃升 ($B)</button>
+              <button type="button" class="mui-seg-btn" data-cview="cadence" data-i18n-zh="Electron 发射频次与单发经济" data-i18n-en="Launch Cadence &amp; Unit Cost">Electron 发射频次与单发经济</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="cohortCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            行业事实核验：截至 2026 年 11 月 14 日，Electron 完成第 100 次发射并创下连续 59 次入轨成功纪录
+            <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-launch-milestone-100th-electron-rocket-week" target="_blank" rel="noopener noreferrer">第100次发射公报 ↗</a>，Q3 单发平均成本降至 $5.0M（去年同期 $5.9M），单发毛利空间稳步扩阔。
+          </p>
+        </div>
+      </section>
+
+      <!-- MODULE 4: 6:6 DUAL WORKBENCH — CUSTOMER FLOAT / CASH FORTRESS + 5Y PRO FORMA SIMULATOR -->
+      <section id="mod-capital" class="bm-split-66">
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04A · CUSTOMER ADVANCES FLOAT &amp; $4.7B CASH FORTRESS</span>
+              <h3 data-i18n-zh="$4.24亿客户预收款浮存金与 $47.0亿零杠杆现金堡垒" data-i18n-en="$423.6M Customer Advances Float &amp; $4.70B Net-Cash Fortress">$4.24亿客户预收款浮存金与 $47.0亿零杠杆现金堡垒</h3>
+            </div>
+            <div class="mui-segmented" id="kChartTabs">
+              <button type="button" class="mui-seg-btn active" data-kview="cash" data-i18n-zh="现金堡垒与净负债演变" data-i18n-en="Cash &amp; Net Cash ($B)">现金堡垒与净负债演变</button>
+              <button type="button" class="mui-seg-btn" data-kview="float" data-i18n-zh="合同预收浮存金 vs 政府占比" data-i18n-en="Contract Float &amp; Gov Mix">合同预收浮存金 vs 政府占比</button>
+            </div>
+          </div>
+
+          <div class="bm-canvas-box">
+            <canvas id="capitalCanvas"></canvas>
+          </div>
+
+          <p class="bm-chart-caption">
+            资本运作亮点：Q3 2026 资产负债表上<strong>合同负债（Contract Liabilities，即客户里程碑预收款）飙升至 $423.6M</strong>（较 2025 年底 $195.4M 翻倍有余），单季净预收流入助推 GAAP 经营现金流首次转正（+$7.2M）；同时公司通过 ATM 股权融资提前募足并购铱星所需全部现金，期末坐拥 <strong>$4.70B 现金及证券</strong>、而有息债务仅剩 $3.0M
+            <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-fully-funds-iridium-acquisition-including-completion" target="_blank" rel="noopener noreferrer">全额募资完成公报 ↗</a>。
+          </p>
+        </div>
+
+        <div class="bm-subpanel">
+          <div class="bm-subhead">
+            <div>
+              <span class="bm-kicker mono">MODULE 04B · INTERACTIVE 5-YEAR PRO FORMA COMPOUNDER</span>
+              <h3 data-i18n-zh="2026E–2031E 商业模式复利与 Iridium 并表推演实验室" data-i18n-en="2026E–2031E Revenue &amp; Pro Forma EBITDA Simulator">2026E–2031E 商业模式复利与 Iridium 并表推演实验室</h3>
+            </div>
+            <div class="mui-segmented" id="simPresets">
+              <button type="button" class="mui-seg-btn" data-preset="bear" data-i18n-zh="独立保守" data-i18n-en="Standalone Bear">独立保守</button>
+              <button type="button" class="mui-seg-btn active" data-preset="base" data-i18n-zh="并表基准" data-i18n-en="Pro Forma Base">并表基准</button>
+              <button type="button" class="mui-seg-btn" data-preset="bull" data-i18n-zh="星网超周期" data-i18n-en="Constellation Bull">星网超周期</button>
+            </div>
+          </div>
+
+          <div class="bm-sim-sliders">
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="内生太空系统与发射年均增速 (Organic CAGR)" data-i18n-en="Organic Launch + Space Systems CAGR">内生太空系统与发射年均增速 (Organic CAGR)</span><b class="mono" id="lblOrgCagr">28.0%</b></div>
+              <input type="range" id="inpOrgCagr" min="12" max="45" step="1" value="28" />
+            </div>
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="Neutron 2031E 年发射频次 ($70M/发)" data-i18n-en="2031E Annual Neutron Flights ($70M/flight)">Neutron 2031E 年发射频次 ($70M/发)</span><b class="mono" id="lblNeuFlights">14 发/年</b></div>
+              <input type="range" id="inpNeuFlights" min="4" max="26" step="1" value="14" />
+            </div>
+            <div class="bm-slider-row">
+              <div class="bm-slider-lbl"><span data-i18n-zh="叠加 Iridium 星座并表与 D2D 协同增厚 (2027中交割)" data-i18n-en="Include Iridium Merger ($0.9B+ Rev · 57% OEBITDA)">叠加 Iridium 星座并表与 D2D 协同增厚 (2027中交割)</span><b class="mono" id="lblIrdmBoost">开启 (+100%)</b></div>
+              <input type="range" id="inpIrdmBoost" min="0" max="100" step="100" value="100" />
+            </div>
+          </div>
+
+          <div class="bm-sim-outputs">
+            <div class="bm-sim-out"><b class="mono" id="simRevOut">$5.51B</b><span data-i18n-zh="FY31E 总营收" data-i18n-en="FY31E Revenue">FY31E 总营收</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simGmOut">47.8%</b><span data-i18n-zh="FY31E 综合毛利率" data-i18n-en="FY31E Gross Margin">FY31E 综合毛利率</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simEbitdaOut">$1.86B</b><span data-i18n-zh="FY31E 调整后 EBITDA" data-i18n-en="FY31E Adj. EBITDA">FY31E 调整后 EBITDA</span></div>
+            <div class="bm-sim-out"><b class="mono" id="simMarginOut">33.8%</b><span data-i18n-zh="EBITDA 利润率" data-i18n-en="EBITDA Margin">EBITDA 利润率</span></div>
+          </div>
+
+          <div class="bm-canvas-box" style="height:175px;">
+            <canvas id="simMiniCanvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 5: SPACE PEER ARCHETYPE MATRIX & STRESS AUDIT -->
+      <section id="mod-matrix" class="bm-panel">
+        <div class="bm-panel-head">
+          <div>
+            <span class="bm-kicker mono">MODULE 05 · SPACE ECONOMY ARCHETYPE MATRIX &amp; STRESS AUDIT</span>
+            <h2 class="bm-h2" data-i18n-zh="全球太空经济六大标杆商业模型对标与三大核心风险压测" data-i18n-en="Global Space Economy Peer Matrix &amp; 3-Pillar Stress Audit">全球太空经济六大标杆商业模型对标与三大核心风险压测</h2>
+            <p class="bm-head-desc" data-i18n-zh="对比商业航天新贵与传统国防巨头的收入规模、毛利结构与现金储备（截至 Q3 2026 SEC 披露口径），并审视三大关键执行风险。" data-i18n-en="Benchmarking Rocket Lab against SpaceX, NewSpace peers, and legacy defense primes on SEC-filed Q3 2026 metrics.">对比商业航天新贵与传统国防巨头的收入规模、毛利结构与现金储备（截至 Q3 2026 SEC 披露口径），并审视三大关键执行风险。</p>
+          </div>
+          <div class="mui-segmented" id="peerFilter">
+            <button type="button" class="mui-seg-btn active" data-pcat="all" data-i18n-zh="全部标杆 (6)" data-i18n-en="All Peers (6)">全部标杆 (6)</button>
+            <button type="button" class="mui-seg-btn" data-pcat="end2end" data-i18n-zh="端到端/星座服务" data-i18n-en="End-to-End / Comms">端到端/星座服务</button>
+            <button type="button" class="mui-seg-btn" data-pcat="hw" data-i18n-zh="运载/航天器制造" data-i18n-en="Launch / Spacecraft">运载/航天器制造</button>
+          </div>
+        </div>
+
+        <div class="bm-table-wrap">
+          <table class="bm-table" id="peerTable">
+            <thead>
+              <tr>
+                <th>公司与代码</th>
+                <th>核心商业模式原型</th>
+                <th>最新营收规模</th>
+                <th>毛利率 / 营业利润率</th>
+                <th>在手订单 / 净现金</th>
+                <th>模式终极壁垒与核心脆弱点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-rklb" data-row-cat="end2end hw">
+                <td><strong>Rocket Lab (RKLB)</strong> <span class="mui-chip mui-chip-primary mono">本研究标的</span></td>
+                <td>高频火箭入口 + 垂直整星总包 + 拟并购 Iridium 星座</td>
+                <td class="mono">TTM $0.88B (26E ~$0.98B)</td>
+                <td class="mono">36.2% GAAP GM (38.4% Q3 Non-GAAP)</td>
+                <td class="mono" style="color:var(--mui-success-text);">Backlog $3.57B · 净现金 +$4.70B</td>
+                <td>美股唯一端到端全栈标的；考验点在 Neutron 2027 首飞与铱星FCC审批</td>
+              </tr>
+              <tr data-row-cat="end2end hw">
+                <td><strong>SpaceX (2026 IPO)</strong></td>
+                <td>可复用猎鹰/星舰垄断运力 + Starlink 千万订户现金牛</td>
+                <td class="mono">FY25 $18.67B (Q3星链 $5.25B)</td>
+                <td class="mono" style="color:var(--mui-success-text);">Starlink 高毛利经常性订阅驱动</td>
+                <td class="mono">全球 ~80%+ 入轨吨位份额</td>
+                <td>内部发射成本极低闭环无敌；客户担忧与 Starlink 同业竞争而分流订单至 RKLB</td>
+              </tr>
+              <tr data-row-cat="end2end">
+                <td><strong>Iridium (IRDM · 拟被RKLB并购)</strong></td>
+                <td>66颗LEO交联星网 + 全球L波段频谱安全语音/IoT/PNT</td>
+                <td class="mono">TTM $0.90B (FY25 $871.7M)</td>
+                <td class="mono" style="color:var(--mui-success-text);">19.0% 营业利润率 · 57% OEBITDA</td>
+                <td class="mono">255万+ 计费订户 · 净债 -$2.04B</td>
+                <td>高现金流公用事业属性（FCF率 30.7%）；并入 RKLB 后消除外部换星发射溢价</td>
+              </tr>
+              <tr data-row-cat="hw">
+                <td><strong>Intuitive Machines (LUNR)</strong></td>
+                <td>月球着陆与近地空间通信网 + 并购 Lanteris 整星制造</td>
+                <td class="mono">TTM $0.49B (Q2'26 $206.2M)</td>
+                <td class="mono">Q2 毛利率 ~17.4% · 营业亏损 -27.5%</td>
+                <td class="mono">Backlog $1.80B · 净现金持平</td>
+                <td>深空与月球基础设施卡位深；无自有运载火箭，受外部发射排期制约</td>
+              </tr>
+              <tr data-row-cat="hw">
+                <td><strong>Firefly Aerospace (FLY)</strong></td>
+                <td>Alpha 火箭 + Blue Ghost 月球着陆器 + SciTec 国防软件</td>
+                <td class="mono">TTM $0.29B (Q3'26 $110.7M)</td>
+                <td class="mono">22.9% GAAP GM · 营业亏损 -118%</td>
+                <td class="mono">Backlog $1.67B · 净现金 +$0.6B</td>
+                <td>增速迅猛且获洛马多发订单；Alpha 历史发射稳定性与规模化良率仍在爬坡</td>
+              </tr>
+              <tr data-row-cat="hw">
+                <td><strong>Lockheed Martin Space (LMT)</strong></td>
+                <td>传统军工主承包商（成本加成与大型高轨国家安全星）</td>
+                <td class="mono">Q3'26 单季 $3.49B (+3.8%)</td>
+                <td class="mono">分部营业利润率 9.5%</td>
+                <td class="mono">传统高轨/战略导弹存量底座</td>
+                <td>深厚军方关系网；但在低轨分布式敏捷固定总价星座竞争中屡被 RKLB 分食</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bm-stress-grid">
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-error mono">STRESS 01 · NEUTRON 2027 TIMELINE</span>
+              <h4>Neutron 复合材料贮箱前顶盖更换与首飞推迟风险</h4>
+              <p>继 2026 年 1 月一子级静水压试验破裂后，2026 年 10 月在复合材料推进剂贮箱前顶盖中检出制造空隙（voids），管理层坚持零带病上天原则将首飞调整至 <strong>2027 年</strong>。值得关注的是，透明工程披露并未动摇客户信心，Q3 仍新签 8 发（&gt;$515M）订单且未触发存量 16 发合同退订
+              <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-provides-update-neutron-development-and-adjusts" target="_blank" rel="noopener noreferrer">Neutron 10月公告 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s1" /> 纳入季度跟踪：一子级新顶盖低温静压与 Archimedes 点火进展</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-warning mono">STRESS 02 · IRIDIUM MERGER &amp; DILUTION</span>
+              <h4>~$80亿并购 Iridium 监管审批与股本摊薄消化</h4>
+              <p>虽然 HSR 反垄断等待期已于 2026 年 8 月届满、Iridium 股东大会于 9 月 24 日高票批准且 $19.44亿现金部分已通过 ATM 全额募足，交易仍需完成 <strong>FCC 频谱牌照转让、DCSA 安全审查及海外电信监管批准</strong>（预计 2027 年中交割）；同时总股本升至 ~6.80亿股（交割后预计再增发约 4,250 万股）需靠并表现金流消化
+              <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/iridium-stockholders-approve-acquisition-rocket-lab" target="_blank" rel="noopener noreferrer">股东批准公告 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s2" /> 纳入季度跟踪：FCC 频谱过户审批与 2027 年中交割时间表</label>
+          </div>
+
+          <div class="bm-stress-card">
+            <div>
+              <span class="mui-chip mui-chip-violet mono">STRESS 03 · U.S. GOV CONCENTRATION (42%)</span>
+              <h4>单一最大美国政府客户占比升至 42% 与固定总价履约</h4>
+              <p>9M 2026 最大美国政府客户贡献达 <strong>42% 营收（约 $294.9M）</strong>，且 2025 年 10 月联邦政府停摆曾短暂延缓合同拨款与 Wallops 靶场排期；此外早年部分卫星平台合同（如 2022 年 MDA 17 颗卫星底盘）面临固定总价进度考核条款，要求极强的内部供应链成本控制
+              <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000013/rklb-20251231.htm" target="_blank" rel="noopener noreferrer">10-K 风险因素 ↗</a>。</p>
+            </div>
+            <label class="bm-check-label"><input type="checkbox" data-stress-chk="s3" /> 纳入季度跟踪：SDA 卫星批次交付里程碑与 Iridium 商业收入冲抵</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIMARY SOURCES FOOTER -->
+      <section class="bm-panel" aria-label="权威财报与行业信源">
+        <div class="bm-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+          <div>
+            <span class="bm-kicker mono">VERIFIED PRIMARY SOURCES</span>
+            <h2 class="bm-h2" data-i18n-zh="权威 SEC 监管文件、官方业绩公报与并购协议信源" data-i18n-en="Verified SEC Filings, Earnings Releases &amp; M&amp;A Disclosures">权威 SEC 监管文件、官方业绩公报与并购协议信源</h2>
+          </div>
+        </div>
+        <div class="bm-sources-grid">
+          <a class="bm-source-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">
+            <b>Rocket Lab Q3 2026 Financial Results (Nov 9, 2026) ↗</b>
+            <span>创纪录单季营收 $267.83M (+72.7% YoY)、$3.57B Backlog、+$7.2M 经营现金流与 $4.70B 现金储备</span>
+          </a>
+          <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000013/rklb-20251231.htm" target="_blank" rel="noopener noreferrer">
+            <b>Rocket Lab SEC Form 10-K (FY2025 Annual Report) ↗</b>
+            <span>全年营收 $601.8M (+38%)、Launch $199.0M / Space Systems $402.8M 分部拆解及 62 项法定风险因素</span>
+          </a>
+          <a class="bm-source-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully" target="_blank" rel="noopener noreferrer">
+            <b>Definitive Agreement to Acquire Iridium (~$8.0B EV) ↗</b>
+            <span>每股 $54 名义对价并购 66 颗 LEO 卫星、全球 L 波段频谱、255万+订户与 $495M OEBITDA 现金流底座</span>
+          </a>
+          <a class="bm-source-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-lands-over-515m-neutron-launch-deals-constellation" target="_blank" rel="noopener noreferrer">
+            <b>Neutron Lands &gt;$515M in Q3 Constellation Deals ↗</b>
+            <span>五家星座运营商新签 8 次 Neutron 发射合同，首飞前累计储备达 16 发、基准票价升至 $70M/发</span>
+          </a>
+          <a class="bm-source-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-launch-milestone-100th-electron-rocket-week" target="_blank" rel="noopener noreferrer">
+            <b>Milestone 100th Electron Launch (Nov 2026) ↗</b>
+            <span>全球最快突破百次发射的小型商业运载火箭，连续 59 次成功入轨、制造节拍提速至每 8 天 1 枚</span>
+          </a>
+          <a class="bm-source-item" href="https://sec-api.io/insights/rocket-lab-rklb-q3-2026-earnings-3-57bn-backlog-neutron-moved-to-2027-and-the-pending-iridium-deal-sec-filing-analysis" target="_blank" rel="noopener noreferrer">
+            <b>SEC EDGAR Filing Cross-Sectional Analysis (Q3 2026) ↗</b>
+            <span>FY2021–TTM Q3 2026 完整财务比率、客户集中度（42%）、并购对价明细与商业航天同行估值对照</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+    var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+    var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+    var STORAGE_STRESS_KEY = 'rklb_bm_stress_v1';
+
+    var state = {
+      theme: 'light',
+      lang: 'zh',
+      pView: 'waterfall',
+      cView: 'backlog',
+      kView: 'cash',
+      activeLens: 0,
+      activeNode: 0,
+      activeCohort: 'constellation'
+    };
+
+    var hitRegions = { profitCanvas: [], cohortCanvas: [], capitalCanvas: [] };
+
+    function isEn() { return state.lang === 'en'; }
+
+    function showToast(msg) {
+      var bar = document.getElementById('muiSnackbar');
+      if (!bar) return;
+      bar.textContent = msg;
+      bar.classList.add('show');
+      clearTimeout(bar._t);
+      bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2400);
+    }
+
+    function getPalette() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      return {
+        dark: dark,
+        text: dark ? '#F3F6F9' : '#0F1924',
+        sub: dark ? '#B2BAC2' : '#334155',
+        tick: dark ? '#94A3B8' : '#475569',
+        grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+        blue: dark ? '#3399FF' : '#0073E6',
+        blueSoft: dark ? 'rgba(51, 153, 255, 0.24)' : 'rgba(0, 115, 230, 0.16)',
+        green: dark ? '#22C55E' : '#16A34A',
+        amber: dark ? '#FFB74D' : '#D97706',
+        violet: dark ? '#A78BFA' : '#7C3AED',
+        red: dark ? '#FF6B6B' : '#DC2626'
+      };
+    }
+
+    function applyTheme(t, silent) {
+      state.theme = (t === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', state.theme);
+      var ic = document.getElementById('appbarThemeIcon');
+      if (ic) {
+        ic.innerHTML = state.theme === 'dark'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+      }
+      var lBtn = document.getElementById('sideThemeLightBtn');
+      var dBtn = document.getElementById('sideThemeDarkBtn');
+      if (lBtn) lBtn.setAttribute('aria-pressed', String(state.theme === 'light'));
+      if (dBtn) dBtn.setAttribute('aria-pressed', String(state.theme === 'dark'));
+      drawAllCharts();
+      if (!silent) showToast(state.theme === 'dark' ? (isEn() ? 'Dark theme enabled' : '已切换至深色蓝图模式') : (isEn() ? 'Light theme enabled' : '已切换至 MUI 浅色模式'));
+    }
+
+    var HERO_LEAD_ZH = '资本市场早年常将 <strong>Rocket Lab (NASDAQ: RKLB)</strong> 简单归类为“小型火箭发射商”，但翻开其 2026 年三季报，这实质上是一台沿袭 SpaceX 终局路径、唯一在美股公开交易的<strong>“三级端到端太空复利机器”</strong>：第一级凭借全球商业发射频次第二的 <strong>Electron 与 HASTE 高超音速火箭</strong>（2026 年 11 月 14 日达成历史性第 100 次发射、连续 59 发成功，每 8 天下线一枚）垄断专车入轨信用入口，Q3 发射营收 <strong>$53.1M（分部毛利率 35.3%，发射积压订单暴涨至 $18.5亿 / 117 发）</strong> <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">Q3 2026 财报 ↗</a>；第二级将发射信任顺势转化为整星制造与核心部组件垄断，推动 <strong>Space Systems（太空系统）</strong>在 Q3 贡献 <strong>$214.8M 营收（占总营收 80.2%，同比激增 +88.1%）</strong>，豪取美国太空发展局（SDA）逾 <strong>$13.3亿</strong> 星座主承包大单 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000012/rklb-02262026ex991.htm" target="_blank" rel="noopener noreferrer">FY25 年报公报 ↗</a>；第三级通过现金对价已全额募资到位的 <strong>~$80亿美元并购 Iridium（铱星通信）</strong>，一步跨入拥有 <strong>255万+ 订阅用户、66 颗在轨卫星、全球 L 波段频谱与 57% OEBITDA 利润率（$4.95亿/年）</strong>的太空通信经常性现金牛 <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully" target="_blank" rel="noopener noreferrer">Iridium 并购公报 ↗</a>。';
+    var HERO_LEAD_EN = 'Wall Street once pigeonholed <strong>Rocket Lab (NASDAQ: RKLB)</strong> as a small-rocket launcher, yet its Q3 2026 filings reveal the only publicly traded <strong>3-Stage End-to-End Space Compounding Machine</strong> following SpaceX\'s full-stack playbook: Stage 1 monopolizes dedicated orbital &amp; hypersonic access via <strong>Electron &amp; HASTE</strong> (100th mission completed Nov 14, 2026 with 59 straight wins and 1 rocket built every 8 days), posting <strong>$53.1M Q3 launch revenue (35.3% GM; $1.85B / 117-launch backlog)</strong> <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">Q3 2026 Release ↗</a>; Stage 2 converts flight heritage into spacecraft &amp; merchant subsystem dominance, driving <strong>Space Systems to $214.8M in Q3 (80.2% of revenue, +88.1% YoY)</strong> with <strong>&gt;$1.33B</strong> in SDA prime constellation awards <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000012/rklb-02262026ex991.htm" target="_blank" rel="noopener noreferrer">FY25 Filing ↗</a>; Stage 3 vaults into recurring orbital telecom services via the fully funded pending <strong>~$8.0B acquisition of Iridium</strong>, adding <strong>2.55M+ subscribers, 66 LEO satellites, global L-band spectrum, and $495M OEBITDA (57% margin)</strong> <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully" target="_blank" rel="noopener noreferrer">Iridium Deal ↗</a>.';
+
+    var LENSES = [
+      {
+        zhF: '单任务全栈价值 = 专车发射费 ($7.8M–$70M) + 整星平台与载荷合同 ($25M–$45M/颗) + 在轨L波段通信订阅年金 (57% OEBITDA)',
+        enF: 'Full-Stack Mission LTV = Launch ($7.8M–$70M) + Spacecraft Bus & Payload ($25M–$45M/sat) + L-Band Subscription Annuity (57% OEBITDA)',
+        zhB: '纯火箭初创公司困于单次运费天花板与发射窗口波动（过去十年逾 60 家小型火箭商折戟），而 Rocket Lab 把火箭变成<strong>“零获客成本的信任漏斗”</strong>——先为全球逾 1,700 次太空任务供应太阳翼、反作用飞轮、分离环与激光终端，再以整星总包商身份承接百亿级国防星座。',
+        enB: 'Pure-play small launchers hit single-ticket revenue ceilings (over 60 failed in the past decade), whereas Rocket Lab turns launch reliability into a <strong>zero-CAC trust funnel</strong>—supplying solar arrays, reaction wheels, separation rings, and laser terminals to 1,700+ missions before capturing billion-dollar prime satellite builds.'
+      },
+      {
+        zhF: '综合毛利率跃迁 (FY21 -3.0% → 9M26 Non-GAAP 40.7%) = 发射频次摊薄固定台位成本 + 核心宇航器件自研内化三级供应商溢价',
+        enF: 'Gross Margin Expansion (FY21 -3.0% → 9M26 Non-GAAP 40.7%) = 8-Day Rocket Cadence Absorption + In-House Subsystem Margin Capture',
+        zhB: '传统军工集团依赖层层转包（Subcontractor Markup），不仅交期长达 5–7 年且毛利被分食；Rocket Lab 垂直并购 SolAero、GEOST、Mynaric 与 Motiv 后，<strong>自己造太阳翼、自己造红外载荷、自己造激光通信机并用自家火箭送上天</strong>，Q3 毛利率逆势超出指引上限逾 260bps。',
+        enB: 'Legacy defense primes suffer from multi-tier subcontractor markups and 5–7 year delays; by vertically integrating SolAero, GEOST, Mynaric, and Motiv, Rocket Lab <strong>builds its own solar cells, IR sensors, and laser terminals</strong>—beating Q3 GAAP gross margin guidance by >260 bps.'
+      },
+      {
+        zhF: '资本自循环飞轮 = $423.6M 客户里程碑预收款浮存金 + $4.70B 在手现金利息 ($45M/季指引) + Iridium 并表 $495M/年 OEBITDA',
+        enF: 'Self-Funding Flywheel = $423.6M Customer Advance Float + $4.70B Cash Interest ($45M/qtr guide) + Iridium $495M Annual OEBITDA',
+        zhB: '商业航天最怕研发期现金枯竭，而 Rocket Lab 一方面靠大型国防与星座合同的<strong>里程碑预付款（合同负债达 $4.24亿）</strong>在 Q3 实现正向经营现金流（+$7.2M），另一方面提前募足并购资金并计划并入 Iridium 高自由现金流订阅底座，彻底打通“以星养箭、以网养星”闭环。',
+        enB: 'Aerospace challengers typically bleed cash during R&D, yet Rocket Lab pairs <strong>$423.6M in upfront customer contract liabilities</strong> (driving +$7.2M positive GAAP OCF in Q3) with $4.70B cash and Iridium\'s 30.7% FCF-margin subscriber base to self-fund next-generation constellations.'
+      }
+    ];
+
+    var NODES = [
+      {
+        badge: 'NODE 01 · MERCHANT SPACECRAFT SUBSYSTEMS',
+        zhT: '底层宇航部组件“卖铲人”：竞争对手每造一颗卫星，都在给 Rocket Lab 交过路费',
+        enT: 'Merchant Subsystem Arsenal: Rivals Pay Rocket Lab Whenever They Build a Satellite',
+        zhD: '通过精准并购整合 Sinclair（飞轮与星敏）、PSC（Lightband 星箭分离装置）、SolAero（全球稀缺空间级三结砷化镓太阳电池）、ASI（飞行软件）、Mynaric（激光通信终端）与 Motiv（空间机械臂），Rocket Lab 把行业最卡脖子的供应链瓶颈全部收归麾下。对外赚取高毛利部组件现货现金流，对内消除自身星座造星的三级供应商加价与交期延误。',
+        enD: 'Through disciplined tuck-in acquisitions—Sinclair (wheels/star trackers), PSC (Lightband separation), SolAero (space-grade solar), ASI (MAX flight software), Mynaric (laser terminals), and Motiv (robotics)—Rocket Lab owns the industry\'s tightest bottlenecks, earning merchant margins externally while eliminating supplier markups internally.',
+        zhF: '商业传导：掌控空间太阳能、激光终端与姿控飞轮 → Q3 产品类营收达 $197.5M（+89.8% YoY），直接推动毛利率超预期突破 38.4% (Non-GAAP)',
+        enF: 'Value Flow: Owning space solar, laser comms & wheels → Q3 Product revenue hit $197.5M (+89.8% YoY), lifting Non-GAAP GM to 38.4%',
+        kpis: [['1,700+', '搭载部件的全球航天任务', 'Global Missions Powered'], ['$26.0M', 'Mynaric 激光终端 Q3 营收', 'Mynaric Q3 Revenue'], ['$197.5M', 'Q3 产品类营收 (+89.8%)', 'Q3 Product Sales (+89.8%)'], ['40%–50%+', '成熟宇航部件稳态毛利带', 'Target Subsystem GM']]
+      },
+      {
+        badge: 'NODE 02 · DEFENSE & COMMERCIAL SPACECRAFT PRIME',
+        zhT: '整星平台与光电载荷主承包商：以固定总价与敏捷交付颠覆传统军工五巨头',
+        enT: 'Spacecraft & EO/IR Payload Prime: Disrupting Legacy Primes on Speed & Cost',
+        zhD: '依托模块化 Photon、Lightning 与可堆叠 Flatellite 卫星母平台，叠加 GEOST 与 Optical Support 的天基光电/红外导弹预警载荷，Rocket Lab 已跃升为美国太空军与太空发展局（SDA）核心一类主承包商（Prime Contractor）。目前长滩等超级工厂内同时在研在造卫星超过 55 颗。',
+        enD: 'Combining modular Photon, Lightning, and stackable Flatellite buses with GEOST electro-optical/IR missile-warning payloads, Rocket Lab now wins Tier-1 Pentagon prime contracts historically reserved for legacy defense giants, with 55+ spacecraft simultaneously in build.',
+        zhF: '商业传导：SDA Tranche 2 ($515M) + Tranche 3 ($816M) + 太空军 SB-AMTI ($397M) → 太空系统 Backlog 膨胀至 $17.2亿',
+        enF: 'Value Flow: SDA Tranche 2 ($515M) + Tranche 3 ($816M) + USSF SB-AMTI ($397M) → Space Systems backlog surged to $1.72B',
+        kpis: [['$214.8M', 'Q3 太空系统营收 (+88.1%)', 'Q3 Space Systems (+88.1%)'], ['$816M', 'SDA Tranche 3 单笔最大合同', 'SDA Tranche 3 Prime Award'], ['55+ 颗', '在研在造整星产线规模', 'Spacecraft Currently in Build'], ['42%', '9M26 最大美政府客户占比', '9M26 Top US Gov Share']]
+      },
+      {
+        badge: 'NODE 03 · ELECTRON & HASTE CADENCE MONOPOLY',
+        zhT: 'Electron 与 HASTE 高超音速专车：每 8 天造一枚火箭的商业入轨霸主',
+        enT: 'Electron & HASTE Cadence Monopoly: 1 Rocket Built Every 8 Days',
+        zhD: '在西方小型专车发射市场，Rocket Lab 已形成事实上的准垄断地位：新西兰 LC-1 与美国弗吉尼亚 LC-2 双发射场联动，2026 年 11 月突破 100 次发射里程碑；同时衍生出的 HASTE 亚轨道高超音速测试火箭切入美军 Golden Dome 与 MACH-TB 国防急需通道，于 2026 年 7 月斩获太空军 $2.66亿多发采购大单。',
+        enD: 'Across LC-1 (Mahia, NZ) and LC-2 (Wallops, VA), Electron reached 100 launches in Nov 2026 as the West\'s undisputed small-launch leader, while its HASTE hypersonic testbed secured a $266M U.S. Space Force multi-launch contract supporting Golden Dome defense.',
+        zhF: '商业传导：年产节拍提速 37.5%（8天/枚） → 单发直接成本降至 $5.0M，而 HASTE 特种任务溢价显著抬升单发毛利',
+        enF: 'Value Flow: +37.5% build cadence (1 rocket/8 days) → Q3 cost/launch fell to $5.0M vs $7.8M–$10M+ ASP',
+        kpis: [['100 次', 'Electron 累计入轨发射里程碑', 'Electron Launches (Nov 2026)'], ['59 连胜', '连续任务成功纪录', 'Consecutive Successful Flights'], ['$5.0M', 'Q3 单发平均制造成本', 'Q3 Avg Cost per Launch'], ['$266M', '太空军 HASTE 高超音速合同', 'USSF HASTE Contract']]
+      },
+      {
+        badge: 'NODE 04 · NEUTRON MEDIUM-LIFT REUSABLE ROCKET',
+        zhT: 'Neutron 中型可复用运载火箭：打开 13 吨级星座组网与国家安全主航道',
+        enT: 'Neutron Reusable Medium-Lift Vehicle: Unlocking 13-Ton Constellation & NSSL Markets',
+        zhD: '配备 9 台自研 Archimedes 富氧分级燃烧液氧甲烷发动机与独创连体“河马嘴（Hungry Hippo）”整流罩，Neutron 旨在打破猎鹰 9 号在中大型星座发射上的独家垄断。尽管因复合材料贮箱前顶盖工艺空隙将首飞审慎推至 2027 年，但在运力紧缺背景下基准票价已涨至 $70M/发，首飞前即锁定 16 次商业与军方任务。',
+        enD: 'Powered by 9 Archimedes LOX/methane engines and a captive "Hungry Hippo" fairing, Neutron breaks the medium-lift bottleneck. Even with maiden flight prudently set for 2027 to replace a composite tank dome, tight global capacity lifted Neutron\'s base price to $70M across 16 booked missions.',
+        zhF: '商业传导：Q3 单季连签 8 发星座合同（>$515M） → 推动发射分部总 Backlog 翻倍至创纪录的 $18.5亿（117 发）',
+        enF: 'Value Flow: 8 new Q3 Neutron missions (>$515M) → Launch backlog nearly doubled QoQ to $1.85B (117 total missions)',
+        kpis: [['13,000 kg', '近地轨道最大运载能力', 'LEO Payload Capacity'], ['16 发', '首飞前已签约任务储备', 'Pre-Debut Booked Missions'], ['$70M', '最新签约基准发射单价', 'Current Base Launch Price'], ['2027E', '弗吉尼亚 LC-3 首飞时间窗', 'Target Maiden Flight Window']]
+      },
+      {
+        badge: 'NODE 05 · IRIDIUM L-BAND CONSTELLATION & SPACE APPS',
+        zhT: '拟 $80亿并购 Iridium 通信星座：补齐“造箭—造星—频率运营”终极版图',
+        enT: 'Pending $8.0B Iridium Acquisition: Completing the Launch-to-Connectivity Flywheel',
+        zhD: '正如彼得·贝克所言，未来太空巨头必将掌控自有在轨基础设施与应用服务。并购 Iridium 不仅立即注入 66 颗在轨运行 LEO 卫星（外加 14 颗在轨备份星）、全球协调 L 波段稀缺频谱及 255万+ 航空/海事/国防高粘性订户，更让下一代手机直连（NTN Direct）星座得以用自家工厂造星、自家 Neutron 成本价换星。',
+        enD: 'Acquiring Iridium adds 66 operational LEO cross-linked satellites (+14 spares), globally coordinated L-band spectrum, and 2.55M+ safety-critical subscribers—letting Rocket Lab build and launch next-gen D2D constellations internally at cost while harvesting 57% OEBITDA recurring cash flows.',
+        zhF: '商业传导：Iridium 年营收 $9.03亿 (TTM) + $4.95亿 OEBITDA (57% 利润率) → 现金部分 $19.44亿已全额募足，预计 2027 年中并表',
+        enF: 'Value Flow: Iridium $903M TTM rev + $495M OEBITDA (57% margin) → Cash leg fully funded via ATM, closing expected mid-2027',
+        kpis: [['~$8.0B', 'Iridium 交易企业价值 (EV)', 'Transaction Enterprise Value'], ['2.55M+', '全球活跃计费订阅终端', 'Active Billable Subscribers'], ['57%', 'Iridium 2025 OEBITDA 利润率', 'Iridium OEBITDA Margin'], ['66+14 颗', '在轨运行与备份 LEO 卫星群', 'Active + Spare LEO Satellites']]
+      }
+    ];
+
+    var COHORTS = {
+      solo: {
+        stats: [
+          ['典型合同标的', '单发 Electron 专车或 HASTE 测试', 'Dedicated Electron / HASTE'],
+          ['单发/单合同基准规模', '$7.8M – $10.1M', '$7.8M – $10.1M / Launch'],
+          ['当前分部毛利率', '35.3% – 47.5%', '35.3% – 47.5% Segment GM'],
+          ['5年单客复购 LTV', '$35M – $80M', '$35M – $80M (Multi-Flight)']
+        ],
+        zhN: '<strong>专车精准入轨溢价：</strong>iQPS、Synspective 等高分辨率 SAR 雷达卫星客户需要特定倾角与分钟级轨道相位部署，拼车火箭无法满足，因此愿意支付每公斤逾 $2.5万美元的专车溢价并连续签下 5–10 发一揽子合同。',
+        enN: '<strong>Dedicated Orbital Precision Premium:</strong> Commercial SAR operators like iQPS and Synspective require exact orbital planes and rapid replacement windows that rideshares cannot serve, driving high repeat multi-launch contracts.'
+      },
+      constellation: {
+        stats: [
+          ['典型合同标的', 'Neutron 多发星座部署 + 分离机构', 'Neutron Multi-Launch + Subsystems'],
+          ['单发/单合同基准规模', '$70M / 发', '$70M Base per Launch'],
+          ['目标复飞稳态毛利率', '40% – 50%+', '40% – 50%+ Target Reuse GM'],
+          ['5年单客全栈潜力 LTV', '$350M – $600M', '$350M – $600M Full-Stack LTV']
+        ],
+        zhN: '<strong>全栈搭售棘轮（One-Stop Orbital Ratchet）：</strong>随着 SpaceX 逐步将重心转向巨型 Starship，商业与国防星座运营商极度渴求<strong>第二家可靠中大型运载商</strong>；而一旦客户采用 Rocket Lab 的 Flatellite 卫星平台与激光终端，便能无缝适配 Neutron 整流罩锁死长期包船订单。',
+        enN: '<strong>One-Stop Orbital Ratchet:</strong> As constellation operators seek non-Starlink medium-lift capacity, pairing Rocket Lab\'s stackable Flatellite bus and Mynaric laser terminals with Neutron locks multi-year fleet deployment into a single vendor.'
+      },
+      defense: {
+        stats: [
+          ['典型合同标的', 'SDA 18星主承包 / 太空军 Flatellite', 'SDA 18-Sat Prime / USSF SB-AMTI'],
+          ['单笔主承包合同规模', '$397M – $816M', '$397M – $816M Prime Award'],
+          ['合同现金流特征', '里程碑预收款驱动正 OCF', 'Milestone Advances Fund WIP'],
+          ['5年国防单客户群 LTV', '$1.5B – $3.0B+', '$1.5B – $3.0B+ Multi-Tranche']
+        ],
+        zhN: '<strong>新国防主承包商护城河：</strong>一旦打入 SDA 增殖型作战太空架构（PWSA）Tranche 2 与 Tranche 3 供应链并获得 CMMC Level 2 满分安全认证，后续每两年一轮的星座迭代升级与在轨运维将形成极高转换壁垒的长期国防年金。',
+        enN: '<strong>Disruptive Defense Prime Moat:</strong> Winning SDA Tranche 2 ($515M), Tranche 3 ($816M), and USSF SB-AMTI ($397M) embeds Rocket Lab\'s bus, Phoenix IR payload, and laser terminals into recurring 2-year Pentagon constellation Spiral upgrades.'
+      }
+    };
+
+    function refreshDynamicPanels() {
+      var ln = LENSES[state.activeLens] || LENSES[0];
+      document.getElementById('lensFormula').textContent = isEn() ? ln.enF : ln.zhF;
+      document.getElementById('lensBody').innerHTML = isEn() ? ln.enB : ln.zhB;
+
+      var nd = NODES[state.activeNode] || NODES[0];
+      document.getElementById('nodeBadge').textContent = nd.badge;
+      document.getElementById('nodeTitle').textContent = isEn() ? nd.enT : nd.zhT;
+      document.getElementById('nodeDesc').textContent = isEn() ? nd.enD : nd.zhD;
+      document.getElementById('nodeFormula').textContent = isEn() ? nd.enF : nd.zhF;
+      document.getElementById('nodeKpis').innerHTML = nd.kpis.map(function (k) {
+        return '<div class="bm-ins-card"><b class="mono">' + k[0] + '</b><span>' + (isEn() ? k[2] : k[1]) + '</span></div>';
+      }).join('');
+
+      var ch = COHORTS[state.activeCohort] || COHORTS.constellation;
+      document.getElementById('cohortMetrics').innerHTML = ch.stats.map(function (s, idx) {
+        var valTxt = isEn() ? s[2] : s[1];
+        var fz = idx === 0 ? ' style="font-size:0.92rem;"' : '';
+        var mn = idx > 0 ? ' mono' : '';
+        return '<div class="bm-cohort-stat"><div class="lbl">' + s[0] + '</div><div class="val' + mn + '"' + fz + '>' + valTxt + '</div><div class="delta">SEC / IR Verified</div></div>';
+      }).join('');
+      document.getElementById('cohortNote').innerHTML = isEn() ? ch.enN : ch.zhN;
+
+      var leadEl = document.getElementById('heroLeadText');
+      if (leadEl) leadEl.innerHTML = isEn() ? HERO_LEAD_EN : HERO_LEAD_ZH;
+    }
+
+    function applyLang(lang, silent) {
+      state.lang = (lang === 'en') ? 'en' : 'zh';
+      document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+      var zhB = document.getElementById('langZhBtn');
+      var enB = document.getElementById('langEnBtn');
+      if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+      if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+      var nodes = document.querySelectorAll('[data-i18n-zh]');
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].getAttribute('data-i18n-zh-raw') === '1' && state.lang === 'zh') continue;
+        var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+        if (val !== null) {
+          if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+          else nodes[i].textContent = val;
+        }
+      }
+      refreshDynamicPanels();
+      runSimulator();
+      drawAllCharts();
+      if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+    }
+
+    // Event bindings for Lenses, Pipeline Nodes, Filters, Cohorts
+    document.getElementById('lensTabs').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lens]');
+      if (!b) return;
+      state.activeLens = parseInt(b.getAttribute('data-lens'), 10) || 0;
+      var all = this.querySelectorAll('.mui-seg-btn');
+      for (var i = 0; i < all.length; i++) all[i].classList.toggle('active', all[i] === b);
+      refreshDynamicPanels();
+    });
+
+    document.getElementById('pipelineTrack').addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-node]');
+      if (!btn) return;
+      state.activeNode = parseInt(btn.getAttribute('data-node'), 10) || 0;
+      var bs = this.querySelectorAll('.bm-node-btn');
+      for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === btn);
+      refreshDynamicPanels();
+    });
+
+    document.getElementById('tierFilter').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-tcat]');
+      if (!b) return;
+      var cat = b.getAttribute('data-tcat');
+      var bs = this.querySelectorAll('.mui-seg-btn');
+      for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+      var cards = document.querySelectorAll('#tierList [data-tier]');
+      for (var j = 0; j < cards.length; j++) {
+        cards[j].style.display = (cat === 'all' || cards[j].getAttribute('data-tier') === cat) ? '' : 'none';
+      }
+    });
+
+    document.getElementById('cohortTabs').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-cohort]');
+      if (!b) return;
+      state.activeCohort = b.getAttribute('data-cohort');
+      var bs = this.querySelectorAll('.mui-seg-btn');
+      for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+      refreshDynamicPanels();
+    });
+
+    document.getElementById('peerFilter').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-pcat]');
+      if (!b) return;
+      var cat = b.getAttribute('data-pcat');
+      var bs = this.querySelectorAll('.mui-seg-btn');
+      for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+      var rows = document.querySelectorAll('#peerTable tbody tr');
+      for (var j = 0; j < rows.length; j++) {
+        var rc = rows[j].getAttribute('data-row-cat') || '';
+        rows[j].style.display = (cat === 'all' || rc.indexOf(cat) !== -1) ? '' : 'none';
+      }
+    });
+
+    // Suite Subfolder Hub Filter & Click Handler
+    var hub = document.getElementById('companySubfolderHub');
+    if (hub) {
+      hub.addEventListener('click', function (e) {
+        var pill = e.target.closest('[data-co-cat]');
+        if (pill) {
+          var cat = pill.getAttribute('data-co-cat');
+          var ps = hub.querySelectorAll('[data-co-cat]');
+          for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === pill);
+          var its = hub.querySelectorAll('[data-co-item-cat]');
+          for (var j = 0; j < its.length; j++) {
+            its[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || its[j].getAttribute('data-co-item-cat') === cat));
+          }
+          return;
+        }
+        var item = e.target.closest('[data-suite-page]');
+        if (item) {
+          if (item.classList.contains('active')) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            var targetName = item.getAttribute('data-suite-page');
+            showToast(isEn() ? ('Companion file in suite: ' + targetName) : ('请在附件列表切换或同目录打开：' + targetName));
+          }
+        }
+      });
+    }
+
+    // High-DPI Retina Canvas Engine
+    function prepCanvas(id) {
+      var c = document.getElementById(id);
+      if (!c) return null;
+      var rect = c.getBoundingClientRect();
+      var w = Math.max(260, rect.width || 500);
+      var h = Math.max(140, rect.height || 280);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      c.width = Math.round(w * dpr);
+      c.height = Math.round(h * dpr);
+      var ctx = c.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      return { c: c, ctx: ctx, w: w, h: h };
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + rr, y);
+      ctx.arcTo(x + w, y, x + w, y + h, rr);
+      ctx.arcTo(x + w, y + h, x, y + h, rr);
+      ctx.arcTo(x, y + h, x, y, rr);
+      ctx.arcTo(x, y, x + w, y, rr);
+      ctx.closePath();
+    }
+
+    function drawProfitCanvas() {
+      var env = prepCanvas('profitCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.profitCanvas = [];
+      var pad = { top: 28, right: 20, bottom: 42, left: 54 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      if (state.pView === 'waterfall') {
+        var steps = [
+          { lbl: isEn() ? 'Space Sys' : '太空系统', val: 540.9, base: 0, col: pal.blue, tip: '9M 2026 Space Systems 营收: $540.9M (占总营收 77.0%)' },
+          { lbl: isEn() ? '+Launch' : '+发射服务', val: 161.3, base: 540.9, col: pal.green, tip: '9M 2026 Launch Services 营收: +$161.3M (18次发射)，合计总营收 $702.25M' },
+          { lbl: isEn() ? 'Non-GAAP GP' : 'Non-GAAP毛利', val: 285.9, base: 0, col: pal.violet, tip: '9M 2026 Non-GAAP 毛利额: $285.88M (毛利率 40.7%；GAAP 毛利 $251.14M)' },
+          { lbl: isEn() ? 'R&D Invest' : '研发投入', val: 261.3, base: 0, col: pal.amber, tip: '9M 2026 GAAP 研发投入: $261.33M (重点攻坚 Neutron 火箭与星座技术)' },
+          { lbl: isEn() ? 'Cust. Float' : '合同预收款', val: 423.6, base: 0, col: pal.green, tip: 'Q3 期末资产负债表合同负债(客户预收款): $423.58M (+117% vs 年初)' },
+          { lbl: isEn() ? 'FY26E Rev' : 'FY26E指引全貌', val: 982.2, base: 0, col: pal.blue, tip: '9M26 实际 ($702.2M) + Q4 指引中值 ($280M) = 隐含全年营收 ~$982.2M' }
+        ];
+        var maxV = 1080;
+        for (var g = 0; g <= 4; g++) {
+          var gv = (maxV / 4) * g;
+          var gy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + gv.toFixed(0) + 'M', pad.left - 8, gy + 4);
+        }
+        var slotW = pw / steps.length;
+        var barW = Math.min(46, slotW * 0.56);
+        steps.forEach(function (s, i) {
+          var x = pad.left + i * slotW + (slotW - barW) / 2;
+          var yTop = pad.top + ph - ((s.base + s.val) / maxV) * ph;
+          var yBot = pad.top + ph - (s.base / maxV) * ph;
+          var bh = Math.max(5, yBot - yTop);
+          ctx.fillStyle = s.col;
+          roundRect(ctx, x, yTop, barW, bh, 6);
+          ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + s.val.toFixed(0) + 'M', x + barW / 2, yTop - 6);
+          ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif';
+          ctx.fillText(s.lbl, x + barW / 2, pad.top + ph + 20);
+          hitRegions.profitCanvas.push({ x: x, y: yTop, w: barW, h: bh, title: s.lbl, body: s.tip });
+        });
+      } else {
+        var yrs = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'TTM Q3\'26'];
+        var gmGaap = [-3.0, 9.0, 21.0, 26.6, 34.4, 36.2];
+        var opMargin = [-164.0, -64.1, -72.7, -43.5, -38.0, -27.6];
+        var minM = -175, maxM = 55;
+        for (var m = 0; m <= 4; m++) {
+          var mv = minM + ((maxM - minM) / 4) * m;
+          var my = pad.top + ph - (m / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText(mv.toFixed(0) + '%', pad.left - 8, my + 4);
+        }
+        var zeroY = pad.top + ph - ((0 - minM) / (maxM - minM)) * ph;
+        ctx.strokeStyle = pal.sub; ctx.setLineDash([4, 4]);
+        ctx.beginPath(); ctx.moveTo(pad.left, zeroY); ctx.lineTo(pad.left + pw, zeroY); ctx.stroke();
+        ctx.setLineDash([]);
+
+        function plotLine(arr, col, name) {
+          ctx.strokeStyle = col; ctx.lineWidth = 2.6; ctx.beginPath();
+          arr.forEach(function (v, idx) {
+            var px = pad.left + (idx / (yrs.length - 1)) * pw;
+            var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+            if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+          });
+          ctx.stroke();
+          arr.forEach(function (v, idx) {
+            var px = pad.left + (idx / (yrs.length - 1)) * pw;
+            var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+            ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py, 4.2, 0, Math.PI * 2); ctx.fill();
+            if (idx === 0 || idx === 4 || idx === 5) {
+              ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+              ctx.fillText(v.toFixed(1) + '%', px, py - 9);
+            }
+            hitRegions.profitCanvas.push({ x: px - 10, y: py - 10, w: 20, h: 20, title: yrs[idx] + ' · ' + name, body: name + ': ' + v.toFixed(1) + '%' });
+          });
+        }
+        yrs.forEach(function (y, idx) {
+          var px = pad.left + (idx / (yrs.length - 1)) * pw;
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText(y, px, pad.top + ph + 20);
+        });
+        plotLine(gmGaap, pal.green, 'GAAP 毛利率 Gross Margin');
+        plotLine(opMargin, pal.blue, 'GAAP 营业利润率 Operating Margin (亏损快速收敛)');
+      }
+    }
+
+    function drawCohortCanvas() {
+      var env = prepCanvas('cohortCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.cohortCanvas = [];
+      var pad = { top: 28, right: 22, bottom: 42, left: 52 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      if (state.cView === 'backlog') {
+        var qs = ['Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026', 'Q3 2026'];
+        var lBk = [0.51, 0.48, 0.92, 0.94, 1.85];
+        var sBk = [0.59, 1.37, 1.30, 1.42, 1.72];
+        var maxB = 4.0;
+        for (var g = 0; g <= 4; g++) {
+          var gv = (maxB / 4) * g;
+          var gy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + gv.toFixed(1) + 'B', pad.left - 8, gy + 4);
+        }
+        var slot = pw / qs.length, bw = Math.min(48, slot * 0.56);
+        qs.forEach(function (q, i) {
+          var x = pad.left + i * slot + (slot - bw) / 2;
+          var tot = lBk[i] + sBk[i];
+          var hS = (sBk[i] / maxB) * ph;
+          var hL = (lBk[i] / maxB) * ph;
+          var yS = pad.top + ph - hS;
+          var yL = yS - hL;
+          ctx.fillStyle = pal.blue;
+          roundRect(ctx, x, yS, bw, hS, 4); ctx.fill();
+          ctx.fillStyle = pal.green;
+          roundRect(ctx, x, yL, bw, hL, 5); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + tot.toFixed(2) + 'B', x + bw / 2, yL - 6);
+          ctx.fillStyle = pal.sub; ctx.font = '600 11px "IBM Plex Mono", monospace';
+          ctx.fillText(q, x + bw / 2, pad.top + ph + 20);
+          hitRegions.cohortCanvas.push({ x: x, y: yL, w: bw, h: hS + hL, title: q + ' 在手订单总计 $' + tot.toFixed(2) + 'B', body: '发射服务 Backlog: $' + lBk[i].toFixed(2) + 'B + 太空系统 Backlog: $' + sBk[i].toFixed(2) + 'B' });
+        });
+      } else {
+        var yrs = ['2021', '2022', '2023', '2024', '2025', '2026 YTD(11.14)'];
+        var flights = [6, 9, 10, 16, 21, 21];
+        var maxF = 25;
+        for (var k = 0; k <= 5; k++) {
+          var kv = k * 5;
+          var ky = pad.top + ph - (kv / maxF) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText(kv + (isEn() ? '' : '发'), pad.left - 8, ky + 4);
+        }
+        var s2 = pw / yrs.length, bw2 = Math.min(42, s2 * 0.54);
+        yrs.forEach(function (yr, idx) {
+          var x = pad.left + idx * s2 + (s2 - bw2) / 2;
+          var bh = (flights[idx] / maxF) * ph, yt = pad.top + ph - bh;
+          ctx.fillStyle = idx >= 4 ? pal.violet : pal.blue;
+          roundRect(ctx, x, yt, bw2, bh, 6); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText(flights[idx] + (isEn() ? '' : '发'), x + bw2 / 2, yt - 6);
+          ctx.fillStyle = pal.sub; ctx.font = '600 10.5px "IBM Plex Mono", monospace';
+          ctx.fillText(yr, x + bw2 / 2, pad.top + ph + 20);
+          hitRegions.cohortCanvas.push({ x: x, y: yt, w: bw2, h: bh, title: yr + ' Electron/HASTE 发射频次', body: '年度完成发射 ' + flights[idx] + ' 次（截至 2026-11-14 累计达 100 次发射、连续 59 次成功）' });
+        });
+      }
+    }
+
+    function drawCapitalCanvas() {
+      var env = prepCanvas('capitalCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.capitalCanvas = [];
+      var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      if (state.kView === 'cash') {
+        var pts = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'Q3 2026'];
+        var cashB = [0.69, 0.54, 0.32, 0.48, 1.10, 4.70];
+        var maxC = 5.2;
+        for (var g = 0; g <= 4; g++) {
+          var cv = (maxC / 4) * g;
+          var cy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, cy); ctx.lineTo(pad.left + pw, cy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + cv.toFixed(1) + 'B', pad.left - 8, cy + 4);
+        }
+        var slot = pw / pts.length, bw = Math.min(42, slot * 0.56);
+        pts.forEach(function (p, i) {
+          var x = pad.left + i * slot + (slot - bw) / 2;
+          var bh = (cashB[i] / maxC) * ph, yt = pad.top + ph - bh;
+          ctx.fillStyle = (i === 5) ? pal.green : pal.blue;
+          roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + cashB[i].toFixed(2) + 'B', x + bw / 2, yt - 6);
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace';
+          ctx.fillText(p, x + bw / 2, pad.top + ph + 20);
+          hitRegions.capitalCanvas.push({ x: x, y: yt, w: bw, h: bh, title: p + ' 现金及有价证券储备', body: '$' + cashB[i].toFixed(2) + 'B（Q3 2026 有息债务仅 $3.0M，Iridium 现金对价已全额募足）' });
+        });
+      } else {
+        var items = [
+          { name: 'Q3\'26 客户合同负债预收款', v: 423.6, max: 460, unit: '$423.6M', col: pal.green, tip: '截至 2026-09-30 合同负债达 $423.58M，无息支撑在研火箭与卫星制造' },
+          { name: 'FY25 期末客户合同负债', v: 195.4, max: 460, unit: '$195.4M', col: pal.blue, tip: '截至 2025-12-31 合同负债为 $195.44M，9个月净增 +116.7%' },
+          { name: '9M26 最大美政府客户营收贡献', v: 294.9, max: 460, unit: '$294.9M (42%)', col: pal.violet, tip: '单一最大美国政府客户占比由 FY24 11% → FY25 28% → 9M26 42%' },
+          { name: 'Q4\'26 预计单季净利息收入', v: 45.0, max: 460, unit: '$45.0M/季', col: pal.amber, tip: '$4.70B 现金储备在交割前每季度创造约 $45M 净利息收益，大幅对冲研发开支' }
+        ];
+        var rowH = ph / items.length;
+        items.forEach(function (it, idx) {
+          var cy = pad.top + idx * rowH + rowH / 2;
+          var bh = 22, barLen = (it.v / it.max) * (pw * 0.78);
+          ctx.fillStyle = pal.grid;
+          roundRect(ctx, pad.left, cy - 2, pw * 0.78, bh, 5); ctx.fill();
+          ctx.fillStyle = it.col;
+          roundRect(ctx, pad.left, cy - 2, barLen, bh, 5); ctx.fill();
+          ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'left';
+          ctx.fillText(it.name, pad.left, cy - 8);
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace';
+          ctx.fillText(it.unit, pad.left + pw * 0.78 + 8, cy + 13);
+          hitRegions.capitalCanvas.push({ x: pad.left, y: cy - 18, w: pw, h: 42, title: it.name, body: it.tip });
+        });
+      }
+    }
+
+    // Interactive 5-Year Pro Forma Simulator
+    var simData = { rev: [0.98, 2.25, 2.85, 3.60, 4.48, 5.51] };
+    function drawSimMiniCanvas() {
+      var env = prepCanvas('simMiniCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      var pad = { top: 22, right: 18, bottom: 26, left: 46 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+      var yrs = ['FY26E', 'FY27E', 'FY28E', 'FY29E', 'FY30E', 'FY31E'];
+      var arr = simData.rev;
+      var maxR = Math.max(4.0, Math.ceil(Math.max.apply(null, arr) * 1.18));
+      ctx.strokeStyle = pal.grid;
+      ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+      ctx.strokeStyle = pal.blue; ctx.lineWidth = 2.6; ctx.beginPath();
+      arr.forEach(function (v, i) {
+        var px = pad.left + (i / 5) * pw;
+        var py = pad.top + ph - (v / maxR) * ph;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+      arr.forEach(function (v, i) {
+        var px = pad.left + (i / 5) * pw;
+        var py = pad.top + ph - (v / maxR) * ph;
+        ctx.fillStyle = (i === 5) ? pal.green : pal.blue;
+        ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+        ctx.fillText('$' + v.toFixed(2) + 'B', px, py - 8);
+        ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+        ctx.fillText(yrs[i], px, pad.top + ph + 16);
+      });
+    }
+
+    function runSimulator() {
+      var gOrg = parseFloat(document.getElementById('inpOrgCagr').value) / 100;
+      var neuF = parseInt(document.getElementById('inpNeuFlights').value, 10);
+      var irdmOn = parseInt(document.getElementById('inpIrdmBoost').value, 10) >= 50;
+
+      document.getElementById('lblOrgCagr').textContent = (gOrg * 100).toFixed(1) + '%';
+      document.getElementById('lblNeuFlights').textContent = neuF + (isEn() ? ' flights/yr' : ' 发/年');
+      document.getElementById('lblIrdmBoost').textContent = irdmOn ? (isEn() ? 'Included (+100%)' : '开启 (+100%)') : (isEn() ? 'Standalone (0%)' : '仅独立内生 (0%)');
+
+      var base26 = 0.982; // Implied FY2026 midpoint $982.2M
+      var revArr = [base26];
+      var core = base26;
+      for (var y = 1; y <= 5; y++) {
+        core = core * (1 + gOrg);
+        var neuRev = (neuF * (y / 5) * 0.070); // $70M per flight ramping to Y5
+        var irdmRev = irdmOn ? (y === 1 ? 0.46 : 0.94 * Math.pow(1.07, y - 1)) : 0; // Mid-2027 close
+        revArr.push(core + neuRev + irdmRev);
+      }
+      var fy31Rev = revArr[5];
+      var core31 = core + (neuF * 0.070);
+      var irdm31 = irdmOn ? (0.94 * Math.pow(1.07, 4)) : 0;
+      var gm31 = ((core31 * 0.445 + irdm31 * 0.68) / fy31Rev) * 100;
+      var ebitda31 = core31 * 0.275 + irdm31 * 0.58;
+      var ebMargin = (ebitda31 / fy31Rev) * 100;
+
+      document.getElementById('simRevOut').textContent = '$' + fy31Rev.toFixed(2) + 'B';
+      document.getElementById('simGmOut').textContent = gm31.toFixed(1) + '%';
+      document.getElementById('simEbitdaOut').textContent = '$' + ebitda31.toFixed(2) + 'B';
+      document.getElementById('simMarginOut').textContent = ebMargin.toFixed(1) + '%';
+
+      simData.rev = revArr;
+      drawSimMiniCanvas();
+    }
+
+    ['inpOrgCagr', 'inpNeuFlights', 'inpIrdmBoost'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', runSimulator);
+    });
+
+    var PRESETS = {
+      bear: { g: 18, n: 6, i: 0 },
+      base: { g: 28, n: 14, i: 100 },
+      bull: { g: 36, n: 22, i: 100 }
+    };
+    document.getElementById('simPresets').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-preset]');
+      if (!b) return;
+      var k = b.getAttribute('data-preset');
+      var bs = this.querySelectorAll('.mui-seg-btn');
+      for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+      var pr = PRESETS[k] || PRESETS.base;
+      document.getElementById('inpOrgCagr').value = pr.g;
+      document.getElementById('inpNeuFlights').value = pr.n;
+      document.getElementById('inpIrdmBoost').value = pr.i;
+      runSimulator();
+    });
+
+    function bindChartTab(groupId, attr, stateKey, drawFn) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      g.addEventListener('click', function (e) {
+        var b = e.target.closest('[' + attr + ']');
+        if (!b) return;
+        state[stateKey] = b.getAttribute(attr);
+        var bs = g.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        drawFn();
+      });
+    }
+    bindChartTab('pChartTabs', 'data-pview', 'pView', drawProfitCanvas);
+    bindChartTab('cChartTabs', 'data-cview', 'cView', drawCohortCanvas);
+    bindChartTab('kChartTabs', 'data-kview', 'kView', drawCapitalCanvas);
+
+    function bindHoverTooltip(canvasId) {
+      var c = document.getElementById(canvasId);
+      var tip = document.getElementById('chartTooltip');
+      if (!c || !tip) return;
+      c.addEventListener('mousemove', function (ev) {
+        var r = c.getBoundingClientRect();
+        var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+        var list = hitRegions[canvasId] || [];
+        var hit = null;
+        for (var i = 0; i < list.length; i++) {
+          var rg = list[i];
+          if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+        }
+        if (hit) {
+          tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+          tip.style.display = 'block';
+          tip.style.left = Math.min(window.innerWidth - 305, ev.clientX + 14) + 'px';
+          tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+        } else {
+          tip.style.display = 'none';
+        }
+      });
+      c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    }
+    ['profitCanvas', 'cohortCanvas', 'capitalCanvas'].forEach(bindHoverTooltip);
+
+    function drawAllCharts() {
+      drawProfitCanvas();
+      drawCohortCanvas();
+      drawCapitalCanvas();
+      drawSimMiniCanvas();
+    }
+
+    // Quick Jump Search (⌘K)
+    var QUICK_ITEMS = [
+      { id: 'mod-deck', t: 'M0 双栏指挥舱与三阶公式', s: 'Q3 $267.8M (+72.7%) · Backlog $3.57B · 净现金 $4.70B' },
+      { id: 'mod-pipeline', t: 'M1 五阶端到端价值链沙盘', s: '核心部组件 → 整星总包 → Electron/HASTE → Neutron → Iridium' },
+      { id: 'mod-profit-pool', t: 'M2 损益瀑布流与太空系统四层塔', s: '9M26 40.7% Non-GAAP GM · SDA $1.33B+ 主承包拆解' },
+      { id: 'mod-cohort', t: 'M3 全栈搭售棘轮与 Backlog 爆发曲线', s: 'Neutron 16发储备 ($70M/发) · 100次发射里程碑' },
+      { id: 'mod-capital', t: 'M4 $4.24亿客户预收浮存金与并表推演器', s: 'Q3 OCF +$7.2M 转正 · 2031E Iridium 并表 EBITDA 模拟' },
+      { id: 'mod-matrix', t: 'M5 全球商业航天对标矩阵与三大压测', s: 'RKLB vs SpaceX / Iridium / LUNR / Firefly / 洛克希德马丁' }
+    ];
+    var qInput = document.getElementById('quickJumpInput');
+    var qPop = document.getElementById('quickJumpPopover');
+    function renderQuick(q) {
+      var kw = (q || '').trim().toLowerCase();
+      var matched = QUICK_ITEMS.filter(function (it) {
+        return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+      });
+      qPop.innerHTML = matched.map(function (it) {
+        return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+      }).join('');
+      qPop.classList.toggle('open', matched.length > 0);
+    }
+    qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+    qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+    qPop.addEventListener('click', function (e) {
+      var jb = e.target.closest('[data-jump]');
+      if (!jb) return;
+      var el = document.querySelector(jb.getAttribute('data-jump'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      qPop.classList.remove('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        qInput.focus();
+      } else if (e.key === 'Escape') {
+        qPop.classList.remove('open');
+        document.body.classList.remove('portal-detail-drawer');
+      }
+    });
+
+    // Sidebar Toggle, Print & 1-Click HTML Download
+    function triggerDownload() {
+      var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '火箭实验室_Rocket_Lab_商业模式解构.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+      showToast(isEn() ? 'Downloaded standalone HTML file' : '已开始下载独立网页文件');
+    }
+    document.getElementById('topDownloadBtn').addEventListener('click', triggerDownload);
+    document.getElementById('sideExportBtn').addEventListener('click', triggerDownload);
+    document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+
+    document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
+      if (window.innerWidth < 1024) {
+        document.body.classList.toggle('portal-detail-drawer');
+      } else {
+        var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+        if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+        else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (e) {}
+        setTimeout(drawAllCharts, 60);
+      }
+    });
+    document.getElementById('portalDetailBackdrop').addEventListener('click', function () {
+      document.body.classList.remove('portal-detail-drawer');
+    });
+    document.getElementById('tocList').addEventListener('click', function (e) {
+      if (e.target.closest('.mui-nav-link')) document.body.classList.remove('portal-detail-drawer');
+    });
+
+    window.addEventListener('scroll', function () {
+      var bar = document.getElementById('readingProgressBar');
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+    }, { passive: true });
+
+    // Stress Audit Checkboxes
+    try {
+      var savedChk = JSON.parse(localStorage.getItem(STORAGE_STRESS_KEY) || '{}');
+      document.querySelectorAll('[data-stress-chk]').forEach(function (chk) {
+        var k = chk.getAttribute('data-stress-chk');
+        chk.checked = !!savedChk[k];
+        chk.addEventListener('change', function () {
+          savedChk[k] = chk.checked;
+          try { localStorage.setItem(STORAGE_STRESS_KEY, JSON.stringify(savedChk)); } catch (err) {}
+          showToast(chk.checked ? '已加入重点跟踪清单' : '已取消跟踪标记');
+        });
+      });
+    } catch (e) {}
+
+    // Theme & Lang Init
+    try {
+      applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+      applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+    } catch (e) {}
+
+    document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+      var nxt = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nxt, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+    });
+    document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+      var tb = e.target.closest('[data-portal-theme]');
+      if (!tb) return;
+      var mode = tb.getAttribute('data-portal-theme');
+      applyTheme(mode, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, mode); } catch (err) {}
+    });
+    document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+      var lb = e.target.closest('[data-lang]');
+      if (!lb) return;
+      var nl = lb.getAttribute('data-lang');
+      applyLang(nl, false);
+      try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+    });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(drawAllCharts, 90);
+    });
+
+    runSimulator();
+    drawAllCharts();
+  })();
+  </script>
+</body>
+</html>

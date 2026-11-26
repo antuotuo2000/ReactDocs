@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="威瑞信 VeriSign, Inc. (NASDAQ: VRSN) 2026–2032 未来战略与第二增长曲线全景推演：.com 7% 四连提价周期、.net 10% 提价、.web 无价格上限商业化落地、Verisign Informed™ 信任验证服务、AI 代理时代 DNS 路由与抗量子基础设施。" />
+ <title>威瑞信 2026–2032 未来战略与新增长曲线观测站 | 数据中心</title>
+
+<style>
+ /* ==========================================================================
+ MUI Official Branding Design System (https://mui.com/)
+ Bespoke 2030 Observatory Layout: 3-Horizon Radar · 4:8 Vertical Explorer · Optionality Builder
+ ========================================================================== */
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.86);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.65);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.82);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.44);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.16);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --blueprint-grid: linear-gradient(rgba(51, 153, 255, 0.065) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(51, 153, 255, 0.065) 1px, transparent 1px);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: rgba(255, 255, 255, 0.95);
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.86);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --blueprint-grid: linear-gradient(rgba(0, 115, 230, 0.048) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(0, 115, 230, 0.048) 1px, transparent 1px);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas);
+ background-image: var(--hero-glow);
+ background-attachment: fixed;
+ color: var(--text-primary);
+ line-height: 1.65;
+ overflow-x: hidden;
+ min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar {
+ position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 50%, #16A34A 100%); z-index: 1300; transition: width 0.08s linear;
+ }
+ #chartTooltip {
+ position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+ padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+ box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+ }
+ #muiSnackbar {
+ position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+ z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+ border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ .mui-appbar {
+ position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+ }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn {
+ display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+ border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+ color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+ }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .brand-monogram {
+ width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+ color: #FFFFFF; font-weight: 800; font-size: 0.78rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .breadcrumbs .crumb-link { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+ .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 215px; }
+ .quick-search-input {
+ width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+ }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd {
+ position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+ padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+ }
+ .quick-jump-popover {
+ position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+ border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+ }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item {
+ display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+ border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+ }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch {
+ display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 36px;
+ }
+ .mui-lang-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+ font-size: 0.76rem; font-weight: 700; height: 30px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+ }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+ .mui-chip {
+ display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 10px; border-radius: 999px;
+ font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+ }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ .mui-segmented {
+ display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+ }
+ .mui-seg-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+ padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+ .ft-chart-legend { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+ .legend-pill {
+ display: inline-flex; align-items: center; gap: 6px; font-size: 0.74rem; font-weight: 600;
+ color: var(--text-secondary); padding: 4px 10px; border-radius: 999px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); cursor: pointer; font-family: inherit; transition: all 0.15s ease;
+ }
+ .legend-pill:hover { border-color: var(--border-strong); color: var(--text-primary); }
+ .legend-pill.muted { opacity: 0.42; }
+ .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+ .layout-shell {
+ max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+ gap: 26px; padding: 22px 20px 72px; align-items: start;
+ }
+ .mui-sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 12px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 15px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+ .mui-nav-link {
+ display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 9px;
+ font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+ .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+ .drawer-backdrop.open { display: block; }
+ @media (max-width: 1023px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr); padding: 14px 14px 56px; }
+ .mui-sidebar {
+ position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+ background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+ transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto;
+ }
+ .mui-sidebar.open { transform: translateX(0); }
+ .hide-sm { display: none !important; }
+ .quick-search-wrap { width: 150px; }
+ }
+
+ /* BESPOKE 2026–2032 STRATEGIC OBSERVATORY LAYOUT */
+ .ft-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+ .ft-hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1080px) { .ft-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+ .ft-manifesto {
+ background-color: var(--bg-paper);
+ background-image: var(--blueprint-grid);
+ background-size: 28px 28px;
+ border: 1px solid var(--border-subtle);
+ border-radius: 18px;
+ padding: 26px 28px;
+ box-shadow: var(--shadow-card);
+ position: relative;
+ overflow: hidden;
+ display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-manifesto::before {
+ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+ background: linear-gradient(90deg, #0073E6 0%, #6D28D9 52%, #16A34A 100%);
+ }
+ .ft-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+ .ft-h1 { font-size: clamp(1.48rem, 2.3vw, 2.08rem); font-weight: 800; line-height: 1.24; letter-spacing: -0.02em; margin-bottom: 10px; }
+ .ft-grad {
+ background: linear-gradient(92deg, #0073E6 0%, #7C3AED 52%, #15803D 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ html[data-theme="dark"] .ft-grad {
+ background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 52%, #66BB6A 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ .ft-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
+ .ft-lead strong { color: var(--text-primary); }
+
+ .ft-ternus-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 640px) { .ft-ternus-strip { grid-template-columns: minmax(0, 1fr); } }
+ .ft-mini-pill { padding: 10px 12px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .ft-mini-pill b { display: block; font-size: 0.78rem; color: var(--mui-primary-lighter); margin-bottom: 2px; }
+ .ft-mini-pill span { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .ft-horizon-radar {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+ padding: 20px 22px; box-shadow: var(--shadow-card);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .ft-hz-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+ .ft-hz-btn {
+ padding: 9px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-secondary); font-family: inherit; font-size: 0.75rem; font-weight: 800; cursor: pointer; text-align: center;
+ transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-hz-btn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+ .ft-hz-btn.active { background: var(--bg-active); border-color: #0073E6; color: var(--mui-primary-lighter); box-shadow: 0 0 0 1px #0073E6; }
+ .ft-hz-card {
+ padding: 15px 16px; border-radius: 13px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle);
+ display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between;
+ }
+ .ft-hz-list { list-style: none; display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: var(--text-secondary); }
+ .ft-hz-list li { display: flex; align-items: flex-start; gap: 7px; }
+ .ft-hz-dot { width: 7px; height: 7px; border-radius: 50%; background: #0073E6; margin-top: 7px; flex-shrink: 0; }
+ .ft-hz-foot { display: flex; justify-content: space-between; padding-top: 9px; border-top: 1px dashed var(--border-default); font-size: 0.74rem; font-weight: 700; gap: 8px; flex-wrap: wrap; }
+
+ .ft-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+ .ft-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+ .ft-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+ html[data-theme="dark"] .ft-kicker { color: var(--mui-primary-light); }
+ .ft-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+ .ft-sub { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+ .ft-explorer { display: grid; grid-template-columns: 4.2fr 7.8fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-explorer { grid-template-columns: minmax(0, 1fr); } }
+ .ft-rail { display: flex; flex-direction: column; gap: 8px; }
+ .ft-rail-btn {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left;
+ padding: 11px 13px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+ color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .ft-rail-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateX(2px); }
+ .ft-rail-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 4px 12px rgba(0, 115, 230, 0.14); }
+ .ft-rail-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+ .ft-rail-idx {
+ width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+ font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0;
+ }
+ .ft-rail-btn.active .ft-rail-idx { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .ft-rail-name { font-size: 0.82rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .ft-rail-tam { font-size: 0.69rem; font-weight: 700; color: var(--mui-primary-lighter); flex-shrink: 0; }
+
+ .ft-dossier {
+ border-radius: 16px; border: 1px solid var(--border-subtle);
+ background-color: var(--bg-paper-solid); background-image: var(--blueprint-grid); background-size: 26px 26px;
+ padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+ }
+ .ft-dossier h3 { font-size: 1.12rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+ .ft-dossier p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.72; }
+ .ft-dossier-formula { padding: 10px 13px; border-radius: 10px; background: var(--bg-subtle); border-left: 3px solid #7C3AED; font-size: 0.79rem; font-weight: 600; color: var(--text-primary); }
+ .ft-gauge-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+ @media (max-width: 680px) { .ft-gauge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ .ft-gauge-card { padding: 11px 12px; border-radius: 11px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+ .ft-gauge-card b { display: block; font-size: 1.05rem; color: var(--mui-primary-lighter); }
+ .ft-gauge-card span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-split-75 { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 18px; align-items: stretch; }
+ .ft-split-57 { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 18px; align-items: stretch; }
+ @media (max-width: 1040px) { .ft-split-75, .ft-split-57 { grid-template-columns: minmax(0, 1fr); } }
+ .ft-subbox {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; min-width: 0;
+ padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: flex-start; gap: 14px;
+ }
+ .ft-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .ft-subhead h3 { font-size: 1.01rem; font-weight: 800; }
+ .ft-canvas-box {
+ position: relative; width: 100%; height: 295px; border-radius: 12px;
+ background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px;
+ }
+ .ft-canvas-box canvas { width: 100%; height: 100%; display: block; cursor: crosshair; }
+ .ft-caption { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
+
+ .ft-thesis-stack { display: flex; flex-direction: column; gap: 9px; }
+ .ft-thesis-item { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-thesis-item b { display: block; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 3px; }
+ .ft-thesis-item p { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .ft-chip-matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 10px; flex: 1; align-content: stretch; }
+ @media (max-width: 600px) { .ft-chip-matrix { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
+ .ft-chip-box { padding: 12px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: flex-start; min-width: 0; overflow-wrap: anywhere; }
+ .ft-chip-box .code { font-size: 0.73rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-chip-box h4 { font-size: 0.84rem; font-weight: 800; margin: 2px 0 4px; }
+ .ft-chip-box p { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.45; }
+
+ .ft-builder-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: stretch; }
+ @media (max-width: 980px) { .ft-builder-grid { grid-template-columns: minmax(0, 1fr); } }
+ .ft-switch-list { display: flex; flex-direction: column; gap: 8px; }
+ .ft-opt-row {
+ display: flex; align-items: center; justify-content: space-between; gap: 10px;
+ padding: 10px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+ cursor: pointer; transition: all 0.15s ease;
+ }
+ .ft-opt-row:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+ .ft-opt-left { display: flex; align-items: center; gap: 9px; min-width: 0; }
+ .ft-opt-left input { width: 16px; height: 16px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .ft-opt-left b { font-size: 0.81rem; color: var(--text-primary); display: block; }
+ .ft-opt-left span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+ .ft-opt-add { font-size: 0.75rem; font-weight: 800; color: var(--mui-success-text); flex-shrink: 0; }
+
+ .ft-val-board {
+ padding: 18px 20px; border-radius: 15px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .ft-val-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+ .ft-val-kpi { padding: 10px 12px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .ft-val-kpi b { display: block; font-size: 1.16rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .ft-val-kpi span { font-size: 0.71rem; color: var(--text-muted); }
+
+ .ft-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+ .ft-source-card {
+ display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .ft-source-card:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+ .ft-source-card b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+ .ft-source-card span { font-size: 0.72rem; color: var(--text-secondary); }
+ </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <!-- Sticky Frosted AppBar -->
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" data-i18n-aria-zh="切换目录侧边栏" data-i18n-aria-en="Toggle Navigation Sidebar" title="展开/收起章节目录" data-i18n-title-zh="展开/收起章节目录" data-i18n-title-en="Toggle Table of Contents">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">VRSN</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航">
+ <a class="crumb-link hide-sm" href="../index.html">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </a>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="威瑞信 2026–2032 未来战略与第二曲线观测站" data-i18n-en="VeriSign 2026–2032 Future Horizon Observatory">威瑞信 2026–2032 未来战略与第二曲线观测站</span>
+ </nav>
+ <span class="mui-chip mui-chip-violet mono hide-sm">.WEB × INFORMED</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">.COM 7% ESCALATOR</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索未来引擎或2030估值…" data-i18n-ph-zh="检索未来引擎或2030估值…" data-i18n-ph-en="Search engines or 2030 cap…" aria-label="快速跳转模块" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+ </span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <!-- Left Sidebar -->
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="未来战略模块与站点导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-violet mono">VRSN · 2030 OBSERVATORY</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="威瑞信未来十年战略观测站" data-i18n-en="VeriSign 2030 Strategic Observatory">威瑞信未来十年战略观测站</div>
+ <p class="sidebar-subtitle" data-i18n-zh=".com 四连提价周期 × .web 无上限商业化 × Verisign Informed™ 信任验证 × AI代理与抗量子 DNS" data-i18n-en=".com 7% Escalator × Uncapped .web Launch × Verisign Informed™ Trust × Post-Quantum DNS"> .com 四连提价周期 × .web 无上限商业化 × Verisign Informed™ 信任验证 × AI代理与抗量子 DNS</p>
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh=".com 提价窗口 (2026–2029)" data-i18n-en=".com Escalator (2026–2029)">.com 提价窗口 (2026–2029)</span>
+ <span class="sidebar-mini-val mono">$10.97 → ~$13.42</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh=".web 全面开放 (GA)" data-i18n-en=".web General Availability">.web 全面开放 (GA)</span>
+ <span class="sidebar-mini-val mono" data-i18n-zh="2027.04.06 (无限价)" data-i18n-en="Apr 6, 2027 (Uncapped)">2027.04.06 (无限价)</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="资本开支纪律 (FY26E)" data-i18n-en="CapEx Intensity (FY26E)">资本开支纪律 (FY26E)</span>
+ <span class="sidebar-mini-val mono">~3.4% ($55M–$65M)</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="站点导航与未来观测目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261126">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261126 · 43/44</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="verisign_inc_vrsn2.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="verisign_nasdaq_vrsn_18_bidzos_calys_mcpherson_indelicarto_kaliski_kane_cote_gorelick.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (44)" data-i18n-en="All (44)">全部 (44)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (44)" data-i18n-en="Company (44)">公司深度 (44)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_12_fy2026e_50b.html" title="Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）" data-i18n-en="Abbott &amp; 12 Deep DiveReport (FY2026E ~$50B OverviewBreakdown)">Abbott 雅培全产品线与服务 12 大板块深度研报中枢（FY2026E ~$50B 全景拆解）</span><span class="co-hub-meta mono">abbott_12_fy2026e_50b.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_20_2026_def_14a (1).html" title="Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）" data-i18n-en="Abbott &amp; 20 PeopleDeep DiveReport (2026 DEF 14A &amp;)">Abbott 雅培核心高管与董事会治理 20 人深度研报中枢（2026 DEF 14A 与战略重构）</span><span class="co-hub-meta mono">abbott_20_2026_def_14a (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt (1).html" title="雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告" data-i18n-en="Abbott Laboratories (ABT) Corporate Culture &amp; Org Architecture Deep Dive">雅培公司 Abbott Laboratories (ABT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">abbott_laboratories_abt (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt.html" title="雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解" data-i18n-en="Abbott Laboratories (ABT) Business Model Deep DiveBreakdown">雅培公司 Abbott Laboratories (ABT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">abbott_laboratories_abt.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt2.html" title="雅培公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">雅培公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">abbott_laboratories_abt2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="abbott_laboratories_abt3.html" title="雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">雅培企业文化与组织操作系统图谱：联邦自治、资本重塑与三代传承</span><span class="co-hub-meta mono">abbott_laboratories_abt3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_2026_2032.html" title="Adeia Inc. 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Adeia Inc. 2026–2032 &amp;">Adeia Inc. 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">adeia_inc_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_adea (1).html" title="Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告" data-i18n-en="Adeia Inc. (ADEA) Corporate Culture &amp; Org Architecture Deep Dive">Adeia Inc. (ADEA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">adeia_inc_adea (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_inc_adea.html" title="Adeia Inc. (ADEA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia Inc. (ADEA) 商业模式架构深度拆解" data-i18n-en="Adeia Inc. (ADEA) Business Model Deep DiveBreakdown">Adeia Inc. (ADEA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">adeia_inc_adea.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="adeia_ip.html" title="Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承" data-i18n-en="Adeia Corporate Culture &amp;: IP, &amp;">Adeia 企业文化与组织操作系统图谱：纯IP分拆、铁三角协同与三代传承</span><span class="co-hub-meta mono">adeia_ip.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn (1).html" title="安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告" data-i18n-en="Amgen Inc. (AMGN) Corporate Culture &amp; Org Architecture Deep Dive">安进公司 Amgen Inc. (AMGN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amgen_inc_amgn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn.html" title="安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解" data-i18n-en="Amgen Inc. (AMGN) Business Model Deep DiveBreakdown">安进公司 Amgen Inc. (AMGN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amgen_inc_amgn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn2.html" title="安进公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">安进公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">amgen_inc_amgn2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amgen_inc_amgn3.html" title="安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">安进企业文化与组织操作系统图谱：科学治企、八大价值观与三代传承</span><span class="co-hub-meta mono">amgen_inc_amgn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple1.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple1.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple2.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple3.html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple4.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat (1).html" title="应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告" data-i18n-en="Applied Materials (AMAT) Corporate Culture &amp; Org Architecture Deep Dive">应用材料公司 Applied Materials (AMAT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">applied_materials_amat (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat.html" title="应用材料 Applied Materials (AMAT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料 Applied Materials (AMAT) 商业模式架构深度拆解" data-i18n-en="Applied Materials (AMAT) Business Model Deep DiveBreakdown">应用材料 Applied Materials (AMAT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">applied_materials_amat.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat2.html" title="应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承" data-i18n-en="Corporate Culture &amp;:, EPIC &amp;">应用材料企业文化与组织操作系统图谱：拐点创新、EPIC 共创与三代传承</span><span class="co-hub-meta mono">applied_materials_amat2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="applied_materials_amat3.html" title="应用材料 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="应用材料 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">应用材料 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">applied_materials_amat3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_2026_2032.html" title="阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="ASML 2026–2032 &amp;">阿斯麦 ASML 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">asml_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_holding_n_v.html" title="阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告" data-i18n-en="ASML Holding N.V. Corporate Culture &amp; Org Architecture Deep Dive">阿斯麦 ASML Holding N.V. 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">asml_holding_n_v.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_nasdaq_asml.html" title="阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解" data-i18n-en="ASML (NASDAQ: ASML) Business Model Deep DiveBreakdown">阿斯麦 ASML (NASDAQ: ASML) 商业模式架构深度拆解</span><span class="co-hub-meta mono">asml_nasdaq_asml.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="asml_nasdaq_asml2.html" title="阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承" data-i18n-en="Corporate Culture &amp;:, &amp;">阿斯麦企业文化与组织操作系统图谱：开放编排、挑战协作与三代传承</span><span class="co-hub-meta mono">asml_nasdaq_asml2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo (1).html" title="博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告" data-i18n-en="Broadcom Inc. (AVGO) Corporate Culture &amp; Org Architecture Deep Dive">博通公司 Broadcom Inc. (AVGO) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">broadcom_inc_avgo (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo.html" title="博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解" data-i18n-en="Broadcom Inc. (AVGO) Business Model Deep DiveBreakdown">博通公司 Broadcom Inc. (AVGO) 商业模式架构深度拆解</span><span class="co-hub-meta mono">broadcom_inc_avgo.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo2.html" title="博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进" data-i18n-en="BroadcomCorporate Culture &amp;: 24, &amp; Trajectory">博通企业文化与组织操作系统图谱：24事业部联邦、并购手术刀与三代演进</span><span class="co-hub-meta mono">broadcom_inc_avgo2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="broadcom_inc_avgo3.html" title="博通公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="博通公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Broadcom 2026–2032 &amp;">博通公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">broadcom_inc_avgo3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_2026_2032.html" title="Chewy 公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Chewy 2026–2032 &amp;">Chewy 公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">chewy_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_7_wow.html" title="Chewy 企业文化与组织操作系统：7大准则与WOW基因"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 企业文化与组织操作系统：7大准则与WOW基因" data-i18n-en="Chewy Corporate Culture &amp;: 7 &amp; WOW">Chewy 企业文化与组织操作系统：7大准则与WOW基因</span><span class="co-hub-meta mono">chewy_7_wow.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_chewy_inc.html" title="Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告" data-i18n-en="Chewy, Inc. Corporate Culture &amp; Org Architecture Deep Dive">Chewy 公司 Chewy, Inc. 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">chewy_chewy_inc.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="chewy_chewy_inc_chwy.html" title="Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解" data-i18n-en="Chewy, Inc. (CHWY) Business Model Deep DiveBreakdown">Chewy 公司 Chewy, Inc. (CHWY) 商业模式架构深度拆解</span><span class="co-hub-meta mono">chewy_chewy_inc_chwy.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui (1).html" title="厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告" data-i18n-en="Ubiquiti Inc. (UI) Corporate Culture &amp; Org Architecture Deep Dive">厄比奎蒂 Ubiquiti Inc. (UI) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">ubiquiti_inc_ui (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui.html" title="厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解" data-i18n-en="Ubiquiti Inc. (UI) Business Model Deep DiveBreakdown">厄比奎蒂 Ubiquiti Inc. (UI) 商业模式架构深度拆解</span><span class="co-hub-meta mono">ubiquiti_inc_ui.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui2.html" title="厄比奎蒂企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂企业文化与组织操作系统图谱" data-i18n-en="Corporate Culture &amp;">厄比奎蒂企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">ubiquiti_inc_ui2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="ubiquiti_inc_ui3.html" title="厄比奎蒂 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="厄比奎蒂 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">厄比奎蒂 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">ubiquiti_inc_ui3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_12_fy2025_1_66b_q3_2026_182_5m.html" title="VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）" data-i18n-en="VeriSign &amp; 12 Deep DiveReport (FY2025 $1.66B / Q3 2026 182.5M OverviewBreakdown)">VeriSign 威瑞信全产品与关键基础设施 12 大板块深度研报中枢（FY2025 $1.66B / Q3 2026 182.5M 域名全景拆解）</span><span class="co-hub-meta mono">verisign_12_fy2025_1_66b_q3_2026_182_5m.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn (1).html" title="威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告" data-i18n-en="VeriSign, Inc. (VRSN) Corporate Culture &amp; Org Architecture Deep Dive">威瑞信 VeriSign, Inc. (VRSN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">verisign_inc_vrsn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn.html" title="威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解" data-i18n-en="VeriSign, Inc. (VRSN) Business Model Deep DiveBreakdown">威瑞信 VeriSign, Inc. (VRSN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">verisign_inc_vrsn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_inc_vrsn2.html" title="威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手" data-i18n-en="Corporate Culture &amp;:, 928 People &amp; 26Y">威瑞信企业文化与组织操作系统图谱：零宕机信仰、928人极简编制与26年创始舵手</span><span class="co-hub-meta mono">verisign_inc_vrsn2.html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="verisign_inc_vrsn3.html" title="威瑞信 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="威瑞信 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">威瑞信 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">verisign_inc_vrsn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="verisign_nasdaq_vrsn_18_bidzos_calys_mcpherson_indelicarto_kaliski_kane_cote_gorelick.html" title="VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）" data-i18n-en="VeriSign (NASDAQ: VRSN) 18 &amp; OverviewDeep DiveReport (Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick)">VeriSign (NASDAQ: VRSN) 18 大核心高管与董事会全景深度研报中枢（Bidzos·Calys·McPherson·Indelicarto·Kaliski·Kane·Cote·Gorelick等）</span><span class="co-hub-meta mono">verisign_nasdaq_vrsn_18_bidzos_calys_mcpherson_indelicarto_kaliski_kane_cote_gorelick.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-section-label" style="margin-top:8px;" data-i18n-zh="未来战略模块 (F0–F4)" data-i18n-en="Future Horizon (F0–F4)">未来战略模块 (F0–F4)</div>
+ <ul class="mui-nav-list">
+ <li><a href="#sec-f0" class="mui-nav-link active"><span class="nav-idx mono">F0</span><span data-i18n-zh="四连提价与三阶时间窗" data-i18n-en="Price Cycle &amp; 3 Horizons">四连提价与三阶时间窗</span></a></li>
+ <li><a href="#sec-f1" class="mui-nav-link"><span class="nav-idx mono">F1</span><span data-i18n-zh="六大增长引擎纵向深潜舱" data-i18n-en="6 Future Growth Engines">六大增长引擎纵向深潜舱</span></a></li>
+ <li><a href="#sec-f2" class="mui-nav-link"><span class="nav-idx mono">F2</span><span data-i18n-zh="反共识轻资产纪律与营收桥" data-i18n-en="CapEx Discipline &amp; 2032 Bridge">反共识轻资产纪律与营收桥</span></a></li>
+ <li><a href="#sec-f3" class="mui-nav-link"><span class="nav-idx mono">F3</span><span data-i18n-zh="基建主权与 .com/.web 爬坡" data-i18n-en="Protocol Moat &amp; .web Ramp">基建主权与 .com/.web 爬坡</span></a></li>
+ <li><a href="#sec-f4" class="mui-nav-link"><span class="nav-idx mono">F4</span><span data-i18n-zh="2030估值跃升期权组装器" data-i18n-en="2030 Valuation Optionality Lab">2030估值跃升期权组装器</span></a></li>
+ </ul>
+ </nav>
+ <div class="sidebar-card sidebar-actions portal-reading-tools" id="portalReadingTools">
+ <div class="nav-section-label" data-portal-zh="阅读与导出工具" data-portal-en="Appearance &amp; Export">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="Theme">
+ <button type="button" data-portal-theme="light" data-portal-zh="浅色外观" data-portal-en="Light">浅色外观</button>
+ <button type="button" data-portal-theme="dark" data-portal-zh="深色外观" data-portal-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" data-portal-export data-portal-zh="导出 HTML" data-portal-en="Export HTML">导出 HTML</button>
+ <button type="button" data-portal-print data-portal-zh="打印 / PDF" data-portal-en="Print / PDF">打印 / PDF</button>
+ </div>
+</div>
+</aside>
+
+ <!-- Main Bespoke 2030 Observatory Workspace -->
+ <main class="ft-workspace">
+
+ <!-- MODULE F0: MANIFESTO + INTERACTIVE 3-HORIZON RADAR -->
+ <section id="sec-f0" class="ft-hero-grid">
+ <div class="ft-manifesto">
+ <div>
+ <div class="ft-badges">
+ <span class="mui-chip mui-chip-violet mono" data-i18n-zh="2026.11 转折点：.com 首轮提价 + .web 获批定档" data-i18n-en="NOV 2026 INFLECTION: .COM HIKE + .WEB CLEARED">2026.11 转折点：.com 首轮提价 + .web 获批定档</span>
+ <span class="mui-chip mui-chip-success mono" data-i18n-zh="零 GPU 折旧的 AI 信任基础设施" data-i18n-en="Zero-GPU-Drag AI Trust Infrastructure">零 GPU 折旧的 AI 信任基础设施</span>
+ </div>
+
+ <h1 class="ft-h1" data-i18n-zh="威瑞信未来十年（2026–2032）战略图谱：<span class='ft-grad'>手握 .com 四连提价确定性，叠加 .web 与 Verisign Informed™ 第二曲线</span>" data-i18n-en="VeriSign's Next Decade (2026–2032): <span class='ft-grad'>Locking in 4-Year .com Escalators While Launching .web &amp; Verisign Informed™</span>">
+ 威瑞信未来十年（2026–2032）战略图谱：<span class="ft-grad">手握 .com 四连提价确定性，叠加 .web 与 Verisign Informed™ 第二曲线</span>
+ </h1>
+
+ <p class="ft-lead" data-i18n-rich="f0_lead">
+ 站在 $17.6 亿年营收与 1.825 亿 .com/.net 域名基数的新起点上，2026 年第四季度成为威瑞信近十年来最重要的战略拐点：一方面，2026 年 11 月 1 日起 <strong>.com 批发价正式启动四年连涨首轮提价（$10.26 → $10.97）</strong>
+ <a class="cite-link" href="https://topsitehosters.com/blog/the-price-of-com-and-org-domains-is-going-up-in-2026-here-is-what-to-do/" target="_blank" rel="noopener noreferrer">.com 提价公告 ↗</a>，同时 <strong>.net 亦定档 2027 年 3 月上调 10% 至 $12.00</strong>
+ <a class="cite-link" href="https://domainincite.com/31906-net-prices-going-up" target="_blank" rel="noopener noreferrer">.net 提价 ↗</a>；另一方面，历经十年 ICANN 博弈的 <strong>.web 顶级域终获放行</strong>（2026 年 12 月 10 日日出期、2027 年 4 月 6 日全面开放，且<strong>无批发限价约束</strong>）
+ <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">.web 上线日程 ↗</a>。叠加 2026 年 10 月启动限额公测的高保证身份验证服务 <strong>Verisign Informed™</strong>
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">Q3 2026 8-K ↗</a>，威瑞信正从单一域名注册局进化为 AI 代理时代的互联网根级信任锚点。
+ </p>
+ </div>
+
+ <div class="ft-ternus-strip">
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第一增长极：法定阶梯提价" data-i18n-en="Pillar 1: Contracted Escalators">第一增长极：法定阶梯提价</b>
+ <span data-i18n-zh="2026–2029 .com 每年最高 +7%（至 ~$13.42），纯利直落" data-i18n-en="2026–2029 .com up to +7%/yr (~$13.42), ~100% margin drop-through">2026–2029 .com 每年最高 +7%（至 ~$13.42），纯利直落</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第二增长极：.web 无上限释放" data-i18n-en="Pillar 2: Uncapped .web gTLD">第二增长极：.web 无上限释放</b>
+ <span data-i18n-zh="2027.01 .com 持有者优先抢注 + 2027.04 全球开放" data-i18n-en="Jan 2027 .com priority window + Apr 2027 global GA">2027.01 .com 持有者优先抢注 + 2027.04 全球开放</span>
+ </div>
+ <div class="ft-mini-pill">
+ <b data-i18n-zh="第三增长极：Verisign Informed™" data-i18n-en="Pillar 3: Verisign Informed™">第三增长极：Verisign Informed™</b>
+ <span data-i18n-zh="解决 AI 代理与机器速度时代的“过期信任”实时验证" data-i18n-en="Solving 'stale trust' at machine speed for AI agents &amp; enterprises">解决 AI 代理与机器速度时代的“过期信任”实时验证</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Right: Interactive 3-Horizon Radar -->
+ <aside class="ft-horizon-radar" aria-label="三阶战略时间窗雷达">
+ <div>
+ <span class="ft-kicker mono">THREE-HORIZON S-CURVE RADAR</span>
+ <strong style="font-size:0.95rem;" data-i18n-zh="点击切换三大战略兑现时间窗" data-i18n-en="Select Strategic Horizon Window">点击切换三大战略兑现时间窗</strong>
+ </div>
+
+ <div class="ft-hz-tabs" id="hzTabs">
+ <button type="button" class="ft-hz-btn active" data-hz="0"><span data-i18n-zh="H1 近程兑现" data-i18n-en="H1 Near-Term">H1 近程兑现</span><br><span class="mono" style="font-weight:600;font-size:0.68rem;">2026–2027</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="1"><span data-i18n-zh="H2 中程放量" data-i18n-en="H2 Mid-Term">H2 中程放量</span><br><span class="mono" style="font-weight:600;font-size:0.68rem;">2028–2029</span></button>
+ <button type="button" class="ft-hz-btn" data-hz="2"><span data-i18n-zh="H3 远期奇点" data-i18n-en="H3 Long-Term">H3 远期奇点</span><br><span class="mono" style="font-weight:600;font-size:0.68rem;">2030–2032</span></button>
+ </div>
+
+ <div class="ft-hz-card" id="hzCard">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="hzBadge"></span>
+ <h3 id="hzTitle" style="font-size:0.96rem;font-weight:800;margin:8px 0 6px;"></h3>
+ <ul class="ft-hz-list" id="hzList"></ul>
+ </div>
+ <div class="ft-hz-foot mono">
+ <span id="hzProb" style="color:var(--mui-success-text);"></span>
+ <span id="hzImpact" style="color:var(--mui-primary-lighter);"></span>
+ </div>
+ </div>
+ </aside>
+ </section>
+
+ <!-- MODULE F1: 4:8 VERTICAL MASTER-DETAIL 6-ENGINE OBSERVATORY -->
+ <section id="sec-f1" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F1 · SIX NEXT-DECADE GROWTH ENGINES</span>
+ <h2 class="ft-h2" data-i18n-zh="六大未来增长引擎纵向深潜舱：合同条款、商业化抓手与里程碑" data-i18n-en="6 Next-Decade Growth Engines: Contractual Levers &amp; Milestones">六大未来增长引擎纵向深潜舱：合同条款、商业化抓手与里程碑</h2>
+ <p class="ft-sub" data-i18n-zh="点击左侧任一战略赛道，右侧实时切换其定价权机制、增量利润空间与关键跟踪路标。" data-i18n-en="Click any engine on the left rail to inspect its contractual lever, margin accretion, and milestones.">点击左侧任一战略赛道，右侧实时切换其定价权机制、增量利润空间与关键跟踪路标。</p>
+ </div>
+ <span class="mui-chip mui-chip-violet mono">6 S-CURVES · MASTER-DETAIL</span>
+ </div>
+
+ <div class="ft-explorer">
+ <div class="ft-rail" id="engineRail">
+ <button type="button" class="ft-rail-btn active" data-eng="0">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">01</span><span class="ft-rail-name" data-i18n-zh=".com 四连提价周期 ($10.97→$13.42)" data-i18n-en=".com 4-Yr Escalator ($10.97→$13.42)">.com 四连提价周期 ($10.97→$13.42)</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="+$520M+/年利润" data-i18n-en="+$520M+/yr OpInc">+$520M+/年利润</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="1">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">02</span><span class="ft-rail-name" data-i18n-zh=".web 顶级域商业化 (无价格上限)" data-i18n-en=".web Uncapped gTLD Launch">.web 顶级域商业化 (无价格上限)</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="+$150M–$300M/年" data-i18n-en="+$150M–$300M/yr">+$150M–$300M/年</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="2">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">03</span><span class="ft-rail-name" data-i18n-zh="Verisign Informed™ 信任验证" data-i18n-en="Verisign Informed™ Trust SaaS">Verisign Informed™ 信任验证</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="2027 H1 商用" data-i18n-en="H1 2027 Rollout">2027 H1 商用</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="3">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">04</span><span class="ft-rail-name" data-i18n-zh=".net 10% 年化提价与防御续费" data-i18n-en=".net 10% Escalator &amp; Renewals">.net 10% 年化提价与防御续费</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="$12.00/域 (2027.03)" data-i18n-en="$12.00/yr (Mar 2027)">$12.00/域 (2027.03)</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="4">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">05</span><span class="ft-rail-name" data-i18n-zh="AI 代理时代域名需求与 DNS 寻址" data-i18n-en="AI-Era Domain Demand &amp; Agentic DNS">AI 代理时代域名需求与 DNS 寻址</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="Q3新注 13.1M 纪录" data-i18n-en="13.1M Q3 Record Adds">Q3新注 13.1M 纪录</span>
+ </button>
+ <button type="button" class="ft-rail-btn" data-eng="5">
+ <span class="ft-rail-left"><span class="ft-rail-idx mono">06</span><span class="ft-rail-name" data-i18n-zh="抗量子密码与根区弹性基础设施" data-i18n-en="Post-Quantum DNSSEC &amp; Root Resilience">抗量子密码与根区弹性基础设施</span></span>
+ <span class="ft-rail-tam mono" data-i18n-zh="2030 续约护城河" data-i18n-en="2030 Renewal Moat">2030 续约护城河</span>
+ </button>
+ </div>
+
+ <div class="ft-dossier" id="engineDossier">
+ <div>
+ <span class="mui-chip mui-chip-primary mono" id="engBadge"></span>
+ <h3 id="engTitle"></h3>
+ <p id="engDesc"></p>
+ <div class="ft-dossier-formula mono" id="engFormula"></div>
+ </div>
+ <div class="ft-gauge-grid" id="engGauges"></div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F2: 7:5 SPLIT — CAPEX DISCIPLINE VS BIG TECH & 2025-2032 REVENUE BRIDGE -->
+ <section id="sec-f2" class="ft-split-75">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2A · ANTI-CONSENSUS CAPEX DISCIPLINE &amp; 2032 BRIDGE</span>
+ <h3 data-i18n-zh="极简资本纪律：威瑞信 1.4%–3.4% CapEx 强度 vs 云巨头军备竞赛" data-i18n-en="Capital Discipline: VeriSign 1.4%–3.4% CapEx Intensity vs. Tech Peers">极简资本纪律：威瑞信 1.4%–3.4% CapEx 强度 vs 云巨头军备竞赛</h3>
+ </div>
+ <div class="mui-segmented" id="fChartTabs">
+ <button type="button" class="mui-seg-btn active" data-fview="capex" data-i18n-zh="CapEx 占营收强度 (%)" data-i18n-en="CapEx / Revenue (%)">CapEx 占营收强度 (%)</button>
+ <button type="button" class="mui-seg-btn" data-fview="bridge" data-i18n-zh="FY25→FY32E 营收阶梯桥" data-i18n-en="2032E Revenue Bridge">FY25→FY32E 营收阶梯桥</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="futureCanvas"></canvas>
+ </div>
+ <div class="ft-chart-legend" id="futureLegend"></div>
+
+ <p class="ft-caption" data-i18n-rich="f2_caption">
+ 战略反差：超大规模云巨头与 CDN 厂商需将营收的 12%–30% 投入高折旧服务器与 GPU 集群；而威瑞信 FY2025 资本开支仅 <strong>$22.8M（占营收 1.4%）</strong>，即便 FY2026 因基础设施升级提至 $55M–$65M（~3.4%），仍属全美利润率最高、最轻资产的数字化核心基建。
+ </p>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F2B · WHY THE ROOT TOLLBOOTH WINS</span>
+ <h3 data-i18n-zh="为什么 AI 时代不会消灭域名，反而强化根级信任？" data-i18n-en="Why the AI Era Strengthens Authoritative DNS &amp; Trust">为什么 AI 时代不会消灭域名，反而强化根级信任？</h3>
+ </div>
+ </div>
+
+ <div class="ft-thesis-stack">
+ <div class="ft-thesis-item">
+ <b data-i18n-zh="① AI 创业潮直接推高新域名注册（Q3 2026 创 1,310 万纪录）" data-i18n-en="① AI Startup Boom Drives Record Registrations (13.1M in Q3 2026)">① AI 创业潮直接推高新域名注册（Q3 2026 创 1,310 万纪录）</b>
+ <p data-i18n-zh="无论是 AI 智能体应用、API 端点、模型托管还是数字身份，全都需要唯一的 .com/.net/.web 域名作为公网入口；Q3 2026 威瑞信单季新注册量同比暴增 +23.6% 至 1,310 万个。" data-i18n-en="Every AI agent, API endpoint, SaaS tool, and digital brand still requires an authoritative domain. Q3 2026 new .com/.net registrations surged +23.6% YoY to a record 13.1M.">无论是 AI 智能体应用、API 端点、模型托管还是数字身份，全都需要唯一的 .com/.net/.web 域名作为公网入口；Q3 2026 威瑞信单季新注册量同比暴增 +23.6% 至 1,310 万个。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b data-i18n-zh="② 从“人类输入网址”升级为“机器验证身份（Verisign Informed™）”" data-i18n-en="② From Human Typing to Machine Verification (Verisign Informed™)">② 从“人类输入网址”升级为“机器验证身份（Verisign Informed™）”</b>
+ <p data-i18n-zh="当 AI 代理每秒自动化调用成千上万个外部端点时，传统静态数字证书易产生“过期信任”漏洞；威瑞信依托 DNS 根区权威地位推出 Informed™，将静态域名升级为动态实时信任查询。" data-i18n-en="When autonomous AI agents query thousands of endpoints per second, static certificates suffer from 'stale trust.' Verisign Informed™ turns authoritative DNS data into real-time validation.">当 AI 代理每秒自动化调用成千上万个外部端点时，传统静态数字证书易产生“过期信任”漏洞；威瑞信依托 DNS 根区权威地位推出 Informed™，将静态域名升级为动态实时信任查询。</p>
+ </div>
+ <div class="ft-thesis-item">
+ <b data-i18n-zh="③ 不赌单一 AI 大模型赢家，坐收全行业基础设施过路费" data-i18n-en="③ Model-Agnostic Infrastructure Tollbooth">③ 不赌单一 AI 大模型赢家，坐收全行业基础设施过路费</b>
+ <p data-i18n-zh="无论 OpenAI、Anthropic、Google 还是开源模型胜出，所有互联网服务与商业交易都必须经过 DNS 根解析；威瑞信只需守住 100% 零宕机 SLA，即可坐享全行业扩容红利。" data-i18n-en="Regardless of which foundation model wins, all internet traffic and commerce must resolve through DNS. Maintaining 100% SLA lets VeriSign monetize ecosystem expansion risk-free.">无论 OpenAI、Anthropic、Google 还是开源模型胜出，所有互联网服务与商业交易都必须经过 DNS 根解析；威瑞信只需守住 100% 零宕机 SLA，即可坐享全行业扩容红利。</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE F3: 5:7 REVERSED SPLIT — PROTOCOL SOVEREIGNTY & .COM/.WEB RAMP -->
+ <section id="sec-f3" class="ft-split-57">
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3A · PROTOCOL &amp; CONTRACT SOVEREIGNTY</span>
+ <h3 data-i18n-zh="四大不可复制的协议级与合同级护城河基石" data-i18n-en="Four Unreplicable Protocol &amp; Contractual Cornerstones">四大不可复制的协议级与合同级护城河基石</h3>
+ </div>
+ </div>
+
+ <div class="ft-chip-matrix">
+ <div class="ft-chip-box">
+ <span class="code mono">ROOT · A &amp; J SERVERS</span>
+ <h4 data-i18n-zh="全球互联网根区维护者" data-i18n-en="Root Zone Maintainer">全球互联网根区维护者</h4>
+ <p data-i18n-rich="f3_root">独家承担 ICANN 根区文件编辑与分发职能，并运营 13 台全球根服务器中的 A 根与 J 根 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">官方披露 ↗</a>。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">SLA · 29+ YEARS 100%</span>
+ <h4 data-i18n-zh="极致的零宕机工程纪录" data-i18n-en="29+ Yrs Zero-Downtime SLA">极致的零宕机工程纪录</h4>
+ <p data-i18n-rich="f3_sla">自 1997 年起连续 29 年+ 保持 .com/.net 解析 100% 在线，日均扛住 ~8,000 亿次查询与 DDoS 攻击。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">EXPANSION · .WEB gTLD</span>
+ <h4 data-i18n-zh="无价格上限的新旗舰后缀" data-i18n-en="Uncapped .web Launch">无价格上限的新旗舰后缀</h4>
+ <p data-i18n-rich="f3_web">2026.12.10 启动日出期，2027.01.12 .com 持有人优先注册，2027.04.06 全面开放 <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">上线时间表 ↗</a>。</p>
+ </div>
+ <div class="ft-chip-box">
+ <span class="code mono">TRUST · INFORMED™</span>
+ <h4 data-i18n-zh="高保证实时信任验证" data-i18n-en="High-Assurance Trust API">高保证实时信任验证</h4>
+ <p data-i18n-zh="2026.10 启动有限测试，针对企业数字证书“过期信任”与 AI 代理身份鉴权开辟新 SaaS 曲线。</p data-i18n-en="Entered limited beta in Oct 2026, opening a high-assurance SaaS curve for enterprise certificate trust and AI agent authentication.">
+ </div>
+ </div>
+ </div>
+
+ <div class="ft-subbox">
+ <div class="ft-subhead">
+ <div>
+ <span class="ft-kicker mono">MODULE F3B · .COM PRICE ESCALATOR &amp; .WEB RAMP</span>
+ <h3 data-i18n-zh="2025–2030 .com 批发价法定阶梯与新增长引擎营收爬坡" data-i18n-en="2025–2030 .com Wholesale Price Path &amp; New Engine Revenue Ramp">2025–2030 .com 批发价法定阶梯与新增长引擎营收爬坡</h3>
+ </div>
+ <div class="mui-segmented" id="sChartTabs">
+ <button type="button" class="mui-seg-btn active" data-sview="pen" data-i18n-zh=".com 批发价阶梯 ($)" data-i18n-en=".com Price Path ($)">.com 批发价阶梯 ($)</button>
+ <button type="button" class="mui-seg-btn" data-sview="save" data-i18n-zh=".web + Informed 营收推演" data-i18n-en=".web + Informed Rev ($M)">.web + Informed 营收推演</button>
+ </div>
+ </div>
+
+ <div class="ft-canvas-box">
+ <canvas id="siliconCanvas"></canvas>
+ </div>
+ <div class="ft-chart-legend" id="siliconLegend"></div>
+
+ <p class="ft-caption" data-i18n-rich="f3_caption">
+ 提价复利推演：按照 ICANN 协议 2026–2029 年每年最高 7% 提价权限，.com 批发价将由 2025 年的 $10.26 稳步阶梯升至 2029/2030 年的 <strong>~$13.42</strong>（累计 +30.8%），仅存量提价即可在 2030 年新增逾 $5 亿高毛利营收。
+ </p>
+ </div>
+ </section>
+
+ <!-- MODULE F4: INTERACTIVE 2030 VALUATION & OPTIONALITY BUILDER -->
+ <section id="sec-f4" class="ft-panel">
+ <div class="ft-panel-head">
+ <div>
+ <span class="ft-kicker mono">MODULE F4 · INTERACTIVE 2030 OPTIONALITY &amp; VALUATION BUILDER</span>
+ <h2 class="ft-h2" data-i18n-zh="2030 迈向“$450亿+市值”期权组装实验室：勾选你认可的增长催化" data-i18n-en="2030 Path to $45B+ Market Cap: Toggle Growth Optionality Switches">2030 迈向“$450亿+市值”期权组装实验室：勾选你认可的增长催化</h2>
+ <p class="ft-sub" data-i18n-zh="自由开关五大未来业务期权并选择市场估值倍数，实时测算 FY2030E 威瑞信总营收、EPS 与目标总市值。" data-i18n-en="Check or uncheck future catalysts and select a P/E multiple to model VeriSign's FY2030E EPS and market cap.">自由开关五大未来业务期权并选择市场估值倍数，实时测算 FY2030E 威瑞信总营收、EPS 与目标总市值。</p>
+ </div>
+ <div class="mui-segmented" id="peTabs">
+ <button type="button" class="mui-seg-btn" data-pe="22" data-i18n-zh="保守 22x P/E" data-i18n-en="22x Bear P/E">保守 22x P/E</button>
+ <button type="button" class="mui-seg-btn active" data-pe="26" data-i18n-zh="稳态 26x P/E" data-i18n-en="26x Base P/E">稳态 26x P/E</button>
+ <button type="button" class="mui-seg-btn" data-pe="30" data-i18n-zh="溢价 30x P/E" data-i18n-en="30x Bull P/E">溢价 30x P/E</button>
+ </div>
+ </div>
+
+ <div class="ft-builder-grid">
+ <div class="ft-switch-list" id="optSwitchList">
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="com7" checked />
+ <span><b data-i18n-zh="期权 1：.com 2026–2029 四轮 7% 提价全部落地" data-i18n-en="Option 1: Full 4-Round 7% .com Escalators (to ~$13.42)">期权 1：.com 2026–2029 四轮 7% 提价全部落地</b><span data-i18n-zh="2026.11 $10.97 起步，至 2029 年升至 ~$13.42，几乎 100% 转为营业利润" data-i18n-en="Starts $10.97 Nov 2026 to ~$13.42 by 2029; ~100% OpInc flow-through">2026.11 $10.97 起步，至 2029 年升至 ~$13.42，几乎 100% 转为营业利润</span></span>
+ </span>
+ <span class="ft-opt-add mono" data-i18n-zh="+$520M 营收 · 95% 净转化" data-i18n-en="+$520M Rev · 95% Margin">+$520M 营收 · 95% 净转化</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="vol" checked />
+ <span><b data-i18n-zh="期权 2：AI 创业潮驱动 .com/.net 基数年增 3.5%+" data-i18n-en="Option 2: AI-Driven 3.5%+ Annual .com/.net Base Growth">期权 2：AI 创业潮驱动 .com/.net 基数年增 3.5%+</b><span data-i18n-zh="延续 Q3 2026 创纪录 1,310 万新注动能，2030 基数迈向 2.08 亿个" data-i18n-en="Extends Q3 2026 record 13.1M new-reg momentum toward ~208M base">延续 Q3 2026 创纪录 1,310 万新注动能，2030 基数迈向 2.08 亿个</span></span>
+ </span>
+ <span class="ft-opt-add mono" data-i18n-zh="+$285M 营收 · 88% GM" data-i18n-en="+$285M Rev · 88% GM">+$285M 营收 · 88% GM</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="web" checked />
+ <span><b data-i18n-zh="期权 3：.web 无价格上限顶级域规模化商业放量" data-i18n-en="Option 3: Uncapped .web gTLD Commercial Ramp (2027–2030)">期权 3：.web 无价格上限顶级域规模化商业放量</b><span data-i18n-zh="假设 2030 年积累 600 万+ 活跃 .web 域名（含高溢价词与品牌保护）" data-i18n-en="Assumes 6M+ active .web domains by 2030 including premium tiers">假设 2030 年积累 600 万+ 活跃 .web 域名（含高溢价词与品牌保护）</span></span>
+ </span>
+ <span class="ft-opt-add mono" data-i18n-zh="+$180M 营收 · 82% GM" data-i18n-en="+$180M Rev · 82% GM">+$180M 营收 · 82% GM</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="buy" checked />
+ <span><b data-i18n-zh="期权 4：每年约 3.2% 自由现金流持续回购注销股本" data-i18n-en="Option 4: ~3.2%/yr FCF-Funded Share Retirement">期权 4：每年约 3.2%/年自由现金流持续回购注销股本</b><span data-i18n-zh="流通股由 Q3 2026 的 8,980 万股继续缩减至 2030 年约 7,880 万股" data-i18n-en="Reduces share count from 89.8M (Q3 2026) to ~78.8M by 2030">流通股由 Q3 2026 的 8,980 万股继续缩减至 2030 年约 7,880 万股</span></span>
+ </span>
+ <span class="ft-opt-add mono" data-i18n-zh="EPS 额外增厚 +14%" data-i18n-en="+14% EPS Lift">EPS 额外增厚 +14%</span>
+ </label>
+
+ <label class="ft-opt-row">
+ <span class="ft-opt-left">
+ <input type="checkbox" data-opt="inf" />
+ <span><b data-i18n-zh="期权 5：远期奇点 — Verisign Informed™ 成为 AI 信任标准" data-i18n-en="Option 5: Moonshot — Verisign Informed™ AI Trust Standard">期权 5：远期奇点 — Verisign Informed™ 成为 AI 信任标准</b><span data-i18n-zh="高赔率期权（默认未勾选，可手动开启观察 2030 估值弹性）" data-i18n-en="High-upside SaaS option (unchecked by default; toggle to model)">高赔率期权（默认未勾选，可手动开启观察 2030 估值弹性）</span></span>
+ </span>
+ <span class="ft-opt-add mono" data-i18n-zh="+$220M 营收 · 75% GM" data-i18n-en="+$220M Rev · 75% GM">+$220M 营收 · 75% GM</span>
+ </label>
+ </div>
+
+ <div class="ft-val-board">
+ <div class="ft-val-kpis">
+ <div class="ft-val-kpi"><b class="mono" id="optRevOut">$2.74B</b><span data-i18n-zh="FY2030E 推演总营收" data-i18n-en="FY2030E Projected Revenue">FY2030E 推演总营收</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optNetOut">$1,468M</b><span data-i18n-zh="FY2030E 推演净利润" data-i18n-en="FY2030E Projected Net Inc">FY2030E 推演净利润</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optEpsOut">$18.63</b><span data-i18n-zh="FY2030E 摊薄 EPS (含缩股)" data-i18n-en="FY2030E Diluted EPS">FY2030E 摊薄 EPS (含缩股)</span></div>
+ <div class="ft-val-kpi"><b class="mono" id="optCapOut" style="color:var(--mui-success-text);">$38.2B</b><span data-i18n-zh="FY2030E 隐含目标总市值" data-i18n-en="FY2030E Implied Market Cap">FY2030E 隐含目标总市值</span></div>
+ </div>
+
+ <div class="ft-canvas-box" style="height:165px;">
+ <canvas id="optMiniCanvas"></canvas>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VERIFIED PRIMARY SOURCES -->
+ <section class="ft-panel" aria-label="权威公告与前瞻信源">
+ <div class="ft-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+ <div>
+ <span class="ft-kicker mono">VERIFIED PRIMARY SOURCES</span>
+ <h2 class="ft-h2" data-i18n-zh="官方监管文件、.web 上线日程与行业前瞻信源" data-i18n-en="Official Filings, .web Launch Notices &amp; Industry Sources">官方监管文件、.web 上线日程与行业前瞻信源</h2>
+ </div>
+ </div>
+ <div class="ft-sources-grid">
+ <a class="ft-source-card" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">
+ <b>VeriSign Q3 2026 SEC Form 8-K (Oct 22, 2026) ↗</b>
+ <span data-i18n-zh="官方确认 Q3 2026 域名基数增至 1.825 亿、.web 推进按期及 Verisign Informed™ 开启有限测试" data-i18n-en="Official Q3 2026 182.5M base, .web progress &amp; Verisign Informed™ limited beta launch">官方确认 Q3 2026 域名基数增至 1.825 亿、.web 推进按期及 Verisign Informed™ 开启有限测试</span>
+ </a>
+ <a class="ft-source-card" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">
+ <b>Verisign Announces .Web Launch, Key Dates (Nov 11, 2026) ↗</b>
+ <span data-i18n-zh="官方公布 .web 2026.12.10 日出期、2027.01.12 .com 优先期及 2027.04.06 全面公开注册" data-i18n-en="Official .web Sunrise Dec 10, 2026, Priority Jan 12, 2027 &amp; GA Apr 6, 2027">官方公布 .web 2026.12.10 日出期、2027.01.12 .com 优先期及 2027.04.06 全面公开注册</span>
+ </a>
+ <a class="ft-source-card" href="https://topsitehosters.com/blog/the-price-of-com-and-org-domains-is-going-up-in-2026-here-is-what-to-do/" target="_blank" rel="noopener noreferrer">
+ <b>.com 2026–2030 Wholesale Price Escalation Analysis ↗</b>
+ <span data-i18n-zh="详述 2026 年 11 月 .com 批发价调升至 $10.97 及后续至 2030 年升至 ~$13.42 的合同依据" data-i18n-en="Details Nov 2026 .com hike to $10.97 and 4-year contracted path toward ~$13.42 by 2030">详述 2026 年 11 月 .com 批发价调升至 $10.97 及后续至 2030 年升至 ~$13.42 的合同依据</span>
+ </a>
+ <a class="ft-source-card" href="https://domainincite.com/31906-net-prices-going-up" target="_blank" rel="noopener noreferrer">
+ <b>Verisign .net 10% Wholesale Price Increase to $12.00 ↗</b>
+ <span data-i18n-zh="威瑞信宣布 2027 年 3 月 1 日起 .net 批发价由 $10.91 上调 10% 至 $12.00" data-i18n-en="Verisign announces 10% .net wholesale increase from $10.91 to $12.00 effective Mar 1, 2027">威瑞信宣布 2027 年 3 月 1 日起 .net 批发价由 $10.91 上调 10% 至 $12.00</span>
+ </a>
+ <a class="ft-source-card" href="https://webhosting.today/2026/07/24/verisign-finally-won-web-unlike-com-no-one-caps-its-price/" target="_blank" rel="noopener noreferrer">
+ <b>Verisign Wins .web — Uncapped Wholesale Pricing ↗</b>
+ <span data-i18n-zh="解析 .web 历经十年仲裁胜出且不受 ICANN 批发价格上限约束的长期商业潜力" data-i18n-en="Analysis of VeriSign's decade-long .web victory and uncapped wholesale pricing freedom">解析 .web 历经十年仲裁胜出且不受 ICANN 批发价格上限约束的长期商业潜力</span>
+ </a>
+ <a class="ft-source-card" href="https://blog.verisign.com/author/jbidzos/" target="_blank" rel="noopener noreferrer">
+ <b>Jim Bidzos on Verisign Informed™ &amp; Stale Trust ↗</b>
+ <span data-i18n-zh="创始人兼 CEO Jim Bidzos 亲自撰文阐述 Verisign Informed™ 解决机器速度时代信任验证的愿景" data-i18n-en="Founder &amp; CEO Jim Bidzos introduces Verisign Informed™ for validating trust at machine speed">创始人兼 CEO Jim Bidzos 亲自撰文阐述 Verisign Informed™ 解决机器速度时代信任验证的愿景</span>
+ </a>
+ </div>
+ </section>
+
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+
+ var TITLE_ZH = '威瑞信 2026–2032 未来战略与新增长曲线观测站 | 数据中心';
+ var TITLE_EN = 'VeriSign, Inc. 2026–2032 Strategic Horizon & Growth Observatory | Research Hub';
+
+ var state = {
+ theme: 'light',
+ lang: 'zh',
+ activeHz: 0,
+ activeEng: 0,
+ fView: 'capex',
+ sView: 'pen',
+ pe: 26,
+ silSeries: { mod: true, wf: true },
+ hover: { futureCanvas: -1, siliconCanvas: -1, optMiniCanvas: -1 }
+ };
+ var hits = { futureCanvas: [], siliconCanvas: [], optMiniCanvas: [] };
+
+ function isEn() { return state.lang === 'en'; }
+
+ function showToast(msg) {
+ var bar = document.getElementById('muiSnackbar');
+ if (!bar) return;
+ bar.textContent = msg;
+ bar.classList.add('show');
+ clearTimeout(bar._t);
+ bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2000);
+ }
+
+ function getPalette() {
+ var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+ return {
+ dark: dark,
+ text: dark ? '#F3F6F9' : '#0F1924',
+ sub: dark ? '#B2BAC2' : '#334155',
+ tick: dark ? '#94A3B8' : '#475569',
+ grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+ hoverBand: dark ? 'rgba(51, 153, 255, 0.09)' : 'rgba(0, 115, 230, 0.06)',
+ pillBg: dark ? 'rgba(9, 13, 22, 0.90)' : 'rgba(255, 255, 255, 0.95)',
+ pillBorder: dark ? 'rgba(51, 153, 255, 0.34)' : 'rgba(0, 115, 230, 0.25)',
+ blue: dark ? '#3399FF' : '#0073E6',
+ violet: dark ? '#A78BFA' : '#7C3AED',
+ green: dark ? '#22C55E' : '#16A34A',
+ amber: dark ? '#FFB74D' : '#D97706',
+ red: dark ? '#FF6B6B' : '#DC2626'
+ };
+ }
+
+ var RICH_I18N = {
+ f0_lead: {
+ zh: '站在 $17.6 亿年营收与 1.825 亿 .com/.net 域名基数的新起点上，2026 年第四季度成为威瑞信近十年来最重要的战略拐点：一方面，2026 年 11 月 1 日起 <strong>.com 批发价正式启动四年连涨首轮提价（$10.26 → $10.97）</strong> <a class="cite-link" href="https://topsitehosters.com/blog/the-price-of-com-and-org-domains-is-going-up-in-2026-here-is-what-to-do/" target="_blank" rel="noopener noreferrer">.com 提价公告 ↗</a>，同时 <strong>.net 亦定档 2027 年 3 月上调 10% 至 $12.00</strong> <a class="cite-link" href="https://domainincite.com/31906-net-prices-going-up" target="_blank" rel="noopener noreferrer">.net 提价 ↗</a>；另一方面，历经十年 ICANN 博弈的 <strong>.web 顶级域终获放行</strong>（2026 年 12 月 10 日日出期、2027 年 4 月 6 日全面开放，且<strong>无批发限价约束</strong>） <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">.web 上线日程 ↗</a>。叠加 2026 年 10 月启动限额公测的高保证身份验证服务 <strong>Verisign Informed™</strong> <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">Q3 2026 8-K ↗</a>，威瑞信正从单一域名注册局进化为 AI 代理时代的互联网根级信任锚点。',
+ en: 'From a $1.76B revenue base and 182.5M .com/.net domains, Q4 2026 marks VeriSign’s biggest strategic inflection in a decade: on Nov 1, 2026, <strong>.com initiated Round 1 of its four-year 7% price escalator ($10.26 → $10.97)</strong> <a class="cite-link" href="https://topsitehosters.com/blog/the-price-of-com-and-org-domains-is-going-up-in-2026-here-is-what-to-do/" target="_blank" rel="noopener noreferrer">.com Hike ↗</a> alongside a <strong>10% .net hike to $12.00 in Mar 2027</strong> <a class="cite-link" href="https://domainincite.com/31906-net-prices-going-up" target="_blank" rel="noopener noreferrer">.net Hike ↗</a>. Simultaneously, after a 10-year battle, <strong>.web launches Dec 10, 2026 (GA Apr 6, 2027) with uncapped pricing</strong> <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">.web Dates ↗</a>, paired with <strong>Verisign Informed™</strong> beta for AI-era trust validation <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">Q3 2026 8-K ↗</a>.'
+ },
+ f2_caption: {
+ zh: '战略反差：超大规模云巨头与 CDN 厂商需将营收的 12%–30% 投入高折旧服务器与 GPU 集群；而威瑞信 FY2025 资本开支仅 <strong>$22.8M（占营收 1.4%）</strong>，即便 FY2026 因基础设施升级提至 $55M–$65M（~3.4%），仍属全美利润率最高、最轻资产的数字化核心基建。',
+ en: 'Strategic Contrast: Hyperscalers and CDN peers sink 12%–30% of revenue into depreciating GPUs and servers, while VeriSign spent just <strong>$22.8M (1.4% of sales)</strong> in FY25—and even with FY26 upgrades at $55M–$65M (~3.4%), remains an unmatched asset-light cash machine.'
+ },
+ f3_root: {
+ zh: '独家承担 ICANN 根区文件编辑与分发职能，并运营 13 台全球根服务器中的 A 根与 J 根 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">官方披露 ↗</a>。',
+ en: 'Exclusive Root Zone Maintainer for ICANN and operator of 2 of 13 global internet root servers (A &amp; J) <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1014473/000101447326000038/q32026earningsrelease.htm" target="_blank" rel="noopener noreferrer">SEC 8-K ↗</a>.'
+ },
+ f3_sla: {
+ zh: '自 1997 年起连续 29 年+ 保持 .com/.net 解析 100% 在线，日均扛住 ~8,000 亿次查询与 DDoS 攻击。',
+ en: '29+ consecutive years of 100% .com/.net DNS availability, resolving ~800B daily queries under constant DDoS.'
+ },
+ f3_web: {
+ zh: '2026.12.10 启动日出期，2027.01.12 .com 持有人优先注册，2027.04.06 全面开放 <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">上线时间表 ↗</a>。',
+ en: 'Sunrise Dec 10, 2026; .com Priority Jan 12, 2027; General Availability Apr 6, 2027 <a class="cite-link" href="https://www.quantisnow.com/insight/verisign-announces-web-launch-key-dates-6785369" target="_blank" rel="noopener noreferrer">Key Dates ↗</a>.'
+ },
+ f3_caption: {
+ zh: '提价复利推演：按照 ICANN 协议 2026–2029 年每年最高 7% 提价权限，.com 批发价将由 2025 年的 $10.26 稳步阶梯升至 2029/2030 年的 <strong>~$13.42</strong>（累计 +30.8%），仅存量提价即可在 2030 年新增逾 $5 亿高毛利营收。',
+ en: 'Pricing Compounding: Under the 7% annual cap from 2026–2029, .com wholesale pricing steps from $10.26 to <strong>~$13.42</strong> (+30.8%), adding $500M+ in high-margin annual revenue by 2030.'
+ }
+ };
+
+ var HORIZONS = [
+ {
+ badge: 'HORIZON 1 · HIGH-CERTAINTY EXECUTION (2026–2027)',
+ badgeZh: 'HORIZON 1 · 高确定性业绩兑现期 (2026–2027)',
+ titleZh: '.com 首轮提价落地 × .net 10% 提价 × .web 全面商业开闸',
+ titleEn: '.com Hike Round 1 × .net +10% Hike × .web Public Launch',
+ itemsZh: [
+ '<strong>.com 与 .net 双轮提价：</strong>2026.11 .com 提至 $10.97，2027.03 .net 提至 $12.00，高毛利营收确定性落地。',
+ '<strong>.web 三阶段上线：</strong>2026.12.10 日出期 → 2027.01.12 .com 持有人优先期 → 2027.04.06 全面开放。',
+ '<strong>Verisign Informed™ 商用：</strong>2026.10 启动有限测试，预计 2027 上半年正式推向企业安全市场。'
+ ],
+ itemsEn: [
+ '<strong>Dual Price Hikes:</strong> .com hits $10.97 (Nov 2026) and .net hits $12.00 (Mar 2027) with near-100% margin flow-through.',
+ '<strong>.web 3-Stage Rollout:</strong> Dec 10, 2026 Sunrise → Jan 12, 2027 .com Priority → Apr 6, 2027 General Availability.',
+ '<strong>Verisign Informed™:</strong> Limited beta launched Oct 2026, targeting commercial rollout in H1 2027.'
+ ],
+ probZh: '兑现确定性：极高 (95%+)', probEn: 'Conviction: Very High (95%+)',
+ impactZh: '年化增量营收池：+$240M–$320M', impactEn: 'Incremental Pool: +$240M–$320M/yr'
+ },
+ {
+ badge: 'HORIZON 2 · COMPOUNDING & NEW CURVE SCALE (2028–2029)',
+ badgeZh: 'HORIZON 2 · 提价复利与新曲线放量期 (2028–2029)',
+ titleZh: '.com 连续四年 7% 提价收官 × .web 续费复利 × 缩股突破 8,000 万股',
+ titleEn: '.com Escalator Completion × .web Recurring Base × Sub-80M Shares',
+ itemsZh: [
+ '<strong>.com 突破 $13 门槛：</strong>若 2027–2029 年每年行使 7% 提价权，批发价将于 2029 年底触及 ~$13.42。',
+ '<strong>.web 进入高续费周期：</strong>首波 2027 年注册的企业与商业 .web 域名进入 75%–85% 高毛利续费复利。',
+ '<strong>股本持续注销：</strong>每年超 $10 亿自由现金流推动流通股本跌破 8,000 万股，EPS 增速显著超营收。'
+ ],
+ itemsEn: [
+ '<strong>.com Tops $13:</strong> Exercising 7% hikes through 2029 lifts .com wholesale pricing to ~$13.42.',
+ '<strong>.web Recurring Flywheel:</strong> 2027 cohort enters high-margin renewal cycles alongside premium domain tiers.',
+ '<strong>Sub-80M Share Count:</strong> $1B+ annual FCF drives shares outstanding below 80M, accelerating EPS growth.'
+ ],
+ probZh: '兑现确定性：高 (80%+)', probEn: 'Conviction: High (80%+)',
+ impactZh: '年化增量营收池：+$550M–$750M', impactEn: 'Incremental Pool: +$550M–$750M/yr'
+ },
+ {
+ badge: 'HORIZON 3 · POST-2030 CONTRACT & AI TRUST ERA (2030–2032)',
+ badgeZh: 'HORIZON 3 · 后 2030 续约与 AI 信任底座期 (2030–2032)',
+ titleZh: '2030 .com 协议新一轮续签 × 抗量子 DNSSEC × AI 代理鉴权网络',
+ titleEn: '2030 .com Renewal × Post-Quantum DNSSEC × Agentic Trust Layer',
+ itemsZh: [
+ '<strong>2030 周期续签博弈：</strong>凭借“推定续约权”与 33 年零宕机纪录，锁定下一个六年商业运营周期。',
+ '<strong>AI 代理信任基础设施：</strong>Verisign Informed™ 切入高频机器间（M2M）证书与身份实时核验市场。',
+ '<strong>抗量子加密根区升级：</strong>全球 DNSSEC 向抗量子密码迁移，进一步拉大中小注册局的技术合规门槛。'
+ ],
+ itemsEn: [
+ '<strong>2030 Contract Renewal:</strong> Presumptive renewal + 33+ years of 100% uptime anchor the next 6-year term.',
+ '<strong>Agentic Trust Layer:</strong> Verisign Informed™ scales into high-frequency machine-to-machine authentication.',
+ '<strong>Post-Quantum DNSSEC:</strong> Industry-wide PQ migration widens the technical moat around root infrastructure.'
+ ],
+ probZh: '兑现确定性：中高期权 (60%–70%)', probEn: 'Conviction: Strategic Option (60%–70%)',
+ impactZh: '年化增量营收池：+$900M+', impactEn: 'Incremental Pool: +$900M+/yr'
+ }
+ ];
+
+ function renderHorizon(idx) {
+ state.activeHz = idx;
+ var hz = HORIZONS[idx] || HORIZONS[0];
+ var en = isEn();
+ document.getElementById('hzBadge').textContent = en ? hz.badge : hz.badgeZh;
+ document.getElementById('hzTitle').textContent = en ? hz.titleEn : hz.titleZh;
+ var items = en ? hz.itemsEn : hz.itemsZh;
+ document.getElementById('hzList').innerHTML = items.map(function (t) {
+ return '<li><span class="ft-hz-dot"></span><span>' + t + '</span></li>';
+ }).join('');
+ document.getElementById('hzProb').textContent = en ? hz.probEn : hz.probZh;
+ document.getElementById('hzImpact').textContent = en ? hz.impactEn : hz.impactZh;
+ }
+
+ var ENGINES = [
+ {
+ badge: 'ENGINE 01 · .COM 7% CONTRACTED PRICE ESCALATOR',
+ titleZh: '.com 四连提价周期（2026–2029）：互联网最确定的内生利润放大器',
+ titleEn: '.com 4-Year Price Escalator (2026–2029): Highest-Visibility Profit Lever',
+ descZh: '根据 ICANN 2020 年修订的 .com 注册局协议，每个六年合同期前两年冻结价格、后四年每年允许最高上调 7%。2026 年 11 月 1 日首轮提价已正式将批发价从 $10.26 推升至 $10.97（CEO Jim Bidzos 称之为“每天仅增加约 0.2 美分”）。由于解析边际成本为零，2026–2029 年连续四次提价几乎全部直接转为营业利润。',
+ descEn: 'Under the 2020 ICANN .com amendment, prices freeze for 2 years and rise up to 7%/year in the final 4 years of each 6-year term. Round 1 took effect Nov 1, 2026 ($10.26 → $10.97). With zero marginal resolution cost, four annual hikes drop straight to operating profit.',
+ formulaZh: '利润公式：1.70亿+ .com 存量 × ($13.42 - $10.26) = 2030年纯提价年化贡献逾 $5.3亿 高毛利收入',
+ formulaEn: 'Profit Formula: 170M+ .com Base × ($13.42 - $10.26) = +$530M+ Pure Price Revenue by 2030',
+ gaugesZh: [['$10.97', '2026.11.01 生效批发价 (+6.9%)'], ['~$13.42', '2029–2030E 理论提价上限'], ['~95%', '提价新增收入转营业利润率'], ['1.70亿+', '.com 活跃商业域名存量基数']],
+ gaugesEn: [['$10.97', 'Nov 1, 2026 Wholesale Price'], ['~$13.42', '2029–2030E Contract Ceiling'], ['~95%', 'Incremental OpInc Flow-Through'], ['170M+', 'Active .com Domain Base']]
+ },
+ {
+ badge: 'ENGINE 02 · .WEB UNCAPPED gTLD LAUNCH',
+ titleZh: '.web 顶级域商业化落地：不受 ICANN 限价约束的第二主干后缀',
+ titleEn: '.web Commercialization: Uncapped Wholesale Pricing Power',
+ descZh: '历经逾十年竞争争议与 ICANN 独立审查，威瑞信于 2026 年 7 月彻底扫清障碍并在 11 月 11 日官宣上线日程：2026 年 12 月 10 日启动商标日出期、2027 年 1 月 12 日开启 .com 持有人优先注册期、2027 年 4 月 6 日全面公开注册。最关键的是，.web 不同于 .com/.net，没有任何批发价格上限限制。',
+ descEn: 'After a decade of ICANN proceedings, VeriSign cleared all hurdles in 2026 and set .web dates: Dec 10, 2026 Sunrise; Jan 12, 2027 .com Owner Priority Access; Apr 6, 2027 General Availability. Crucially, .web has NO ICANN wholesale price cap.',
+ formulaZh: '变现双轮：(1) 2027 Q1 既存 .com 品牌防御性批量抢注 + (2) 高价值词分级溢价与长期续费复利',
+ formulaEn: 'Dual Engine: (1) Q1 2027 defensive .com owner priority uptake + (2) tiered premium pricing &amp; recurring renewals',
+ gaugesZh: [['2026.12.10', 'TMCH 商标日出期正式启动'], ['2027.01.12', '.com 持有人优先配对窗口'], ['2027.04.06', '全球公众全面开放注册 (GA)'], ['无价格上限', '摆脱 ICANN 批发限价约束']],
+ gaugesEn: [['Dec 10, 2026', 'TMCH Trademark Sunrise Opens'], ['Jan 12, 2027', '.com Owner Priority Window'], ['Apr 6, 2027', 'Global General Availability'], ['Uncapped', 'Free from ICANN Price Caps']]
+ },
+ {
+ badge: 'ENGINE 03 · VERISIGN INFORMED™ HIGH-ASSURANCE TRUST',
+ titleZh: 'Verisign Informed™：从“域名寻址”切入“机器速度时代实时信任验证”',
+ titleEn: 'Verisign Informed™: Real-Time Trust Validation at Machine Speed',
+ descZh: '2026 年 10 月威瑞信正式发布并开启 Verisign Informed™ 有限测试。随着企业依赖数字证书与 AI 自主代理在毫秒级交互，传统静态证书极易产生“过期信任（Stale Trust）”风险。威瑞信将自身权威域名注册与根级安全遥测封装为高保证验证服务，在不重资产扩张的前提下开辟高毛利 B2B 安全 SaaS 收入。',
+ descEn: 'Launched in limited beta in Oct 2026, Verisign Informed™ addresses "stale trust" for enterprises and autonomous AI agents operating at machine speed—monetizing VeriSign’s authoritative DNS telemetry as a high-margin B2B validation layer.',
+ formulaZh: '战略定位：复用现有 928 人安全/工程底座 → 零重资产切入企业零信任与 AI 代理身份校验',
+ formulaEn: 'Strategic Leverage: Reuses existing 928-FTE security core → asset-light B2B trust SaaS',
+ gaugesZh: [['2026.10', 'Q3 财报确认开启有限测试'], ['Stale Trust', '直击企业数字证书过期痛点'], ['2027 H1', '预计推向全面商业化部署'], ['高毛利 SaaS', '纯软件接口订阅收费模式']],
+ gaugesEn: [['Oct 2026', 'Limited Beta Confirmed in Q3'], ['Stale Trust', 'Solves Certificate Staleness'], ['H1 2027', 'Expected Commercial Rollout'], ['High-GM SaaS', 'API-Driven Enterprise Subs']]
+ },
+ {
+ badge: 'ENGINE 04 · .NET 10% ESCALATOR & STICKY RENEWAL',
+ titleZh: '.net 基础设施后缀：1,240 万老牌基数的 10% 年提价压舱石',
+ titleEn: '.net Infrastructure Registry: 10% Annual Escalator on Sticky Base',
+ descZh: '作为全球互联网早期网络基础设施、ISP 与技术开发者的首选后缀，.net 拥有约 1,240 万个极度稳定的域名基数。威瑞信已正式公告自 2027 年 3 月 1 日起将 .net 批发价从 $10.91 上调 10% 至 $12.00（合同允许每年最高 10% 提价），在低波动中持续贡献高纯度现金流。',
+ descEn: 'With ~12.4M domains powering ISPs and network infrastructure, .net exhibits exceptional renewal inertia. VeriSign announced a 10% wholesale increase from $10.91 to $12.00 effective March 1, 2027.',
+ formulaZh: '利润传导：1,240万 .net 域名 × $1.09 提价 ≈ 年化新增 ~$1,350万 纯税前利润',
+ formulaEn: 'Margin Flow: 12.4M .net Domains × $1.09 Hike ≈ +$13.5M Annualized Pre-Tax Profit',
+ gaugesZh: [['$12.00', '2027.03.01 生效批发价'], ['+10.0%', 'ICANN 合同允许年提价上限'], ['~1,240万', '.net 区域文件稳定域名基数'], ['基础设施级', 'ISP 与技术架构极低迁移意愿']],
+ gaugesEn: [['$12.00', 'Mar 1, 2027 Wholesale Fee'], ['+10.0%/yr', 'ICANN Contracted Escalator'], ['~12.4M', 'Stable .net Zone File Base'], ['Infra-Grade', 'Ultra-Sticky ISP/Tech Base']]
+ },
+ {
+ badge: 'ENGINE 05 · AI-ERA DOMAIN DEMAND & AGENTIC DNS',
+ titleZh: 'AI 代理与微型应用爆发：Q3 2026 新注册飙至 1,310 万创近年纪录',
+ titleEn: 'AI Startup & Agentic Boom: Record 13.1M Q3 2026 New Registrations',
+ descZh: '市场曾担忧聊天机器人会取代网站访问，但现实恰恰相反：AI 编程极大降低了网站与 SaaS 搭建门槛，全球 AI 工具、智能体与自动化工作流反而需要更多独立域名作为可信 API 与品牌入口。Q3 2026 威瑞信新注册量跳升至 1,310 万个（+23.6% YoY），推动全年基数增速指引上调至 6.5%–7.0%。',
+ descEn: 'Contrary to fears that chatbots would kill domains, AI coding lowered website creation friction while agents need trusted API endpoints. Q3 2026 new registrations jumped +23.6% YoY to 13.1M, lifting FY26 base growth guidance to 6.5%–7.0%.',
+ formulaZh: '量价共振：域名基数恢复 4%–6% 增长 × 7% 年提价 = 双位数营收与 13%–16% EPS 复利',
+ formulaEn: 'Volume × Price: 4%–6% Base Growth × 7% Escalator = Double-Digit Rev &amp; 13%–16% EPS CAGR',
+ gaugesZh: [['13.1M', 'Q3 2026 单季新注 (+23.6% YoY)'], ['+3.36M', 'Q3 2026 单季净增域名基数'], ['6.5%–7.0%', 'FY2026 全年基数增长指引'], ['75.2%', 'Q2 2026 最终混合续费率']],
+ gaugesEn: [['13.1M', 'Q3 2026 New Adds (+23.6% YoY)'], ['+3.36M', 'Q3 2026 Net Base Additions'], ['6.5%–7.0%', 'FY2026 Base Growth Guidance'], ['75.2%', 'Q2 2026 Final Renewal Rate']]
+ },
+ {
+ badge: 'ENGINE 06 · POST-QUANTUM DNSSEC & ROOT RESILIENCE',
+ titleZh: '抗量子 DNSSEC 与根区弹性：锁定 2030 年后下一个十年特许权',
+ titleEn: 'Post-Quantum DNSSEC & Root Resilience: Locking in Post-2030 Renewal',
+ descZh: '为应对 AI 代理流量洪峰与未来量子计算对加密签名的挑战，威瑞信在 FY2026 将资本开支由 $22.8M 主动提升至 $55M–$65M，强化全球任意播（Anycast）解析集群、DDoS 防御与抗量子 DNSSEC 演进。持续零失误的国家级安全表现，是威瑞信在 2030 年顺利续签 ICANN .com 协议的最强政治与技术背书。',
+ descEn: 'To absorb AI traffic spikes and prepare for quantum computing threats, VeriSign raised FY26 CapEx from $22.8M to $55M–$65M for Anycast capacity, DDoS defense, and post-quantum DNSSEC—cementing its 2030 ICANN .com renewal.',
+ formulaZh: '战略定位：以不足营收 3.5% 的极小 CapEx 投入，换取 2030–2036 年下一个六年垄断期续约',
+ formulaEn: 'Strategic ROI: <3.5% CapEx intensity secures the next 2030–2036 exclusive .com renewal',
+ gaugesZh: [['$55M–$65M', 'FY2026E 基础设施升级 CapEx'], ['Anycast', '全球分布式抗 DDoS 根解析网'], ['PQ-DNSSEC', '抗量子加密签名演进储备'], ['2030→2036', '推定续约权锁定下个六年周期']],
+ gaugesEn: [['$55M–$65M', 'FY2026E Infrastructure CapEx'], ['Anycast', 'Global DDoS-Resilient Mesh'], ['PQ-DNSSEC', 'Post-Quantum Crypto Readiness'], ['2030→2036', 'Presumptive Next 6-Yr Cycle']]
+ }
+ ];
+
+ function renderEngine(idx) {
+ state.activeEng = idx;
+ var eg = ENGINES[idx] || ENGINES[0];
+ var en = isEn();
+ document.getElementById('engBadge').textContent = eg.badge;
+ document.getElementById('engTitle').innerHTML = en ? eg.titleEn : eg.titleZh;
+ document.getElementById('engDesc').textContent = en ? eg.descEn : eg.descZh;
+ document.getElementById('engFormula').innerHTML = en ? eg.formulaEn : eg.formulaZh;
+ var gs = en ? eg.gaugesEn : eg.gaugesZh;
+ document.getElementById('engGauges').innerHTML = gs.map(function (g) {
+ return '<div class="ft-gauge-card"><b class="mono">' + g[0] + '</b><span>' + g[1] + '</span></div>';
+ }).join('');
+ }
+
+ function applyTheme(t, silent) {
+ state.theme = (t === 'dark') ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var ic = document.getElementById('appbarThemeIcon');
+ if (ic) {
+ ic.innerHTML = state.theme === 'dark'
+ ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+ : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+ }
+ drawAll();
+ if (!silent) showToast(isEn() ? (state.theme === 'dark' ? 'Switched to Dark Blueprint' : 'Switched to Light Mode') : (state.theme === 'dark' ? '已切换至深色蓝图模式' : '已切换至 MUI 浅色模式'));
+ }
+
+ function applyLang(lang, silent) {
+ state.lang = (lang === 'en') ? 'en' : 'zh';
+ var en = isEn();
+ document.documentElement.lang = en ? 'en' : 'zh-CN';
+ document.title = en ? TITLE_EN : TITLE_ZH;
+ var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+ if (zhB) { zhB.classList.toggle('active', !en); zhB.setAttribute('aria-pressed', String(!en)); }
+ if (enB) { enB.classList.toggle('active', en); enB.setAttribute('aria-pressed', String(en)); }
+
+ var nodes = document.querySelectorAll('[data-i18n-zh]');
+ for (var i = 0; i < nodes.length; i++) {
+ var val = nodes[i].getAttribute(en ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1 || val.indexOf('&') !== -1) nodes[i].innerHTML = val;
+ else nodes[i].textContent = val;
+ }
+ }
+ var richNodes = document.querySelectorAll('[data-i18n-rich]');
+ for (var r = 0; r < richNodes.length; r++) {
+ var rk = richNodes[r].getAttribute('data-i18n-rich');
+ if (RICH_I18N[rk]) richNodes[r].innerHTML = en ? RICH_I18N[rk].en : RICH_I18N[rk].zh;
+ }
+ var phNodes = document.querySelectorAll('[data-i18n-ph-zh]');
+ for (var p = 0; p < phNodes.length; p++) {
+ phNodes[p].setAttribute('placeholder', phNodes[p].getAttribute(en ? 'data-i18n-ph-en' : 'data-i18n-ph-zh'));
+ }
+ var ariaNodes = document.querySelectorAll('[data-i18n-aria-zh]');
+ for (var a = 0; a < ariaNodes.length; a++) {
+ ariaNodes[a].setAttribute('aria-label', ariaNodes[a].getAttribute(en ? 'data-i18n-aria-en' : 'data-i18n-aria-zh'));
+ }
+ var titleNodes = document.querySelectorAll('[data-i18n-title-zh]');
+ for (var t = 0; t < titleNodes.length; t++) {
+ titleNodes[t].setAttribute('title', titleNodes[t].getAttribute(en ? 'data-i18n-title-en' : 'data-i18n-title-zh'));
+ }
+
+ renderHorizon(state.activeHz);
+ renderEngine(state.activeEng);
+ renderFutureLegend();
+ renderSiliconLegend();
+ drawAll();
+ if (!silent) showToast(en ? 'Switched to English' : '已切换为中文');
+ }
+
+ var hzTabs = document.getElementById('hzTabs');
+ if (hzTabs) {
+ hzTabs.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-hz]');
+ if (!b) return;
+ var bs = hzTabs.querySelectorAll('.ft-hz-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderHorizon(parseInt(b.getAttribute('data-hz'), 10) || 0);
+ });
+ }
+
+ var rail = document.getElementById('engineRail');
+ if (rail) {
+ rail.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-eng]');
+ if (!b) return;
+ var bs = rail.querySelectorAll('.ft-rail-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ renderEngine(parseInt(b.getAttribute('data-eng'), 10) || 0);
+ });
+ }
+
+ function prepCanvas(id) {
+ var c = document.getElementById(id);
+ if (!c) return null;
+ var rect = c.getBoundingClientRect();
+ var w = Math.max(260, rect.width || 480), h = Math.max(135, rect.height || 260);
+ var dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+ c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+ var ctx = c.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { c: c, ctx: ctx, w: w, h: h };
+ }
+
+ function roundRect(ctx, x, y, w, h, r) {
+ if (w <= 0 || h <= 0) return;
+ var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rr, y);
+ ctx.arcTo(x + w, y, x + w, y + h, rr);
+ ctx.arcTo(x + w, y + h, x, y + h, rr);
+ ctx.arcTo(x, y + h, x, y, rr);
+ ctx.arcTo(x, y, x + w, y, rr);
+ ctx.closePath();
+ }
+
+ function drawSmoothLine(ctx, pts) {
+ if (!pts.length) return;
+ ctx.beginPath();
+ ctx.moveTo(pts[0].x, pts[0].y);
+ for (var i = 0; i < pts.length - 1; i++) {
+ var xc = (pts[i].x + pts[i + 1].x) / 2;
+ ctx.bezierCurveTo(xc, pts[i].y, xc, pts[i + 1].y, pts[i + 1].x, pts[i + 1].y);
+ }
+ }
+
+ function drawValueBadge(ctx, text, cx, cy, fgColor, pal) {
+ ctx.save();
+ ctx.font = '700 10.5px "IBM Plex Mono", sans-serif';
+ var tw = ctx.measureText(text).width + 10;
+ var th = 17;
+ ctx.fillStyle = pal.pillBg;
+ roundRect(ctx, cx - tw / 2, cy - th / 2, tw, th, 5);
+ ctx.fill();
+ ctx.strokeStyle = pal.pillBorder; ctx.lineWidth = 1; ctx.stroke();
+ ctx.fillStyle = fgColor; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+ ctx.fillText(text, cx, cy + 0.5);
+ ctx.restore();
+ }
+
+ function renderFutureLegend() {
+ var leg = document.getElementById('futureLegend');
+ if (!leg) return;
+ var en = isEn();
+ if (state.fView === 'capex') {
+ leg.innerHTML = '<span class="mui-chip mui-chip-success mono">' + (en ? 'VeriSign 1.4% (FY25) / 3.4% (FY26E) vs. Cloud &amp; Infra Peers (12%–29%)' : '威瑞信 1.4% (FY25) / 3.4% (FY26E) vs 云/边缘基建同行 (12%–29%)') + '</span>';
+ } else {
+ leg.innerHTML = '<span class="mui-chip mui-chip-primary mono">' + (en ? 'FY2025 ($1.66B) → FY2032E (~$3.28B) Multi-Horizon Bridge' : 'FY2025 ($1.66B) → FY2032E (~$3.28B) 多曲线营收增量阶梯') + '</span>';
+ }
+ }
+
+ function renderSiliconLegend() {
+ var leg = document.getElementById('siliconLegend');
+ if (!leg) return;
+ var en = isEn();
+ if (state.sView === 'pen') {
+ leg.innerHTML =
+ '<button type="button" class="legend-pill' + (state.silSeries.mod ? '' : ' muted') + '" data-sil-series="mod"><span class="legend-dot" style="background:var(--mui-primary-main);"></span><span>' + (en ? '.com Wholesale Price ($)' : '.com 批发价法定路径 ($)') + '</span></button>' +
+ '<button type="button" class="legend-pill' + (state.silSeries.wf ? '' : ' muted') + '" data-sil-series="wf"><span class="legend-dot" style="background:var(--mui-violet-text);"></span><span>' + (en ? '.net Wholesale Price ($)' : '.net 批发价路径 ($)') + '</span></button>';
+ } else {
+ leg.innerHTML = '<span class="mui-chip mui-chip-success mono">' + (en ? 'Projected .web + Verisign Informed™ Incremental Revenue ($M)' : '推演 .web + Verisign Informed™ 年化增量营收 ($M)') + '</span>';
+ }
+ }
+
+ var silLegEl = document.getElementById('siliconLegend');
+ if (silLegEl) {
+ silLegEl.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-sil-series]');
+ if (!b) return;
+ var k = b.getAttribute('data-sil-series');
+ state.silSeries[k] = !state.silSeries[k];
+ if (!state.silSeries.mod && !state.silSeries.wf) state.silSeries[k] = true;
+ renderSiliconLegend();
+ drawSiliconCanvas();
+ });
+ }
+
+ function drawFutureCanvas() {
+ var env = prepCanvas('futureCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(), en = isEn();
+ hits.futureCanvas = [];
+ var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.fView === 'capex') {
+ var peers = [
+ { name: 'Microsoft', cap: 27.5, col: pal.amber, tip: en ? 'Hyperscale AI data centers require ~27% of sales in CapEx' : '超大规模 AI 数据中心投入占营收 ~27.5%' },
+ { name: 'Alphabet', cap: 18.5, col: pal.blue, tip: en ? 'TPU & AI infrastructure buildout ~18.5% of sales' : 'TPU 与云基础设施 CapEx 占营收 ~18.5%' },
+ { name: 'Cloudflare', cap: 12.2, col: pal.violet, tip: en ? 'Global edge network server expansion ~12.2% of sales' : '全球边缘服务器与 CDN 扩容占营收 ~12.2%' },
+ { name: 'VRSN FY26E', cap: 3.4, col: pal.blue, tip: en ? 'FY26E CapEx $55M–$65M (~3.4% of $1.76B sales) for infrastructure refresh' : 'FY2026E 指引 CapEx $55M–$65M（占营收 ~3.4%），用于根解析升级' },
+ { name: 'VRSN FY25', cap: 1.4, col: pal.green, tip: en ? 'FY25 actual CapEx just $22.8M (1.4% of $1,656.6M sales); FCF $1,068.3M!' : 'FY2025 实际 CapEx 仅 $22.8M（占营收 1.4%），FCF 高达 $1,068.3M' }
+ ];
+ var maxC = 32;
+ for (var g = 0; g <= 4; g++) {
+ var gv = Math.round((maxC / 4) * g), gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(gv + '%', pad.left - 8, gy + 4);
+ }
+ var slot = pw / peers.length, bw = Math.min(44, slot * 0.56);
+ peers.forEach(function (p, i) {
+ var cx = pad.left + i * slot + slot / 2, x = cx - bw / 2;
+ var bh = Math.max(6, (p.cap / maxC) * ph), yt = pad.top + ph - bh;
+ if (state.hover.futureCanvas === i) {
+ ctx.fillStyle = pal.hoverBand;
+ roundRect(ctx, pad.left + i * slot + 3, pad.top, slot - 6, ph, 7); ctx.fill();
+ }
+ ctx.fillStyle = p.col;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ if (state.hover.futureCanvas === i) { ctx.strokeStyle = pal.text; ctx.lineWidth = 1.5; ctx.stroke(); }
+ drawValueBadge(ctx, p.cap.toFixed(1) + '%', cx, yt - 12, p.col, pal);
+ ctx.fillStyle = i >= 3 ? pal.green : pal.sub; ctx.font = (i === 4 ? 'bold ' : '600 ') + '11px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(p.name, cx, pad.top + ph + 20);
+ hits.futureCanvas.push({ idx: i, x: pad.left + i * slot, y: pad.top, w: slot, h: ph + 26, title: p.name + (en ? ' CapEx Intensity' : ' 资本开支强度'), body: p.tip });
+ });
+ } else {
+ var steps = [
+ { lbl: en ? 'FY25 Base' : 'FY25基准', v: 1657, b: 0, col: pal.blue, tip: en ? 'FY2025 Actual Revenue: $1,656.6M' : 'FY2025 实际总营收: $1,656.6M' },
+ { lbl: en ? '+.com Price' : '+.com提价', v: 580, b: 1657, col: pal.green, tip: en ? '2026–2031 .com & .net contracted wholesale escalators: +$580M' : '2026–2031 .com 与 .net 法定提价周期贡献 +$580M' },
+ { lbl: en ? '+Base Vol' : '+基数扩容', v: 410, b: 2237, col: pal.violet, tip: en ? 'AI-era domain base expansion (~3.5%/yr): +$410M' : 'AI 时代域名基数自然增长（~3.5%/年）贡献 +$410M' },
+ { lbl: en ? '+.web gTLD' : '+.web商业化', v: 265, b: 2647, col: pal.amber, tip: en ? 'Uncapped .web gTLD registration & renewal scaling: +$265M' : '.web 无上限新顶级域注册与续费放量贡献 +$265M' },
+ { lbl: en ? '+Informed' : '+信任服务', v: 368, b: 2912, col: pal.green, tip: en ? 'Verisign Informed™ & enterprise trust APIs: +$368M' : 'Verisign Informed™ 实时信任验证与安全增值服务贡献 +$368M' },
+ { lbl: en ? 'FY32E Target' : 'FY32E蓝图', v: 3280, b: 0, col: pal.blue, tip: en ? 'FY2032E Horizon Target: ~$3.28B (~2x FY25 revenue at >72% OpM)' : 'FY2032E 远期营收蓝图: ~$3.28B（营业利润率维持 72%+）' }
+ ];
+ var maxB = 3600;
+ for (var k = 0; k <= 4; k++) {
+ var kv = Math.round((maxB / 4) * k), ky = pad.top + ph - (k / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + (kv / 1000).toFixed(1) + 'B', pad.left - 8, ky + 4);
+ }
+ var sW = pw / steps.length, bW = Math.min(44, sW * 0.58);
+ steps.forEach(function (s, i) {
+ var cx = pad.left + i * sW + sW / 2, x = cx - bW / 2;
+ var yt = pad.top + ph - ((s.b + s.v) / maxB) * ph;
+ var yb = pad.top + ph - (s.b / maxB) * ph;
+ var bh = Math.max(5, yb - yt);
+ if (state.hover.futureCanvas === i) {
+ ctx.fillStyle = pal.hoverBand;
+ roundRect(ctx, pad.left + i * sW + 3, pad.top, sW - 6, ph, 7); ctx.fill();
+ }
+ ctx.fillStyle = s.col;
+ roundRect(ctx, x, yt, bW, bh, 5); ctx.fill();
+ if (state.hover.futureCanvas === i) { ctx.strokeStyle = pal.text; ctx.lineWidth = 1.5; ctx.stroke(); }
+ var badgeTxt = s.v >= 1000 ? ('$' + (s.v / 1000).toFixed(2) + 'B') : ((s.b > 0 ? '+' : '') + '$' + s.v + 'M');
+ drawValueBadge(ctx, badgeTxt, cx, yt - 12, s.col, pal);
+ ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(s.lbl, cx, pad.top + ph + 20);
+ hits.futureCanvas.push({ idx: i, x: pad.left + i * sW, y: pad.top, w: sW, h: ph + 26, title: s.lbl, body: s.tip });
+ });
+ }
+ }
+
+ function drawSiliconCanvas() {
+ var env = prepCanvas('siliconCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(), en = isEn();
+ hits.siliconCanvas = [];
+ var pad = { top: 28, right: 22, bottom: 40, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var yrs = ['2025', '2026.11', '2027E', '2028E', '2029E', '2030E'];
+
+ if (state.sView === 'pen') {
+ var comP = [10.26, 10.97, 11.73, 12.55, 13.42, 13.42];
+ var netP = [10.91, 10.91, 12.00, 13.20, 14.52, 15.97];
+ var minP = 9.0, maxP = 17.0;
+ for (var g = 0; g <= 4; g++) {
+ var gv = minP + ((maxP - minP) / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv.toFixed(0), pad.left - 8, gy + 4);
+ }
+ var stepX = pw / 5;
+ yrs.forEach(function (y, idx) {
+ var px = pad.left + idx * stepX;
+ if (state.hover.siliconCanvas === idx) {
+ ctx.save(); ctx.strokeStyle = pal.blue; ctx.setLineDash([3, 3]);
+ ctx.beginPath(); ctx.moveTo(px, pad.top); ctx.lineTo(px, pad.top + ph); ctx.stroke(); ctx.restore();
+ }
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(y, px, pad.top + ph + 20);
+ hits.siliconCanvas.push({
+ idx: idx, x: px - stepX / 2, y: pad.top, w: stepX, h: ph + 26,
+ title: y + (en ? ' Wholesale Price Ceiling' : ' 法定批发价路径'),
+ body: '.com: $' + comP[idx].toFixed(2) + ' · .net: $' + netP[idx].toFixed(2)
+ });
+ });
+ function plotP(arr, col, fillTop) {
+ var pts = arr.map(function (v, idx) { return { x: pad.left + idx * stepX, y: pad.top + ph - ((v - minP) / (maxP - minP)) * ph, v: v }; });
+ ctx.save(); drawSmoothLine(ctx, pts);
+ ctx.lineTo(pts[pts.length - 1].x, pad.top + ph); ctx.lineTo(pts[0].x, pad.top + ph); ctx.closePath();
+ var ag = ctx.createLinearGradient(0, pad.top, 0, pad.top + ph);
+ ag.addColorStop(0, fillTop); ag.addColorStop(1, 'rgba(0,0,0,0)');
+ ctx.fillStyle = ag; ctx.fill(); ctx.restore();
+ ctx.strokeStyle = col; ctx.lineWidth = 2.6; drawSmoothLine(ctx, pts); ctx.stroke();
+ pts.forEach(function (pt, idx) {
+ var isHov = state.hover.siliconCanvas === idx;
+ if (isHov) { ctx.fillStyle = fillTop; ctx.beginPath(); ctx.arc(pt.x, pt.y, 9, 0, Math.PI * 2); ctx.fill(); }
+ ctx.fillStyle = pal.pillBg; ctx.beginPath(); ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(pt.x, pt.y, isHov ? 4.6 : 3.6, 0, Math.PI * 2); ctx.fill();
+ if (idx === 1 || idx === 4 || isHov) drawValueBadge(ctx, '$' + pt.v.toFixed(2), pt.x, pt.y - 13, col, pal);
+ });
+ }
+ if (state.silSeries.mod) plotP(comP, pal.blue, 'rgba(0, 115, 230, 0.18)');
+ if (state.silSeries.wf) plotP(netP, pal.violet, 'rgba(124, 58, 237, 0.16)');
+ } else {
+ var incRev = [0, 8, 68, 155, 270, 400];
+ var maxS = 450;
+ for (var m = 0; m <= 3; m++) {
+ var mv = m * 150, my = pad.top + ph - (mv / maxS) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + mv + 'M', pad.left - 8, my + 4);
+ }
+ var slot = pw / yrs.length, bw = Math.min(40, slot * 0.54);
+ yrs.forEach(function (y, i) {
+ var cx = pad.left + i * slot + slot / 2, x = cx - bw / 2;
+ var bh = Math.max(3, (incRev[i] / maxS) * ph), yt = pad.top + ph - bh;
+ if (state.hover.siliconCanvas === i) {
+ ctx.fillStyle = pal.hoverBand;
+ roundRect(ctx, pad.left + i * slot + 2, pad.top, slot - 4, ph, 7); ctx.fill();
+ }
+ ctx.fillStyle = i >= 3 ? pal.green : pal.blue;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ if (state.hover.siliconCanvas === i) { ctx.strokeStyle = pal.text; ctx.lineWidth = 1.5; ctx.stroke(); }
+ drawValueBadge(ctx, '$' + incRev[i] + 'M', cx, yt - 12, i >= 3 ? pal.green : pal.blue, pal);
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(y, cx, pad.top + ph + 20);
+ hits.siliconCanvas.push({
+ idx: i, x: pad.left + i * slot, y: pad.top, w: slot, h: ph + 26,
+ title: y + (en ? ' .web + Informed™ Est.' : ' .web + Informed™ 增量推演'),
+ body: (en ? 'Projected combined incremental revenue: ~$' : '预计 .web 与 Verisign Informed™ 合计贡献营收 ~$') + incRev[i] + 'M'
+ });
+ });
+ }
+ }
+
+ var OPT_DATA = {
+ com7: { rev: 520, net: 390 },
+ vol: { rev: 285, net: 198 },
+ web: { rev: 180, net: 118 },
+ buy: { rev: 0, net: 0 },
+ inf: { rev: 220, net: 132 }
+ };
+ var miniCaps = [25.8, 28.5, 38.2];
+
+ function drawOptMiniCanvas() {
+ var env = prepCanvas('optMiniCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette(), en = isEn();
+ hits.optMiniCanvas = [];
+ var pad = { top: 24, right: 18, bottom: 26, left: 46 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var lbls = en ? ['Current Cap', '2030 Core', '2030 + Options'] : ['当前市值基准', '2030基础盘', '2030含期权'];
+ var maxV = Math.max(52, Math.ceil(Math.max.apply(null, miniCaps) * 1.15));
+ ctx.strokeStyle = pal.grid;
+ ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+ var slot = pw / 3, bw = Math.min(54, slot * 0.5);
+ miniCaps.forEach(function (v, i) {
+ var cx = pad.left + i * slot + slot / 2, x = cx - bw / 2;
+ var bh = (v / maxV) * ph, yt = pad.top + ph - bh;
+ if (state.hover.optMiniCanvas === i) {
+ ctx.fillStyle = pal.hoverBand;
+ roundRect(ctx, pad.left + i * slot + 4, pad.top, slot - 8, ph, 7); ctx.fill();
+ }
+ var col = i === 2 ? pal.green : (i === 1 ? pal.blue : pal.violet);
+ ctx.fillStyle = col;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ if (state.hover.optMiniCanvas === i) { ctx.strokeStyle = pal.text; ctx.lineWidth = 1.5; ctx.stroke(); }
+ drawValueBadge(ctx, '$' + v.toFixed(1) + 'B', cx, yt - 12, col, pal);
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(lbls[i], cx, pad.top + ph + 16);
+ hits.optMiniCanvas.push({
+ idx: i, x: pad.left + i * slot, y: pad.top, w: slot, h: ph + 24,
+ title: lbls[i],
+ body: (en ? 'Implied Market Cap at ' + state.pe + 'x P/E: $' : state.pe + 'x P/E 隐含市值: $') + v.toFixed(1) + 'B'
+ });
+ });
+ }
+
+ function recalcOptionality() {
+ var baseRev = 1758.0, baseNet = 865.0;
+ var addRev = 0, addNet = 0, useBuyback = false;
+ document.querySelectorAll('[data-opt]').forEach(function (chk) {
+ if (chk.checked) {
+ var k = chk.getAttribute('data-opt');
+ if (k === 'buy') useBuyback = true;
+ var d = OPT_DATA[k];
+ if (d) { addRev += d.rev; addNet += d.net; }
+ }
+ });
+ var totRev = baseRev + addRev, totNet = baseNet + addNet;
+ var sh2030 = useBuyback ? 78.8 : 89.8;
+ var eps = totNet / sh2030;
+ var mcapB = (totNet * state.pe) / 1000;
+ var baseMcapB = (baseNet * state.pe) / 1000;
+
+ document.getElementById('optRevOut').textContent = '$' + (totRev / 1000).toFixed(2) + 'B';
+ document.getElementById('optNetOut').textContent = '$' + Math.round(totNet) + 'M';
+ document.getElementById('optEpsOut').textContent = '$' + eps.toFixed(2);
+ document.getElementById('optCapOut').textContent = '$' + mcapB.toFixed(1) + 'B';
+
+ miniCaps = [25.8, baseMcapB, mcapB];
+ drawOptMiniCanvas();
+ }
+
+ document.querySelectorAll('[data-opt]').forEach(function (chk) { chk.addEventListener('change', recalcOptionality); });
+ var peTabs = document.getElementById('peTabs');
+ if (peTabs) {
+ peTabs.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-pe]');
+ if (!b) return;
+ state.pe = parseInt(b.getAttribute('data-pe'), 10) || 26;
+ var bs = peTabs.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ recalcOptionality();
+ });
+ }
+
+ function bindSeg(gid, attr, skey, fn) {
+ var g = document.getElementById(gid);
+ if (!g) return;
+ g.addEventListener('click', function (e) {
+ var b = e.target.closest('[' + attr + ']');
+ if (!b) return;
+ state[skey] = b.getAttribute(attr);
+ var bs = g.querySelectorAll('.mui-seg-btn');
+ for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+ if (gid === 'fChartTabs') renderFutureLegend();
+ if (gid === 'sChartTabs') renderSiliconLegend();
+ fn();
+ });
+ }
+ bindSeg('fChartTabs', 'data-fview', 'fView', drawFutureCanvas);
+ bindSeg('sChartTabs', 'data-sview', 'sView', drawSiliconCanvas);
+
+ function bindTip(cid, redrawFn) {
+ var c = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+ if (!c || !tip) return;
+ function handlePtr(clientX, clientY) {
+ var r = c.getBoundingClientRect();
+ var mx = clientX - r.left, my = clientY - r.top;
+ var arr = hits[cid] || [], hit = null;
+ for (var i = 0; i < arr.length; i++) {
+ var rg = arr[i];
+ if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+ }
+ var nextIdx = hit ? hit.idx : -1;
+ if (state.hover[cid] !== nextIdx) { state.hover[cid] = nextIdx; redrawFn(); }
+ if (hit) {
+ tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 305, Math.max(12, clientX + 14)) + 'px';
+ tip.style.top = Math.min(window.innerHeight - tip.offsetHeight - 12, Math.max(12, clientY - 28)) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ }
+ c.addEventListener('mousemove', function (ev) { handlePtr(ev.clientX, ev.clientY); });
+ c.addEventListener('touchstart', function (ev) { if (ev.touches[0]) handlePtr(ev.touches[0].clientX, ev.touches[0].clientY); }, { passive: true });
+ c.addEventListener('touchmove', function (ev) { if (ev.touches[0]) handlePtr(ev.touches[0].clientX, ev.touches[0].clientY); }, { passive: true });
+ c.addEventListener('mouseleave', function () {
+ if (state.hover[cid] !== -1) { state.hover[cid] = -1; redrawFn(); }
+ tip.style.display = 'none';
+ });
+ }
+ bindTip('futureCanvas', drawFutureCanvas);
+ bindTip('siliconCanvas', drawSiliconCanvas);
+ bindTip('optMiniCanvas', drawOptMiniCanvas);
+
+ function drawAll() {
+ drawFutureCanvas();
+ drawSiliconCanvas();
+ drawOptMiniCanvas();
+ }
+
+ var QITEMS_ZH = [
+ { id: 'sec-f0', t: 'F0 四连提价与三阶战略时间窗雷达', s: '2026–2032 近程/中程/远期三大兑现阶段与确定性评级' },
+ { id: 'sec-f1', t: 'F1 六大未来增长引擎纵向深潜舱', s: '.com 7%提价 · .web 无上限 · Verisign Informed™ · .net 10% · AI DNS' },
+ { id: 'sec-f2', t: 'F2 反共识轻资产纪律与 2032 营收桥', s: '威瑞信 1.4%–3.4% CapEx 对比云巨头 · 迈向 ~$3.28B 营收阶梯' },
+ { id: 'sec-f3', t: 'F3 协议主权与 .com/.web 爬坡路线图', s: 'A/J 根服务器 + .com $10.97→$13.42 + .web 2027.04 开放' },
+ { id: 'sec-f4', t: 'F4 2030 估值跃升期权组装器', s: '自由开关五大催化剂与 P/E 倍数实时测算 EPS 与市值' }
+ ];
+ var QITEMS_EN = [
+ { id: 'sec-f0', t: 'F0 Price Cycle & 3-Horizon S-Curve Radar', s: '2026–2032 Near / Mid / Long-Term Catalysts & Conviction' },
+ { id: 'sec-f1', t: 'F1 Six Future Growth Engines Explorer', s: '.com 7% · Uncapped .web · Verisign Informed™ · .net 10% · AI DNS' },
+ { id: 'sec-f2', t: 'F2 Anti-Consensus CapEx & 2032 Bridge', s: 'VeriSign 1.4%–3.4% CapEx vs. Peers · Bridge to ~$3.28B' },
+ { id: 'sec-f3', t: 'F3 Protocol Sovereignty & .com/.web Ramp', s: 'A/J Root Servers + .com $10.97→$13.42 + .web Apr 2027 GA' },
+ { id: 'sec-f4', t: 'F4 2030 Valuation Optionality Builder', s: 'Toggle 5 Growth Catalysts & P/E Multiples Live' }
+ ];
+ var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+ function renderQ(kw) {
+ if (!qPop) return;
+ var q = (kw || '').trim().toLowerCase();
+ var src = isEn() ? QITEMS_EN : QITEMS_ZH;
+ var m = src.filter(function (x, idx) {
+ var z = QITEMS_ZH[idx], e = QITEMS_EN[idx];
+ return !q || (z.t + ' ' + z.s + ' ' + e.t + ' ' + e.s).toLowerCase().indexOf(q) !== -1;
+ });
+ qPop.innerHTML = m.map(function (x) {
+ return '<button type="button" class="quick-jump-item" data-jump="#' + x.id + '"><span class="quick-jump-item-title">' + x.t + '</span><span class="quick-jump-item-sub">' + x.s + '</span></button>';
+ }).join('');
+ qPop.classList.toggle('open', m.length > 0);
+ }
+ if (qIn && qPop) {
+ qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+ qIn.addEventListener('input', function () { renderQ(qIn.value); });
+ qPop.addEventListener('click', function (e) {
+ var jb = e.target.closest('[data-jump]');
+ if (!jb) return;
+ var target = document.querySelector(jb.getAttribute('data-jump'));
+ if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ qPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) {
+ if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+ });
+ }
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (qIn) qIn.focus(); }
+ });
+
+ var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ if (sbBtn && sb && bd) {
+ sbBtn.addEventListener('click', function () {
+ if (window.innerWidth < 1024) { var open = sb.classList.toggle('open'); bd.classList.toggle('open', open); }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+ }
+ window.addEventListener('scroll', function () {
+ var bar = document.getElementById('readingProgressBar');
+ if (bar) {
+ var dh = document.documentElement.scrollHeight - window.innerHeight;
+ bar.style.width = (dh > 0 ? Math.min(100, (window.scrollY / dh) * 100) : 0) + '%';
+ }
+ }, { passive: true });
+
+ try {
+ applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+ applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+ } catch (e) {
+ applyLang('zh', true);
+ }
+
+ var tBtn = document.getElementById('appbarThemeBtn');
+ if (tBtn) {
+ tBtn.addEventListener('click', function () {
+ var nxt = state.theme === 'dark' ? 'light' : 'dark';
+ applyTheme(nxt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+ });
+ }
+ document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+ var lb = e.target.closest('[data-lang]');
+ if (!lb) return;
+ var nl = lb.getAttribute('data-lang');
+ applyLang(nl, false);
+ try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+ });
+ window.addEventListener('storage', function (ev) {
+ if (ev.key === STORAGE_THEME_KEY && ev.newValue) applyTheme(ev.newValue.replace(/^"|"$/g, ''), true);
+ if (ev.key === STORAGE_LANG_KEY && ev.newValue) applyLang(ev.newValue.replace(/^"|"$/g, ''), true);
+ });
+
+ var rt = null;
+ window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 90); });
+ recalcOptionality();
+ drawAll();
+ })();
+ </script>
+</body>
+</html>

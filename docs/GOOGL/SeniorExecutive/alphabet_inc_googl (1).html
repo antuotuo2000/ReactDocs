@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告 | 数据中心</title>
+  <meta name="description" content="谷歌母公司 Alphabet Inc. (NASDAQ: GOOGL) 企业文化与组织架构深度研究报告：Alphabet 伞状控股与双层股权、Google DeepMind 战时大一统、OKRs 极限对齐、Project Oxygen & Aristotle 心理安全感、20% 自由探索基因演进、FY2025 $4,028.4亿与 Q3 2026 $1,275.8亿业绩验证。" />
+  
+  <style>
+    /* ==========================================================================
+       MUI Official Branding Design System (https://mui.com/)
+       Dark Obsidian (#090D16) + Sapphire Glow (#0073E6 / #3399FF) + Crisp Light
+       8-Chapter Deep-Dive Monograph Layout (Modeled 1:1 on Apple Culture Analysis)
+       ========================================================================== */
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg-canvas: #090D16;
+      --bg-canvas-elevated: #0C1320;
+      --bg-paper: rgba(15, 25, 36, 0.92);
+      --bg-paper-solid: #0F1924;
+      --bg-subtle: rgba(19, 35, 55, 0.68);
+      --bg-hover: rgba(51, 153, 255, 0.08);
+      --bg-active: rgba(0, 115, 230, 0.16);
+      --bg-appbar: rgba(9, 13, 22, 0.86);
+
+      --border-subtle: rgba(51, 153, 255, 0.14);
+      --border-default: rgba(148, 163, 184, 0.16);
+      --border-strong: rgba(51, 153, 255, 0.42);
+      --divider: rgba(148, 163, 184, 0.12);
+
+      --text-primary: #F3F6F9;
+      --text-secondary: #B2BAC2;
+      --text-muted: #7E8C9A;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #3399FF;
+      --mui-primary-lighter: #66B2FF;
+      --mui-primary-bg: rgba(0, 115, 230, 0.15);
+      --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+      --mui-success-main: #1AA251;
+      --mui-success-text: #66BB6A;
+      --mui-success-bg: rgba(26, 162, 81, 0.14);
+      --mui-success-border: rgba(102, 187, 106, 0.34);
+
+      --mui-warning-main: #DEA500;
+      --mui-warning-text: #FFB74D;
+      --mui-warning-bg: rgba(255, 183, 77, 0.14);
+      --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+      --mui-error-main: #EB0014;
+      --mui-error-text: #FF6B6B;
+      --mui-error-bg: rgba(235, 0, 20, 0.14);
+      --mui-error-border: rgba(255, 107, 107, 0.34);
+
+      --mui-violet-text: #A78BFA;
+      --mui-violet-bg: rgba(139, 92, 246, 0.14);
+      --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+      --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.30);
+      --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+
+      --chart-grid: rgba(148, 163, 184, 0.13);
+      --chart-tick: #94A3B8;
+      --chart-c1: #3399FF;
+      --chart-c2: #22C55E;
+      --chart-c3: #FFB74D;
+      --chart-c4: #A78BFA;
+    }
+
+    :root,
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg-canvas: #F8FAFC;
+      --bg-canvas-elevated: #F1F5F9;
+      --bg-paper: rgba(255, 255, 255, 0.96);
+      --bg-paper-solid: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-hover: rgba(0, 115, 230, 0.06);
+      --bg-active: rgba(0, 115, 230, 0.11);
+      --bg-appbar: rgba(255, 255, 255, 0.88);
+
+      --border-subtle: #E2E8F0;
+      --border-default: #CBD5E1;
+      --border-strong: #0073E6;
+      --divider: #E2E8F0;
+
+      --text-primary: #0F1924;
+      --text-secondary: #334155;
+      --text-muted: #5B6B7C;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #0059B2;
+      --mui-primary-lighter: #0059B2;
+      --mui-primary-bg: rgba(0, 115, 230, 0.09);
+      --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+      --mui-success-main: #15803D;
+      --mui-success-text: #15803D;
+      --mui-success-bg: rgba(21, 128, 61, 0.09);
+      --mui-success-border: rgba(21, 128, 61, 0.26);
+
+      --mui-warning-main: #B45309;
+      --mui-warning-text: #B45309;
+      --mui-warning-bg: rgba(180, 83, 9, 0.09);
+      --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+      --mui-error-main: #C62828;
+      --mui-error-text: #C62828;
+      --mui-error-bg: rgba(198, 40, 40, 0.08);
+      --mui-error-border: rgba(198, 40, 40, 0.26);
+
+      --mui-violet-text: #6D28D9;
+      --mui-violet-bg: rgba(109, 40, 217, 0.08);
+      --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+      --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+      --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+
+      --chart-grid: rgba(100, 116, 139, 0.16);
+      --chart-tick: #475569;
+      --chart-c1: #0073E6;
+      --chart-c2: #16A34A;
+      --chart-c3: #D97706;
+      --chart-c4: #7C3AED;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      background-color: var(--bg-canvas); background-image: var(--hero-glow); background-attachment: fixed;
+      color: var(--text-primary); line-height: 1.65; overflow-x: hidden; min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+    a:hover { text-decoration: underline; }
+
+    .cite-link {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 0.75rem; font-weight: 600; line-height: 1.3;
+      padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+      border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+      white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+    }
+    .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+    #readingProgressBar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #4285F4 0%, #34A853 50%, #FBBC05 80%, #EA4335 100%); z-index: 1300; transition: width 0.08s linear;
+    }
+    #chartTooltip {
+      position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+      padding: 10px 13px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+      color: var(--text-primary); font-size: 0.77rem; line-height: 1.55; box-shadow: var(--shadow-popover);
+    }
+    #muiSnackbar {
+      position: fixed; bottom: 22px; right: 22px; z-index: 1500; padding: 10px 16px; border-radius: 10px;
+      background: #0F1924; color: #FFFFFF; border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover);
+      font-size: 0.81rem; font-weight: 600; opacity: 0; transform: translateY(12px); pointer-events: none; transition: all 0.2s ease;
+    }
+    #muiSnackbar.show { opacity: 1; transform: translateY(0); }
+
+    /* AppBar */
+    .mui-appbar {
+      position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+    }
+    .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+    .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mui-icon-btn, .mui-theme-icon-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+      color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+    }
+    .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+    .brand-monogram {
+      width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.30);
+      color: #FFFFFF; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breadcrumbs .crumb-label { display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); font-weight: 600; }
+    .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+    .quick-search-wrap { position: relative; width: 220px; flex-shrink: 0; }
+    .quick-search-input {
+      width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+    }
+    .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+    .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+    .quick-search-kbd {
+      position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+      padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+    }
+    .quick-jump-popover {
+      position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+      border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+    }
+    .quick-jump-popover.open { display: block; }
+    .quick-jump-item {
+      display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+      border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+    }
+    .quick-jump-item:hover { background: var(--bg-hover); }
+    .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+    .mui-lang-switch {
+      display: inline-flex; align-items: center; height: 34px; padding: 2px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; flex-shrink: 0;
+    }
+    .mui-lang-btn {
+      height: 28px; padding: 0 10px; border: none; border-radius: 7px; background: transparent;
+      color: var(--text-secondary); font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;
+    }
+    .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+    .mui-segmented {
+      display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+    }
+    .mui-seg-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.78rem; font-weight: 600;
+      padding: 5px 10px; border-radius: 7px; cursor: pointer; transition: all 0.16s ease;
+    }
+    .mui-seg-btn:hover { color: var(--text-primary); }
+    .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+    .mui-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px;
+      border-radius: 10px; font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+      border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); transition: all 0.16s ease;
+    }
+    .mui-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+
+    .mui-chip {
+      display: inline-flex; flex-wrap: wrap; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px;
+      border-radius: 999px; font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+    }
+    .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+    .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+    .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+    .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+    /* Layout Shell & Sidebar */
+    .layout-shell {
+      max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+      gap: 28px; padding: 24px 20px 72px; align-items: start;
+    }
+    @media (min-width: 1024px) {
+      html[data-sidebar-collapsed="1"] .mui-sidebar { display: none !important; }
+      html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr) !important; }
+    }
+    .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+    .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 13px 14px; box-shadow: var(--shadow-card); }
+    .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+    .sidebar-title { font-size: 1rem; font-weight: 800; color: var(--text-primary); }
+    .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42; margin: 4px 0 8px; }
+    .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; padding-top: 8px; border-top: 1px solid var(--divider); }
+    .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+    .sidebar-mini-label { color: var(--text-muted); }
+    .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+
+    .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 4px; }
+    .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .mui-nav-link {
+      display: flex; align-items: center; gap: 9px; padding: 6px 10px; border-radius: 9px;
+      font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+    }
+    .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+    .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .nav-idx { font-size: 0.72rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+    .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.24); color: var(--mui-primary-lighter); }
+
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+    .co-hub-pills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 8px; }
+    .co-hub-pill { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.72rem; font-weight: 700; padding: 5px 6px; border-radius: 7px; cursor: pointer; }
+    .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+    html[data-theme="dark"] .co-hub-pill.active { color: var(--mui-primary-lighter); }
+    .co-side-list { display: flex; flex-direction: column; gap: 5px; }
+    .co-hub-item {
+      display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid);
+      cursor: pointer; font-family: inherit; color: var(--text-primary); transition: all 0.15s ease;
+    }
+    .co-hub-item.co-hub-hidden { display: none !important; }
+    .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+    .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+    .co-hub-ticker { width: 25px; height: 25px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); flex-shrink: 0; }
+    .co-hub-item.active .co-hub-ticker { background: #0073E6; color: #FFFFFF; }
+    .co-hub-info { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; }
+    .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+    .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+    .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .portal-reading-tools button { font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+    .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-paper-solid); }
+
+    .drawer-backdrop { display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.6); backdrop-filter: blur(4px); z-index: 1180; }
+    .drawer-backdrop.open { display: block; }
+
+    /* Main Content Stack */
+    .main-content { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+    .mui-paper { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; box-shadow: var(--shadow-card); }
+    .section-block { scroll-margin-top: 76px; padding: 26px; }
+    .hero-card { position: relative; overflow: hidden; padding: 28px; }
+    .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .hero-overline { display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.04em; color: var(--mui-primary-lighter); margin-bottom: 10px; }
+    .hero-h1 { font-size: clamp(1.5rem, 2.5vw, 2.12rem); font-weight: 800; line-height: 1.28; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 16px; }
+    .hero-h1 .gradient-accent {
+      background: linear-gradient(90deg, #0059B2 0%, #0073E6 55%, #15803D 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    html[data-theme="dark"] .hero-h1 .gradient-accent {
+      background: linear-gradient(90deg, #3399FF 0%, #66B2FF 55%, #66BB6A 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .lead-prose { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.78; margin-bottom: 22px; }
+    .lead-prose strong { color: var(--text-primary); font-weight: 700; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-radar { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 18px; align-items: stretch; }
+
+    .feature-card {
+      padding: 18px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 12px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .feature-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+    .mui-avatar-icon {
+      width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;
+      background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter); flex-shrink: 0;
+    }
+    .feature-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+    .feature-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+
+    .kpi-card { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+    .kpi-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .kpi-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+    .kpi-value { font-size: 1.72rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.2; margin: 2px 0; }
+    .kpi-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.52; }
+
+    .sec-header {
+      display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px;
+      margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--divider);
+    }
+    .sec-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mui-primary-lighter); margin-bottom: 6px; }
+    .sec-h2 { font-size: clamp(1.22rem, 1.9vw, 1.48rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.015em; line-height: 1.35; }
+    .sec-sub { font-size: 0.86rem; color: var(--text-secondary); margin-top: 4px; }
+
+    .mui-alert {
+      display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--mui-primary-border); background: var(--mui-primary-bg); font-size: 0.85rem; color: var(--text-primary);
+    }
+    .mui-alert-success { border-color: var(--mui-success-border); background: var(--mui-success-bg); }
+    .mui-alert-warning { border-color: var(--mui-warning-border); background: var(--mui-warning-bg); }
+
+    /* Operating Architecture Blueprint Diagram */
+    .arch-blueprint {
+      padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle);
+      background: var(--bg-canvas-elevated); margin-bottom: 18px;
+    }
+    .arch-hub {
+      text-align: center; padding: 12px 16px; border-radius: 10px;
+      background: linear-gradient(90deg, rgba(0, 115, 230, 0.18), rgba(51, 153, 255, 0.09), rgba(0, 115, 230, 0.18));
+      border: 1px solid var(--mui-primary-border); margin-bottom: 12px;
+    }
+    .arch-hub-title { font-size: 0.9rem; font-weight: 800; color: var(--text-primary); }
+    .arch-hub-sub { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+    .arch-nodes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+    .arch-node { padding: 11px 12px; border-radius: 10px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+    .arch-node-tag { font-size: 0.68rem; font-weight: 800; color: var(--mui-primary-lighter); text-transform: uppercase; letter-spacing: 0.04em; }
+    .arch-node-name { font-size: 0.84rem; font-weight: 700; color: var(--text-primary); margin: 2px 0; }
+    .arch-node-desc { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.45; }
+    .arch-platform-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .arch-platform {
+      padding: 10px 14px; border-radius: 10px; background: var(--mui-success-bg); border: 1px solid var(--mui-success-border);
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .arch-platform strong { font-size: 0.82rem; color: var(--mui-success-text); }
+    .arch-platform span { font-size: 0.75rem; color: var(--text-secondary); }
+
+    .matrix-card {
+      padding: 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; gap: 10px; transition: border-color 0.16s ease;
+    }
+    .matrix-card:hover { border-color: var(--border-strong); }
+    .matrix-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .matrix-card-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; }
+    .matrix-card-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; }
+    .collapse-toggle {
+      align-self: flex-start; border: none; background: transparent; color: var(--mui-primary-lighter);
+      font-family: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0;
+    }
+    .collapse-panel { display: none; padding-top: 10px; border-top: 1px dashed var(--divider); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+    .collapse-panel.open { display: block; }
+
+    /* Charts */
+    .chart-card { padding: 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); }
+    .chart-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .chart-title { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+    .chart-caption { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+    .canvas-stage { position: relative; width: 100%; height: 326px; overflow: hidden; }
+    .canvas-stage-tall { position: relative; width: 100%; height: 356px; overflow: hidden; }
+    .canvas-stage-bars { position: relative; width: 100%; height: 392px; overflow: hidden; }
+    .canvas-stage-sim { position: relative; width: 100%; height: 232px; overflow: hidden; }
+    .canvas-stage canvas, .canvas-stage-tall canvas, .canvas-stage-bars canvas, .canvas-stage-sim canvas { width: 100% !important; height: 100% !important; display: block; }
+    .chart-axis-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.73rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; padding: 0 4px; flex-wrap: wrap; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; align-items: center; }
+    .legend-pill {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary);
+      padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-paper); cursor: pointer; font-family: inherit;
+    }
+    .legend-pill.muted { opacity: 0.42; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+    .pillar-stack { display: flex; flex-direction: column; gap: 10px; }
+    .pillar-card {
+      width: 100%; text-align: left; padding: 15px 16px; border-radius: 12px; border: 1px solid var(--border-subtle);
+      background: var(--bg-canvas-elevated); color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+    }
+    .pillar-card:hover { border-color: var(--border-strong); }
+    .pillar-card.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); box-shadow: inset 3px 0 0 var(--mui-primary-light); }
+    .pillar-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+    .pillar-title { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); }
+    .pillar-desc { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; }
+
+    .datagrid-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .mui-input-outlined {
+      height: 36px; min-width: 240px; flex: 1; max-width: 380px; padding: 0 12px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); color: var(--text-primary); font-family: inherit; font-size: 0.83rem; outline: none;
+    }
+    .mui-input-outlined:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+    .table-wrap { width: 100%; overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); }
+    .mui-table { width: 100%; border-collapse: collapse; min-width: 860px; font-size: 0.83rem; }
+    .mui-table th {
+      text-align: left; padding: 12px 14px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg-subtle); border-bottom: 1px solid var(--border-subtle); white-space: nowrap;
+    }
+    .mui-table td { padding: 14px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: top; line-height: 1.58; }
+    .mui-table tr:last-child td { border-bottom: none; }
+    .mui-table tbody tr:hover td { background: var(--bg-hover); }
+    .mui-table tr.benchmark-row td { background: rgba(0, 115, 230, 0.06); }
+    mark.hl { background: rgba(255, 183, 77, 0.28); color: var(--text-primary); padding: 0 2px; border-radius: 3px; }
+
+    /* Simulator */
+    .simulator-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 18px; margin-top: 18px; }
+    .sim-controls { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); display: flex; flex-direction: column; gap: 14px; }
+    .preset-stack { display: flex; flex-direction: column; gap: 6px; }
+    .preset-btn {
+      width: 100%; text-align: left; padding: 9px 12px; border-radius: 9px; border: 1px solid var(--border-subtle);
+      background: var(--bg-paper); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600;
+      cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; transition: all 0.15s ease;
+    }
+    .preset-btn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+    .preset-btn.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .slider-group { display: flex; flex-direction: column; gap: 5px; }
+    .slider-head { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
+    .slider-val { color: var(--mui-primary-lighter); font-weight: 800; }
+    input[type="range"].mui-slider { width: 100%; accent-color: #0073E6; height: 6px; cursor: pointer; }
+    .mui-switch-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 10px 12px; border-radius: 10px; border: 1px solid var(--mui-success-border); background: var(--mui-success-bg); cursor: pointer;
+    }
+    .mui-switch-row input { width: 18px; height: 18px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+    .sim-output-panel { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); display: flex; flex-direction: column; gap: 14px; }
+    .sim-readouts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .sim-stat-box { padding: 12px 14px; border-radius: 10px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+    .sim-stat-label { font-size: 0.73rem; color: var(--text-muted); font-weight: 700; }
+    .sim-stat-num { font-size: 1.32rem; font-weight: 800; color: var(--text-primary); margin-top: 2px; }
+
+    /* Timeline & Checklist */
+    .mui-timeline { display: flex; flex-direction: column; gap: 14px; position: relative; padding-left: 24px; margin-bottom: 20px; }
+    .mui-timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(180deg, #0073E6 0%, #3399FF 55%, #22C55E 100%); }
+    .timeline-step { position: relative; padding: 16px 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); }
+    .timeline-dot { position: absolute; left: -23px; top: 20px; width: 14px; height: 14px; border-radius: 50%; background: var(--mui-primary-main); border: 3px solid var(--bg-canvas); box-shadow: 0 0 0 2px var(--mui-primary-light); }
+
+    .progress-track { width: 100%; height: 8px; border-radius: 999px; background: var(--bg-subtle); overflow: hidden; border: 1px solid var(--border-subtle); margin: 10px 0 16px; }
+    .progress-fill { height: 100%; width: 50%; border-radius: 999px; background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); transition: width 0.24s ease; }
+    .checklist-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .check-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); cursor: pointer; transition: all 0.15s ease; }
+    .check-card:hover { border-color: var(--border-strong); }
+    .check-card.checked { border-color: var(--mui-primary-border); background: var(--mui-primary-bg); }
+    .check-card input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+    .check-title { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .check-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .sources-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; list-style: none; margin-top: 12px; font-size: 0.79rem; }
+    .sources-list li { display: flex; align-items: baseline; gap: 7px; color: var(--text-secondary); }
+
+    @media (max-width: 1023px) {
+      .layout-shell { grid-template-columns: minmax(0, 1fr); padding: 16px 14px 56px; }
+      .mui-sidebar {
+        position: fixed; top: 60px; left: 0; bottom: 0; width: min(320px, 88vw);
+        background: var(--bg-paper-solid); border-right: 1px solid var(--border-subtle);
+        padding: 14px 12px; z-index: 1200; transform: translateX(-105%); transition: transform 0.24s ease; overflow-y: auto;
+      }
+      .mui-sidebar.open { transform: translateX(0); }
+      .grid-4, .arch-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-radar, .simulator-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .quick-search-wrap, .hide-sm { display: none; }
+      .hero-card, .section-block { padding: 18px; }
+      .grid-3, .grid-2, .grid-4, .arch-nodes, .arch-platform-bar, .checklist-grid, .sources-list, .sim-readouts { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media print {
+      .mui-appbar, .mui-sidebar, #readingProgressBar, #muiSnackbar, #chartTooltip, #drawerBackdrop { display: none !important; }
+      .layout-shell { grid-template-columns: 1fr !important; padding: 0 !important; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky MUI AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">GOOGL</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <span class="crumb-label hide-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </span>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="谷歌公司 (Alphabet) 企业文化与组织架构研报" data-i18n-en="Alphabet Inc. Corporate Culture & Org Report">谷歌公司 (Alphabet) 企业文化与组织架构研报</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: GOOGL</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">FY2025 10-K · Q3'26 10-Q</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索章节或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left MUI Documentation Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="研究章节目录与套件导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">GOOGL · CORPORATE CULTURE</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="谷歌企业文化研报" data-i18n-en="Google Culture Monograph">谷歌企业文化研报</div>
+        <p class="sidebar-subtitle" data-i18n-zh="Alphabet 控股伞 × Google DeepMind 战时大一统 × OKRs 极限目标 × Project Aristotle 心理安全感科学" data-i18n-en="Alphabet Umbrella × Unified Google DeepMind × Stretch OKRs × Project Aristotle People Analytics">Alphabet 控股伞 × Google DeepMind 战时大一统 × OKRs 极限目标 × Project Aristotle 心理安全感科学</p>
+
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="组织形态" data-i18n-en="Org Model">组织形态</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="控股伞 + AI全栈中枢" data-i18n-en="Holding + AI Spine">控股伞 + AI全栈中枢</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="Q3'26 员工 / 年化人效" data-i18n-en="FTEs / Run-Rate/FTE">Q3'26 员工 / 年化人效</span>
+            <span class="sidebar-mini-val mono">20.48万 · $2.49M</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="综合毛利 / 研发占比" data-i18n-en="Gross Margin / R&D">综合毛利 / 研发占比</span>
+            <span class="sidebar-mini-val mono">59.7% · 16.2%</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="套件导航与章节目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="GOOGL">
+          <div class="co-side-head">
+            <span class="co-side-title mono">GOOGL · 02/06</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="Google_20_Senior_Executives.single.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="alphabet_inc_googl (2).html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (6)" data-i18n-en="All (6)">全部 (6)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (5)" data-i18n-en="SeniorExecutive (5)">高管人物 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="software" data-i18n-zh="软件生态 (1)" data-i18n-en="software (1)">软件生态 (1)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="Google_20_Senior_Executives.single.html" title="Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心" data-i18n-en="Alphabet &amp; Google 20 OverviewDeep DiveReport (Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin)| Data Center">Alphabet &amp; Google 20 大核心高管全景深度研报中枢（Pichai·Ashkenazi·Porat·Kurian·Hassabis·Koray·Mohan·Osterloh·Vahdat·Page&amp;Brin等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="software" href="../software/Google_12_Products.compressed.html" title="Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心" data-i18n-en="Alphabet &amp; Google 12 Deep Dive Report (Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo)| Data Center">Alphabet &amp; Google 全线 12 款核心产品深度商业研报中枢（Search·YouTube·Ads·Cloud·Gemini·Workspace·Android·Chrome·Maps·Photos·Pixel·Waymo）| 王安安数据中心</span><span class="co-hub-meta mono">software</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" data-i18n-zh="核心研究章节 (00 – 07)" data-i18n-en="Report Chapters (00 – 07)">核心研究章节 (00 – 07)</div>
+        <ul class="mui-nav-list" id="tocNavList">
+          <li><a href="#sec-00" class="mui-nav-link active" data-sec="sec-00"><span class="nav-idx mono">00</span><span data-i18n-zh="执行摘要与核心指标" data-i18n-en="Executive Summary & KPIs">执行摘要与核心指标</span></a></li>
+          <li><a href="#sec-01" class="mui-nav-link" data-sec="sec-01"><span class="nav-idx mono">01</span><span data-i18n-zh="Alphabet控股与AI全栈重构" data-i18n-en="Alphabet Holding & AI Spine">Alphabet控股与AI全栈重构</span></a></li>
+          <li><a href="#sec-02" class="mui-nav-link" data-sec="sec-02"><span class="nav-idx mono">02</span><span data-i18n-zh="四大文化支柱与创新护城河" data-i18n-en="4 Cultural Pillars & Moat">四大文化支柱与创新护城河</span></a></li>
+          <li><a href="#sec-03" class="mui-nav-link" data-sec="sec-03"><span class="nav-idx mono">03</span><span data-i18n-zh="全球科技巨头文化横向对比" data-i18n-en="Global Big Tech Peer Matrix">全球科技巨头文化横向对比</span></a></li>
+          <li><a href="#sec-04" class="mui-nav-link" data-sec="sec-04"><span class="nav-idx mono">04</span><span data-i18n-zh="研发红利、利润率与复利推演" data-i18n-en="R&D Payoff & Flywheel Lab">研发红利、利润率与复利推演</span></a></li>
+          <li><a href="#sec-05" class="mui-nav-link" data-sec="sec-05"><span class="nav-idx mono">05</span><span data-i18n-zh="三代演进与四大战役复盘" data-i18n-en="3-Era Evolution & Battles">三代演进与四大战役复盘</span></a></li>
+          <li><a href="#sec-06" class="mui-nav-link" data-sec="sec-06"><span class="nav-idx mono">06</span><span data-i18n-zh="谷歌文化法则核查清单" data-i18n-en="Org Diagnostic Checklist">谷歌文化法则核查清单</span></a></li>
+          <li><a href="#sec-07" class="mui-nav-link" data-sec="sec-07"><span class="nav-idx mono">07</span><span data-i18n-zh="数据来源与监管核验索引" data-i18n-en="Primary Filings & Sources">数据来源与监管核验索引</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Reading & Export Tools">阅读与导出工具</div>
+        <div class="side-theme-group" role="group" aria-label="外观模式切换">
+          <button type="button" id="sideLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+          <button type="button" id="sideDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Analytical Content -->
+    <main class="main-content">
+
+      <!-- 00 执行摘要与核心指标 -->
+      <section id="sec-00" class="mui-paper hero-card section-block">
+        <div class="status-strip">
+          <span class="mui-chip mui-chip-primary" data-i18n-zh="组织史定评：现代互联网工程师自组织文化、OKRs 与人才分析科学（People Analytics）的策源地" data-i18n-en="Verdict: Birthplace of Modern Engineering Meritocracy, Stretch OKRs & People Analytics">组织史定评：现代互联网工程师自组织文化、OKRs 与人才分析科学（People Analytics）的策源地</span>
+          <span class="mui-chip" data-i18n-zh="研究横跨：佩奇/布林/施密特车库扩张 (1998–2014) · Alphabet控股分拆 (2015–2022) · 皮查伊AI战时集结 (2023–2026+)" data-i18n-en="Scope: Page/Brin/Schmidt Era (1998–2014) · Alphabet Split (2015–2022) · Pichai Wartime AI Unification (2023–2026+)">研究横跨：佩奇/布林/施密特车库扩张 (1998–2014) · Alphabet控股分拆 (2015–2022) · 皮查伊AI战时集结 (2023–2026+)</span>
+          <span class="mui-chip mui-chip-success mono">FY2025 10-K + Q3'26 10-Q</span>
+        </div>
+
+        <div class="hero-overline mono">
+          <span>CORE THESIS · Alphabet 伞状风险隔离 × Google DeepMind 战时合流 × OKRs 公开对齐 × 心理安全感与 10x 登月思维</span>
+        </div>
+
+        <h1 class="hero-h1" data-i18n-zh="谷歌公司 Alphabet Inc. 企业文化与组织架构深度研究报告：<span class='gradient-accent'>从“学院派自由乌托邦”到“全栈 AI 战时机器”的组织自我革命</span>" data-i18n-en="Alphabet Inc. Corporate Culture & Organizational Architecture Deep Dive: <span class='gradient-accent'>Self-Reinvention from Academic Engineering Utopia to Full-Stack Wartime AI Juggernaut</span>">
+          谷歌公司 Alphabet Inc. 企业文化与组织架构深度研究报告：<span class="gradient-accent">从“学院派自由乌托邦”到“全栈 AI 战时机器”的组织自我革命</span>
+        </h1>
+
+        <p class="lead-prose" id="ch0LeadProse">
+          如果说苹果代表<strong>“自上而下、工业设计铁腕集权与物理保密”</strong>的极致，那么<strong>谷歌母公司 Alphabet Inc.（NASDAQ: GOOGL）</strong>则开创了硅谷另一套影响深远的组织母本——<strong>以学术实验室式的自下而上探索（20% 自由时间）、公开透明的极限 OKRs、同侪委员会招聘晋升以及实证人才科学（Project Oxygen / Project Aristotle）驱动十亿级算法产品涌现</strong>
+          <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">Google re:Work ↗</a>。
+          2015 年拉里·佩奇发表《G is for Google》重构 <strong>Alphabet 控股架构</strong>，将成熟搜索现金牛与高风险登月业务（Other Bets：Waymo、Isomorphic Labs 等）进行财务与激励隔离
+          <a class="cite-link" href="https://abc.xyz/investor/founders-letters/2015/" target="_blank" rel="noopener noreferrer">2015 创始人信 ↗</a>。
+          更具启发意义的是 2023–2026 年的<strong>“战时组织重塑”</strong>：面对大公司共识迟缓与生成式 AI 挑战，CEO 桑达尔·皮查伊果断打破内部藩篱，将长期分立的 Google Brain 与 DeepMind 合并为单一引擎室 <strong>Google DeepMind</strong>，将 Android、Chrome 与 Pixel 硬件合并为统一的 <strong>Platforms &amp; Devices</strong>，并于 2026 年 8 月任命深度学习元老 Koray Kavukcuoglu 出任 SVP 加速模型产品化、让诺奖得主 Demis Hassabis 专注前沿科学与药物研发
+          <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" target="_blank" rel="noopener noreferrer">GDM 架构升级 ↗</a>。
+          财报验证了这场组织变革的爆发力：FY2025 营收首破 <strong>$4,028.36亿</strong>、净利润达 <strong>$1,321.70亿（中位员工年薪高达 $310,826）</strong>；2026 年 Q3 单季营收更提速至 <strong>$1,275.77亿（+25% YoY，年化破 $5,100亿）</strong>，204,757 名员工实现年化人均创收 <strong>$2.49M</strong>，并于 2026 年 6 月正式入选道琼斯工业平均指数
+          <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">SEC FY25 8-K ↗</a>
+          <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3'26 10-Q ↗</a>。
+        </p>
+
+        <div class="grid-3" style="margin-bottom: 18px;">
+          <div class="feature-card">
+            <div class="mui-avatar-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+            </div>
+            <h3 data-i18n-zh="Alphabet 控股伞 + 共享 AI 中枢双层架构" data-i18n-en="Alphabet Umbrella + Unified AI Engine Room">Alphabet 控股伞 + 共享 AI 中枢双层架构</h3>
+            <p data-i18n-zh="外层以控股子公司隔离 Waymo 等登月项目股权与债务风险，内层将大模型、算力基建与软硬终端收拢为单一全栈飞轮。" data-i18n-en="External holding structure isolates Waymo/moonshot risk & equity, while internal Google unifies models, TPUs, and OS platforms.">外层以控股子公司隔离 Waymo 等登月项目股权与债务风险，内层将大模型、算力基建与软硬终端收拢为单一全栈飞轮。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="mui-avatar-icon" style="color: var(--mui-success-text); background: var(--mui-success-bg); border-color: var(--mui-success-border);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 data-i18n-zh="OKRs 公开对齐 × 同侪委员会人才统治" data-i18n-en="Transparent Stretch OKRs × Peer Committees">OKRs 公开对齐 × 同侪委员会人才统治</h3>
+            <p data-i18n-zh="从 CEO 到实习生的季度 OKR 全员可查（以 0.6–0.7 分为理想挑战度），招聘与晋升由跨团队委员会裁决，杜绝直属主管任人唯亲。" data-i18n-en="Company-wide transparent OKRs (targeting 0.6–0.7 stretch scores) and independent hiring/promotion committees prevent manager nepotism.">从 CEO 到实习生的季度 OKR 全员可查（以 0.6–0.7 分为理想挑战度），招聘与晋升由跨团队委员会裁决，杜绝直属主管任人唯亲。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="mui-avatar-icon" style="color: var(--mui-warning-text); background: var(--mui-warning-bg); border-color: var(--mui-warning-border);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 data-i18n-zh="People Analytics 实证管理与 AI 自举提效" data-i18n-en="People Analytics & AI Self-Bootstrapping">People Analytics 实证管理与 AI 自举提效</h3>
+            <p data-i18n-zh="用统计回归证明“心理安全感”是高绩效团队第一要素；2026 内部部署 Gemini 4 Argon 使核心团队代码交付量提升 35%、错误率下降 30%。" data-i18n-en="Proved psychological safety via Project Aristotle; internal Gemini 4 Argon deployment boosted code output +35% with 30% fewer bugs.">用统计回归证明“心理安全感”是高绩效团队第一要素；2026 内部部署 Gemini 4 Argon 使核心团队代码交付量提升 35%、错误率下降 30%。</p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="mui-paper kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label" data-i18n-zh="年化人均创收与中位薪酬" data-i18n-en="Run-Rate Rev/FTE & Median Pay">年化人均创收与中位薪酬</span>
+              <span class="mui-chip mui-chip-primary mono">中位薪 $310.8K</span>
+            </div>
+            <div class="kpi-value mono">$2.49M</div>
+            <p class="kpi-desc">204,757 名全职员工（Q3'26）支撑超 $5,100亿 年化营收；2025 代理声明披露员工中位总薪酬达 $310,826 <a class="cite-link" href="https://sqmagazine.co.uk/how-many-people-work-at-youtube/" target="_blank" rel="noopener noreferrer">SEC Proxy ↗</a>。</p>
+          </div>
+
+          <div class="mui-paper kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label" data-i18n-zh="Q3 2026 单季营收 / FY25 净利" data-i18n-en="Q3'26 Revenue / FY25 Net Income">Q3 2026 单季营收 / FY25 净利</span>
+              <span class="mui-chip mui-chip-success mono">FY25净利 $132.2B</span>
+            </div>
+            <div class="kpi-value mono">$127.6B</div>
+            <p class="kpi-desc">Q3 单季营收同比增长 +25%（TTM $4,711.0亿），FY2025 全年营收 $4,028.4亿、GAAP 净利 $1,321.7亿 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">FY25 8-K ↗</a>。</p>
+          </div>
+
+          <div class="mui-paper kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label" data-i18n-zh="全集团综合毛利率与云利润率" data-i18n-en="Consolidated GM & Cloud OPM">全集团综合毛利率与云利润率</span>
+              <span class="mui-chip mui-chip-warning mono">Cloud OPM 36.2%</span>
+            </div>
+            <div class="kpi-value mono">59.7%</div>
+            <p class="kpi-desc">综合毛利率由 FY22 的 55.4% 连升至 59.7%；Google Cloud 分部营业利润率由负转正跃升至 36.2% <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3'26 10-Q ↗</a>。</p>
+          </div>
+
+          <div class="mui-paper kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label" data-i18n-zh="研发强度与五年累计研发投入" data-i18n-en="R&D Intensity & 5Y Cumulative R&D">研发强度与五年累计研发投入</span>
+              <span class="mui-chip mui-chip-violet mono">Q3 研发 $20.64B</span>
+            </div>
+            <div class="kpi-value mono">16.2%</div>
+            <p class="kpi-desc">Q3 2026 单季研发飙升 +36% 至 $206.4亿（年化超 $825亿，占营收 16.2%），过去五年累计研发逾 $2,500亿 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm" target="_blank" rel="noopener noreferrer">FY25 10-K ↗</a>。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 Alphabet 控股与 AI 全栈重构 -->
+      <section id="sec-01" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 01 · ALPHABET HOLDING UMBRELLA &amp; WARTIME AI UNIFICATION</div>
+            <h2 class="sec-h2" data-i18n-zh="一、双层治理架构进化：外层 Alphabet 风险隔离伞 × 内层 Google 全栈 AI 集权中枢" data-i18n-en="1. Dual-Layer Architecture: External Alphabet Risk Umbrella × Unified Internal AI Spine">一、双层治理架构进化：外层 Alphabet 风险隔离伞 × 内层 Google 全栈 AI 集权中枢</h2>
+            <p class="sec-sub" data-i18n-zh="兼顾苹果式“底层基础设施统一复用”与伯克希尔式“非核心登月子公司独立融资核算”的混合型组织杰作" data-i18n-en="Combining Apple-style shared AI infrastructure with Berkshire-style ring-fenced moonshot subsidiaries">兼顾苹果式“底层基础设施统一复用”与伯克希尔式“非核心登月子公司独立融资核算”的混合型组织杰作</p>
+          </div>
+          <span class="mui-chip mui-chip-primary mono">Q3 研发 $20.6B = 3.36x 管理费用</span>
+        </div>
+
+        <div class="arch-blueprint">
+          <div class="arch-hub">
+            <div class="arch-hub-title">Alphabet Inc. 控股治理顶层（Mountain View · 创始人 Class B 每股10票超级投票权守护 10年+ 周期）</div>
+            <div class="arch-hub-sub">核心执委会：Sundar Pichai (CEO) × Anat Ashkenazi (CFO) × Sergey Brin (联合创始人重返 AI 一线) × John Hennessy (董事长)</div>
+          </div>
+          <div class="arch-nodes">
+            <div class="arch-node">
+              <div class="arch-node-tag mono">AI ENGINE ROOM · 统一大脑</div>
+              <div class="arch-node-name">Google DeepMind &amp; Infra</div>
+              <div class="arch-node-desc">Koray Kavukcuoglu (SVP) 统管 Gemini 模型与 App；Demis Hassabis 任主席攻坚科学；Amin Vahdat 统管 TPU 8t/8i 集群。</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-tag mono">KNOWLEDGE &amp; ADS · 现金母舰</div>
+              <div class="arch-node-name">Search, Ads &amp; YouTube</div>
+              <div class="arch-node-desc">Liz Reid (Search)、Philipp Schindler (商业与UCP)、Neal Mohan (YouTube) 驱动 Q3 Services $96.3B 营收（40.7% 利润率）。</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-tag mono">ENTERPRISE · 第二增长极</div>
+              <div class="arch-node-name">Google Cloud &amp; Wiz Cyber</div>
+              <div class="arch-node-desc">Thomas Kurian 打造高纪律 B2B 销售与工程军团：Q3 $30.71B (+103%)、$560.8B RPO 及 $29.5B Wiz 安全整合。</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-tag mono">PLATFORMS &amp; BETS · 硬件与登月</div>
+              <div class="arch-node-name">Platforms/Devices &amp; Other Bets</div>
+              <div class="arch-node-desc">Rick Osterloh 统合 Android/Chrome/Pixel/XR；Waymo 与 Isomorphic Labs 独立融资激励（剥离 GFiber 聚焦核心）。</div>
+            </div>
+          </div>
+          <div class="arch-platform-bar">
+            <div class="arch-platform">
+              <strong>财务科目单列“Alphabet 级共享 AI 研发池”（Q3 单季投入 $77亿）</strong>
+              <span>与苹果类似，基础大模型训练算力与研究薪酬在集团层统一核算，不向各产品线征收内部过路费，确保 Gemini 毫秒级注入全系产品。</span>
+            </div>
+            <div class="arch-platform">
+              <strong>Other Bets 独立股权与无追索权债务防火墙（Waymo 范本）</strong>
+              <span>Waymo 拥有独立董事会、独立员工期权与外部融资（2026年 $160亿股权轮 + $50亿无追索贷款），失败不拖累主业、成功可独立重估。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 16px;">
+          <div class="feature-card">
+            <h3 data-i18n-zh="1. 终结双头内耗：合并 Brain 与 DeepMind" data-i18n-en="1. Ending AI Turf Wars: Merging Brain & DeepMind">1. 终结双头内耗：合并 Brain 与 DeepMind</h3>
+            <p>2023 年 4 月前，硅谷总部的 Google Brain 与伦敦的 DeepMind 各自抢占 TPU 配额、分别训练重叠模型；合并为 Google DeepMind 后算力与人才一盘棋调度，短短三年催生出登顶全球第一的 Gemini 4 Carbon <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2024/" target="_blank" rel="noopener noreferrer">Pichai 重组说明 ↗</a>。</p>
+          </div>
+          <div class="feature-card">
+            <h3 data-i18n-zh="2. 打破软硬隔阂：Platforms &amp; Devices 合流" data-i18n-en="2. Unifying OS & Silicon: Platforms & Devices">2. 打破软硬隔阂：Platforms &amp; Devices 合流</h3>
+            <p>2024 年 4 月皮查伊将长期分治的 Android/Chrome 软件平台与 Pixel/Tensor 硬件团队全部划归 Rick Osterloh 统管，消除了“系统等硬件、硬件等模型”的跨部门延迟，加速 Gemini Nano 与 Android XR 落地。</p>
+          </div>
+          <div class="feature-card">
+            <h3 data-i18n-zh="3. CFO 财务铁腕：砍掉冗余层级转投算力" data-i18n-en="3. CFO Discipline: Delayering G&A to Fund AI">3. CFO 财务铁腕：砍掉冗余层级转投算力</h3>
+            <p>新任 CFO Anat Ashkenazi（原礼来 CFO）推行“持久成本重塑”，Q3 2026 一般及行政费用（G&amp;A）同比下降 17% 仅占营收 4.8%，把省下的每一分编制预算置换为 AI 研究员与 TPU 集群。</p>
+          </div>
+        </div>
+
+        <div class="mui-alert" style="margin-bottom: 18px;">
+          <span class="mui-chip mui-chip-primary mono">2026.08 组织新篇</span>
+          <div>
+            <strong>Google DeepMind 双核升级 &amp; 传奇院士开启新探索：</strong>2026 年 8 月，13 年元老 <strong>Koray Kavukcuoglu</strong> 升任 SVP 全面统管 Gemini 模型研发、App 与开发者团队；诺奖得主 <strong>Demis Hassabis</strong> 出任 GDM 主席兼首席科学家并掌舵 Isomorphic Labs；效力 27 年的首席科学家 Jeff Dean 与 Sanjay Ghemawat 创立独立公益科研机构 Discovery Loop（谷歌作为创始投资方与云伙伴深度协同）
+            <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" target="_blank" rel="noopener noreferrer">官方内部信 ↗</a>。
+          </div>
+        </div>
+
+        <!-- Interactive Chart 1: Segment Revenue Synergy vs Workforce Productivity -->
+        <div class="chart-card" style="margin-bottom: 18px;">
+          <div class="chart-toolbar">
+            <div>
+              <div id="ch1ChartTitle" class="chart-title">FY2024 vs FY2025 vs TTM Q3'26 五大业务板块净营收跃升（$B · SEC 10-K/10-Q）</div>
+              <div id="ch1ChartSub" class="chart-caption">全栈 AI 赋能下：Google Cloud 两年翻倍突破 $93.2B (TTM)，Search、YouTube 与订阅硬件全面刷新历史峰值</div>
+            </div>
+            <div class="mui-segmented" role="tablist" aria-label="第一章图表视图切换">
+              <button type="button" id="ch1TabA" class="mui-seg-btn active" data-ch1-view="viewA" data-i18n-zh="视图A: 五大业务营收跃升" data-i18n-en="View A: 5-Line Revenue">视图A: 五大业务营收跃升</button>
+              <button type="button" id="ch1TabB" class="mui-seg-btn" data-ch1-view="viewB" data-i18n-zh="视图B: 编制重塑与人效跃迁" data-i18n-en="View B: FTE & Rev/Employee">视图B: 编制重塑与人效跃迁</button>
+            </div>
+          </div>
+          <div id="ch1AxisMeta" class="chart-axis-meta mono">
+            <span style="color:var(--chart-c1);">■ 蓝色：FY2024 净营收 ($B · 合计 $350.0B)</span>
+            <span style="color:var(--chart-c2);">■ 绿色：TTM Q3'26 净营收 ($B · 合计 $471.1B)</span>
+          </div>
+          <div class="canvas-stage">
+            <canvas id="chartCh1"></canvas>
+          </div>
+          <div class="chart-legend" id="ch1Legend">
+            <button type="button" class="legend-pill" data-ch1-series="s1"><span class="legend-dot" style="background:var(--chart-c1);"></span><span id="ch1Leg1">FY2024 分业务营收 ($B)</span></button>
+            <button type="button" class="legend-pill" data-ch1-series="s2"><span class="legend-dot" style="background:var(--chart-c2);"></span><span id="ch1Leg2">TTM Q3'26 分业务营收 ($B)</span></button>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="matrix-card">
+            <div class="matrix-card-head">
+              <div class="matrix-card-title">统一模型底座赋能全产品线（Google DeepMind × Search/Workspace）</div>
+              <span class="mui-chip mui-chip-primary mono">32B Tokens/分钟</span>
+            </div>
+            <p class="matrix-card-body">合并后的 Google DeepMind 为 Search、YouTube、Workspace 与 Cloud 提供单一模型接口（Single Access Point），使 Gemini 4 发布数周内即可同步驱动 25 亿人使用的 AI Overviews 与 1300 万企业组织的办公套件 <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/" target="_blank" rel="noopener noreferrer">Q3'26 电话会 ↗</a>。</p>
+            <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail1"><span>展开微观执行机制</span> <span>⌄</span></button>
+            <div id="matrixDetail1" class="collapse-panel">通过蒸馏技术（Distillation），旗舰模型 Gemini 4 Carbon 的高阶推理能力被快速压缩至极低延迟的 Flash 版本，既夺取技术制高点又守住搜索单次查询毛利率。</div>
+          </div>
+
+          <div class="matrix-card">
+            <div class="matrix-card-head">
+              <div class="matrix-card-title">从学术极客文化嫁接企业级销售铁军（Google Cloud 文化再造）</div>
+              <span class="mui-chip mui-chip-success mono">Cloud RPO $560.8B</span>
+            </div>
+            <p class="matrix-card-body">早年谷歌工程师轻视 B2B 客户定制服务导致云业务落后；甲骨文出身的 Thomas Kurian 引入行业垂直解决方案架构师、长周期合同考核与 Wiz 安全并购整合，令 Cloud 在 Q3 2026 斩获 $111亿 单季营业利润。</p>
+            <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail2"><span>展开微观执行机制</span> <span>⌄</span></button>
+            <div id="matrixDetail2" class="collapse-panel">Google Cloud 目前拥有 18 条年营收超 $10亿 的产品线，近 90% 的财富百强企业使用 Gemini Enterprise，成功将谷歌顶级工程基因转化为高确定性 B2B 契约现金流。</div>
+          </div>
+
+          <div class="matrix-card">
+            <div class="matrix-card-head">
+              <div class="matrix-card-title">AI 内部自举飞轮：用自家大模型重塑 20 万员工工程效率</div>
+              <span class="mui-chip mui-chip-warning mono">代码量 +35% · 缺陷 -30%</span>
+            </div>
+            <p class="matrix-card-body">皮查伊在 Q3 2026 财报会上披露：内部率先在 Chrome、Ads 与 Search 工程团队部署 Gemini 4 Argon 进行长链路 Agentic 编程后，高质量代码提交频次大增 35%、代码错误率下降 30%，开启 2027“生产力黄金年”。</p>
+            <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail3"><span>展开微观执行机制</span> <span>⌄</span></button>
+            <div id="matrixDetail3" class="collapse-panel">谷歌内部专门追踪“高质量代码签入（High-quality code check-ins）”指标，模型能力提升直接缩短下一代模型训练与产品发版周期，形成罕见的研发正反馈闭环。</div>
+          </div>
+
+          <div class="matrix-card">
+            <div class="matrix-card-head">
+              <div class="matrix-card-title">有进有退的投资组合纪律：分拆剥离 GFiber，重注 Waymo 与绿电</div>
+              <span class="mui-chip mui-chip-violet mono">Waymo 独立贷款 $5B</span>
+            </div>
+            <p class="matrix-card-body">Alphabet 并非无限期包养所有副业：2026 年果断签署协议剥离重资产宽带业务 GFiber（回收 $15亿现金 + $20亿票据并出表），同时全力支持具备全球技术代差的 Waymo 与 Intersect 清洁电力。</p>
+            <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail4"><span>展开微观执行机制</span> <span>⌄</span></button>
+            <div id="matrixDetail4" class="collapse-panel">根据 Q3 2026 10-Q 附注 8，$71亿 GFiber 设备已划归持有待售并将出表；而 Waymo 凭借 3 亿无人英里独立拿到 $50亿 资产担保贷款，验证了控股伞孵化机制的成熟。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 四大文化支柱与创新护城河 -->
+      <section id="sec-02" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 02 · CULTURAL PILLARS &amp; PEOPLE ANALYTICS MOAT</div>
+            <h2 class="sec-h2" data-i18n-zh="二、四大企业文化支柱：极限 OKRs、心理安全感实证科学、10x 登月基因与战时速度" data-i18n-en="2. Four Cultural Pillars: Stretch OKRs, Psychological Safety, 10x Moonshots & Wartime Velocity">二、四大企业文化支柱：极限 OKRs、心理安全感实证科学、10x 登月基因与战时速度</h2>
+            <p class="sec-sub" data-i18n-zh="点击左侧任一文化支柱卡片，联动查看谷歌如何用数据科学管理全球最高密度的计算机科学家群体" data-i18n-en="Click any pillar card on the left to inspect Google's empirical management science and 5-axis culture radar">点击左侧任一文化支柱卡片，联动查看谷歌如何用数据科学管理全球最高密度的计算机科学家群体</p>
+          </div>
+          <span class="mui-chip mui-chip-success">护城河定性：极宽 (Wide Moat · 顶尖AI人才磁场 + 全栈基础设施 + 数据科学治理)</span>
+        </div>
+
+        <div class="grid-radar">
+          <div class="pillar-stack" id="pillarStack">
+            <button type="button" class="pillar-card active" data-pillar="0">
+              <div class="pillar-head">
+                <span class="pillar-title">01 · OKRs 极限目标与全员透明对齐（Stretch Goals）</span>
+                <span class="mui-chip mui-chip-primary mono">0.6–0.7 理想得分区</span>
+              </div>
+              <p class="pillar-desc">1999 年董事 John Doerr 将英特尔 OKR 引入创立未满一年的谷歌：所有人的季度目标与量化关键结果在内网完全公开；若总是拿到 1.0 满分反而说明目标过于保守，鼓励无惩罚挑战不可能性。</p>
+            </button>
+
+            <button type="button" class="pillar-card" data-pillar="1">
+              <div class="pillar-head">
+                <span class="pillar-title">02 · Project Oxygen &amp; Aristotle 实证人才科学</span>
+                <span class="mui-chip mui-chip-success mono">心理安全感第一定律</span>
+              </div>
+              <p class="pillar-desc">早年工程师曾怀疑“管理者毫无价值”，谷歌用数年双盲统计开展氧气计划（提炼优秀主管 10 大行为）与亚里士多德计划（研究 180 个团队），科学证实“心理安全感”与“无指责事故复盘”是创新第一土壤。</p>
+            </button>
+
+            <button type="button" class="pillar-card" data-pillar="2">
+              <div class="pillar-head">
+                <span class="pillar-title">03 · 10x 登月思维（Moonshot Thinking）与自下而上涌现</span>
+                <span class="mui-chip mui-chip-warning mono">10倍颠覆而非10%改良</span>
+              </div>
+              <p class="pillar-desc">拉里·佩奇信奉“追求 10 倍跃升往往比渐进改良 10% 更容易吸引天才且避开红海竞争”——早年 20% 时间孕育出 Gmail 与 AdSense，随后制度化为 X 实验室、AlphaFold 诺奖突破与太空 TPU 实验。</p>
+            </button>
+
+            <button type="button" class="pillar-card" data-pillar="3">
+              <div class="pillar-head">
+                <span class="pillar-title">04 · 同侪招聘晋升委员会与“战时执行力”进化</span>
+                <span class="mui-chip mui-chip-violet mono">严控人才稀释 + 敏捷砍层</span>
+              </div>
+              <p class="pillar-desc">直线经理无权单方面录用或提拔下属，必须通过跨部门独立委员会评审以防止“二流招三流”；2023 年后更叠加扁平化提速，创始人布林重返研发一线写代码，兼具学术深度与战时敏捷。</p>
+            </button>
+
+            <div id="pillarFocusNote" class="mui-alert" style="margin-top: 4px;">
+              <div>
+                <strong>当前选中支柱解读（01 OKRs 极限目标体系）：</strong>OKRs 与年度薪酬绩效考核刻意脱钩，防止员工为拿奖金而刻意压低目标（Sandbagging）——正是这种机制支撑了 Chrome 从零逆袭 IE、Gemini App 创史上最快速度突破 10 亿月活 <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer">re:Work 团队科学 ↗</a>。
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div class="chart-title">科技巨头企业文化五维特征对比雷达图（10分制标杆评估）</div>
+              <div class="chart-caption">点击下方图例胶囊可单独开关对比曲线，悬停顶点查看精确评分</div>
+            </div>
+            <div class="canvas-stage-tall">
+              <canvas id="chartRadar"></canvas>
+            </div>
+            <div class="chart-legend" id="radarLegend">
+              <button type="button" class="legend-pill" data-radar-key="googl"><span class="legend-dot" style="background:#3399FF;"></span><span>谷歌 (Alphabet · 全栈AI与科学自由)</span></button>
+              <button type="button" class="legend-pill" data-radar-key="aapl"><span class="legend-dot" style="background:#22C55E;"></span><span>苹果 (Apple · 职能集权与极致减法)</span></button>
+              <button type="button" class="legend-pill" data-radar-key="msft"><span class="legend-dot" style="background:#FFB74D;"></span><span>微软 (Microsoft · 企业协同矩阵)</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 全球科技巨头文化横向对比 -->
+      <section id="sec-03" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 03 · GLOBAL BIG TECH &amp; ICONIC CULTURE BENCHMARKING</div>
+            <h2 class="sec-h2" data-i18n-zh="三、全球五大科技巨头文化对比：当“算法工程师共和国”遇上“硬件设计君主制”" data-i18n-en="3. Global Big Tech Culture Matrix: Engineering Republic vs. Design Monarchy">三、全球五大科技巨头文化对比：当“算法工程师共和国”遇上“硬件设计君主制”</h2>
+            <p class="sec-sub" data-i18n-zh="支持按企业、掌舵人（皮查伊 / 特努斯 / 黄仁勋 / 扎克伯格 / 贾西）或文化关键词（OKR / DRI / 心理安全感）实时检索" data-i18n-en="Filter or search in real time by company, leader, or governance DNA (OKR / DRI / Psychological Safety)">支持按企业、掌舵人（皮查伊 / 特努斯 / 黄仁勋 / 扎克伯格 / 贾西）或文化关键词（OKR / DRI / 心理安全感）实时检索</p>
+          </div>
+          <span id="peerCountBadge" class="mui-chip mui-chip-primary mono">显示 5 / 5 家标杆企业</span>
+        </div>
+
+        <div class="datagrid-toolbar">
+          <input type="search" id="peerSearchInput" class="mui-input-outlined" placeholder="搜索企业、掌舵人、文化基因 (OKR / DRI / 双披萨 / 开源) 或利润率…" aria-label="筛选对比企业" />
+          <div class="mui-segmented" role="group" aria-label="标杆企业分类筛选">
+            <button type="button" class="mui-seg-btn active" data-peer-filter="all">全部标杆企业</button>
+            <button type="button" class="mui-seg-btn" data-peer-filter="eng">工程与全栈研发派</button>
+            <button type="button" class="mui-seg-btn" data-peer-filter="biz">商业矩阵与分权派</button>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-bottom: 20px;">
+          <table class="mui-table" aria-label="全球顶级科技巨头企业文化横向对比表">
+            <thead>
+              <tr>
+                <th>企业与文化掌舵人</th>
+                <th>底层组织架构形态</th>
+                <th>核心决策与人才机制</th>
+                <th>员工规模与人效特征</th>
+                <th>利润率与最新财务表现</th>
+                <th>与谷歌企业文化的异同及互补洞察</th>
+              </tr>
+            </thead>
+            <tbody id="peerTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-toolbar">
+            <div>
+              <div class="chart-title">组织基因向财务效率的转化：Alphabet 核心利润率与研发/管理费率拆解（Q3 2026 · %）</div>
+              <div class="chart-caption">数据来源：Alphabet Q3 2026 Form 10-Q 合并利润表与分部报告（研发费率达行政管理费率的 3.36 倍）</div>
+            </div>
+            <span class="mui-chip mui-chip-success mono">综合毛利 59.7% · Services OPM 40.7%</span>
+          </div>
+          <div class="canvas-stage-bars">
+            <canvas id="chartBars"></canvas>
+          </div>
+          <div class="chart-legend">
+            <span class="mui-chip mui-chip-success mono">绿色/蓝色：综合毛利率与双核心业务营业利润率 (虚线为 35% 顶级利润率锚)</span>
+            <span class="mui-chip mui-chip-violet mono">紫色/琥珀色：Q3 研发投入强度 (16.2%) vs 极度精简的行政管理费率 (4.8%)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 全栈研发红利、利润率与复利推演 -->
+      <section id="sec-04" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 04 · R&amp;D COMPOUNDING &amp; MULTI-ERA VALUE FLYWHEEL</div>
+            <h2 class="sec-h2" data-i18n-zh="四、硬核科研复利验证：五年逾 $2,500亿研发如何转化为 $1,322亿年净利与 $5,608亿云订单" data-i18n-en="4. Deep-Tech Compounding: Turning $250B+ 5Y R&D into $132.2B Net Profit & $560.8B Backlog">四、硬核科研复利验证：五年逾 $2,500亿研发如何转化为 $1,322亿年净利与 $5,608亿云订单</h2>
+            <p class="sec-sub" data-i18n-zh="复盘 FY2021–FY2025 净利润与综合毛利率跨越式抬升，并推演跨代际文化复利回报" data-i18n-en="Reviewing FY2021–FY2025 net income and gross-margin expansion alongside multi-era shareholder compounding">复盘 FY2021–FY2025 净利润与综合毛利率跨越式抬升，并推演跨代际文化复利回报</p>
+          </div>
+          <span class="mui-chip mui-chip-warning mono">IPO 以来年化回报 &gt;21%</span>
+        </div>
+
+        <div class="grid-4" style="margin-bottom: 18px;">
+          <div class="mui-paper kpi-card">
+            <span class="kpi-label mono">GOOGLE SERVICES OPM</span>
+            <div class="kpi-value mono" style="color: var(--mui-primary-lighter);">40.7% <span style="font-size:0.85rem;font-weight:600;">($39.2B/季)</span></div>
+            <p class="kpi-desc">Q3 2026 搜索、YouTube 与订阅业务单季贡献 $392亿 营业利润，稳居全球最强现金母舰。</p>
+          </div>
+          <div class="mui-paper kpi-card">
+            <span class="kpi-label mono">GOOGLE CLOUD OPM</span>
+            <div class="kpi-value mono" style="color: var(--mui-success-text);">36.2% <span style="font-size:0.85rem;font-weight:600;">(+1,250bps)</span></div>
+            <p class="kpi-desc">单季营业利润同比翻 3.1 倍至 $111亿，证明自研 TPU 与全栈软件具备极强经营杠杆。</p>
+          </div>
+          <div class="mui-paper kpi-card">
+            <span class="kpi-label mono">FY2025 SHAREHOLDER RETURN</span>
+            <div class="kpi-value mono" style="color: var(--mui-warning-text);">$55.8B</div>
+            <p class="kpi-desc">FY25 执行 $457.1亿回购 + $100.5亿分红；2026 战略性暂停回购全力抢占 AI 算力制高点。</p>
+          </div>
+          <div class="mui-paper kpi-card">
+            <span class="kpi-label mono">TOTAL ASSETS MILESTONE</span>
+            <div class="kpi-value mono" style="color: var(--mui-violet-text);">$1.003T <span style="font-size:0.85rem;font-weight:600;">(+68.5%)</span></div>
+            <p class="kpi-desc">2026Q3 末总资产历史性突破一万亿美元，含 $3,728亿净物业设备与 $2,651亿现金证券。</p>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-toolbar">
+            <div>
+              <div class="chart-title">FY2021–FY2025 组织提效与 AI 变现红利：GAAP 年度净利润 ($B) 与综合毛利率 (%)</div>
+              <div class="chart-caption">柱状图（左轴）为 GAAP 年度净利润；折线（右轴）为全年综合毛利率（2023 效率重塑后毛利率连升 +430 bps 至 59.7%）</div>
+            </div>
+            <span class="mui-chip mui-chip-primary mono">净利 $76.0B → $132.2B</span>
+          </div>
+          <div class="chart-axis-meta mono">
+            <span style="color:var(--chart-c1);">■ 左轴：GAAP 年度净利润 ($B)</span>
+            <span style="color:var(--chart-c2);">● 右轴：全年综合毛利率 (%)</span>
+          </div>
+          <div class="canvas-stage">
+            <canvas id="chartEps"></canvas>
+          </div>
+          <div class="chart-legend" id="epsLegend">
+            <button type="button" class="legend-pill" data-eps-series="eps"><span class="legend-dot" style="background:var(--chart-c1);"></span><span>GAAP 年度净利润 (左轴 · $B)</span></button>
+            <button type="button" class="legend-pill" data-eps-series="oci"><span class="legend-dot" style="background:var(--chart-c2);"></span><span>全年综合毛利率 (右轴 · %)</span></button>
+            <span class="mui-chip mui-chip-warning mono">--- 高毛利平台跃升锚 58.0%</span>
+          </div>
+        </div>
+
+        <!-- Interactive Multi-Era Compounding Simulator -->
+        <div class="simulator-grid">
+          <div class="sim-controls">
+            <div>
+              <div class="sec-eyebrow mono" style="margin-bottom:2px;">INTERACTIVE FLYWHEEL SIMULATOR</div>
+              <h3 style="font-size:1rem;font-weight:800;">Alphabet 跨代际技术与资本复利推演器</h3>
+            </div>
+
+            <label class="mui-switch-row" for="simDripToggle">
+              <div>
+                <div style="font-size:0.84rem;font-weight:700;color:var(--text-primary);">叠加云算力重估 + 分红/回购收获期增益 (+2.0%/年)</div>
+                <div style="font-size:0.74rem;color:var(--text-secondary);">映射 $0.22/季分红再投及 2029+ AI 基建收获期重启千亿回购增厚</div>
+              </div>
+              <input type="checkbox" id="simDripToggle" checked />
+            </label>
+
+            <div class="preset-stack" role="group" aria-label="谷歌历史与前瞻复利预设周期">
+              <button type="button" class="preset-btn active" data-preset="p1">
+                <span>① 2015–2026 Alphabet 重组与 AI 云爆发期</span>
+                <span class="mono">11年 · 22.4%+增益</span>
+              </button>
+              <button type="button" class="preset-btn" data-preset="p2">
+                <span>② 2004–2015 车库 IPO 至移动互联网制霸期</span>
+                <span class="mono">11年 · 26.8%</span>
+              </button>
+              <button type="button" class="preset-btn" data-preset="p3">
+                <span>③ 2026–2036 全栈 AI 与 Waymo 收获基准期</span>
+                <span class="mono">10年 · 13.5%+增益</span>
+              </button>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <span>初始投入本金 (USD)</span>
+                <span id="simPrincipalLabel" class="slider-val mono">$10,000</span>
+              </div>
+              <input type="range" id="simPrincipalSlider" class="mui-slider" min="1000" max="100000" step="1000" value="10000" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <span>长期持有年限 (Years)</span>
+                <span id="simYearsLabel" class="slider-val mono">11 年</span>
+              </div>
+              <input type="range" id="simYearsSlider" class="mui-slider" min="5" max="30" step="1" value="11" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <span>核心内生年化增值率 (Base CAGR %)</span>
+                <span id="simCagrLabel" class="slider-val mono">22.4%</span>
+              </div>
+              <input type="range" id="simCagrSlider" class="mui-slider" min="4" max="35" step="0.1" value="22.4" />
+            </div>
+          </div>
+
+          <div class="sim-output-panel">
+            <div class="sim-readouts">
+              <div class="sim-stat-box">
+                <div class="sim-stat-label">期末预估总资产 (Ending Value)</div>
+                <div id="simEndingVal" class="sim-stat-num mono" style="color:var(--mui-primary-lighter);">$110,664</div>
+              </div>
+              <div class="sim-stat-box">
+                <div class="sim-stat-label">总回报倍数 (MOIC) / 综合年化</div>
+                <div id="simMoicVal" class="sim-stat-num mono" style="color:var(--mui-success-text);">11.07x · 24.40%</div>
+              </div>
+              <div class="sim-stat-box">
+                <div class="sim-stat-label">累计净复利收益 (Net Gain)</div>
+                <div id="simNetGainVal" class="sim-stat-num mono">$100,664</div>
+              </div>
+              <div class="sim-stat-box">
+                <div id="simMidLabel" class="sim-stat-label">第 5 年中期资产节点</div>
+                <div id="simMidVal" class="sim-stat-num mono">$29,792</div>
+              </div>
+            </div>
+
+            <div class="canvas-stage-sim">
+              <canvas id="chartSim"></canvas>
+            </div>
+            <div class="chart-legend" style="margin-top:4px;">
+              <span class="mui-chip mui-chip-primary mono">━ 含算力重估与分红/回购复利轨迹</span>
+              <span class="mui-chip mono">- - 仅基础内生估值增长曲线</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 18px;">
+          <div class="mui-alert mui-alert-success" style="flex-direction:column; gap:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="mui-chip mui-chip-success mono">ENDURING MOAT</span>
+              <strong>正向组织文化遗产定评</strong>
+            </div>
+            <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+              <strong>1. 全球无人可及的基础科研厚度：</strong>从 Transformer 论文原产地、TPU 十年迭代到诺贝尔化学奖（AlphaFold），吸引全球最顶尖科学大脑。<br/>
+              <strong>2. 控股分权与核心集权的弹性平衡：</strong>既能让 Google DeepMind 集中算力打大仗，又能让 Waymo 独立融资跑通物理世界无人驾驶。<br/>
+              <strong>3. 实证数据主义纠偏能力：</strong>面对 2022–2023 年人员膨胀与产品分散，管理层能迅速合并部门并借助自家 AI 实现工程效率跃迁。
+            </p>
+          </div>
+
+          <div class="mui-alert mui-alert-warning" style="flex-direction:column; gap:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="mui-chip mui-chip-warning mono">CRITICAL LENS</span>
+              <strong>客观局限与组织张力反思</strong>
+            </div>
+            <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+              <strong>1. “晋升导向开发（Promo-Driven Development）”历史顽疾：</strong>同侪晋升委员会偏爱“发布新项目”胜过“维护老产品”，曾导致谷歌频繁关停聊天与工具产品（Google Graveyard）。<br/>
+              <strong>2. 高额股权激励（SBC）与资本稀释成本：</strong>Q3 2026 单季 SBC 达 $87亿（未确认薪酬成本 $618亿），叠加 2026 年增发与可转股暂停了净缩股效应。<br/>
+              <strong>3. 发明者窘境与保守合规束缚：</strong>谷歌最早发明 Transformer 却因声誉顾虑晚于创业公司引爆对话式 AI，直至 2023–2026 战时体制才彻底释放速度。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 三代演进与四大战役复盘 -->
+      <section id="sec-05" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 05 · THREE-GENERATION EVOLUTION &amp; LANDMARK BATTLES</div>
+            <h2 class="sec-h2" data-i18n-zh="五、三代文化演进与四大组织战役复盘：从斯坦福宿舍到万亿美元资产全栈帝国" data-i18n-en="5. Three-Era Cultural Evolution & Landmark Battles (1998–2026+)">五、三代文化演进与四大组织战役复盘：从斯坦福宿舍到万亿美元资产全栈帝国</h2>
+            <p class="sec-sub" data-i18n-zh="每一次重大技术范式切换，都伴随着谷歌对自身组织边界与权力结构的果断外科手术" data-i18n-en="Every major computing paradigm shift forced Google to re-architect its internal reporting lines">每一次重大技术范式切换，都伴随着谷歌对自身组织边界与权力结构的果断外科手术</p>
+          </div>
+          <span class="mui-chip mui-chip-primary mono">1998 创立 → 2026 纳入道指</span>
+        </div>
+
+        <div class="mui-timeline">
+          <div class="timeline-step">
+            <span class="timeline-dot"></span>
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+              <strong style="font-size:0.95rem;">第一幕 · 车库极客共和国、OKRs 与 20% 自由探索黄金期 (1998–2014) —— 佩奇、布林与施密特三驾马车</strong>
+              <span class="mui-chip mono">营收 $0 → $66B</span>
+            </div>
+            <p style="font-size:0.84rem;color:var(--text-secondary);">确立 PageRank 算法信仰、TGIF 周五全员质询会、John Doerr 引入的 OKRs 与 20% 自由时间；通过自下而上孵化与精准并购（Android、YouTube、DoubleClick、DeepMind）奠定七大十亿级用户入口 <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">re:Work 档案 ↗</a>。</p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="timeline-dot" style="background:#3399FF;"></span>
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+              <strong style="font-size:0.95rem;">第二幕 · “G is for Google” 控股分拆与财务制度化期 (2015–2022) —— Alphabet 伞状架构与皮查伊接棒</strong>
+              <span class="mui-chip mui-chip-primary mono">营收 $75B → $283B</span>
+            </div>
+            <p style="font-size:0.84rem;color:var(--text-secondary);">2015 年成立 Alphabet 将核心 Google 与 Other Bets 财务透明分离，华尔街出身的 CFO Ruth Porat 建立资本开支与回购纪律；2019 年底皮查伊统一出任 Alphabet 与 Google 双料 CEO，但疫情期扩招至 19 万人也带来阶段性协调迟缓 <a class="cite-link" href="https://abc.xyz/investor/founders-letters/2015/" target="_blank" rel="noopener noreferrer">2015 公开信 ↗</a>。</p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="timeline-dot" style="background:#22C55E;"></span>
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+              <strong style="font-size:0.95rem;">第三幕 · Code Red 觉醒与全栈 AI 战时大一统 (2023–2026+) —— 破除部门墙、合并 GDM 与千亿云爆发</strong>
+              <span class="mui-chip mui-chip-success mono">年化营收突破 $5,100亿</span>
+            </div>
+            <p style="font-size:0.84rem;color:var(--text-secondary);">2023 年果断合并 Brain 与 DeepMind、2024 年合并 Platforms &amp; Devices、引入新 CFO Anat Ashkenazi 严控行政层级，2026 年完成 $295亿 Wiz 收购并实现 Cloud 单季翻倍（+103%）、Gemini 月活破 10 亿，于 2026 年 6 月跻身道琼斯工业指数。</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 18px;">
+          <div class="feature-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="mui-chip mui-chip-error mono">战役 01 · 2023.04–2026.08</span>
+              <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">破除科研诸侯墙</span>
+            </div>
+            <h3>合并 Google Brain 与 DeepMind 终结算力分治</h3>
+            <p>面对生成式 AI 窗口，皮查伊终结两大顶级实验室十年的编制分立，统一算力调度与 Gemini 品牌；2026 年 8 月进一步由 Koray 统管 Gemini 工程与 App、Demis 聚焦前沿科学，实现科研高度与发版速度兼得。</p>
+          </div>
+
+          <div class="feature-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="mui-chip mui-chip-success mono">战役 02 · 2019–2026</span>
+              <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">B2B 组织换血</span>
+            </div>
+            <h3>Google Cloud 从年亏数十亿到单季狂赚 $111亿</h3>
+            <p>通过赋予 Thomas Kurian 重建企业销售激励、并购 Mandiant 与 Wiz（$295亿）的自主权，同时背靠自研 TPU 底层成本优势，Cloud 营业利润率由 2021 年的 -4.6% 逆袭至 Q3 2026 的 36.2%。</p>
+          </div>
+
+          <div class="feature-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="mui-chip mui-chip-warning mono">战役 03 · 2008 &amp; 2015</span>
+              <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">自下而上突围</span>
+            </div>
+            <h3>Sundar Pichai 主导 Chrome 逆袭与生态卡位</h3>
+            <p>当年施密特反对开发浏览器以免激怒微软，年轻的产品负责人皮查伊以极小精锐团队打造极速 Chrome，最终拿下全球近 70% 浏览器份额，为谷歌在反垄断时代保住了最核心的自有免税入口。</p>
+          </div>
+
+          <div class="feature-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="mui-chip mui-chip-primary mono">战役 04 · 2024–2026</span>
+              <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">资本纪律进化</span>
+            </div>
+            <h3>剥离 GFiber 宽带资产，聚焦 Waymo 与全栈算力</h3>
+            <p>不同于早年盲目撒网的登月烧钱，2026 年 Alphabet 一边将重资产光纤业务 GFiber 分拆出表回笼现金，一边推动 Waymo 引入外部无追索权债务并集中 $2,000亿 CapEx 猛攻高 ROIC 算力主航道。</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="mui-alert">
+            <div><strong>法则一：</strong>平时用“心理安全感 + 20% 探索”培育颠覆性火种（Transformer / Gmail），战时必须果断收拢山头、合并基础设施避免内耗。</div>
+          </div>
+          <div class="mui-alert">
+            <div><strong>法则二：</strong>OKRs 唯有在“全员公开透明 + 与奖金脱钩”时才能激发真正的 10x 极限目标，否则必沦为平庸的数字凑分游戏。</div>
+          </div>
+          <div class="mui-alert">
+            <div><strong>法则三：</strong>对跨度达 10–15 年的硬核新物种（如无人驾驶 Waymo），最健康的架构是“Alphabet 控股伞下独立股权与外部市场化融资检验”。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 谷歌文化法则核查清单 -->
+      <section id="sec-06" class="mui-paper section-block">
+        <div class="sec-header">
+          <div>
+            <div class="sec-eyebrow mono">CHAPTER 06 · INTERACTIVE ORGANIZATION DIAGNOSTIC CHECKLIST</div>
+            <h2 class="sec-h2" data-i18n-zh="六、“谷歌文化法则”平台型科技企业组织健康度交互式核查清单" data-i18n-en="6. Interactive 'Google Culture Laws' Organization & AI Velocity Diagnostic">六、“谷歌文化法则”平台型科技企业组织健康度交互式核查清单</h2>
+            <p class="sec-sub" data-i18n-zh="用于诊断 AI 与平台型科技组织是否兼具底层科学创新活力与商业化执行速度（勾选状态自动保存在本地）" data-i18n-en="Diagnose whether an AI or platform enterprise balances bottom-up scientific invention with wartime execution speed">用于诊断 AI 与平台型科技组织是否兼具底层科学创新活力与商业化执行速度（勾选状态自动保存在本地）</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <span id="checklistScoreChip" class="mui-chip mui-chip-primary mono">已核查 3 / 6 项 (50%)</span>
+            <button type="button" id="checkAllBtn" class="mui-btn">全部勾选</button>
+            <button type="button" id="resetCheckBtn" class="mui-btn">重置清单</button>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-label="核查完成度进度条">
+          <div id="checklistProgressBar" class="progress-fill"></div>
+        </div>
+
+        <div id="checklistContainer" class="checklist-grid"></div>
+      </section>
+
+      <!-- 07 数据来源与监管核验索引 -->
+      <footer id="sec-07" class="mui-paper section-block" style="padding: 22px 26px;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;">
+          <strong style="font-size:0.92rem;">数据来源与一手监管/学术核验索引（SEC EDGAR · Google re:Work · Harvard Business Review）</strong>
+          <span class="mui-chip mono">MUI Branding UI Architecture · Offline Ready</span>
+        </div>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">
+          本研报所有财务指标、员工编制、中位薪酬、分部营业利润率、高管职责调整及管理学研究结论均严格核验自美国证监会（SEC EDGAR）、Alphabet 投资者关系（abc.xyz）、Google 官方博客、Google re:Work 及《哈佛商业评论》（HBR），仅供企业文化与组织架构研究参考，不构成任何投资建议。
+        </p>
+        <ul class="sources-list">
+          <li><span class="mono">[01]</span><a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm" target="_blank" rel="noopener noreferrer">SEC Exhibit 99.1 — Alphabet Q3 2026 Financial Results ($127.58B Rev · 204,757 FTEs) ↗</a></li>
+          <li><span class="mono">[02]</span><a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">SEC Exhibit 99.1 — Alphabet Q4 &amp; Full-Year 2025 Results ($402.84B Rev · $132.17B Net Inc) ↗</a></li>
+          <li><span class="mono">[03]</span><a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm" target="_blank" rel="noopener noreferrer">Alphabet Inc. FY2025 Form 10-K Annual Report (190,820 FTEs · Segment Disclosures) ↗</a></li>
+          <li><span class="mono">[04]</span><a href="https://abc.xyz/investor/founders-letters/2015/" target="_blank" rel="noopener noreferrer">Larry Page 2015 Founders' Letter — "G is for Google" Alphabet Restructuring ↗</a></li>
+          <li><span class="mono">[05]</span><a href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">Google re:Work — Project Oxygen (10 Manager Behaviors) &amp; Project Aristotle ↗</a></li>
+          <li><span class="mono">[06]</span><a href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer">Google re:Work — Understand Team Effectiveness &amp; Psychological Safety ↗</a></li>
+          <li><span class="mono">[07]</span><a href="https://store.hbr.org/product/google-s-project-oxygen-do-managers-matter/313110" target="_blank" rel="noopener noreferrer">Harvard Business Review Case — Google's Project Oxygen: Do Managers Matter? ↗</a></li>
+          <li><span class="mono">[08]</span><a href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" target="_blank" rel="noopener noreferrer">Google Blog — The Next Chapter of Our AI Momentum (Koray Kavukcuoglu &amp; Demis Hassabis) ↗</a></li>
+          <li><span class="mono">[09]</span><a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2024/" target="_blank" rel="noopener noreferrer">Google Blog — Consolidating Google DeepMind &amp; Platforms and Devices Teams ↗</a></li>
+          <li><span class="mono">[10]</span><a href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3 2026 Form 10-Q Analysis — Segment Margins, SBC, GFiber Spin-off &amp; Waymo Loan ↗</a></li>
+          <li><span class="mono">[11]</span><a href="https://bullfincher.io/companies/alphabet/number-of-employees" target="_blank" rel="noopener noreferrer">Bullfincher — Alphabet Historical Full-Time Employee Count (2016–2025) ↗</a></li>
+          <li><span class="mono">[12]</span><a href="https://sqmagazine.co.uk/how-many-people-work-at-youtube/" target="_blank" rel="noopener noreferrer">SQ Magazine — Alphabet Proxy Median Compensation ($310,826) &amp; Quarterly Headcount ↗</a></li>
+        </ul>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+      var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+      var STORAGE_CHECK_KEY = 'mui_googl_culture_checks_v1';
+
+      var CH0_PROSE = {
+        zh: '如果说苹果代表<strong>“自上而下、工业设计铁腕集权与物理保密”</strong>的极致，那么<strong>谷歌母公司 Alphabet Inc.（NASDAQ: GOOGL）</strong>则开创了硅谷另一套影响深远的组织母本——<strong>以学术实验室式的自下而上探索（20% 自由时间）、公开透明的极限 OKRs、同侪委员会招聘晋升以及实证人才科学（Project Oxygen / Project Aristotle）驱动十亿级算法产品涌现</strong> <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">Google re:Work ↗</a>。2015 年拉里·佩奇发表《G is for Google》重构 <strong>Alphabet 控股架构</strong>，将成熟搜索现金牛与高风险登月业务（Other Bets：Waymo、Isomorphic Labs 等）进行财务与激励隔离 <a class="cite-link" href="https://abc.xyz/investor/founders-letters/2015/" target="_blank" rel="noopener noreferrer">2015 创始人信 ↗</a>。更具启发意义的是 2023–2026 年的<strong>“战时组织重塑”</strong>：面对大公司共识迟缓与生成式 AI 挑战，CEO 桑达尔·皮查伊果断打破内部藩篱，将长期分立的 Google Brain 与 DeepMind 合并为单一引擎室 <strong>Google DeepMind</strong>，将 Android、Chrome 与 Pixel 硬件合并为统一的 <strong>Platforms &amp; Devices</strong>，并于 2026 年 8 月任命深度学习元老 Koray Kavukcuoglu 出任 SVP 加速模型产品化、让诺奖得主 Demis Hassabis 专注前沿科学与药物研发 <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" target="_blank" rel="noopener noreferrer">GDM 架构升级 ↗</a>。财报验证了这场组织变革的爆发力：FY2025 营收首破 <strong>$4,028.36亿</strong>、净利润达 <strong>$1,321.70亿（中位员工年薪高达 $310,826）</strong>；2026 年 Q3 单季营收更提速至 <strong>$1,275.77亿（+25% YoY，年化破 $5,100亿）</strong>，204,757 名员工实现年化人均创收 <strong>$2.49M</strong>，并于 2026 年 6 月正式入选道琼斯工业平均指数 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">SEC FY25 8-K ↗</a> <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3\'26 10-Q ↗</a>。',
+        en: 'Whereas Apple perfected top-down industrial design centralization and secrecy, <strong>Alphabet Inc. (NASDAQ: GOOGL)</strong> pioneered Silicon Valley\'s counter-archetype: <strong>bottom-up scientific exploration (20% time), company-wide transparent stretch OKRs, independent peer hiring/promotion committees, and empirical People Analytics (Projects Oxygen &amp; Aristotle)</strong> <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">Google re:Work ↗</a>. Larry Page\'s 2015 <em>"G is for Google"</em> reorganization ring-fenced moonshots (Waymo, Isomorphic Labs) under the <strong>Alphabet holding umbrella</strong> <a class="cite-link" href="https://abc.xyz/investor/founders-letters/2015/" target="_blank" rel="noopener noreferrer">2015 Founders\' Letter ↗</a>. Even more instructive is CEO Sundar Pichai\'s 2023–2026 <strong>wartime structural unification</strong>: merging Google Brain and DeepMind into <strong>Google DeepMind</strong>, combining Android, Chrome, and Pixel into <strong>Platforms &amp; Devices</strong>, and elevating Koray Kavukcuoglu to SVP GDM in August 2026 while freeing Nobel Laureate Demis Hassabis to spearhead frontier science <a class="cite-link" href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" target="_blank" rel="noopener noreferrer">GDM Update ↗</a>. The payoff is unmistakable: FY2025 sales topped <strong>$402.84B</strong> with <strong>$132.17B</strong> in GAAP net income ($310,826 median pay), while Q3 2026 accelerated +25% YoY to <strong>$127.58B (&gt;$510B run rate; $2.49M annualized rev/FTE across 204,757 employees)</strong> alongside Dow Jones Industrial Average inclusion <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm" target="_blank" rel="noopener noreferrer">SEC FY25 8-K ↗</a> <a class="cite-link" href="https://www.nextgcomm.com/financials-google-q3-earnings-results-2026-analysis/" target="_blank" rel="noopener noreferrer">Q3\'26 10-Q ↗</a>.'
+      };
+
+      var PILLAR_NOTES = [
+        '<strong>当前选中支柱解读（01 OKRs 极限目标体系）：</strong>OKRs 与年度薪酬绩效考核刻意脱钩，防止员工为拿奖金而压低目标（Sandbagging）——正是这种机制支撑了 Chrome 从零逆袭、Gemini App 创史上最快速度突破 10 亿月活 <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer">re:Work 团队科学 ↗</a>。',
+        '<strong>当前选中支柱解读（02 Project Oxygen &amp; Aristotle）：</strong>谷歌对 180 个团队做多变量统计分析发现，“团队成员如何互动”远比“团队里有谁”更重要；<strong>心理安全感（敢于提出异议与承认失误而不遭羞辱）</strong>位列高效团队五大要素之首 <a class="cite-link" href="https://store.hbr.org/product/google-s-project-oxygen-do-managers-matter/313110" target="_blank" rel="noopener noreferrer">HBR Oxygen 案例 ↗</a>。',
+        '<strong>当前选中支柱解读（03 10x 登月思维与宽容失败）：</strong>在 Alphabet 体系内，大胆尝试科学难题即使商业中止也能获得高度尊重（甚至在 X 实验室发奖金鼓励及早证伪不可行方案），由此沉淀出 TPU 光互连、Waymo 与 AlphaFold 等跨十年壁垒。',
+        '<strong>当前选中支柱解读（04 委员会治企与战时提速）：</strong>同侪招聘与晋升委员会守住了全球最高 AI 人才纯度（中位年薪 $31.1万），而 2023–2026 砍掉冗余审批层级与内部部署 Gemini 4 编码助手则补齐了大公司执行速度短板。'
+      ];
+
+      var PILLAR_NOTES_EN = [
+        '<strong>Selected Pillar (01 · Stretch OKRs):</strong> Decoupling OKRs from annual bonus formulas prevents sandbagging and empowers 0.6–0.7 stretch ambition—fueling Chrome\'s ascent and Gemini App\'s sprint past 1B MAUs <a class="cite-link" href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer">re:Work Study ↗</a>.',
+        '<strong>Selected Pillar (02 · Projects Oxygen &amp; Aristotle):</strong> Analyzing 180+ Google teams proved that <em>how a team interacts</em> matters more than individual stardom, with <strong>Psychological Safety</strong> ranking #1 <a class="cite-link" href="https://store.hbr.org/product/google-s-project-oxygen-do-managers-matter/313110" target="_blank" rel="noopener noreferrer">HBR Case ↗</a>.',
+        '<strong>Selected Pillar (03 · 10x Moonshot Mindset):</strong> Pursuing 10x breakthroughs rather than 10% incremental tweaks birthed custom TPUs, AlphaFold 3, and Waymo\'s 300M+ autonomous miles.',
+        '<strong>Selected Pillar (04 · Peer Committees + Wartime Speed):</strong> Independent hiring/promotion committees protect A+ talent density ($310.8K median pay), while 2023–2026 delayering and internal Gemini coding (+35% output) restored startup velocity.'
+      ];
+
+      var PEER_ROWS = [
+        {
+          category: 'eng', benchmark: true,
+          company: '研究基准：谷歌 Alphabet (GOOGL)',
+          leader: '佩奇 & 布林 / 桑达尔·皮查伊 (Sundar Pichai)',
+          positioning: 'Alphabet 控股风险隔离伞 + Google 内部全栈 AI 统一引擎室',
+          culture: '公开极限 OKRs + 心理安全感科学 + 10x 登月思维 + 同侪委员会',
+          headcount: '20.48万人 (Q3\'26) · 年化人效 $2.49M · 中位薪 $311K',
+          margins: 'Q3\'26 营收 $1,276亿 (+25%) · 毛利率 59.7% · Cloud OPM 36.2%',
+          verdict: '基础科研与大规模分布式工程天花板：合流 Google DeepMind 后补齐发版速度，成为唯一四层全栈自研 AI 巨头。',
+          sourceLabel: 'SEC Q3\'26 / re:Work',
+          sourceUrl: 'https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers'
+        },
+        {
+          category: 'eng', benchmark: false,
+          company: '苹果公司 (Apple · AAPL)',
+          leader: '乔布斯 / 库克 / 约翰·特努斯 (John Ternus)',
+          positioning: '按专业能力划分的纯粹职能制 + 全公司唯一损益表 (Single P&L)',
+          culture: '专家领导专家 + DRI 单点问责 + 物理保密 + 极致 SKU 减法',
+          headcount: '16.7万人 · 人均创收 $2.87M (含直营店)',
+          margins: 'FY26 营收 $4,788亿 · 综合毛利 48.8% (服务 76.2%) · 净利 $1,322亿',
+          verdict: '工业精品与概率算法的两极：苹果靠“封闭保密+对99件事说不”打磨硬件神作；谷歌靠“开放生态+开源/论文影响力”统治全球信息与云底座。',
+          sourceLabel: 'HBR Apple Study',
+          sourceUrl: 'https://www.apple.com/careers/pdf/HBR_How_Apple_Is_Organized_For_Innovation-4.pdf'
+        },
+        {
+          category: 'eng', benchmark: false,
+          company: 'Meta Platforms (META)',
+          leader: '马克·扎克伯格 (Mark Zuckerberg)',
+          positioning: '创始人超级集权 + 极扁平算法推荐与开源 Llama 突击队',
+          culture: 'Move Fast (黑客马拉松) + 效率之年铁腕扁平化 + 激进开源',
+          headcount: '~7.4万人 · 人均创收 ~$2.42M+',
+          margins: '综合毛利率 ~81% · 社交广告高利润率补贴 Reality Labs',
+          verdict: '同为广告双雄，扎克伯格自上而下转向极快；但谷歌拥有 Meta 缺失的自有操作系统（Android/Chrome）与年入超千亿的 Google Cloud 回血池。',
+          sourceLabel: 'SQ Ads Benchmark',
+          sourceUrl: 'https://sqmagazine.co.uk/google-ads-statistics/'
+        },
+        {
+          category: 'biz', benchmark: false,
+          company: '微软 (Microsoft · MSFT)',
+          leader: '萨提亚·纳德拉 (Satya Nadella)',
+          positioning: '三大企业级事业部矩阵 (智能云 / 生产力 / 个人计算)',
+          culture: '成长型思维 (Growth Mindset) + B2B 客户成功导向 + 外部模型结盟',
+          headcount: '~22.3万人 · 人均创收 ~$1.49M',
+          margins: '综合毛利率 ~69% · 企业席位订阅现金流极稳',
+          verdict: '微软长于企业 CIO 关系与软件捆绑销售；谷歌则在自研 TPU 芯片性价比与一方原生多模态模型（Gemini 4）自主权上更具全栈优势。',
+          sourceLabel: 'Big Tech 10-K Data',
+          sourceUrl: 'https://bebop.ai/companies/largest-tech-companies'
+        },
+        {
+          category: 'biz', benchmark: false,
+          company: '亚马逊 (Amazon · AMZN)',
+          leader: '贝索斯 / 安迪·贾西 (Andy Jassy)',
+          positioning: '契约化 API 解耦 + 数千支自负盈亏“双披萨小队”',
+          culture: '客户痴迷 + 六页纸叙事备忘录 + 节俭主义 (Frugality)',
+          headcount: '~155万人 (含全球重物流仓配)',
+          margins: 'AWS 云与零售广告贡献绝大部分营业利润',
+          verdict: '亚马逊极度节俭务实、擅长标准化运营扩张；谷歌则以高薪酬福利与学术自由吸引科学奇才攻克量子计算、无人驾驶与蛋白质折叠。',
+          sourceLabel: 'Amazon AR',
+          sourceUrl: 'https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm'
+        }
+      ];
+
+      var CHECKLIST_ITEMS = [
+        {
+          tag: '统一AI引擎',
+          title: '1. 核心底座去孤岛测试：基础大模型与算力调度是否已彻底消除内部重复造轮子？',
+          desc: '核查研究与工程团队是否像合并后的 Google DeepMind 一样共享统一算力池与单一产品接入点，而非各自为战。'
+        },
+        {
+          tag: '0.6–0.7 OKRs',
+          title: '2. 极限 OKRs 纯度测试：目标是否全员公开透明，且不因未达满分而遭薪酬惩罚？',
+          desc: '检验团队是否敢于设定 10x 挑战性目标，避免将 OKR 异化为保守防御的传统 KPI 绩效打分表。'
+        },
+        {
+          tag: '心理安全感',
+          title: '3. Project Aristotle 心理安全测试：一线工程师能否在复盘会上直言架构缺陷？',
+          desc: '核查事故复盘是否严格执行“无指责复盘（Blameless Postmortem）”，对事不对人地修复系统性漏洞。'
+        },
+        {
+          tag: '委员会防稀释',
+          title: '4. 人才密度防火墙测试：招聘与晋升是否由跨团队客观标准把关而非直属主管一言堂？',
+          desc: '验证在业务扩张期是否依然守住高认知能力（GCA）与工程素养底线，同时避免“为晋升而造新轮子”。'
+        },
+        {
+          tag: 'AI内部自举',
+          title: '5. AI 原生工作流测试：自身研发与行政费率是否正因内部 AI Agent 部署出现显著杠杆？',
+          desc: '对标谷歌内部代码量 +35% 且 G&A 费率压降至 4.8%，观察人均创收是否跑赢人员增速。'
+        },
+        {
+          tag: '控股伞纪律',
+          title: '6. 新业务组合退出纪律测试：对长期偏离护城河的副业能否果断剥离（如 GFiber）？',
+          desc: '既要给 Waymo 类高壁垒项目十年耐心与外部融资检验，也要对缺乏超额回报的重资产果断瘦身出表。'
+        }
+      ];
+
+      var QUICK_JUMP_INDEX = [
+        { sec: 'sec-00', title: '00 执行摘要与核心指标', sub: 'Q3 $127.6B (+25%) · 年化人效 $2.49M · 综合毛利 59.7%' },
+        { sec: 'sec-01', title: '01 Alphabet 控股与 AI 全栈重构', sub: 'Google DeepMind 合流 · 分部营收与人效双视图图表' },
+        { sec: 'sec-02', title: '02 四大文化支柱与创新护城河', sub: '极限 OKRs · 氧气与亚里士多德计划 · 五维雷达图' },
+        { sec: 'sec-03', title: '03 全球科技巨头文化横向对比', sub: 'Alphabet vs Apple vs Meta vs Microsoft vs Amazon' },
+        { sec: 'sec-04', title: '04 研发红利、利润率与复利推演', sub: 'FY21–FY25 净利跃升至 $132.2B · 跨代复利模拟器' },
+        { sec: 'sec-05', title: '05 三代演进与四大战役复盘', sub: '车库创业 → Alphabet重组 → 2023–2026 AI战时集结' },
+        { sec: 'sec-06', title: '06 谷歌文化法则核查清单', sub: '6 项平台型科技组织诊断与本地持久化评分' },
+        { sec: 'sec-07', title: '07 数据来源与监管核验索引', sub: 'SEC 10-K/10-Q · Google re:Work · HBR 权威信源' }
+      ];
+
+      var PRESETS = {
+        p1: { principal: 10000, years: 11, priceCagr: 22.4, drip: true },
+        p2: { principal: 10000, years: 11, priceCagr: 26.8, drip: false },
+        p3: { principal: 10000, years: 10, priceCagr: 13.5, drip: true }
+      };
+
+      var state = {
+        lang: 'zh',
+        theme: 'light',
+        ch1View: 'viewA',
+        activePillar: 0,
+        radarSeries: { googl: true, aapl: true, msft: true },
+        ch1Series: { s1: true, s2: true },
+        epsSeries: { eps: true, oci: true },
+        peerFilter: 'all',
+        peerQuery: '',
+        sim: { principal: 10000, years: 11, priceCagr: 22.4, drip: true, preset: 'p1' },
+        checks: [true, true, true, false, false, false]
+      };
+
+      var hitRegions = { chartCh1: [], chartRadar: [], chartBars: [], chartEps: [], chartSim: [] };
+
+      function showToast(msg) {
+        var el = document.getElementById('muiSnackbar');
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(el._t);
+        el._t = setTimeout(function () { el.classList.remove('show'); }, 2400);
+      }
+
+      function escapeHtml(str) {
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function highlightMatch(text, query) {
+        var safe = escapeHtml(text);
+        if (!query) return safe;
+        var escapedQ = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return safe.replace(new RegExp('(' + escapedQ + ')', 'gi'), '<mark class="hl">$1</mark>');
+      }
+
+      function getPalette() {
+        var isDark = state.theme === 'dark';
+        return {
+          isDark: isDark,
+          grid: isDark ? 'rgba(148,163,184,0.13)' : 'rgba(100,116,139,0.16)',
+          tick: isDark ? '#94A3B8' : '#475569',
+          text: isDark ? '#F3F6F9' : '#0F1924',
+          sub: isDark ? '#B2BAC2' : '#334155',
+          pillBg: isDark ? 'rgba(9, 13, 22, 0.88)' : 'rgba(255, 255, 255, 0.94)',
+          pillBorder: isDark ? 'rgba(51, 153, 255, 0.28)' : 'rgba(0, 115, 230, 0.24)',
+          trackBg: isDark ? 'rgba(148, 163, 184, 0.10)' : 'rgba(15, 25, 36, 0.06)',
+          c1: isDark ? '#3399FF' : '#0073E6',
+          c2: isDark ? '#22C55E' : '#16A34A',
+          c3: isDark ? '#FFB74D' : '#D97706',
+          c4: isDark ? '#A78BFA' : '#7C3AED'
+        };
+      }
+
+      function applyTheme(theme, silent) {
+        state.theme = theme === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', state.theme);
+        var abIconEl = document.getElementById('appbarThemeIcon');
+        if (abIconEl) {
+          abIconEl.innerHTML = (state.theme === 'dark')
+            ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+            : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+        }
+        var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+        if (sl) sl.setAttribute('aria-pressed', String(state.theme === 'light'));
+        if (sd) sd.setAttribute('aria-pressed', String(state.theme === 'dark'));
+        try { localStorage.setItem(STORAGE_THEME_KEY, state.theme); } catch (e) {}
+        renderAllCharts();
+        if (!silent) showToast(state.theme === 'dark' ? '已切换至深色模式' : '已切换至浅色模式');
+      }
+
+      function applyLanguage(lang, silent) {
+        state.lang = lang === 'en' ? 'en' : 'zh';
+        var en = state.lang === 'en';
+        document.documentElement.lang = en ? 'en' : 'zh-CN';
+        var zhBtn = document.getElementById('langZhBtn'), enBtn = document.getElementById('langEnBtn');
+        if (zhBtn && enBtn) {
+          zhBtn.classList.toggle('active', !en);
+          enBtn.classList.toggle('active', en);
+          zhBtn.setAttribute('aria-pressed', String(!en));
+          enBtn.setAttribute('aria-pressed', String(en));
+        }
+        var lead = document.getElementById('ch0LeadProse');
+        if (lead) lead.innerHTML = CH0_PROSE[state.lang];
+        var nodes = document.querySelectorAll('[data-i18n-zh]');
+        for (var i = 0; i < nodes.length; i++) {
+          var val = nodes[i].getAttribute(en ? 'data-i18n-en' : 'data-i18n-zh');
+          if (val !== null) {
+            if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+            else nodes[i].textContent = val;
+          }
+        }
+        document.getElementById('pillarFocusNote').innerHTML = '<div>' + (en ? PILLAR_NOTES_EN : PILLAR_NOTES)[state.activePillar] + '</div>';
+        renderPeerTable();
+        renderChecklist();
+        updateSimulatorUI();
+        renderAllCharts();
+        try { localStorage.setItem(STORAGE_LANG_KEY, state.lang); } catch (e) {}
+        if (!silent) showToast(en ? 'Switched to English' : '已切换至中文');
+      }
+
+      function renderPeerTable() {
+        var tbody = document.getElementById('peerTableBody');
+        var badge = document.getElementById('peerCountBadge');
+        if (!tbody) return;
+        var q = state.peerQuery.trim().toLowerCase();
+        var filtered = PEER_ROWS.filter(function (row) {
+          var catOk = state.peerFilter === 'all' || row.category === state.peerFilter;
+          if (!catOk) return false;
+          if (!q) return true;
+          var hay = (row.company + ' ' + row.leader + ' ' + row.positioning + ' ' + row.culture + ' ' + row.verdict + ' ' + row.margins).toLowerCase();
+          return hay.indexOf(q) !== -1;
+        });
+        if (badge) badge.textContent = '显示 ' + filtered.length + ' / ' + PEER_ROWS.length + ' 家标杆企业';
+        if (!filtered.length) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;">未找到匹配的标杆企业，请清空搜索词重试。</td></tr>';
+          return;
+        }
+        var rawQ = state.peerQuery.trim();
+        tbody.innerHTML = filtered.map(function (r) {
+          return '<tr class="' + (r.benchmark ? 'benchmark-row' : '') + '">' +
+            '<td><strong style="color:var(--text-primary);display:block;">' + highlightMatch(r.company, rawQ) + '</strong><span style="font-size:0.76rem;color:var(--text-muted);">' + highlightMatch(r.leader, rawQ) + '</span></td>' +
+            '<td>' + highlightMatch(r.positioning, rawQ) + '</td>' +
+            '<td>' + highlightMatch(r.culture, rawQ) + '</td>' +
+            '<td class="mono" style="font-size:0.79rem;">' + highlightMatch(r.headcount, rawQ) + '</td>' +
+            '<td class="mono" style="font-size:0.79rem;color:var(--mui-primary-lighter);font-weight:700;">' + highlightMatch(r.margins, rawQ) + '</td>' +
+            '<td>' + highlightMatch(r.verdict, rawQ) + ' <a class="cite-link" href="' + r.sourceUrl + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(r.sourceLabel) + ' ↗</a></td>' +
+            '</tr>';
+        }).join('');
+      }
+
+      function renderChecklist() {
+        var container = document.getElementById('checklistContainer');
+        var chip = document.getElementById('checklistScoreChip');
+        var bar = document.getElementById('checklistProgressBar');
+        if (!container) return;
+        var doneCount = state.checks.filter(Boolean).length;
+        var pct = Math.round((doneCount / CHECKLIST_ITEMS.length) * 100);
+        if (chip) chip.textContent = '已核查 ' + doneCount + ' / ' + CHECKLIST_ITEMS.length + ' 项 (' + pct + '%)';
+        if (bar) bar.style.width = pct + '%';
+        container.innerHTML = CHECKLIST_ITEMS.map(function (item, idx) {
+          var isChecked = !!state.checks[idx];
+          return '<label class="check-card ' + (isChecked ? 'checked' : '') + '">' +
+            '<input type="checkbox" data-check-input="' + idx + '" ' + (isChecked ? 'checked' : '') + ' />' +
+            '<div style="flex:1;">' +
+            '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin-bottom:4px;">' +
+            '<span class="check-title">' + escapeHtml(item.title) + '</span>' +
+            '<span class="mui-chip mono">' + escapeHtml(item.tag) + '</span>' +
+            '</div>' +
+            '<p class="check-desc">' + escapeHtml(item.desc) + '</p>' +
+            '</div></label>';
+        }).join('');
+      }
+
+      function formatCurrency(val) {
+        if (val >= 10000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+        return '$' + Math.round(val).toLocaleString('en-US');
+      }
+
+      // Canvas Helpers
+      function prepareCanvas(id) {
+        var canvas = document.getElementById(id);
+        if (!canvas || !canvas.parentElement) return null;
+        var rect = canvas.parentElement.getBoundingClientRect();
+        var w = Math.max(240, Math.floor(rect.width || 500));
+        var h = Math.max(170, Math.floor(rect.height || 280));
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        var ctx = canvas.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        return { ctx: ctx, w: w, h: h };
+      }
+
+      function roundRect(ctx, x, y, w, h, r) {
+        var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + rr, y);
+        ctx.arcTo(x + w, y, x + w, y + h, rr);
+        ctx.arcTo(x + w, y + h, x, y + h, rr);
+        ctx.arcTo(x, y + h, x, y, rr);
+        ctx.arcTo(x, y, x + w, y, rr);
+        ctx.closePath();
+      }
+
+      function drawCh1Chart() {
+        var env = prepareCanvas('chartCh1');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.chartCh1 = [];
+        var pad = { top: 28, right: 48, bottom: 42, left: 52 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+        if (state.ch1View === 'viewA') {
+          var labels = ['Search & other', 'Google Cloud', '订阅/平台/硬件', 'YouTube Ads', 'Google Network'];
+          var fy24 = [198.08, 43.23, 40.34, 36.15, 30.36];
+          var ttm26 = [243.29, 93.17, 53.16, 43.55, 29.56];
+          var maxY = 270;
+          for (var g = 0; g <= 4; g++) {
+            var gv = (maxY / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+            ctx.fillText('$' + Math.round(gv) + 'B', pad.left - 7, gy + 4);
+          }
+          var step = pw / labels.length, bw = Math.min(34, step * 0.28);
+          labels.forEach(function (lb, i) {
+            var cx = pad.left + step * (i + 0.5);
+            if (state.ch1Series.s1) {
+              var h1 = (fy24[i] / maxY) * ph;
+              ctx.fillStyle = pal.c1;
+              roundRect(ctx, cx - bw - 3, pad.top + ph - h1, bw, h1, 5); ctx.fill();
+            }
+            if (state.ch1Series.s2) {
+              var h2 = (ttm26[i] / maxY) * ph;
+              ctx.fillStyle = pal.c2;
+              roundRect(ctx, cx + 3, pad.top + ph - h2, bw, h2, 5); ctx.fill();
+              ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+              ctx.fillText('$' + ttm26[i].toFixed(1) + 'B', cx + bw / 2 + 3, pad.top + ph - h2 - 6);
+            }
+            ctx.fillStyle = pal.text; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(lb, cx, pad.top + ph + 20);
+            hitRegions.chartCh1.push({
+              x: pad.left + step * i, y: pad.top, w: step, h: ph + 28,
+              html: '<strong>' + lb + '</strong><br/>• FY2024 营收：$' + fy24[i].toFixed(2) + 'B<br/>• TTM Q3\'26 营收：<strong>$' + ttm26[i].toFixed(2) + 'B</strong>'
+            });
+          });
+        } else {
+          var yrs = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'Q3\'26年化'];
+          var fteK = [156.5, 190.2, 182.5, 183.3, 190.8, 204.8];
+          var revEmp = [1.65, 1.49, 1.68, 1.91, 2.11, 2.49];
+          var maxF = 240, minR = 1.2, maxR = 2.7;
+          for (var j = 0; j <= 4; j++) {
+            var r = j / 4, yG = pad.top + ph - r * ph;
+            ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, yG); ctx.lineTo(pad.left + pw, yG); ctx.stroke();
+            ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+            ctx.fillText(Math.round(maxF * r) + 'k', pad.left - 7, yG + 4);
+            ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+            ctx.fillText('$' + (minR + r * (maxR - minR)).toFixed(2) + 'M', pad.left + pw + 6, yG + 4);
+          }
+          var stepB = pw / yrs.length, bW = Math.min(34, stepB * 0.44);
+          var pts = [];
+          yrs.forEach(function (yr, k) {
+            var cx = pad.left + stepB * (k + 0.5);
+            if (state.ch1Series.s1) {
+              var bH = (fteK[k] / maxF) * ph;
+              ctx.fillStyle = 'rgba(0, 115, 230, 0.35)';
+              roundRect(ctx, cx - bW / 2, pad.top + ph - bH, bW, bH, 5); ctx.fill();
+            }
+            var py = pad.top + ph - ((revEmp[k] - minR) / (maxR - minR)) * ph;
+            pts.push({ x: cx, y: py, v: revEmp[k] });
+            ctx.fillStyle = pal.text; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(yr, cx, pad.top + ph + 20);
+            hitRegions.chartCh1.push({
+              x: pad.left + stepB * k, y: pad.top, w: stepB, h: ph + 26,
+              html: '<strong>' + yr + '</strong><br/>• 全职员工数：' + fteK[k].toFixed(1) + 'k 人<br/>• 人均创收：<strong>$' + revEmp[k].toFixed(2) + 'M / 人</strong>'
+            });
+          });
+          if (state.ch1Series.s2) {
+            ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.6; ctx.beginPath();
+            pts.forEach(function (pt, idx) { if (idx === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+            ctx.stroke();
+            pts.forEach(function (pt) {
+              ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(pt.x, pt.y, 4.2, 0, Math.PI * 2); ctx.fill();
+              ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+              ctx.fillText('$' + pt.v.toFixed(2) + 'M', pt.x, pt.y - 8);
+            });
+          }
+        }
+      }
+
+      function drawRadarChart() {
+        var env = prepareCanvas('chartRadar');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.chartRadar = [];
+        var axes = ['基础科研与AI原力', '目标透明度(OKRs)', '心理安全与自由度', '工业减法与保密', '多生态平台扩展力'];
+        var series = [
+          { key: 'googl', name: '谷歌 (Alphabet)', color: pal.c1, fill: 'rgba(51, 153, 255, 0.24)', vals: [9.9, 9.6, 9.4, 6.8, 9.7] },
+          { key: 'aapl', name: '苹果 (Apple)', color: pal.c2, fill: 'rgba(34, 197, 94, 0.16)', vals: [8.6, 7.2, 7.5, 9.9, 8.8] },
+          { key: 'msft', name: '微软 (Microsoft)', color: pal.c3, fill: 'rgba(255, 183, 77, 0.14)', vals: [8.8, 8.2, 8.5, 7.4, 9.5] }
+        ];
+        var cx = w / 2, cy = h / 2 + 6;
+        var radius = Math.max(62, Math.min((w - 190) / 2, h * 0.35));
+        for (var ring = 2; ring <= 10; ring += 2) {
+          var r = (ring / 10) * radius;
+          ctx.strokeStyle = pal.grid; ctx.beginPath();
+          for (var i = 0; i < 5; i++) {
+            var ang = -Math.PI / 2 + (i * 2 * Math.PI) / 5;
+            var px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+            if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+          }
+          ctx.closePath(); ctx.stroke();
+        }
+        axes.forEach(function (axName, a) {
+          var angle = -Math.PI / 2 + (a * 2 * Math.PI) / 5;
+          var ax = cx + Math.cos(angle) * radius, ay = cy + Math.sin(angle) * radius;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, ay); ctx.stroke();
+          var lx = cx + Math.cos(angle) * (radius + 14), ly = cy + Math.sin(angle) * (radius + 15);
+          ctx.fillStyle = pal.text; ctx.font = '600 11px sans-serif';
+          ctx.textAlign = Math.abs(Math.cos(angle)) < 0.2 ? 'center' : (Math.cos(angle) > 0 ? 'left' : 'right');
+          ctx.fillText(axName, lx, ly);
+          hitRegions.chartRadar.push({
+            x: lx - 40, y: ly - 16, w: 80, h: 32,
+            html: '<strong>' + axName + '</strong><br/>• 谷歌：' + series[0].vals[a] + ' | 苹果：' + series[1].vals[a] + ' | 微软：' + series[2].vals[a]
+          });
+        });
+        series.forEach(function (s) {
+          if (!state.radarSeries[s.key]) return;
+          ctx.beginPath();
+          s.vals.forEach(function (v, idx) {
+            var th = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
+            var vx = cx + Math.cos(th) * (v / 10) * radius, vy = cy + Math.sin(th) * (v / 10) * radius;
+            if (idx === 0) ctx.moveTo(vx, vy); else ctx.lineTo(vx, vy);
+          });
+          ctx.closePath(); ctx.fillStyle = s.fill; ctx.fill(); ctx.strokeStyle = s.color; ctx.lineWidth = 2.3; ctx.stroke();
+        });
+      }
+
+      function drawHorizontalBars() {
+        var env = prepareCanvas('chartBars');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.chartBars = [];
+        var items = [
+          { label: 'Alphabet 集团综合毛利率 Gross Margin (Q3\'26)', val: 59.7, col: pal.c2, sub: '$76.16B / $127.58B', note: '剔除 TAC 与数据中心折旧后仍保持近 60% 软件级高毛利' },
+          { label: 'Google Services 分部营业利润率 (Q3\'26)', val: 40.7, col: pal.c1, sub: '$39.2B / $96.3B (+220bps)', note: '搜索与 YouTube 意图拍卖的恐怖印钞效率' },
+          { label: 'Google Cloud 分部营业利润率 (Q3\'26)', val: 36.2, col: pal.c2, sub: '$11.1B / $30.71B (+1,250bps)', note: '自研 TPU 与高毛利 AI 企业席位带动利润率跨越式跃升' },
+          { label: 'Alphabet 合并营业利润率 Operating Margin (Q3\'26)', val: 31.8, col: pal.c1, sub: '$40.58B / $127.58B', note: '已全额消化单季 $7.7B 集团层共享 AI 研发费用后的净营业利润率' },
+          { label: '硬核研发投入强度 R&D / Revenue (Q3\'26)', val: 16.2, col: pal.c4, sub: '单季 $20.64B (+36% YoY)', note: '顶尖 AI 科学家与 TPU 架构研发强度远超传统科技巨头' },
+          { label: '精简一般及行政管理费率 G&A / Revenue (Q3\'26)', val: 4.8, col: pal.c3, sub: '单季 $6.14B (-17% YoY)', note: '砍掉冗余管理层级，确保资源集中流向一线工程与算力' }
+        ];
+        var pad = { top: 10, right: 18, bottom: 24, left: 18 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom, maxX = 68;
+        var rowH = ph / items.length;
+        var refX = pad.left + (35 / maxX) * pw;
+        ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = pal.c3;
+        ctx.beginPath(); ctx.moveTo(refX, pad.top); ctx.lineTo(refX, pad.top + rowH * 4); ctx.stroke(); ctx.restore();
+        items.forEach(function (it, i) {
+          var rt = pad.top + rowH * i;
+          var ly = rt + rowH * 0.36, by = rt + rowH * 0.52, bh = 13;
+          var bw = (it.val / maxX) * pw;
+          ctx.fillStyle = pal.text; ctx.font = '600 11.5px sans-serif'; ctx.textAlign = 'left';
+          ctx.fillText(it.label, pad.left, ly);
+          ctx.fillStyle = it.col; ctx.font = 'bold 12px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+          ctx.fillText(it.val.toFixed(1) + '%', pad.left + pw, ly);
+          ctx.fillStyle = pal.trackBg; roundRect(ctx, pad.left, by, pw, bh, 6); ctx.fill();
+          ctx.fillStyle = it.col; roundRect(ctx, pad.left, by, bw, bh, 6); ctx.fill();
+          hitRegions.chartBars.push({
+            x: pad.left, y: rt, w: pw, h: rowH,
+            html: '<strong>' + it.label + '：' + it.val + '%</strong><br/>• 明细：' + it.sub + '<br/>• 解读：' + it.note
+          });
+        });
+      }
+
+      function drawEpsComboChart() {
+        var env = prepareCanvas('chartEps');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.chartEps = [];
+        var years = ['FY2021', 'FY2022', 'FY2023', 'FY2024', 'FY2025'];
+        var netB = [76.03, 59.97, 73.80, 100.12, 132.17];
+        var gmPct = [56.9, 55.4, 56.6, 58.2, 59.7];
+        var pad = { top: 26, right: 50, bottom: 38, left: 52 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+        var maxNet = 150, minGm = 53, maxGm = 61;
+        for (var g = 0; g <= 4; g++) {
+          var r = g / 4, gy = pad.top + ph - r * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+          ctx.fillText('$' + Math.round(maxNet * r) + 'B', pad.left - 7, gy + 4);
+          ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+          ctx.fillText((minGm + r * (maxGm - minGm)).toFixed(1) + '%', pad.left + pw + 6, gy + 4);
+        }
+        var step = pw / years.length, bw = Math.min(44, step * 0.42), pts = [];
+        years.forEach(function (yr, i) {
+          var cx = pad.left + step * (i + 0.5);
+          if (state.epsSeries.eps) {
+            var bh = (netB[i] / maxNet) * ph, by = pad.top + ph - bh;
+            ctx.fillStyle = pal.c1; roundRect(ctx, cx - bw / 2, by, bw, bh, 6); ctx.fill();
+            ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('$' + netB[i].toFixed(1) + 'B', cx, by + 16);
+          }
+          var oy = pad.top + ph - ((gmPct[i] - minGm) / (maxGm - minGm)) * ph;
+          pts.push({ x: cx, y: oy, gm: gmPct[i] });
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11.5px sans-serif'; ctx.textAlign = 'center';
+          ctx.fillText(yr, cx, pad.top + ph + 20);
+          hitRegions.chartEps.push({
+            x: pad.left + step * i, y: pad.top, w: step, h: ph + 28,
+            html: '<strong>' + yr + ' (Form 10-K)</strong><br/>• GAAP 净利润：<strong>$' + netB[i].toFixed(2) + 'B</strong><br/>• 综合毛利率：<strong>' + gmPct[i].toFixed(1) + '%</strong>'
+          });
+        });
+        if (state.epsSeries.oci) {
+          ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.8; ctx.beginPath();
+          pts.forEach(function (p, idx) { if (idx === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y); });
+          ctx.stroke();
+          pts.forEach(function (p) {
+            ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(p.x, p.y, 4.5, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(p.gm.toFixed(1) + '%', p.x, p.y - 9);
+          });
+        }
+      }
+
+      function drawSimChart() {
+        var env = prepareCanvas('chartSim');
+        if (!env) return;
+        var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+        hitRegions.chartSim = [];
+        var p = state.sim.principal, yrs = state.sim.years;
+        var baseR = state.sim.priceCagr / 100;
+        var totR = (state.sim.priceCagr + (state.sim.drip ? 2.0 : 0)) / 100;
+        var totS = [], baseS = [];
+        for (var y = 0; y <= yrs; y++) {
+          totS.push(p * Math.pow(1 + totR, y));
+          baseS.push(p * Math.pow(1 + baseR, y));
+        }
+        var maxV = Math.max(totS[yrs], p * 1.2) * 1.08;
+        var pad = { top: 18, right: 18, bottom: 26, left: 58 };
+        var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+        for (var g = 0; g <= 3; g++) {
+          var v = (maxV / 3) * g, gy = pad.top + ph - (g / 3) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+          ctx.fillText(v >= 1000000 ? ('$' + (v / 1000000).toFixed(1) + 'M') : ('$' + Math.round(v / 1000) + 'k'), pad.left - 6, gy + 4);
+        }
+        var stepX = pw / yrs;
+        ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = pal.tick; ctx.beginPath();
+        baseS.forEach(function (bv, idx) {
+          var px = pad.left + stepX * idx, py = pad.top + ph - (bv / maxV) * ph;
+          if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.stroke(); ctx.restore();
+        ctx.strokeStyle = pal.c1; ctx.lineWidth = 2.6; ctx.beginPath();
+        totS.forEach(function (tv, idx) {
+          var px = pad.left + stepX * idx, py = pad.top + ph - (tv / maxV) * ph;
+          if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+          if (idx === 0 || idx === Math.floor(yrs / 2) || idx === yrs) {
+            ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Y' + idx, px, pad.top + ph + 18);
+          }
+          hitRegions.chartSim.push({
+            x: px - stepX / 2, y: pad.top, w: Math.max(10, stepX), h: ph + 20,
+            html: '<strong>持有第 ' + idx + ' 年</strong><br/>• 含增益总资产：<strong>' + formatCurrency(tv) + '</strong><br/>• 基础内生价值：' + formatCurrency(baseS[idx])
+          });
+        });
+        ctx.stroke();
+      }
+
+      function updateSimulatorUI() {
+        var p = state.sim.principal, yrs = state.sim.years, cagr = state.sim.priceCagr;
+        var totalRate = (cagr + (state.sim.drip ? 2.0 : 0)) / 100;
+        var endingValue = p * Math.pow(1 + totalRate, yrs);
+        var moic = endingValue / p;
+        var midYear = Math.max(1, Math.floor(yrs / 2));
+        document.getElementById('simPrincipalLabel').textContent = '$' + Math.round(p).toLocaleString('en-US');
+        document.getElementById('simYearsLabel').textContent = yrs + ' 年';
+        document.getElementById('simCagrLabel').textContent = cagr.toFixed(1) + '%';
+        document.getElementById('simEndingVal').textContent = formatCurrency(endingValue);
+        document.getElementById('simMoicVal').textContent = moic.toFixed(2) + 'x · ' + (totalRate * 100).toFixed(2) + '%';
+        document.getElementById('simNetGainVal').textContent = formatCurrency(endingValue - p);
+        document.getElementById('simMidLabel').textContent = '第 ' + midYear + ' 年中期资产节点';
+        document.getElementById('simMidVal').textContent = formatCurrency(p * Math.pow(1 + totalRate, midYear));
+        var presetBtns = document.querySelectorAll('[data-preset]');
+        for (var i = 0; i < presetBtns.length; i++) {
+          presetBtns[i].classList.toggle('active', presetBtns[i].getAttribute('data-preset') === state.sim.preset);
+        }
+        drawSimChart();
+      }
+
+      function renderAllCharts() {
+        drawCh1Chart();
+        drawRadarChart();
+        drawHorizontalBars();
+        drawEpsComboChart();
+        drawSimChart();
+      }
+
+      function wireTip(id) {
+        var c = document.getElementById(id), tip = document.getElementById('chartTooltip');
+        if (!c || !tip) return;
+        c.addEventListener('mousemove', function (e) {
+          var rect = c.getBoundingClientRect();
+          var x = e.clientX - rect.left, y = e.clientY - rect.top;
+          var regs = hitRegions[id] || [], hit = null;
+          for (var i = 0; i < regs.length; i++) {
+            var r = regs[i];
+            if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) { hit = r; break; }
+          }
+          if (hit) {
+            tip.innerHTML = hit.html;
+            tip.style.display = 'block';
+            tip.style.left = Math.min(window.innerWidth - 295, e.clientX + 14) + 'px';
+            tip.style.top = Math.max(12, e.clientY - 36) + 'px';
+          } else {
+            tip.style.display = 'none';
+          }
+        });
+        c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+      }
+
+      function init() {
+        try {
+          var st = (localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, '');
+          var sl = (localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, '');
+          var sc = JSON.parse(localStorage.getItem(STORAGE_CHECK_KEY) || 'null');
+          if (Array.isArray(sc) && sc.length === 6) state.checks = sc.map(Boolean);
+          applyTheme(st, true);
+          applyLanguage(sl, true);
+        } catch (e) {
+          renderPeerTable();
+          renderChecklist();
+          updateSimulatorUI();
+          renderAllCharts();
+        }
+
+        document.getElementById('langZhBtn').addEventListener('click', function () { applyLanguage('zh', false); });
+        document.getElementById('langEnBtn').addEventListener('click', function () { applyLanguage('en', false); });
+        document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+          applyTheme(state.theme === 'dark' ? 'light' : 'dark', false);
+        });
+        document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+          var tb = e.target.closest('[data-portal-theme]');
+          if (tb) applyTheme(tb.getAttribute('data-portal-theme'), false);
+        });
+        document.getElementById('sideExportBtn').addEventListener('click', function () {
+          var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url; a.download = '谷歌公司 Alphabet Inc. 企业文化与组织架构深度研究报告.html'; a.click();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+          showToast('已导出独立 HTML 研报');
+        });
+        document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+
+        var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+        sbBtn.addEventListener('click', function () {
+          if (window.innerWidth >= 1024) {
+            var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+            if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+            else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+            try { localStorage.setItem('mui_portal_sidebar_collapsed_v1', col ? '0' : '1'); } catch (e) {}
+            setTimeout(renderAllCharts, 60);
+          } else {
+            var open = sb.classList.toggle('open'); bd.classList.toggle('open', open);
+          }
+        });
+        bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+        var hub = document.getElementById('companySubfolderHub');
+        if (hub) {
+          hub.addEventListener('click', function (e) {
+            var pill = e.target.closest('[data-co-cat]');
+            if (pill) {
+              var cat = pill.getAttribute('data-co-cat');
+              var ps = hub.querySelectorAll('[data-co-cat]');
+              for (var i = 0; i < ps.length; i++) ps[i].classList.toggle('active', ps[i] === pill);
+              var its = hub.querySelectorAll('[data-co-item-cat]');
+              for (var j = 0; j < its.length; j++) {
+                its[j].classList.toggle('co-hub-hidden', !(cat === 'ALL' || its[j].getAttribute('data-co-item-cat') === cat));
+              }
+              return;
+            }
+            var item = e.target.closest('.co-hub-item');
+            if (item) {
+              var jp = item.getAttribute('data-suite-jump');
+              var ts = item.getAttribute('data-suite-toast');
+              if (jp) {
+                var el = document.querySelector(jp);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              } else if (ts) showToast(ts);
+            }
+          });
+        }
+
+        document.querySelectorAll('[data-ch1-view]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            state.ch1View = this.getAttribute('data-ch1-view');
+            document.getElementById('ch1TabA').classList.toggle('active', state.ch1View === 'viewA');
+            document.getElementById('ch1TabB').classList.toggle('active', state.ch1View === 'viewB');
+            drawCh1Chart();
+          });
+        });
+
+        document.querySelectorAll('[data-collapse-target]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var p = document.getElementById(this.getAttribute('data-collapse-target'));
+            if (!p) return;
+            var open = p.classList.toggle('open');
+            this.innerHTML = open ? '<span>收起微观执行机制</span> <span>⌃</span>' : '<span>展开微观执行机制</span> <span>⌄</span>';
+          });
+        });
+
+        var pCards = document.querySelectorAll('[data-pillar]');
+        pCards.forEach(function (card) {
+          card.addEventListener('click', function () {
+            var idx = parseInt(this.getAttribute('data-pillar'), 10) || 0;
+            state.activePillar = idx;
+            pCards.forEach(function (c, k) { c.classList.toggle('active', k === idx); });
+            document.getElementById('pillarFocusNote').innerHTML = '<div>' + (state.lang === 'en' ? PILLAR_NOTES_EN : PILLAR_NOTES)[idx] + '</div>';
+            drawRadarChart();
+          });
+        });
+
+        document.querySelectorAll('[data-radar-key]').forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            var k = this.getAttribute('data-radar-key');
+            state.radarSeries[k] = !state.radarSeries[k];
+            if (!state.radarSeries.googl && !state.radarSeries.aapl && !state.radarSeries.msft) state.radarSeries[k] = true;
+            this.classList.toggle('muted', !state.radarSeries[k]);
+            drawRadarChart();
+          });
+        });
+
+        document.querySelectorAll('[data-ch1-series]').forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            var k = this.getAttribute('data-ch1-series');
+            state.ch1Series[k] = !state.ch1Series[k];
+            if (!state.ch1Series.s1 && !state.ch1Series.s2) state.ch1Series[k] = true;
+            this.classList.toggle('muted', !state.ch1Series[k]);
+            drawCh1Chart();
+          });
+        });
+
+        document.querySelectorAll('[data-eps-series]').forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            var k = this.getAttribute('data-eps-series');
+            state.epsSeries[k] = !state.epsSeries[k];
+            if (!state.epsSeries.eps && !state.epsSeries.oci) state.epsSeries[k] = true;
+            this.classList.toggle('muted', !state.epsSeries[k]);
+            drawEpsComboChart();
+          });
+        });
+
+        document.getElementById('peerSearchInput').addEventListener('input', function () {
+          state.peerQuery = this.value;
+          renderPeerTable();
+        });
+        var pfBtns = document.querySelectorAll('[data-peer-filter]');
+        pfBtns.forEach(function (b) {
+          b.addEventListener('click', function () {
+            state.peerFilter = this.getAttribute('data-peer-filter');
+            pfBtns.forEach(function (x) { x.classList.toggle('active', x === b); });
+            renderPeerTable();
+          });
+        });
+
+        var pS = document.getElementById('simPrincipalSlider'), yS = document.getElementById('simYearsSlider'), cS = document.getElementById('simCagrSlider'), dT = document.getElementById('simDripToggle');
+        pS.addEventListener('input', function () { state.sim.principal = parseFloat(this.value) || 10000; state.sim.preset = ''; updateSimulatorUI(); });
+        yS.addEventListener('input', function () { state.sim.years = parseInt(this.value, 10) || 11; state.sim.preset = ''; updateSimulatorUI(); });
+        cS.addEventListener('input', function () { state.sim.priceCagr = parseFloat(this.value) || 0; state.sim.preset = ''; updateSimulatorUI(); });
+        dT.addEventListener('change', function () { state.sim.drip = !!this.checked; updateSimulatorUI(); });
+        document.querySelectorAll('[data-preset]').forEach(function (pb) {
+          pb.addEventListener('click', function () {
+            var k = this.getAttribute('data-preset'), cfg = PRESETS[k];
+            if (!cfg) return;
+            state.sim = { principal: cfg.principal, years: cfg.years, priceCagr: cfg.priceCagr, drip: cfg.drip, preset: k };
+            pS.value = cfg.principal; yS.value = cfg.years; cS.value = cfg.priceCagr; dT.checked = cfg.drip;
+            updateSimulatorUI();
+          });
+        });
+
+        document.getElementById('checklistContainer').addEventListener('change', function (e) {
+          var inp = e.target.closest('[data-check-input]');
+          if (!inp) return;
+          state.checks[parseInt(inp.getAttribute('data-check-input'), 10)] = !!inp.checked;
+          try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+          renderChecklist();
+        });
+        document.getElementById('checkAllBtn').addEventListener('click', function () {
+          state.checks = [true, true, true, true, true, true];
+          try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+          renderChecklist();
+          showToast('已勾选全部 6 项核查指标');
+        });
+        document.getElementById('resetCheckBtn').addEventListener('click', function () {
+          state.checks = [true, true, true, false, false, false];
+          try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+          renderChecklist();
+          showToast('核查清单已恢复默认基准');
+        });
+
+        var jumpInput = document.getElementById('quickJumpInput'), jumpPop = document.getElementById('quickJumpPopover');
+        function renderJump(q) {
+          var kw = (q || '').trim().toLowerCase();
+          var list = QUICK_JUMP_INDEX.filter(function (it) { return !kw || (it.title + ' ' + it.sub).toLowerCase().indexOf(kw) !== -1; });
+          jumpPop.innerHTML = list.map(function (it) {
+            return '<button type="button" class="quick-jump-item" data-jump-sec="' + it.sec + '"><span class="quick-jump-item-title">' + escapeHtml(it.title) + '</span><span class="quick-jump-item-sub">' + escapeHtml(it.sub) + '</span></button>';
+          }).join('');
+          jumpPop.classList.toggle('open', list.length > 0);
+        }
+        jumpInput.addEventListener('focus', function () { renderJump(jumpInput.value); });
+        jumpInput.addEventListener('input', function () { renderJump(jumpInput.value); });
+        jumpPop.addEventListener('click', function (e) {
+          var b = e.target.closest('[data-jump-sec]');
+          if (!b) return;
+          var sec = document.getElementById(b.getAttribute('data-jump-sec'));
+          if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+          jumpPop.classList.remove('open');
+        });
+        document.addEventListener('click', function (e) { if (!e.target.closest('.quick-search-wrap')) jumpPop.classList.remove('open'); });
+        document.addEventListener('keydown', function (e) { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); jumpInput.focus(); } });
+
+        window.addEventListener('scroll', function () {
+          var maxS = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+          document.getElementById('readingProgressBar').style.width = Math.min(100, (window.scrollY / maxS) * 100) + '%';
+        }, { passive: true });
+
+        ['chartCh1', 'chartRadar', 'chartBars', 'chartEps', 'chartSim'].forEach(wireTip);
+        var rt = null;
+        window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(renderAllCharts, 80); });
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+</body>
+</html>

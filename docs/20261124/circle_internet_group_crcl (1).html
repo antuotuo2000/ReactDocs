@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="Circle Internet Group, Inc. (NYSE: CRCL) 商业模式全景架构拆解：正门合规数字美元铸币入口、$739亿全额储备国债浮存金、18.1%平台直存剪刀差、CPN跨境清算网与Arc企业级公链第二增长曲线（基于 FY2025 10-K 与 Q3 2026 最新财报）。" />
+ <title>Circle Internet Group (CRCL) 商业模式架构深度拆解 | 数据中心</title>
+ 
+ <style>
+ /* ==========================================================================
+ MUI Official Branding Design System (https://mui.com/)
+ Light Mode First (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16) + Sapphire (#0073E6)
+ Circle (NYSE: CRCL) Business Model Architecture: Command Deck · 5-Node Pipeline · Dual Workbenches
+ ========================================================================== */
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.90);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.68);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.86);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.44);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.16);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: #FFFFFF;
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.90);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas);
+ background-image: var(--hero-glow);
+ background-attachment: fixed;
+ color: var(--text-primary);
+ line-height: 1.65;
+ overflow-x: hidden;
+ min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar {
+ position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+ background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); z-index: 1300; transition: width 0.08s linear;
+ }
+ #chartTooltip {
+ position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+ padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+ box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+ }
+ #muiSnackbar {
+ position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+ z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+ border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ /* AppBar */
+ .mui-appbar {
+ position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+ }
+ .mui-appbar-inner {
+ max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+ display: flex; align-items: center; justify-content: space-between; gap: 12px;
+ }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn {
+ display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+ border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+ color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+ }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .brand-monogram {
+ width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #0099FF 55%, #16A34A 100%);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.30);
+ color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+ .breadcrumbs .crumb-link { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+ .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 220px; flex-shrink: 0; }
+ .quick-search-input {
+ width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+ }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd {
+ position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+ padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+ }
+ .quick-jump-popover {
+ position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+ border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+ }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item {
+ display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+ border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+ }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch {
+ display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+ }
+ .mui-lang-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+ font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+ }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+ .mui-chip {
+ display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 10px; border-radius: 999px;
+ font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+ }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ .mui-segmented {
+ display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+ }
+ .mui-seg-btn {
+ border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+ padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+ html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+ /* Layout Shell & Sidebar */
+ .layout-shell {
+ max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+ gap: 26px; padding: 22px 20px 72px; align-items: start;
+ }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+ html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+ .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 4px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+ .mui-nav-link {
+ display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+ font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+ }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+ /* Suite Subfolder Hub */
+ .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+ .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+ .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+ .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+ .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+ .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+ .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+ .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+ .co-hub-item {
+ display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+ }
+ .co-hub-item.co-hub-hidden { display: none; }
+ .co-hub-item:hover { border-color: #3399FF; background: var(--bg-hover); }
+ .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+ .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+ .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+ .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+ .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+ .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+ .portal-reading-tools button { font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+ .portal-reading-tools button:hover, .portal-reading-tools button.active { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-hover); }
+
+ .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+ .drawer-backdrop.open { display: block; }
+ @media (max-width: 1023px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+ .mui-sidebar {
+ position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+ background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+ transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+ }
+ .mui-sidebar.open { transform: translateX(0); }
+ .hide-sm { display: none !important; }
+ .quick-search-wrap { width: 148px; }
+ }
+ @media (max-width: 720px) { .quick-search-wrap { display: none; } }
+
+ /* ==========================================================================
+ DISTINCT BUSINESS MODEL WORKSPACE (M0–M5)
+ ========================================================================== */
+ .bm-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+
+ .bm-command-deck { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: stretch; }
+ @media (max-width: 1080px) { .bm-command-deck { grid-template-columns: minmax(0, 1fr); } }
+
+ .bm-thesis-deck {
+ background-color: var(--bg-paper);
+ border: 1px solid var(--border-subtle);
+ border-radius: 18px;
+ padding: 26px 28px;
+ box-shadow: var(--shadow-card);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+ position: relative; overflow: hidden;
+ }
+ .bm-thesis-deck::after {
+ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+ background: linear-gradient(90deg, #0073E6 0%, #3399FF 55%, #16A34A 100%);
+ }
+ .bm-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+ .bm-display-h1 { font-size: clamp(1.48rem, 2.3vw, 2.08rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 12px; }
+ .bm-gradient-txt {
+ background: linear-gradient(92deg, #0073E6 0%, #0099FF 52%, #15803D 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ html[data-theme="dark"] .bm-gradient-txt {
+ background: linear-gradient(92deg, #66B2FF 0%, #3399FF 50%, #66BB6A 100%);
+ -webkit-background-clip: text; background-clip: text; color: transparent;
+ }
+ .bm-lead { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.74; }
+ .bm-lead strong { color: var(--text-primary); }
+
+ .bm-lens-panel {
+ background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px;
+ display: flex; flex-direction: column; gap: 10px;
+ }
+ .bm-lens-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .bm-equation-bar {
+ padding: 9px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border);
+ font-size: 0.80rem; font-weight: 700; color: var(--mui-primary-lighter);
+ }
+ .bm-lens-body { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.62; }
+
+ .bm-telemetry-ledger {
+ background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+ padding: 20px 22px; box-shadow: var(--shadow-card);
+ display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+ }
+ .bm-ledger-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--divider); }
+ .bm-ledger-title { font-size: 0.86rem; font-weight: 800; display: flex; align-items: center; gap: 7px; }
+ .bm-pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18); }
+ .bm-telemetry-rows { display: flex; flex-direction: column; gap: 10px; }
+ .bm-tel-item {
+ padding: 10px 12px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+ transition: transform 0.15s ease, border-color 0.15s ease;
+ }
+ .bm-tel-item:hover { border-color: var(--mui-primary-border); transform: translateX(2px); }
+ .bm-tel-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+ .bm-tel-lbl { font-size: 0.76rem; font-weight: 700; color: var(--text-secondary); }
+ .bm-tel-val { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); }
+ .bm-tel-bar-track { height: 5px; border-radius: 999px; background: var(--border-subtle); margin: 6px 0 5px; overflow: hidden; display: flex; }
+ .bm-tel-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #0073E6, #3399FF); }
+ .bm-tel-sub { display: flex; justify-content: space-between; font-size: 0.71rem; color: var(--text-muted); }
+
+ .bm-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+ .bm-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+ .bm-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+ html[data-theme="dark"] .bm-kicker { color: var(--mui-primary-light); }
+ .bm-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+ .bm-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+ /* 5-Node Pipeline */
+ .bm-pipeline-track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+ @media (max-width: 1120px) { .bm-pipeline-track { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+ @media (max-width: 680px) { .bm-pipeline-track { grid-template-columns: minmax(0, 1fr); } }
+ .bm-node-btn {
+ text-align: left; padding: 13px 14px; border-radius: 13px; border: 1px solid var(--border-subtle);
+ background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit;
+ transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; gap: 6px;
+ }
+ .bm-node-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateY(-2px); }
+ .bm-node-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 6px 16px rgba(0, 115, 230, 0.14); }
+ .bm-node-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+ .bm-node-step { width: 28px; height: 28px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .bm-node-btn.active .bm-node-step { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; border-color: #0059B2; }
+ .bm-node-tag { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+ .bm-node-title { font-size: 0.85rem; font-weight: 800; line-height: 1.3; }
+ .bm-node-kpi { font-size: 0.74rem; font-weight: 700; color: var(--mui-primary-lighter); }
+
+ .bm-node-inspector {
+ border-radius: 15px; border: 1px solid var(--border-subtle); background-color: var(--bg-subtle);
+ padding: 20px 22px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: center;
+ }
+ @media (max-width: 900px) { .bm-node-inspector { grid-template-columns: minmax(0, 1fr); } }
+ .bm-ins-prose h3 { font-size: 1.05rem; font-weight: 800; margin: 8px 0; color: var(--text-primary); }
+ .bm-ins-prose p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.72; }
+ .bm-ins-formula { margin-top: 12px; padding: 9px 12px; border-radius: 9px; background: var(--bg-paper-solid); border-left: 3px solid var(--mui-primary-main); font-size: 0.79rem; color: var(--text-primary); font-weight: 600; }
+ .bm-ins-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .bm-ins-card { padding: 12px 13px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .bm-ins-card b { display: block; font-size: 1.10rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .bm-ins-card span { font-size: 0.73rem; color: var(--text-muted); display: block; margin-top: 2px; }
+
+ /* Asymmetric Grids */
+ .bm-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+ .bm-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+ .bm-split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+ @media (max-width: 1040px) { .bm-split-75, .bm-split-57, .bm-split-66 { grid-template-columns: minmax(0, 1fr); } }
+
+ .bm-subpanel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+ .bm-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .bm-subhead h3 { font-size: 1.02rem; font-weight: 800; color: var(--text-primary); }
+ .bm-canvas-box { position: relative; width: 100%; height: 310px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); padding: 10px; }
+ .bm-canvas-box canvas { width: 100%; height: 100%; display: block; }
+ .bm-chart-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; }
+
+ .bm-tier-list { display: flex; flex-direction: column; gap: 9px; }
+ .bm-tier-card { padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); transition: all 0.15s ease; }
+ .bm-tier-card:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+ .bm-tier-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+ .bm-tier-name { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); }
+ .bm-tier-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .bm-cohort-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .bm-cohort-stat { padding: 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .bm-cohort-stat .lbl { font-size: 0.72rem; color: var(--text-muted); }
+ .bm-cohort-stat .val { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 2px 0; }
+ .bm-cohort-stat .delta { font-size: 0.71rem; font-weight: 700; color: var(--mui-success-text); }
+ .bm-ratchet-note { padding: 12px 14px; border-radius: 11px; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); font-size: 0.80rem; color: var(--text-secondary); line-height: 1.6; }
+
+ .bm-sim-sliders { display: flex; flex-direction: column; gap: 11px; }
+ .bm-slider-row { display: flex; flex-direction: column; gap: 4px; }
+ .bm-slider-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+ .bm-slider-lbl b { color: var(--mui-primary-lighter); }
+ .bm-slider-row input[type="range"] { width: 100%; accent-color: #0073E6; height: 6px; cursor: pointer; }
+ .bm-sim-outputs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+ @media (max-width: 640px) { .bm-sim-outputs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+ .bm-sim-out { padding: 10px 8px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-align: center; }
+ .bm-sim-out b { display: block; font-size: 1.01rem; font-weight: 800; color: var(--mui-primary-lighter); }
+ .bm-sim-out span { font-size: 0.69rem; color: var(--text-muted); }
+
+ .bm-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-bottom: 18px; }
+ .bm-table { width: 100%; border-collapse: collapse; font-size: 0.81rem; min-width: 780px; background: var(--bg-paper-solid); }
+ .bm-table th { text-align: left; padding: 11px 13px; background: var(--bg-subtle); color: var(--text-muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-subtle); }
+ .bm-table td { padding: 11px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: middle; }
+ .bm-table tr:last-child td { border-bottom: none; }
+ .bm-table tr.is-circle td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+ .bm-table tr:hover td { background: var(--bg-hover); }
+
+ .bm-stress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+ @media (max-width: 960px) { .bm-stress-grid { grid-template-columns: minmax(0, 1fr); } }
+ .bm-stress-card { padding: 16px; border-radius: 13px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 10px; }
+ .bm-stress-card h4 { font-size: 0.89rem; font-weight: 800; color: var(--text-primary); margin-top: 6px; }
+ .bm-stress-card p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+ .bm-check-label { display: flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 700; color: var(--mui-primary-lighter); cursor: pointer; padding-top: 8px; border-top: 1px dashed var(--border-default); }
+ .bm-check-label input { accent-color: #0073E6; width: 15px; height: 15px; cursor: pointer; }
+
+ .bm-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+ .bm-source-item { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease; }
+ .bm-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+ .bm-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+ .bm-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+ @media print {
+ .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+ .layout-shell { display: block !important; padding: 0 !important; }
+ }
+ </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body id="top">
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <!-- Sticky Frosted Glass MUI AppBar -->
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">CRCL</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航">
+ <a class="crumb-link hide-sm" href="../index.html">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6.007 6.007 0 0 1-6 6z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </a>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="Circle (CRCL) 商业模式架构拆解" data-i18n-en="Circle (CRCL) Business Model Architecture">Circle (CRCL) 商业模式架构拆解</span>
+ </nav>
+ <span class="mui-chip mui-chip-primary mono hide-sm">NYSE: CRCL</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">TTM $3.03B · RLDC 52.4%</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索飞轮或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+ </span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <!-- Left MUI Documentation Sidebar -->
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="商业模式模块与套件导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-primary mono">CRCL · BUSINESS MODEL</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="Circle 商业模式架构图谱" data-i18n-en="Circle Business Model Blueprint">Circle 商业模式架构图谱</div>
+ <p class="sidebar-subtitle" data-i18n-zh="合规美元铸币入口 × $739亿国债储备生息 × 18.1%平台直存提留存 × CPN/Arc 非利差清算飞轮" data-i18n-en="Regulated Mint Funnel × $73.9B Treasury Reserve Float × 18.1% Platform Custody × CPN/Arc Rails">合规美元铸币入口 × $739亿国债储备生息 × 18.1%平台直存提留存 × CPN/Arc 非利差清算飞轮</p>
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="商业原型" data-i18n-en="Archetype">商业原型</span>
+ <span class="sidebar-mini-val mono" data-i18n-zh="国债浮存金 + 链上清算网" data-i18n-en="Treasury Float + Rails">国债浮存金 + 链上清算网</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="Q3'26 RLDC / EBITDA率" data-i18n-en="Q3'26 RLDC / EBITDA">Q3'26 RLDC / EBITDA率</span>
+ <span class="sidebar-mini-val mono">52.4% · 70.0%</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="链上交易份额 / 有息债" data-i18n-en="Tx Share / Total Debt">链上交易份额 / 有息债</span>
+ <span class="sidebar-mini-val mono">79.0% · $0 Debt</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="套件导航与架构目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261124">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261124 · 24/53</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="circle_2026_2032.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="circle_internet_group_crcl.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (53)" data-i18n-en="All (53)">全部 (53)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (53)" data-i18n-en="Company (53)">公司深度 (53)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="Meta未来十年（2026–2032）战略图谱.html" title="Meta META 2026–2032 战略与增长曲线"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta META 2026–2032 战略与增长曲线" data-i18n-en="Meta 2026–2032 &amp;">Meta META 2026–2032 战略与增长曲线</span><span class="co-hub-meta mono">Meta未来十年（2026–2032）战略图谱.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">alphabet_inc_googl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">alphabet_inc_googl (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">alphabet_inc_googl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">alphabet_inc_googl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amazon_com_amzn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amazon_com_amzn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">amazon_com_amzn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">amazon_com_amzn4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic.html" title="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动" data-i18n-en="Anthropic Corporate Culture &amp;:, &amp;">Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动</span><span class="co-hub-meta mono">anthropic.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_2026_2032.html" title="Anthropic 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Anthropic 2026–2032 &amp;">Anthropic 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">anthropic_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant (1).html" title="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告" data-i18n-en="Anthropic, PBC (ANT) Corporate Culture &amp; Org Architecture Deep Dive">Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">anthropic_pbc_ant (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant.html" title="Anthropic, PBC (ANT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 商业模式架构深度拆解" data-i18n-en="Anthropic, PBC (ANT) Business Model Deep DiveBreakdown">Anthropic, PBC (ANT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">anthropic_pbc_ant.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl (1).html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple_inc_aapl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple_inc_aapl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl2.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple_inc_aapl2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl3.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple_inc_aapl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_2026_2032.html" title="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Arm Holdings Arm 2026–2032 &amp;">安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">arm_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (1).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp; Org Architecture Deep Dive">安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">arm_holdings_arm (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (2).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp;">安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">arm_holdings_arm (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm.html" title="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解" data-i18n-en="Arm Holdings (ARM) Business Model Deep DiveBreakdown">安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解</span><span class="co-hub-meta mono">arm_holdings_arm.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle.html" title="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理" data-i18n-en="Circle Corporate Culture &amp;:, &amp;">Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理</span><span class="co-hub-meta mono">circle.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_2026_2032.html" title="Circle 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Circle 2026–2032 &amp;">Circle 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">circle_2026_2032.html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="circle_internet_group_crcl (1).html" title="Circle Internet Group (CRCL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 商业模式架构深度拆解" data-i18n-en="Circle Internet Group (CRCL) Business Model Deep DiveBreakdown">Circle Internet Group (CRCL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">circle_internet_group_crcl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl.html" title="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告" data-i18n-en="Circle Internet Group (CRCL) Corporate Culture &amp; Org Architecture Deep Dive">Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">circle_internet_group_crcl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta.html" title="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力" data-i18n-en="MetaCorporate Culture &amp;: People, &amp; Compute">Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力</span><span class="co-hub-meta mono">meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_2026_2032.html" title="Meta公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Meta 2026–2032 &amp;">Meta公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">meta_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta (1).html" title="Meta公司 Meta Platforms (META) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 商业模式架构深度拆解" data-i18n-en="Meta Platforms (META) Business Model Deep DiveBreakdown">Meta公司 Meta Platforms (META) 商业模式架构深度拆解</span><span class="co-hub-meta mono">meta_meta_platforms_meta (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta.html" title="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告" data-i18n-en="Meta Platforms (META) Corporate Culture &amp; Org Architecture Deep Dive">Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">meta_meta_platforms_meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">microsoft_msft (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">microsoft_msft.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">microsoft_msft2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">microsoft_msft3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx (1).html" title="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解" data-i18n-en="Netflix (NFLX) Business Model Deep DiveBreakdown">奈飞公司 Netflix (NFLX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">netflix_nflx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx.html" title="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告" data-i18n-en="Netflix (NFLX) Corporate Culture &amp; Org Architecture Deep Dive">奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">netflix_nflx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx2.html" title="奈飞公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Netflix 2026–2032 &amp;">奈飞公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">netflix_nflx2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx3.html" title="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承" data-i18n-en="NetflixCorporate Culture &amp;:, &amp;">奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承</span><span class="co-hub-meta mono">netflix_nflx3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_2032.html" title="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="On Holding AG 2026–2032 &amp;">昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">on_holding_ag_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_20323.html" title="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治" data-i18n-en="On HoldingCorporate Culture &amp;:, &amp; People">昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治</span><span class="co-hub-meta mono">on_holding_ag_2026_20323.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon (1).html" title="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告" data-i18n-en="On Holding AG (ONON) Corporate Culture &amp; Org Architecture Deep Dive">昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">on_holding_ag_onon (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon.html" title="昂跑 On Holding AG (ONON) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 商业模式架构深度拆解" data-i18n-en="On Holding AG (ONON) Business Model Deep DiveBreakdown">昂跑 On Holding AG (ONON) 商业模式架构深度拆解</span><span class="co-hub-meta mono">on_holding_ag_onon.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">rocket_lab (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">rocket_lab.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">rocket_lab_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">45</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">rocket_lab_rklb.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex.html" title="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承"><span class="co-hub-ticker mono">46</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承" data-i18n-en="SpaceX Corporate Culture &amp;:, &amp;">SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承</span><span class="co-hub-meta mono">spacex.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_2026_2032.html" title="SpaceX 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">47</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="SpaceX 2026–2032 &amp;">SpaceX 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">spacex_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx (1).html" title="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">48</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解" data-i18n-en="SpaceX (NASDAQ: SPCX) Business Model Deep DiveBreakdown">SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">spacex_nasdaq_spcx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx.html" title="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">49</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX (NASDAQ: SPCX) Corporate Culture &amp; Org Architecture Deep Dive">SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">spacex_nasdaq_spcx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla (1).html" title="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">50</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告" data-i18n-en="Tesla, Inc. (TSLA) Corporate Culture &amp; Org Architecture Deep Dive">特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">tesla_inc_tsla (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla.html" title="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">51</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解" data-i18n-en="Tesla, Inc. (TSLA) Business Model Deep DiveBreakdown">特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">tesla_inc_tsla.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla2.html" title="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站"><span class="co-hub-ticker mono">52</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站" data-i18n-en="Tesla 2026–2032 &amp; AI">特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站</span><span class="co-hub-meta mono">tesla_inc_tsla2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla3.html" title="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军"><span class="co-hub-ticker mono">53</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军" data-i18n-en="TeslaCorporate Culture &amp;: First Principles, &amp; COO">特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军</span><span class="co-hub-meta mono">tesla_inc_tsla3.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-section-label" data-i18n-zh="商业架构工作台 (M0–M5)" data-i18n-en="Workbench Modules (M0–M5)">商业架构工作台 (M0–M5)</div>
+ <ul class="mui-nav-list" id="tocList">
+ <li><a href="#mod-deck" class="mui-nav-link active"><span class="nav-idx mono">M0</span><span data-i18n-zh="双栏指挥舱与核心公式" data-i18n-en="Command Deck &amp; Formula">双栏指挥舱与核心公式</span></a></li>
+ <li><a href="#mod-pipeline" class="mui-nav-link"><span class="nav-idx mono">M1</span><span data-i18n-zh="五阶价值链传导沙盘" data-i18n-en="5-Node Value Pipeline">五阶价值链传导沙盘</span></a></li>
+ <li><a href="#mod-profit-pool" class="mui-nav-link"><span class="nav-idx mono">M2</span><span data-i18n-zh="利润池瀑布流与收入拆解" data-i18n-en="RLDC Waterfall &amp; Stack">利润池瀑布流与收入拆解</span></a></li>
+ <li><a href="#mod-cohort" class="mui-nav-link"><span class="nav-idx mono">M3</span><span data-i18n-zh="渠道分润剪刀差与单币经济" data-i18n-en="Channel Custody Economics">渠道分润剪刀差与单币经济</span></a></li>
+ <li><a href="#mod-capital" class="mui-nav-link"><span class="nav-idx mono">M4</span><span data-i18n-zh="隔离储备安全垫与复利推演" data-i18n-en="Reserve Safety &amp; 5Y Lab">隔离储备安全垫与复利推演</span></a></li>
+ <li><a href="#mod-matrix" class="mui-nav-link"><span class="nav-idx mono">M5</span><span data-i18n-zh="全球支付矩阵与三大压测" data-i18n-en="Peer Matrix &amp; Stress Audit">全球支付矩阵与三大压测</span></a></li>
+ </ul>
+ </nav>
+
+ <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+ <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance &amp; Export">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="外观模式">
+ <button type="button" id="sideLightBtn" data-portal-theme="light" class="active" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+ <button type="button" id="sideDarkBtn" data-portal-theme="dark" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" id="exportHtmlBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+ <button type="button" id="printPageBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+ </div>
+ </div>
+ </aside>
+
+ <!-- Main Non-Linear Workspace -->
+ <main class="bm-workspace">
+
+ <!-- MODULE 0: ASYMMETRIC COMMAND DECK -->
+ <section id="mod-deck" class="bm-command-deck">
+ <div class="bm-thesis-deck">
+ <div>
+ <div class="bm-badge-row">
+ <span class="mui-chip mui-chip-primary mono" data-i18n-zh="商业范式：零付息国债浮存金 × 79%链上结算垄断清算网" data-i18n-en="ARCHETYPE: Zero-Interest Treasury Float × 79% Onchain Settlement Network">商业范式：零付息国债浮存金 × 79%链上结算垄断清算网</span>
+ <span class="mui-chip mui-chip-success mono">FY2025 10-K &amp; Q3 2026 口径</span>
+ <span class="mui-chip mui-chip-violet mono">净现金 $2.72B · 零有息负债</span>
+ </div>
+
+ <h1 class="bm-display-h1" data-i18n-zh="Circle 商业模式解构：<span class='bm-gradient-txt'>以正门合规铸就 $739亿 数字美元底座，从“国债利差分成”跃迁“全栈互联网金融 OS”</span>" data-i18n-en="Deconstructing Circle's Business Model: <span class='bm-gradient-txt'>$73.9B Regulated Dollar Float Transitioning into the Internet's Full-Stack Economic OS</span>">
+ Circle 商业模式解构：<span class="bm-gradient-txt">以正门合规铸就 $739亿 数字美元底座，从“国债利差分成”跃迁“全栈互联网金融 OS”</span>
+ </h1>
+
+ <p class="bm-lead">
+ 华尔街常将 <strong>Circle Internet Group (NYSE: CRCL)</strong> 简单简化为一只“押注美联储短期利率的货币基金影子股”，但其真实商业架构正经历深刻的<strong>三阶范式跃迁</strong>：第一阶通过美国 GENIUS 法案、OCC 联邦国民信托银行有条件牌照及欧盟 MiCA 构筑正门合规壁垒，吸纳全球 <strong>$739亿 USDC 零息法币浮存金</strong>，其中约 88% 配置于贝莱德管理的 <strong>Circle Reserve Fund</strong> 赚取国债无风险收益（FY2025 总收入 <strong>$27.47亿，+64% YoY</strong>；TTM 达 <strong>$30.31亿</strong>）
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/final_circlereportsfourt.htm" target="_blank" rel="noopener noreferrer">SEC FY25 8-K ↗</a>；第二阶加速做大 <strong>Circle Platform 机构直存规模（Q3'26 达 $139亿、日均权重升至 18.1%，+462bps）</strong>，稀释第三方交易所约 60% 分润侵蚀
+ <a class="cite-link" href="https://research.artemis.ai/p/circle-internet-group-crcl" target="_blank" rel="noopener noreferrer">Artemis 分润拆解 ↗</a>；第三阶依托单季 <strong>$13.9万亿 链上结算量（占全球稳定币交易量 79%）</strong>，推出年化 TPV 飙升超 15 倍至 <strong>$413亿 的 Circle Payments Network (CPN)</strong> 与 <strong>Arc 企业级 Layer-1 公链主网</strong>，推动 Q3'26 扣除分润后净留存利润率（RLDC Margin）跳升至 <strong>52.4%</strong>、经调整 EBITDA 达 <strong>$3.17亿（70% 利润率）</strong>
+ <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3 2026 官方财报 ↗</a>。
+ </p>
+ </div>
+
+ <!-- Interactive 3-Lens Business Formula Switcher -->
+ <div class="bm-lens-panel">
+ <div class="bm-lens-head">
+ <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换商业本质透镜：" data-i18n-en="SWITCH ECONOMIC LENS:">切换商业本质透镜：</span>
+ <div class="mui-segmented" id="lensTabs">
+ <button type="button" class="mui-seg-btn active" data-lens="0" data-i18n-zh="① 零息国债浮存金漏斗" data-i18n-en="① Zero-Cost Treasury Float">① 零息国债浮存金漏斗</button>
+ <button type="button" class="mui-seg-btn" data-lens="1" data-i18n-zh="② 平台直存分润剪刀差" data-i18n-en="② Custody Margin Scissors">② 平台直存分润剪刀差</button>
+ <button type="button" class="mui-seg-btn" data-lens="2" data-i18n-zh="③ 利率免疫清算收费站" data-i18n-en="③ Rate-Free Settlement Rails">③ 利率免疫清算收费站</button>
+ </div>
+ </div>
+ <div class="bm-equation-bar mono" id="lensFormula">
+ 年度净留存收益 (RLDC) = [日均 USDC 流通量 ($73.3B) × 储备国债收益率 (3.54%) - 渠道分润成本] + 非利差网络与生态收入 ($207.3M/季)
+ </div>
+ <div class="bm-lens-body" id="lensBody">
+ 根据美国《GENIUS 法案》与欧盟 MiCA 法规，支付型稳定币<strong>法定禁止向持币散户直接派发利息</strong>。这使得 Circle 如同伯克希尔的保险浮存金机器：全球企业与用户在 30+ 条公链上沉淀的 $739 亿数字美元无需支付存款利息，100% 隔离储备所产生的短期美债收益由 Circle 与核心分发伙伴共享。
+ </div>
+ </div>
+ </div>
+
+ <!-- Right: Live Financial Telemetry Ledger -->
+ <aside class="bm-telemetry-ledger" aria-label="FY2025 & Q3 2026 核心经济遥测">
+ <div class="bm-ledger-head">
+ <div class="bm-ledger-title">
+ <span class="bm-pulse-dot"></span>
+ <span data-i18n-zh="Q3 2026 &amp; TTM 核心经济遥测账本" data-i18n-en="Q3 2026 &amp; TTM Financial Telemetry">Q3 2026 &amp; TTM 核心经济遥测账本</span>
+ </div>
+ <a class="cite-link mono" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3'26 10-Q/8-K ↗</a>
+ </div>
+
+ <div class="bm-telemetry-rows">
+ <div class="bm-tel-item">
+ <div class="bm-tel-top">
+ <span class="bm-tel-lbl" data-i18n-zh="TTM 总营收与储备收入 (FY25 $2.75B)" data-i18n-en="TTM Total Revenue &amp; Reserve Income">TTM 总营收与储备收入 (FY25 $2.75B)</span>
+ <span class="bm-tel-val mono">$3.03B <small style="font-size:0.74rem;color:var(--mui-success-text);">Q3 +17%</small></span>
+ </div>
+ <div class="bm-tel-bar-track">
+ <div class="bm-tel-bar-fill" style="width:76%;"></div>
+ <div style="width:24%;background:#16A34A;"></div>
+ </div>
+ <div class="bm-tel-sub mono"><span>Q3'26 Reserve $657.6M</span><span>Q3'26 Other $207.3M (+627%)</span></div>
+ </div>
+
+ <div class="bm-tel-item">
+ <div class="bm-tel-top">
+ <span class="bm-tel-lbl" data-i18n-zh="Q3'26 扣除分润净收入 (RLDC 利润率)" data-i18n-en="Q3'26 RLDC &amp; Net Retention Margin">Q3'26 扣除分润净收入 (RLDC 利润率)</span>
+ <span class="bm-tel-val mono">$453.3M <small style="font-size:0.74rem;color:var(--mui-success-text);">52.4%</small></span>
+ </div>
+ <div class="bm-tel-bar-track">
+ <div class="bm-tel-bar-fill" style="width:52.4%;background:linear-gradient(90deg,#16A34A,#22C55E);"></div>
+ <div style="width:47.6%;background:rgba(148,163,184,0.35);"></div>
+ </div>
+ <div class="bm-tel-sub mono"><span>RLDC +55% YoY (+1,291bps)</span><span>分润成本 $411.6M (-8% YoY)</span></div>
+ </div>
+
+ <div class="bm-tel-item">
+ <div class="bm-tel-top">
+ <span class="bm-tel-lbl" data-i18n-zh="Q3'26 经调整 EBITDA (占 RLDC 70%)" data-i18n-en="Q3'26 Adjusted EBITDA (70% of RLDC)">Q3'26 经调整 EBITDA (占 RLDC 70%)</span>
+ <span class="bm-tel-val mono">$316.7M <small style="font-size:0.74rem;color:var(--mui-success-text);">+85% YoY</small></span>
+ </div>
+ <div class="bm-tel-bar-track">
+ <div class="bm-tel-bar-fill" style="width:70%;"></div>
+ </div>
+ <div class="bm-tel-sub mono"><span>GAAP 净利 $226.0M ($0.84 EPS)</span><span>TTM Adj. EBITDA $787.5M</span></div>
+ </div>
+
+ <div class="bm-tel-item">
+ <div class="bm-tel-top">
+ <span class="bm-tel-lbl" data-i18n-zh="USDC 流通盘 × Q3 链上结算交易额" data-i18n-en="USDC Circulation × Q3 Onchain Volume">USDC 流通盘 × Q3 链上结算交易额</span>
+ <span class="bm-tel-val mono">$73.9B / $13.9T</span>
+ </div>
+ <div class="bm-tel-bar-track">
+ <div class="bm-tel-bar-fill" style="width:79%;"></div>
+ </div>
+ <div class="bm-tel-sub mono"><span>占全球稳定币交易量 79%</span><span>平台直存 $13.9B (18.1%)</span></div>
+ </div>
+ </div>
+ </aside>
+ </section>
+
+ <!-- MODULE 1: HORIZONTAL 5-NODE VALUE-CHAIN PIPELINE -->
+ <section id="mod-pipeline" class="bm-panel">
+ <div class="bm-panel-head">
+ <div>
+ <span class="bm-kicker mono">MODULE 01 · END-TO-END DIGITAL DOLLAR VALUE CAPTURE</span>
+ <h2 class="bm-h2" data-i18n-zh="五阶商业价值传导沙盘：从全球法币合规铸币到互联网经济 OS 复利" data-i18n-en="5-Node Value-Chain Pipeline: From Regulated Fiat Minting to Economic OS Compounding">五阶商业价值传导沙盘：从全球法币合规铸币到互联网经济 OS 复利</h2>
+ <p class="bm-head-desc" data-i18n-zh="点击下方任一价值链节点，拆解 Circle 在该环节的牌照护城河、分润博弈结构与核心量化指标。" data-i18n-en="Select any node in the horizontal value chain to inspect licensing moats, revenue-share mechanics, and KPIs.">点击下方任一价值链节点，拆解 Circle 在该环节的牌照护城河、分润博弈结构与核心量化指标。</p>
+ </div>
+ <span class="mui-chip mui-chip-primary mono" data-i18n-zh="点击节点交互拆解 (01 → 05)" data-i18n-en="Interactive 5-Stage Flow">点击节点交互拆解 (01 → 05)</span>
+ </div>
+
+ <div class="bm-pipeline-track" id="pipelineTrack">
+ <button type="button" class="bm-node-btn active" data-node="0">
+ <div class="bm-node-top"><span class="bm-node-step mono">01</span><span class="bm-node-tag mono">MINT GATEWAY</span></div>
+ <div class="bm-node-title" data-i18n-zh="全球牌照矩阵与 Circle Mint" data-i18n-en="Global Licenses &amp; Circle Mint">全球牌照矩阵与 Circle Mint</div>
+ <div class="bm-node-kpi mono">185+国电汇 · Q3铸赎各 $104B</div>
+ </button>
+
+ <button type="button" class="bm-node-btn" data-node="1">
+ <div class="bm-node-top"><span class="bm-node-step mono">02</span><span class="bm-node-tag mono">RESERVE FLOAT</span></div>
+ <div class="bm-node-title" data-i18n-zh="贝莱德 2a-7 国债储备生息池" data-i18n-en="BlackRock 2a-7 Reserve Engine">贝莱德 2a-7 国债储备生息池</div>
+ <div class="bm-node-kpi mono">$73.6B 隔离储备 · 88% 国债基金</div>
+ </button>
+
+ <button type="button" class="bm-node-btn" data-node="2">
+ <div class="bm-node-top"><span class="bm-node-step mono">03</span><span class="bm-node-tag mono">CUSTODY SPLIT</span></div>
+ <div class="bm-node-title" data-i18n-zh="渠道分润与平台直存重构" data-i18n-en="Distribution vs Platform Custody">渠道分润与平台直存重构</div>
+ <div class="bm-node-kpi mono">直存 18.1% (+462bps) 提留存</div>
+ </button>
+
+ <button type="button" class="bm-node-btn" data-node="3">
+ <div class="bm-node-top"><span class="bm-node-step mono">04</span><span class="bm-node-tag mono">PAYMENT RAILS</span></div>
+ <div class="bm-node-title" data-i18n-zh="CPN 跨境清算与 CCTP 全链桥" data-i18n-en="CPN Cross-Border &amp; CCTP">CPN 跨境清算与 CCTP 全链桥</div>
+ <div class="bm-node-kpi mono">CPN $41.3B TPV (+15x YoY)</div>
+ </button>
+
+ <button type="button" class="bm-node-btn" data-node="4">
+ <div class="bm-node-top"><span class="bm-node-step mono">05</span><span class="bm-node-tag mono">ARC ECONOMIC OS</span></div>
+ <div class="bm-node-title" data-i18n-zh="Arc 公链与高经营杠杆复利" data-i18n-en="Arc Mainnet &amp; Operating Leverage">Arc 公链与高经营杠杆复利</div>
+ <div class="bm-node-kpi mono">Q3 Adj. EBITDA 率高达 70%</div>
+ </button>
+ </div>
+
+ <div class="bm-node-inspector" id="nodeInspector">
+ <div class="bm-ins-prose">
+ <span class="mui-chip mui-chip-primary mono" id="nodeBadge">NODE 01 · REGULATED FIAT ON/OFF-RAMP GATEWAY</span>
+ <h3 id="nodeTitle">正门监管护城河（GENIUS 法案 + OCC 信托银行 + MiCA）：全球机构法币上链唯一首选通道</h3>
+ <p id="nodeDesc">
+ 机构客户通过 Circle Mint 账户在 185+ 个国家和地区将美元、欧元实时 1:1 铸造为链上 USDC 与 EURC。依托美国联邦《GENIUS 法案》、OCC 国民信托银行有条件批文、纽约 BitLicense（2015 年首张）及欧盟法国 MiCA 电子货币机构牌照，Circle 自 2018 年以来已累计处理逾 $53.3 万亿美元的传统银行与公链跨轨资金流转。
+ </p>
+ <div class="bm-ins-formula mono" id="nodeFormula">
+ 商业传导：牌照合规垄断 → 零获客补贴吸引银行/PSP/跨国企业直接开立 Circle Mint → Q3'26 单季铸币 $104B、赎回 $104B
+ </div>
+ </div>
+ <div class="bm-ins-kpis" id="nodeKpis">
+ <div class="bm-ins-card"><b class="mono">185+ 国</b><span>支持法币电汇铸造与赎回</span></div>
+ <div class="bm-ins-card"><b class="mono">$53.3T+</b><span>2018 以来累计法币-链上吞吐</span></div>
+ <div class="bm-ins-card"><b class="mono">30+ 公链</b><span>原生发行无需第三方包装桥</span></div>
+ <div class="bm-ins-card"><b class="mono">7.3M 个</b><span>持有 &gt;$10 USDC 活跃有效钱包</span></div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE 2: DUAL-ENGINE PROFIT POOL (7:5 ASYMMETRIC SPLIT) -->
+ <section id="mod-profit-pool" class="bm-split-75">
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 02A · P&amp;L WATERFALL &amp; RLDC SCISSORS</span>
+ <h3 data-i18n-zh="Q3 2026 $8.65亿 损益瀑布流与 5 季度净留存剪刀差" data-i18n-en="Q3 2026 $865M P&amp;L Waterfall &amp; 5-Quarter RLDC Scissors">Q3 2026 $8.65亿 损益瀑布流与 5 季度净留存剪刀差</h3>
+ </div>
+ <div class="mui-segmented" id="pChartTabs">
+ <button type="button" class="mui-seg-btn active" data-pview="waterfall" data-i18n-zh="Q3'26 营收→EBITDA 瀑布" data-i18n-en="Q3'26 Rev → EBITDA">Q3'26 营收→EBITDA 瀑布</button>
+ <button type="button" class="mui-seg-btn" data-pview="scissors" data-i18n-zh="5季度 RLDC 利润率跃升" data-i18n-en="5Q RLDC Margin Expansion">5季度 RLDC 利润率跃升</button>
+ </div>
+ </div>
+
+ <div class="bm-canvas-box">
+ <canvas id="profitCanvas"></canvas>
+ </div>
+
+ <p class="bm-chart-caption">
+ 数据来源：<a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Circle Q3 2026 财报 ↗</a> 与
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/final_circlereportsfourt.htm" target="_blank" rel="noopener noreferrer">FY2025 Form 8-K ↗</a>。
+ 核心看点：一旦跨越渠道分润成本线（RLDC $453.3M），由于全公司仅约千名精兵且全年固定资产净值仅 $2,115万，<strong>RLDC 向经调整 EBITDA（$316.7M）的经营转化率高达 70.0%</strong>！
+ </p>
+ </div>
+
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 02B · 4-TIER MONETIZATION ARCHITECTURE</span>
+ <h3 data-i18n-zh="四大收入与毛利引擎拆解（从利差走向网络费）" data-i18n-en="4-Tier Monetization Stack (From Yield to Network Fees)">四大收入与毛利引擎拆解（从利差走向网络费）</h3>
+ </div>
+ <div class="mui-segmented" id="tierFilter">
+ <button type="button" class="mui-seg-btn active" data-tcat="all" data-i18n-zh="全部" data-i18n-en="All">全部</button>
+ <button type="button" class="mui-seg-btn" data-tcat="float" data-i18n-zh="储备生息" data-i18n-en="Float Yield">储备生息</button>
+ <button type="button" class="mui-seg-btn" data-tcat="net" data-i18n-zh="网络与平台" data-i18n-en="Network/SaaS">网络与平台</button>
+ </div>
+ </div>
+
+ <div class="bm-tier-list" id="tierList">
+ <div class="bm-tier-card" data-tier="float">
+ <div class="bm-tier-top">
+ <span class="bm-tier-name" data-i18n-zh="① 平台直存 USDC 储备国债收益 (18.1% 权重)" data-i18n-en="① On-Platform USDC Reserve Yield (18.1% Share)">① 平台直存 USDC 储备国债收益 (18.1% 权重)</span>
+ <span class="mui-chip mui-chip-success mono">净留存率 ~100%</span>
+ </div>
+ <div class="bm-tier-desc">存放于 Circle Mint 及企业级托管账户内的 $139亿 USDC 无需向外部交易所让渡高比例分成，每一分国债利息近乎全额沉淀为 Circle 自身 RLDC。</div>
+ </div>
+
+ <div class="bm-tier-card" data-tier="float">
+ <div class="bm-tier-top">
+ <span class="bm-tier-name" data-i18n-zh="② 全球生态伙伴分发池储备分润 (Coinbase / 币安等)" data-i18n-en="② Ecosystem Distribution Float Pool (Coinbase / Binance)">② 全球生态伙伴分发池储备分润 (Coinbase / 币安等)</span>
+ <span class="mui-chip mui-chip-primary mono">Q3 总储备收入 $657.6M</span>
+ </div>
+ <div class="bm-tier-desc">借力 Coinbase、Binance（5年续约+1亿美元入股）、Visa 与拉美/亚太钱包触达 6亿+ 终端钱包，虽让渡约 58%–60% 分润，但零买量筑起全球流动性护城河。</div>
+ </div>
+
+ <div class="bm-tier-card" data-tier="net">
+ <div class="bm-tier-top">
+ <span class="bm-tier-name" data-i18n-zh="③ Circle Payments Network (CPN) 跨境 B2B 结算费" data-i18n-en="③ Circle Payments Network (CPN) Settlement Take-Rate">③ Circle Payments Network (CPN) 跨境 B2B 结算费</span>
+ <span class="mui-chip mui-chip-violet mono">年化 TPV $41.3B (+Tazapay)</span>
+ </div>
+ <div class="bm-tier-desc">已接入 205 家金融机构，叠加拟 $4亿收购的 Tazapay（$25B+ TPV），对企业跨境收付收取基点级（bps）结算与编排服务费，完全免疫美联储降息周期。</div>
+ </div>
+
+ <div class="bm-tier-card" data-tier="net">
+ <div class="bm-tier-top">
+ <span class="bm-tier-name" data-i18n-zh="④ Arc 公链生态、CCTP 跨链收费与 USYC 资产管理费" data-i18n-en="④ Arc L1 Ecosystem, CCTP/xReserve &amp; USYC Fees">④ Arc 公链生态、CCTP 跨链收费与 USYC 资产管理费</span>
+ <span class="mui-chip mui-chip-warning mono">FY26E 其他收入 $3.1–$3.3亿</span>
+ </div>
+ <div class="bm-tier-desc">2026年9月 Arc 主网上线单季确认 $1.818亿 代币预售收入；同时 CCTP（占跨链桥量近半）、xReserve 链间订阅、可编程钱包与 $15亿+ USYC 代币化货基构建纯软件高毛利矩阵。</div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE 3: REVERSED 5:7 SPLIT — CHANNEL UNIT ECONOMICS & TRANSACTION SHARE -->
+ <section id="mod-cohort" class="bm-split-57">
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 03A · CUSTODY &amp; DISTRIBUTION ECONOMICS</span>
+ <h3 data-i18n-zh="单币分层经济模型：为什么“平台直存占比”是利润率胜负手？" data-i18n-en="Channel Unit Economics: Why On-Platform Custody Drives Margin">单币分层经济模型：为什么“平台直存占比”是利润率胜负手？</h3>
+ </div>
+ </div>
+
+ <div class="mui-segmented" id="cohortTabs">
+ <button type="button" class="mui-seg-btn" data-cohort="exch" data-i18n-zh="历史核心交易所池" data-i18n-en="Legacy Exchange Pool">历史核心交易所池</button>
+ <button type="button" class="mui-seg-btn" data-cohort="global" data-i18n-zh="新兴银行/PSP渠道" data-i18n-en="Global Bank/PSP Partners">新兴银行/PSP渠道</button>
+ <button type="button" class="mui-seg-btn active" data-cohort="direct" data-i18n-zh="Circle 平台直存 (18.1%)" data-i18n-en="Circle On-Platform (18.1%)">Circle 平台直存 (18.1%)</button>
+ </div>
+
+ <div class="bm-cohort-metrics" id="cohortMetrics">
+ <div class="bm-cohort-stat">
+ <div class="lbl">典型持币场景与客群</div>
+ <div class="val" style="font-size:0.94rem;">Circle Mint 机构户 / 跨国企业财资</div>
+ <div class="delta">Q3 期末直存 $13.9B (+36% YoY)</div>
+ </div>
+ <div class="bm-cohort-stat">
+ <div class="lbl">渠道分润让渡比例</div>
+ <div class="val mono">~0% 分润</div>
+ <div class="delta">摆脱外部交易所 50%+ 分成盘剥</div>
+ </div>
+ <div class="bm-cohort-stat">
+ <div class="lbl">每 $10B 规模年化净留存 (3.54%利率)</div>
+ <div class="val mono">~$354M / 年</div>
+ <div class="delta">约为第三方深度分润渠道的 2.3 倍</div>
+ </div>
+ <div class="bm-cohort-stat">
+ <div class="lbl">日均加权流通占比演进</div>
+ <div class="val mono">18.1%</div>
+ <div class="delta">较 FY24 低位大幅跃升 (YoY +462bps)</div>
+ </div>
+ </div>
+
+ <div class="bm-ratchet-note" id="cohortNote">
+ <strong>平台直存棘轮效应：</strong>2023 年 8 月重签协议后，分润按<strong>“谁托管/获客谁优先分成 + 剩余生态池对半平分”</strong>执行
+ <a class="cite-link" href="https://research.artemis.ai/p/circle-internet-group-crcl" target="_blank" rel="noopener noreferrer">Artemis 深度研报 ↗</a>。这意味着每当 Visa Direct、SAP/Tereina 或跨国金融机构直接在 Circle 平台持有 USDC，Circle 不仅省下高昂渠道税，还能顺势交叉销售 CPN 与可编程钱包 API！
+ </div>
+ </div>
+
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 03B · CHANNEL RETENTION &amp; VELOCITY DOMINANCE</span>
+ <h3 data-i18n-zh="三大渠道净留存对比与“27% 存量撬动 79% 链上交易量”之谜" data-i18n-en="Channel Retention Comparison &amp; 27% Stock vs 79% Volume Share">三大渠道净留存对比与“27% 存量撬动 79% 链上交易量”之谜</h3>
+ </div>
+ <div class="mui-segmented" id="cChartTabs">
+ <button type="button" class="mui-seg-btn active" data-cview="share" data-i18n-zh="存量份额 vs 链上交易份额" data-i18n-en="Circulation vs Tx Share">存量份额 vs 链上交易份额</button>
+ <button type="button" class="mui-seg-btn" data-cview="yield" data-i18n-zh="每 $10B 渠道净留存 ($M)" data-i18n-en="Net RLDC per $10B ($M)">每 $10B 渠道净留存 ($M)</button>
+ </div>
+ </div>
+
+ <div class="bm-canvas-box">
+ <canvas id="cohortCanvas"></canvas>
+ </div>
+
+ <p class="bm-chart-caption">
+ 核心发现：尽管 USDC 按流通市值占合规美元稳定币约 <strong>27%</strong>（仅次于离岸 USDT），但由于 USDC 100% 透明合规且深度集成 DeFi 智能合约、CCTP 与企业支付，Q3'26 单季链上交易额暴涨 +49% 至 <strong>$13.9万亿美元，独占全球稳定币链上交易量的 79%</strong>
+ <a class="cite-link" href="https://finance.biggo.com/news/US_CRCL_2026-11-04" target="_blank" rel="noopener noreferrer">Q3 业绩电话会纪要 ↗</a>！
+ </p>
+ </div>
+ </section>
+
+ <!-- MODULE 4: 6:6 DUAL WORKBENCH — RESERVE SAFETY + LIVE 5-YEAR SIMULATOR -->
+ <section id="mod-capital" class="bm-split-66">
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 04A · FORTRESS BALANCE SHEET &amp; EBITDA SCALING</span>
+ <h3 data-i18n-zh="$736亿 100%隔离储备安全垫与季度 EBITDA 跃升曲线" data-i18n-en="$73.6B Segregated Reserve Fortress &amp; Quarterly EBITDA Trajectory">$736亿 100%隔离储备安全垫与季度 EBITDA 跃升曲线</h3>
+ </div>
+ <div class="mui-segmented" id="kChartTabs">
+ <button type="button" class="mui-seg-btn active" data-kview="ebitda" data-i18n-zh="5季度 EBITDA 跃升 ($M)" data-i18n-en="5Q Adj. EBITDA ($M)">5季度 EBITDA 跃升 ($M)</button>
+ <button type="button" class="mui-seg-btn" data-kview="reserve" data-i18n-zh="隔离储备与自有净现金" data-i18n-en="Reserve &amp; Cash Mix">隔离储备与自有净现金</button>
+ </div>
+ </div>
+
+ <div class="bm-canvas-box">
+ <canvas id="capitalCanvas"></canvas>
+ </div>
+
+ <p class="bm-chart-caption">
+ 资产负债表核验（截至 2026 年 9 月 30 日）：持币人隔离储备资产达 <strong>$735.75亿</strong>（对应持币人存款负债 $734.51亿，超额足额覆盖），约 88% 存放于贝莱德管理的 SEC 注册 2a-7 政府货币市场基金；公司自有现金及企业持币隔离现金达 <strong>$27.16亿</strong>，可转债已全部清零（<strong>$0 有息负债</strong>）
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">SEC 10-K/10-Q ↗</a>。
+ </p>
+ </div>
+
+ <div class="bm-subpanel">
+ <div class="bm-subhead">
+ <div>
+ <span class="bm-kicker mono">MODULE 04B · INTERACTIVE 2026–2031E RATE &amp; FLOAT SIMULATOR</span>
+ <h3 data-i18n-zh="2026–2031E 利率周期 × 流通规模 × 非利差收入交互推演器" data-i18n-en="2026–2031E Rate × USDC Float × CPN Revenue Simulator">2026–2031E 利率周期 × 流通规模 × 非利差收入交互推演器</h3>
+ </div>
+ <div class="mui-segmented" id="simPresets">
+ <button type="button" class="mui-seg-btn" data-preset="bear" data-i18n-zh="大幅降息压测" data-i18n-en="Low-Rate Bear">大幅降息压测</button>
+ <button type="button" class="mui-seg-btn active" data-preset="base" data-i18n-zh="40% 指引基准" data-i18n-en="40% CAGR Base">40% 指引基准</button>
+ <button type="button" class="mui-seg-btn" data-preset="bull" data-i18n-zh="全球清算超周期" data-i18n-en="Global Rail Bull">全球清算超周期</button>
+ </div>
+ </div>
+
+ <div class="bm-sim-sliders">
+ <div class="bm-slider-row">
+ <div class="bm-slider-lbl"><span data-i18n-zh="USDC 流通规模年复合增速 (官方多周期指引 40%)" data-i18n-en="USDC Circulation CAGR (Guidance: 40%)">USDC 流通规模年复合增速 (官方多周期指引 40%)</span><b class="mono" id="lblUsdcCagr">40.0%</b></div>
+ <input type="range" id="inpUsdcCagr" min="15" max="55" step="2.5" value="40" />
+ </div>
+ <div class="bm-slider-row">
+ <div class="bm-slider-lbl"><span data-i18n-zh="中长期稳态国债储备收益率 (Reserve Yield %)" data-i18n-en="Steady-State Reserve Return Rate (%)">中长期稳态国债储备收益率 (Reserve Yield %)</span><b class="mono" id="lblResYield">3.2%</b></div>
+ <input type="range" id="inpResYield" min="1.5" max="5.0" step="0.1" value="3.2" />
+ </div>
+ <div class="bm-slider-row">
+ <div class="bm-slider-lbl"><span data-i18n-zh="储备净留存率 (Net Reserve Margin · 直存提升驱动)" data-i18n-en="Net Reserve Retention Margin (%)">储备净留存率 (Net Reserve Margin · 直存提升驱动)</span><b class="mono" id="lblNetMargin">43.0%</b></div>
+ <input type="range" id="inpNetMargin" min="35" max="55" step="1" value="43" />
+ </div>
+ </div>
+
+ <div class="bm-sim-outputs">
+ <div class="bm-sim-out"><b class="mono" id="simFloatOut">$398B</b><span data-i18n-zh="2031E USDC 流通盘" data-i18n-en="2031E Avg USDC">2031E USDC 流通盘</span></div>
+ <div class="bm-sim-out"><b class="mono" id="simRldcOut">$6.37B</b><span data-i18n-zh="2031E RLDC 净收入" data-i18n-en="2031E Total RLDC">2031E RLDC 净收入</span></div>
+ <div class="bm-sim-out"><b class="mono" id="simMarginOut">46.8%</b><span data-i18n-zh="2031E 综合 RLDC 率" data-i18n-en="2031E RLDC Margin">2031E 综合 RLDC 率</span></div>
+ <div class="bm-sim-out"><b class="mono" id="simEbitdaOut">$4.14B</b><span data-i18n-zh="2031E 经调整 EBITDA" data-i18n-en="2031E Adj. EBITDA">2031E 经调整 EBITDA</span></div>
+ </div>
+
+ <div class="bm-canvas-box" style="height:175px;">
+ <canvas id="simMiniCanvas"></canvas>
+ </div>
+ </div>
+ </section>
+
+ <!-- MODULE 5: GLOBAL FINTECH & STABLECOIN MATRIX + STRESS AUDIT -->
+ <section id="mod-matrix" class="bm-panel">
+ <div class="bm-panel-head">
+ <div>
+ <span class="bm-kicker mono">MODULE 05 · ARCHETYPE BENCHMARKING &amp; STRESS AUDIT</span>
+ <h2 class="bm-h2" data-i18n-zh="全球稳定币与支付清算巨头商业模型横向对标及三大风险压测" data-i18n-en="Global Stablecoin &amp; Payment Network Matrix &amp; Stress Audit">全球稳定币与支付清算巨头商业模型横向对标及三大风险压测</h2>
+ <p class="bm-head-desc" data-i18n-zh="对比六大数字美元及传统清算巨头的分润结构、合规深度与利率敏感度，并核查 Circle 商业模式三大核心挑战。" data-i18n-en="Benchmarking Circle against stablecoin and payment peers across margin structure, licensing, and rate sensitivity.">对比六大数字美元及传统清算巨头的分润结构、合规深度与利率敏感度，并核查 Circle 商业模式三大核心挑战。</p>
+ </div>
+ <div class="mui-segmented" id="peerFilter">
+ <button type="button" class="mui-seg-btn active" data-pcat="all" data-i18n-zh="全部标杆 (6)" data-i18n-en="All Peers (6)">全部标杆 (6)</button>
+ <button type="button" class="mui-seg-btn" data-pcat="stable" data-i18n-zh="稳定币与加密基建" data-i18n-en="Stablecoin / Crypto">稳定币与加密基建</button>
+ <button type="button" class="mui-seg-btn" data-pcat="pay" data-i18n-zh="全球清算与支付网" data-i18n-en="Payment Networks">全球清算与支付网</button>
+ </div>
+ </div>
+
+ <div class="bm-table-wrap">
+ <table class="bm-table" id="peerTable">
+ <thead>
+ <tr>
+ <th>公司与代码</th>
+ <th>核心商业模式原型</th>
+ <th>净留存 / 毛利率特征</th>
+ <th>监管牌照与储备透明度</th>
+ <th>利率周期敏感度</th>
+ <th>终极护城河与核心脆弱点</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr class="is-circle" data-row-cat="stable pay">
+ <td><strong>Circle (NYSE: CRCL)</strong> <span class="mui-chip mui-chip-primary mono">本研究标的</span></td>
+ <td>合规国债浮存金 + CPN 跨境网 + Arc 金融公链</td>
+ <td class="mono">RLDC 52.4% (FY25 39.4%) · EBITDA/RLDC 70%</td>
+ <td class="mono" style="color:var(--mui-success-text);">GENIUS + OCC 信托 + MiCA + 四大月审</td>
+ <td class="mono" style="color:var(--mui-warning-text);">中高 (CPN/Arc 正加速脱敏)</td>
+ <td>79% 链上交易量垄断与华尔街正门合规；短板在约 58% 渠道分润税</td>
+ </tr>
+ <tr data-row-cat="stable">
+ <td><strong>Tether (USDT · 未上市)</strong></td>
+ <td>离岸新兴市场美元替代品 + 零分润全额吃利差</td>
+ <td class="mono">~95%+ (几乎不向交易所分润)</td>
+ <td class="mono" style="color:var(--mui-error-text);">萨尔瓦多离岸注册 · 欧盟 MiCA 下架受限</td>
+ <td class="mono" style="color:var(--mui-warning-text);">极高 (纯储备收益与金比特币配置)</td>
+ <td>新兴市场散户点对点网络效应极深；无法直接合规进入美国银行与 ERP 体系</td>
+ </tr>
+ <tr data-row-cat="pay">
+ <td><strong>Visa (NYSE: V)</strong></td>
+ <td>全球四方卡组织清算网关过路费 (已接入 USDC 结算)</td>
+ <td class="mono">~80% 净营收利润率 · ~67% 营业利润率</td>
+ <td class="mono" style="color:var(--mui-success-text);">全球主权级金融清算牌照网络</td>
+ <td class="mono" style="color:var(--mui-success-text);">免疫 (按名义消费额抽基点，受益通胀)</td>
+ <td>40亿+ 张银行卡双边网络；跨境高费率走廊面临稳定币 B2B 直连替代</td>
+ </tr>
+ <tr data-row-cat="stable pay">
+ <td><strong>Stripe (+ Bridge)</strong></td>
+ <td>全球商户收单网关 + 收购 Bridge 切入稳定币编排 API</td>
+ <td class="mono">净收单留存率约 ~30–40bps (毛利率 ~42%)</td>
+ <td class="mono">欧美支付牌照齐全，非独立巨量稳定币发行方</td>
+ <td class="mono" style="color:var(--mui-success-text);">低 (以商户交易量抽成为主)</td>
+ <td>数百万互联网商户接入深度极强；底层稳定币流动性仍高度互通依赖 USDC</td>
+ </tr>
+ <tr data-row-cat="stable">
+ <td><strong>Coinbase (NASDAQ: COIN)</strong></td>
+ <td>美国合规加密交易经纪 + Base L2 + USDC 分润核心盟友</td>
+ <td class="mono">综合毛利率 ~85% (拿走 USDC 2025 总利差约 51%)</td>
+ <td class="mono" style="color:var(--mui-success-text);">美股上市合规标杆 + 机构现货 ETF 托管霸主</td>
+ <td class="mono">双向对冲 (降息伤利差但刺激散户交易量)</td>
+ <td>既是 Circle 最大分发引擎，也是拿走 FY25 $13.5亿 分润的最大利益博弈方</td>
+ </tr>
+ <tr data-row-cat="stable pay">
+ <td><strong>PayPal (PYUSD · PYPL)</strong></td>
+ <td>4.3亿双边电子钱包 + 高额补贴推广自有稳定币 PYUSD</td>
+ <td class="mono">综合交易毛利率 ~45%–47%</td>
+ <td class="mono">Paxos 合作纽约信托监管发行</td>
+ <td class="mono">低 (稳定币占集团体量尚小)</td>
+ <td>C端商户钱包基数庞大；但封闭生态属性强，跨所与企业 B2B 中立性弱于 USDC</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div class="bm-stress-grid">
+ <div class="bm-stress-card">
+ <div>
+ <span class="mui-chip mui-chip-error mono">STRESS 01 · FED RATE CUT SENSITIVITY</span>
+ <h4>美联储降息周期：每降息 100bps 冲击几何？</h4>
+ <p>Q3'26 储备回报率由上年同期的 4.15% 降至 <strong>3.54%（-61bps）</strong>，导致日均流通盘虽增 8%，单季储备收入仍微降 8% 至 $6.58亿
+ <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3'26 财报 ↗</a>。但关键缓冲机制在于：<strong>约 58%–60% 的利差波动由 Coinbase 等分润伙伴自动同步共担</strong>，静态测算在 $74B 盘子下每降息 100bps 对 Circle 自身 RLDC 净冲击仅约 $2.9亿–$3.1亿，可由 40% 流通量复合增速与 CPN 交易费对冲。</p>
+ </div>
+ <label class="bm-check-label"><input type="checkbox" data-stress-chk="s1" /> 纳入季度跟踪：美联储 SOFR 利率路径与 USDC 增速弹性</label>
+ </div>
+
+ <div class="bm-stress-card">
+ <div>
+ <span class="mui-chip mui-chip-warning mono">STRESS 02 · COINBASE 51% SHARE TAX</span>
+ <h4>渠道分润居高不下：能否打破 ~60% 分成天花板？</h4>
+ <p>2025 全年渠道分润与交易成本高达 $16.64亿（占总收入 60.6%，其中仅 Coinbase 即分走约 $13.5亿）
+ <a class="cite-link" href="https://beancount.io/blog/2026/09/13/circle-q2-2026-earnings-analysis" target="_blank" rel="noopener noreferrer">账本拆解 ↗</a>。Circle 破局三招已见成效：① 拉升自家平台直存权重至 <strong>18.1%</strong>（零分润）；② 续签币安 5 年协议并引入 SAP/Visa/传统银行直连，以更优阶梯条款稀释单一平台议价权；③ 放大 100% 归属自身的 CPN 与 Arc 网络收入。</p>
+ </div>
+ <label class="bm-check-label"><input type="checkbox" data-stress-chk="s2" /> 纳入季度跟踪：平台直存 USDC 占比能否突破 25% 关口</label>
+ </div>
+
+ <div class="bm-stress-card">
+ <div>
+ <span class="mui-chip mui-chip-violet mono">STRESS 03 · BANK COINS &amp; TMMF COMPETITION</span>
+ <h4>华尔街银行币与生息代币化货基（TMMF）分流</h4>
+ <p>《GENIUS 法案》落地后大型银行联盟加速探索自有存款代币，而交易机构对生息型代币化国债（如贝莱德 BUIDL）作为保证金需求上升。Circle 早已提前卡位：收购 Hashnote 将 <strong>$15亿+ USYC 代币化货币市场基金</strong>纳入自家版图，实现“计价结算用零息高频 USDC + 闲置财资一键秒转生息 USYC”的闭环防守
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/final_circlereportsfourt.htm" target="_blank" rel="noopener noreferrer">FY25 USYC 披露 ↗</a>。</p>
+ </div>
+ <label class="bm-check-label"><input type="checkbox" data-stress-chk="s3" /> 纳入季度跟踪：USYC 资产规模及 USDC 27%+ 市场份额防线</label>
+ </div>
+ </div>
+ </section>
+
+ <!-- PRIMARY SOURCES FOOTER -->
+ <section class="bm-panel" aria-label="权威财报与行业信源">
+ <div class="bm-panel-head" style="margin-bottom:14px;padding-bottom:10px;">
+ <div>
+ <span class="bm-kicker mono">VERIFIED PRIMARY SOURCES</span>
+ <h2 class="bm-h2" data-i18n-zh="权威 SEC 监管文件、季度财报与机构研究信源" data-i18n-en="Verified SEC Filings, Quarterly Releases &amp; Institutional Research">权威 SEC 监管文件、季度财报与机构研究信源</h2>
+ </div>
+ </div>
+ <div class="bm-sources-grid">
+ <a class="bm-source-item" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">
+ <b>Circle Q3 2026 Financial Results (Nov 4, 2026) ↗</b>
+ <span>官方披露 Q3 收入 $865M、RLDC 利润率 52.4%、经调整 EBITDA $317M、Arc 主网上线与拟收购 Tazapay</span>
+ </a>
+ <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/final_circlereportsfourt.htm" target="_blank" rel="noopener noreferrer">
+ <b>Circle FY2025 Form 8-K Full-Year Financial Tables ↗</b>
+ <span>审计口径 FY25 总营收与储备收入 $2,746.6M、RLDC $1,083.0M、经调整 EBITDA $582.2M 及资产负债表</span>
+ </a>
+ <a class="bm-source-item" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">
+ <b>Circle Internet Group FY2025 SEC Form 10-K ↗</b>
+ <span>完整披露 Circle Reserve Fund 88% 储备配置、Coinbase 合作条款、xReserve、CCTP 与约 1,100 人团队架构</span>
+ </a>
+ <a class="bm-source-item" href="https://www.circle.com/pressroom/circle-launches-cpn-managed-payments-a-full-stack-platform-for-seamless-stablecoin-settlement" target="_blank" rel="noopener noreferrer">
+ <b>Circle Launches CPN Managed Payments (Apr 2026) ↗</b>
+ <span>Circle Payments Network 全栈企业级跨境法币与稳定币编排清算平台官方发布说明</span>
+ </a>
+ <a class="bm-source-item" href="https://research.artemis.ai/p/circle-internet-group-crcl" target="_blank" rel="noopener noreferrer">
+ <b>Artemis Institutional Research: Circle ($CRCL) ↗</b>
+ <span>深度拆解 Coinbase 51% 分润结构、非 Coinbase 渠道扩张推动毛利向 54% 演进及 CPN/CCTP 估值模型</span>
+ </a>
+ <a class="bm-source-item" href="https://s206.q4cdn.com/265218871/files/doc_financials/2025/ar/CRCL_AR_2026_WO13_WKV_PR-1.pdf" target="_blank" rel="noopener noreferrer">
+ <b>Circle 2025 Annual Report &amp; Shareholder Letter ↗</b>
+ <span>Jeremy Allaire 阐述从稳定币发行商向三层全栈互联网金融平台（Arc + 数字资产 + 应用层）跃迁蓝图</span>
+ </a>
+ </div>
+ </section>
+
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+ var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+ var STORAGE_STRESS_KEY = 'crcl_bm_stress_v1';
+
+ var state = {
+ theme: 'light',
+ lang: 'zh',
+ pView: 'waterfall',
+ cView: 'share',
+ kView: 'ebitda'
+ };
+
+ var hitRegions = { profitCanvas: [], cohortCanvas: [], capitalCanvas: [] };
+
+ function showToast(msg) {
+ var bar = document.getElementById('muiSnackbar');
+ if (!bar) return;
+ bar.textContent = msg;
+ bar.classList.add('show');
+ clearTimeout(bar._t);
+ bar._t = setTimeout(function () { bar.classList.remove('show'); }, 2200);
+ }
+
+ function getPalette() {
+ var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+ return {
+ dark: dark,
+ text: dark ? '#F3F6F9' : '#0F1924',
+ sub: dark ? '#B2BAC2' : '#334155',
+ tick: dark ? '#94A3B8' : '#475569',
+ grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+ blue: dark ? '#3399FF' : '#0073E6',
+ blueSoft: dark ? 'rgba(51, 153, 255, 0.26)' : 'rgba(0, 115, 230, 0.18)',
+ green: dark ? '#22C55E' : '#16A34A',
+ amber: dark ? '#FFB74D' : '#D97706',
+ violet: dark ? '#A78BFA' : '#7C3AED',
+ red: dark ? '#FF6B6B' : '#DC2626'
+ };
+ }
+
+ function applyTheme(t, silent) {
+ state.theme = (t === 'dark') ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var ic = document.getElementById('appbarThemeIcon');
+ if (ic) {
+ ic.innerHTML = state.theme === 'dark'
+ ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+ : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+ }
+ var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+ if (sl) sl.classList.toggle('active', state.theme === 'light');
+ if (sd) sd.classList.toggle('active', state.theme === 'dark');
+ drawAllCharts();
+ if (!silent) showToast(state.theme === 'dark' ? '已切换至深色模式' : '已切换至清晰浅色模式');
+ }
+
+ function applyLang(lang, silent) {
+ state.lang = (lang === 'en') ? 'en' : 'zh';
+ document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+ var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+ if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+ if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+ var nodes = document.querySelectorAll('[data-i18n-zh]');
+ for (var i = 0; i < nodes.length; i++) {
+ var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+ else nodes[i].textContent = val;
+ }
+ }
+ drawAllCharts();
+ if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+ }
+
+ // Suite Hub Category Filter & Sibling Notification (Zero Auto-Scroll)
+ var hub = document.getElementById('companySubfolderHub');
+ if (hub) {
+ hub.addEventListener('click', function (e) {
+ var pill = e.target.closest('[data-co-cat]');
+ if (pill) {
+ var cat = pill.getAttribute('data-co-cat');
+ hub.querySelectorAll('[data-co-cat]').forEach(function (p) { p.classList.toggle('active', p === pill); });
+ hub.querySelectorAll('[data-co-item-cat]').forEach(function (it) {
+ it.classList.toggle('co-hub-hidden', !(cat === 'ALL' || it.getAttribute('data-co-item-cat') === cat));
+ });
+ return;
+ }
+ var item = e.target.closest('[data-suite-doc]');
+ if (item && !item.classList.contains('active')) {
+ showToast('请在本次交付的四份网页附件中打开：《' + item.getAttribute('data-suite-doc') + '》');
+ }
+ });
+ }
+
+ // 1. Command Deck 3-Lens Switcher
+ var LENSES = [
+ {
+ formula: '年度净留存收益 (RLDC) = [日均 USDC 流通量 ($73.3B) × 储备国债收益率 (3.54%) - 渠道分润成本] + 非利差网络与生态收入 ($207.3M/季)',
+ body: '根据美国《GENIUS 法案》与欧盟 MiCA 法规，支付型稳定币<strong>法定禁止向持币散户直接派发利息</strong>。这使得 Circle 如同伯克希尔的保险浮存金机器：全球企业与用户在 30+ 条公链上沉淀的 $739 亿数字美元无需支付存款利息，100% 隔离储备所产生的短期美债收益由 Circle 与核心分发伙伴共享。'
+ },
+ {
+ formula: '储备净留存率重构 = Circle 平台直存权重 (18.1% × ~100%留存) + 生态伙伴渠道权重 (81.9% × ~24%–45%留存) → 推动净留存稳步上移',
+ body: '过去市场担忧 Coinbase 分走约一半总储备收入，但 Circle 正通过银行、Visa Direct、SAP 企业工作流与 Circle Mint 机构账户做大<strong>“平台直存 USDC（Q3 达 $139亿，+36% YoY）”</strong>——每迁移 10% 流通盘进入自家平台，即可直接增厚约 500–600bps 的综合净留存利润率。'
+ },
+ {
+ formula: '经营利润弹性 (Q3 Adj. EBITDA $316.7M) = RLDC 净收入 ($453.3M) - 极简固定运营开支 ($138.8M) → 边际经营利润转化率高达 70.0%',
+ body: '不同于重资产硬件商或数万人规模的传统银行，Circle 仅凭约 1,045–1,100 名精锐员工和 $2,115 万固定资产即可运转全球 $13.9 万亿季度链上结算；随着 <strong>CPN 跨境支付网（$41.3B TPV）与 Arc 公链</strong>放量，新增软件与结算费几乎直通利润表底线。'
+ }
+ ];
+ var lensTabs = document.getElementById('lensTabs');
+ if (lensTabs) {
+ lensTabs.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-lens]');
+ if (!b) return;
+ var idx = parseInt(b.getAttribute('data-lens'), 10) || 0;
+ lensTabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ document.getElementById('lensFormula').textContent = LENSES[idx].formula;
+ document.getElementById('lensBody').innerHTML = LENSES[idx].body;
+ });
+ }
+
+ // 2. Horizontal 5-Node Value-Chain Pipeline Inspector
+ var NODES = [
+ {
+ badge: 'NODE 01 · REGULATED FIAT ON/OFF-RAMP GATEWAY',
+ title: '正门监管护城河（GENIUS 法案 + OCC 信托银行 + MiCA）：全球机构法币上链唯一首选通道',
+ desc: '机构客户通过 Circle Mint 账户在 185+ 个国家和地区将美元、欧元实时 1:1 铸造为链上 USDC 与 EURC。依托美国联邦《GENIUS 法案》、OCC 国民信托银行有条件批文、纽约 BitLicense（2015 年首张）及欧盟法国 MiCA 电子货币机构牌照，Circle 自 2018 年以来已累计处理逾 $53.3 万亿美元的传统银行与公链跨轨资金流转。',
+ formula: '商业传导：牌照合规垄断 → 零获客补贴吸引银行/PSP/跨国企业直接开立 Circle Mint → Q3\'26 单季铸币 $104B、赎回 $104B',
+ kpis: [['185+ 国', '支持法币电汇铸造与赎回'], ['$53.3T+', '2018 以来累计法币-链上吞吐'], ['30+ 公链', '原生发行无需第三方包装桥'], ['7.3M 个', '持有 >$10 USDC 活跃有效钱包']]
+ },
+ {
+ badge: 'NODE 02 · BLACKROCK 2A-7 TREASURY RESERVE ENGINE',
+ title: '贝莱德托管 Circle Reserve Fund：100% 破产隔离与无信用杠杆的生息金库',
+ desc: 'Circle 严禁将持币人资金用于信贷放贷或高风险套利。截至 Q3 2026 末，$735.75 亿隔离储备资产中约 88% 存放于由全球最大资管巨头贝莱德（BlackRock）专门管理的 SEC 注册 2a-7 政府货币市场基金（仅持有极短期美债与隔夜逆回购），其余约 12% 存放于全球系统重要性银行（GSIB）现金账户，每月接受四大会计师事务所独立鉴证。',
+ formula: '商业传导：零存款付息成本 × 100% 高流动性美债配置 → FY25 创造 $26.37亿、Q3\'26 创造 $6.58亿 储备利息总池',
+ kpis: [['$73.57B', 'Q3\'26 持币人隔离储备资产'], ['~88%', '贝莱德 Circle Reserve Fund 占比'], ['3.54%', 'Q3\'26 年化储备综合回报率'], ['100%+', '储备资产对流通负债足额覆盖']]
+ },
+ {
+ badge: 'NODE 03 · DISTRIBUTION FLYWHEEL VS PLATFORM CUSTODY',
+ title: '双层分发博弈：用伙伴分成换全球网络效应，用自有平台直存收回高毛利',
+ desc: '为对抗离岸 USDT 的先发优势，Circle 与 Coinbase、Binance（续签 5 年战略合作并获 $1亿股权投资）等达成深度收入共享，使 USDC 触达超 6 亿终端钱包；与此同时，Circle 大力拓展企业与金融机构直存托管，推动平台内 USDC 日均占比同比跃升 462bps 至 18.1%（期末 $139亿），持续改善净储备利润率（Net Reserve Margin 升至 38%–39%）。',
+ formula: '商业传导：外部伙伴铺开全球 79% 链上交易份额 + 自有平台直存免分润 → 驱动 Q3\'26 分润成本同比下降 8% 至 $4.12亿',
+ kpis: [['18.1%', 'Q3\'26 平台直存日均权重 (+462bps)'], ['$13.9B', 'Circle 平台内托管 USDC (+36%)'], ['38.0%', 'Q3\'26 净储备留存率 (Net Reserve)'], ['$100M', '币安对 Circle 战略股权投资额']]
+ },
+ {
+ badge: 'NODE 04 · CPN CROSS-BORDER RAILS & CCTP INTEROPERABILITY',
+ title: '利率免疫第二引擎：Circle Payments Network (CPN) 与 CCTP 全链清算收费站',
+ desc: '2025 年 5 月推出的 CPN 将全球银行、支付服务商（PSP）与企业财资接入链上实时美元清算网，仅一年多即吸引 205 家金融机构入驻，年化结算额飙升逾 15 倍至 $413 亿；配合拟 $4 亿股票收购的新加坡 Tazapay（年化 $250 亿+ 跨境交易量，覆盖 100+ 市场）及占据跨链桥近半壁江山的 CCTP / Circle Gateway，正式打通按交易额收取基点服务费的非利差商业闭环。',
+ formula: '商业传导：$13.9T/季 链上真实流转 → CPN 跨境结算费 + CCTP/xReserve 跨链基础设施订阅 → 对冲降息周期波动',
+ kpis: [['$41.3B', 'Q3\'26 CPN 年化结算额 (>15x YoY)'], ['205 家', '已签约入驻 CPN 的金融机构'], ['+$25B+', '拟并购 Tazapay 增量跨境流水'], ['~47–50%', 'CCTP 占全网跨链桥交易份额']]
+ },
+ {
+ badge: 'NODE 05 · ARC ENTERPRISE LAYER-1 & OPERATING LEVERAGE',
+ title: 'Arc 互联网经济操作系统：首家公开发行 Layer-1 网络的纽交所上市公司',
+ desc: '2026 年 9 月 16 日，Circle 正式上线专为稳定币外汇、资本市场与 AI Agent 高频微支付打造的企业级 Layer-1 公链 Arc 主网（首发即汇聚 100+ 机构与生态伙伴、7.5 万名开发者与 1,200+ 应用，亚秒级终局确认，原生以 USDC 支付 Gas）。Q3 单季确认 $1.818 亿 ARC 代币预售收入，助推 RLDC 利润率冲上 52.4%，展现极致的软件平台经营杠杆。',
+ formula: '商业传导：RLDC 净收入 ($453.3M) - 精简经调整运营费用 ($138.8M) → 单季经调整 EBITDA 暴涨 +85% 至 $316.7M（利润率 70%）',
+ kpis: [['52.4%', 'Q3\'26 RLDC 净留存利润率'], ['70.0%', 'Q3\'26 经调整 EBITDA / RLDC 率'], ['$2.72B', '公司自有流动性现金 ($0 有息债)'], ['75,000+', 'Arc House 全球生态开发者规模']]
+ }
+ ];
+ var pTrack = document.getElementById('pipelineTrack');
+ if (pTrack) {
+ pTrack.addEventListener('click', function (e) {
+ var btn = e.target.closest('[data-node]');
+ if (!btn) return;
+ var idx = parseInt(btn.getAttribute('data-node'), 10) || 0;
+ pTrack.querySelectorAll('.bm-node-btn').forEach(function (b) { b.classList.toggle('active', b === btn); });
+ var nd = NODES[idx];
+ document.getElementById('nodeBadge').textContent = nd.badge;
+ document.getElementById('nodeTitle').textContent = nd.title;
+ document.getElementById('nodeDesc').textContent = nd.desc;
+ document.getElementById('nodeFormula').textContent = nd.formula;
+ document.getElementById('nodeKpis').innerHTML = nd.kpis.map(function (k) {
+ return '<div class="bm-ins-card"><b class="mono">' + k[0] + '</b><span>' + k[1] + '</span></div>';
+ }).join('');
+ });
+ }
+
+ // 3. Tier Filter, Cohort Switcher & Peer Filter
+ var tierFilter = document.getElementById('tierFilter');
+ if (tierFilter) {
+ tierFilter.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-tcat]');
+ if (!b) return;
+ var cat = b.getAttribute('data-tcat');
+ tierFilter.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ document.querySelectorAll('#tierList [data-tier]').forEach(function (card) {
+ card.style.display = (cat === 'all' || card.getAttribute('data-tier') === cat) ? '' : 'none';
+ });
+ });
+ }
+
+ var COHORTS = {
+ exch: {
+ stats: [
+ ['典型持币场景与客群', '头部合规交易所现货与托管池', '2025年贡献最大存量流动性底座'],
+ ['渠道分润让渡比例', '~50%–65%+', '平台内持币归属方优先分润 + 剩余池平分'],
+ ['每 $10B 规模年化净留存 (3.54%利率)', '~$135M / 年', '早期冷启动获客必须支付的渠道过路费'],
+ ['战略演进方向', '稳存量 · 降权重', '随非单一交易所生态扩张逐步摊薄占比']
+ ],
+ note: '<strong>头部交易所分润池特征：</strong>2025 年 Coinbase 分走约 $13.5 亿（占总储备收入约 51%），虽然压低了表观综合毛利率，但帮助 USDC 在北美与机构现货交易市场零广告费站稳合规第一宝座。'
+ },
+ global: {
+ stats: [
+ ['典型持币场景与客群', '全球区域银行 / 拉美亚太 PSP / 币安', '覆盖 180+ 国家跨境汇款与抗通胀美元储蓄'],
+ ['渠道分润让渡比例', '~35%–50%', '新签阶梯协议议价权显著优于历史排他条款'],
+ ['每 $10B 规模年化净留存 (3.54%利率)', '~$195M / 年', '兼具新兴市场高增速与更高净留存率'],
+ ['代表性战略伙伴', 'Binance / Nubank / Allaria / Visa', '2026年9月币安续约5年并斥资$1亿入股Circle']
+ ],
+ note: '<strong>全球多元化伙伴池特征：</strong>随着越来越多商业银行、Samsung Wallet 与区域金融科技平台主动寻求接入合规美元，Circle 在新签渠道协议中掌握更优定价权，预计推动整体分润率由 ~60% 中枢趋势性下行。'
+ },
+ direct: {
+ stats: [
+ ['典型持币场景与客群', 'Circle Mint 机构户 / 跨国企业财资', 'Q3 期末直存 $13.9B (+36% YoY)'],
+ ['渠道分润让渡比例', '~0% 分润', '摆脱外部交易所 50%+ 分成盘剥'],
+ ['每 $10B 规模年化净留存 (3.54%利率)', '~$354M / 年', '约为第三方深度分润渠道的 2.6 倍'],
+ ['日均加权流通占比演进', '18.1%', '较上年同期大幅提升 +462bps']
+ ],
+ note: '<strong>平台直存棘轮效应：</strong>每当跨国企业、SAP ERP 客户或金融机构直接在 Circle 平台托管与调度 USDC，Circle 不仅将近 100% 的储备美债收益留存在表内，还能无缝叠加 CPN 清算费与可编程钱包订阅费！'
+ }
+ };
+ var cohortTabs = document.getElementById('cohortTabs');
+ if (cohortTabs) {
+ cohortTabs.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-cohort]');
+ if (!b) return;
+ var key = b.getAttribute('data-cohort');
+ cohortTabs.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ var c = COHORTS[key] || COHORTS.direct;
+ document.getElementById('cohortMetrics').innerHTML = c.stats.map(function (s, idx) {
+ var isMono = idx > 0 ? ' mono' : '';
+ var fz = idx === 0 ? ' style="font-size:0.92rem;"' : '';
+ return '<div class="bm-cohort-stat"><div class="lbl">' + s[0] + '</div><div class="val' + isMono + '"' + fz + '>' + s[1] + '</div><div class="delta">' + s[2] + '</div></div>';
+ }).join('');
+ document.getElementById('cohortNote').innerHTML = c.note;
+ });
+ }
+
+ var peerFilter = document.getElementById('peerFilter');
+ if (peerFilter) {
+ peerFilter.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-pcat]');
+ if (!b) return;
+ var cat = b.getAttribute('data-pcat');
+ peerFilter.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ document.querySelectorAll('#peerTable tbody tr').forEach(function (row) {
+ var rc = row.getAttribute('data-row-cat') || '';
+ row.style.display = (cat === 'all' || rc.indexOf(cat) !== -1) ? '' : 'none';
+ });
+ });
+ }
+
+ // 4. High-DPI Retina Canvas Engine
+ function prepCanvas(id) {
+ var c = document.getElementById(id);
+ if (!c) return null;
+ var rect = c.getBoundingClientRect();
+ var w = Math.max(260, rect.width || 500);
+ var h = Math.max(140, rect.height || 280);
+ var dpr = Math.min(window.devicePixelRatio || 1, 2);
+ c.width = Math.round(w * dpr);
+ c.height = Math.round(h * dpr);
+ var ctx = c.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { c: c, ctx: ctx, w: w, h: h };
+ }
+
+ function roundRect(ctx, x, y, w, h, r) {
+ var rr = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rr, y);
+ ctx.arcTo(x + w, y, x + w, y + h, rr);
+ ctx.arcTo(x + w, y + h, x, y + h, rr);
+ ctx.arcTo(x, y + h, x, y, rr);
+ ctx.arcTo(x, y, x + w, y, rr);
+ ctx.closePath();
+ }
+
+ function drawProfitCanvas() {
+ var env = prepCanvas('profitCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.profitCanvas = [];
+ var pad = { top: 28, right: 20, bottom: 42, left: 54 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.pView === 'waterfall') {
+ var steps = [
+ { lbl: '储备生息', val: 657.6, base: 0, col: pal.blue, tip: 'Q3 2026 储备利息收入: $657.6M（日均 $73.3B USDC × 3.54% 回报率）' },
+ { lbl: '+网络/其他', val: 207.3, base: 657.6, col: pal.green, tip: 'Q3 2026 其他收入: +$207.3M (+627% YoY，含 Arc 主网确认 $181.8M 及 CPN/订阅收入)，总收入达 $864.9M' },
+ { lbl: '=RLDC净留存', val: 453.3, base: 0, col: pal.violet, tip: '扣除 $411.6M 渠道分润与交易成本后，RLDC 净留存达 $453.3M (+55% YoY)，RLDC 利润率高达 52.4%' },
+ { lbl: '经调整EBITDA', val: 316.7, base: 0, col: pal.green, tip: '扣除 $138.8M 经调整运营费用后，Q3 经调整 EBITDA 达 $316.7M (+85% YoY，占 RLDC 高达 70.0%)' },
+ { lbl: 'GAAP营业利润', val: 208.3, base: 0, col: pal.blue, tip: '扣除 $43.1M SBC 与折旧摊销后，GAAP 营业利润 $208.3M (+157% YoY)' },
+ { lbl: 'GAAP净利润', val: 226.0, base: 0, col: pal.amber, tip: 'Q3 2026 持续经营 GAAP 净利润: $226.0M (+5% YoY)，净利率 26.1%，稀释 EPS $0.84' }
+ ];
+ var maxV = 950;
+ for (var g = 0; g <= 4; g++) {
+ var gv = (maxV / 4) * g;
+ var gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.lineWidth = 1;
+ ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv.toFixed(0) + 'M', pad.left - 8, gy + 4);
+ }
+ var slotW = pw / steps.length, barW = Math.min(46, slotW * 0.58);
+ steps.forEach(function (s, i) {
+ var x = pad.left + i * slotW + (slotW - barW) / 2;
+ var yTop = pad.top + ph - ((s.base + s.val) / maxV) * ph;
+ var yBot = pad.top + ph - (s.base / maxV) * ph;
+ var bh = Math.max(4, yBot - yTop);
+ ctx.fillStyle = s.col;
+ roundRect(ctx, x, yTop, barW, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + s.val.toFixed(0) + 'M', x + barW / 2, yTop - 7);
+ ctx.fillStyle = pal.sub; ctx.font = '600 10.5px sans-serif';
+ ctx.fillText(s.lbl, x + barW / 2, pad.top + ph + 20);
+ hitRegions.profitCanvas.push({ x: x, y: yTop, w: barW, h: bh, title: s.lbl, body: s.tip });
+ });
+ } else {
+ var qtrs = ["Q3'25", "Q4'25", "Q1'26", "Q2'26", "Q3'26"];
+ var rldcM = [39.5, 40.1, 41.4, 41.2, 52.4];
+ var netResM = [37.1, 37.2, 38.0, 38.6, 37.8];
+ var platPct = [13.5, 17.8, 17.9, 18.0, 18.1];
+ var minM = 10, maxM = 60;
+ for (var m = 0; m <= 4; m++) {
+ var mv = minM + ((maxM - minM) / 4) * m;
+ var my = pad.top + ph - (m / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, my); ctx.lineTo(pad.left + pw, my); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(mv.toFixed(0) + '%', pad.left - 8, my + 4);
+ }
+ function plotLine(arr, col, name) {
+ ctx.strokeStyle = col; ctx.lineWidth = 2.6; ctx.beginPath();
+ arr.forEach(function (v, idx) {
+ var px = pad.left + (idx / (qtrs.length - 1)) * pw;
+ var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+ if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ });
+ ctx.stroke();
+ arr.forEach(function (v, idx) {
+ var px = pad.left + (idx / (qtrs.length - 1)) * pw;
+ var py = pad.top + ph - ((v - minM) / (maxM - minM)) * ph;
+ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py, 4.2, 0, Math.PI * 2); ctx.fill();
+ if (idx === qtrs.length - 1 || idx === 0) {
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(v.toFixed(1) + '%', px, py - 9);
+ }
+ hitRegions.profitCanvas.push({ x: px - 10, y: py - 10, w: 20, h: 20, title: qtrs[idx] + ' · ' + name, body: name + ': ' + v.toFixed(1) + '%' });
+ });
+ }
+ qtrs.forEach(function (q, idx) {
+ var px = pad.left + (idx / (qtrs.length - 1)) * pw;
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(q, px, pad.top + ph + 20);
+ });
+ plotLine(rldcM, pal.green, 'RLDC 净留存利润率');
+ plotLine(netResM, pal.blue, '净储备利润率 Net Reserve Margin');
+ plotLine(platPct, pal.violet, 'Circle 平台直存日均权重');
+ }
+ }
+
+ function drawCohortCanvas() {
+ var env = prepCanvas('cohortCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.cohortCanvas = [];
+ var pad = { top: 28, right: 22, bottom: 42, left: 54 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.cView === 'share') {
+ var issuers = [
+ { name: 'USDC (Circle)', stock: 27.0, vol: 79.0, col: pal.blue },
+ { name: 'USDT (Tether)', stock: 68.0, vol: 18.5, col: pal.green },
+ { name: '其他合规稳定币 (PYUSD等)', stock: 5.0, vol: 2.5, col: pal.amber }
+ ];
+ var slot = pw / issuers.length;
+ for (var k = 0; k <= 4; k++) {
+ var kv = k * 25, ky = pad.top + ph - (k / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText(kv + '%', pad.left - 8, ky + 4);
+ }
+ issuers.forEach(function (v, idx) {
+ var cx = pad.left + idx * slot + slot / 2, bw = 34;
+ var sh = (v.stock / 100) * ph, vh = (v.vol / 100) * ph;
+ ctx.fillStyle = pal.blueSoft;
+ roundRect(ctx, cx - bw - 4, pad.top + ph - sh, bw, sh, 5); ctx.fill();
+ ctx.fillStyle = v.col;
+ roundRect(ctx, cx + 4, pad.top + ph - vh, bw, vh, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText(v.stock + '%', cx - bw / 2 - 4, pad.top + ph - sh - 6);
+ ctx.fillText(v.vol + '%', cx + bw / 2 + 4, pad.top + ph - vh - 6);
+ ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif';
+ ctx.fillText(v.name, cx, pad.top + ph + 20);
+ hitRegions.cohortCanvas.push({ x: cx - bw - 6, y: pad.top, w: bw * 2 + 12, h: ph, title: v.name, body: '市值流通存量占比 ~' + v.stock + '% vs Q3 链上结算交易量占比 ~' + v.vol + '%' });
+ });
+ } else {
+ var chans = [
+ { lbl: '头部交易所分成池', v: 135, col: pal.amber, tip: '扣除平台优先分成与生态对半分成后，每 $10B USDC 年化净留存约 ~$135M' },
+ { lbl: '新兴银行/PSP伙伴池', v: 195, col: pal.blue, tip: '新签全球商业银行与支付机构阶梯分成下，每 $10B USDC 年化净留存约 ~$195M' },
+ { lbl: 'Circle 平台直存池', v: 354, col: pal.green, tip: 'Circle Mint 与企业直存零外部渠道分成，3.54% 利率下每 $10B 年化净留存达 ~$354M' }
+ ];
+ var maxC = 400;
+ for (var g = 0; g <= 4; g++) {
+ var gv = (maxC / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv + 'M', pad.left - 8, gy + 4);
+ }
+ var sW = pw / chans.length, bW = Math.min(56, sW * 0.48);
+ chans.forEach(function (ch, idx) {
+ var x = pad.left + idx * sW + (sW - bW) / 2;
+ var bh = (ch.v / maxC) * ph, yt = pad.top + ph - bh;
+ ctx.fillStyle = ch.col;
+ roundRect(ctx, x, yt, bW, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + ch.v + 'M', x + bW / 2, yt - 7);
+ ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif';
+ ctx.fillText(ch.lbl, x + bW / 2, pad.top + ph + 20);
+ hitRegions.cohortCanvas.push({ x: x, y: yt, w: bW, h: bh, title: ch.lbl, body: ch.tip });
+ });
+ }
+ }
+
+ function drawCapitalCanvas() {
+ var env = prepCanvas('capitalCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.capitalCanvas = [];
+ var pad = { top: 28, right: 20, bottom: 42, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.kView === 'ebitda') {
+ var qtrs = ["Q3'25", "Q4'25", "Q1'26", "Q2'26", "Q3'26"];
+ var eb = [171.5, 175.9, 151.4, 143.5, 316.7];
+ var maxE = 360;
+ for (var g = 0; g <= 4; g++) {
+ var ev = (maxE / 4) * g, ey = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ey); ctx.lineTo(pad.left + pw, ey); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+ ctx.fillText('$' + ev.toFixed(0) + 'M', pad.left - 8, ey + 4);
+ }
+ var slot = pw / qtrs.length, bw = Math.min(44, slot * 0.54);
+ qtrs.forEach(function (q, i) {
+ var x = pad.left + i * slot + (slot - bw) / 2;
+ var bh = (eb[i] / maxE) * ph, yt = pad.top + ph - bh;
+ ctx.fillStyle = (i === 4) ? pal.green : pal.blue;
+ roundRect(ctx, x, yt, bw, bh, 6); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + eb[i].toFixed(1) + 'M', x + bw / 2, yt - 6);
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", monospace';
+ ctx.fillText(q, x + bw / 2, pad.top + ph + 20);
+ hitRegions.capitalCanvas.push({ x: x, y: yt, w: bw, h: bh, title: q + ' 经调整 EBITDA (新口径)', body: '$' + eb[i].toFixed(1) + 'M（Q3\'26 同比增长 +85%，占 RLDC 70%）' });
+ });
+ } else {
+ var items = [
+ { name: '贝莱德 Circle Reserve Fund (~88%)', val: 64.7, col: pal.blue, tip: 'SEC 注册 2a-7 政府货币基金，仅持有极短期美国国债与隔夜国债逆回购协议' },
+ { name: '系统重要性银行隔离现金 (~12%)', val: 8.9, col: pal.green, tip: '存放于全球 GSIB 银行的持币人利益隔离现金账户 (FBO Accounts)，支撑 24/7 即时赎回' },
+ { name: '公司自有流动性现金 ($2.72B)', val: 2.72, col: pal.violet, tip: '含 $1,700M 企业自由现金 + $1,016M 企业自持稳定币隔离现金，且有息可转债已降为 $0' }
+ ];
+ var maxR = 72;
+ var rowH = ph / items.length;
+ items.forEach(function (it, idx) {
+ var cy = pad.top + idx * rowH + rowH / 2, bh = 24;
+ var bl = Math.max(12, (it.val / maxR) * (pw * 0.78));
+ ctx.fillStyle = it.col;
+ roundRect(ctx, pad.left, cy - bh / 2, bl, bh, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'left';
+ ctx.fillText('$' + it.val.toFixed(2) + 'B', pad.left + bl + 8, cy + 4);
+ ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif';
+ ctx.fillText(it.name, pad.left, cy - 17);
+ hitRegions.capitalCanvas.push({ x: pad.left, y: cy - 22, w: pw, h: 42, title: it.name, body: it.tip });
+ });
+ }
+ }
+
+ // 5. Interactive 2026–2031E Rate × Float × Margin Simulator
+ var simData = { eb: [0.79, 0.98, 1.38, 1.96, 2.82, 4.14] };
+ function drawSimMiniCanvas() {
+ var env = prepCanvas('simMiniCanvas');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ var pad = { top: 22, right: 18, bottom: 26, left: 48 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var yrs = ['2026E', '2027E', '2028E', '2029E', '2030E', '2031E'];
+ var arr = simData.eb;
+ var maxE = Math.max(2.0, Math.ceil(Math.max.apply(null, arr) * 1.18));
+ ctx.strokeStyle = pal.grid;
+ ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+ ctx.strokeStyle = pal.blue; ctx.lineWidth = 2.6; ctx.beginPath();
+ arr.forEach(function (v, i) {
+ var px = pad.left + (i / 5) * pw;
+ var py = pad.top + ph - (v / maxE) * ph;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ });
+ ctx.stroke();
+ arr.forEach(function (v, i) {
+ var px = pad.left + (i / 5) * pw;
+ var py = pad.top + ph - (v / maxE) * ph;
+ ctx.fillStyle = (i === 5) ? pal.green : pal.blue;
+ ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+ ctx.fillText('$' + v.toFixed(2) + 'B', px, py - 8);
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+ ctx.fillText(yrs[i], px, pad.top + ph + 16);
+ });
+ }
+
+ function runSimulator() {
+ var gFloat = parseFloat(document.getElementById('inpUsdcCagr').value) / 100;
+ var rYield = parseFloat(document.getElementById('inpResYield').value) / 100;
+ var netM = parseFloat(document.getElementById('inpNetMargin').value) / 100;
+
+ document.getElementById('lblUsdcCagr').textContent = (gFloat * 100).toFixed(1) + '%';
+ document.getElementById('lblResYield').textContent = (rYield * 100).toFixed(1) + '%';
+ document.getElementById('lblNetMargin').textContent = (netM * 100).toFixed(1) + '%';
+
+ var avgFloat = 74.0; // FY26E avg $B
+ var otherRev = 0.32; // FY26E guidance midpoint $320M
+ var opEx = 0.58; // FY26E adj opex midpoint $578M
+ var ebArr = [0.78];
+
+ for (var y = 1; y <= 5; y++) {
+ avgFloat *= (1 + gFloat);
+ otherRev *= (1 + 0.28 + gFloat * 0.15); // CPN + Arc + CCTP scaling
+ opEx *= 1.13; // Disciplined 13% annual opex growth
+ var resInc = avgFloat * rYield;
+ var rldc = resInc * netM + otherRev * 0.90;
+ var ebitda = Math.max(0.15, rldc - opEx);
+ ebArr.push(ebitda);
+ if (y === 5) {
+ var totRev31 = resInc + otherRev;
+ var rldcMargin31 = (rldc / Math.max(0.01, totRev31)) * 100;
+ document.getElementById('simFloatOut').textContent = '$' + Math.round(avgFloat) + 'B';
+ document.getElementById('simRldcOut').textContent = '$' + rldc.toFixed(2) + 'B';
+ document.getElementById('simMarginOut').textContent = rldcMargin31.toFixed(1) + '%';
+ document.getElementById('simEbitdaOut').textContent = '$' + ebitda.toFixed(2) + 'B';
+ }
+ }
+ simData.eb = ebArr;
+ drawSimMiniCanvas();
+ }
+
+ ['inpUsdcCagr', 'inpResYield', 'inpNetMargin'].forEach(function (id) {
+ var el = document.getElementById(id);
+ if (el) el.addEventListener('input', runSimulator);
+ });
+
+ var PRESETS = {
+ bear: { f: 22.5, r: 2.1, m: 39 },
+ base: { f: 40.0, r: 3.2, m: 43 },
+ bull: { f: 47.5, r: 3.8, m: 49 }
+ };
+ var simPresets = document.getElementById('simPresets');
+ if (simPresets) {
+ simPresets.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-preset]');
+ if (!b) return;
+ var k = b.getAttribute('data-preset');
+ simPresets.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ var pr = PRESETS[k] || PRESETS.base;
+ document.getElementById('inpUsdcCagr').value = pr.f;
+ document.getElementById('inpResYield').value = pr.r;
+ document.getElementById('inpNetMargin').value = pr.m;
+ runSimulator();
+ });
+ }
+
+ function bindChartTab(groupId, attr, stateKey, drawFn) {
+ var g = document.getElementById(groupId);
+ if (!g) return;
+ g.addEventListener('click', function (e) {
+ var b = e.target.closest('[' + attr + ']');
+ if (!b) return;
+ state[stateKey] = b.getAttribute(attr);
+ g.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+ drawFn();
+ });
+ }
+ bindChartTab('pChartTabs', 'data-pview', 'pView', drawProfitCanvas);
+ bindChartTab('cChartTabs', 'data-cview', 'cView', drawCohortCanvas);
+ bindChartTab('kChartTabs', 'data-kview', 'kView', drawCapitalCanvas);
+
+ function bindHoverTooltip(canvasId) {
+ var c = document.getElementById(canvasId), tip = document.getElementById('chartTooltip');
+ if (!c || !tip) return;
+ c.addEventListener('mousemove', function (ev) {
+ var r = c.getBoundingClientRect();
+ var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+ var list = hitRegions[canvasId] || [], hit = null;
+ for (var i = 0; i < list.length; i++) {
+ var rg = list[i];
+ if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+ }
+ if (hit) {
+ tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 300, ev.clientX + 14) + 'px';
+ tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ });
+ c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+ }
+ ['profitCanvas', 'cohortCanvas', 'capitalCanvas'].forEach(bindHoverTooltip);
+
+ function drawAllCharts() {
+ drawProfitCanvas();
+ drawCohortCanvas();
+ drawCapitalCanvas();
+ drawSimMiniCanvas();
+ }
+
+ // Quick Jump Search (⌘K)
+ var QUICK_ITEMS = [
+ { id: 'mod-deck', t: 'M0 双栏指挥舱与核心公式', s: 'TTM $3.03B 收入 · Q3 RLDC 利润率 52.4% · 三大透镜切换' },
+ { id: 'mod-pipeline', t: 'M1 五阶商业价值传导沙盘', s: 'Circle Mint → 贝莱德 88% 国债池 → 直存 18.1% → CPN → Arc' },
+ { id: 'mod-profit-pool', t: 'M2 利润池瀑布流与四大引擎', s: 'Q3 $865M 营收 → $453M RLDC → $317M 经调整 EBITDA (70%)' },
+ { id: 'mod-cohort', t: 'M3 渠道分润剪刀差与 79% 链上份额', s: '直存零分润 vs 交易所分润 · 27% 存量撬动 79% 链上交易额' },
+ { id: 'mod-capital', t: 'M4 $73.6B 隔离储备与 5 年复利推演', s: '零有息债 · 利率×流通量×净留存率交互模拟器' },
+ { id: 'mod-matrix', t: 'M5 全球支付与稳定币矩阵及三大压测', s: 'CRCL vs Tether / Visa / Stripe / Coinbase / PayPal' }
+ ];
+ var qInput = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+ function renderQuick(q) {
+ if (!qPop) return;
+ var kw = (q || '').trim().toLowerCase();
+ var matched = QUICK_ITEMS.filter(function (it) {
+ return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+ });
+ qPop.innerHTML = matched.map(function (it) {
+ return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+ }).join('');
+ qPop.classList.toggle('open', matched.length > 0);
+ }
+ if (qInput && qPop) {
+ qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+ qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+ qPop.addEventListener('click', function (e) {
+ var jb = e.target.closest('[data-jump]');
+ if (!jb) return;
+ var el = document.querySelector(jb.getAttribute('data-jump'));
+ if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ qPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) {
+ if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+ });
+ }
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+ e.preventDefault();
+ if (qInput) qInput.focus();
+ }
+ if (e.key === 'Escape') {
+ if (qPop) qPop.classList.remove('open');
+ document.getElementById('muiSidebar').classList.remove('open');
+ document.getElementById('drawerBackdrop').classList.remove('open');
+ }
+ });
+
+ // Sidebar Toggle, Export & Print
+ var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ if (sbBtn && sb && bd) {
+ sbBtn.addEventListener('click', function () {
+ if (window.innerWidth < 1024) {
+ var open = sb.classList.toggle('open');
+ bd.classList.toggle('open', open);
+ } else {
+ var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+ if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+ else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+ try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (err) {}
+ setTimeout(drawAllCharts, 60);
+ }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+ }
+
+ document.querySelectorAll('[data-portal-theme]').forEach(function (btn) {
+ btn.addEventListener('click', function () {
+ var t = btn.getAttribute('data-portal-theme');
+ applyTheme(t, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, t); } catch (err) {}
+ });
+ });
+ document.getElementById('exportHtmlBtn').addEventListener('click', function () {
+ var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+ var url = URL.createObjectURL(blob);
+ var a = document.createElement('a');
+ a.href = url;
+ a.download = 'Circle_商业模式解构.html';
+ a.click();
+ setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+ showToast('已导出独立网页：Circle_商业模式解构.html');
+ });
+ document.getElementById('printPageBtn').addEventListener('click', function () { window.print(); });
+
+ window.addEventListener('scroll', function () {
+ var bar = document.getElementById('readingProgressBar');
+ if (bar) {
+ var docH = document.documentElement.scrollHeight - window.innerHeight;
+ bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+ }
+ }, { passive: true });
+
+ try {
+ var savedChk = JSON.parse(localStorage.getItem(STORAGE_STRESS_KEY) || '{}');
+ document.querySelectorAll('[data-stress-chk]').forEach(function (chk) {
+ var k = chk.getAttribute('data-stress-chk');
+ chk.checked = !!savedChk[k];
+ chk.addEventListener('change', function () {
+ savedChk[k] = chk.checked;
+ try { localStorage.setItem(STORAGE_STRESS_KEY, JSON.stringify(savedChk)); } catch (err) {}
+ showToast(chk.checked ? '已加入重点跟踪清单' : '已取消跟踪标记');
+ });
+ });
+ } catch (e) {}
+
+ try {
+ applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+ applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+ } catch (e) {}
+
+ document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+ var nxt = state.theme === 'dark' ? 'light' : 'dark';
+ applyTheme(nxt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+ });
+ document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+ var lb = e.target.closest('[data-lang]');
+ if (!lb) return;
+ var nl = lb.getAttribute('data-lang');
+ applyLang(nl, false);
+ try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+ });
+
+ var resizeTimer = null;
+ window.addEventListener('resize', function () {
+ clearTimeout(resizeTimer);
+ resizeTimer = setTimeout(drawAllCharts, 90);
+ });
+
+ runSimulator();
+ drawAllCharts();
+ })();
+ </script>
+</body>
+</html>

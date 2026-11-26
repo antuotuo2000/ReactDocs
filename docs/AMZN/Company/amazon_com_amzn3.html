@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="亚马逊 Amazon.com, Inc. (NASDAQ: AMZN) 未来十年（2026–2032）战略图谱：~$2,200亿 AI 重基建与双万亿营收地平线、AWS AgentCore 与 Bedrock、Annapurna Labs 自研芯片主权（Graviton5 / Trainium2-4）、百万机器人与20分钟闪送、Amazon Leo 卫星互联网及 Zoox 无人驾驶出租车。" />
+  <title>亚马逊未来十年（2026–2032）战略图谱 | 数据中心</title>
+  
+  <style>
+  /* ==========================================================================
+     MUI Official Branding Design System (https://mui.com/)
+     High-Clarity Light Mode Default (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16)
+     2026–2032 Strategic Observatory Layout (F0–F4)
+     ========================================================================== */
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-canvas: #090D16;
+    --bg-canvas-elevated: #0C1320;
+    --bg-paper: rgba(15, 25, 36, 0.88);
+    --bg-paper-solid: #0F1924;
+    --bg-subtle: rgba(19, 35, 55, 0.65);
+    --bg-hover: rgba(51, 153, 255, 0.08);
+    --bg-active: rgba(0, 115, 230, 0.16);
+    --bg-appbar: rgba(9, 13, 22, 0.86);
+
+    --border-subtle: rgba(51, 153, 255, 0.14);
+    --border-default: rgba(148, 163, 184, 0.18);
+    --border-strong: rgba(51, 153, 255, 0.44);
+    --divider: rgba(148, 163, 184, 0.12);
+
+    --text-primary: #F3F6F9;
+    --text-secondary: #B2BAC2;
+    --text-muted: #7E8C9A;
+
+    --mui-primary-main: #0073E6;
+    --mui-primary-light: #3399FF;
+    --mui-primary-lighter: #66B2FF;
+    --mui-primary-bg: rgba(0, 115, 230, 0.16);
+    --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+    --mui-success-main: #1AA251;
+    --mui-success-text: #66BB6A;
+    --mui-success-bg: rgba(26, 162, 81, 0.14);
+    --mui-success-border: rgba(102, 187, 106, 0.34);
+
+    --mui-warning-main: #DEA500;
+    --mui-warning-text: #FFB74D;
+    --mui-warning-bg: rgba(255, 183, 77, 0.14);
+    --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+    --mui-error-main: #EB0014;
+    --mui-error-text: #FF6B6B;
+    --mui-error-bg: rgba(235, 0, 20, 0.14);
+    --mui-error-border: rgba(255, 107, 107, 0.34);
+
+    --mui-violet-text: #A78BFA;
+    --mui-violet-bg: rgba(139, 92, 246, 0.14);
+    --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+    --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+    --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+    --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+  }
+
+  :root,
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg-canvas: #F8FAFC;
+    --bg-canvas-elevated: #F1F5F9;
+    --bg-paper: rgba(255, 255, 255, 0.96);
+    --bg-paper-solid: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+    --bg-hover: rgba(0, 115, 230, 0.06);
+    --bg-active: rgba(0, 115, 230, 0.11);
+    --bg-appbar: rgba(255, 255, 255, 0.90);
+
+    --border-subtle: #E2E8F0;
+    --border-default: #CBD5E1;
+    --border-strong: #0073E6;
+    --divider: #E2E8F0;
+
+    --text-primary: #0F1924;
+    --text-secondary: #334155;
+    --text-muted: #5B6B7C;
+
+    --mui-primary-main: #0073E6;
+    --mui-primary-light: #0059B2;
+    --mui-primary-lighter: #0059B2;
+    --mui-primary-bg: rgba(0, 115, 230, 0.09);
+    --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+    --mui-success-main: #15803D;
+    --mui-success-text: #15803D;
+    --mui-success-bg: rgba(21, 128, 61, 0.09);
+    --mui-success-border: rgba(21, 128, 61, 0.26);
+
+    --mui-warning-main: #B45309;
+    --mui-warning-text: #B45309;
+    --mui-warning-bg: rgba(180, 83, 9, 0.09);
+    --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+    --mui-error-main: #C62828;
+    --mui-error-text: #C62828;
+    --mui-error-bg: rgba(198, 40, 40, 0.08);
+    --mui-error-border: rgba(198, 40, 40, 0.26);
+
+    --mui-violet-text: #6D28D9;
+    --mui-violet-bg: rgba(109, 40, 217, 0.08);
+    --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+    --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+    --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+    --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    background-color: var(--bg-canvas);
+    background-image: var(--hero-glow);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.65;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+  a:hover { text-decoration: underline; }
+
+  .cite-link {
+    display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+    padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+    border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+    white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+  }
+  .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+  #readingProgressBar {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #7C3AED 100%); z-index: 1300; transition: width 0.08s linear;
+  }
+  #chartTooltip {
+    position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 190px; max-width: 300px;
+    padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+  }
+  #muiSnackbar {
+    position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+    z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+    border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* AppBar */
+  .mui-appbar {
+    position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+  }
+  .mui-appbar-inner {
+    max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+  .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .mui-icon-btn, .mui-theme-icon-btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+    border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+    color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+  }
+  .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+  .mui-dl-btn {
+    display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px;
+    border-radius: 10px; border: 1px solid #0073E6; background: linear-gradient(180deg, #1985F1 0%, #0073E6 100%);
+    color: #FFFFFF; font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.16s ease; white-space: nowrap;
+  }
+  .mui-dl-btn:hover { background: linear-gradient(180deg, #3399FF 0%, #0059B2 100%); transform: translateY(-0.5px); }
+  .brand-monogram {
+    width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #4F46E5 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+    color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .breadcrumbs .crumb-link {
+    display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px;
+    color: var(--text-secondary); font-weight: 600; text-decoration: none; border: none; background: transparent; cursor: pointer; font-family: inherit; font-size: 0.85rem;
+  }
+  .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+  .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+  .quick-search-wrap { position: relative; width: 210px; }
+  .quick-search-input {
+    width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+    border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease;
+  }
+  .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+  .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+  .quick-search-kbd {
+    position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+    padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+  }
+  .quick-jump-popover {
+    position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+    border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+  }
+  .quick-jump-popover.open { display: block; }
+  .quick-jump-item {
+    display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+    border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+  }
+  .quick-jump-item:hover { background: var(--bg-hover); }
+  .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+  .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+  .mui-lang-switch {
+    display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+    border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+  }
+  .mui-lang-btn {
+    border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+    font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+  .mui-chip {
+    display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 10px; border-radius: 999px;
+    font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+  }
+  .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+  .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+  .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+  .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+  .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+  .mui-segmented {
+    display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+    background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+  }
+  .mui-seg-btn {
+    border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+    padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mui-seg-btn:hover { color: var(--text-primary); }
+  .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+  /* Layout Shell & Sidebar */
+  .layout-shell {
+    max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+    gap: 26px; padding: 22px 20px 72px; align-items: start;
+  }
+  html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+  html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+  .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+  .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+  .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+  .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+  .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+  .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+  .sidebar-mini-label { color: var(--text-muted); }
+  .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+  .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+  .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .mui-nav-link {
+    display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px;
+    font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease;
+  }
+  .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+  .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+  .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+  .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.22); color: var(--mui-primary-lighter); }
+
+  /* Suite Hub Navigation */
+  .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--border-subtle); }
+  .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+  .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+  .co-side-home {
+    display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 6px;
+    font-size: 0.70rem; font-weight: 700; color: var(--mui-primary-lighter); background: var(--mui-primary-bg);
+    border: 1px solid var(--mui-primary-border); cursor: pointer; font-family: inherit;
+  }
+  .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+  .co-hub-pill {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px;
+    border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+  }
+  .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+  .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+  .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+  .co-hub-item {
+    display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px;
+    border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid);
+    cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+  }
+  .co-hub-item.co-hub-hidden { display: none !important; }
+  .co-hub-item:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+  .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+  .co-hub-ticker {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.68rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border);
+  }
+  .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; border-color: #0059B2; }
+  .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+  .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+  .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+  .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+  .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .portal-reading-tools button {
+    font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 31px; color: var(--text-secondary);
+    border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease;
+  }
+  .portal-reading-tools button.active, .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--border-strong); background: var(--bg-paper-solid); }
+
+  .drawer-backdrop { position: fixed; inset: 0; background: rgba(9, 13, 22, 0.48); backdrop-filter: blur(3px); z-index: 1150; display: none; }
+  .drawer-backdrop.open { display: block; }
+  @media (max-width: 1023px) {
+    .layout-shell { grid-template-columns: minmax(0, 1fr) !important; padding: 14px 14px 56px; }
+    .mui-sidebar {
+      position: fixed; top: 60px; left: 0; bottom: 0; z-index: 1200; width: min(320px, 88vw);
+      background: var(--bg-canvas); padding: 12px; border-right: 1px solid var(--border-subtle);
+      transform: translateX(-105%); transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+    }
+    .mui-sidebar.open { transform: translateX(0); }
+    .hide-sm { display: none !important; }
+    .quick-search-wrap { width: 145px; }
+  }
+  @media (max-width: 680px) { .quick-search-wrap { display: none; } }
+
+  /* ==========================================================================
+     2026–2032 STRATEGIC OBSERVATORY LAYOUT (F0–F4)
+     ========================================================================== */
+  .fh-workspace { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .fh-hero-grid { display: grid; grid-template-columns: 1.38fr 1fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 1080px) { .fh-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .fh-manifesto-card {
+    background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 26px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; position: relative; overflow: hidden;
+  }
+  .fh-manifesto-card::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #0073E6 0%, #6366F1 55%, #16A34A 100%);
+  }
+  .fh-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .fh-h1 { font-size: clamp(1.48rem, 2.28vw, 2.06rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .fh-grad { background: linear-gradient(92deg, #0073E6 0%, #4F46E5 52%, #15803D 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  html[data-theme="dark"] .fh-grad { background: linear-gradient(92deg, #66B2FF 0%, #A78BFA 52%, #66BB6A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .fh-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.74; }
+  .fh-lead strong { color: var(--text-primary); }
+  .fh-quote {
+    margin-top: 12px; padding: 11px 14px; border-radius: 11px; background: var(--bg-subtle);
+    border-left: 3px solid var(--mui-primary-main); font-size: 0.82rem; color: var(--text-secondary); line-height: 1.62;
+  }
+
+  .fh-horizon-box { background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .fh-horizon-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .fh-horizon-formula { padding: 8px 12px; border-radius: 9px; background: var(--mui-primary-bg); border: 1px dashed var(--mui-primary-border); font-size: 0.79rem; font-weight: 700; color: var(--mui-primary-lighter); }
+  .fh-horizon-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+  .fh-radar-card {
+    background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px;
+    padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  }
+  .fh-canvas-wrap { position: relative; width: 100%; height: 310px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+  .fh-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
+  .fh-kpi-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .fh-mini-kpi { padding: 9px 10px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .fh-mini-kpi b { display: block; font-size: 0.98rem; font-weight: 800; color: var(--mui-primary-lighter); }
+  .fh-mini-kpi span { font-size: 0.69rem; color: var(--text-muted); }
+
+  .fh-panel { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+  .fh-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--divider); }
+  .fh-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-main); display: block; margin-bottom: 3px; }
+  html[data-theme="dark"] .fh-kicker { color: var(--mui-primary-light); }
+  .fh-h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.015em; color: var(--text-primary); }
+  .fh-head-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; }
+
+  /* F1: 4:8 Vertical Master-Detail 6-Engine Observatory */
+  .fh-observatory { display: grid; grid-template-columns: 4fr 8fr; gap: 18px; align-items: start; }
+  @media (max-width: 1020px) { .fh-observatory { grid-template-columns: minmax(0, 1fr); } }
+  .fh-engine-rail { display: flex; flex-direction: column; gap: 8px; }
+  .fh-eng-btn {
+    width: 100%; text-align: left; padding: 12px 14px; border-radius: 13px; border: 1px solid var(--border-subtle);
+    background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit;
+    transition: all 0.16s ease; display: flex; flex-direction: column; gap: 4px;
+  }
+  .fh-eng-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); transform: translateX(2px); }
+  .fh-eng-btn.active { border-color: #0073E6; background: var(--bg-active); box-shadow: 0 0 0 1px #0073E6, 0 6px 16px rgba(0, 115, 230, 0.13); }
+  .fh-eng-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .fh-eng-code { font-size: 0.70rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); }
+  .fh-eng-btn.active .fh-eng-code { background: #0073E6; color: #FFFFFF; }
+  .fh-eng-horizon { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+  .fh-eng-name { font-size: 0.86rem; font-weight: 800; line-height: 1.32; }
+  .fh-eng-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+  .fh-engine-detail {
+    background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); border-radius: 16px;
+    padding: 22px 24px; display: flex; flex-direction: column; gap: 16px;
+  }
+  .fh-det-header { display: flex; flex-direction: column; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid var(--divider); }
+  .fh-det-title { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); line-height: 1.3; }
+  .fh-det-lead { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.72; }
+  .fh-det-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 720px) { .fh-det-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .fh-det-kpi { padding: 11px 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .fh-det-kpi b { display: block; font-size: 1.06rem; font-weight: 800; color: var(--mui-primary-lighter); }
+  .fh-det-kpi span { font-size: 0.71rem; color: var(--text-muted); display: block; margin-top: 2px; }
+  .fh-det-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 760px) { .fh-det-cols { grid-template-columns: minmax(0, 1fr); } }
+  .fh-det-box { padding: 13px 15px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .fh-det-box h4 { font-size: 0.80rem; font-weight: 800; color: var(--text-primary); margin-bottom: 5px; }
+  .fh-det-box p { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.62; }
+
+  /* F2 & F3 Asymmetric Splits */
+  .fh-split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+  .fh-split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 1040px) { .fh-split-75, .fh-split-57 { grid-template-columns: minmax(0, 1fr); } }
+  .fh-subcard { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+  .fh-subhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .fh-subhead h3 { font-size: 1.02rem; font-weight: 800; color: var(--text-primary); }
+  .fh-caption { font-size: 0.76rem; color: var(--text-muted); line-height: 1.52; }
+
+  .fh-audit-list, .fh-chip-stack { display: flex; flex-direction: column; gap: 10px; }
+  .fh-audit-item { padding: 12px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .fh-audit-item h4 { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .fh-audit-item p { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.56; }
+
+  /* F4 Optionality Switchboard */
+  .fh-switchboard { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 1040px) { .fh-switchboard { grid-template-columns: minmax(0, 1fr); } }
+  .fh-toggle-list { display: flex; flex-direction: column; gap: 9px; }
+  .fh-opt-row {
+    display: flex; align-items: flex-start; gap: 11px; padding: 11px 13px; border-radius: 12px;
+    background: var(--bg-subtle); border: 1px solid var(--border-subtle); cursor: pointer; transition: all 0.15s ease;
+  }
+  .fh-opt-row:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+  .fh-opt-row input[type="checkbox"] { width: 17px; height: 17px; accent-color: #0073E6; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+  .fh-opt-body { flex: 1; min-width: 0; }
+  .fh-opt-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .fh-opt-name { font-size: 0.83rem; font-weight: 800; color: var(--text-primary); }
+  .fh-opt-add { font-size: 0.72rem; font-weight: 800; color: var(--mui-success-text); }
+  .fh-opt-desc { font-size: 0.74rem; color: var(--text-secondary); margin-top: 2px; }
+
+  .fh-slider-wrap { margin-top: 10px; padding: 11px 13px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+  .fh-slider-top { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px; }
+  .fh-slider-top b { color: var(--mui-primary-lighter); }
+  .fh-slider-wrap input[type="range"] { width: 100%; accent-color: #0073E6; cursor: pointer; }
+
+  .fh-sim-outgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .fh-sim-card { padding: 12px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+  .fh-sim-card b { display: block; font-size: 1.18rem; font-weight: 800; color: var(--mui-primary-lighter); }
+  .fh-sim-card span { font-size: 0.72rem; color: var(--text-muted); }
+
+  .fh-sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--divider); }
+  .fh-source-item { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important; transition: all 0.15s ease; }
+  .fh-source-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); transform: translateY(-1px); }
+  .fh-source-item b { font-size: 0.80rem; color: var(--mui-primary-lighter); }
+  .fh-source-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+  @media print {
+    .mui-appbar, .mui-sidebar, #readingProgressBar { display: none !important; }
+    .layout-shell { display: block !important; padding: 0 !important; }
+  }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body id="top">
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">AMZN</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <button type="button" class="crumb-link hide-sm" id="crumbTopBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </button>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon 2026–2032 Strategic Horizon Atlas">亚马逊未来十年（2026–2032）战略图谱</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: AMZN</span>
+        <span class="mui-chip mui-chip-violet mono hide-sm">2026E CapEx ~$220B</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索芯片、卫星或引擎…" aria-label="快速跳转战略章节" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <button type="button" id="exportHtmlBtn" class="mui-dl-btn" title="下载独立 HTML 网页文件">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n-zh="下载 HTML" data-i18n-en="Download">下载 HTML</span>
+        </button>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left MUI Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="未来十年战略模块与站点导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">AMZN · 2026–2032 ATLAS</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="亚马逊未来十年战略观测台" data-i18n-en="Amazon 2032 Strategic Observatory">亚马逊未来十年战略观测台</div>
+        <p class="sidebar-subtitle" data-i18n-zh="双万亿营收终局推演：~$2,200亿 AI 基建周期 × Annapurna 芯片主权 × 百万机器人闪送 × Leo 卫星 × Zoox 无人驾驶" data-i18n-en="Dual $1T Revenue Horizon: ~$220B AI CapEx × Annapurna Silicon × 1M+ Robots × Amazon Leo × Zoox Robotaxi">双万亿营收终局推演：~$2,200亿 AI 基建周期 × Annapurna 芯片主权 × 百万机器人闪送 × Leo 卫星 × Zoox 无人驾驶</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="2026E 现金资本开支" data-i18n-en="2026E Cash CapEx">2026E 现金资本开支</span>
+            <span class="sidebar-mini-val mono">~$220B</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="AWS 2027–28 预期增速" data-i18n-en="AWS 2027–28 Est Growth">AWS 2027–28 预期增速</span>
+            <span class="sidebar-mini-val mono">&gt;40% YoY</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="自研芯片年化运行率" data-i18n-en="Custom Silicon Run Rate">自研芯片年化运行率</span>
+            <span class="sidebar-mini-val mono">&gt;$20B (~$50B Eq)</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="站点导航与战略目录">
+        <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="AMZN">
+          <div class="co-side-head">
+            <span class="co-side-title mono">AMZN · 04/06</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="amazon_com_amzn.html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="amazon_com_amzn4.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (6)" data-i18n-en="All (6)">全部 (6)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (5)" data-i18n-en="Company (5)">公司深度 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (1)" data-i18n-en="SeniorExecutive (1)">高管人物 (1)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_amzn_12_1p_3p_fba_prime_ads_aws_bedrock_video_alexa_ring_eero_leo_zoox.html" title="Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心" data-i18n-en="Amazon (AMZN) 12 &amp; Deep Dive Report (1P ·3P/FBA·Prime·Ads·AWS·Bedrock/ ·Video· · ·Alexa+·Ring/eero·Leo/Zoox)| Data Center">Amazon (AMZN) 全线 12 款核心产品与服务深度商业研报中枢（1P零售·3P/FBA·Prime·Ads·AWS·Bedrock/芯片·Video·生鲜·药房·Alexa+·Ring/eero·Leo/Zoox）| 王安安数据中心</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/amazon_nasdaq_amzn_20_jassy_olsavsky_garman_herrington_desantis_bezos.html" title="Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心" data-i18n-en="Amazon (NASDAQ: AMZN) 20 &amp; OverviewDeep DiveReport (Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos)| Data Center">Amazon (NASDAQ: AMZN) 20 大核心高管与董事会全景深度研报中枢（Jassy·Olsavsky·Garman·Herrington·DeSantis·Bezos等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+        <div class="nav-section-label" style="margin-top:8px;" data-i18n-zh="十年战略观测台 (F0–F4)" data-i18n-en="Observatory Modules (F0–F4)">十年战略观测台 (F0–F4)</div>
+        <ul class="mui-nav-list" id="tocList">
+          <li><a href="#mod-f0" class="mui-nav-link active"><span class="nav-idx mono">F0</span><span data-i18n-zh="战略总纲与三阶段S曲线" data-i18n-en="Manifesto & 3-Horizon S-Curve">战略总纲与三阶段S曲线</span></a></li>
+          <li><a href="#mod-f1" class="mui-nav-link"><span class="nav-idx mono">F1</span><span data-i18n-zh="六大增长引擎主从观测台" data-i18n-en="6-Engine Master Observatory">六大增长引擎主从观测台</span></a></li>
+          <li><a href="#mod-f2" class="mui-nav-link"><span class="nav-idx mono">F2</span><span data-i18n-zh="$2,200亿基建与双万亿瀑布桥" data-i18n-en="$220B CapEx & Revenue Bridge">$2,200亿基建与双万亿瀑布桥</span></a></li>
+          <li><a href="#mod-f3" class="mui-nav-link"><span class="nav-idx mono">F3</span><span data-i18n-zh="Annapurna 自研芯片主权图谱" data-i18n-en="Annapurna Silicon Sovereignty">Annapurna 自研芯片主权图谱</span></a></li>
+          <li><a href="#mod-f4" class="mui-nav-link"><span class="nav-idx mono">F4</span><span data-i18n-zh="2032五万亿市值期权调音台" data-i18n-en="2032 $5T Optionality Switchboard">2032五万亿市值期权调音台</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card sidebar-actions portal-reading-tools" id="portalReadingTools">
+        <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Appearance & Export">阅读与导出工具</div>
+        <div class="side-theme-group" role="group" aria-label="外观切换">
+          <button type="button" id="sideLightBtn" class="active" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+          <button type="button" id="sideDarkBtn" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+        </div>
+        <div class="side-tool-grid">
+          <button type="button" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Strategic Observatory -->
+    <main class="fh-workspace">
+
+      <!-- F0: STRATEGIC MANIFESTO & 3-HORIZON S-CURVE RADAR -->
+      <section id="mod-f0" class="fh-hero-grid">
+        <div class="fh-manifesto-card">
+          <div>
+            <div class="fh-badge-row">
+              <span class="mui-chip mui-chip-primary mono" data-i18n-zh="十年终局图景：双万亿营收帝国 (Retail $1T+ & AWS $1T+)" data-i18n-en="2026–2032 THESIS: Dual $1T+ Revenue Businesses">十年终局图景：双万亿营收帝国 (Retail $1T+ &amp; AWS $1T+)</span>
+              <span class="mui-chip mui-chip-success mono" data-i18n-zh="AWS Q3'26 同比加速至 +39.3%" data-i18n-en="AWS Q3'26 Re-accelerated +39.3%">AWS Q3'26 同比加速至 +39.3%</span>
+              <span class="mui-chip mui-chip-violet mono">Parallel Bets · 2 &gt; 0</span>
+            </div>
+
+            <h1 class="fh-h1" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱：<span class='fh-grad'>以 $2,200亿 年化重资本筑墙，同时叩响数字电网与物理商业的“双万亿”大门</span>" data-i18n-en="Amazon 2026–2032 Strategic Horizon Atlas: <span class='fh-grad'>Deploying ~$220B Annual CapEx Toward Two $1 Trillion Revenue Engines</span>">
+              亚马逊未来十年（2026–2032）战略图谱：<span class="fh-grad">以 $2,200亿 年化重资本筑墙，同时叩响数字电网与物理商业的“双万亿”大门</span>
+            </h1>
+
+            <p class="fh-lead">
+              苹果的未来十年是一场<strong>“端侧隐私 AI 与个人器官级硬件渗透”</strong>的精密手术；而亚马逊的未来十年则是一场史无前例的<strong>“行星级算力、电力、硅片、机器人、低轨卫星与极速物理履约”</strong>的重工业基础设施总攻。在 2026 年 10 月发布的 Q3 财报中，AWS 单季营收飙升 <strong>+39.3% 至 $459.8亿（年化运行率 $1,840亿）</strong>，CEO Andy Jassy 首次给出极具冲击力的中长期判断：<strong>基于在手订单与电力/芯片交付节奏，AWS 在 2027 与 2028 年预计均将保持 40% 以上的年营收增速</strong>
+              <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">Q3 2026 官方季报 ↗</a>。
+              与此同时，全球仍有约 <strong>80% 的零售额发生在线下实体店、约 85% 的企业 IT 支出停留在本地机房（On-Premises）</strong>——这两片尚未迁移的巨型海洋，构成了亚马逊未来十年最厚实的结构性长坡
+              <a class="cite-link" href="https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf" target="_blank" rel="noopener noreferrer">2025 致股东信 PDF ↗</a>。
+            </p>
+
+            <blockquote class="fh-quote">
+              “There has never been a trillion dollar revenue business, and we may have two of them in the next 5-10 years.”（商业史上从未诞生过年营收一万亿美元的单一业务，而在未来 5 到 10 年内，我们可能同时拥有两个。）—— <strong>Andy Jassy</strong>，Amazon Q3 2026 业绩公告（2026年10月29日）
+              <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">原文出处 ↗</a>
+            </blockquote>
+          </div>
+
+          <!-- Interactive 3-Horizon Switcher -->
+          <div class="fh-horizon-box">
+            <div class="fh-horizon-head">
+              <span class="mono" style="font-size:0.74rem;font-weight:800;color:var(--text-muted);" data-i18n-zh="切换三阶段战略地平线：" data-i18n-en="SELECT STRATEGIC HORIZON:">切换三阶段战略地平线：</span>
+              <div class="mui-segmented" id="horizonTabs">
+                <button type="button" class="mui-seg-btn active" data-hz="0" data-i18n-zh="H1 · 2026–2027 算力与闪送兑现波" data-i18n-en="H1 · 2026–27 AI & Ultra-Fast">H1 · 2026–2027 算力与闪送兑现波</button>
+                <button type="button" class="mui-seg-btn" data-hz="1" data-i18n-zh="H2 · 2028–2029 Agent与芯片收获波" data-i18n-en="H2 · 2028–29 Agents & Silicon">H2 · 2028–2029 Agent与芯片收获波</button>
+                <button type="button" class="mui-seg-btn" data-hz="2" data-i18n-zh="H3 · 2030–2032 太空与无人终局波" data-i18n-en="H3 · 2030–32 Space & Autonomy">H3 · 2030–2032 太空与无人终局波</button>
+              </div>
+            </div>
+            <div class="fh-horizon-formula mono" id="hzFormula">H1 核心催化：~$2,200亿 CapEx 转化为 AWS 电力翻倍（2027底）+ Trainium3/4 放量 + 生鲜当日达 2,300+ 城 &amp; Rufus/Alexa+ 导购变现</div>
+            <p class="fh-horizon-desc" id="hzDesc">2026–2027 年是重资本投入立即转化为收入加速的窗口期：AWS 电力容量在 2025 新增 3.9 GW 基础上将于 2027 年底翻倍，支撑 AWS 连续冲击 &gt;40% 增速；零售端通过生鲜易腐品当日达与 450+ 城镇 Amazon Now 极速闪送将 Prime 购买频次拉升至 3 倍。</p>
+          </div>
+        </div>
+
+        <div class="fh-radar-card">
+          <div class="fh-subhead">
+            <h3 data-i18n-zh="三阶段战略 S 曲线接力雷达（2025–2032E）" data-i18n-en="3-Horizon S-Curve Relay Trajectory (2025–2032E)">三阶段战略 S 曲线接力雷达（2025–2032E）</h3>
+            <span class="mui-chip mui-chip-primary mono" id="sCurveBadge">H1 → H2 → H3</span>
+          </div>
+          <div class="fh-canvas-wrap">
+            <canvas id="sCurveCanvas" aria-label="亚马逊三阶段战略S曲线图表"></canvas>
+          </div>
+          <div class="fh-kpi-strip">
+            <div class="fh-mini-kpi">
+              <b class="mono">~85% IT</b>
+              <span data-i18n-zh="全球仍待上云的本地IT支出空间" data-i18n-en="Global IT Still On-Premises">全球仍待上云的本地IT支出空间</span>
+            </div>
+            <div class="fh-mini-kpi">
+              <b class="mono">~80% 零售</b>
+              <span data-i18n-zh="全球仍在线下门店的零售总额" data-i18n-en="Global Retail Still Physical">全球仍在线下门店的零售总额</span>
+            </div>
+            <div class="fh-mini-kpi">
+              <b class="mono">2x 电力</b>
+              <span data-i18n-zh="AWS 数据中心容量至2027年底翻倍" data-i18n-en="AWS Power Doubling by End-2027">AWS 数据中心容量至2027年底翻倍</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- F1: 4:8 MASTER-DETAIL 6-ENGINE STRATEGIC OBSERVATORY -->
+      <section id="mod-f1" class="fh-panel">
+        <div class="fh-panel-head">
+          <div>
+            <span class="fh-kicker mono">MODULE F1 · SIX PARALLEL GROWTH ENGINES (2 &gt; 0 PHILOSOPHY)</span>
+            <h2 class="fh-h2" data-i18n-zh="六大战略引擎主从观测台：从“直线幻觉”到多路径并行饱和攻击" data-i18n-en="6-Engine Master-Detail Observatory: Parallel Saturation Bets ('2 > 0')">六大战略引擎主从观测台：从“直线幻觉”到多路径并行饱和攻击</h2>
+            <p class="fh-head-desc" data-i18n-zh="Andy Jassy 在 2025 致股东信中提出“直线是个谎言（The Straight Line Was a Lie）”与“并行押注（2 > 0）”原则：点击左侧任一引擎审阅技术底座、财务量级与竞争壁垒。" data-i18n-en="Inspect each of Amazon's six parallel growth engines across cloud AI, custom silicon, embodied robotics, commerce agents, LEO satellite broadband, and autonomous mobility/healthcare.">Andy Jassy 在 2025 致股东信中提出“直线是个谎言（The Straight Line Was a Lie）”与“并行押注（2 &gt; 0）”原则：点击左侧任一引擎审阅技术底座、财务量级与竞争壁垒。</p>
+          </div>
+          <span class="mui-chip mui-chip-success mono" data-i18n-zh="点击切换六大引擎深度档案" data-i18n-en="Click Any Engine to Inspect">点击切换六大引擎深度档案</span>
+        </div>
+
+        <div class="fh-observatory">
+          <div class="fh-engine-rail" id="engineRail">
+            <button type="button" class="fh-eng-btn active" data-eng="0">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E01 · H1–H2</span><span class="fh-eng-horizon mono">$184B Run Rate</span></div>
+              <div class="fh-eng-name" data-i18n-zh="AWS Agentic AI 全栈数字电网" data-i18n-en="AWS Agentic AI Cloud Stack">AWS Agentic AI 全栈数字电网</div>
+              <div class="fh-eng-sub" data-i18n-zh="Bedrock · Mantle · AgentCore · Kiro · +39.3% YoY" data-i18n-en="Bedrock · Mantle · AgentCore · Kiro · +39.3% YoY">Bedrock · Mantle · AgentCore · Kiro · +39.3% YoY</div>
+            </button>
+            <button type="button" class="fh-eng-btn" data-eng="1">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E02 · H1–H2</span><span class="fh-eng-horizon mono">&gt;$20B Silicon</span></div>
+              <div class="fh-eng-name" data-i18n-zh="Annapurna Labs 自研芯片主权" data-i18n-en="Annapurna Labs Custom Silicon">Annapurna Labs 自研芯片主权</div>
+              <div class="fh-eng-sub" data-i18n-zh="Graviton5 · Trainium2/3/4 · Project Rainier" data-i18n-en="Graviton5 · Trainium2/3/4 · Project Rainier">Graviton5 · Trainium2/3/4 · Project Rainier</div>
+            </button>
+            <button type="button" class="fh-eng-btn" data-eng="2">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E03 · H1–H2</span><span class="fh-eng-horizon mono">1M+ Robots</span></div>
+              <div class="fh-eng-name" data-i18n-zh="百万具身机器人 × 20分钟闪送 × 生鲜霸权" data-i18n-en="1M+ Robotics × Amazon Now × $150B+ Grocery">百万具身机器人 × 20分钟闪送 × 生鲜霸权</div>
+              <div class="fh-eng-sub" data-i18n-zh="85+ SSD 当日达仓 · Amazon Now 450+城 · 乡村扩网" data-i18n-en="85+ SSDs · Amazon Now 450+ Cities · Rural Net">85+ SSD 当日达仓 · Amazon Now 450+城 · 乡村扩网</div>
+            </button>
+            <button type="button" class="fh-eng-btn" data-eng="3">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E04 · H1–H2</span><span class="fh-eng-horizon mono">TTM $78.0B Ads</span></div>
+              <div class="fh-eng-name" data-i18n-zh="闭环商业 Agent 与流媒体广告帝国" data-i18n-en="Agentic Commerce & Retail Media Tollbooth">闭环商业 Agent 与流媒体广告帝国</div>
+              <div class="fh-eng-sub" data-i18n-zh="Rufus · Alexa+ (6亿终端) · Prime Video & Ads Agent" data-i18n-en="Rufus · Alexa+ (600M Endpoints) · Ads Agent">Rufus · Alexa+ (6亿终端) · Prime Video &amp; Ads Agent</div>
+            </button>
+            <button type="button" class="fh-eng-btn" data-eng="4">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E05 · H2–H3</span><span class="fh-eng-horizon mono">300+ LEO Sats</span></div>
+              <div class="fh-eng-name" data-i18n-zh="Amazon Leo 近地轨道太空互联网" data-i18n-en="Amazon Leo LEO Satellite Broadband">Amazon Leo 近地轨道太空互联网</div>
+              <div class="fh-eng-sub" data-i18n-zh="Leo Ultra 1Gbps · AT&T/达美航空 · $116亿 Globalstar" data-i18n-en="Leo Ultra 1Gbps · AT&T/Delta · $11.6B Globalstar">Leo Ultra 1Gbps · AT&amp;T/达美航空 · $116亿 Globalstar</div>
+            </button>
+            <button type="button" class="fh-eng-btn" data-eng="5">
+              <div class="fh-eng-top"><span class="fh-eng-code mono">E06 · H2–H3</span><span class="fh-eng-horizon mono">Zoox + Pharmacy</span></div>
+              <div class="fh-eng-name" data-i18n-zh="Zoox 无人驾驶出租车 × 3小时极速医药" data-i18n-en="Zoox Autonomous Robotaxi × 3-Hr Pharmacy">Zoox 无人驾驶出租车 × 3小时极速医药</div>
+              <div class="fh-eng-sub" data-i18n-zh="拉斯维加斯付费Robotaxi · 3,000+城当日达处方药" data-i18n-en="Las Vegas Paid Robotaxi · 3,000+ Cities Rx">拉斯维加斯付费Robotaxi · 3,000+城当日达处方药</div>
+            </button>
+          </div>
+
+          <div class="fh-engine-detail" id="engineDetail">
+            <div class="fh-det-header">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+                <span class="mui-chip mui-chip-primary mono" id="detBadge">ENGINE 01 · AWS AGENTIC AI STACK (H1–H2 CORE)</span>
+                <a class="cite-link" id="detCite" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">核验财报与股东信信源 ↗</a>
+              </div>
+              <h3 class="fh-det-title" id="detTitle">AWS Agentic AI 全栈数字电网：企业核心数据重力 × 多模型中立路由 × AgentCore 运行时</h3>
+              <p class="fh-det-lead" id="detLead">随着生成式 AI 从早期训练（Training）全面迈向高频生产推理（Inference）与自主智能体（Agents），企业发现智能体必须安全贴近自身核心数据库、IAM 权限与私有 VPC 运行。AWS 在 Q3 2026 营收同比加速至 +39.3%（单季 $459.8亿，营业利润 $177.7亿），财富 500 强在 Amazon Bedrock 上的支出同比暴增约 7 倍、Token 处理量激增约 17 倍；Bedrock AgentCore 在 Q3 单季部署的生产级 Agent 数量超过此前三个季度总和的 2 倍，叠加 OpenAI 逾 $1,000亿 算力合作与 Anthropic 深度绑定，奠定 2027–2028 连续 &gt;40% 增长底座。</p>
+            </div>
+
+            <div class="fh-det-kpis" id="detKpis">
+              <div class="fh-det-kpi"><b class="mono">+39.3% YoY</b><span>Q3 2026 AWS 营收增速 ($45.98B)</span></div>
+              <div class="fh-det-kpi"><b class="mono">~17x Token</b><span>Q3 Bedrock Token 处理量同比倍增</span></div>
+              <div class="fh-det-kpi"><b class="mono">&gt;$15B 年化</b><span>Q1 2026 AWS AI 早期年化运行率</span></div>
+              <div class="fh-det-kpi"><b class="mono">-32% 成本</b><span>Strands 开源 Agent 框架节省 Token</span></div>
+            </div>
+
+            <div class="fh-det-cols">
+              <div class="fh-det-box">
+                <h4 data-i18n-zh="底层架构护城河与标杆产品" data-i18n-en="Architectural Moat & Flagship Stack">底层架构护城河与标杆产品</h4>
+                <p id="detMoat">6 名工程师借助 Kiro 仅用 76 天从零构建 Bedrock Mantle 高吞吐推理引擎；Strands Box 提供硬件虚拟化级 Agent 安全沙箱；AWS Transform 已累计分析 18 亿行大型机老旧代码并把迁移周期压缩 4 倍；收购 DuckDB 幕后团队 DuckLabs 强化云原生分析底座。</p>
+              </div>
+              <div class="fh-det-box">
+                <h4 data-i18n-zh="关键瓶颈与风险审计" data-i18n-en="Bottlenecks & Execution Risk Audit">关键瓶颈与风险审计</h4>
+                <p id="detRisk">当前首要约束并非需求而是电网接入、变压器、光模块与 HBM 存储产能；同时若单一闭源模型形成绝对垄断可能削弱多模型平台溢价，AWS 正以多模型 Bedrock + 自研 Nova + Trainium 30–40% 性价比对冲。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- F2: 7:5 $220B AI CAPEX SURGE & DUAL-TRILLION REVENUE BRIDGE -->
+      <section id="mod-f2" class="fh-panel">
+        <div class="fh-panel-head">
+          <div>
+            <span class="fh-kicker mono">MODULE F2 · $220B INFRASTRUCTURE CYCLE &amp; DUAL-$1T BRIDGE</span>
+            <h2 class="fh-h2" data-i18n-zh="$2,200亿 超级资本开支周期与 2025→2032E 双万亿营收增量瀑布桥" data-i18n-en="~$220B AI CapEx Cycle & FY25→FY32E Dual-Trillion Revenue Bridge">$2,200亿 超级资本开支周期与 2025→2032E 双万亿营收增量瀑布桥</h2>
+            <p class="fh-head-desc" data-i18n-zh="解析为何 TTM Q3'26 自由现金流阶段性转负 (-$423.6亿) 不是财务恶化，而是复制 2006 AWS 与 2020 履约扩网的前置重装锁定。" data-i18n-en="Why temporary negative TTM FCF (-$42.4B) on ~$220B CapEx mirrors Amazon's historic high-ROIC capacity buildouts.">解析为何 TTM Q3'26 自由现金流阶段性转负 (-$423.6亿) 不是财务恶化，而是复制 2006 AWS 与 2020 履约扩网的前置重装锁定。</p>
+          </div>
+        </div>
+
+        <div class="fh-split-75">
+          <div class="fh-subcard">
+            <div class="fh-subhead">
+              <h3 data-i18n-zh="资本军备竞赛与十年营收增量桥" data-i18n-en="CapEx Trajectory & 2032E Revenue Waterfall">资本军备竞赛与十年营收增量桥</h3>
+              <div class="mui-segmented" id="f2Tabs">
+                <button type="button" class="mui-seg-btn active" data-f2="capex" data-i18n-zh="2022–2026E CapEx 与巨头对比" data-i18n-en="CapEx Surge vs Peers">2022–2026E CapEx 与巨头对比</button>
+                <button type="button" class="mui-seg-btn" data-f2="bridge" data-i18n-zh="FY25→FY32E 营收增量桥 ($B)" data-i18n-en="FY25→FY32E Rev Bridge">FY25→FY32E 营收增量桥 ($B)</button>
+              </div>
+            </div>
+            <div class="fh-canvas-wrap">
+              <canvas id="capexBridgeCanvas" aria-label="资本开支与十年营收增量瀑布图"></canvas>
+            </div>
+            <p class="fh-caption" data-i18n-zh="注：FY24 净 CapEx $776.6亿、FY25 净 CapEx $1,283.2亿、TTM Q3'26 净 CapEx $2,106.6亿，管理层指引 2026 全年现金 CapEx 约 $2,200亿（绝大部分投向 AWS AI 算力与定制芯片）；鼠标悬停柱体查看分项明细。" data-i18n-en="Note: FY24 Net CapEx $77.7B, FY25 $128.3B, TTM Q3'26 $210.7B, and 2026E Cash CapEx guided ~$220B predominantly for AWS AI & custom silicon. Hover bars for details.">注：FY24 净 CapEx $776.6亿、FY25 净 CapEx $1,283.2亿、TTM Q3'26 净 CapEx $2,106.6亿，管理层指引 2026 全年现金 CapEx 约 $2,200亿（绝大部分投向 AWS AI 算力与定制芯片）；鼠标悬停柱体查看分项明细。</p>
+          </div>
+
+          <div class="fh-subcard">
+            <div class="fh-subhead">
+              <h3 data-i18n-zh="重基建资本纪律三项审计" data-i18n-en="Three Capital-Cycle Discipline Audits">重基建资本纪律三项审计</h3>
+              <span class="mui-chip mui-chip-warning mono">TTM OCF $168.3B</span>
+            </div>
+            <div class="fh-audit-list">
+              <div class="fh-audit-item">
+                <h4><span data-i18n-zh="① 需求前置信号驱动，绝非盲目囤卡" data-i18n-en="① Demand-Backed Capacity Monetization">① 需求前置信号驱动，绝非盲目囤卡</span><span class="mui-chip mui-chip-success mono">Sold Out</span></h4>
+                <p>AWS 数据中心土建与变电站寿命长达 <strong>20–30 年</strong>，而芯片服务器按实际企业签约信号分批上架；目前 Trainium2 已售罄、Trainium3 几近全部被预订，上线产能即刻转化为计费收入
+                  <a class="cite-link" href="https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf" target="_blank" rel="noopener noreferrer">2025 股东信 ↗</a>。</p>
+              </div>
+              <div class="fh-audit-item">
+                <h4><span data-i18n-zh="② 自身经营造血覆盖近八成巅峰投资" data-i18n-en="② Self-Funded via $168.3B TTM OCF">② 自身经营造血覆盖近八成巅峰投资</span><span class="mui-chip mui-chip-primary mono">+29% OCF</span></h4>
+                <p>TTM Q3 2026 经营现金流高达 <strong>$1,683.0亿（+29% YoY）</strong>，叠加账面 <strong>$1,142.3亿</strong> 现金与有价证券及 <strong>$1,587.2亿</strong> 应付账款无息浮存，无需激进稀释股东权益即可吃下 $2,200亿 峰值开支
+                  <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">Q3'26 资产负债表 ↗</a>。</p>
+              </div>
+              <div class="fh-audit-item">
+                <h4><span data-i18n-zh="③ 折旧爬坡压力下营业利润率仍创历史新高" data-i18n-en="③ Record 13.9% OpM Despite D&A Ramp">③ 折旧爬坡压力下营业利润率仍创历史新高</span><span class="mui-chip mui-chip-violet mono">13.9% OpM</span></h4>
+                <p>即便 Q3 2026 单季折旧与摊销已升至 <strong>$209.5亿</strong>，凭借 AWS <strong>38.7%</strong> 利润率、零售区域化履约降本及 G&amp;A 同比下降 <strong>-6.1%</strong>，全集团 Q3 营业利润率依然刷新历史极值达 <strong>13.9%</strong>。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- F3: 5:7 ANNAPURNA LABS SILICON SOVEREIGNTY -->
+      <section id="mod-f3" class="fh-panel">
+        <div class="fh-panel-head">
+          <div>
+            <span class="fh-kicker mono">MODULE F3 · ANNAPURNA LABS SILICON SOVEREIGNTY</span>
+            <h2 class="fh-h2" data-i18n-zh="Annapurna Labs 算力主权图谱：对标 Apple Silicon 的云端“芯-云一体”护城河" data-i18n-en="Annapurna Labs Silicon Sovereignty: Cloud Counterpart to Apple Silicon">Annapurna Labs 算力主权图谱：对标 Apple Silicon 的云端“芯-云一体”护城河</h2>
+            <p class="fh-head-desc" data-i18n-zh="2015 年以约 $3.5亿 收购 Annapurna Labs 堪称云计算史上回报率最高的并购：如今 Graviton + Trainium + Nitro 合计年化运行率已超 $200亿（独立市场等价规模约 $500亿）。" data-i18n-en="Acquired in 2015, Annapurna Labs now powers >$20B in annualized AWS silicon run-rate (~$50B standalone equivalent), insulating AWS margins from merchant GPU pricing.">2015 年以约 $3.5亿 收购 Annapurna Labs 堪称云计算史上回报率最高的并购：如今 Graviton + Trainium + Nitro 合计年化运行率已超 $200亿（独立市场等价规模约 $500亿）。</p>
+          </div>
+          <a class="cite-link" href="https://www.globaldatacenterhub.com/p/amazon-q1-fy2026-the-silicon-pivot" target="_blank" rel="noopener noreferrer">Silicon Pivot 深度解析 ↗</a>
+        </div>
+
+        <div class="fh-split-57">
+          <div class="fh-subcard">
+            <div class="fh-subhead">
+              <h3 data-i18n-zh="四大自研硅片家族矩阵" data-i18n-en="Four Custom Silicon Families">四大自研硅片家族矩阵</h3>
+              <span class="mui-chip mui-chip-primary mono">98% Top EC2 Adopted</span>
+            </div>
+            <div class="fh-chip-stack">
+              <div class="fh-audit-item">
+                <h4><span>Graviton5（3nm 通用云 CPU）</span><span class="mui-chip mui-chip-success mono">+40% 性价比</span></h4>
+                <p>前 1,000 大 EC2 客户中高达 <strong>98%</strong> 已采用 Graviton，贡献 AWS 新增 CPU 算力过半；Meta 签署数百万核多年期 Graviton5 协议运行核心基础设施。</p>
+              </div>
+              <div class="fh-audit-item">
+                <h4><span>Trainium2 &amp; Trainium3（大规模训练与推理芯片）</span><span class="mui-chip mui-chip-primary mono">500K+ 集群</span></h4>
+                <p>已交付超 140 万颗 Trainium2，驱动全球最大 AI 算力集群之一 <strong>Project Rainier（50万+ 芯片服务 Anthropic Claude）</strong>；Trainium3 较 Trn2 性价比再升 <strong>30%–40%</strong>，2026 产能近乎订满。</p>
+              </div>
+              <div class="fh-audit-item">
+                <h4><span>Trainium4（2027 下一代推理怪兽）</span><span class="mui-chip mui-chip-violet mono">6x FP4 算力</span></h4>
+                <p>定档 2027 年推出，预计较 Trainium3 提供 <strong>6 倍 FP4 浮点算力、4 倍内存带宽与 2 倍高带宽存储（HBM）容量</strong>，并由 TorchNeuron 原生打通 PyTorch 生态
+                  <a class="cite-link" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/" target="_blank" rel="noopener noreferrer">FY25 财报披露 ↗</a>。</p>
+              </div>
+              <div class="fh-audit-item">
+                <h4><span>AWS Nitro + Amazon Leo 太空通信芯片</span><span class="mui-chip mui-chip-warning mono">6–8x 上行</span></h4>
+                <p>Nitro 卸载全部虚拟化与安全开销；自研 <strong>Leo Silicon</strong> 支撑低轨卫星相控阵与星间激光链路，使企业终端上行吞吐较竞品高出 <strong>6–8 倍</strong>。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fh-subcard">
+            <div class="fh-subhead">
+              <h3 data-i18n-zh="自研芯片渗透率与推理 TCO 降本曲线" data-i18n-en="Custom Silicon Penetration & Token TCO Savings">自研芯片渗透率与推理 TCO 降本曲线</h3>
+              <div class="mui-segmented" id="f3Tabs">
+                <button type="button" class="mui-seg-btn active" data-f3="pen" data-i18n-zh="自研硅片年化营收与渗透率" data-i18n-en="Run-Rate & Share">自研硅片年化营收与渗透率</button>
+                <button type="button" class="mui-seg-btn" data-f3="tco" data-i18n-zh="百万 Token 推理成本与毛利对比" data-i18n-en="Token TCO vs GPU">百万 Token 推理成本与毛利对比</button>
+              </div>
+            </div>
+            <div class="fh-canvas-wrap" style="height:335px;">
+              <canvas id="siliconCanvas" aria-label="自研芯片渗透率与推理成本优势图"></canvas>
+            </div>
+            <p class="fh-caption" data-i18n-zh="核心战略含义：当全球每天产生数百万亿 Agentic Token 时，省去第三方 GPU 约 65%–75% 的硬件毛利税，直接决定了 AWS 能否在降价 30%–40% 抢占份额的同时守住 38%+ 营业利润率。" data-i18n-en="Strategic takeaway: Bypassing merchant GPU margin taxes enables AWS to pass 30%–40% lower inference costs to customers while preserving 38%+ AWS operating margins.">核心战略含义：当全球每天产生数百万亿 Agentic Token 时，省去第三方 GPU 约 65%–75% 的硬件毛利税，直接决定了 AWS 能否在降价 30%–40% 抢占份额的同时守住 38%+ 营业利润率。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- F4: INTERACTIVE 2032 "$5T+ MARKET CAP" OPTIONALITY SWITCHBOARD & SOURCES -->
+      <section id="mod-f4" class="fh-panel">
+        <div class="fh-panel-head">
+          <div>
+            <span class="fh-kicker mono">MODULE F4 · 2032 OPTIONALITY SWITCHBOARD &amp; VALUATION LAB</span>
+            <h2 class="fh-h2" data-i18n-zh="2032 “五万亿市值地平线”期权开关调音台" data-i18n-en="2032 '$5T+ Horizon' Strategic Optionality Switchboard">2032 “五万亿市值地平线”期权开关调音台</h2>
+            <p class="fh-head-desc" data-i18n-zh="勾选或关闭五大战略期权模块并调节终端估值倍数，实时测算 2032E 亚马逊总营收、营业利润与隐含企业价值。" data-i18n-en="Toggle Amazon's five strategic growth options and terminal EV/EBIT multiple to simulate 2032E revenue, operating profit, and implied enterprise value.">勾选或关闭五大战略期权模块并调节终端估值倍数，实时测算 2032E 亚马逊总营收、营业利润与隐含企业价值。</p>
+          </div>
+          <div class="mui-segmented" id="optPresetGroup">
+            <button type="button" class="mui-seg-btn" data-opreset="core" data-i18n-zh="仅核心盘保守态" data-i18n-en="Core Only">仅核心盘保守态</button>
+            <button type="button" class="mui-seg-btn active" data-opreset="base" data-i18n-zh="基准兑现态" data-i18n-en="Base Horizon">基准兑现态</button>
+            <button type="button" class="mui-seg-btn" data-opreset="full" data-i18n-zh="全期权爆发态" data-i18n-en="Full Optionality">全期权爆发态</button>
+          </div>
+        </div>
+
+        <div class="fh-switchboard">
+          <div>
+            <div class="fh-toggle-list" id="optToggleList">
+              <label class="fh-opt-row">
+                <input type="checkbox" data-opt="aws_ai" checked />
+                <div class="fh-opt-body">
+                  <div class="fh-opt-top"><span class="fh-opt-name" data-i18n-zh="期权 1 · AWS AgentCore 与 AI 推理超高速扩张" data-i18n-en="Option 1 · AWS AgentCore & AI Inference Scale">期权 1 · AWS AgentCore 与 AI 推理超高速扩张</span><span class="fh-opt-add mono">+$340B Rev · +$125B EBIT</span></div>
+                  <div class="fh-opt-desc" data-i18n-zh="AWS 在 $1,840亿年化底座上兑现 2027–28 高增长，迈向年销 $6,500亿+ 云与 AI 数字电网" data-i18n-en="AWS scales beyond $184B run rate toward $650B+ cloud & agentic infrastructure">AWS 在 $1,840亿年化底座上兑现 2027–28 高增长，迈向年销 $6,500亿+ 云与 AI 数字电网</div>
+                </div>
+              </label>
+              <label class="fh-opt-row">
+                <input type="checkbox" data-opt="silicon" checked />
+                <div class="fh-opt-body">
+                  <div class="fh-opt-top"><span class="fh-opt-name" data-i18n-zh="期权 2 · Annapurna 自研芯片 (Trainium3/4 + Graviton5) 毛利增厚" data-i18n-en="Option 2 · Annapurna Silicon Margin Uplift">期权 2 · Annapurna 自研芯片 (Trainium3/4 + Graviton5) 毛利增厚</span><span class="fh-opt-add mono">+$45B Rev · +$34B EBIT</span></div>
+                  <div class="fh-opt-desc" data-i18n-zh="自研芯片承接 55%+ 内部与客户推理负载，显著降低单机柜折旧压力并增厚 AWS 利润率" data-i18n-en="Custom silicon handles >55% of inference compute, reducing depreciation drag">自研芯片承接 55%+ 内部与客户推理负载，显著降低单机柜折旧压力并增厚 AWS 利润率</div>
+                </div>
+              </label>
+              <label class="fh-opt-row">
+                <input type="checkbox" data-opt="retail_ads" checked />
+                <div class="fh-opt-body">
+                  <div class="fh-opt-top"><span class="fh-opt-name" data-i18n-zh="期权 3 · 百万机器人闪送 + 生鲜当日达 + $1,400亿高毛利广告池" data-i18n-en="Option 3 · 1M+ Robots + Fresh Now + $140B+ Ads">期权 3 · 百万机器人闪送 + 生鲜当日达 + $1,400亿高毛利广告池</span><span class="fh-opt-add mono">+$260B Rev · +$58B EBIT</span></div>
+                  <div class="fh-opt-desc" data-i18n-zh="Amazon Now 与生鲜复购推动全球零售破万亿，Rufus/Alexa+ 与 Prime Video 广告释放高边际利润" data-i18n-en="Ultra-fast grocery frequency + high-margin closed-loop retail media & video ads">Amazon Now 与生鲜复购推动全球零售破万亿，Rufus/Alexa+ 与 Prime Video 广告释放高边际利润</div>
+                </div>
+              </label>
+              <label class="fh-opt-row">
+                <input type="checkbox" data-opt="leo" />
+                <div class="fh-opt-body">
+                  <div class="fh-opt-top"><span class="fh-opt-name" data-i18n-zh="期权 4 · Amazon Leo 低轨卫星全球企业专网与手机直连 (D2D)" data-i18n-en="Option 4 · Amazon Leo Enterprise & Direct-to-Device">期权 4 · Amazon Leo 低轨卫星全球企业专网与手机直连 (D2D)</span><span class="fh-opt-add mono">+$28B Rev · +$9B EBIT</span></div>
+                  <div class="fh-opt-desc" data-i18n-zh="3,200+ 颗星座组网完成，打通航空(达美/捷蓝)、运营商(AT&T/Vodafone)、AWS 太空边缘与手机直连" data-i18n-en="Full LEO constellation serving aviation, telcos, AWS edge, and D2D connectivity">3,200+ 颗星座组网完成，打通航空(达美/捷蓝)、运营商(AT&amp;T/Vodafone)、AWS 太空边缘与手机直连</div>
+                </div>
+              </label>
+              <label class="fh-opt-row">
+                <input type="checkbox" data-opt="zoox_rx" />
+                <div class="fh-opt-body">
+                  <div class="fh-opt-top"><span class="fh-opt-name" data-i18n-zh="期权 5 · Zoox 无人驾驶 Robotaxi 网络 × Amazon Pharmacy 医疗破局" data-i18n-en="Option 5 · Zoox Robotaxi Fleet & Amazon Pharmacy">期权 5 · Zoox 无人驾驶 Robotaxi 网络 × Amazon Pharmacy 医疗破局</span><span class="fh-opt-add mono">+$36B Rev · +$10B EBIT</span></div>
+                  <div class="fh-opt-desc" data-i18n-zh="Zoox 从拉斯维加斯与12城扩展至全美商业化运营，Pharmacy 切入万亿级处方药与慢病履约市场" data-i18n-en="Zoox scales commercial robotaxi network alongside 3,000+ city Same-Day Pharmacy">Zoox 从拉斯维加斯与12城扩展至全美商业化运营，Pharmacy 切入万亿级处方药与慢病履约市场</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="fh-slider-wrap">
+              <div class="fh-slider-top">
+                <span data-i18n-zh="2032E 终端估值倍数 (EV / Operating Income)" data-i18n-en="2032E Terminal Multiple (EV / EBIT)">2032E 终端估值倍数 (EV / Operating Income)</span>
+                <b class="mono" id="lblEvMult">20.0x</b>
+              </div>
+              <input type="range" id="inpEvMult" min="15" max="26" step="0.5" value="20" />
+            </div>
+          </div>
+
+          <div class="fh-subcard" style="padding:18px 20px;">
+            <div class="fh-sim-outgrid">
+              <div class="fh-sim-card">
+                <b class="mono" id="outRev32">$1,745B</b>
+                <span data-i18n-zh="2032E 模拟总营收 (双万亿逼近度)" data-i18n-en="2032E Simulated Total Revenue">2032E 模拟总营收 (双万亿逼近度)</span>
+              </div>
+              <div class="fh-sim-card">
+                <b class="mono" id="outEbit32">$316B</b>
+                <span data-i18n-zh="2032E 模拟营业利润 (EBIT)" data-i18n-en="2032E Simulated Operating Income">2032E 模拟营业利润 (EBIT)</span>
+              </div>
+              <div class="fh-sim-card">
+                <b class="mono" id="outOpm32">18.1%</b>
+                <span data-i18n-zh="2032E 综合营业利润率" data-i18n-en="2032E Consolidated Op Margin">2032E 综合营业利润率</span>
+              </div>
+              <div class="fh-sim-card">
+                <b class="mono" id="outEv32">$6.32T</b>
+                <span data-i18n-zh="2032E 隐含企业价值 ($万亿)" data-i18n-en="2032E Implied Enterprise Value">2032E 隐含企业价值 ($万亿)</span>
+              </div>
+            </div>
+            <div class="fh-canvas-wrap" style="height:225px;">
+              <canvas id="optSimCanvas" aria-label="2032E营业利润构成模拟图"></canvas>
+            </div>
+            <p class="fh-caption" data-i18n-zh="模型说明：仅为基于 FY2025 ($716.9B 营收 / $80.0B 营业利润) 与 TTM Q3'26 ($797.5B / $104.4B) 基准的交互情景敏感度沙盘，不构成投资建议。" data-i18n-en="Interactive sensitivity scenario anchored on FY25 ($716.9B rev / $80.0B EBIT) & TTM Q3'26 ($797.5B / $104.4B) baselines; for analytical exploration only.">模型说明：仅为基于 FY2025 ($716.9B 营收 / $80.0B 营业利润) 与 TTM Q3'26 ($797.5B / $104.4B) 基准的交互情景敏感度沙盘，不构成投资建议。</p>
+          </div>
+        </div>
+
+        <!-- Primary Grounded Sources -->
+        <div class="fh-sources-grid">
+          <a class="fh-source-item" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Amazon Q3 2026 Official Earnings Release ↗</b>
+            <span>AWS +39.3% ($45.98B)、2026E CapEx ~$220B、2027–28 AWS &gt;40% 预期与“双万亿业务”原话</span>
+          </a>
+          <a class="fh-source-item" href="https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Andy Jassy 2025 Letter to Shareholders (PDF) ↗</b>
+            <span>百万机器人、Graviton/Trainium &gt;$20B 运行率、Mantle 76天研发、Alexa+ 6亿终端、Amazon Leo 与生鲜 &gt;$150B</span>
+          </a>
+          <a class="fh-source-item" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Amazon Q4 &amp; Full-Year 2025 Financial Results ↗</b>
+            <span>FY2025 全年营收 $716.92B、Project Rainier 50万颗 Trainium2、Trainium4 (2027) 6x FP4 规格与 Rufus $12B 增量</span>
+          </a>
+          <a class="fh-source-item" href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" target="_blank" rel="noopener noreferrer">
+            <b class="mono">SEC Form 10-K (FY2025 Annual Report) ↗</b>
+            <span>分部资产、资本开支构成、长期租赁承诺与全球履约中心面积审计披露</span>
+          </a>
+          <a class="fh-source-item" href="https://www.globaldatacenterhub.com/p/amazon-q1-fy2026-the-silicon-pivot" target="_blank" rel="noopener noreferrer">
+            <b class="mono">Global Data Center Hub · The Silicon Pivot ↗</b>
+            <span>Annapurna 自研硅片经济学、3.9 GW 新增电力与 $11.6B Globalstar / Apple D2D 卫星协议分析</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+    var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+    var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+
+    var state = {
+      theme: document.documentElement.getAttribute('data-theme') || 'light',
+      lang: 'zh',
+      hz: 0,
+      eng: 0,
+      f2View: 'capex',
+      f3View: 'pen'
+    };
+
+    var hitRegions = { sCurveCanvas: [], capexBridgeCanvas: [], siliconCanvas: [] };
+
+    function showToast(msg) {
+      var el = document.getElementById('muiSnackbar');
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(function () { el.classList.remove('show'); }, 2200);
+    }
+
+    function getPalette() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      return {
+        dark: dark,
+        text: dark ? '#F3F6F9' : '#0F1924',
+        sub: dark ? '#B2BAC2' : '#334155',
+        tick: dark ? '#94A3B8' : '#475569',
+        grid: dark ? 'rgba(148, 163, 184, 0.14)' : 'rgba(100, 116, 139, 0.15)',
+        blue: dark ? '#3399FF' : '#0073E6',
+        blueSoft: dark ? 'rgba(51, 153, 255, 0.22)' : 'rgba(0, 115, 230, 0.16)',
+        green: dark ? '#22C55E' : '#16A34A',
+        amber: dark ? '#FFB74D' : '#D97706',
+        violet: dark ? '#A78BFA' : '#7C3AED',
+        red: dark ? '#FF6B6B' : '#DC2626'
+      };
+    }
+
+    function prepCanvas(id) {
+      var c = document.getElementById(id);
+      if (!c) return null;
+      var rect = c.getBoundingClientRect();
+      var w = Math.max(260, rect.width || 520);
+      var h = Math.max(180, rect.height || 280);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      c.width = Math.round(w * dpr);
+      c.height = Math.round(h * dpr);
+      var ctx = c.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      return { ctx: ctx, w: w, h: h };
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      var rr = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + rr, y);
+      ctx.arcTo(x + w, y, x + w, y + h, rr);
+      ctx.arcTo(x + w, y + h, x, y + h, rr);
+      ctx.arcTo(x, y + h, x, y, rr);
+      ctx.arcTo(x, y, x + w, y, rr);
+      ctx.closePath();
+    }
+
+    // F0 Horizons Data
+    var HORIZONS = [
+      {
+        formula: 'H1 核心催化：~$2,200亿 CapEx 转化为 AWS 电力翻倍（2027底）+ Trainium3/4 放量 + 生鲜当日达 2,300+ 城 & Rufus/Alexa+ 导购变现',
+        desc: '2026–2027 年是重资本投入立即转化为收入加速的窗口期：AWS 电力容量在 2025 新增 3.9 GW 基础上将于 2027 年底翻倍，支撑 AWS 连续冲击 >40% 增速；零售端通过生鲜易腐品当日达与 450+ 城镇 Amazon Now 极速闪送将 Prime 购买频次拉升至 3 倍。',
+        badge: 'H1 ACTIVE · 2026–2027'
+      },
+      {
+        formula: 'H2 核心催化：企业级 AgentCore 生产自治普及 + Trainium4 (6x FP4) 规模替代外部 GPU + 零售闭环广告突破 $1,100亿/年',
+        desc: '2028–2029 年进入高边际利润收获波：数百万企业智能体常驻 AWS 数据重力层 7×24 小时消耗 Token；自研芯片大幅拉低单机柜折旧占比，同时 Amazon Pharmacy 与超快闪送重塑家庭日常刚需钱包份额。',
+        badge: 'H2 SCALE · 2028–2029'
+      },
+      {
+        formula: 'H3 核心催化：全球零售与 AWS 双双突破 $1T 年营收门槛 + Amazon Leo 全球星座组网 + Zoox 无人出行与 Prime Air 5亿件无人机网',
+        desc: '2030–2032 年迈向物理与太空全栈重构：约 85% 本地 IT 上云与 80% 线下零售渗透持续兑现，Amazon Leo 打通天地一体化 AWS 边缘计算与手机直连，Zoox 与百万具身机器人彻底改写城市物流与出行成本曲线。',
+        badge: 'H3 ENDGAME · 2030–2032'
+      }
+    ];
+
+    var hTabs = document.getElementById('horizonTabs');
+    if (hTabs) {
+      hTabs.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-hz]');
+        if (!b) return;
+        state.hz = parseInt(b.getAttribute('data-hz'), 10) || 0;
+        var bs = hTabs.querySelectorAll('.mui-seg-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        document.getElementById('hzFormula').textContent = HORIZONS[state.hz].formula;
+        document.getElementById('hzDesc').textContent = HORIZONS[state.hz].desc;
+        document.getElementById('sCurveBadge').textContent = HORIZONS[state.hz].badge;
+        drawSCurveCanvas();
+      });
+    }
+
+    // F1 6-Engine Master-Detail Data
+    var ENGINES = [
+      {
+        badge: 'ENGINE 01 · AWS AGENTIC AI STACK (H1–H2 CORE)',
+        cite: 'https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/',
+        title: 'AWS Agentic AI 全栈数字电网：企业核心数据重力 × 多模型中立路由 × AgentCore 运行时',
+        lead: '随着生成式 AI 从早期训练（Training）全面迈向高频生产推理（Inference）与自主智能体（Agents），企业发现智能体必须安全贴近自身核心数据库、IAM 权限与私有 VPC 运行。AWS 在 Q3 2026 营收同比加速至 +39.3%（单季 $459.8亿，营业利润 $177.7亿），财富 500 强在 Amazon Bedrock 上的支出同比暴增约 7 倍、Token 处理量激增约 17 倍；Bedrock AgentCore 在 Q3 单季部署的生产级 Agent 数量超过此前三个季度总和的 2 倍，叠加 OpenAI 逾 $1,000亿 算力合作与 Anthropic 深度绑定，奠定 2027–2028 连续 >40% 增长底座。',
+        kpis: [['+39.3% YoY', 'Q3 2026 AWS 营收增速 ($45.98B)'], ['~17x Token', 'Q3 Bedrock Token 处理量同比倍增'], ['>$15B 年化', 'Q1 2026 AWS AI 早期年化运行率'], ['-32% 成本', 'Strands 开源 Agent 框架节省 Token']],
+        moat: '6 名工程师借助 Kiro 仅用 76 天从零构建 Bedrock Mantle 高吞吐推理引擎；Strands Box 提供硬件虚拟化级 Agent 安全沙箱；AWS Transform 已累计分析 18 亿行大型机老旧代码并把迁移周期压缩 4 倍；收购 DuckDB 幕后团队 DuckLabs 强化云原生分析底座。',
+        risk: '当前首要约束并非需求而是电网接入、变压器、光模块与 HBM 存储产能；同时若单一闭源模型形成绝对垄断可能削弱多模型平台溢价，AWS 正以多模型 Bedrock + 自研 Nova + Trainium 30–40% 性价比对冲。'
+      },
+      {
+        badge: 'ENGINE 02 · ANNAPURNA LABS CUSTOM SILICON (H1–H2 MARGIN SHIELD)',
+        cite: 'https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf',
+        title: 'Annapurna Labs 自研硅片帝国：Graviton5 × Trainium2/3/4 × Nitro 全栈去“英伟达税”',
+        lead: '正如苹果靠 Apple Silicon 甩开 x86/高通毛利盘剥，亚马逊通过自研芯片掌控云端算力底层成本：截至 2026 年初，Graviton、Trainium 与 Nitro 合计年化营收运行率已突破 $200亿（若按外部商用芯片公司毛利折算等价于 ~$500亿 市场体量）。前 1,000 大 EC2 客户中 98% 已采用 Graviton（性价比优于 x86 达 40%）；超过 140 万颗 Trainium2 已落地（含为 Anthropic 打造的 50万+ 芯片超级集群 Project Rainier），Trainium3 几近订满，2027 年登场的 Trainium4 更将带来 6 倍 FP4 算力跃升。',
+        kpis: [['>$20B 年化', '自研硅片组合年化运行率 (~$50B等价)'], ['98% 采用率', 'Top 1,000 EC2 客户使用 Graviton'], ['30%–40%', 'Trainium2/3 较同级 GPU 性价比优势'], ['6x FP4 算力', '2027 Trainium4 较 Trn3 算力跃迁']],
+        moat: '硬件芯片（Trainium）、系统虚拟化卸载卡（Nitro）、高速互连网络（EFA）与软件编译器栈（TorchNeuron 原生集成 PyTorch）由同一内部团队垂直协同设计，不仅对外出租还支撑内部 Rufus、Alexa+ 与 Bedrock 超大规模推理。',
+        risk: '第三方 CUDA 开发者生态惯性依然深厚；台积电先进制程（3nm/2nm）、CoWoS 封装与 HBM4 配额竞争激烈，需持续提升 Neuron SDK 开箱即用流畅度。'
+      },
+      {
+        badge: 'ENGINE 03 · EMBODIED ROBOTICS & ULTRA-FAST GROCERY (H1–H2 RETAIL MOAT)',
+        cite: 'https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf',
+        title: '100万+ 仓储机器人 × 20分钟闪送 × $1,500亿生鲜霸权：用物理极速锁死万亿零售地平线',
+        lead: '亚马逊全球履约网络已部署超过 1,000,000 台具身机器人，配合 85+ 座当日达履约中心（SSD，存放最高频 9万个 SKU）与 $40亿+ 美国乡村配送网扩建（覆盖 13,000+ 邮编），在 Q3 2026 单季实现逾 15 亿件当日或次日送达。更关键的品类破局在于日常生鲜与闪送：2025 年生鲜杂货总销售额突破 $1,500亿（稳居全美第 2 大杂货商），在开通当日达的城市生鲜约占 Q3 售出件数的 50%；20–30 分钟送达的 Amazon Now 已扩展至全球 450+ 城镇，单量同比猛增 10 倍并使 Prime 用户下单频次翻至 3 倍。',
+        kpis: [['1,000,000+', '全球履约中心在役机器人数量'], ['>$150B GMV', '生鲜杂货年总销售额 (全美第2)'], ['10x 订单量', 'Q3 2026 Amazon Now (450+城) 同比暴增'], ['500M 件/年', 'Prime Air 无人机本十年末年配送目标']],
+        moat: '履约区域化 + 机器人拣选 + 生鲜高频连带构成的物理网络具有极强规模经济与路线密度壁垒；同时上线超低价频道 Amazon Haul（覆盖 25+ 国百万件 $10 以下商品）封堵跨境白牌电商渗透。',
+        risk: '一线仓配人力成本刚性上升（2026 年投入 $15亿+ 将全美仓配起薪提至 $20/小时），超快闪送微仓（Micro-FC）在低密度城区的单均履约经济性需精细打磨。'
+      },
+      {
+        badge: 'ENGINE 04 · AGENTIC COMMERCE & CLOSED-LOOP ADS (H1–H2 PROFIT ENGINE)',
+        cite: 'https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/',
+        title: 'Rufus × Alexa+（6亿终端）× $780亿闭环广告：重塑 AI 时代的购物入口与高毛利变现',
+        lead: '当传统搜索框向对话式 Agent 演进，亚马逊手握两大原生超级入口：站内购物助手 Rufus 已服务超 3亿顾客并带来约 $120亿 年化增量销售；重构后的 Alexa+ 覆盖全球 6亿活跃终端（Prime 会员免费、独立订阅 $19.99/月），交互对话量翻倍、带动的设备购买翻 3 倍，Q3 2026 Alexa 购物交互量更同比飙升 +570%。入口之上是 TTM 高达 $780.1亿 的闭环广告收费站，2026 新推 Amazon Ads Agent 将搜索广告与 Prime Video（NFL 周四夜赛场均 1,770万观众、NBA 200+ 国转播）全漏斗打通。',
+        kpis: [['$78.01B', 'TTM Q3 2026 广告服务累计净营收'], ['~$12B 增量', 'Rufus (3亿+用户) 拉动年化增量销售'], ['600M 终端', 'Alexa+ 覆盖活跃硬件生态底座'], ['+570% YoY', 'Q3 2026 Alexa 购物交互量同比激增']],
+        moat: '唯一同时拥有“家庭语音硬件生态 + 万亿级真实商品履约目录 + 第一方交易支付闭环 + 顶级体育流媒体大屏”的商业体，天然免疫第三方隐私政策冲击。',
+        risk: '外部通用 AI 搜索智能体（如 ChatGPT Shopping / Google AI Mode）试图截留上游比价流量；广告加载率提升需严格平衡自然搜索结果相关性与商家 ROI。'
+      },
+      {
+        badge: 'ENGINE 05 · AMAZON LEO SPACE INTERNET (H2–H3 GLOBAL INFRASTRUCTURE)',
+        cite: 'https://s2.q4cdn.com/299287126/files/doc_financials/2026/ar/2025-Shareholder-Letter-Final.pdf',
+        title: 'Amazon Leo 近地轨道卫星星座：连接全球无网人口、航空海事与 AWS 太空私有云链路',
+        lead: '原 Project Kuiper 已正式定名为 Amazon Leo，截至 2026 年已在轨部署 300+ 颗商业低轨卫星并进入密集发射与企业商用冲刺期。依托自研相控阵与星间光链路芯片，旗舰终端 Leo Ultra 实现 1 Gbps 下行与 400 Mbps 上行速率（企业级上行能力达竞品 6–8 倍），并可直接绕开公网通过私有链路接入 AWS VPC。目前已锁定 AT&T 企业连接、达美航空（逾 500 架客机）、捷蓝航空、Vodafone 与 NASA 等重磅订单，并通过 $116亿 Globalstar 频谱合作切入 Apple 卫星直连手机（D2D）服务。',
+        kpis: [['300+ 在轨', '已部署低轨卫星 (规划超 3,200 颗)'], ['1 Gbps / 400M', 'Leo Ultra 企业终端下行/上行峰值'], ['6–8x 上行', '自研 Leo 芯片较竞品企业上行优势'], ['$11.6B 合作', 'Globalstar 频谱与手机直连卫星布局']],
+        moat: '不同于单纯卖消费者宽带的卫星公司，Amazon Leo 与 AWS 企业专网、全球物流车队/远洋货轮调度及 Prime 家庭生态形成深度交叉补贴与 B2B 打包锁死。',
+        risk: '重型火箭发射窗口排期紧张（已向 FCC 申请星座部署节点顺延），卫星制造与发射折旧在组网前中期对国际与总部利润存在阶段性摊销拖累。'
+      },
+      {
+        badge: 'ENGINE 06 · ZOOX ROBOTAXI & AMAZON PHARMACY (H2–H3 PHYSICAL FRONTIERS)',
+        cite: 'https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/',
+        title: 'Zoox 原生无人驾驶出租车 × Amazon Pharmacy 3小时送药：向万亿出行与医疗深水区进军',
+        lead: '在零售与云计算之外，亚马逊耐心孵化十年的两大物理新物种已跨过商业化拐点：第一，Zoox 摒弃改装传统燃油车路线，正向研发无方向盘、无踏板、双向对称行驶的原生 Robotaxi，已在拉斯维加斯正式开启面向公众的商业付费乘车服务，并在全美 12 座城市开展车队测试运营；第二，Amazon Pharmacy 已在全美 3,000+ 城镇开通处方药当日达、在 350+ 城市实现 3 小时极速送药上门，Q3 2026 活跃购药患者同比大增 +60%，复购客户增长逾 +50%。',
+        kpis: [['12 座城市', 'Zoox 全美运营测试与拉斯维加斯付费商运'], ['3,000+ 城', 'Amazon Pharmacy 处方药当日达覆盖'], ['350+ 城市', '处方药 3 小时极速送达覆盖范围'], ['+60% YoY', 'Q3 2026 Amazon Pharmacy 活跃客户增速']],
+        moat: 'Pharmacy 直接复用已建成的当日达微仓与温控配送网络，透明药价直击北美传统药房痛点；Zoox 依托 AWS 海量仿真训练算力与正向定制车规产线降低单英里成本。',
+        risk: '自动驾驶面临州级安全监管审批与长尾极端路况责任界定；处方药业务需持续突破北美 PBM（药品福利管理机构）与商业医保报销网络壁垒。'
+      }
+    ];
+
+    var engRail = document.getElementById('engineRail');
+    if (engRail) {
+      engRail.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-eng]');
+        if (!b) return;
+        state.eng = parseInt(b.getAttribute('data-eng'), 10) || 0;
+        var bs = engRail.querySelectorAll('.fh-eng-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('active', bs[i] === b);
+        var d = ENGINES[state.eng];
+        document.getElementById('detBadge').textContent = d.badge;
+        document.getElementById('detCite').href = d.cite;
+        document.getElementById('detTitle').textContent = d.title;
+        document.getElementById('detLead').textContent = d.lead;
+        document.getElementById('detMoat').textContent = d.moat;
+        document.getElementById('detRisk').textContent = d.risk;
+        document.getElementById('detKpis').innerHTML = d.kpis.map(function (k) {
+          return '<div class="fh-det-kpi"><b class="mono">' + k[0] + '</b><span>' + k[1] + '</span></div>';
+        }).join('');
+      });
+    }
+
+    // Chart 1: F0 3-Horizon S-Curve Canvas
+    function drawSCurveCanvas() {
+      var env = prepCanvas('sCurveCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.sCurveCanvas = [];
+      var pad = { top: 28, right: 22, bottom: 38, left: 48 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      var yrs = ['2025', '2026E', '2027E', '2028E', '2029E', '2030E', '2031E', '2032E'];
+      var h1 = [717, 815, 935, 1055, 1165, 1270, 1365, 1455]; // Core Retail + 3P + Base Cloud
+      var h2 = [717, 825, 985, 1175, 1365, 1545, 1710, 1875]; // + Agentic AI + Silicon + Ads
+      var h3 = [717, 828, 995, 1200, 1415, 1630, 1845, 2060]; // + Leo + Zoox + Pharmacy Dual-$1T
+      var maxY = 2200;
+
+      for (var g = 0; g <= 4; g++) {
+        var val = (maxY / 4) * g;
+        var gy = pad.top + ph - (g / 4) * ph;
+        ctx.strokeStyle = pal.grid;
+        ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+        ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+        ctx.fillText('$' + Math.round(val) + 'B', pad.left - 6, gy + 4);
+      }
+
+      // Highlight active horizon band
+      var bands = [[0, 2], [2, 4], [4, 7]];
+      var bIdx = bands[state.hz] || [0, 2];
+      var bx1 = pad.left + (bIdx[0] / 7) * pw;
+      var bx2 = pad.left + (bIdx[1] / 7) * pw;
+      ctx.fillStyle = pal.blueSoft;
+      ctx.fillRect(bx1, pad.top, bx2 - bx1, ph);
+
+      function plotLine(arr, col, width, label, active) {
+        ctx.strokeStyle = col;
+        ctx.lineWidth = active ? 3.2 : width;
+        ctx.beginPath();
+        arr.forEach(function (v, i) {
+          var px = pad.left + (i / 7) * pw;
+          var py = pad.top + ph - (v / maxY) * ph;
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.stroke();
+        arr.forEach(function (v, i) {
+          var px = pad.left + (i / 7) * pw;
+          var py = pad.top + ph - (v / maxY) * ph;
+          ctx.fillStyle = col;
+          ctx.beginPath(); ctx.arc(px, py, active ? 4.4 : 3.2, 0, Math.PI * 2); ctx.fill();
+          if (i === 7) {
+            ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+            ctx.fillText('$' + (v / 1000).toFixed(2) + 'T', px - 4, py - 7);
+          }
+          hitRegions.sCurveCanvas.push({
+            x: px - 10, y: py - 10, w: 20, h: 20,
+            title: yrs[i] + ' · ' + label,
+            body: '模拟集团年营收轨迹: $' + v + 'B ($' + (v / 1000).toFixed(2) + 'T)'
+          });
+        });
+      }
+
+      yrs.forEach(function (y, i) {
+        var px = pad.left + (i / 7) * pw;
+        ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+        ctx.fillText(y, px, pad.top + ph + 19);
+      });
+
+      plotLine(h1, pal.amber, 2.0, 'H1 基础飞轮线', state.hz === 0);
+      plotLine(h2, pal.blue, 2.4, 'H2 Agentic AI + 芯片叠加线', state.hz === 1);
+      plotLine(h3, pal.violet, 2.4, 'H3 双万亿 + 太空/无人全栈线', state.hz === 2);
+    }
+
+    // Chart 2: F2 CapEx vs Peers & Revenue Bridge
+    function drawCapexBridgeCanvas() {
+      var env = prepCanvas('capexBridgeCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.capexBridgeCanvas = [];
+      var pad = { top: 28, right: 20, bottom: 44, left: 54 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      if (state.f2View === 'capex') {
+        var labels = ['AMZN 23', 'AMZN 24', 'AMZN 25', 'AMZN 26E', 'GOOGL 26E', 'MSFT 26E', 'META 26E', 'AAPL 26E'];
+        var vals = [52.7, 77.7, 128.3, 220.0, 175.0, 145.0, 118.0, 13.5];
+        var cols = [pal.blueSoft, pal.blueSoft, pal.blue, pal.violet, pal.green, pal.amber, pal.amber, pal.tick];
+        var maxV = 240;
+        for (var g = 0; g <= 4; g++) {
+          var sv = (maxV / 4) * g;
+          var gy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + Math.round(sv) + 'B', pad.left - 7, gy + 4);
+        }
+        var slot = pw / labels.length, bw = Math.min(38, slot * 0.62);
+        labels.forEach(function (lb, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var bh = (vals[i] / maxV) * ph;
+          var by = pad.top + ph - bh;
+          ctx.fillStyle = (i < 2) ? pal.blue : cols[i];
+          if (i < 2) ctx.globalAlpha = 0.65;
+          roundRect(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + vals[i].toFixed(0) + 'B', cx, by - 6);
+          ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", monospace';
+          ctx.fillText(lb, cx, pad.top + ph + 18);
+          hitRegions.capexBridgeCanvas.push({
+            x: cx - bw / 2, y: by, w: bw, h: bh,
+            title: lb + ' 年度资本开支对比',
+            body: '资本开支规模: ~$' + vals[i].toFixed(1) + 'B（AMZN 2026E 现金 CapEx 指引约 $220B，居全球科技企业首位，苹果则采用轻资产 PCC 路径）'
+          });
+        });
+      } else {
+        var steps = [
+          { n: 'FY25 基准', v: 717, base: 0, col: pal.blue, tip: 'FY2025 审计总净销售额 $716.92B' },
+          { n: '+AWS与AI', v: 490, base: 717, col: pal.violet, tip: 'AWS 从 $128.7B 迈向 $618B+（AgentCore + AI 推理 + 85%本地IT上云）' },
+          { n: '+自营/生鲜', v: 215, base: 1207, col: pal.green, tip: '生鲜当日达、Amazon Now 极速闪送与全球零售渗透增量' },
+          { n: '+3P与订阅', v: 185, base: 1422, col: pal.green, tip: '第三方卖家 FBA 服务费与 Prime / Alexa+ 订阅增量' },
+          { n: '+闭环广告', v: 88, base: 1607, col: pal.amber, tip: '零售搜索广告 + Prime Video 体育流媒体广告增量' },
+          { n: '+Leo/Zoox/医', v: 65, base: 1695, col: pal.amber, tip: 'Amazon Leo 卫星通信、Zoox 无人出租车与 Pharmacy 医疗贡献' },
+          { n: 'FY32E 终局', v: 1760, base: 0, col: pal.blue, tip: '2032E 基准双引擎总营收 ~$1.76T（乐观全期权突破 $2.0T+）' }
+        ];
+        var maxB = 1950;
+        for (var k = 0; k <= 4; k++) {
+          var bv = (maxB / 4) * k;
+          var bgy = pad.top + ph - (k / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, bgy); ctx.lineTo(pad.left + pw, bgy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + Math.round(bv) + 'B', pad.left - 7, bgy + 4);
+        }
+        var bSlot = pw / steps.length, bW = Math.min(42, bSlot * 0.64);
+        steps.forEach(function (st, idx) {
+          var cx = pad.left + idx * bSlot + bSlot / 2;
+          var topVal = st.base + st.v;
+          var yTop = pad.top + ph - (topVal / maxB) * ph;
+          var yBot = pad.top + ph - (st.base / maxB) * ph;
+          var bh = Math.max(5, yBot - yTop);
+          ctx.fillStyle = st.col;
+          roundRect(ctx, cx - bW / 2, yTop, bW, bh, 5); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText((st.base > 0 ? '+$' : '$') + st.v + 'B', cx, yTop - 6);
+          ctx.fillStyle = pal.tick; ctx.font = '10px sans-serif';
+          ctx.fillText(st.n, cx, pad.top + ph + 18);
+          hitRegions.capexBridgeCanvas.push({ x: cx - bW / 2, y: yTop, w: bW, h: bh, title: st.n, body: st.tip });
+        });
+      }
+    }
+
+    // Chart 3: F3 Annapurna Silicon Canvas
+    function drawSiliconCanvas() {
+      var env = prepCanvas('siliconCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      hitRegions.siliconCanvas = [];
+      var pad = { top: 28, right: 38, bottom: 42, left: 52 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+      if (state.f3View === 'pen') {
+        var yrs = ['2022', '2024', 'Q1 26', '2027E', '2029E', '2031E'];
+        var runRate = [3.5, 9.5, 20.5, 34.0, 56.0, 82.0]; // $B annualized run-rate
+        var share = [14, 24, 36, 48, 58, 66]; // % AWS compute share
+        var maxR = 90;
+        for (var g = 0; g <= 4; g++) {
+          var sv = (maxR / 4) * g;
+          var gy = pad.top + ph - (g / 4) * ph;
+          ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'right';
+          ctx.fillText('$' + Math.round(sv) + 'B', pad.left - 6, gy + 4);
+          ctx.textAlign = 'left';
+          ctx.fillText(Math.round((g / 4) * 80) + '%', pad.left + pw + 6, gy + 4);
+        }
+        var slot = pw / yrs.length, bw = Math.min(38, slot * 0.52);
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var bh = (runRate[i] / maxR) * ph;
+          var by = pad.top + ph - bh;
+          ctx.fillStyle = i <= 2 ? pal.blue : pal.violet;
+          roundRect(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+          ctx.fillText('$' + runRate[i].toFixed(1) + 'B', cx, by - 6);
+          ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", monospace';
+          ctx.fillText(y, cx, pad.top + ph + 18);
+          hitRegions.siliconCanvas.push({
+            x: cx - bw / 2, y: by, w: bw, h: bh,
+            title: y + ' Annapurna 自研硅片规模',
+            body: '自研芯片年化营收运行率: ~$' + runRate[i].toFixed(1) + 'B · 占 AWS 内部与客户新增算力比重约 ' + share[i] + '%'
+          });
+        });
+        ctx.strokeStyle = pal.green; ctx.lineWidth = 2.6; ctx.beginPath();
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var py = pad.top + ph - (share[i] / 80) * ph;
+          if (i === 0) ctx.moveTo(cx, py); else ctx.lineTo(cx, py);
+        });
+        ctx.stroke();
+        yrs.forEach(function (y, i) {
+          var cx = pad.left + i * slot + slot / 2;
+          var py = pad.top + ph - (share[i] / 80) * ph;
+          ctx.fillStyle = pal.green; ctx.beginPath(); ctx.arc(cx, py, 4.2, 0, Math.PI * 2); ctx.fill();
+        });
+      } else {
+        var rows = [
+          { n: '第三方旗舰商用 GPU 实例 (基准=100)', cost: 100, gm: 31, col: pal.amber, tip: '承受上游芯片厂商 ~70% 硬件毛利溢价，折旧占比较高' },
+          { n: 'AWS Trainium2 (Project Rainier 已投产)', cost: 68, gm: 41, col: pal.blue, tip: '较同级 GPU 实例提供 30%–40% 性价比优势，同时提升 AWS 实例毛利率' },
+          { n: 'AWS Trainium3 (2026 放量交付)', cost: 48, gm: 45, col: pal.green, tip: '较 Trainium2 再提升 30%–40% 性价比，支撑高频 Agentic Token 推理' },
+          { n: 'AWS Trainium4 (2027 规划 · 6x FP4)', cost: 28, gm: 49, col: pal.violet, tip: '6倍 FP4 算力 + 4倍内存带宽，将百万 Token 推理成本压降至基准约 28%' }
+        ];
+        var rH = ph / rows.length;
+        rows.forEach(function (r, idx) {
+          var cy = pad.top + idx * rH + rH / 2;
+          var barW = (r.cost / 110) * (pw * 0.78);
+          ctx.fillStyle = pal.sub; ctx.font = '600 11px sans-serif'; ctx.textAlign = 'left';
+          ctx.fillText(r.n, pad.left, cy - 13);
+          ctx.fillStyle = r.col;
+          roundRect(ctx, pad.left, cy - 6, barW, 18, 5); ctx.fill();
+          ctx.fillStyle = pal.text; ctx.font = 'bold 11px "IBM Plex Mono", monospace';
+          ctx.fillText('推理成本指数 ' + r.cost + ' · 估算实例毛利 ~' + r.gm + '%', pad.left + barW + 8, cy + 7);
+          hitRegions.siliconCanvas.push({ x: pad.left, y: cy - 22, w: pw, h: 38, title: r.n, body: r.tip });
+        });
+      }
+    }
+
+    // F4 Optionality Switchboard & Mini Canvas
+    var OPT_CFG = {
+      aws_ai: { rev: 340, ebit: 125, label: 'AWS+AI', col: 'blue' },
+      silicon: { rev: 45, ebit: 34, label: '自研芯片', col: 'violet' },
+      retail_ads: { rev: 260, ebit: 58, label: '闪送+广告', col: 'green' },
+      leo: { rev: 28, ebit: 9, label: 'Leo卫星', col: 'amber' },
+      zoox_rx: { rev: 36, ebit: 10, label: 'Zoox+医药', col: 'red' }
+    };
+    var optBreakdown = [];
+
+    function drawOptSimCanvas() {
+      var env = prepCanvas('optSimCanvas');
+      if (!env) return;
+      var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+      var pad = { top: 24, right: 16, bottom: 32, left: 46 };
+      var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+      var maxV = 160;
+      ctx.strokeStyle = pal.grid;
+      ctx.beginPath(); ctx.moveTo(pad.left, pad.top + ph); ctx.lineTo(pad.left + pw, pad.top + ph); ctx.stroke();
+      var slot = pw / optBreakdown.length, bw = Math.min(36, slot * 0.58);
+      optBreakdown.forEach(function (it, i) {
+        var cx = pad.left + i * slot + slot / 2;
+        var bh = Math.max(3, (it.v / maxV) * ph);
+        var by = pad.top + ph - bh;
+        ctx.fillStyle = pal[it.col] || pal.blue;
+        if (!it.on) ctx.globalAlpha = 0.22;
+        roundRect(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = pal.text; ctx.font = 'bold 10px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+        ctx.fillText('$' + it.v + 'B', cx, by - 5);
+        ctx.fillStyle = pal.tick; ctx.font = '10px sans-serif';
+        ctx.fillText(it.n, cx, pad.top + ph + 16);
+      });
+    }
+
+    function runOptionalitySim() {
+      var baseRev = 1100, baseEbit = 99; // Conservative 2032E inertial baseline
+      var addRev = 0, addEbit = 0;
+      optBreakdown = [{ n: '惯性底盘', v: baseEbit, col: 'blue', on: true }];
+      document.querySelectorAll('#optToggleList [data-opt]').forEach(function (chk) {
+        var k = chk.getAttribute('data-opt');
+        var cfg = OPT_CFG[k];
+        if (!cfg) return;
+        if (chk.checked) {
+          addRev += cfg.rev;
+          addEbit += cfg.ebit;
+        }
+        optBreakdown.push({ n: cfg.label, v: chk.checked ? cfg.ebit : 0, col: cfg.col, on: chk.checked });
+      });
+      var mult = parseFloat(document.getElementById('inpEvMult').value) || 20;
+      document.getElementById('lblEvMult').textContent = mult.toFixed(1) + 'x';
+      var totRev = baseRev + addRev;
+      var totEbit = baseEbit + addEbit;
+      var opm = (totEbit / totRev) * 100;
+      var evT = (totEbit * mult) / 1000;
+
+      document.getElementById('outRev32').textContent = '$' + totRev.toLocaleString() + 'B';
+      document.getElementById('outEbit32').textContent = '$' + totEbit + 'B';
+      document.getElementById('outOpm32').textContent = opm.toFixed(1) + '%';
+      document.getElementById('outEv32').textContent = '$' + evT.toFixed(2) + 'T';
+      drawOptSimCanvas();
+    }
+
+    document.querySelectorAll('#optToggleList [data-opt]').forEach(function (chk) {
+      chk.addEventListener('change', runOptionalitySim);
+    });
+    document.getElementById('inpEvMult').addEventListener('input', runOptionalitySim);
+
+    var optPresets = document.getElementById('optPresetGroup');
+    if (optPresets) {
+      optPresets.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-opreset]');
+        if (!b) return;
+        var mode = b.getAttribute('data-opreset');
+        optPresets.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        var map = {
+          core: { opts: ['retail_ads'], m: 17.5 },
+          base: { opts: ['aws_ai', 'silicon', 'retail_ads'], m: 20.0 },
+          full: { opts: ['aws_ai', 'silicon', 'retail_ads', 'leo', 'zoox_rx'], m: 22.5 }
+        }[mode];
+        if (!map) return;
+        document.querySelectorAll('#optToggleList [data-opt]').forEach(function (chk) {
+          chk.checked = map.opts.indexOf(chk.getAttribute('data-opt')) !== -1;
+        });
+        document.getElementById('inpEvMult').value = map.m;
+        runOptionalitySim();
+      });
+    }
+
+    function bindChartTabs(groupId, attr, stateKey, fn) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      g.addEventListener('click', function (e) {
+        var b = e.target.closest('[' + attr + ']');
+        if (!b) return;
+        state[stateKey] = b.getAttribute(attr);
+        g.querySelectorAll('.mui-seg-btn').forEach(function (btn) { btn.classList.toggle('active', btn === b); });
+        fn();
+      });
+    }
+    bindChartTabs('f2Tabs', 'data-f2', 'f2View', drawCapexBridgeCanvas);
+    bindChartTabs('f3Tabs', 'data-f3', 'f3View', drawSiliconCanvas);
+
+    function bindHoverTooltip(canvasId) {
+      var c = document.getElementById(canvasId);
+      var tip = document.getElementById('chartTooltip');
+      if (!c || !tip) return;
+      c.addEventListener('mousemove', function (ev) {
+        var r = c.getBoundingClientRect();
+        var mx = ev.clientX - r.left, my = ev.clientY - r.top;
+        var list = hitRegions[canvasId] || [];
+        var hit = null;
+        for (var i = 0; i < list.length; i++) {
+          var rg = list[i];
+          if (mx >= rg.x && mx <= rg.x + rg.w && my >= rg.y && my <= rg.y + rg.h) { hit = rg; break; }
+        }
+        if (hit) {
+          tip.innerHTML = '<div style="font-weight:800;color:var(--mui-primary-lighter);margin-bottom:2px;">' + hit.title + '</div><div>' + hit.body + '</div>';
+          tip.style.display = 'block';
+          tip.style.left = Math.min(window.innerWidth - 305, ev.clientX + 14) + 'px';
+          tip.style.top = Math.max(12, ev.clientY - 28) + 'px';
+        } else {
+          tip.style.display = 'none';
+        }
+      });
+      c.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    }
+    ['sCurveCanvas', 'capexBridgeCanvas', 'siliconCanvas'].forEach(bindHoverTooltip);
+
+    function drawAllCharts() {
+      drawSCurveCanvas();
+      drawCapexBridgeCanvas();
+      drawSiliconCanvas();
+      drawOptSimCanvas();
+    }
+
+    function applyTheme(t, silent) {
+      state.theme = (t === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', state.theme);
+      var ic = document.getElementById('appbarThemeIcon');
+      if (ic) {
+        ic.innerHTML = state.theme === 'dark'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+      }
+      var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+      if (sl) sl.classList.toggle('active', state.theme === 'light');
+      if (sd) sd.classList.toggle('active', state.theme === 'dark');
+      drawAllCharts();
+      if (!silent) showToast(state.theme === 'dark' ? '已切换至深色护眼模式' : '已切换至 MUI 浅色模式');
+    }
+
+    function applyLang(lang, silent) {
+      state.lang = (lang === 'en') ? 'en' : 'zh';
+      document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+      var zhB = document.getElementById('langZhBtn'), enB = document.getElementById('langEnBtn');
+      if (zhB) { zhB.classList.toggle('active', state.lang === 'zh'); zhB.setAttribute('aria-pressed', String(state.lang === 'zh')); }
+      if (enB) { enB.classList.toggle('active', state.lang === 'en'); enB.setAttribute('aria-pressed', String(state.lang === 'en')); }
+      var nodes = document.querySelectorAll('[data-i18n-zh]');
+      for (var i = 0; i < nodes.length; i++) {
+        var val = nodes[i].getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+        if (val !== null) {
+          if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+          else nodes[i].textContent = val;
+        }
+      }
+      drawAllCharts();
+      if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换为中文');
+    }
+
+    function exportStandaloneHtml() {
+      try {
+        var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = '亚马逊未来十年（2026–2032）战略图谱.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+        showToast(state.lang === 'en' ? 'Downloaded standalone HTML file' : '已开始下载《亚马逊未来十年（2026–2032）战略图谱.html》');
+      } catch (e) {
+        showToast('导出失败，请使用浏览器保存网页功能');
+      }
+    }
+
+    // Quick Jump Search (⌘K)
+    var QUICK_ITEMS = [
+      { id: 'mod-f0', t: 'F0 战略总纲与三阶段 S 曲线', s: '双万亿营收地平线 · AWS 2027–28 >40% 预期增速 · 85% IT 未上云' },
+      { id: 'mod-f1', t: 'F1 六大增长引擎主从观测台', s: 'Bedrock/AgentCore · Annapurna芯片 · 百万机器人闪送 · Rufus/Alexa+ · Leo · Zoox' },
+      { id: 'mod-f2', t: 'F2 $2,200亿基建周期与营收瀑布桥', s: '2026E 现金 CapEx ~$220B vs 科技巨头 · FY25→FY32E 增量桥' },
+      { id: 'mod-f3', t: 'F3 Annapurna Labs 算力主权图谱', s: 'Graviton5 · Trainium2/3/4 (6x FP4) · >$20B 年化运行率' },
+      { id: 'mod-f4', t: 'F4 2032 五万亿市值期权调音台', s: '五大战略期权自由开关 · EV/EBIT 倍数与 2032E 利润模拟' }
+    ];
+    var qInput = document.getElementById('quickJumpInput');
+    var qPop = document.getElementById('quickJumpPopover');
+    function renderQuick(q) {
+      if (!qPop) return;
+      var kw = (q || '').trim().toLowerCase();
+      var matched = QUICK_ITEMS.filter(function (it) {
+        return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+      });
+      qPop.innerHTML = matched.map(function (it) {
+        return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+      }).join('');
+      qPop.classList.toggle('open', matched.length > 0);
+    }
+    if (qInput && qPop) {
+      qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+      qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+      qPop.addEventListener('click', function (e) {
+        var jb = e.target.closest('[data-jump]');
+        if (!jb) return;
+        var el = document.querySelector(jb.getAttribute('data-jump'));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        qPop.classList.remove('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (qInput) qInput.focus();
+      }
+      if (e.key === 'Escape') {
+        if (qPop) qPop.classList.remove('open');
+        document.getElementById('muiSidebar').classList.remove('open');
+        document.getElementById('drawerBackdrop').classList.remove('open');
+      }
+    });
+
+    // Suite Hub Navigation
+    var hub = document.getElementById('companySubfolderHub');
+    if (hub) {
+      hub.addEventListener('click', function (e) {
+        var pill = e.target.closest('[data-co-cat]');
+        if (pill) {
+          var cat = pill.getAttribute('data-co-cat');
+          hub.querySelectorAll('[data-co-cat]').forEach(function (p) { p.classList.toggle('active', p === pill); });
+          hub.querySelectorAll('[data-co-item-cat]').forEach(function (it) {
+            it.classList.toggle('co-hub-hidden', !(cat === 'ALL' || it.getAttribute('data-co-item-cat') === cat));
+          });
+          return;
+        }
+        var item = e.target.closest('.co-hub-item');
+        if (item) {
+          var jump = item.getAttribute('data-suite-jump');
+          var docName = item.getAttribute('data-suite-Doc');
+          if (jump) {
+            var sec = document.querySelector(jump);
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+          } else if (docName) {
+            showToast('请在配套四页式套件中打开《' + docName + '》');
+          }
+        }
+      });
+    }
+
+    document.getElementById('crumbTopBtn').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.getElementById('sideTopBtn').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    var sbBtn = document.getElementById('sidebarToggleBtn');
+    var sb = document.getElementById('muiSidebar');
+    var bd = document.getElementById('drawerBackdrop');
+    if (sbBtn && sb && bd) {
+      sbBtn.addEventListener('click', function () {
+        if (window.innerWidth < 1024) {
+          var open = sb.classList.toggle('open');
+          bd.classList.toggle('open', open);
+        } else {
+          var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+          if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+          else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+          try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (err) {}
+          setTimeout(drawAllCharts, 60);
+        }
+      });
+      bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+    }
+
+    var tocLinks = document.querySelectorAll('#tocList .mui-nav-link');
+    window.addEventListener('scroll', function () {
+      var bar = document.getElementById('readingProgressBar');
+      if (bar) {
+        var docH = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+      }
+    }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            var id = '#' + en.target.id;
+            tocLinks.forEach(function (lk) { lk.classList.toggle('active', lk.getAttribute('href') === id); });
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      ['mod-f0', 'mod-f1', 'mod-f2', 'mod-f3', 'mod-f4'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    }
+
+    document.getElementById('exportHtmlBtn').addEventListener('click', exportStandaloneHtml);
+    document.getElementById('sideExportBtn').addEventListener('click', exportStandaloneHtml);
+    document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+    document.getElementById('sideLightBtn').addEventListener('click', function () {
+      applyTheme('light', false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, 'light'); } catch (e) {}
+    });
+    document.getElementById('sideDarkBtn').addEventListener('click', function () {
+      applyTheme('dark', false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, 'dark'); } catch (e) {}
+    });
+
+    try {
+      var initT = (localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, '');
+      applyTheme(initT, true);
+      var initL = (localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, '');
+      applyLang(initL, true);
+    } catch (e) {}
+
+    document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+      var nxt = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nxt, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+    });
+    document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+      var lb = e.target.closest('[data-lang]');
+      if (!lb) return;
+      var nl = lb.getAttribute('data-lang');
+      applyLang(nl, false);
+      try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+    });
+    window.addEventListener('storage', function (ev) {
+      if (ev.key === STORAGE_THEME_KEY && ev.newValue) applyTheme(ev.newValue.replace(/^"|"$/g, ''), true);
+      if (ev.key === STORAGE_LANG_KEY && ev.newValue) applyLang(ev.newValue.replace(/^"|"$/g, ''), true);
+    });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(drawAllCharts, 80);
+    });
+
+    runOptionalitySim();
+    drawAllCharts();
+  })();
+  </script>
+</body>
+</html>

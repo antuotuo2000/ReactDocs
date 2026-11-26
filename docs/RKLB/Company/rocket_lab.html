@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="火箭实验室 Rocket Lab Corporation (NASDAQ: RKLB) 企业文化与组织操作系统蓝图：跨洋全栈组织拓扑沙盘、2×2文化操作码与工程带宽罗盘、三代治理演进、全球航天组织基因竞技场与扩张熵增推演器（基于 HBR R2602K、FY2025 10-K、Q3 2026 10-Q 与 2026 DEF 14A）。" />
+  <title>火箭实验室 Rocket Lab 企业文化与组织操作系统 | 数据中心</title>
+  
+  <style>
+    /* ==========================================================================
+       MUI Official Branding Design System (https://mui.com/)
+       Light Mode First (#F8FAFC / #FFFFFF) + Dark Obsidian (#090D16) + Sapphire (#0073E6)
+       Bespoke Organizational OS Blueprint: C0–C4 · Topology Sandbox · Entropy Sim
+       ========================================================================== */
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg-canvas: #090D16;
+      --bg-canvas-elevated: #0C1320;
+      --bg-paper: rgba(15, 25, 36, 0.92);
+      --bg-paper-solid: #0F1924;
+      --bg-subtle: rgba(19, 35, 55, 0.65);
+      --bg-hover: rgba(51, 153, 255, 0.08);
+      --bg-active: rgba(0, 115, 230, 0.16);
+      --bg-appbar: rgba(9, 13, 22, 0.86);
+
+      --border-subtle: rgba(51, 153, 255, 0.14);
+      --border-default: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(51, 153, 255, 0.44);
+      --divider: rgba(148, 163, 184, 0.12);
+
+      --text-primary: #F3F6F9;
+      --text-secondary: #B2BAC2;
+      --text-muted: #7E8C9A;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #3399FF;
+      --mui-primary-lighter: #66B2FF;
+      --mui-primary-bg: rgba(0, 115, 230, 0.16);
+      --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+      --mui-success-text: #66BB6A;
+      --mui-success-bg: rgba(26, 162, 81, 0.14);
+      --mui-success-border: rgba(102, 187, 106, 0.34);
+
+      --mui-warning-text: #FFB74D;
+      --mui-warning-bg: rgba(255, 183, 77, 0.14);
+      --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+      --mui-error-text: #FF6B6B;
+      --mui-error-bg: rgba(235, 0, 20, 0.14);
+      --mui-error-border: rgba(255, 107, 107, 0.34);
+
+      --mui-violet-text: #A78BFA;
+      --mui-violet-bg: rgba(139, 92, 246, 0.14);
+      --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.22), rgba(9, 13, 22, 0) 70%);
+      --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.32);
+      --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+    }
+
+    :root,
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg-canvas: #F8FAFC;
+      --bg-canvas-elevated: #F1F5F9;
+      --bg-paper: #FFFFFF;
+      --bg-paper-solid: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-hover: rgba(0, 115, 230, 0.06);
+      --bg-active: rgba(0, 115, 230, 0.11);
+      --bg-appbar: rgba(255, 255, 255, 0.88);
+
+      --border-subtle: #E2E8F0;
+      --border-default: #CBD5E1;
+      --border-strong: #0073E6;
+      --divider: #E2E8F0;
+
+      --text-primary: #0F1924;
+      --text-secondary: #334155;
+      --text-muted: #5B6B7C;
+
+      --mui-primary-main: #0073E6;
+      --mui-primary-light: #0059B2;
+      --mui-primary-lighter: #0059B2;
+      --mui-primary-bg: rgba(0, 115, 230, 0.09);
+      --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+      --mui-success-text: #15803D;
+      --mui-success-bg: rgba(21, 128, 61, 0.09);
+      --mui-success-border: rgba(21, 128, 61, 0.26);
+
+      --mui-warning-text: #B45309;
+      --mui-warning-bg: rgba(180, 83, 9, 0.09);
+      --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+      --mui-error-text: #C62828;
+      --mui-error-bg: rgba(198, 40, 40, 0.08);
+      --mui-error-border: rgba(198, 40, 40, 0.26);
+
+      --mui-violet-text: #6D28D9;
+      --mui-violet-bg: rgba(109, 40, 217, 0.08);
+      --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+      --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.09), rgba(248, 250, 252, 0) 70%);
+      --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+      --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      background-color: var(--bg-canvas);
+      background-image: var(--hero-glow);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+    a:hover { text-decoration: underline; }
+
+    .cite-link {
+      display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+      padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+      border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+      white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+    }
+    .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); }
+
+    #readingProgressBar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); z-index: 1300; transition: width 0.08s linear;
+    }
+    #chartTooltip {
+      position: fixed; pointer-events: none; z-index: 1400; display: none; min-width: 195px; max-width: 300px;
+      padding: 9px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-popover); font-size: 0.76rem; color: var(--text-primary); line-height: 1.45;
+    }
+    #muiSnackbar {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; pointer-events: none;
+      z-index: 1400; padding: 9px 16px; border-radius: 10px; background: #0F1924; color: #FFFFFF;
+      border: 1px solid rgba(51, 153, 255, 0.4); box-shadow: var(--shadow-popover); font-size: 0.8rem; font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    #muiSnackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* AppBar */
+    .mui-appbar {
+      position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+    }
+    .mui-appbar-inner {
+      max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+    .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mui-icon-btn, .mui-theme-icon-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+      color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+    }
+    .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+    .mui-dl-btn {
+      display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px;
+      border-radius: 10px; border: 1px solid #0073E6; background: linear-gradient(180deg, #1985F1 0%, #0073E6 100%);
+      color: #FFFFFF; font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+    }
+    .mui-dl-btn:hover { background: linear-gradient(180deg, #3399FF 0%, #0059B2 100%); }
+    .brand-monogram {
+      width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+      color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breadcrumbs .crumb-label { display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); font-weight: 600; }
+    .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+    .quick-search-wrap { position: relative; width: 210px; }
+    .quick-search-input {
+      width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none;
+    }
+    .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+    .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+    .quick-search-kbd {
+      position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700;
+      padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none;
+    }
+    .quick-jump-popover {
+      position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto;
+      border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250;
+    }
+    .quick-jump-popover.open { display: block; }
+    .quick-jump-item {
+      display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px;
+      border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit;
+    }
+    .quick-jump-item:hover { background: var(--bg-hover); }
+    .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+    .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+    .mui-lang-switch {
+      display: inline-flex; align-items: center; padding: 2px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; height: 34px;
+    }
+    .mui-lang-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit;
+      font-size: 0.76rem; font-weight: 700; height: 28px; padding: 0 10px; border-radius: 7px; cursor: pointer;
+    }
+    .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-lang-btn.active { color: var(--mui-primary-lighter); }
+
+    .mui-chip {
+      display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px;
+      font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+    }
+    .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+    .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+    .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+    .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+    .mui-segmented {
+      display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px;
+    }
+    .mui-seg-btn {
+      border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.77rem; font-weight: 700;
+      padding: 5px 11px; border-radius: 7px; cursor: pointer; transition: all 0.16s ease;
+    }
+    .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-main); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+    html[data-theme="dark"] .mui-seg-btn.active { color: var(--mui-primary-lighter); }
+
+    /* Layout Shell & Sidebar */
+    .layout-shell {
+      max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr);
+      gap: 26px; padding: 22px 20px 72px; align-items: start;
+    }
+    html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+    html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+    .mui-sidebar {
+      position: sticky; top: 76px; max-height: calc(100vh - 92px); overflow-y: auto;
+      display: flex; flex-direction: column; gap: 10px; padding-right: 2px;
+    }
+    .sidebar-card {
+      background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px;
+      padding: 14px; box-shadow: var(--shadow-card);
+    }
+    .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .sidebar-title { font-size: 0.96rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+    .sidebar-subtitle { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px; }
+    .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 6px; padding-top: 8px; border-top: 1px solid var(--divider); }
+    .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.73rem; }
+    .sidebar-mini-label { color: var(--text-muted); }
+    .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+
+    .co-side-nav { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--divider); }
+    .co-side-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .co-side-title { font-size: 0.70rem; font-weight: 800; letter-spacing: 0.06em; color: var(--text-muted); }
+    .co-hub-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+    .co-hub-pill {
+      border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary);
+      border-radius: 999px; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; cursor: pointer; font-family: inherit;
+    }
+    .co-hub-pill.active { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+    .co-side-list { display: flex; flex-direction: column; gap: 5px; }
+    .co-hub-item {
+      display: flex; align-items: flex-start; gap: 8px; width: 100%; text-align: left; padding: 7px 8px;
+      border-radius: 9px; border: 1px solid transparent; background: transparent; cursor: pointer; font-family: inherit;
+    }
+    .co-hub-item:hover { background: var(--bg-hover); border-color: var(--border-subtle); }
+    .co-hub-item.active { background: var(--bg-active); border-color: var(--mui-primary-border); }
+    .co-hub-ticker {
+      font-size: 0.68rem; font-weight: 800; padding: 2px 5px; border-radius: 5px;
+      background: var(--bg-subtle); color: var(--mui-primary-lighter); flex-shrink: 0; margin-top: 1px;
+    }
+    .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+    .co-hub-title { font-size: 0.75rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
+    .co-hub-meta { font-size: 0.66rem; color: var(--text-muted); }
+
+    .nav-group-label { font-size: 0.69rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+    .mui-nav-link {
+      display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px;
+      font-size: 0.77rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important;
+    }
+    .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+    .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+    .nav-idx { font-size: 0.68rem; font-weight: 800; opacity: 0.75; width: 22px; flex-shrink: 0; }
+
+    .reading-tools-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
+    .tool-btn {
+      padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-subtle);
+      color: var(--text-secondary); font-size: 0.73rem; font-weight: 700; cursor: pointer; font-family: inherit;
+    }
+    .tool-btn:hover, .tool-btn.active { border-color: var(--mui-primary-border); background: var(--mui-primary-bg); color: var(--mui-primary-lighter); }
+
+    #portalDetailBackdrop { display: none; }
+    @media (max-width: 1023px) {
+      .layout-shell { grid-template-columns: minmax(0, 1fr); padding: 16px 14px 56px; }
+      .hide-sm { display: none !important; }
+      .quick-search-wrap { width: 150px; }
+      .mui-sidebar {
+        position: fixed; top: 0; left: 0; bottom: 0; width: 292px; max-height: 100vh; z-index: 1250;
+        background: var(--bg-canvas); padding: 16px; transform: translateX(-105%); transition: transform 0.22s ease;
+      }
+      body.portal-detail-drawer .mui-sidebar { transform: translateX(0); }
+      body.portal-detail-drawer #portalDetailBackdrop {
+        display: block; position: fixed; inset: 0; background: rgba(9, 13, 22, 0.55); z-index: 1200;
+      }
+    }
+
+    /* Organizational OS Modules C0-C4 */
+    .main-col { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+    .os-module {
+      scroll-margin-top: 76px; background: var(--bg-paper); border: 1px solid var(--border-subtle);
+      border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow-card);
+    }
+    @media (max-width: 640px) { .os-module { padding: 18px 16px; border-radius: 14px; } }
+    .os-overline { font-size: 0.73rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mui-primary-lighter); margin-bottom: 6px; display: block; }
+    .os-h1 {
+      font-size: clamp(1.5rem, 2.4vw, 2.15rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text-primary) 20%, #0073E6 85%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 8px 0 14px;
+    }
+    html[data-theme="dark"] .os-h1 {
+      background: linear-gradient(135deg, #FFFFFF 20%, #66B2FF 90%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .os-h2 { font-size: 1.28rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+    .os-lead { font-size: 0.91rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; }
+
+    .quote-ribbon {
+      padding: 14px 18px; border-radius: 13px; border-left: 4px solid #0073E6;
+      background: var(--mui-primary-bg); margin-bottom: 18px; font-size: 0.85rem; color: var(--text-primary); line-height: 1.65;
+    }
+    .quote-ribbon cite { display: block; margin-top: 5px; font-style: normal; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; }
+
+    /* C0 Topology Sandbox */
+    .topo-box {
+      padding: 18px; border-radius: 15px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+    }
+    .topo-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+    .topo-stage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 920px) { .topo-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 540px) { .topo-stage { grid-template-columns: minmax(0, 1fr); } }
+    .topo-node {
+      padding: 14px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .topo-node.warn { border-color: var(--mui-warning-border); }
+    .topo-node.good { border-color: var(--mui-primary-border); }
+    .topo-node b { font-size: 0.84rem; color: var(--text-primary); }
+    .topo-node span { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
+    .topo-verdict {
+      padding: 13px 15px; border-radius: 11px; background: var(--bg-paper-solid); border: 1px solid var(--mui-primary-border);
+      font-size: 0.80rem; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    /* Splits */
+    .split-75 { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; align-items: stretch; }
+    .split-57 { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; align-items: stretch; }
+    .split-66 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+    @media (max-width: 1020px) { .split-75, .split-57, .split-66 { grid-template-columns: minmax(0, 1fr); } }
+
+    /* C1 2x2 Quadrant Grid & Bandwidth Dial */
+    .quad-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    @media (max-width: 640px) { .quad-grid { grid-template-columns: minmax(0, 1fr); } }
+    .quad-card {
+      text-align: left; padding: 16px; border-radius: 14px; border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle); cursor: pointer; font-family: inherit; transition: all 0.16s ease;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .quad-card:hover { border-color: var(--mui-primary-border); background: var(--bg-hover); }
+    .quad-card.active { border-color: var(--mui-primary-main); background: var(--mui-primary-bg); box-shadow: 0 3px 14px rgba(0, 115, 230, 0.12); }
+    .quad-code { font-size: 0.71rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .quad-card h3 { font-size: 0.92rem; font-weight: 800; color: var(--text-primary); }
+    .quad-card p { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.55; }
+
+    .dial-panel {
+      padding: 18px; border-radius: 15px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+    }
+    .bw-bars { display: flex; flex-direction: column; gap: 8px; }
+    .bw-row { display: flex; flex-direction: column; gap: 3px; }
+    .bw-lbl { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); }
+    .bw-track { height: 8px; border-radius: 999px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); overflow: hidden; }
+    .bw-fill { height: 100%; background: linear-gradient(90deg, #0073E6, #38BDF8); transition: width 0.25s ease; }
+
+    /* C2 Era Card & Canvas */
+    .sub-panel {
+      padding: 18px; border-radius: 15px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+    }
+    .era-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .era-kpi { padding: 11px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+    .era-kpi b { display: block; font-size: 1.08rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .era-kpi span { font-size: 0.72rem; color: var(--text-muted); }
+
+    .canvas-box { position: relative; width: 100%; height: 295px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); padding: 10px; }
+    .canvas-box canvas { width: 100%; height: 100%; display: block; }
+
+    /* C3 Yin-Yang & Genome Table */
+    .yy-stack { display: flex; flex-direction: column; gap: 10px; }
+    .yy-card { padding: 13px 15px; border-radius: 12px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+    .yy-card h4 { font-size: 0.85rem; font-weight: 800; color: var(--mui-primary-lighter); margin-bottom: 4px; }
+    .yy-card p { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.56; }
+
+    .cc-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); margin-top: 16px; }
+    .cc-table { width: 100%; border-collapse: collapse; font-size: 0.80rem; min-width: 780px; background: var(--bg-paper-solid); }
+    .cc-table th {
+      text-align: left; padding: 10px 13px; background: var(--bg-subtle); color: var(--text-muted);
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase; border-bottom: 1px solid var(--border-subtle);
+    }
+    .cc-table td { padding: 10px 13px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); }
+    .cc-table tr.is-rklb td { background: var(--mui-primary-bg); color: var(--text-primary); font-weight: 600; }
+
+    /* C4 Entropy Sim & Audit */
+    .slider-row { display: flex; flex-direction: column; gap: 4px; }
+    .slider-lbl { display: flex; justify-content: space-between; font-size: 0.77rem; font-weight: 700; color: var(--text-secondary); }
+    .slider-lbl b { color: var(--mui-primary-lighter); }
+    .slider-row input[type="range"] { width: 100%; accent-color: #0073E6; height: 6px; cursor: pointer; }
+    .score-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .score-pill { padding: 10px 8px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); text-align: center; }
+    .score-pill b { display: block; font-size: 1.05rem; font-weight: 800; color: var(--mui-primary-lighter); }
+    .score-pill span { font-size: 0.69rem; color: var(--text-muted); }
+
+    .audit-list { display: flex; flex-direction: column; gap: 9px; }
+    .audit-item {
+      display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border-radius: 11px;
+      background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); cursor: pointer;
+    }
+    .audit-item:hover { border-color: var(--mui-primary-border); }
+    .audit-item input { margin-top: 3px; width: 16px; height: 16px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+    .audit-item b { display: block; font-size: 0.82rem; color: var(--text-primary); }
+    .audit-item span { display: block; font-size: 0.74rem; color: var(--text-secondary); line-height: 1.5; }
+
+    .src-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 18px; }
+    .src-item {
+      display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border-radius: 11px;
+      background: var(--bg-subtle); border: 1px solid var(--border-subtle); text-decoration: none !important;
+    }
+    .src-item:hover { border-color: var(--mui-primary-main); background: var(--bg-hover); }
+    .src-item b { font-size: 0.79rem; color: var(--mui-primary-lighter); }
+    .src-item span { font-size: 0.72rem; color: var(--text-secondary); }
+
+    @media print {
+      .mui-appbar, .mui-sidebar, #readingProgressBar, #portalDetailBackdrop { display: none !important; }
+      .layout-shell { display: block !important; padding: 0 !important; }
+    }
+  </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],#portalRelatedReports [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+  <div id="portalDetailBackdrop" aria-hidden="true"></div>
+  <div id="readingProgressBar"></div>
+  <div id="chartTooltip"></div>
+  <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+  <!-- Sticky AppBar -->
+  <header class="mui-appbar">
+    <div class="mui-appbar-inner">
+      <div class="appbar-left">
+        <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </button>
+        <span class="brand-monogram mono">RKLB</span>
+        <nav class="breadcrumbs" aria-label="面包屑导航"><a class="crumb-link hide-sm" href="../../index.html"><span class="portal-menu-text" data-portal-zh="数据中心" data-portal-en="Research Hub">数据中心</span></a><span class="hide-sm" aria-hidden="true">/</span>
+          <span class="crumb-label hide-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+            <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+          </span>
+          <span class="hide-sm" style="opacity:0.45;">/</span>
+          <span class="crumb-current" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Organizational Operating System">火箭实验室 Rocket Lab 企业文化与组织操作系统</span>
+        </nav>
+        <span class="mui-chip mui-chip-primary mono hide-sm">ORG OS · C0–C4</span>
+        <span class="mui-chip mui-chip-success mono hide-sm">SINGLE ERP · CHIEF ENGINEER</span>
+      </div>
+
+      <div class="appbar-right">
+        <div class="quick-search-wrap">
+          <span class="quick-search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索组织模块 C0–C4…" aria-label="快速跳转模块" autocomplete="off" />
+          <span class="quick-search-kbd mono">⌘K</span>
+          <div id="quickJumpPopover" class="quick-jump-popover"></div>
+        </div>
+        <button type="button" id="topDownloadBtn" class="mui-dl-btn" title="下载独立 HTML 网页">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n-zh="下载 HTML" data-i18n-en="Download">下载 HTML</span>
+        </button>
+        <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+          <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+    <!-- Left Sidebar -->
+    <aside id="muiSidebar" class="mui-sidebar" aria-label="组织操作系统模块与套件导航">
+      <div class="sidebar-card">
+        <div class="sidebar-brand-top">
+          <span class="mui-chip mui-chip-primary mono">RKLB · ORG OS BLUEPRINT</span>
+        </div>
+        <div class="sidebar-title" data-i18n-zh="Rocket Lab 组织操作系统" data-i18n-en="Rocket Lab Organizational OS">Rocket Lab 组织操作系统</div>
+        <p class="sidebar-subtitle" data-i18n-zh="解构 3,217 人如何跨美新德加四国协同运转百发火箭产线、55+ 颗在研军民卫星与 $80 亿 Iridium 并购整合并保持零官僚熵增" data-i18n-en="How 3,217 staff across US, NZ, Canada &amp; Germany run an 8-day rocket line, 55+ spacecraft in build, and $8B Iridium integration without bureaucratic bloat">解构 3,217 人如何跨美新德加四国协同运转百发火箭产线、55+ 颗在研军民卫星与 $80 亿 Iridium 并购整合并保持零官僚熵增</p>
+        <div class="sidebar-mini-kpis">
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="操作系统内核" data-i18n-en="OS Kernel">操作系统内核</span>
+            <span class="sidebar-mini-val mono" data-i18n-zh="首席工程师 + 单一ERP" data-i18n-en="Chief Eng + Single ERP">首席工程师 + 单一ERP</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="在研整星 / 造箭节拍" data-i18n-en="Sats in Build / Cadence">在研整星 / 造箭节拍</span>
+            <span class="sidebar-mini-val mono">55+ Sats · 8 Days</span>
+          </div>
+          <div class="sidebar-mini-row">
+            <span class="sidebar-mini-label" data-i18n-zh="9M26 毛利覆盖研发率" data-i18n-en="9M26 GP / R&amp;D Cover">9M26 毛利覆盖研发率</span>
+            <span class="sidebar-mini-val mono">96.1% GAAP / 109% NG</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-card" aria-label="套件导航与模块目录">
+<!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="portalRelatedReports" data-co-key="RKLB">
+          <div class="co-side-head">
+            <span class="co-side-title mono">RKLB · 02/06</span>
+            <a href="../../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="portalRelatedPrevBtn" href="rocket_lab (1).html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="portalRelatedNextBtn" href="rocket_lab_2026_2032.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (6)" data-i18n-en="All (6)">全部 (6)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (5)" data-i18n-en="Company (5)">公司深度 (5)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="SeniorExecutive" data-i18n-zh="高管人物 (1)" data-i18n-en="SeniorExecutive (1)">高管人物 (1)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb_12_electron_neutron_haste_photon_flatellite_iridium_solaero_sinclair_psc_mynaric_geost_gauss.html" title="Rocket Lab (RKLB) 全线 12 款核心产品与服务深度商业研报中枢（Electron·Neutron·HASTE·Photon·Flatellite·Iridium·SolAero·Sinclair·PSC·Mynaric·Geost·Gauss）"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab (RKLB) 全线 12 款核心产品与服务深度商业研报中枢（Electron·Neutron·HASTE·Photon·Flatellite·Iridium·SolAero·Sinclair·PSC·Mynaric·Geost·Gauss）" data-i18n-en="Rocket Lab (RKLB) 12 &amp; Deep Dive Report (Electron·Neutron·HASTE·Photon·Flatellite·Iridium·SolAero·Sinclair·PSC·Mynaric·Geost·Gauss)">Rocket Lab (RKLB) 全线 12 款核心产品与服务深度商业研报中枢（Electron·Neutron·HASTE·Photon·Flatellite·Iridium·SolAero·Sinclair·PSC·Mynaric·Geost·Gauss）</span><span class="co-hub-meta mono">Company</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="SeniorExecutive" href="../SeniorExecutive/rocket_lab_nasdaq_rklb_24_sir_peter_beck_spice_klein_kampani_clevenger_d_mello_saintil_olson_frank_possenriede_armagno_slusky.html" title="Rocket Lab (NASDAQ: RKLB) 全量 24 位高管与独立董事会深度研报中枢（Sir Peter Beck·Spice·Klein·Kampani·Clevenger·D&#x27;Mello·Saintil·Olson·Frank·Possenriede·Armagno·Slusky等）| 王安安数据中心"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab (NASDAQ: RKLB) 全量 24 位高管与独立董事会深度研报中枢（Sir Peter Beck·Spice·Klein·Kampani·Clevenger·D&#x27;Mello·Saintil·Olson·Frank·Possenriede·Armagno·Slusky等）| 王安安数据中心" data-i18n-en="Rocket Lab (NASDAQ: RKLB) 24 &amp; Deep DiveReport (Sir Peter Beck·Spice·Klein·Kampani·Clevenger·D&#x27;Mello·Saintil·Olson·Frank·Possenriede·Armagno·Slusky)| Data Center">Rocket Lab (NASDAQ: RKLB) 全量 24 位高管与独立董事会深度研报中枢（Sir Peter Beck·Spice·Klein·Kampani·Clevenger·D&#x27;Mello·Saintil·Olson·Frank·Possenriede·Armagno·Slusky等）| 王安安数据中心</span><span class="co-hub-meta mono">SeniorExecutive</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("portalRelatedReports");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("portalRelatedPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("portalRelatedNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="RKLB">
+          <div class="co-side-head">
+            <span class="co-side-title mono">RKLB SUITE · 04/04</span>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部套件 (4)" data-i18n-en="All Suite (4)">全部套件 (4)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (2)" data-i18n-en="Company (2)">公司深度 (2)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="CorporateCulture" data-i18n-zh="企业文化 (2)" data-i18n-en="Culture (2)">企业文化 (2)</button>
+          </div>
+          <div class="co-side-list">
+            <button type="button" class="co-hub-item" data-co-item-cat="Company" data-suite-page="火箭实验室 Rocket Lab 商业模式解构.html">
+              <span class="co-hub-ticker mono">01</span>
+              <span class="co-hub-info">
+                <span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 商业模式架构深度拆解" data-i18n-en="Rocket Lab Business Model Architecture">火箭实验室 Rocket Lab 商业模式架构深度拆解</span>
+                <span class="co-hub-meta mono">Company · 01/04</span>
+              </span>
+            </button>
+            <button type="button" class="co-hub-item" data-co-item-cat="Company" data-suite-page="火箭实验室 Rocket Lab 未来十年（2026–2032）战略图谱.html">
+              <span class="co-hub-ticker mono">02</span>
+              <span class="co-hub-info">
+                <span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与增长观测站" data-i18n-en="Rocket Lab 2026–2032 Strategic Observatory">Rocket Lab 2026–2032 未来战略与增长观测站</span>
+                <span class="co-hub-meta mono">Company · 02/04</span>
+              </span>
+            </button>
+            <button type="button" class="co-hub-item" data-co-item-cat="CorporateCulture" data-suite-page="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告.html">
+              <span class="co-hub-ticker mono">03</span>
+              <span class="co-hub-info">
+                <span class="co-hub-title" data-i18n-zh="Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Monograph">Rocket Lab 企业文化与组织架构深度研究报告</span>
+                <span class="co-hub-meta mono">CorporateCulture · 03/04</span>
+              </span>
+            </button>
+            <button type="button" class="co-hub-item active" data-co-item-cat="CorporateCulture" data-suite-page="火箭实验室 Rocket Lab 企业文化与组织操作系统.html">
+              <span class="co-hub-ticker mono">04</span>
+              <span class="co-hub-info">
+                <span class="co-hub-title" data-i18n-zh="Rocket Lab 企业文化与组织操作系统蓝图" data-i18n-en="Rocket Lab Organizational Operating System">Rocket Lab 企业文化与组织操作系统蓝图</span>
+                <span class="co-hub-meta mono">CorporateCulture · Current</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="nav-group-label" data-i18n-zh="操作系统架构目录 (C0–C4)" data-i18n-en="OS Architecture (C0–C4)">操作系统架构目录 (C0–C4)</div>
+        <ul id="tocList" class="mui-nav-list">
+          <li><a class="mui-nav-link active" href="#sec-c0"><span class="nav-idx mono">C0</span><span data-i18n-zh="跨洋全栈组织拓扑沙盘" data-i18n-en="Org Topology Sandbox">跨洋全栈组织拓扑沙盘</span></a></li>
+          <li><a class="mui-nav-link" href="#sec-c1"><span class="nav-idx mono">C1</span><span data-i18n-zh="2×2 操作码与工程带宽罗盘" data-i18n-en="2×2 Codes &amp; Bandwidth Dial">2×2 操作码与工程带宽罗盘</span></a></li>
+          <li><a class="mui-nav-link" href="#sec-c2"><span class="nav-idx mono">C2</span><span data-i18n-zh="三代治理演进与研发自造血" data-i18n-en="3-Era Governance Scrubber">三代治理演进与研发自造血</span></a></li>
+          <li><a class="mui-nav-link" href="#sec-c3"><span class="nav-idx mono">C3</span><span data-i18n-zh="全球组织基因竞技与阴阳对立" data-i18n-en="Genome Arena &amp; Yin-Yang">全球组织基因竞技与阴阳对立</span></a></li>
+          <li><a class="mui-nav-link" href="#sec-c4"><span class="nav-idx mono">C4</span><span data-i18n-zh="扩张熵增推演与六大铁律审计" data-i18n-en="Entropy Sim &amp; 6-Law Audit">扩张熵增推演与六大铁律审计</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-card" id="portalReadingTools">
+        <div class="nav-group-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Reading &amp; Export Tools">阅读与导出工具</div>
+        <div class="reading-tools-grid">
+          <button type="button" class="tool-btn active" id="sideLightBtn" data-portal-theme="light" data-i18n-zh="浅色外观" data-i18n-en="Light Mode">浅色外观</button>
+          <button type="button" class="tool-btn" id="sideDarkBtn" data-portal-theme="dark" data-i18n-zh="深色外观" data-i18n-en="Dark Mode">深色外观</button>
+          <button type="button" class="tool-btn" id="sideExportBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+          <button type="button" class="tool-btn" id="sidePrintBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Blueprint Modules -->
+    <main class="main-col">
+      <!-- C0: Topology Hero + Interactive Sandbox Switcher -->
+      <section id="sec-c0" class="os-module">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+          <span class="mui-chip mui-chip-primary mono">MODULE C0 · ORG TOPOLOGY KERNEL</span>
+          <span class="mui-chip mui-chip-success mono">3,217 GLOBAL ENGINEERS &amp; BUILDERS</span>
+          <span class="mui-chip mui-chip-violet mono">US · NZ · CANADA · GERMANY</span>
+        </div>
+        <span class="os-overline">ORGANIZATIONAL OPERATING SYSTEM BLUEPRINT</span>
+        <h1 class="os-h1" data-i18n-zh="火箭实验室 Rocket Lab 组织操作系统蓝图：以“首席工程师直管 + 单一 ERP 垂直脊柱”重构太空与防务工业生产力" data-i18n-en="Rocket Lab Organizational Operating System: Rewiring Space &amp; Defense Productivity via Chief-Engineer Governance &amp; Single-ERP Verticality">火箭实验室 Rocket Lab 组织操作系统蓝图：以“首席工程师直管 + 单一 ERP 垂直脊柱”重构太空与防务工业生产力</h1>
+        <p class="os-lead">
+          <span data-i18n-zh="为什么传统军工巨头造一颗国防跟踪卫星需要 5–7 年和数亿美元成本加成预算，而 Rocket Lab 能在固定总价下同时推进 55+ 颗在研航天器、保持每 8 天造 1 枚 Electron 火箭，并斩获超 $35.7 亿在手订单？答案不在于某一项孤立专利，而在于其底层“组织操作系统（Organizational OS）”：用职能工程主线取代事业部割据，把 7 家并购硬科技子公司强制熔接在同一套数字制造底座之上" data-i18n-en="Why do legacy defense primes take 5–7 years on cost-plus budgets to field defense satellites while Rocket Lab builds 55+ spacecraft concurrently under firm-fixed-price contracts, produces an Electron rocket every 8 days, and scales backlog to $3.57B? The answer lies in its Organizational OS: replacing divisional profit-center silos with Chief-Engineer direct ownership and one unified ERP spine across 7 acquired subsystem leaders">为什么传统军工巨头造一颗国防跟踪卫星需要 5–7 年和数亿美元成本加成预算，而 Rocket Lab 能在固定总价下同时推进 55+ 颗在研航天器、保持每 8 天造 1 枚 Electron 火箭，并斩获超 $35.7 亿在手订单？答案不在于某一项孤立专利，而在于其底层“组织操作系统（Organizational OS）”：用职能工程主线取代事业部割据，把 7 家并购硬科技子公司强制熔接在同一套数字制造底座之上</span>
+          <a class="cite-link" href="https://hbsp.harvard.edu/product/R2602K-PDF-ENG" target="_blank" rel="noopener noreferrer">HBR R2602K ↗</a>
+          <a class="cite-link" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">Q3 2026 财报 ↗</a>。
+        </p>
+
+        <div class="quote-ribbon">
+          <span data-i18n-zh="与拥有无限私人资本的对手同台竞争，迫使我们把每一美元资本约束都锤炼成组织效率武器：拒绝空谈演示稿，只用入轨硬件说话；把关键供应链握在自己手里，做聪明而可靠的快，而不是鲁莽的快。" data-i18n-en="Competing against rivals with virtually unlimited personal fortunes forced us to turn capital discipline into an organizational weapon: ship working orbital hardware rather than slideware, own critical bottlenecks vertically, and practice smart speed without compromising flight reliability.">与拥有无限私人资本的对手同台竞争，迫使我们把每一美元资本约束都锤炼成组织效率武器：拒绝空谈演示稿，只用入轨硬件说话；把关键供应链握在自己手里，做聪明而可靠的快，而不是鲁莽的快。</span>
+          <cite data-i18n-zh="—— 彼得·贝克爵士 (Sir Peter Beck) 思想精髓提炼，参见《哈佛商业评论》2026年3–4月刊 (R2602K)" data-i18n-en="— Paraphrased synthesis of Sir Peter Beck's operating philosophy in Harvard Business Review (Mar/Apr 2026, R2602K)">—— 彼得·贝克爵士 (Sir Peter Beck) 思想精髓提炼，参见《哈佛商业评论》2026年3–4月刊 (R2602K)</cite>
+        </div>
+
+        <div class="topo-box">
+          <div class="topo-head">
+            <strong style="font-size:0.94rem;" data-i18n-zh="交互式组织拓扑对照沙盘：点击切换两类航天工业架构" data-i18n-en="Interactive Org Topology Sandbox: Toggle Aerospace Operating Architectures">交互式组织拓扑对照沙盘：点击切换两类航天工业架构</strong>
+            <div class="mui-segmented" id="topoSwitch">
+              <button type="button" class="mui-seg-btn active" data-topo="rklb" data-i18n-zh="Rocket Lab：端到端垂直脊柱 + 单一ERP" data-i18n-en="Rocket Lab: Vertical Spine + Single ERP">Rocket Lab：端到端垂直脊柱 + 单一ERP</button>
+              <button type="button" class="mui-seg-btn" data-topo="legacy" data-i18n-zh="传统军工巨头：四级分包 + 成本加成孤岛" data-i18n-en="Legacy Prime: 4-Tier Cost-Plus Silos">传统军工巨头：四级分包 + 成本加成孤岛</button>
+            </div>
+          </div>
+          <div class="topo-stage" id="topoStage"></div>
+          <div class="topo-verdict" id="topoVerdict"></div>
+        </div>
+      </section>
+
+      <!-- C1: 2x2 Cultural Operating Codes Bento + Engineering Bandwidth Dial -->
+      <section id="sec-c1" class="os-module">
+        <span class="os-overline">MODULE C1 · 2×2 OPERATING CODES &amp; BANDWIDTH DIAL</span>
+        <h2 class="os-h2" data-i18n-zh="四大文化操作码（2×2 Bento）与管理层工程带宽罗盘" data-i18n-en="2×2 Cultural Operating Codes &amp; Engineering Bandwidth Dial">四大文化操作码（2×2 Bento）与管理层工程带宽罗盘</h2>
+        <p class="os-lead" data-i18n-zh="点击左侧 2×2 象限任一文化操作码，右侧罗盘与四维工程带宽条将实时解析 Rocket Lab 如何在“自主掌控（Owning）、硬件迭代（Iterating）、并购内化（Integrating）与授权执行（Delegating）”之间分配组织算力。" data-i18n-en="Click any quadrant in the 2×2 Operating Code grid to inspect how Rocket Lab allocates organizational bandwidth across Owning, Iterating, Integrating, and Delegating.">点击左侧 2×2 象限任一文化操作码，右侧罗盘与四维工程带宽条将实时解析 Rocket Lab 如何在“自主掌控（Owning）、硬件迭代（Iterating）、并购内化（Integrating）与授权执行（Delegating）”之间分配组织算力。</p>
+
+        <div class="split-75">
+          <div class="quad-grid" id="quadGrid">
+            <button type="button" class="quad-card active" data-quad="0">
+              <span class="quad-code mono">CODE Q1 · FIERCE EFFICIENCY</span>
+              <h3 data-i18n-zh="极致资本效率 × 8号铁丝工程学" data-i18n-en="Fierce Efficiency × No. 8 Wire">极致资本效率 × 8号铁丝工程学</h3>
+              <p data-i18n-zh="拒绝豪华总部与冗余中台：破产拍卖抄底长滩五轴产线、自研自动化铺丝设备，用同行 1/5 资本开支跑通轨道火箭与卫星量产。" data-i18n-en="Zero vanity spend: acquire distressed CNC factories at pennies on the dollar and engineer custom robotic tooling at 1/5 peer CapEx.">拒绝豪华总部与冗余中台：破产拍卖抄底长滩五轴产线、自研自动化铺丝设备，用同行 1/5 资本开支跑通轨道火箭与卫星量产。</p>
+            </button>
+            <button type="button" class="quad-card" data-quad="1">
+              <span class="quad-code mono">CODE Q2 · SHOW, DON'T TELL</span>
+              <h3 data-i18n-zh="硬件实证主义 × 吃帽认错透明门禁" data-i18n-en="Show Don't Tell × Radical Candor">硬件实证主义 × 吃帽认错透明门禁</h3>
+              <p data-i18n-zh="战略预判错了就公开吃帽转向 Neutron；外包前穹顶发现孔隙就主动公告推迟至2027年并收回内制，绝不带隐患上发射台。" data-i18n-en="Eat your hat publicly when market physics shift; halt and internalize composite dome production when contractor voids appear.">战略预判错了就公开吃帽转向 Neutron；外包前穹顶发现孔隙就主动公告推迟至2027年并收回内制，绝不带隐患上发射台。</p>
+            </button>
+            <button type="button" class="quad-card" data-quad="2">
+              <span class="quad-code mono">CODE Q3 · SMART SPEED</span>
+              <h3 data-i18n-zh="聪明速度 × 零委员会扁平拍板" data-i18n-en="Smart Speed × Zero-Committee Execution">聪明速度 × 零委员会扁平拍板</h3>
+              <p data-i18n-zh="砍掉多级汇报链，系统主任工程师直通 CEO/COO；依托自有玛希亚 LC-1 与沃洛普斯发射场实现每 8 天出厂 1 枚火箭。" data-i18n-en="Lead responsible engineers connect directly to Chief Engineer &amp; COO; private launch ranges sustain an 8-day rocket build tempo.">砍掉多级汇报链，系统主任工程师直通 CEO/COO；依托自有玛希亚 LC-1 与沃洛普斯发射场实现每 8 天出厂 1 枚火箭。</p>
+            </button>
+            <button type="button" class="quad-card" data-quad="3">
+              <span class="quad-code mono">CODE Q4 · M&amp;A VERTICAL PLAYBOOK</span>
+              <h3 data-i18n-zh="纪律并购 × 90天部组件垂直内化" data-i18n-en="Disciplined M&amp;A × 90-Day Integration">纪律并购 × 90天部组件垂直内化</h3>
+              <p data-i18n-zh="专挑拥有太空飞行遗产但缺量产能力的隐形冠军（SolAero/Sinclair/Mynaric/GEOST），注入自动化制造纪律并保留外部商售收入。" data-i18n-en="Acquire flight-proven bottleneck suppliers, inject high-rate manufacturing discipline within 90 days, and sell both internally and externally.">专挑拥有太空飞行遗产但缺量产能力的隐形冠军（SolAero/Sinclair/Mynaric/GEOST），注入自动化制造纪律并保留外部商售收入。</p>
+            </button>
+          </div>
+
+          <div class="dial-panel" id="dialInspector">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <strong id="dialTitle" style="font-size:0.92rem;">CODE Q1 · 工程带宽配置罗盘</strong>
+              <span class="mui-chip mui-chip-primary mono" id="dialBadge">CAPEX DISCIPLINE</span>
+            </div>
+            <div class="canvas-box" style="height:175px;"><canvas id="dialCanvas"></canvas></div>
+            <div class="bw-bars">
+              <div class="bw-row">
+                <div class="bw-lbl"><span data-i18n-zh="核心瓶颈自研掌控 (Owning)" data-i18n-en="Bottleneck Owning">核心瓶颈自研掌控 (Owning)</span><b class="mono" id="bwVal0">92%</b></div>
+                <div class="bw-track"><div class="bw-fill" id="bwFill0" style="width:92%;"></div></div>
+              </div>
+              <div class="bw-row">
+                <div class="bw-lbl"><span data-i18n-zh="高频硬件实测迭代 (Iterating)" data-i18n-en="Hardware Iterating">高频硬件实测迭代 (Iterating)</span><b class="mono" id="bwVal1">88%</b></div>
+                <div class="bw-track"><div class="bw-fill" id="bwFill1" style="width:88%;"></div></div>
+              </div>
+              <div class="bw-row">
+                <div class="bw-lbl"><span data-i18n-zh="跨基地ERP垂直整合 (Integrating)" data-i18n-en="Single-ERP Integrating">跨基地ERP垂直整合 (Integrating)</span><b class="mono" id="bwVal2">90%</b></div>
+                <div class="bw-track"><div class="bw-fill" id="bwFill2" style="width:90%;"></div></div>
+              </div>
+              <div class="bw-row">
+                <div class="bw-lbl"><span data-i18n-zh="一线主任工程师授权 (Delegating)" data-i18n-en="Frontline Lead Delegating">一线主任工程师授权 (Delegating)</span><b class="mono" id="bwVal3">84%</b></div>
+                <div class="bw-track"><div class="bw-fill" id="bwFill3" style="width:84%;"></div></div>
+              </div>
+            </div>
+            <p id="dialDesc" style="font-size:0.77rem;color:var(--text-secondary);line-height:1.58;"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- C2: 3-Era Governance Scrubber & Dual-View Canvas -->
+      <section id="sec-c2" class="os-module">
+        <span class="os-overline">MODULE C2 · 3-ERA GOVERNANCE SCRUBBER &amp; R&amp;D SELF-FUNDING</span>
+        <h2 class="os-h2" data-i18n-zh="三代组织治理演进与“毛利覆盖研发”自造血拐点" data-i18n-en="3-Era Governance Scrubber &amp; Gross-Profit-to-R&amp;D Self-Funding Inflection">三代组织治理演进与“毛利覆盖研发”自造血拐点</h2>
+        <p class="os-lead">
+          <span data-i18n-zh="切换上方时代标签审视治理内核跃迁：截至 2026 年前九个月（9M 2026），Rocket Lab 的 GAAP 毛利（$2.511 亿）已覆盖高达 96.1% 的 GAAP 研发费用（$2.613 亿），Non-GAAP 毛利（$2.859 亿）对 Non-GAAP 研发的覆盖率更达 109.4%——标志着公司即使在 Neutron 研发峰值期也已跨越“主业毛利养活前沿研发”的制度拐点" data-i18n-en="Scrub across three organizational eras below: in 9M 2026, Rocket Lab's GAAP Gross Profit ($251.1M) covered 96.1% of GAAP R&amp;D ($261.3M), while Non-GAAP GP ($285.9M) exceeded R&amp;D at 109.4% coverage—proving Space Systems + Electron gross profit now self-funds peak Neutron R&amp;D">切换上方时代标签审视治理内核跃迁：截至 2026 年前九个月（9M 2026），Rocket Lab 的 GAAP 毛利（$2.511 亿）已覆盖高达 96.1% 的 GAAP 研发费用（$2.613 亿），Non-GAAP 毛利（$2.859 亿）对 Non-GAAP 研发的覆盖率更达 109.4%——标志着公司即使在 Neutron 研发峰值期也已跨越“主业毛利养活前沿研发”的制度拐点</span>
+          <a class="cite-link" href="https://sec-api.io/insights/rocket-lab-rklb-q3-2026-earnings-3-57bn-backlog-neutron-moved-to-2027-and-the-pending-iridium-deal-sec-filing-analysis" target="_blank" rel="noopener noreferrer">9M 2026 10-Q 数据 ↗</a>。
+        </p>
+
+        <div class="mui-segmented" id="eraTabs" style="margin-bottom:16px;">
+          <button type="button" class="mui-seg-btn" data-era="0" data-i18n-zh="Era I · 2006–2016 极客车间内核" data-i18n-en="Era I · 2006–2016 Kiwi Garage Kernel">Era I · 2006–2016 极客车间内核</button>
+          <button type="button" class="mui-seg-btn" data-era="1" data-i18n-zh="Era II · 2017–2024 双总部并购底盘" data-i18n-en="Era II · 2017–2024 Dual-Hub Roll-Up">Era II · 2017–2024 双总部并购底盘</button>
+          <button type="button" class="mui-seg-btn active" data-era="2" data-i18n-zh="Era III · 2025–2026+ 全栈防务与星座OS" data-i18n-en="Era III · 2025–2026+ Prime &amp; Constellation OS">Era III · 2025–2026+ 全栈防务与星座OS</button>
+        </div>
+
+        <div class="split-66">
+          <div class="sub-panel" id="eraCard"></div>
+          <div class="sub-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+              <strong style="font-size:0.92rem;" data-i18n-zh="组织杠杆演进图谱 (2021–2026)" data-i18n-en="Organizational Leverage Trajectory (2021–2026)">组织杠杆演进图谱 (2021–2026)</strong>
+              <div class="mui-segmented" id="eraChartTabs">
+                <button type="button" class="mui-seg-btn active" data-era-chart="rdgp" data-i18n-zh="毛利覆盖研发率 (%)" data-i18n-en="GP / R&amp;D Coverage (%)">毛利覆盖研发率 (%)</button>
+                <button type="button" class="mui-seg-btn" data-era-chart="revemp" data-i18n-zh="人均创收跃升 ($K)" data-i18n-en="Rev / Employee ($K)">人均创收跃升 ($K)</button>
+              </div>
+            </div>
+            <div class="canvas-box"><canvas id="eraCanvas"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- C3: Global Org Genome Arena & Yin-Yang Contrasts -->
+      <section id="sec-c3" class="os-module">
+        <span class="os-overline">MODULE C3 · GLOBAL ORG GENOME ARENA &amp; YIN-YANG CONTRASTS</span>
+        <h2 class="os-h2" data-i18n-zh="全球航天组织基因竞技场与三大“阴阳对立”边界" data-i18n-en="Global Space Org Genome Arena &amp; 3 Yin-Yang Structural Contrasts">全球航天组织基因竞技场与三大“阴阳对立”边界</h2>
+        <p class="os-lead">
+          <span data-i18n-zh="任何卓越组织操作系统都由其“坚决不做什么”所定义。通过对比全球 7 家代表性太空与国防企业的增速/利润率分布，并拆解三组结构性阴阳张力，可以清晰识别 Rocket Lab 组织基因的护城河边界" data-i18n-en="Great organizational operating systems are defined as much by what they refuse to do as what they pursue. Comparing 7 aerospace peers alongside three Yin-Yang contrasts clarifies Rocket Lab's structural boundaries">任何卓越组织操作系统都由其“坚决不做什么”所定义。通过对比全球 7 家代表性太空与国防企业的增速/利润率分布，并拆解三组结构性阴阳张力，可以清晰识别 Rocket Lab 组织基因的护城河边界</span>
+          <a class="cite-link" href="https://newmarketpitch.com/blogs/news/space-economy-top-revenue" target="_blank" rel="noopener noreferrer">2026 太空营收对标 ↗</a>。
+        </p>
+
+        <div class="split-75">
+          <div class="sub-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+              <strong style="font-size:0.92rem;" data-i18n-zh="七大太空与防务企业组织效率竞技场" data-i18n-en="7-Peer Space &amp; Defense Genome Arena">七大太空与防务企业组织效率竞技场</strong>
+              <div class="mui-segmented" id="genomeTabs">
+                <button type="button" class="mui-seg-btn active" data-gen-tab="growth" data-i18n-zh="营收同比增速 (%)" data-i18n-en="YoY Revenue Growth (%)">营收同比增速 (%)</button>
+                <button type="button" class="mui-seg-btn" data-gen-tab="margin" data-i18n-zh="GAAP毛利 / 经营利润率 (%)" data-i18n-en="GAAP GM / Op Margin (%)">GAAP毛利 / 经营利润率 (%)</button>
+              </div>
+            </div>
+            <div class="canvas-box"><canvas id="genomeCanvas"></canvas></div>
+          </div>
+
+          <div class="yy-stack">
+            <div class="yy-card">
+              <h4 data-i18n-zh="对立一：Rocket Lab vs 传统成本加成军工 (洛马/诺格/波音)" data-i18n-en="Contrast 1: Rocket Lab vs. Cost-Plus Legacy Primes">对立一：Rocket Lab vs 传统成本加成军工 (洛马/诺格/波音)</h4>
+              <p data-i18n-zh="【阳】Rocket Lab 拥抱固定总价合同与自研标准平台（Flatellite/Lightning），省下的每一分 BOM 成本归属股东毛利；【阴】传统巨头依赖客户全额报销研发超支，组织激励天然滑向人员臃肿与延期。" data-i18n-en="[Yang] Rocket Lab thrives on Firm-Fixed-Price contracts and modular platforms where BOM savings expand margin; [Yin] Cost-Plus primes are structurally incentivized toward headcount bloat and multi-year delays.">【阳】Rocket Lab 拥抱固定总价合同与自研标准平台（Flatellite/Lightning），省下的每一分 BOM 成本归属股东毛利；【阴】传统巨头依赖客户全额报销研发超支，组织激励天然滑向人员臃肿与延期。</p>
+            </div>
+            <div class="yy-card">
+              <h4 data-i18n-zh="对立二：Rocket Lab vs SpaceX" data-i18n-en="Contrast 2: Rocket Lab vs. SpaceX">对立二：Rocket Lab vs SpaceX</h4>
+              <p data-i18n-zh="【阳】Rocket Lab 坚持开放商售部组件生态（向全行业出售太阳翼、飞轮与激光终端）及上市公司透明治理（85.7%独董）；【阴】SpaceX 封闭内部供应链并与客户在星座端正面竞争，迫使众多卫星商与盟国机构将 Rocket Lab 视为核心独立替代方。" data-i18n-en="[Yang] Rocket Lab operates as an open merchant supplier of solar/wheels/laser links with 85.7% independent public governance; [Yin] SpaceX's closed stack competes directly with satellite customers, driving constellation operators to RKLB.">【阳】Rocket Lab 坚持开放商售部组件生态（向全行业出售太阳翼、飞轮与激光终端）及上市公司透明治理（85.7%独董）；【阴】SpaceX 封闭内部供应链并与客户在星座端正面竞争，迫使众多卫星商与盟国机构将 Rocket Lab 视为核心独立替代方。</p>
+            </div>
+            <div class="yy-card">
+              <h4 data-i18n-zh="对立三：Rocket Lab vs 纯小型火箭新创公司" data-i18n-en="Contrast 3: Rocket Lab vs. Pure-Play Small Launchers">对立三：Rocket Lab vs 纯小型火箭新创公司</h4>
+              <p data-i18n-zh="【阳】早于同行五年看清“单靠小火箭天花板有限”，果断将发射作为信任漏斗，构筑 80.2% 营收占比的太空系统与 $80亿 Iridium 星座服务；【阴】纯卖发射船票的新创普遍倒在固定制造摊销与现金流枯竭前夜。" data-i18n-en="[Yang] Recognized early that small launch TAM alone is capped, turning Electron into a funnel for 80.2% Space Systems revenue and Iridium recurring cash flow; [Yin] Launch-only peers struggled with under-absorbed factory overhead.">【阳】早于同行五年看清“单靠小火箭天花板有限”，果断将发射作为信任漏斗，构筑 80.2% 营收占比的太空系统与 $80亿 Iridium 星座服务；【阴】纯卖发射船票的新创普遍倒在固定制造摊销与现金流枯竭前夜。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cc-table-wrap">
+          <table class="cc-table">
+            <thead>
+              <tr>
+                <th data-i18n-zh="公司" data-i18n-en="Company">公司</th>
+                <th data-i18n-zh="核心操作系统内核" data-i18n-en="OS Kernel">核心操作系统内核</th>
+                <th data-i18n-zh="供应链垂直度" data-i18n-en="Supply Verticality">供应链垂直度</th>
+                <th data-i18n-zh="合同与变现模型" data-i18n-en="Monetization Model">合同与变现模型</th>
+                <th data-i18n-zh="治理对齐特征" data-i18n-en="Governance Alignment">治理对齐特征</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-rklb">
+                <td><a href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer"><strong>Rocket Lab (RKLB) ↗</strong></a></td>
+                <td data-i18n-zh="首席工程师 + 单一ERP跨洋脊柱" data-i18n-en="Chief Engineer + Single-ERP Spine">首席工程师 + 单一ERP跨洋脊柱</td>
+                <td data-i18n-zh="极高（自研+7次并购内化）" data-i18n-en="Very High (In-house + 7 M&amp;As)">极高（自研+7次并购内化）</td>
+                <td data-i18n-zh="固定总价整星/发射 + 拟并Iridium订阅" data-i18n-en="FFP Prime/Launch + Pending IRDM SaaS">固定总价整星/发射 + 拟并Iridium订阅</td>
+                <td data-i18n-zh="$1 CEO年薪 · 85.7%独董 · 90.5%赞成率" data-i18n-en="$1 CEO Base · 85.7% Ind. · 90.5% Say-on-Pay">$1 CEO年薪 · 85.7%独董 · 90.5%赞成率</td>
+              </tr>
+              <tr>
+                <td><a href="https://newmarketpitch.com/blogs/news/space-economy-top-revenue" target="_blank" rel="noopener noreferrer">SpaceX ↗</a></td>
+                <td data-i18n-zh="创始人绝对集权极速试错制" data-i18n-en="Founder Command Rapid Iteration">创始人绝对集权极速试错制</td>
+                <td data-i18n-zh="极高（封闭全自研体系）" data-i18n-en="Extreme (Closed Proprietary Stack)">极高（封闭全自研体系）</td>
+                <td data-i18n-zh="Starlink 消费者/企业订阅 + 商业发射" data-i18n-en="Starlink Subscriptions + Launch">Starlink 消费者/企业订阅 + 商业发射</td>
+                <td data-i18n-zh="超级投票权集中 · 资本密集冲锋" data-i18n-en="Super-Voting Control · Mega-CapEx">超级投票权集中 · 资本密集冲锋</td>
+              </tr>
+              <tr>
+                <td><a href="https://newmarketpitch.com/blogs/news/space-economy-top-revenue" target="_blank" rel="noopener noreferrer">Planet Labs (PL) ↗</a></td>
+                <td data-i18n-zh="敏捷立方星迭代 + 云端地球数据SaaS" data-i18n-en="Agile Dove Fleet + EO Data SaaS">敏捷立方星迭代 + 云端地球数据SaaS</td>
+                <td data-i18n-zh="中等（自造遥感星，外购发射）" data-i18n-en="Medium (In-house EO sats, external launch)">中等（自造遥感星，外购发射）</td>
+                <td data-i18n-zh="55.4% 高毛利遥感数据订阅" data-i18n-en="55.4% GM Geospatial Data Subscriptions">55.4% 高毛利遥感数据订阅</td>
+                <td data-i18n-zh="公益企业(PBC)使命驱动架构" data-i18n-en="Public Benefit Corp (PBC) Charter">公益企业(PBC)使命驱动架构</td>
+              </tr>
+              <tr>
+                <td><a href="https://newmarketpitch.com/blogs/news/space-economy-top-revenue" target="_blank" rel="noopener noreferrer">Redwire (RDW) ↗</a></td>
+                <td data-i18n-zh="多子公司并购联邦制平台" data-i18n-en="Federated M&amp;A Holding Model">多子公司并购联邦制平台</td>
+                <td data-i18n-zh="中高（专攻展开机构/太阳翼）" data-i18n-en="Med-High (Deployables &amp; Solar)">中高（专攻展开机构/太阳翼）</td>
+                <td data-i18n-zh="宇航子系统分包供货 (24.1% GM)" data-i18n-en="Tier-1/2 Subsystem Supplier (24.1% GM)">宇航子系统分包供货 (24.1% GM)</td>
+                <td data-i18n-zh="私募股权整合背景驱动" data-i18n-en="PE Roll-Up Heritage">私募股权整合背景驱动</td>
+              </tr>
+              <tr>
+                <td><a href="https://sec-api.io/insights/firefly-aerospace-fly-q3-2026-earnings-revenue-110-7m-backlog-1-67bn-ast-deal-about-1-3bn-sec-filing-analysis" target="_blank" rel="noopener noreferrer">Firefly Aerospace (FLY) ↗</a></td>
+                <td data-i18n-zh="快速响应运载与轨间飞行器工程制" data-i18n-en="Responsive Launch &amp; OTV Engineering">快速响应运载与轨间飞行器工程制</td>
+                <td data-i18n-zh="中高（碳纤维箭体与发动机自制）" data-i18n-en="Med-High (In-house composites/engines)">中高（碳纤维箭体与发动机自制）</td>
+                <td data-i18n-zh="商业星座发射 + NASA月球任务 (22.9% GM)" data-i18n-en="Constellation Launch + CLPS (22.9% GM)">商业星座发射 + NASA月球任务 (22.9% GM)</td>
+                <td data-i18n-zh="新晋IPO扩张治理架构" data-i18n-en="Newly Listed Growth Governance">新晋IPO扩张治理架构</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.sec.gov/Archives/edgar/data/1819994/000162828026023922/rklb-20260406.htm" target="_blank" rel="noopener noreferrer">Lockheed Martin Space ↗</a></td>
+                <td data-i18n-zh="大型事业部矩阵 + 四级外部供应商网" data-i18n-en="Divisional Matrix + 4-Tier Supply Web">大型事业部矩阵 + 四级外部供应商网</td>
+                <td data-i18n-zh="偏低（高度依赖外部子系统分包）" data-i18n-en="Low (Heavy Tier-1/2 Subcontracting)">偏低（高度依赖外部子系统分包）</td>
+                <td data-i18n-zh="成本加成 + 多年战略防务合同 (9.5% OpM)" data-i18n-en="Cost-Plus &amp; Strategic Defense (9.5% OpM)">成本加成 + 多年战略防务合同 (9.5% OpM)</td>
+                <td data-i18n-zh="职业经理人稳健分红回购导向" data-i18n-en="Institutional Dividend/Buyback Focus">职业经理人稳健分红回购导向</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- C4: Scaling & M&A Entropy Simulator + 6-Law OS Audit -->
+      <section id="sec-c4" class="os-module">
+        <span class="os-overline">MODULE C4 · SCALING ENTROPY SIMULATOR &amp; 6-LAW OS AUDIT</span>
+        <h2 class="os-h2" data-i18n-zh="规模扩张与并购熵增推演器 × 六大组织铁律健康度审计" data-i18n-en="Scaling &amp; M&amp;A Entropy Simulator × 6-Law Organizational OS Audit">规模扩张与并购熵增推演器 × 六大组织铁律健康度审计</h2>
+        <p class="os-lead" data-i18n-zh="随着员工突破 3,217 人并即将吸纳 Iridium 全球通信团队，Rocket Lab 面临的核心组织命题是如何抵御“大企业官僚熵增”。拖动左侧滑块模拟并行项目数、部组件内化率与并购整合时滞对组织效率曲线的冲击；右侧勾选六大铁律完成 OS 健康度自检。" data-i18n-en="As Rocket Lab scales past 3,217 employees toward closing the ~$8.0B Iridium merger, its primary challenge is resisting bureaucratic entropy. Adjust the sliders to stress-test synergy, velocity, and margin impact, and audit the 6 OS Laws on the right.">随着员工突破 3,217 人并即将吸纳 Iridium 全球通信团队，Rocket Lab 面临的核心组织命题是如何抵御“大企业官僚熵增”。拖动左侧滑块模拟并行项目数、部组件内化率与并购整合时滞对组织效率曲线的冲击；右侧勾选六大铁律完成 OS 健康度自检。</p>
+
+        <div class="split-57">
+          <div class="sub-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <strong style="font-size:0.92rem;" data-i18n-zh="并购与多线作战熵增压力模拟器" data-i18n-en="Multi-Program &amp; M&amp;A Entropy Simulator">并购与多线作战熵增压力模拟器</strong>
+              <span class="mui-chip mui-chip-primary mono">STRESS SIM</span>
+            </div>
+            <div class="slider-row">
+              <div class="slider-lbl"><span data-i18n-zh="并行重大宇航/国防项目数" data-i18n-en="Concurrent Major Programs">并行重大宇航/国防项目数</span><b class="mono" id="entLblProg">12 个</b></div>
+              <input type="range" id="entPrograms" min="4" max="24" step="1" value="12" />
+            </div>
+            <div class="slider-row">
+              <div class="slider-lbl"><span data-i18n-zh="核心部组件自研内化率 (%)" data-i18n-en="In-House Subsystem Verticalization (%)">核心部组件自研内化率 (%)</span><b class="mono" id="entLblVert">82%</b></div>
+              <input type="range" id="entVertical" min="35" max="95" step="1" value="82" />
+            </div>
+            <div class="slider-row">
+              <div class="slider-lbl"><span data-i18n-zh="并购后单一 ERP 整合时滞 (月)" data-i18n-en="Post-M&amp;A ERP Integration Lag (Mos)">并购后单一 ERP 整合时滞 (月)</span><b class="mono" id="entLblLag">3 个月</b></div>
+              <input type="range" id="entLag" min="1" max="18" step="1" value="3" />
+            </div>
+            <div class="score-trio">
+              <div class="score-pill"><b class="mono" id="scoreSynergy">91/100</b><span data-i18n-zh="全栈协同指数" data-i18n-en="Stack Synergy">全栈协同指数</span></div>
+              <div class="score-pill"><b class="mono" id="scoreVelocity">87/100</b><span data-i18n-zh="工程交付速度" data-i18n-en="Exec Velocity">工程交付速度</span></div>
+              <div class="score-pill"><b class="mono" id="scoreMargin">+5.8pp</b><span data-i18n-zh="稳态毛利净增厚" data-i18n-en="Margin Accretion">稳态毛利净增厚</span></div>
+            </div>
+            <div class="canvas-box" style="height:205px;"><canvas id="entropyCanvas"></canvas></div>
+          </div>
+
+          <div class="sub-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+              <strong style="font-size:0.92rem;" data-i18n-zh="Rocket Lab 组织操作系统六大铁律审计" data-i18n-en="6-Law Organizational OS Health Audit">Rocket Lab 组织操作系统六大铁律审计</strong>
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span class="mui-chip mui-chip-success mono" id="auditScoreChip">6 / 6 ACTIVE</span>
+                <button type="button" class="tool-btn" id="auditToggleAllBtn" data-i18n-zh="全选 / 重置" data-i18n-en="Toggle All">全选 / 重置</button>
+              </div>
+            </div>
+            <div class="audit-list" id="cultureAuditList">
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l1" checked />
+                <div>
+                  <b data-i18n-zh="铁律 01 · 拒绝事业部内部转移定价（Zero Transfer-Pricing Friction）" data-i18n-en="Law 01 · Zero Internal Transfer-Pricing Friction">铁律 01 · 拒绝事业部内部转移定价（Zero Transfer-Pricing Friction）</b>
+                  <span data-i18n-zh="SolAero 光伏、Sinclair 飞轮与 Mynaric 激光终端对内直供 SDA 整星项目不收内部溢价，确保主承包竞标报价极具杀伤力。" data-i18n-en="SolAero, Sinclair &amp; Mynaric feed internal SDA prime satellite builds at true cost without divisional markup.">SolAero 光伏、Sinclair 飞轮与 Mynaric 激光终端对内直供 SDA 整星项目不收内部溢价，确保主承包竞标报价极具杀伤力。</span>
+                </div>
+              </label>
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l2" checked />
+                <div>
+                  <b data-i18n-zh="铁律 02 · 外包掉链子即启动垂直自制（Bottleneck Internalization）" data-i18n-en="Law 02 · Automatic Bottleneck Internalization">铁律 02 · 外包掉链子即启动垂直自制（Bottleneck Internalization）</b>
+                  <span data-i18n-zh="如 2026年10月 Neutron 承包商前穹顶出现孔隙后立即切换至自有 AFP 机器人铺放机生产，绝不受制于低效外部供应商。" data-i18n-en="When a third-party Neutron forward dome showed voids in Oct 2026, production shifted immediately onto Rocket Lab's in-house robotic AFP machine.">如 2026年10月 Neutron 承包商前穹顶出现孔隙后立即切换至自有 AFP 机器人铺放机生产，绝不受制于低效外部供应商。</span>
+                </div>
+              </label>
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l3" checked />
+                <div>
+                  <b data-i18n-zh="铁律 03 · 发射场主权自有（Owned Launch Range Sovereignty）" data-i18n-en="Law 03 · Owned Launch Range Sovereignty">铁律 03 · 发射场主权自有（Owned Launch Range Sovereignty）</b>
+                  <span data-i18n-zh="自建运营新西兰玛希亚 LC-1 与弗吉尼亚沃洛普斯 LC-2/LC-3 专用发射台，消除国家靶场排期拥堵。" data-i18n-en="Owning Mahia LC-1 and dedicated Wallops LC-2/LC-3 pads eliminates range congestion and unlocks responsive launch windows.">自建运营新西兰玛希亚 LC-1 与弗吉尼亚沃洛普斯 LC-2/LC-3 专用发射台，消除国家靶场排期拥堵。</span>
+                </div>
+              </label>
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l4" checked />
+                <div>
+                  <b data-i18n-zh="铁律 04 · 创始人与高管利益下沉一线研发（$1 Base + RSU Reinvestment）" data-i18n-en="Law 04 · Founder Skin-in-the-Game ($1 Base + RSU Forfeiture)">铁律 04 · 创始人与高管利益下沉一线研发（$1 Base + RSU Reinvestment）</b>
+                  <span data-i18n-zh="CEO $1 年薪并注销 39.2万股 RSU 反哺工程预算，杜绝管理层脱离车间的贵族化倾向。" data-i18n-en="CEO $1 base salary and 392K RSU forfeiture signal unmistakable capital priority: frontline engineering over executive perks.">CEO $1 年薪并注销 39.2万股 RSU 反哺工程预算，杜绝管理层脱离车间的贵族化倾向。</span>
+                </div>
+              </label>
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l5" checked />
+                <div>
+                  <b data-i18n-zh="铁律 05 · 商售与自用双轮检验（Merchant + Captive Dual Validation）" data-i18n-en="Law 05 · Merchant + Captive Dual Market Discipline">铁律 05 · 商售与自用双轮检验（Merchant + Captive Dual Validation）</b>
+                  <span data-i18n-zh="内部部组件团队必须持续在公开市场赢取外部卫星客户订单，防止因内部包销而丧失技术与成本竞争力。" data-i18n-en="Subsystem units must continue winning external commercial orders so internal supply never breeds complacency.">内部部组件团队必须持续在公开市场赢取外部卫星客户订单，防止因内部包销而丧失技术与成本竞争力。</span>
+                </div>
+              </label>
+              <label class="audit-item">
+                <input type="checkbox" data-os-law="l6" checked />
+                <div>
+                  <b data-i18n-zh="铁律 06 · 以高毛利经常性服务锁定硬件周期（Iridium Cash Shield）" data-i18n-en="Law 06 · Recurring Constellation Cash Shield (Iridium)">铁律 06 · 以高毛利经常性服务锁定硬件周期（Iridium Cash Shield）</b>
+                  <span data-i18n-zh="并入 Iridium 时保持其电信级网络高可靠运营独立性，同时用 Neutron + Flatellite 将其下一代星座更新资本开支砍半。" data-i18n-en="Preserve Iridium's 99.9%+ network operations reliability while using Neutron + Flatellite to slash next-gen constellation replacement CapEx.">并入 Iridium 时保持其电信级网络高可靠运营独立性，同时用 Neutron + Flatellite 将其下一代星座更新资本开支砍半。</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="src-grid">
+          <a class="src-item" href="https://hbsp.harvard.edu/product/R2602K-PDF-ENG" target="_blank" rel="noopener noreferrer">
+            <b>Harvard Business Review · R2602K (2026)</b>
+            <span>Sir Peter Beck 四大组织与竞争原则原始出处。</span>
+          </a>
+          <a class="src-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-third-quarter-2026-financial-results-posts" target="_blank" rel="noopener noreferrer">
+            <b>Rocket Lab Q3 2026 Earnings Release</b>
+            <span>$267.8M 营收、38.4% Non-GAAP GM、+$7.2M OCF 与 $3.57B Backlog。</span>
+          </a>
+          <a class="src-item" href="https://www.sec.gov/Archives/edgar/data/1819994/000175392626000568/g085462_8k-rocket.htm" target="_blank" rel="noopener noreferrer">
+            <b>SEC Form 8-K (Mar 30, 2026)</b>
+            <span>CEO $1.00 基本年薪与 392,155 股 RSU 注销法定披露。</span>
+          </a>
+          <a class="src-item" href="https://www.sec.gov/Archives/edgar/data/1819994/000162828026023922/rklb-20260406.htm" target="_blank" rel="noopener noreferrer">
+            <b>SEC 2026 DEF 14A Proxy Statement</b>
+            <span>85.7% 董事会独立性、88:1 薪酬比及洛马/太空军背景董事治理结构。</span>
+          </a>
+          <a class="src-item" href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully" target="_blank" rel="noopener noreferrer">
+            <b>Rocket Lab – Iridium ~$8.0B Acquisition</b>
+            <span>端到端太空基础设施与全球 L 波段卫星通信整合架构。</span>
+          </a>
+          <a class="src-item" href="https://www.spacecapital.com/blogs/rocket-lab-the-discipline-of-audacity-the-art-of-precision" target="_blank" rel="noopener noreferrer">
+            <b>Space Capital Deep Profile</b>
+            <span>Rocket Lab: The Discipline of Audacity, The Art of Precision。</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+    var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+    var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+    var STORAGE_AUDIT_KEY = 'rklb_os_audit_v1';
+
+    var state = {
+      theme: document.documentElement.getAttribute('data-theme') || 'light',
+      lang: 'zh',
+      topo: 'rklb',
+      quadIdx: 0,
+      eraIdx: 2,
+      eraChart: 'rdgp',
+      genomeTab: 'growth'
+    };
+
+    function isEn() { return state.lang === 'en'; }
+
+    function showToast(msg) {
+      var sb = document.getElementById('muiSnackbar');
+      sb.textContent = msg;
+      sb.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(function () { sb.classList.remove('show'); }, 2200);
+    }
+
+    // Suite Subfolder Hub
+    var hubEl = document.getElementById('companySubfolderHub');
+    hubEl.addEventListener('click', function (e) {
+      var pill = e.target.closest('[data-co-cat]');
+      if (pill) {
+        var cat = pill.getAttribute('data-co-cat');
+        hubEl.querySelectorAll('.co-hub-pill').forEach(function (b) { b.classList.toggle('active', b === pill); });
+        hubEl.querySelectorAll('.co-hub-item').forEach(function (it) {
+          var ic = it.getAttribute('data-co-item-cat');
+          it.style.display = (cat === 'ALL' || ic === cat) ? 'flex' : 'none';
+        });
+        return;
+      }
+      var item = e.target.closest('.co-hub-item');
+      if (item) {
+        var pg = item.getAttribute('data-suite-page');
+        if (item.classList.contains('active')) window.scrollTo({ top: 0, behavior: 'smooth' });
+        else showToast(isEn() ? ('Suite Deliverable: ' + pg) : ('同系列独立交付网页：' + pg));
+      }
+    });
+
+    // C0 Topology Sandbox
+    var TOPO_DATA = {
+      rklb: {
+        nodes: [
+          { cls: 'good', zhB: '节点 1 · 自研部组件零加价直供', enB: 'Node 1 · Zero-Markup In-House Subsystems', zhS: 'SolAero 光伏、Sinclair 飞轮、Mynaric 激光与 GEOST 载荷在同一 ERP 内部直调，省去 25%–40% 分包商层层加价。', enS: 'SolAero solar, Sinclair wheels, Mynaric optical links & GEOST sensors flow via one ERP with zero supplier markup stacking.' },
+          { cls: 'good', zhB: '节点 2 · 模块化整星平台并行总装', enB: 'Node 2 · Modular Bus Parallel AIT', zhS: '长滩清白房并行总装 55+ 颗航天器（SDA Tranche 2/3、SB-AMTI），主任工程师端到端对交付期与 BOM 成本负责。', enS: 'Long Beach cleanrooms build 55+ spacecraft concurrently with single-threaded Responsible Engineer ownership.' },
+          { cls: 'good', zhB: '节点 3 · 自有发射场与 8天造箭节拍', enB: 'Node 3 · Private Pads & 8-Day Rocket Tempo', zhS: '玛希亚 LC-1 与沃洛普斯 LC-2/LC-3 专属工位随时响应补网，Electron 单发成本压至 $5.0M，Neutron 承接整网部署。', enS: 'Private Mahia LC-1 and Wallops LC-2/LC-3 pads launch on demand at $5.0M/Electron while Neutron scales constellation deployment.' },
+          { cls: 'good', zhB: '节点 4 · 在轨软件与星座现金流闭环', enB: 'Node 4 · Orbital Operations & Cash Loop', zhS: 'ASI MAX 飞控软件统一执管在轨星座，叠加拟并入的 Iridium $4.95亿 OEBITDA 现金流持续反哺下一代研发。', enS: 'ASI MAX flight software runs constellations on orbit while pending Iridium\'s $495M OEBITDA funds next-gen R&D.' }
+        ],
+        verdictZh: '<strong>拓扑诊断结论（Rocket Lab 垂直脊柱）：</strong>端到端交付周期较传统军工缩短 <strong>50%–65%</strong>，固定总价合同下 Non-GAAP 毛利率达 <strong>38.4%–40.7%</strong>，9M 2026 主业毛利已覆盖 <strong>96.1%</strong> GAAP 研发支出。',
+        verdictEn: '<strong>Topology Verdict (Rocket Lab Vertical Spine):</strong> Compresses concept-to-orbit cycle time by <strong>50%–65%</strong>, delivers <strong>38.4%–40.7%</strong> Non-GAAP gross margin under firm-fixed-price awards, and covers <strong>96.1%</strong> of 9M26 GAAP R&D from gross profit.'
+      },
+      legacy: {
+        nodes: [
+          { cls: 'warn', zhB: '孤岛 1 · 三四级外部部组件分包', enB: 'Silo 1 · Tier-2/3 External Subcontractors', zhS: '太阳翼、星敏、激光终端分别采购自不同外部供应商，每层叠加 15%–25% 毛利与漫长合同谈判期。', enS: 'Solar arrays, star trackers, and laser links sourced across fragmented vendors, stacking 15%–25% margin markups per tier.' },
+          { cls: 'warn', zhB: '孤岛 2 · 矩阵式委员会审批与定制化', enB: 'Silo 2 · Matrix Review Boards & Bespoke Specs', zhS: '每个防务项目重新定制底盘，设计变更需跨多个事业部利润中心会签，动辄触发数亿美元成本超支。', enS: 'Bespoke satellite buses require multi-division sign-off for every engineering change order, driving routine schedule slips.' },
+          { cls: 'warn', zhB: '孤岛 3 · 外部火箭排队与工位受制', enB: 'Silo 3 · Captive to Third-Party Launch Queues', zhS: '缺乏自有高频中小型与中型一体发射闭环，卫星下线后常在地面仓储等待数月甚至一年以上发射窗口。', enS: 'Finished satellites wait months in storage for third-party launch manifest slots and shared federal range availability.' },
+          { cls: 'warn', zhB: '孤岛 4 · 硬件一次性交付无长尾服务', enB: 'Silo 4 · One-Off Cost-Plus Delivery', zhS: '分部经营利润率普遍锁死在 8%–10% 区间，缺乏高毛利商业订阅服务现金流弹性。', enS: 'Operating margins stay capped near 8%–10% under cost-plus rules with limited high-margin commercial recurring revenue.' }
+        ],
+        verdictZh: '<strong>拓扑诊断结论（传统军工孤岛）：</strong>多级分包加价（Double Marginalization）与多套异构 ERP 吞噬利润与速度，导致传统航天分部经营利润率长期徘徊在 <strong>~9.5%</strong>、同比增速仅 <strong>~4%</strong>。',
+        verdictEn: '<strong>Topology Verdict (Legacy Prime Silos):</strong> Multi-tier double marginalization and incompatible ERPs erode agility, leaving legacy space division operating margins near <strong>~9.5%</strong> at single-digit growth.'
+      }
+    };
+
+    function renderTopology() {
+      var d = TOPO_DATA[state.topo];
+      document.getElementById('topoStage').innerHTML = d.nodes.map(function (n) {
+        return '<div class="topo-node ' + n.cls + '"><b>' + (isEn() ? n.enB : n.zhB) + '</b><span>' + (isEn() ? n.enS : n.zhS) + '</span></div>';
+      }).join('');
+      document.getElementById('topoVerdict').innerHTML = isEn() ? d.verdictEn : d.verdictZh;
+    }
+
+    document.getElementById('topoSwitch').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-topo]');
+      if (!b) return;
+      state.topo = b.getAttribute('data-topo');
+      document.querySelectorAll('#topoSwitch .mui-seg-btn').forEach(function (el) { el.classList.toggle('active', el === b); });
+      renderTopology();
+    });
+
+    // C1 2x2 Quadrants & Dial Canvas
+    var QUADS = [
+      {
+        badge: 'CAPEX DISCIPLINE',
+        titleZh: 'CODE Q1 · 极致效率带宽配置', titleEn: 'CODE Q1 · Fierce Efficiency Allocation',
+        bw: [92, 86, 88, 82],
+        descZh: '将 92% 工程主导力投向高壁垒自制夹具与二手高精产线改造（如长滩前 Virgin Orbit 总部），把固定资产折旧摊销压至行业最低水平。',
+        descEn: 'Concentrates 92% engineering ownership on proprietary robotic tooling and distressed asset conversion (e.g., Virgin Orbit Long Beach plant) to minimize depreciation drag.'
+      },
+      {
+        badge: 'FLIGHT TRUTH',
+        titleZh: 'CODE Q2 · 硬件实证与透明门禁', titleEn: 'CODE Q2 · Show Don\'t Tell Gate',
+        bw: [95, 91, 84, 78],
+        descZh: '在飞行安全关键件（如 Neutron 碳纤维前穹顶、Rutherford 电泵涡轮）保留 95% 首席工程师一票否决权，宁可短期推迟首飞也绝不牺牲入轨成功率。',
+        descEn: 'Retains 95% Chief Engineer veto authority on flight-critical hardware (Neutron composite forward dome), trading short-term calendar optics for 100% orbital reliability.'
+      },
+      {
+        badge: '8-DAY CADENCE',
+        titleZh: 'CODE Q3 · 聪明速度与扁平授权', titleEn: 'CODE Q3 · Smart Speed Execution',
+        bw: [84, 96, 87, 93],
+        descZh: '赋予一线主任工程师（Responsible Engineer）高达 93% 的跨工序直接调度权，省去跨部门周会审批，支撑每 8 天下线 1 枚 Electron 火箭。',
+        descEn: 'Grants frontline Responsible Engineers 93% cross-shop execution autonomy, eliminating committee bottlenecks to sustain an 8-day rocket build cadence.'
+      },
+      {
+        badge: 'M&A FLYWHEEL',
+        titleZh: 'CODE Q4 · 90天并购内化带宽', titleEn: 'CODE Q4 · 90-Day M&A Integration',
+        bw: [89, 83, 97, 85],
+        descZh: 'CFO Adam Spice 与 COO Frank Klein 团队在交割后 90 天内执行 97% 强度的 ERP、采购与良率工程整合（Mynaric Q3 单季即贡献 $2,600 万营收）。',
+        descEn: 'Executes 97%-intensity ERP, supply-chain, and yield integration within 90 days post-close—evidenced by Mynaric generating $26.0M in Q3 2026 revenue.'
+      }
+    ];
+
+    var tooltip = document.getElementById('chartTooltip');
+    var hitMap = {};
+
+    function setupCanvas(id) {
+      var c = document.getElementById(id);
+      var rect = c.parentElement.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(220, rect.width - 20);
+      var h = Math.max(150, rect.height - 20);
+      c.width = w * dpr;
+      c.height = h * dpr;
+      c.style.width = w + 'px';
+      c.style.height = h + 'px';
+      var ctx = c.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      return { ctx: ctx, w: w, h: h };
+    }
+
+    function palette() {
+      var dark = state.theme === 'dark';
+      return {
+        text: dark ? '#F3F6F9' : '#0F1924',
+        muted: dark ? '#94A3B8' : '#5B6B7C',
+        grid: dark ? 'rgba(148,163,184,0.14)' : 'rgba(15,25,36,0.08)',
+        blue: '#0073E6',
+        cyan: dark ? '#38BDF8' : '#0284C7',
+        green: dark ? '#4ADE80' : '#16A34A',
+        amber: dark ? '#FBBF24' : '#D97706',
+        violet: dark ? '#A78BFA' : '#7C3AED'
+      };
+    }
+
+    function drawDialCanvas() {
+      var q = QUADS[state.quadIdx] || QUADS[0];
+      var avg = Math.round((q.bw[0] + q.bw[1] + q.bw[2] + q.bw[3]) / 4);
+      var s = setupCanvas('dialCanvas');
+      var ctx = s.ctx, w = s.w, h = s.h, p = palette();
+      var cx = w / 2, cy = h * 0.78;
+      var rad = Math.min(w * 0.36, h * 0.64);
+
+      ctx.lineWidth = 14;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = p.grid;
+      ctx.beginPath();
+      ctx.arc(cx, cy, rad, Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      var endAng = Math.PI + (avg / 100) * Math.PI;
+      var grad = ctx.createLinearGradient(cx - rad, cy, cx + rad, cy);
+      grad.addColorStop(0, '#0073E6');
+      grad.addColorStop(1, '#22C55E');
+      ctx.strokeStyle = grad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, rad, Math.PI, endAng);
+      ctx.stroke();
+
+      ctx.fillStyle = p.text;
+      ctx.font = '800 24px "IBM Plex Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(avg + ' / 100', cx, cy - 16);
+      ctx.fillStyle = p.muted;
+      ctx.font = '700 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(isEn() ? 'COMPOSITE OS INTENSITY' : '组织操作系统综合带宽指数', cx, cy + 4);
+    }
+
+    function renderQuadInspector() {
+      var q = QUADS[state.quadIdx] || QUADS[0];
+      document.getElementById('dialTitle').textContent = isEn() ? q.titleEn : q.titleZh;
+      document.getElementById('dialBadge').textContent = q.badge;
+      document.getElementById('dialDesc').textContent = isEn() ? q.descEn : q.descZh;
+      for (var i = 0; i < 4; i++) {
+        document.getElementById('bwVal' + i).textContent = q.bw[i] + '%';
+        document.getElementById('bwFill' + i).style.width = q.bw[i] + '%';
+      }
+      drawDialCanvas();
+    }
+
+    document.getElementById('quadGrid').addEventListener('click', function (e) {
+      var card = e.target.closest('[data-quad]');
+      if (!card) return;
+      state.quadIdx = parseInt(card.getAttribute('data-quad'), 10) || 0;
+      document.querySelectorAll('#quadGrid .quad-card').forEach(function (c, idx) { c.classList.toggle('active', idx === state.quadIdx); });
+      renderQuadInspector();
+    });
+
+    // C2 Era Governance Scrubber
+    var ERAS = [
+      {
+        titleZh: 'Era I (2006–2016) · 奥克兰极客车间内核', titleEn: 'Era I (2006–2016) · Auckland Workshop Kernel',
+        descZh: '治理结构：创始人彼得·贝克身兼总设计师与车间主任，不足百人精锐团队围绕 Atea-1 探空火箭与 Rutherford 3D打印电泵发动机单线程攻坚，确立“零外部供应链依赖”生存本能。',
+        descEn: 'Governance: Founder-led single-threaded skunkworks (<100 engineers) inventing Rutherford 3D-printed battery-pumped engines and private Mahia LC-1 pad.',
+        kpis: [
+          { v: '<150', lZh: '核心工程师规模', lEn: 'Core Team Size' },
+          { v: '1st', lZh: '全球电泵入轨发动机', lEn: 'Battery-Pump Engine' },
+          { v: 'LC-1', lZh: '自建玛希亚私营发射场', lEn: 'Private Orbital Pad' },
+          { v: '~$100M', lZh: 'Electron 入轨总研发费', lEn: 'Electron R&D to Orbit' }
+        ]
+      },
+      {
+        titleZh: 'Era II (2017–2024) · 美新双总部与部组件四连并购', titleEn: 'Era II (2017–2024) · Dual-Hub & Subsystem Roll-Up',
+        descZh: '治理结构：总部迁入加州长滩对接五角大楼与 NASA，保留奥克兰制造母体；引入半导体财务老将 Adam Spice 担任 CFO，完成 Sinclair、ASI、PSC、SolAero 并购并打通统一 ERP，员工扩至 2,100 人，营收突破 $4.36 亿。',
+        descEn: 'Governance: Dual US/NZ headquarters established; CFO Adam Spice institutionalized 90-day M&A integration across Sinclair, ASI, PSC & SolAero, scaling FY24 revenue to $436.2M across 2,100 staff.',
+        kpis: [
+          { v: '$436.2M', lZh: 'FY2024 合并营收', lEn: 'FY2024 Revenue' },
+          { v: '26.6%', lZh: 'FY2024 GAAP 毛利率', lEn: 'FY2024 GAAP GM' },
+          { v: '2,100', lZh: '2024 全球员工总数', lEn: 'FY2024 Employees' },
+          { v: '71.2%', lZh: '太空系统营收占比', lEn: 'Space Systems Share' }
+        ]
+      },
+      {
+        titleZh: 'Era III (2025–2026+) · 国防主承包、Neutron 与 Iridium 星座帝国', titleEn: 'Era III (2025–2026+) · Defense Prime, Neutron & Iridium OS',
+        descZh: '治理结构：COO Frank Klein 统管全球高节拍产线，6/7 独立董事（含前太空军副参谋长与前洛马 CFO）护航国家安全治理；CEO 主动降薪至 $1 并弃权 39.2万股 RSU；9M26 毛利覆盖 96.1% 研发，账握 $47.0 亿净现金推进 ~$80 亿 Iridium 并购。',
+        descEn: 'Governance: COO Frank Klein scales 8-day rocket manufacturing alongside an 85.7% independent board; CEO $1 salary alignment; 9M26 GAAP GP covers 96.1% of R&D while +$4.70B net cash backs the ~$8.0B Iridium merger.',
+        kpis: [
+          { v: '$3.57B', lZh: 'Q3 2026 在手订单', lEn: 'Q3 2026 Backlog' },
+          { v: '96.1%', lZh: '9M26 毛利覆盖研发率', lEn: '9M26 GP/R&D Cover' },
+          { v: '3,217', lZh: '四国全球员工规模', lEn: 'Global Workforce' },
+          { v: '+$7.2M', lZh: 'Q3 经营现金流转正', lEn: 'Q3 Positive OCF' }
+        ]
+      }
+    ];
+
+    function renderEraCard() {
+      var e = ERAS[state.eraIdx] || ERAS[2];
+      document.getElementById('eraCard').innerHTML =
+        '<div><span class="mui-chip mui-chip-primary mono" style="margin-bottom:8px;">GOVERNANCE SNAPSHOT</span>' +
+        '<h3 style="font-size:1.0rem;font-weight:800;margin-bottom:8px;">' + (isEn() ? e.titleEn : e.titleZh) + '</h3>' +
+        '<p style="font-size:0.80rem;color:var(--text-secondary);line-height:1.62;">' + (isEn() ? e.descEn : e.descZh) + '</p></div>' +
+        '<div class="era-kpis">' + e.kpis.map(function (k) {
+          return '<div class="era-kpi"><b class="mono">' + k.v + '</b><span>' + (isEn() ? k.lEn : k.lZh) + '</span></div>';
+        }).join('') + '</div>';
+    }
+
+    document.getElementById('eraTabs').addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-era]');
+      if (!b) return;
+      state.eraIdx = parseInt(b.getAttribute('data-era'), 10) || 0;
+      document.querySelectorAll('#eraTabs .mui-seg-btn').forEach(function (el) { el.classList.toggle('active', el === b); });
+      renderEraCard();
+    });
+
+    // Era Dual-View Chart: GP/R&D Coverage (%) vs Rev/FTE ($K)
+    var ERA_LABELS = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', '9M/26E'];
+    var GP_RD_COV = [-4.5, 29.2, 43.8, 66.6, 76.5, 96.1]; // Verified: FY24 116.15/174.39=66.6%, FY25 207.18/270.72=76.5%, 9M26 251.14/261.33=96.1%
+    var REV_EMP = [52.6, 150.7, 148.2, 207.7, 231.5, 305.3];
+
+    function drawEraCanvas() {
+      var s = setupCanvas('eraCanvas');
+      var ctx = s.ctx, w = s.w, h = s.h, p = palette();
+      var pad = { t: 22, r: 22, b: 30, l: 48 };
+      var cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+      var hits = [];
+      var isCov = state.eraChart === 'rdgp';
+      var arr = isCov ? GP_RD_COV : REV_EMP;
+      var minY = isCov ? -10 : 0;
+      var maxY = isCov ? 110 : 340;
+
+      ctx.strokeStyle = p.grid;
+      ctx.font = '600 11px "IBM Plex Mono", monospace';
+      for (var g = 0; g <= 4; g++) {
+        var gy = pad.t + (ch * g / 4);
+        ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(w - pad.r, gy); ctx.stroke();
+        var v = Math.round(maxY - (maxY - minY) * (g / 4));
+        ctx.fillStyle = p.muted;
+        ctx.textAlign = 'right';
+        ctx.fillText(isCov ? (v + '%') : ('$' + v + 'K'), pad.l - 6, gy + 4);
+      }
+
+      var n = ERA_LABELS.length, step = cw / n;
+      ctx.strokeStyle = isCov ? p.blue : p.green;
+      ctx.lineWidth = 2.8;
+      ctx.beginPath();
+      arr.forEach(function (val, idx) {
+        var px = pad.l + step * (idx + 0.5);
+        var py = pad.t + ch - ((val - minY) / (maxY - minY)) * ch;
+        if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+
+      arr.forEach(function (val, idx) {
+        var px = pad.l + step * (idx + 0.5);
+        var py = pad.t + ch - ((val - minY) / (maxY - minY)) * ch;
+        ctx.fillStyle = p.muted;
+        ctx.textAlign = 'center';
+        ctx.fillText(ERA_LABELS[idx], px, h - 8);
+        ctx.fillStyle = isCov ? p.blue : p.green;
+        ctx.beginPath(); ctx.arc(px, py, 4.5, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = p.text;
+        ctx.fillText(isCov ? (val.toFixed(1) + '%') : ('$' + val.toFixed(0) + 'K'), px, py - 9);
+        hits.push({
+          x: px - 16, y: pad.t, w: 32, h: ch,
+          html: '<b>' + ERA_LABELS[idx] + '</b><br/>' + (isCov ? ('GAAP GP / R&D Coverage: <b>' + val.toFixed(1) + '%</b>') : ('Implied Rev / Employee: <b>$' + val.toFixed(1) + 'K</b>'))
+        });
+      });
+      hitMap.eraCanvas = hits;
+    }
+
+    document.getElementById('eraChartTabs').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-era-chart]');
+      if (!b) return;
+      state.eraChart = b.getAttribute('data-era-chart');
+      document.querySelectorAll('#eraChartTabs .mui-seg-btn').forEach(function (el) { el.classList.toggle('active', el === b); });
+      drawEraCanvas();
+    });
+
+    // C3 Genome Horizontal Bar Chart
+    var GENOME_PEERS = [
+      { name: 'Rocket Lab (RKLB)', growth: 72.7, margin: 36.2, rklb: true },
+      { name: 'Intuitive Machines', growth: 58.0, margin: 17.4, rklb: false },
+      { name: 'Firefly Aerospace', growth: 44.0, margin: 22.9, rklb: false },
+      { name: 'SpaceX (Est.)', growth: 38.0, margin: 47.0, rklb: false },
+      { name: 'Planet Labs (PL)', growth: 18.0, margin: 55.4, rklb: false },
+      { name: 'Redwire (RDW)', growth: 12.0, margin: 24.1, rklb: false },
+      { name: 'Lockheed Space', growth: 4.1, margin: 9.5, rklb: false }
+    ];
+
+    function drawGenomeCanvas() {
+      var s = setupCanvas('genomeCanvas');
+      var ctx = s.ctx, w = s.w, h = s.h, p = palette();
+      var pad = { t: 10, r: 58, b: 14, l: 145 };
+      var cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+      var hits = [];
+      var isGr = state.genomeTab === 'growth';
+      var maxV = isGr ? 80 : 62;
+      var rowH = ch / GENOME_PEERS.length;
+
+      GENOME_PEERS.forEach(function (pr, idx) {
+        var y = pad.t + idx * rowH + rowH * 0.18;
+        var bh = rowH * 0.64;
+        var val = isGr ? pr.growth : pr.margin;
+        var bw = Math.max(4, (val / maxV) * cw);
+
+        ctx.fillStyle = pr.rklb ? p.text : p.muted;
+        ctx.font = (pr.rklb ? '800 ' : '600 ') + '11px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'right';
+        ctx.fillText(pr.name, pad.l - 8, y + bh * 0.7);
+
+        ctx.fillStyle = pr.rklb ? p.blue : p.cyan;
+        ctx.beginPath();
+        ctx.roundRect(pad.l, y, bw, bh, 5);
+        ctx.fill();
+
+        ctx.fillStyle = p.text;
+        ctx.font = '700 11px "IBM Plex Mono", monospace';
+        ctx.textAlign = 'left';
+        ctx.fillText(val.toFixed(1) + '%', pad.l + bw + 7, y + bh * 0.7);
+
+        hits.push({
+          x: pad.l, y: y, w: cw, h: bh,
+          html: '<b>' + pr.name + '</b><br/>YoY Growth: <b>+' + pr.growth.toFixed(1) + '%</b><br/>GAAP GM / OpM: <b>' + pr.margin.toFixed(1) + '%</b>'
+        });
+      });
+      hitMap.genomeCanvas = hits;
+    }
+
+    document.getElementById('genomeTabs').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-gen-tab]');
+      if (!b) return;
+      state.genomeTab = b.getAttribute('data-gen-tab');
+      document.querySelectorAll('#genomeTabs .mui-seg-btn').forEach(function (el) { el.classList.toggle('active', el === b); });
+      drawGenomeCanvas();
+    });
+
+    // C4 Entropy Simulator
+    function runEntropySim() {
+      var prog = parseInt(document.getElementById('entPrograms').value, 10) || 12;
+      var vert = parseInt(document.getElementById('entVertical').value, 10) || 82;
+      var lag = parseInt(document.getElementById('entLag').value, 10) || 3;
+
+      document.getElementById('entLblProg').textContent = prog + (isEn() ? ' Programs' : ' 个');
+      document.getElementById('entLblVert').textContent = vert + '%';
+      document.getElementById('entLblLag').textContent = lag + (isEn() ? ' Mos' : ' 个月');
+
+      var synergy = Math.max(32, Math.min(99, Math.round(vert * 0.92 + 24 - lag * 1.8 - Math.max(0, prog - 14) * 1.1)));
+      var velocity = Math.max(28, Math.min(98, Math.round(94 - lag * 2.4 - Math.max(0, prog - 10) * 1.4 + (vert - 60) * 0.35)));
+      var marginDelta = ((vert - 50) * 0.18 - lag * 0.28 - Math.max(0, prog - 16) * 0.15).toFixed(1);
+
+      document.getElementById('scoreSynergy').textContent = synergy + '/100';
+      document.getElementById('scoreVelocity').textContent = velocity + '/100';
+      document.getElementById('scoreMargin').textContent = (parseFloat(marginDelta) >= 0 ? '+' : '') + marginDelta + 'pp';
+
+      var s = setupCanvas('entropyCanvas');
+      var ctx = s.ctx, w = s.w, h = s.h, p = palette();
+      var pad = { t: 16, r: 18, b: 26, l: 40 };
+      var cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+      var hits = [];
+
+      ctx.strokeStyle = p.grid;
+      ctx.font = '600 10.5px "IBM Plex Mono", monospace';
+      for (var g = 0; g <= 3; g++) {
+        var gy = pad.t + (ch * g / 3);
+        ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(w - pad.r, gy); ctx.stroke();
+        ctx.fillStyle = p.muted;
+        ctx.textAlign = 'right';
+        ctx.fillText(Math.round(100 - (100 * g / 3)), pad.l - 6, gy + 4);
+      }
+
+      var rklbPts = [], siloPts = [];
+      for (var q = 0; q <= 5; q++) {
+        var v1 = Math.max(25, Math.min(99, velocity - q * (lag * 0.35) + q * ((vert - 65) * 0.12)));
+        var v2 = Math.max(20, 72 - q * 6.5 - Math.max(0, prog - 8) * 0.9);
+        rklbPts.push(v1);
+        siloPts.push(v2);
+      }
+
+      function drawCurve(pts, col, dash) {
+        ctx.save();
+        if (dash) ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 2.4;
+        ctx.beginPath();
+        pts.forEach(function (v, idx) {
+          var px = pad.l + (cw * idx / 5);
+          var py = pad.t + ch - (v / 100) * ch;
+          if (idx === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.stroke();
+        ctx.restore();
+      }
+      drawCurve(siloPts, p.amber, true);
+      drawCurve(rklbPts, p.blue, false);
+
+      for (var m = 0; m <= 5; m++) {
+        var px = pad.l + (cw * m / 5);
+        var py = pad.t + ch - (rklbPts[m] / 100) * ch;
+        ctx.fillStyle = p.muted;
+        ctx.textAlign = 'center';
+        ctx.fillText('Y' + m, px, h - 6);
+        ctx.fillStyle = p.blue;
+        ctx.beginPath(); ctx.arc(px, py, 3.8, 0, Math.PI * 2); ctx.fill();
+        hits.push({
+          x: px - 14, y: pad.t, w: 28, h: ch,
+          html: '<b>Year +' + m + '</b><br/>Single-ERP OS Efficiency: <b>' + rklbPts[m].toFixed(0) + '</b><br/>Unintegrated Silo Decay: <b>' + siloPts[m].toFixed(0) + '</b>'
+        });
+      }
+      hitMap.entropyCanvas = hits;
+    }
+
+    ['entPrograms', 'entVertical', 'entLag'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', runEntropySim);
+    });
+
+    function bindHover(id) {
+      var c = document.getElementById(id);
+      c.addEventListener('mousemove', function (e) {
+        var r = c.getBoundingClientRect();
+        var mx = e.clientX - r.left, my = e.clientY - r.top;
+        var list = hitMap[id] || [];
+        var hit = null;
+        for (var i = 0; i < list.length; i++) {
+          var b = list[i];
+          if (mx >= b.x && mx <= b.x + b.w && my >= b.y && my <= b.y + b.h) { hit = b; break; }
+        }
+        if (hit) {
+          tooltip.innerHTML = hit.html;
+          tooltip.style.display = 'block';
+          tooltip.style.left = Math.min(window.innerWidth - 250, e.clientX + 14) + 'px';
+          tooltip.style.top = Math.max(12, e.clientY - 34) + 'px';
+        } else {
+          tooltip.style.display = 'none';
+        }
+      });
+      c.addEventListener('mouseleave', function () { tooltip.style.display = 'none'; });
+    }
+    ['eraCanvas', 'genomeCanvas', 'entropyCanvas'].forEach(bindHover);
+
+    // 6-Law OS Audit Persistence
+    var auditState = { l1: true, l2: true, l3: true, l4: true, l5: true, l6: true };
+    try {
+      var raw = localStorage.getItem(STORAGE_AUDIT_KEY);
+      if (raw) auditState = JSON.parse(raw);
+    } catch (e) {}
+
+    function syncAuditUI() {
+      var boxes = document.querySelectorAll('[data-os-law]');
+      var cnt = 0;
+      boxes.forEach(function (cb) {
+        var k = cb.getAttribute('data-os-law');
+        cb.checked = !!auditState[k];
+        if (cb.checked) cnt++;
+      });
+      var chip = document.getElementById('auditScoreChip');
+      chip.textContent = cnt + ' / ' + boxes.length + (isEn() ? ' LAWS ACTIVE' : ' 铁律在线');
+      chip.className = 'mui-chip mono ' + (cnt >= 5 ? 'mui-chip-success' : (cnt >= 3 ? 'mui-chip-warning' : 'mui-chip-error'));
+    }
+
+    document.getElementById('cultureAuditList').addEventListener('change', function (e) {
+      var cb = e.target.closest('[data-os-law]');
+      if (!cb) return;
+      auditState[cb.getAttribute('data-os-law')] = cb.checked;
+      try { localStorage.setItem(STORAGE_AUDIT_KEY, JSON.stringify(auditState)); } catch (err) {}
+      syncAuditUI();
+    });
+    document.getElementById('auditToggleAllBtn').addEventListener('click', function () {
+      var boxes = document.querySelectorAll('[data-os-law]');
+      var allChecked = Array.prototype.every.call(boxes, function (b) { return b.checked; });
+      boxes.forEach(function (b) { auditState[b.getAttribute('data-os-law')] = !allChecked; });
+      try { localStorage.setItem(STORAGE_AUDIT_KEY, JSON.stringify(auditState)); } catch (err) {}
+      syncAuditUI();
+    });
+
+    function drawAllCharts() {
+      drawDialCanvas();
+      drawEraCanvas();
+      drawGenomeCanvas();
+      runEntropySim();
+    }
+
+    // Quick Jump
+    var QUICK_ITEMS = [
+      { id: 'sec-c0', t: 'C0 跨洋全栈组织拓扑沙盘', s: 'Rocket Lab 单一ERP垂直脊柱 vs 传统军工四级分包孤岛' },
+      { id: 'sec-c1', t: 'C1 2×2 操作码与工程带宽罗盘', s: 'Fierce Efficiency · Show Don\'t Tell · Smart Speed · M&A' },
+      { id: 'sec-c2', t: 'C2 三代治理演进与研发自造血', s: '9M26 GAAP毛利覆盖96.1%研发 · 人均创收跃升至$305.3K' },
+      { id: 'sec-c3', t: 'C3 全球组织基因竞技与阴阳对立', s: '7大太空防务企业增速/利润率对比 + 三组阴阳张力' },
+      { id: 'sec-c4', t: 'C4 扩张熵增推演与六大铁律审计', s: '多项目与Iridium并购整合模拟器 + 6项OS铁律自检' }
+    ];
+    var qInput = document.getElementById('quickJumpInput');
+    var qPop = document.getElementById('quickJumpPopover');
+    function renderQuick(q) {
+      var kw = (q || '').trim().toLowerCase();
+      var matched = QUICK_ITEMS.filter(function (it) {
+        return !kw || it.t.toLowerCase().indexOf(kw) !== -1 || it.s.toLowerCase().indexOf(kw) !== -1;
+      });
+      qPop.innerHTML = matched.map(function (it) {
+        return '<button type="button" class="quick-jump-item" data-jump="#' + it.id + '"><span class="quick-jump-item-title">' + it.t + '</span><span class="quick-jump-item-sub">' + it.s + '</span></button>';
+      }).join('');
+      qPop.classList.toggle('open', matched.length > 0);
+    }
+    qInput.addEventListener('focus', function () { renderQuick(qInput.value); });
+    qInput.addEventListener('input', function () { renderQuick(qInput.value); });
+    qPop.addEventListener('click', function (e) {
+      var jb = e.target.closest('[data-jump]');
+      if (!jb) return;
+      var el = document.querySelector(jb.getAttribute('data-jump'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      qPop.classList.remove('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open');
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault(); qInput.focus();
+      } else if (e.key === 'Escape') {
+        qPop.classList.remove('open');
+        document.body.classList.remove('portal-detail-drawer');
+      }
+    });
+
+    function applyTheme(mode, silent) {
+      var t = mode === 'dark' ? 'dark' : 'light';
+      state.theme = t;
+      document.documentElement.setAttribute('data-theme', t);
+      document.getElementById('sideLightBtn').classList.toggle('active', t === 'light');
+      document.getElementById('sideDarkBtn').classList.toggle('active', t === 'dark');
+      document.getElementById('appbarThemeIcon').innerHTML = t === 'dark'
+        ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+      drawAllCharts();
+      if (!silent) showToast(t === 'dark' ? (isEn() ? 'Switched to Dark Obsidian' : '已切换至深色曜石主题') : (isEn() ? 'Switched to Light Mode' : '已切换至高清晰浅色主题'));
+    }
+
+    function applyLang(lang, silent) {
+      state.lang = lang === 'en' ? 'en' : 'zh';
+      document.documentElement.setAttribute('lang', state.lang === 'en' ? 'en' : 'zh-CN');
+      document.getElementById('langZhBtn').classList.toggle('active', state.lang === 'zh');
+      document.getElementById('langEnBtn').classList.toggle('active', state.lang === 'en');
+      document.querySelectorAll('[data-i18n-zh]').forEach(function (el) {
+        var txt = el.getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+        if (txt !== null) el.textContent = txt;
+      });
+      qInput.placeholder = isEn() ? 'Jump to module C0–C4…' : '检索组织模块 C0–C4…';
+      renderTopology();
+      renderQuadInspector();
+      renderEraCard();
+      syncAuditUI();
+      drawAllCharts();
+      if (!silent) showToast(isEn() ? 'Language set to English' : '已切换为中文界面');
+    }
+
+    function triggerDownload() {
+      var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '火箭实验室_Rocket_Lab_企业文化与组织操作系统.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+      showToast(isEn() ? 'Downloaded standalone HTML file' : '已开始下载独立网页文件');
+    }
+    document.getElementById('topDownloadBtn').addEventListener('click', triggerDownload);
+    document.getElementById('sideExportBtn').addEventListener('click', triggerDownload);
+    document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+
+    document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
+      if (window.innerWidth < 1024) {
+        document.body.classList.toggle('portal-detail-drawer');
+      } else {
+        var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+        if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+        else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (e) {}
+        setTimeout(drawAllCharts, 60);
+      }
+    });
+    document.getElementById('portalDetailBackdrop').addEventListener('click', function () {
+      document.body.classList.remove('portal-detail-drawer');
+    });
+    document.getElementById('tocList').addEventListener('click', function (e) {
+      if (e.target.closest('.mui-nav-link')) document.body.classList.remove('portal-detail-drawer');
+    });
+
+    var mods = Array.prototype.slice.call(document.querySelectorAll('.os-module'));
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#tocList .mui-nav-link'));
+    window.addEventListener('scroll', function () {
+      var bar = document.getElementById('readingProgressBar');
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0) + '%';
+      var cur = mods[0] ? mods[0].id : '';
+      for (var i = 0; i < mods.length; i++) {
+        if (mods[i].getBoundingClientRect().top <= 130) cur = mods[i].id;
+      }
+      tocLinks.forEach(function (lk) { lk.classList.toggle('active', lk.getAttribute('href') === '#' + cur); });
+    }, { passive: true });
+
+    document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+      var nxt = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nxt, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (e) {}
+    });
+    document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+      var tb = e.target.closest('[data-portal-theme]');
+      if (!tb) return;
+      var mode = tb.getAttribute('data-portal-theme');
+      applyTheme(mode, false);
+      try { localStorage.setItem(STORAGE_THEME_KEY, mode); } catch (err) {}
+    });
+    document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+      var lb = e.target.closest('[data-lang]');
+      if (!lb) return;
+      var nl = lb.getAttribute('data-lang');
+      applyLang(nl, false);
+      try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+    });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(drawAllCharts, 90);
+    });
+
+    try {
+      applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+      applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+    } catch (e) {
+      renderTopology();
+      renderQuadInspector();
+      renderEraCard();
+      syncAuditUI();
+      drawAllCharts();
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告 | 数据中心</title>
+ <meta name="description" content="SpaceX (Space Exploration Technologies Corp., NASDAQ: SPCX) 企业文化与组织架构深度研究报告：马斯克五步工程算法 (The Algorithm)、第一性原理与白痴指数、双核统御 (Musk × Shotwell)、责任工程师 (RE) 端到端所有权、硬件敏捷迭代及 2026 Q3 $145.8亿单季营收与星舰 Flight 15 捕获。" />
+ <style>
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.86);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.65);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.82);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.16);
+ --border-strong: rgba(51, 153, 255, 0.42);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.15);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.30);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+
+ --chart-grid: rgba(148, 163, 184, 0.13);
+ --chart-tick: #94A3B8;
+ --chart-c1: #3399FF;
+ --chart-c2: #22C55E;
+ --chart-c3: #FFB74D;
+ --chart-c4: #A78BFA;
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: rgba(255, 255, 255, 0.96);
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.88);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+
+ --chart-grid: rgba(100, 116, 139, 0.16);
+ --chart-tick: #475569;
+ --chart-c1: #0073E6;
+ --chart-c2: #16A34A;
+ --chart-c3: #D97706;
+ --chart-c4: #7C3AED;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas); background-image: var(--hero-glow); background-attachment: fixed;
+ color: var(--text-primary); line-height: 1.65; overflow-x: hidden; min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar {
+ position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+ background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); z-index: 1300; transition: width 0.08s linear;
+ }
+ #chartTooltip {
+ position: fixed; pointer-events: none; z-index: 1400; padding: 10px 13px; border-radius: 10px;
+ background: var(--bg-paper-solid); border: 1px solid var(--border-strong); color: var(--text-primary);
+ font-size: 0.77rem; line-height: 1.55; box-shadow: var(--shadow-popover); display: none; max-width: 295px;
+ }
+ #muiSnackbar {
+ position: fixed; bottom: 22px; right: 22px; z-index: 1500; padding: 11px 16px; border-radius: 10px;
+ background: var(--bg-paper-solid); color: var(--text-primary); border: 1px solid var(--border-strong);
+ box-shadow: var(--shadow-popover); font-size: 0.82rem; font-weight: 600; opacity: 0; transform: translateY(12px);
+ pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease;
+ }
+ #muiSnackbar.show { opacity: 1; transform: translateY(0); }
+
+ .mui-appbar {
+ position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar);
+ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle);
+ }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn {
+ display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+ border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper);
+ color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0;
+ }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+ .brand-monogram {
+ width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #003A75 100%);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32);
+ color: #FFFFFF; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .breadcrumbs .crumb-link { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+ .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 220px; }
+ .quick-search-input {
+ width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px;
+ border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none;
+ }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700; padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none; }
+ .quick-jump-popover { position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto; border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250; }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px; border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit; }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch { display: inline-flex; align-items: center; height: 34px; padding: 2px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; }
+ .mui-lang-btn { height: 28px; padding: 0 10px; border: none; border-radius: 7px; background: transparent; color: var(--text-secondary); font-size: 0.76rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+ .mui-segmented { display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px; }
+ .mui-seg-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.78rem; font-weight: 600; padding: 5px 10px; border-radius: 7px; cursor: pointer; transition: all 0.16s ease; }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+ .mui-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 10px; font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); }
+ .mui-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+
+ .mui-chip { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 3px 10px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ .layout-shell { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 28px; padding: 24px 20px 72px; align-items: start; }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); }
+ html[data-sidebar-collapsed="1"] #muiSidebar { display: none; }
+
+ .mui-sidebar { display: flex; flex-direction: column; gap: 10px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+ .sidebar-title { font-size: 1rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42; margin: 4px 0 8px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 5px; padding-top: 8px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+ .mui-nav-link { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px; font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); text-decoration: none !important; transition: all 0.15s ease; }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.72rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.24); color: var(--mui-primary-lighter); }
+ .nav-divider { height: 1px; background: var(--divider); margin: 10px 0; }
+
+ .co-side-nav { margin-bottom: 8px; }
+ .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+ .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+ .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+ .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 8px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+ .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+ .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+ .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+ .co-hub-item { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); cursor: pointer; font-family: inherit; transition: all 0.16s ease; }
+ .co-hub-item:hover { border-color: #3399FF; background: var(--bg-hover); transform: translateY(-1px); }
+ .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+ .co-hub-item.co-hub-hidden { display: none !important; }
+ .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6 0%, #0059B2 100%); color: #FFFFFF; }
+ .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+ .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+ .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+ .portal-reading-tools { display: flex; flex-direction: column; gap: 8px; }
+ .portal-reading-tools .side-theme-group, .portal-reading-tools .side-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+ .portal-reading-tools button { font: inherit; font-size: 0.76rem; font-weight: 600; min-height: 30px; color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); cursor: pointer; }
+ .portal-reading-tools button[aria-pressed="true"], .portal-reading-tools button:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-paper-solid); }
+
+ .drawer-backdrop { display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.64); backdrop-filter: blur(4px); z-index: 1180; }
+ .drawer-backdrop.open { display: block; }
+
+ /* Main Content Stack */
+ .main-content { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+ .mui-paper { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; box-shadow: var(--shadow-card); }
+ .mui-card-interactive:hover { border-color: var(--border-strong); }
+
+ .hero-card { position: relative; overflow: hidden; padding: 28px; }
+ .hero-card::after { content: ""; position: absolute; top: -90px; right: -90px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(0, 115, 230, 0.18) 0%, transparent 70%); pointer-events: none; }
+ .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+ .hero-overline { display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.04em; color: var(--mui-primary-lighter); margin-bottom: 10px; }
+ .hero-h1 { font-size: clamp(1.48rem, 2.4vw, 2.12rem); font-weight: 800; line-height: 1.28; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 16px; }
+ .hero-h1 .gradient-accent { background: linear-gradient(90deg, #0059B2 0%, #0073E6 60%, #15803D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ html[data-theme="dark"] .hero-h1 .gradient-accent { background: linear-gradient(90deg, #3399FF 0%, #66B2FF 55%, #66BB6A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ .lead-prose { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.78; margin-bottom: 22px; }
+ .lead-prose strong { color: var(--text-primary); font-weight: 700; }
+
+ .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+ .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+ .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+ .grid-radar { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 18px; align-items: stretch; }
+
+ .feature-card { padding: 18px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.16s ease, transform 0.16s ease; }
+ .feature-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+ .mui-avatar-icon { width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter); flex-shrink: 0; }
+ .feature-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+ .feature-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+
+ .kpi-card { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+ .kpi-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+ .kpi-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+ .kpi-value { font-size: 1.68rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.2; margin: 2px 0; }
+ .kpi-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.52; }
+
+ .section-block { scroll-margin-top: 76px; padding: 26px; }
+ .sec-header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--divider); }
+ .sec-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mui-primary-lighter); margin-bottom: 6px; }
+ .sec-h2 { font-size: clamp(1.22rem, 1.9vw, 1.48rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.015em; line-height: 1.35; }
+ .sec-sub { font-size: 0.86rem; color: var(--text-secondary); margin-top: 4px; }
+
+ .mui-alert { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--mui-primary-border); background: var(--mui-primary-bg); font-size: 0.85rem; color: var(--text-primary); }
+ .mui-alert-success { border-color: var(--mui-success-border); background: var(--mui-success-bg); }
+ .mui-alert-warning { border-color: var(--mui-warning-border); background: var(--mui-warning-bg); }
+
+ .arch-blueprint { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); margin-bottom: 18px; }
+ .arch-hub { text-align: center; padding: 12px 16px; border-radius: 10px; background: linear-gradient(90deg, rgba(0, 115, 230, 0.16), rgba(51, 153, 255, 0.08), rgba(0, 115, 230, 0.16)); border: 1px solid var(--mui-primary-border); margin-bottom: 12px; }
+ .arch-hub-title { font-size: 0.9rem; font-weight: 800; color: var(--text-primary); }
+ .arch-hub-sub { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+ .arch-nodes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+ .arch-node { padding: 11px 12px; border-radius: 10px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+ .arch-node-tag { font-size: 0.68rem; font-weight: 800; color: var(--mui-primary-lighter); text-transform: uppercase; letter-spacing: 0.04em; }
+ .arch-node-name { font-size: 0.84rem; font-weight: 700; color: var(--text-primary); margin: 2px 0; }
+ .arch-node-desc { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.45; }
+ .arch-platform-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .arch-platform { padding: 10px 14px; border-radius: 10px; background: var(--mui-success-bg); border: 1px solid var(--mui-success-border); display: flex; flex-direction: column; gap: 2px; }
+ .arch-platform strong { font-size: 0.82rem; color: var(--mui-success-text); }
+ .arch-platform span { font-size: 0.75rem; color: var(--text-secondary); }
+
+ .matrix-card { padding: 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 10px; }
+ .matrix-card:hover { border-color: var(--border-strong); }
+ .matrix-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .matrix-card-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+ .matrix-card-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; }
+ .collapse-toggle { align-self: flex-start; border: none; background: transparent; color: var(--mui-primary-lighter); font-family: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; }
+ .collapse-panel { display: none; padding-top: 10px; border-top: 1px dashed var(--divider); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+ .collapse-panel.open { display: block; }
+
+ .chart-card { padding: 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); }
+ .chart-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+ .chart-title { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+ .chart-caption { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+ .canvas-stage { position: relative; width: 100%; height: 326px; overflow: hidden; }
+ .canvas-stage-tall { position: relative; width: 100%; height: 356px; overflow: hidden; }
+ .canvas-stage-bars { position: relative; width: 100%; height: 392px; overflow: hidden; }
+ .canvas-stage-sim { position: relative; width: 100%; height: 232px; overflow: hidden; }
+ .canvas-stage canvas, .canvas-stage-tall canvas, .canvas-stage-bars canvas, .canvas-stage-sim canvas { width: 100% !important; height: 100% !important; display: block; }
+ .chart-axis-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.73rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; padding: 0 4px; flex-wrap: wrap; }
+ .chart-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; align-items: center; }
+ .legend-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-paper); cursor: pointer; font-family: inherit; }
+ .legend-pill.muted { opacity: 0.42; }
+ .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+ .pillar-stack { display: flex; flex-direction: column; gap: 10px; }
+ .pillar-card { width: 100%; text-align: left; padding: 15px 16px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s ease; }
+ .pillar-card:hover { border-color: var(--border-strong); }
+ .pillar-card.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); box-shadow: inset 3px 0 0 var(--mui-primary-light); }
+ .pillar-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+ .pillar-title { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); }
+ .pillar-desc { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; }
+
+ .datagrid-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+ .mui-input-outlined { height: 36px; min-width: 260px; flex: 1; max-width: 380px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); color: var(--text-primary); font-family: inherit; font-size: 0.83rem; outline: none; }
+ .mui-input-outlined:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .table-wrap { width: 100%; overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); }
+ .mui-table { width: 100%; border-collapse: collapse; min-width: 860px; font-size: 0.83rem; }
+ .mui-table th { text-align: left; padding: 12px 14px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg-subtle); border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
+ .mui-table td { padding: 14px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: top; line-height: 1.58; }
+ .mui-table tr:last-child td { border-bottom: none; }
+ .mui-table tbody tr:hover td { background: var(--bg-hover); }
+ .mui-table tr.benchmark-row td { background: rgba(0, 115, 230, 0.06); }
+ mark.hl { background: rgba(255, 183, 77, 0.28); color: var(--text-primary); padding: 0 2px; border-radius: 3px; }
+
+ .simulator-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 18px; margin-top: 18px; }
+ .sim-controls { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); display: flex; flex-direction: column; gap: 14px; }
+ .preset-stack { display: flex; flex-direction: column; gap: 6px; }
+ .preset-btn { width: 100%; text-align: left; padding: 9px 12px; border-radius: 9px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+ .preset-btn.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .slider-group { display: flex; flex-direction: column; gap: 5px; }
+ .slider-head { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
+ .slider-val { color: var(--mui-primary-lighter); font-weight: 800; }
+ input[type="range"].mui-slider { width: 100%; height: 6px; accent-color: #0073E6; cursor: pointer; }
+ .mui-switch-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--mui-success-border); background: var(--mui-success-bg); cursor: pointer; }
+ .mui-switch-row input { width: 18px; height: 18px; accent-color: #0073E6; cursor: pointer; }
+ .sim-output-panel { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); display: flex; flex-direction: column; gap: 14px; }
+ .sim-readouts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .sim-stat-box { padding: 12px 14px; border-radius: 10px; background: var(--bg-paper); border: 1px solid var(--border-subtle); }
+ .sim-stat-label { font-size: 0.73rem; color: var(--text-muted); font-weight: 700; }
+ .sim-stat-num { font-size: 1.32rem; font-weight: 800; color: var(--text-primary); margin-top: 2px; }
+
+ .mui-timeline { display: flex; flex-direction: column; gap: 14px; position: relative; padding-left: 24px; margin-bottom: 20px; }
+ .mui-timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(180deg, #0073E6 0%, #3399FF 55%, #22C55E 100%); }
+ .timeline-step { position: relative; padding: 16px 18px; border-radius: 12px; background: var(--bg-canvas-elevated); border: 1px solid var(--border-subtle); }
+ .timeline-dot { position: absolute; left: -23px; top: 20px; width: 14px; height: 14px; border-radius: 50%; background: var(--mui-primary-main); border: 3px solid var(--bg-canvas); box-shadow: 0 0 0 2px var(--mui-primary-light); }
+
+ .progress-track { width: 100%; height: 8px; border-radius: 999px; background: var(--bg-subtle); overflow: hidden; border: 1px solid var(--border-subtle); margin: 10px 0 16px; }
+ .progress-fill { height: 100%; width: 50%; border-radius: 999px; background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1); }
+ .checklist-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+ .check-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-canvas-elevated); cursor: pointer; transition: all 0.15s ease; }
+ .check-card:hover { border-color: var(--border-strong); }
+ .check-card.checked { border-color: var(--mui-primary-border); background: var(--mui-primary-bg); }
+ .check-card input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .check-title { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+ .check-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .sources-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; list-style: none; margin-top: 12px; font-size: 0.79rem; }
+ .sources-list li { display: flex; align-items: baseline; gap: 7px; color: var(--text-secondary); }
+
+ @media (max-width: 1120px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr) !important; }
+ .mui-sidebar {
+ position: fixed; top: 60px; left: 0; bottom: 0; width: min(320px, 88vw);
+ background: var(--bg-paper-solid); border-right: 1px solid var(--border-subtle);
+ padding: 14px 12px; z-index: 1200; transform: translateX(-105%);
+ transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: flex !important;
+ }
+ .mui-sidebar.open { transform: translateX(0); }
+ .grid-4, .arch-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .grid-radar, .simulator-grid { grid-template-columns: minmax(0, 1fr); }
+ }
+ @media (max-width: 760px) {
+ .quick-search-wrap, .hide-sm { display: none; }
+ .hero-card, .section-block { padding: 18px; }
+ .grid-3, .grid-2, .grid-4, .arch-nodes, .arch-platform-bar, .checklist-grid, .sources-list, .sim-readouts { grid-template-columns: minmax(0, 1fr); }
+ }
+ @media print {
+ .mui-appbar, .mui-sidebar, #readingProgressBar, #muiSnackbar, #chartTooltip { display: none !important; }
+ .layout-shell { grid-template-columns: 1fr !important; padding: 0 !important; }
+ }
+ </style>
+ 
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body>
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">SPCX</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航">
+ <a class="crumb-link hide-sm" href="../index.html">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M2 5.2L9.5 9.5v8.3L2 13.5V5.2zm20 0L14.5 9.5v8.3L22 13.5V5.2zM12 2L4.6 6.2 12 10.4l7.4-4.2L12 2z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </a>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="SpaceX 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX Corporate Culture &amp; Org Architecture Monograph">SpaceX 企业文化与组织架构深度研究报告</span>
+ </nav>
+ <span class="mui-chip mui-chip-primary mono hide-sm">NASDAQ: SPCX</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">2026 S-1 &amp; Q3 10-Q</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索章节或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="研究章节目录与套件导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-primary mono">SPCX · CORPORATE CULTURE</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="SpaceX 企业文化研报" data-i18n-en="SpaceX Culture Monograph">SpaceX 企业文化研报</div>
+ <p class="sidebar-subtitle" data-i18n-zh="马斯克五步算法 × 双核统御(Musk × Shotwell) × 责任工程师(RE) × 硬件敏捷迭代 · 天地算力巨兽密码" data-i18n-en="Musk's 5-Step Algorithm × Dual-Core Stewardship × Responsible Engineer × Hardware-Rich Iteration">马斯克五步算法 × 双核统御(Musk × Shotwell) × 责任工程师(RE) × 硬件敏捷迭代 · 天地算力巨兽密码</p>
+
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="组织形态与所有权" data-i18n-en="Org &amp; Ownership">组织形态与所有权</span>
+ <span class="sidebar-mini-val mono" data-i18n-zh="超扁平 · RE 端到端" data-i18n-en="Ultra-Flat · RE">超扁平 · RE 端到端</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="2026 编制 / 年化人效" data-i18n-en="FTEs / Rev per FTE">2026 编制 / 年化人效</span>
+ <span class="sidebar-mini-val mono">2.26万人 · $2.58M</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="核心部件自制 / 星链OPM" data-i18n-en="In-House / Starlink OPM">核心部件自制 / 星链OPM</span>
+ <span class="sidebar-mini-val mono">&gt;80% · 45.1%</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="套件导航与章节目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261124">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261124 · 49/53</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="spacex_nasdaq_spcx (1).html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="tesla_inc_tsla (1).html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (53)" data-i18n-en="All (53)">全部 (53)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (53)" data-i18n-en="Company (53)">公司深度 (53)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="Meta未来十年（2026–2032）战略图谱.html" title="Meta META 2026–2032 战略与增长曲线"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta META 2026–2032 战略与增长曲线" data-i18n-en="Meta 2026–2032 &amp;">Meta META 2026–2032 战略与增长曲线</span><span class="co-hub-meta mono">Meta未来十年（2026–2032）战略图谱.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">alphabet_inc_googl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">alphabet_inc_googl (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">alphabet_inc_googl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">alphabet_inc_googl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amazon_com_amzn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amazon_com_amzn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">amazon_com_amzn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">amazon_com_amzn4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic.html" title="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动" data-i18n-en="Anthropic Corporate Culture &amp;:, &amp;">Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动</span><span class="co-hub-meta mono">anthropic.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_2026_2032.html" title="Anthropic 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Anthropic 2026–2032 &amp;">Anthropic 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">anthropic_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant (1).html" title="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告" data-i18n-en="Anthropic, PBC (ANT) Corporate Culture &amp; Org Architecture Deep Dive">Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">anthropic_pbc_ant (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant.html" title="Anthropic, PBC (ANT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 商业模式架构深度拆解" data-i18n-en="Anthropic, PBC (ANT) Business Model Deep DiveBreakdown">Anthropic, PBC (ANT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">anthropic_pbc_ant.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl (1).html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple_inc_aapl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple_inc_aapl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl2.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple_inc_aapl2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl3.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple_inc_aapl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_2026_2032.html" title="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Arm Holdings Arm 2026–2032 &amp;">安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">arm_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (1).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp; Org Architecture Deep Dive">安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">arm_holdings_arm (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (2).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp;">安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">arm_holdings_arm (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm.html" title="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解" data-i18n-en="Arm Holdings (ARM) Business Model Deep DiveBreakdown">安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解</span><span class="co-hub-meta mono">arm_holdings_arm.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle.html" title="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理" data-i18n-en="Circle Corporate Culture &amp;:, &amp;">Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理</span><span class="co-hub-meta mono">circle.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_2026_2032.html" title="Circle 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Circle 2026–2032 &amp;">Circle 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">circle_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl (1).html" title="Circle Internet Group (CRCL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 商业模式架构深度拆解" data-i18n-en="Circle Internet Group (CRCL) Business Model Deep DiveBreakdown">Circle Internet Group (CRCL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">circle_internet_group_crcl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl.html" title="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告" data-i18n-en="Circle Internet Group (CRCL) Corporate Culture &amp; Org Architecture Deep Dive">Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">circle_internet_group_crcl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta.html" title="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力" data-i18n-en="MetaCorporate Culture &amp;: People, &amp; Compute">Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力</span><span class="co-hub-meta mono">meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_2026_2032.html" title="Meta公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Meta 2026–2032 &amp;">Meta公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">meta_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta (1).html" title="Meta公司 Meta Platforms (META) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 商业模式架构深度拆解" data-i18n-en="Meta Platforms (META) Business Model Deep DiveBreakdown">Meta公司 Meta Platforms (META) 商业模式架构深度拆解</span><span class="co-hub-meta mono">meta_meta_platforms_meta (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta.html" title="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告" data-i18n-en="Meta Platforms (META) Corporate Culture &amp; Org Architecture Deep Dive">Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">meta_meta_platforms_meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">microsoft_msft (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">microsoft_msft.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">microsoft_msft2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">microsoft_msft3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx (1).html" title="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解" data-i18n-en="Netflix (NFLX) Business Model Deep DiveBreakdown">奈飞公司 Netflix (NFLX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">netflix_nflx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx.html" title="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告" data-i18n-en="Netflix (NFLX) Corporate Culture &amp; Org Architecture Deep Dive">奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">netflix_nflx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx2.html" title="奈飞公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Netflix 2026–2032 &amp;">奈飞公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">netflix_nflx2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx3.html" title="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承" data-i18n-en="NetflixCorporate Culture &amp;:, &amp;">奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承</span><span class="co-hub-meta mono">netflix_nflx3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_2032.html" title="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="On Holding AG 2026–2032 &amp;">昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">on_holding_ag_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_20323.html" title="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治" data-i18n-en="On HoldingCorporate Culture &amp;:, &amp; People">昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治</span><span class="co-hub-meta mono">on_holding_ag_2026_20323.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon (1).html" title="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告" data-i18n-en="On Holding AG (ONON) Corporate Culture &amp; Org Architecture Deep Dive">昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">on_holding_ag_onon (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon.html" title="昂跑 On Holding AG (ONON) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 商业模式架构深度拆解" data-i18n-en="On Holding AG (ONON) Business Model Deep DiveBreakdown">昂跑 On Holding AG (ONON) 商业模式架构深度拆解</span><span class="co-hub-meta mono">on_holding_ag_onon.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">rocket_lab (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">rocket_lab.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">rocket_lab_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">45</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">rocket_lab_rklb.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex.html" title="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承"><span class="co-hub-ticker mono">46</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承" data-i18n-en="SpaceX Corporate Culture &amp;:, &amp;">SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承</span><span class="co-hub-meta mono">spacex.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_2026_2032.html" title="SpaceX 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">47</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="SpaceX 2026–2032 &amp;">SpaceX 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">spacex_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx (1).html" title="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">48</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解" data-i18n-en="SpaceX (NASDAQ: SPCX) Business Model Deep DiveBreakdown">SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">spacex_nasdaq_spcx (1).html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="spacex_nasdaq_spcx.html" title="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">49</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX (NASDAQ: SPCX) Corporate Culture &amp; Org Architecture Deep Dive">SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">spacex_nasdaq_spcx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla (1).html" title="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">50</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告" data-i18n-en="Tesla, Inc. (TSLA) Corporate Culture &amp; Org Architecture Deep Dive">特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">tesla_inc_tsla (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla.html" title="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">51</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解" data-i18n-en="Tesla, Inc. (TSLA) Business Model Deep DiveBreakdown">特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">tesla_inc_tsla.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla2.html" title="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站"><span class="co-hub-ticker mono">52</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站" data-i18n-en="Tesla 2026–2032 &amp; AI">特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站</span><span class="co-hub-meta mono">tesla_inc_tsla2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla3.html" title="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军"><span class="co-hub-ticker mono">53</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军" data-i18n-en="TeslaCorporate Culture &amp;: First Principles, &amp; COO">特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军</span><span class="co-hub-meta mono">tesla_inc_tsla3.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-divider"></div>
+ <div class="nav-section-label" data-i18n-zh="核心研究章节 (00 – 07)" data-i18n-en="Report Chapters (00 – 07)">核心研究章节 (00 – 07)</div>
+ <ul class="mui-nav-list" id="tocNavList">
+ <li><a href="#sec-00" class="mui-nav-link active" data-sec="sec-00"><span class="nav-idx mono">00</span><span data-i18n-zh="执行摘要与核心指标" data-i18n-en="Executive Summary &amp; KPIs">执行摘要与核心指标</span></a></li>
+ <li><a href="#sec-01" class="mui-nav-link" data-sec="sec-01"><span class="nav-idx mono">01</span><span data-i18n-zh="双核架构与垂直自造协同" data-i18n-en="Dual-Core Org &amp; In-House">双核架构与垂直自造协同</span></a></li>
+ <li><a href="#sec-02" class="mui-nav-link" data-sec="sec-02"><span class="nav-idx mono">02</span><span data-i18n-zh="四大文化支柱与五维雷达" data-i18n-en="4 Cultural Pillars &amp; Radar">四大文化支柱与五维雷达</span></a></li>
+ <li><a href="#sec-03" class="mui-nav-link" data-sec="sec-03"><span class="nav-idx mono">03</span><span data-i18n-zh="全球军工科技文化横向对比" data-i18n-en="Aerospace &amp; Tech Matrix">全球军工科技文化横向对比</span></a></li>
+ <li><a href="#sec-04" class="mui-nav-link" data-sec="sec-04"><span class="nav-idx mono">04</span><span data-i18n-zh="复用红利与跨代估值复利" data-i18n-en="Reuse Dividends &amp; Flywheel">复用红利与跨代估值复利</span></a></li>
+ <li><a href="#sec-05" class="mui-nav-link" data-sec="sec-05"><span class="nav-idx mono">05</span><span data-i18n-zh="三幕演进与四大生死战役" data-i18n-en="3-Act History &amp; Battles">三幕演进与四大生死战役</span></a></li>
+ <li><a href="#sec-06" class="mui-nav-link" data-sec="sec-06"><span class="nav-idx mono">06</span><span data-i18n-zh="五步算法组织核查清单" data-i18n-en="Algorithm Diagnostic List">五步算法组织核查清单</span></a></li>
+ <li><a href="#sec-07" class="mui-nav-link" data-sec="sec-07"><span class="nav-idx mono">07</span><span data-i18n-zh="数据来源与监管核验索引" data-i18n-en="Primary Filings &amp; Sources">数据来源与监管核验索引</span></a></li>
+ </ul>
+ </nav>
+
+ <div class="sidebar-card portal-reading-tools" id="portalReadingTools">
+ <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Reading &amp; Export">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="Theme">
+ <button type="button" id="sideLightBtn" data-portal-theme="light" aria-pressed="true" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+ <button type="button" id="sideDarkBtn" data-portal-theme="dark" aria-pressed="false" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" id="exportHtmlBtn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+ <button type="button" id="printPdfBtn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+ </div>
+ </div>
+ </aside>
+
+ <main class="main-content">
+ <!-- 00 执行摘要与核心指标 -->
+ <section id="sec-00" class="mui-paper hero-card section-block">
+ <div class="status-strip">
+ <span class="mui-chip mui-chip-primary" data-i18n-zh="组织史定评：商业史唯一把“软件敏捷冲刺 + 第一性原理物理极限”植入重型航天的 $1.9T 全栈帝国" data-i18n-en="Verdict: History's Only ~$1.9T Aerospace-AI Giant Run on Software Sprints & First-Principles Physics">组织史定评：商业史唯一把“软件敏捷冲刺 + 第一性原理物理极限”植入重型航天的 $1.9T 全栈帝国</span>
+ <span class="mui-chip" data-i18n-zh="研究横跨：夸贾林绝境求生 (2002–2008) · 复用与星链霸权 (2009–2025) · 上市与太空AI纪元 (2026+)" data-i18n-en="Scope: Kwajalein Survival (2002–2008) · Reuse & Starlink (2009–2025) · Public Space-AI Era (2026+)">研究横跨：夸贾林绝境求生 (2002–2008) · 复用与星链霸权 (2009–2025) · 上市与太空AI纪元 (2026+)</span>
+ <span class="mui-chip mui-chip-success mono">2026 S-1 &amp; Q3 10-Q</span>
+ </div>
+
+ <div class="hero-overline mono">
+ <span>CORE THESIS · 马斯克五步算法 (The Algorithm) × 双核统御 (Musk × Shotwell) × 责任工程师 (RE) × 硬件敏捷迭代</span>
+ </div>
+
+ <h1 class="hero-h1" data-i18n-zh="SpaceX 企业文化与组织架构深度研究报告：<span class='gradient-accent'>物理定律唯一有效、零分包墙全栈自造与“把百米火箭当软件迭代”的组织密码</span>" data-i18n-en="SpaceX Corporate Culture &amp; Organizational Architecture Deep Dive: <span class='gradient-accent'>Physics as the Only Law, Zero-Subcontractor In-House Build &amp; Hardware-Rich Iteration</span>">
+ SpaceX 企业文化与组织架构深度研究报告：<span class="gradient-accent">物理定律唯一有效、零分包墙全栈自造与“把百米火箭当软件迭代”的组织密码</span>
+ </h1>
+
+ <p class="lead-prose">
+ 为什么坐拥十余万名员工与百年国家预算的传统航空航天巨头深陷固定总价合同亏损与进度泥潭，而 2002 年起家于加州仓库的 <strong>SpaceX（Space Exploration Technologies Corp., NASDAQ: SPCX）</strong>却能包揽全球逾 <strong>85% 入轨载荷质量</strong>，并在 2026 年接连合并 <strong>xAI</strong>、完成 <strong>$862.5亿人类最大 IPO</strong> 与 <strong>$600亿并购 Cursor</strong>
+ <a class="cite-link" href="https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue" target="_blank" rel="noopener noreferrer">SEC 10-Q 时间线 ↗</a>？
+ 答案深植于其彻底颠覆军工“成本加成（Cost-Plus）与层层转包”顽疾的组织操作系统：在内部，<strong>“唯一的铁律是物理学定律，其余一切皆为可被质疑的建议”</strong>
+ <a class="cite-link" href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy" target="_blank" rel="noopener noreferrer">五步算法研究 ↗</a>。
+ 公司采用罕见的<strong>双核统御架构</strong>——创始人兼首席工程师 <strong>埃隆·马斯克（Elon Musk）</strong>常驻得州 Starbase 前线主导“五步工程算法（The Algorithm）”与跨学科会战，而第 11 号员工、总裁兼 COO <strong>格温·肖特维尔（Gwynne Shotwell）</strong>统管全公司日常运营与商业履约
+ <a class="cite-link" href="https://spacexunpacked.com/people" target="_blank" rel="noopener noreferrer">SpaceX 核心高管谱 ↗</a>。
+ 据 2026 年监管披露，SpaceX 仅凭 <strong>22,621 名全职员工</strong>（不到波音员工数的 1/8）
+ <a class="cite-link" href="https://internationalfinance.com/markets/anthropic-ipo-claude-parent-beats-spacex-on-cash-raised-not-on-market-value/" target="_blank" rel="noopener noreferrer">S-1 员工编制 ↗</a>，在 Q3 2026 创下单季营收 <strong>$145.75亿（年化 $583亿，人均年化创收达 $2.58M）</strong>、单季营业利润 <strong>$27.91亿</strong> 的惊人战绩，并于 2026 年 11 月 14 日完成 <strong>Starship Flight 15 筷子机械臂陆地捕获轨道飞船</strong>的工程壮举
+ <a class="cite-link" href="https://www.spacex.com/launches/starship-flight-15" target="_blank" rel="noopener noreferrer">Flight 15 官方公报 ↗</a>。
+ </p>
+
+ <div class="grid-3" style="margin-bottom: 18px;">
+ <div class="feature-card">
+ <div class="mui-avatar-icon">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+ </div>
+ <h3 data-i18n-zh="马斯克五步工程算法 (The 5-Step Algorithm)" data-i18n-en="Musk's 5-Step Engineering Algorithm">马斯克五步工程算法 (The 5-Step Algorithm)</h3>
+ <p data-i18n-zh="每条技术需求必须署名具体责任人而非“某部门”；强制删除零件与流程（若加回比例不足 10% 说明删得不够狠），严禁优化本不该存在的模块。" data-i18n-en="Every requirement must carry a real person's name (never a department); delete parts & steps until forced to add back 10%; never optimize or automate before deleting.">每条技术需求必须署名具体责任人而非“某部门”；强制删除零件与流程（若加回比例不足 10% 说明删得不够狠），严禁优化本不该存在的模块。</p>
+ </div>
+
+ <div class="feature-card">
+ <div class="mui-avatar-icon" style="color: var(--mui-success-text); background: var(--mui-success-bg); border-color: var(--mui-success-border);">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg>
+ </div>
+ <h3 data-i18n-zh="Musk 首席工程师 × Shotwell 总裁双核制衡" data-i18n-en="Musk Chief Engineer × Shotwell COO Dual-Core">Musk 首席工程师 × Shotwell 总裁双核制衡</h3>
+ <p data-i18n-zh="马斯克注入非理性的物理极限紧迫感（Surge 突击），肖特维尔构建极致可靠的 NASA/国防部客户信任与星链全球商业化现金牛，形成罕见互补。" data-i18n-en="Musk drives physics-limit urgency and Starship architecture, while Shotwell anchors operational reliability, NSSL/NASA trust, and Starlink cash generation.">马斯克注入非理性的物理极限紧迫感（Surge 突击），肖特维尔构建极致可靠的 NASA/国防部客户信任与星链全球商业化现金牛，形成罕见互补。</p>
+ </div>
+
+ <div class="feature-card">
+ <div class="mui-avatar-icon" style="color: var(--mui-warning-text); background: var(--mui-warning-bg); border-color: var(--mui-warning-border);">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+ </div>
+ <h3 data-i18n-zh="责任工程师 (RE) 端到端所有权与敏捷试飞" data-i18n-en="Responsible Engineer (RE) &amp; Hardware-Rich Testing">责任工程师 (RE) 端到端所有权与敏捷试飞</h3>
+ <p data-i18n-zh="拒绝在图纸上做五年纸面评审：单一责任工程师从 CAD 设计、车间焊接、试车台点火跟到发射塔升空，把试飞解体转化为最快物理反馈闭环。" data-i18n-en="Rejecting 5-year paper reviews: a single Responsible Engineer owns a component from CAD and shop floor to launch telemetry, turning test flights into rapid iteration loops.">拒绝在图纸上做五年纸面评审：单一责任工程师从 CAD 设计、车间焊接、试车台点火跟到发射塔升空，把试飞解体转化为最快物理反馈闭环。</p>
+ </div>
+ </div>
+
+ <div class="grid-4">
+ <div class="mui-paper mui-card-interactive kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="年化人均创收与精干度 (Q3 26)" data-i18n-en="Annualized Rev / FTE (Q3 26)">年化人均创收与精干度 (Q3 26)</span>
+ <span class="mui-chip mui-chip-primary mono">22,621 FTEs</span>
+ </div>
+ <div class="kpi-value mono">$2.58M</div>
+ <p class="kpi-desc">2.26 万名全职员工支撑年化 $583亿 营收，人效高达传统军工巨头波音 ($0.49M) 的 5.3 倍 <a class="cite-link" href="https://bullfincher.io/companies/boeing-company/overview" target="_blank" rel="noopener noreferrer">人效对标 ↗</a>。</p>
+ </div>
+
+ <div class="mui-paper mui-card-interactive kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="Q3 2026 单季营收与净利" data-i18n-en="Q3 2026 Revenue &amp; Net Income">Q3 2026 单季营收与净利</span>
+ <span class="mui-chip mui-chip-success mono">净利 $4.40B</span>
+ </div>
+ <div class="kpi-value mono">$14.58B</div>
+ <p class="kpi-desc">单季营收同比暴增 +161.4%（SI $75.6亿、星链 $52.5亿、航天 $17.7亿），营业利润达 $27.91亿 <a class="cite-link" href="https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue" target="_blank" rel="noopener noreferrer">SEC 10-Q ↗</a>。</p>
+ </div>
+
+ <div class="mui-paper mui-card-interactive kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="星链现金牛营业利润率" data-i18n-en="Starlink Operating Margin">星链现金牛营业利润率</span>
+ <span class="mui-chip mui-chip-warning mono">订户 1,360万</span>
+ </div>
+ <div class="kpi-value mono">45.1%</div>
+ <p class="kpi-desc">Connectivity 分部 Q3 营业利润 $23.67亿（EBITDA $34.99亿），贡献全集团近 85% 营业利润。</p>
+ </div>
+
+ <div class="mui-paper mui-card-interactive kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="火箭复用纪录与 IPO 募资" data-i18n-en="Booster Reuse &amp; Record IPO">火箭复用纪录与 IPO 募资</span>
+ <span class="mui-chip mui-chip-violet mono">IPO $86.25B</span>
+ </div>
+ <div class="kpi-value mono">37次复用</div>
+ <p class="kpi-desc">单枚猎鹰 9 号助推器创 37 次飞行纪录；2026.06 纳斯达克上市创人类史上最大规模 IPO <a class="cite-link" href="https://dealroom.co/resources/spacex-ipo/" target="_blank" rel="noopener noreferrer">Dealroom ↗</a>。</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- 01 双核组织与零分包垂直协同 -->
+ <section id="sec-01" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 01 · DUAL-CORE ARCHITECTURE &amp; IN-HOUSE VERTICAL INTEGRATION</div>
+ <h2 class="sec-h2" data-i18n-zh="一、双核统御与超扁平工程制：为什么 SpaceX 只有两根汇报线直通 CEO？" data-i18n-en="1. Dual-Core Stewardship &amp; Ultra-Flat Engineering: Inside SpaceX's Reporting Spine">一、双核统御与超扁平工程制：为什么 SpaceX 只有两根汇报线直通 CEO？</h2>
+ <p class="sec-sub" data-i18n-zh="工位紧邻火箭焊接车间的扁平现场主义：研发与产线同体，硬件、软件与超算跨界互通" data-i18n-en="Engineers sit steps from the factory weld line: zero handoff walls across rockets, satellites, and AI">工位紧邻火箭焊接车间的扁平现场主义：研发与产线同体，硬件、软件与超算跨界互通</p>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">总部：得州 Starbase · 4–5级极简层级</span>
+ </div>
+
+ <div class="arch-blueprint">
+ <div class="arch-hub">
+ <div class="arch-hub-title">SpaceX 双核指挥中枢（Starbase TX HQ · Elon Musk CEO/CTO/Chief Engineer × Gwynne Shotwell President &amp; COO）</div>
+ <div class="arch-hub-sub">财务与资本市场直报线：Bret Johnsen (CFO, 2011至今 · 主导半年要约回购、$86.25B IPO 与 $25B 债融)</div>
+ </div>
+ <div class="arch-nodes">
+ <div class="arch-node">
+ <div class="arch-node-tag mono">FALCON &amp; LAUNCH · 现金流运力</div>
+ <div class="arch-node-name">Falcon, Dragon &amp; Pad Ops</div>
+ <div class="arch-node-desc">Jon Edwards (SVP) &amp; Kiko Dontchev (VP Launch)：2025年 165发全胜，单助推器 37次复用，包揽商业与 NASA 载人龙任务。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">STARSHIP &amp; RAPTOR · 星际重器</div>
+ <div class="arch-node-name">Starbase, Raptor &amp; Reliability</div>
+ <div class="arch-node-desc">Bill Gerstenmaier、Mark Juncosa、Bill Riley &amp; Jacob McKenzie：猛禽3引擎、30X不锈钢箭体与 Flight 15 筷子捕获。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">CONNECTIVITY · 全球轨道通信</div>
+ <div class="arch-node-name">Starlink &amp; Starshield</div>
+ <div class="arch-node-desc">Redmond / Bastrop 自动化卫星与相控阵工厂：周产 60+ 颗卫星，服务 1,360 万消费订户及航空海事与主权防务。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">SPACEX SI · 超级智能与代码</div>
+ <div class="arch-node-name">Grok, SI Cloud, Cursor &amp; X</div>
+ <div class="arch-node-desc">Michael Nicolls (President, SpaceXAI)：统领 1.7GW GPU 超算集群、Grok 模型、Cursor 编程平台与 2028 StarMind 太空算力。</div>
+ </div>
+ </div>
+ <div class="arch-platform-bar">
+ <div class="arch-platform">
+ <strong>责任工程师制度（Responsible Engineer · 零部门交接墙）</strong>
+ <span>不设庞大的项目协调官僚层，每个阀门、电路板或代码模块由唯一 RE 从头负责到底；出现故障时 RE 直接向首席工程师汇报物理根因。</span>
+ </div>
+ <div class="arch-platform">
+ <strong>跨马斯克生态共享技术池（Materials &amp; Power Cross-Pollination）</strong>
+ <span>Charles Kuehmann 材料团队跨 SpaceX 与 Tesla 研发 SX500/30X 合金；SI 超算中心直接采购部署数亿美元 Tesla Megapack 储能系统。</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="grid-3" style="margin-bottom: 16px;">
+ <div class="feature-card">
+ <h3>1. 工程师工位搬进工厂车间：消灭“隔墙扔图纸”</h3>
+ <p>在传统航空巨头，设计院在写字楼画图、相隔千里的分包厂按图施工；而在霍桑、Starbase 与得州 Bastrop 星链工厂，设计工程师工位就在焊装流水线旁，设计修改在数小时内即可上台试车 <a class="cite-link" href="https://orgtree.app/org-chart-examples/spacex-org-chart" target="_blank" rel="noopener noreferrer">组织架构复原 ↗</a>。</p>
+ </div>
+ <div class="feature-card">
+ <h3>2. 固定总价（Fixed-Price）倒逼全员成本意识</h3>
+ <p>SpaceX 主动放弃军工界躺赚超支费的“成本加成”合同，全面采用里程碑固定总价竞标（如 NASA 商业载人比波音 Starliner 报价低近 40% 且提前数年稳定运营），倒逼内部每一级工程师追求极简低成本设计。</p>
+ </div>
+ <div class="feature-card">
+ <h3>3. 半年一次内部要约流动性 + 全员股东文化</h3>
+ <p>上市前长达十余年通过每年两次内部要约收购（Tender Offer）让普通焊工、技术员与工程师定期兑现期权增值；上市日更批量诞生数千名百万富翁工程师，形成极强的精英人才磁吸力 <a class="cite-link" href="https://www.allium.so/blog/spacex-valuation-from-tender-offers-to-1-98t/" target="_blank" rel="noopener noreferrer">Allium 报告 ↗</a>。</p>
+ </div>
+ </div>
+
+ <div class="mui-alert" style="margin-bottom: 18px;">
+ <span class="mui-chip mui-chip-primary mono">治理里程碑</span>
+ <div>
+ <strong>2026年上市后的“受控公司”治理铁幕：B类股 10倍投票权守护百年火星愿景</strong> —— 为防止上市后华尔街机构股东因短期季度利润率波动而逼迫公司砍掉星舰深空研发或太空 AI 投入，SpaceX 设置 1股10票 B类股结构（占总投票权 <strong>86.6%</strong>，马斯克在招股书中持有约 <strong>82.4%</strong> 投票权），从法律治理上锁死了跨十年的硬科技冒险自由度 <a class="cite-link" href="https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue" target="_blank" rel="noopener noreferrer">10-Q 投票权披露 ↗</a>。
+ </div>
+ </div>
+
+ <div class="chart-card" style="margin-bottom: 18px;">
+ <div class="chart-toolbar">
+ <div>
+ <div id="ch1ChartTitle" class="chart-title">Q3 2025 vs Q3 2026 三大业务分部单季营收协同跃升（$B · SEC Form 10-Q）</div>
+ <div id="ch1ChartSub" class="chart-caption">双核执行力兑现：SI 暴涨 9.3 倍至 $7.56B、星链大涨 +69.5% 至 $5.25B、航天发射稳健支撑 $1.77B</div>
+ </div>
+ <div class="mui-segmented" role="tablist">
+ <button type="button" id="ch1TabA" class="mui-seg-btn active" data-ch1-view="viewA">视图A: 三大分部营收跃升</button>
+ <button type="button" id="ch1TabB" class="mui-seg-btn" data-ch1-view="viewB">视图B: 精干编制与人效飞跃</button>
+ </div>
+ </div>
+ <div id="ch1AxisMeta" class="chart-axis-meta mono">
+ <span style="color:var(--chart-c1);">■ 蓝色：Q3 2025 分部营收 ($B · 合计 $5.58B)</span>
+ <span style="color:var(--chart-c2);">■ 绿色：Q3 2026 分部营收 ($B · 合计 $14.58B)</span>
+ </div>
+ <div class="canvas-stage">
+ <canvas id="chartCh1"></canvas>
+ </div>
+ <div class="chart-legend" id="ch1Legend">
+ <button type="button" class="legend-pill" data-ch1-series="s1"><span class="legend-dot" style="background:var(--chart-c1);"></span><span id="ch1Leg1">Q3 2025 分部营收 ($B)</span></button>
+ <button type="button" class="legend-pill" data-ch1-series="s2"><span class="legend-dot" style="background:var(--chart-c2);"></span><span id="ch1Leg2">Q3 2026 分部营收 ($B)</span></button>
+ </div>
+ </div>
+
+ <div class="grid-2">
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">推进与材料垂直自研（Raptor × SX500/30X 冶金实验室）</div>
+ <span class="mui-chip mui-chip-primary mono">&gt;80% BOM 内化</span>
+ </div>
+ <p class="matrix-card-body">自创始推进负责人 Tom Mueller 在车库打造梅林引擎奠基，到如今 Jacob McKenzie 与材料副总裁 Charles Kuehmann 攻克全流量分级燃烧猛禽引擎及抗高温富氧腐蚀超级合金，SpaceX 把最卡脖子的航空冶金与液体火箭推进完全握在自己手中。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail1"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail1" class="collapse-panel">2018 年底马斯克拍板放弃昂贵缓慢的碳纤维方案，改用每公斤仅 ~$3 的 30X 冷轧不锈钢露天焊接星舰箭体，不仅耐受 800°C+ 再入高温，更让单台箭体迭代周期从数月缩短至数周。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">发射场流水线革命（Pad Ops &amp; 37次助推器周转纪律）</div>
+ <span class="mui-chip mui-chip-success mono">2025年 165发全胜</span>
+ </div>
+ <p class="matrix-card-body">Kiko Dontchev 与 Jon Edwards 团队将原本如同“特种科研实验”的火箭发射改造为标准化空港流水线，辅以前 NASA 载人航天掌门人 Bill Gerstenmaier 坐镇飞行可靠性评审，实现安全与超高频次的兼得 <a class="cite-link" href="https://spacexunpacked.com/people" target="_blank" rel="noopener noreferrer">高管分工 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail2"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail2" class="collapse-panel">截至 2026 年 11 月下旬，猎鹰系列累计完成 718 次发射（715 次圆满成功），单枚助推器最快数天即可完成检测再次点火升空，彻底改写全球航天发射产能上限。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">把消费电子摩尔定律搬进卫星工厂（Starlink Mass Production）</div>
+ <span class="mui-chip mui-chip-warning mono">45.1% 营业利润率</span>
+ </div>
+ <p class="matrix-card-body">传统制造一颗通信卫星耗时 3–5 年、造价数亿美元；星链团队自主研发相控阵硅芯片、霍尔推进器与空间激光器，以每周 60+ 颗的汽车级流水线速率批产，推动星链网络容量按芯片摩尔定律节奏快速翻倍 <a class="cite-link" href="https://payloadspace.com/spacex-leadership-map-out-the-future-of-the-starship-program/" target="_blank" rel="noopener noreferrer">Shotwell 访谈 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail3"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail3" class="collapse-panel">通过几轮激进降本，星链用户相控阵终端（Dishy）从早期每台倒贴逾 $1,500 制造亏损压缩至百美元级盈利区间，直接支撑全球 1,360 万户订户与 45.1% 的超高分部营业利润率。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">跨界整合超算与顶尖软件人才（SpaceXSI × Cursor 极速会师）</div>
+ <span class="mui-chip mui-chip-violet mono">1.7 GW 算力装机</span>
+ </div>
+ <p class="matrix-card-body">2026 年初 xAI 并入 SpaceX 后，公司直接抽调原星链工程统帅 Michael Nicolls 出任 SpaceXAI 总裁重整工程纪律，随后以 $600亿全股票火速拿下 Cursor 精英团队，122天建成超算集群的执行力在 AI 基建战场重演 <a class="cite-link" href="https://www.basenor.com/blogs/news/musk-explains-spacexs-60b-cursor-acquisition-data-is-the-moat" target="_blank" rel="noopener noreferrer">整合复盘 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail4"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail4" class="collapse-panel">Q3 2026 10-Q 显示，公司总资产已从 2025 年底的 $920.8亿 跃升至 $2,540.5亿，服务器与网络设备原值翻倍至 $432.1亿，把硬科技基建狂魔作风无缝复制到超级智能赛道。</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 02 四大文化支柱与五维雷达 -->
+ <section id="sec-02" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 02 · CULTURAL PILLARS &amp; INNOVATION MOAT</div>
+ <h2 class="sec-h2" data-i18n-zh="二、四大企业文化支柱：五步算法、白痴指数、RE 单点担责与爆炸式敏捷学习" data-i18n-en="2. Four Cultural Pillars: The Algorithm, Idiot Index, RE Ownership &amp; Hardware Sprints">二、四大企业文化支柱：五步算法、白痴指数、RE 单点担责与爆炸式敏捷学习</h2>
+ <p class="sec-sub" data-i18n-zh="点击左侧任一文化支柱卡片，联动查看 SpaceX 内部工程铁律与五维竞争力雷达画像" data-i18n-en="Click any pillar card on the left to inspect SpaceX's engineering commandments and 5-axis radar">点击左侧任一文化支柱卡片，联动查看 SpaceX 内部工程铁律与五维竞争力雷达画像</p>
+ </div>
+ <span class="mui-chip mui-chip-success">护城河定性：极宽 (Wide Moat · 物理成本底线 + 复用代差 + 极速迭代)</span>
+ </div>
+
+ <div class="grid-radar">
+ <div class="pillar-stack" id="pillarStack">
+ <button type="button" class="pillar-card active" data-pillar="0">
+ <div class="pillar-head">
+ <span class="pillar-title">01 · 马斯克五步工程算法（The 5-Step Algorithm）</span>
+ <span class="mui-chip mui-chip-primary mono">先删除 · 最后自动化</span>
+ </div>
+ <p class="pillar-desc">①质疑每条需求（必须找到提出该需求的具体个人而非部门）；②删除零件与工序；③简化与优化；④加快周转周期；⑤最后一步才自动化——严禁将错误顺序倒置。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="1">
+ <div class="pillar-head">
+ <span class="pillar-title">02 · 第一性原理与“白痴指数”（Idiot Index）</span>
+ <span class="mui-chip mui-chip-success mono">只认物理学边界</span>
+ </div>
+ <p class="pillar-desc">拒绝接受“航天惯例一直如此”的解释，将任何组件拆解至铝、不锈钢、铜、硅与液氧甲烷的原材料现货价；若成品报价是材料费的 50 倍，说明设计太蠢或分包链太贪婪。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="2">
+ <div class="pillar-head">
+ <span class="pillar-title">03 · 责任工程师端到端所有权（Responsible Engineer）</span>
+ <span class="mui-chip mui-chip-warning mono">零委员会推诿</span>
+ </div>
+ <p class="pillar-desc">每个子系统设唯一 RE，既管设计也管供应商砍价、车间质检与飞行遥测判读；同时鼓励跳过层级直接沟通——任何阻碍一线跨部门直接对话的中层主管会被立即开除。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="3">
+ <div class="pillar-head">
+ <span class="pillar-title">04 · “像飞行一样测试”的硬件敏捷主义（Hardware-Rich）</span>
+ <span class="mui-chip mui-chip-violet mono">把爆炸当高带宽数据</span>
+ </div>
+ <p class="pillar-desc">不花十年做零风险纸面仿真，而是以极低成本造出多台全尺寸试验箭（Ship 1 → Ship 42），在真实超音速与轨道再入边界中公开试飞、快速失败、数周内改进复飞。</p>
+ </button>
+
+ <div id="pillarFocusNote" class="mui-alert" style="margin-top: 4px;">
+ <div>
+ <strong>当前选中支柱解读（01 马斯克五步工程算法）：</strong>在星舰与星链每一次产能突击（Surge）会上，马斯克反复追问“是谁规定的这条冗余安全系数？”——星舰直接砍掉传统沉重着陆腿、改用发射塔机械臂空中夹取（Flight 15 成功兑现），正是“最好的零件就是没有零件”哲学的巅峰之作 <a class="cite-link" href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy" target="_blank" rel="noopener noreferrer">The Algorithm 拆解 ↗</a>。
+ </div>
+ </div>
+ </div>
+
+ <div class="chart-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+ <div>
+ <div class="chart-title">SpaceX 企业文化五维特征对比雷达图（10分制标杆评估）</div>
+ <div class="chart-caption">点击下方图例胶囊可单独开关对比曲线，悬停顶点查看各维度评分</div>
+ </div>
+ <div class="canvas-stage-tall">
+ <canvas id="chartRadar"></canvas>
+ </div>
+ <div class="chart-legend" id="radarLegend">
+ <button type="button" class="legend-pill" data-radar-key="spcx"><span class="legend-dot" style="background:#3399FF;"></span><span>SpaceX (SPCX · 第一性原理全栈)</span></button>
+ <button type="button" class="legend-pill" data-radar-key="nvda"><span class="legend-dot" style="background:#22C55E;"></span><span>英伟达/苹果 (顶级扁平/职能科技标杆)</span></button>
+ <button type="button" class="legend-pill" data-radar-key="oldspace"><span class="legend-dot" style="background:#FFB74D;"></span><span>传统军工航天巨头 (Cost-Plus 瀑布流)</span></button>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 03 全球军工与硬科技巨头横向对比 -->
+ <section id="sec-03" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 03 · GLOBAL AEROSPACE &amp; HARD-TECH CULTURE BENCHMARKING</div>
+ <h2 class="sec-h2" data-i18n-zh="三、全球航天军工与硬科技巨头文化对比：五种组织基因与人效统治力" data-i18n-en="3. Aerospace &amp; Hard-Tech Peer Matrix: Five Organizational Genomes">三、全球航天军工与硬科技巨头文化对比：五种组织基因与人效统治力</h2>
+ <p class="sec-sub" data-i18n-zh="支持按企业、掌舵人（马斯克 / 肖特维尔 / 黄仁勋 / 贝克）或组织机制（五步算法 / 固定总价 / 成本加成）实时筛选" data-i18n-en="Search or filter in real time by company, steward, or org mechanism (Algorithm / Fixed-Price / Cost-Plus)">支持按企业、掌舵人（马斯克 / 肖特维尔 / 黄仁勋 / 贝克）或组织机制（五步算法 / 固定总价 / 成本加成）实时筛选</p>
+ </div>
+ <span id="peerCountBadge" class="mui-chip mui-chip-primary mono">显示 5 / 5 家标杆企业</span>
+ </div>
+
+ <div class="datagrid-toolbar">
+ <input type="search" id="peerSearchInput" class="mui-input-outlined" placeholder="搜索企业、掌舵人、文化特征 (五步算法 / RE / 成本加成) 或利润率…" aria-label="筛选对比企业" />
+ <div class="mui-segmented" role="group">
+ <button type="button" class="mui-seg-btn active" data-peer-filter="all">全部标杆企业</button>
+ <button type="button" class="mui-seg-btn" data-peer-filter="flat">第一性原理与扁平全栈派</button>
+ <button type="button" class="mui-seg-btn" data-peer-filter="legacy">传统军工分包派</button>
+ </div>
+ </div>
+
+ <div class="table-wrap" style="margin-bottom: 20px;">
+ <table class="mui-table" aria-label="全球航天与硬科技巨头企业文化横向对比表">
+ <thead>
+ <tr>
+ <th>企业与文化掌舵人</th>
+ <th>底层组织架构形态</th>
+ <th>核心决策与问责机制</th>
+ <th>员工规模与人效特征</th>
+ <th>利润率与核心财务表现</th>
+ <th>与 SpaceX 文化的异同及适配评估</th>
+ </tr>
+ </thead>
+ <tbody id="peerTableBody"></tbody>
+ </table>
+ </div>
+
+ <div class="chart-card">
+ <div class="chart-toolbar">
+ <div>
+ <div class="chart-title">组织文化向工程与财务统治力的转化：核心利润率、自制率与复用成功率拆解（%）</div>
+ <div class="chart-caption">数据来源：SpaceX Q3 2026 10-Q、Falcon 9 Block 5 历史统计、Rocket Lab Q3 2026 8-K 与 Boeing/LMT 财报</div>
+ </div>
+ <span class="mui-chip mui-chip-success mono">星链 OPM 45.1% · 猎鹰回收成功率 99.1%</span>
+ </div>
+ <div class="canvas-stage-bars">
+ <canvas id="chartBars"></canvas>
+ </div>
+ </div>
+ </section>
+
+ <!-- 04 全栈复用红利与跨代估值复利推演 -->
+ <section id="sec-04" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 04 · REUSABILITY DIVIDENDS &amp; VALUATION COMPOUNDING</div>
+ <h2 class="sec-h2" data-i18n-zh="四、复用红利与组织复利推演：从百次发射垄断到 $1.90万亿 上市巨舰" data-i18n-en="4. Reusability Dividends &amp; Compounding: From Launch Cadence to ~$1.90T Market Cap">四、复用红利与组织复利推演：从百次发射垄断到 $1.90万亿 上市巨舰</h2>
+ <p class="sec-sub" data-i18n-zh="检验敏捷工程文化如何同步推高年度发射频次（61发 → 170发）与企业资本价值（$1,270亿 → $1.90万亿）" data-i18n-en="Tracking how hardware agility compounded annual launch cadence (61 → 170) and enterprise valuation ($127B → $1.90T)">检验敏捷工程文化如何同步推高年度发射频次（61发 → 170发）与企业资本价值（$1,270亿 → $1.90万亿）</p>
+ </div>
+ <span class="mui-chip mui-chip-warning mono">9M26 经营现金流 $13.1B</span>
+ </div>
+
+ <div class="grid-4" style="margin-bottom: 18px;">
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">STARLINK OPERATING PROFIT</span>
+ <div class="kpi-value mono" style="color: var(--mui-primary-lighter);">$2.37B <span style="font-size:0.85rem;font-weight:600;">(Q3单季)</span></div>
+ <p class="kpi-desc">9个月累计营业利润达 $52.11亿，以 45.1% 单季营业利润率成为全集团造血心脏。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">HISTORIC IPO NET PROCEEDS</span>
+ <div class="kpi-value mono" style="color: var(--mui-success-text);">$85.68B <span style="font-size:0.85rem;font-weight:600;">(净募资)</span></div>
+ <p class="kpi-desc">2026.06.12 发行 6.389 亿股 A类股（毛募资 $862.5亿），期末账面现金及证券达 $898.6亿。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">FALCON BLOCK 5 LANDING RATE</span>
+ <div class="kpi-value mono" style="color: var(--mui-warning-text);">99.1%</div>
+ <p class="kpi-desc">Block 5 助推器 658 次回收尝试成功 652 次，累计完成逾 650 次二手助推器复飞。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">SI SEGMENT REVENUE SURGE</span>
+ <div class="kpi-value mono" style="color: var(--mui-violet-text);">9.3x YoY <span style="font-size:0.85rem;font-weight:600;">($7.56B)</span></div>
+ <p class="kpi-desc">Q3 2026 SI 收入较上年同期 $8.13亿 暴增 9.3 倍，Segment Adjusted EBITDA 达 $49.53亿。</p>
+ </div>
+ </div>
+
+ <div class="chart-card">
+ <div class="chart-toolbar">
+ <div>
+ <div class="chart-title">2022–2026 敏捷制造红利释放期：年度火箭总发射次数 (左轴) 与公司估值跃升 (右轴 · $B)</div>
+ <div class="chart-caption">柱状图（左轴）为全年发射总次数（2026 截至 11 月中旬已达 136+ 次含星舰）；折线（右轴）为要约及上市估值 ($B)</div>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">估值 $127B → $1,900B (15x)</span>
+ </div>
+ <div class="chart-axis-meta mono">
+ <span style="color:var(--chart-c1);">■ 左轴：年度总发射次数 (Falcon + Starship)</span>
+ <span style="color:var(--chart-c2);">● 右轴：要约收购 / 二级市场估值 ($B)</span>
+ </div>
+ <div class="canvas-stage">
+ <canvas id="chartEps"></canvas>
+ </div>
+ <div class="chart-legend" id="epsLegend">
+ <button type="button" class="legend-pill" data-eps-series="eps"><span class="legend-dot" style="background:var(--chart-c1);"></span><span>年度总发射次数 (左轴 · 发)</span></button>
+ <button type="button" class="legend-pill" data-eps-series="oci"><span class="legend-dot" style="background:var(--chart-c2);"></span><span>期末估值 / 市值 (右轴 · $B)</span></button>
+ </div>
+ </div>
+
+ <!-- Interactive Multi-Era Compounding Simulator -->
+ <div class="simulator-grid">
+ <div class="sim-controls">
+ <div>
+ <div class="sec-eyebrow mono" style="margin-bottom:2px;">INTERACTIVE EQUITY FLYWHEEL SIMULATOR</div>
+ <h3 style="font-size:1rem;font-weight:800;">SpaceX 跨代际员工期权与股东价值复利推演器</h3>
+ </div>
+
+ <label class="mui-switch-row" for="simDripToggle">
+ <div>
+ <div style="font-size:0.84rem;font-weight:700;color:var(--text-primary);">叠加太空 AI (StarMind) 与手机直连生态溢价 (+4.5%/年)</div>
+ <div style="font-size:0.74rem;color:var(--text-secondary);">映射从单一发射/宽带公司跃升为天地一体 AI 算力底座带来的估值溢价扩张</div>
+ </div>
+ <input type="checkbox" id="simDripToggle" checked />
+ </label>
+
+ <div class="preset-stack" role="group">
+ <button type="button" class="preset-btn active" data-preset="p1">
+ <span>① 2016–2026 猎鹰回收与星链爆发十年</span>
+ <span class="mono">10年 · ~46%+溢价</span>
+ </button>
+ <button type="button" class="preset-btn" data-preset="p2">
+ <span>② 2023–2026 要约冲刺至纳斯达克 IPO</span>
+ <span class="mono">3年 · ~110%+溢价</span>
+ </button>
+ <button type="button" class="preset-btn" data-preset="p3">
+ <span>③ 2026–2036 上市后星舰与太空AI新十年</span>
+ <span class="mono">10年 · 14.5%+溢价</span>
+ </button>
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>初始投入本金 / 早期期权包 (USD)</span>
+ <span id="simPrincipalLabel" class="slider-val mono">$10,000</span>
+ </div>
+ <input type="range" id="simPrincipalSlider" class="mui-slider" min="1000" max="100000" step="1000" value="10000" />
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>长期持有年限 (Years)</span>
+ <span id="simYearsLabel" class="slider-val mono">10 年</span>
+ </div>
+ <input type="range" id="simYearsSlider" class="mui-slider" min="3" max="20" step="1" value="10" />
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>核心业务内生年化增值率 (Base CAGR %)</span>
+ <span id="simCagrLabel" class="slider-val mono">14.5%</span>
+ </div>
+ <input type="range" id="simCagrSlider" class="mui-slider" min="5" max="65" step="0.5" value="14.5" />
+ </div>
+ </div>
+
+ <div class="sim-output-panel">
+ <div class="sim-readouts">
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">期末预估总资产 (Ending Value)</div>
+ <div id="simEndingVal" class="sim-stat-num mono" style="color:var(--mui-primary-lighter);">$56,947</div>
+ </div>
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">总回报倍数 (MOIC) / 综合年化</div>
+ <div id="simMoicVal" class="sim-stat-num mono" style="color:var(--mui-success-text);">5.69x · 19.00%</div>
+ </div>
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">累计净复利收益 (Net Gain)</div>
+ <div id="simNetGainVal" class="sim-stat-num mono">$46,947</div>
+ </div>
+ <div class="sim-stat-box">
+ <div id="simMidLabel" class="sim-stat-label">第 5 年中期资产节点</div>
+ <div id="simMidVal" class="sim-stat-num mono">$23,864</div>
+ </div>
+ </div>
+
+ <div class="canvas-stage-sim">
+ <canvas id="chartSim"></canvas>
+ </div>
+ <div class="chart-legend" style="margin-top:4px;">
+ <span class="mui-chip mui-chip-primary mono">━ 含太空 AI 与直连频谱生态溢价轨迹</span>
+ <span class="mui-chip mono">- - 仅核心航天与宽带基准增长</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="grid-2" style="margin-top: 18px;">
+ <div class="mui-alert mui-alert-success" style="flex-direction:column; gap:8px;">
+ <div style="display:flex;align-items:center;gap:8px;">
+ <span class="mui-chip mui-chip-success mono">ENDURING MOAT</span>
+ <strong>正向组织文化遗产定评</strong>
+ </div>
+ <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+ <strong>1. 彻底粉碎航天“成本加成官僚病”：</strong>把航空级零件成本向物理原材料底线挤压，形成后来者十年内难以追赶的发射与造星成本鸿沟。<br/>
+ <strong>2. 使命驱动的顶尖硬核人才磁场：</strong>“让人类成为多行星物种”的宏大愿景叠加全员股权激励，常年包揽全美航空与机械工程最顶尖毕业生。<br/>
+ <strong>3. 双核制衡抵御创始人单点失控：</strong>Shotwell 长达 24 年稳健运营护盘，使 SpaceX 在激进技术冒险同时始终兑现 NASA 与国防部最高可靠性标准。
+ </p>
+ </div>
+
+ <div class="mui-alert mui-alert-warning" style="flex-direction:column; gap:8px;">
+ <div style="display:flex;align-items:center;gap:8px;">
+ <span class="mui-chip mui-chip-warning mono">CRITICAL LENS</span>
+ <strong>客观局限与组织张力反思</strong>
+ </div>
+ <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+ <strong>1. 极端高压“突击文化（Surge）”与人才倦怠率：</strong>全天候现场待命与严苛进度压缩导致基层工程师流动率偏高，工作生活平衡长期承压。<br/>
+ <strong>2. 多公司带宽分散与复杂关联交易：</strong>CEO 横跨 SpaceX、Tesla、TBC 等多家实体（S-1 明确提示精力分配风险），且 10-Q 披露 Valor 关联租赁、Boring 投资及评估特斯拉合并等复杂治理议题。<br/>
+ <strong>3. 跨文化并购磨合考验：</strong>2026 年早些时候 xAI 原联合创始团队曾经历流失波动，如何留住 $600亿收购的 Cursor 顶尖 AI 研究员是对硬核航天管理风格的新考题 <a class="cite-link" href="https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/" target="_blank" rel="noopener noreferrer">TechCrunch 报道 ↗</a>。
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- 05 三幕演进与四大生死战役复盘 -->
+ <section id="sec-05" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 05 · THREE-ACT EVOLUTION &amp; LANDMARK BATTLES</div>
+ <h2 class="sec-h2" data-i18n-zh="五、三幕文化演进与四大生死战役复盘：从夸贾林孤岛三连败到纳斯达克 $1.9万亿" data-i18n-en="5. Three-Act Evolution &amp; Four Landmark Battles: From Kwajalein Island to $1.9T Giant">五、三幕文化演进与四大生死战役复盘：从夸贾林孤岛三连败到纳斯达克 $1.9万亿</h2>
+ <p class="sec-sub" data-i18n-zh="SpaceX 的偏执成本纪律与自研基因，是在 2008 年距离破产仅剩最后一发火箭的绝境中淬炼而出的" data-i18n-en="SpaceX's extreme cost discipline and in-house obsession were forged one launch away from bankruptcy in 2008">SpaceX 的偏执成本纪律与自研基因，是在 2008 年距离破产仅剩最后一发火箭的绝境中淬炼而出的</p>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">2002 创立 → 2026 登陆 NASDAQ: SPCX</span>
+ </div>
+
+ <div class="mui-timeline">
+ <div class="timeline-step">
+ <span class="timeline-dot"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第一幕 · 夸贾林绝境与车库自研觉醒 (2002–2008) —— 距离破产仅差一次点火</strong>
+ <span class="mui-chip mono">2008.09 第4发绝地翻盘</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">马斯克携 $1亿 PayPal 创业资金在加州仓库起步，联手 Tom Mueller 与 Gwynne Shotwell 打造猎鹰 1 号。经历太平洋夸贾林岛前三次发射接连爆炸、资金几近枯竭后，团队在短短数周内用运载机抢修出第四枚火箭并于 2008 年 9 月 28 日成功入轨，随后由 Shotwell 斩获救命的 NASA $16亿 CRS 货运合同。</p>
+ </div>
+
+ <div class="timeline-step">
+ <span class="timeline-dot" style="background:#3399FF;"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第二幕 · 垂直回收革命与星链跨界豪赌 (2009–2025) —— 把不可能变成每周例行公事</strong>
+ <span class="mui-chip mui-chip-primary mono">2015首回收 → 2025年165发</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">2015 年 12 月猎鹰 9 号首次实现轨道级火箭陆地垂直回收，彻底终结“火箭用完即扔”历史；2018 年马斯克亲赴西雅图撤换保守管理层、加速星链批产，并在 Starbase 开启不锈钢星舰露天快速制造，到 2025 年底将估值推上 $8,000亿。</p>
+ </div>
+
+ <div class="timeline-step">
+ <span class="timeline-dot" style="background:#22C55E;"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第三幕 · 超级智能合体、史诗级 IPO 与星舰捕获飞船 (2026+) —— 天地一体新物种</strong>
+ <span class="mui-chip mui-chip-success mono">2026.06 $86.3B IPO · Flight 15</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">2026 年 2 月吸收合并 xAI，6 月 12 日以 $135/股 登陆纳斯达克募资 $862.5亿，8 月 $600亿并购 Cursor，11 月 14 日星舰 Flight 15 成功用筷子机械臂在陆地捕获轨道返回的二级飞船 Ship 42，全面吹响 2028 轨道太阳能 AI 数据中心冲锋号 <a class="cite-link" href="https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch" target="_blank" rel="noopener noreferrer">CNN 现场报道 ↗</a>。</p>
+ </div>
+ </div>
+
+ <div class="grid-2" style="margin-bottom: 18px;">
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-error mono">战役 01 · 2018</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">反官僚闪电战</span>
+ </div>
+ <h3>西雅图星链管理层大换血：拒绝慢节奏研究院作风</h3>
+ <p>2018 年星链早期团队倾向按传统航天多年验证流程慢慢打磨，马斯克乘专机直飞雷德蒙德当场解雇进度迟缓的高管，换上 Mark Juncosa 与 Michael Nicolls 等硬核实战派，仅用 11 个月便将首批 60 颗试验星送上太空。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-success mono">战役 02 · 2018–2020</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">第一性原理转向</span>
+ </div>
+ <h3>果断报废上亿美元碳纤维模具，转向 30X 不锈钢造星舰</h3>
+ <p>面对每公斤 $130+ 且大型热压罐成型极慢的碳纤维材料，工程团队回归热力学第一性原理，发现高熔点不锈钢在液氧液甲烷低温下强度倍增且耐再入高温，一举将箭体材料费砍掉 95%+。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-warning mono">战役 03 · 2020–2026</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">固定总价完胜</span>
+ </div>
+ <h3>载人龙飞船 Crew-13 稳定轮换 vs 波音 Starliner 泥潭</h3>
+ <p>NASA 同批授予商业载人合同，波音拿走更高经费却因分包失控在 Starliner 上亏损逾十亿美元且载人滞留；SpaceX 载人龙飞船已于 2026 年 10 月稳健执行至第 13 次常态化空间站轮换（Crew-13）。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-primary mono">战役 04 · 2024–2026.11</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">删除着陆腿极限</span>
+ </div>
+ <h3>Mechazilla“筷子夹火箭与飞船”：删掉最沉重的着陆机构</h3>
+ <p>不顾外界“天方夜谭”质疑，SpaceX 坚决把降落缓冲机构从箭体转移至地面发射塔机械臂，继成功捕获超重型助推器后，又在 2026.11.14 Flight 15 一举夹住从轨道再入的二级星舰飞船。</p>
+ </div>
+ </div>
+
+ <div class="grid-3">
+ <div class="mui-alert">
+ <div><strong>法则一：</strong>永远先质疑并删除愚蠢的需求——如果每条规范找不到具体署名的活人负责，它大概率是过时的历史包袱。</div>
+ </div>
+ <div class="mui-alert">
+ <div><strong>法则二：</strong>用“白痴指数”刺穿外部供应链黑箱——凡是成品报价远超物理原材料几十倍的关键部件，果断垂直内化自研自产。</div>
+ </div>
+ <div class="mui-alert">
+ <div><strong>法则三：</strong>让设计工程师贴近车间焊枪，用高频率真实飞行测试代替冗长的委员会 PPT 评审。</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 06 交互式核查清单 -->
+ <section id="sec-06" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 06 · INTERACTIVE FIRST-PRINCIPLES DIAGNOSTIC CHECKLIST</div>
+ <h2 class="sec-h2" data-i18n-zh="六、“SpaceX 五步算法”硬科技企业组织效率交互式核查清单" data-i18n-en="6. Interactive 'SpaceX 5-Step Algorithm' Hard-Tech Organization Checklist">六、“SpaceX 五步算法”硬科技企业组织效率交互式核查清单</h2>
+ <p class="sec-sub" data-i18n-zh="用于诊断硬科技制造、商业航天或 AI 基建企业是否具备反官僚极速迭代基因（勾选状态自动保存在本地）" data-i18n-en="Evaluate whether an engineering or AI infrastructure organization exhibits SpaceX-grade velocity (saved locally)">用于诊断硬科技制造、商业航天或 AI 基建企业是否具备反官僚极速迭代基因（勾选状态自动保存在本地）</p>
+ </div>
+ <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+ <span id="checklistScoreChip" class="mui-chip mui-chip-primary mono">已核查 3 / 6 项 (50%)</span>
+ <button type="button" id="checkAllBtn" class="mui-btn">全部勾选</button>
+ <button type="button" id="resetCheckBtn" class="mui-btn">重置清单</button>
+ </div>
+ </div>
+
+ <div class="progress-track" aria-label="核查完成度进度条">
+ <div id="checklistProgressBar" class="progress-fill"></div>
+ </div>
+
+ <div id="checklistContainer" class="checklist-grid"></div>
+ </section>
+
+ <!-- 07 Primary Sources -->
+ <footer id="sec-07" class="mui-paper section-block" style="padding: 22px 26px;">
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;">
+ <strong style="font-size:0.92rem;">数据来源与一手监管/产业核验索引（SEC EDGAR · SpaceX Official · Payload Space）</strong>
+ <span class="mui-chip mono">MUI Branding UI Architecture · Offline Ready</span>
+ </div>
+ <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">
+ 本研报所有财务、分部利润、员工编制、IPO 定价、发射统计与管理层架构数据均核验自美国证监会（SEC EDGAR CIK 0001181412）、SpaceX 官方任务简报及权威商业航天研究机构，仅供企业文化与商业架构研究参考，不构成任何投资建议。
+ </p>
+ <ul class="sources-list">
+ <li><span class="mono">[01]</span><a href="https://www.sec.gov/edgar/browse/?CIK=1181412" target="_blank" rel="noopener noreferrer">SEC EDGAR — Space Exploration Technologies Corp. (SPCX) S-1, 424B4 &amp; Q3 2026 10-Q ↗</a></li>
+ <li><span class="mono">[02]</span><a href="https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue" target="_blank" rel="noopener noreferrer">CrowdfundedWealth — SpaceX Q3 2026 10-Q Segment, CapEx &amp; Governance Forensic Read ↗</a></li>
+ <li><span class="mono">[03]</span><a href="https://payloadspace.com/spacex-reveals-financial-data-ahead-of-ipo/" target="_blank" rel="noopener noreferrer">Payload Space — SpaceX S-1 FY2025 Financials ($18.67B Rev) &amp; $28.5T TAM (2026-05-21) ↗</a></li>
+ <li><span class="mono">[04]</span><a href="https://dealroom.co/resources/spacex-ipo/" target="_blank" rel="noopener noreferrer">Dealroom — SpaceX June 12, 2026 $86.2B Nasdaq IPO &amp; Valuation Analysis ↗</a></li>
+ <li><span class="mono">[05]</span><a href="https://www.spacex.com/launches/starship-flight-15" target="_blank" rel="noopener noreferrer">SpaceX Official — Starship Flight 15 Orbital Test &amp; Ship 42 Tower Catch (2026-11-14) ↗</a></li>
+ <li><span class="mono">[06]</span><a href="https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch" target="_blank" rel="noopener noreferrer">CNN Science — SpaceX Starship Nails Historic Ship Catch in Flight 15 Test ↗</a></li>
+ <li><span class="mono">[07]</span><a href="https://spacexunpacked.com/people" target="_blank" rel="noopener noreferrer">SpaceX Unpacked — Leadership Profiles: Shotwell, Johnsen, Juncosa, Nicolls &amp; Board (Oct 2026) ↗</a></li>
+ <li><span class="mono">[08]</span><a href="https://internationalfinance.com/markets/anthropic-ipo-claude-parent-beats-spacex-on-cash-raised-not-on-market-value/" target="_blank" rel="noopener noreferrer">International Finance — SpaceX 22,621 Employees &amp; FY2025/2026 Financial Comparison ↗</a></li>
+ <li><span class="mono">[09]</span><a href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy" target="_blank" rel="noopener noreferrer">Corporate Rebels — Musk's 5-Step Algorithm to Cut Internal Bureaucracy (Isaacson Study) ↗</a></li>
+ <li><span class="mono">[10]</span><a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener noreferrer">Cursor Official Blog — Cursor Is Now a Part of SpaceX (August 14, 2026) ↗</a></li>
+ <li><span class="mono">[11]</span><a href="https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-record-37th-booster-flight-100-falcon-9-launches" target="_blank" rel="noopener noreferrer">Space.com — Falcon 9 Sets 37th Booster Reuse Record on 100th Launch of 2026 ↗</a></li>
+ <li><span class="mono">[12]</span><a href="https://www.sec.gov/Archives/edgar/data/1819994/000181999426000073/rklb-11092026ex991.htm" target="_blank" rel="noopener noreferrer">SEC EDGAR — Rocket Lab Q3 2026 Results &amp; Peer Aerospace Filings (LMT / BA / TSLA) ↗</a></li>
+ </ul>
+ </footer>
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+ var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+ var STORAGE_CHECK_KEY = 'mui_spcx_culture_checks_v1';
+
+ var PILLAR_NOTES_ZH = [
+ '<strong>当前选中支柱解读（01 马斯克五步工程算法）：</strong>在星舰与星链每一次产能突击（Surge）会上，马斯克反复追问“是谁规定的这条冗余安全系数？”——星舰直接砍掉传统沉重着陆腿、改用发射塔机械臂空中夹取（Flight 15 成功兑现），正是“最好的零件就是没有零件”哲学的巅峰之作 <a class="cite-link" href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy" target="_blank" rel="noopener noreferrer">The Algorithm 拆解 ↗</a>。',
+ '<strong>当前选中支柱解读（02 第一性原理与白痴指数）：</strong>当航空供应商对单套星载无线电或推进阀门报价超过 $100,000 时，SpaceX 工程师直接拆解铝材与工业芯片成本，内部自研将成本压至 $5,000 以下，使全公司核心硬件自制率超过 80%。',
+ '<strong>当前选中支柱解读（03 责任工程师 RE 制度）：</strong>不同于传统大厂设计、采购、质检各自免责，SpaceX 的 RE 对所辖部件终身负责；同时严禁金字塔式逐级传话，一线技术员可直接向副总裁或首席工程师发起跨级排障沟通 <a class="cite-link" href="https://orgtree.app/org-chart-examples/spacex-org-chart" target="_blank" rel="noopener noreferrer">扁平汇报链 ↗</a>。',
+ '<strong>当前选中支柱解读（04 硬件敏捷试飞文化）：</strong>从猎鹰 9 号早期多次海上回收甲板爆炸，到星舰历经 15 次综合试飞最终攻克二级飞船陆地机械臂捕获，SpaceX 用快速制造真箭实测跑赢了传统军工耗时十余年的仿真论证 <a class="cite-link" href="https://www.spacex.com/launches/starship-flight-15" target="_blank" rel="noopener noreferrer">Flight 15 纪实 ↗</a>。'
+ ];
+
+ var PILLAR_NOTES_EN = [
+ '<strong>Selected Pillar (01 · The 5-Step Algorithm):</strong> Every requirement must carry a named person rather than a department. Deleting Starship landing legs in favor of Mechazilla tower chopsticks—validated on Flight 15 (Nov 2026)—embodies "the best part is no part" <a class="cite-link" href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy" target="_blank" rel="noopener noreferrer">Algorithm Study ↗</a>.',
+ '<strong>Selected Pillar (02 · First Principles &amp; Idiot Index):</strong> By comparing finished aerospace quotes against raw stainless steel, aluminum, and silicon commodity costs, SpaceX brought >80% of propulsion, avionics, and phased-array manufacturing in-house at 10x lower cost.',
+ '<strong>Selected Pillar (03 · Responsible Engineer Ownership):</strong> Every valve, board, or Raptor sub-assembly has one named Responsible Engineer (RE) owning design, shop-floor build, and flight telemetry—with direct skip-level communication across 4–5 flat layers.',
+ '<strong>Selected Pillar (04 · Hardware-Rich Iterative Testing):</strong> Rather than spending a decade on paper reviews, SpaceX builds flight hardware rapidly at Starbase—iterating across 15 integrated Starship flights to achieve orbital V3 deployment and upper-stage tower catch.'
+ ];
+
+ var PEER_ROWS_ZH = [
+ {
+ category: 'flat', benchmark: true,
+ company: '研究基准：SpaceX (NASDAQ: SPCX)',
+ leader: '埃隆·马斯克 (CEO/首席工程师) × 格温·肖特维尔 (总裁/COO)',
+ positioning: '双核统御 + 超扁平职能制 + >80% 垂直自造工厂',
+ culture: '五步工程算法 + 白痴指数砍成本 + 责任工程师(RE) + 硬件敏捷试飞',
+ headcount: '22,621人 · 年化人均创收 $2.58M',
+ margins: 'Q3 26 营收 $14.58B · 营业利润 $2.79B (星链 OPM 45.1%)',
+ verdict: '人类航天与基建效率极限：凭不到波音 1/8 的人力包揽全球 >85% 入轨质量，并融合 xAI/Cursor 开启轨道算力新纪元。',
+ sourceLabel: 'SEC Q3 26 10-Q', sourceUrl: 'https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: '英伟达 (NVIDIA · NVDA)',
+ leader: '黄仁勋 (Jensen Huang)',
+ positioning: '超扁平蛛网架构 (~60高管直报CEO) + 软硬全栈无事业部墙',
+ culture: '光速执行 (Speed of Light) + Top-5 全透明邮件 + 零官僚内耗',
+ headcount: '~42,000人 (研发 ~74%) · 人均创收 ~$5.14M',
+ margins: 'FY26 营收 $215.9B · GAAP 毛利率 71.1% · 净利 $120.1B',
+ verdict: '硅片界的同频共振者：与 SpaceX 同样厌恶层级汇报与事业部藩篱，且是 SpaceX 地面与 2028 轨道 AI 卫星的核心算力伙伴。',
+ sourceLabel: 'NVIDIA FY26 Stats', sourceUrl: 'https://www.gradually.ai/en/nvidia-statistics/'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: '特斯拉 (Tesla · TSLA)',
+ leader: '埃隆·马斯克 (CEO)',
+ positioning: '第一性原理垂直制造 + 一体压铸自动化超级工厂',
+ culture: '同源马斯克五步工程算法 + 产线驻场突击 + 软硬端到端 AI',
+ headcount: '134,785人 · 人均创收 ~$0.70M',
+ margins: 'FY25 营收 $94.83B · GAAP 营业利润 $4.4B · 26E CapEx ~$20B',
+ verdict: '同源文化孪生体：共享材料学团队与 Megapack 能源基建，且 SpaceX 董事会已成立特别委员会研究潜在合并可能。',
+ sourceLabel: 'SEC TSLA 10-K', sourceUrl: 'https://backlinko.com/tesla-stats'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: '火箭实验室 (Rocket Lab · RKLB)',
+ leader: '彼得·贝克 (Peter Beck · 工程师创始人)',
+ positioning: '轻中型可复用火箭 + 垂直整合卫星平台组件端到端模式',
+ culture: '工程师创始人领衔 + 碳纤维复合材料自制 + 快速发射响应',
+ headcount: '2,600+人 · Q3 26 年化人效 ~$0.41M',
+ margins: 'Q3 26 创纪录营收 $267.8M (+73% YoY) · GAAP 毛利率 33.6%',
+ verdict: '商业航天最稳健追赶者：完全复刻 SpaceX“火箭+卫星系统”垂直整合逻辑，正全力攻坚中大型可复用火箭 Neutron。',
+ sourceLabel: 'SEC RKLB Q3 26', sourceUrl: 'https://www.sec.gov/Archives/edgar/data/1819994/000181999426000073/rklb-11092026ex991.htm'
+ },
+ {
+ category: 'legacy', benchmark: false,
+ company: '波音与洛克希德传统军工体系 (BA / LMT)',
+ leader: '罗伯特·奥特伯格 (BA) / 吉姆·泰克莱特 (LMT)',
+ positioning: '多事业部矩阵 (BCA/BDS 等) + 全球数千家多级分包商网络',
+ culture: '瀑布流长周期纸面评审 + 历史成本加成惯性 + 严密合规层级',
+ headcount: '波音 ~18.2万 ($0.49M/人) · 洛马 ~12.2万 ($0.61M/人)',
+ margins: '2025 波音营收 $89.5B (净利 $2.23B) · 洛马 $75.0B (净利 $5.0B)',
+ verdict: '组织制度的反面参照系：层层外包导致供应链白痴指数极高，一旦转入固定总价合同（如 Starliner）即遭遇严重延期与超支亏损。',
+ sourceLabel: 'BA & LMT Filings', sourceUrl: 'https://investors.lockheedmartin.com/news-releases/news-release-details/lockheed-martin-reports-fourth-quarter-and-full-year-2025/'
+ }
+ ];
+
+ var PEER_ROWS_EN = [
+ {
+ category: 'flat', benchmark: true,
+ company: 'Benchmark: SpaceX (NASDAQ: SPCX)',
+ leader: 'Elon Musk (CEO/Chief Eng) × Gwynne Shotwell (President/COO)',
+ positioning: 'Dual-Core Stewardship + Ultra-Flat Org + >80% In-House Factories',
+ culture: '5-Step Algorithm + Idiot Index + Responsible Engineer (RE) + Flight Sprints',
+ headcount: '22,621 FTE · $2.58M Annualized Q3 Rev / FTE',
+ margins: 'Q3 26 Rev $14.58B · OpInc $2.79B (Starlink OPM 45.1%)',
+ verdict: 'Aerospace-AI benchmark: delivers >85% of global orbital mass with <1/8 of Boeing\'s workforce while scaling Grok, Cursor & StarMind.',
+ sourceLabel: 'SEC Q3 26 10-Q', sourceUrl: 'https://www.crowdfundedwealth.com/articles/spacex-10-q-q3-2026-ai-segment-starlink-revenue'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: 'NVIDIA (NVDA)',
+ leader: 'Jensen Huang',
+ positioning: 'Ultra-flat 60-direct-report web + unified silicon/CUDA stack',
+ culture: 'Speed-of-light execution + Top-5 email transparency + zero unit silos',
+ headcount: '~42,000 FTE (~74% R&D) · ~$5.14M Rev / FTE',
+ margins: 'FY26 Rev $215.9B · 71.1% GAAP GM · Net Inc $120.1B',
+ verdict: 'Silicon soulmate: shares SpaceX\'s disdain for divisional hierarchy and supplies GPUs for SpaceX\'s 1.7GW SI & 2028 orbital AI satellites.',
+ sourceLabel: 'NVIDIA FY26 Stats', sourceUrl: 'https://www.gradually.ai/en/nvidia-statistics/'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: 'Tesla (TSLA)',
+ leader: 'Elon Musk',
+ positioning: 'First-principles Gigafactory integration + EV/Energy/Autonomy',
+ culture: 'Shared 5-Step Algorithm + shop-floor surges + end-to-end AI',
+ headcount: '134,785 FTE · ~$0.70M Rev / FTE',
+ margins: 'FY25 Rev $94.83B · GAAP OpInc $4.4B · 26E CapEx ~$20B',
+ verdict: 'Cultural twin: shares materials engineering and Megapack supply; SpaceX formed a board committee in Oct 2026 to study a potential combination.',
+ sourceLabel: 'SEC TSLA 10-K', sourceUrl: 'https://backlinko.com/tesla-stats'
+ },
+ {
+ category: 'flat', benchmark: false,
+ company: 'Rocket Lab (RKLB)',
+ leader: 'Peter Beck (Founder-Engineer)',
+ positioning: 'Small/medium launch + vertically integrated Space Systems',
+ culture: 'Founder-engineer led + in-house composites & spacecraft components',
+ headcount: '2,600+ FTE · ~$0.41M Annualized Q3 Rev / FTE',
+ margins: 'Q3 26 Record Rev $267.8M (+73% YoY) · 33.6% GAAP GM',
+ verdict: 'Closest New-Space peer: mirrors SpaceX\'s launch + satellite vertical playbook while developing reusable medium-lift Neutron.',
+ sourceLabel: 'SEC RKLB Q3 26', sourceUrl: 'https://www.sec.gov/Archives/edgar/data/1819994/000181999426000073/rklb-11092026ex991.htm'
+ },
+ {
+ category: 'legacy', benchmark: false,
+ company: 'Legacy Aerospace Primes (Boeing BA / Lockheed LMT)',
+ leader: 'Kelly Ortberg (BA) / Jim Taiclet (LMT)',
+ positioning: 'Multi-division matrices + multi-tier subcontractor pyramids',
+ culture: 'Waterfall paper reviews + Cost-Plus heritage + heavy compliance layers',
+ headcount: 'BA ~182k ($0.49M/FTE) · LMT ~122k ($0.61M/FTE)',
+ margins: 'FY25 BA Rev $89.5B (Net $2.23B) · LMT Rev $75.0B (Net $5.0B)',
+ verdict: 'Structural foil: deep outsourcing inflates the Idiot Index and triggers severe overruns under fixed-price contracts like Starliner.',
+ sourceLabel: 'BA & LMT Filings', sourceUrl: 'https://investors.lockheedmartin.com/news-releases/news-release-details/lockheed-martin-reports-fourth-quarter-and-full-year-2025/'
+ }
+ ];
+
+ var CHECKLIST_ZH = [
+ { tag: '实名质疑需求', title: '1. 需求实名制测试：每条技术约束能否追溯到具体个人而非“某部门”？', desc: '核查工程评审是否强制要求所有安全冗余与流程规定挂钩具体工程师姓名，随时按物理学第一性原理重新质询。' },
+ { tag: '10% 加回铁律', title: '2. 残酷删除测试：团队是否敢于砍掉零件，直到被迫加回约 10%？', desc: '对标星舰砍掉着陆腿改用发射塔夹取，检验研发团队是在“做减法删结构”还是在不断叠加复杂的补丁机构。' },
+ { tag: '白痴指数 <3x', title: '3. 白痴指数测试：核心部件采购价与原材料成本之比是否被极致压缩？', desc: '排查是否存在被外部供应商收取 20–50 倍溢价的黑盒组件，企业是否具备自建产线垂直内化 >80% BOM 的能力。' },
+ { tag: 'RE 一竿子到底', title: '4. 责任工程师 (RE) 测试：单个模块是否由同一人贯通设计、制造与实测？', desc: '检验设计工程师工位是否紧贴产线车间，杜绝“设计部画完图扔给制造部、出了故障互相甩锅”的部门墙。' },
+ { tag: '高频真机试错', title: '5. 硬件敏捷迭代测试：从设计冻结到真机点火实测的周期是按周还是按年计？', desc: '观察企业是耗费数年撰写完美仿真报告，还是以低成本快速造出原型机在真实物理边界高频试错迭代。' },
+ { tag: '双核现金闭环', title: '6. 远期探月与现金牛平衡测试：是否有 Shotwell 式运营铁军守护高毛利基本盘？', desc: '对标星链 45.1% 营业利润率反哺星舰与太空 AI，检验激进前沿研发背后是否有稳健的经常性现金流引擎支撑。' }
+ ];
+
+ var CHECKLIST_EN = [
+ { tag: 'Named Owner', title: '1. Named-Requirement Test: Does every constraint trace to a person, never a department?', desc: 'Verify whether specifications attach a real engineer\'s name so inherited rules can be challenged against first-principles physics.' },
+ { tag: '10% Add-Back', title: '2. Aggressive Deletion Test: Are parts & steps deleted until ~10% must be added back?', desc: 'Benchmarked against deleting Starship landing legs for tower catches—are teams deleting complexity before optimizing or automating?' },
+ { tag: 'Idiot Index', title: '3. Idiot-Index Audit: Is finished component cost benchmarked against raw material value?', desc: 'Check whether 20x–50x subcontractor markups are aggressively replaced by >80% in-house vertical manufacturing.' },
+ { tag: 'Single RE', title: '4. Responsible Engineer (RE) Test: Does one owner span CAD, shop floor, and flight telemetry?', desc: 'Confirm engineers sit adjacent to production lines with zero handoff walls between design, fabrication, and testing.' },
+ { tag: 'Hardware Sprint', title: '5. Hardware-Rich Cadence Test: Is prototype-to-test cycle time measured in weeks rather than years?', desc: 'Assess whether teams build affordable test articles rapidly to gather real-world flight data instead of multi-year paper waterfall reviews.' },
+ { tag: 'Dual-Core Cash', title: '6. Dual-Core Balance Test: Does a high-margin cash engine fund moonshot R&D?', desc: 'Mirroring Shotwell\'s 45.1% OPM Starlink funding Starship & StarMind, verify whether disciplined execution backs frontier bets.' }
+ ];
+
+ var QUICK_JUMP = [
+ { sec: 'sec-00', title: '00 执行摘要与核心指标', sub: 'Q3 $14.58B 营收 · $2.58M 年化人效 · 星链 45.1% 利润率' },
+ { sec: 'sec-01', title: '01 双核架构与垂直自造协同', sub: 'Musk × Shotwell 汇报线 · 三大分部营收与人效双视图图表' },
+ { sec: 'sec-02', title: '02 四大文化支柱与五维雷达', sub: '五步算法 · 白痴指数 · RE责任工程师 · 五维对比雷达图' },
+ { sec: 'sec-03', title: '03 全球军工与硬科技横向对比', sub: 'SpaceX vs NVIDIA / Tesla / Rocket Lab / 波音洛马' },
+ { sec: 'sec-04', title: '04 复用红利与跨代估值复利', sub: '2022–2026 发射与估值齐飞 · 期权与股东价值复利推演器' },
+ { sec: 'sec-05', title: '05 三幕演进与四大生死战役', sub: '夸贾林第4发 · 不锈钢转向 · Crew-13 · Flight 15 捕获' },
+ { sec: 'sec-06', title: '06 五步算法组织核查清单', sub: '6 项第一性原理硬科技诊断与本地持久化评分' },
+ { sec: 'sec-07', title: '07 数据来源与监管核验索引', sub: 'SEC CIK 0001181412 · SpaceX Official · Payload Space' }
+ ];
+
+ var PRESETS = {
+ p1: { principal: 10000, years: 10, priceCagr: 45.0, drip: true },
+ p2: { principal: 10000, years: 3, priceCagr: 95.0, drip: true },
+ p3: { principal: 10000, years: 10, priceCagr: 14.5, drip: true }
+ };
+
+ var state = {
+ lang: 'zh',
+ theme: 'light',
+ ch1View: 'viewA',
+ ch1Series: { s1: true, s2: true },
+ epsSeries: { eps: true, oci: true },
+ activePillar: 0,
+ radarSeries: { spcx: true, nvda: true, oldspace: true },
+ peerFilter: 'all',
+ peerQuery: '',
+ sim: { principal: 10000, years: 10, priceCagr: 14.5, drip: true, preset: 'p3' },
+ checks: [true, true, true, false, false, false]
+ };
+
+ var hitRegions = { chartCh1: [], chartRadar: [], chartBars: [], chartEps: [], chartSim: [] };
+
+ function isEn() { return state.lang === 'en'; }
+
+ function showToast(msg) {
+ var el = document.getElementById('muiSnackbar');
+ if (!el) return;
+ el.textContent = msg;
+ el.classList.add('show');
+ clearTimeout(el._t);
+ el._t = setTimeout(function () { el.classList.remove('show'); }, 2400);
+ }
+
+ function escapeHtml(str) {
+ return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+ }
+
+ function highlightMatch(text, query) {
+ var safe = escapeHtml(text);
+ if (!query) return safe;
+ var escapedQ = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ return safe.replace(new RegExp('(' + escapedQ + ')', 'gi'), '<mark class="hl">$1</mark>');
+ }
+
+ function renderPeerTable() {
+ var tbody = document.getElementById('peerTableBody');
+ var badge = document.getElementById('peerCountBadge');
+ if (!tbody) return;
+ var rows = isEn() ? PEER_ROWS_EN : PEER_ROWS_ZH;
+ var q = state.peerQuery.trim().toLowerCase();
+ var filtered = rows.filter(function (r, idx) {
+ var catOk = state.peerFilter === 'all' || r.category === state.peerFilter;
+ if (!catOk) return false;
+ if (!q) return true;
+ var hay = (PEER_ROWS_ZH[idx].company + ' ' + PEER_ROWS_ZH[idx].leader + ' ' + PEER_ROWS_ZH[idx].culture + ' ' + PEER_ROWS_EN[idx].company + ' ' + PEER_ROWS_EN[idx].leader + ' ' + PEER_ROWS_EN[idx].culture).toLowerCase();
+ return hay.indexOf(q) !== -1;
+ });
+ if (badge) badge.textContent = isEn() ? ('Showing ' + filtered.length + ' / ' + rows.length + ' Peers') : ('显示 ' + filtered.length + ' / ' + rows.length + ' 家标杆企业');
+ if (!filtered.length) {
+ tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;">未找到匹配企业，请尝试其他关键词。</td></tr>';
+ return;
+ }
+ var rawQ = state.peerQuery.trim();
+ tbody.innerHTML = filtered.map(function (r) {
+ return '<tr class="' + (r.benchmark ? 'benchmark-row' : '') + '">' +
+ '<td><strong style="color:var(--text-primary);display:block;">' + highlightMatch(r.company, rawQ) + '</strong><span style="font-size:0.76rem;color:var(--text-muted);">' + highlightMatch(r.leader, rawQ) + '</span></td>' +
+ '<td>' + highlightMatch(r.positioning, rawQ) + '</td>' +
+ '<td>' + highlightMatch(r.culture, rawQ) + '</td>' +
+ '<td class="mono" style="font-size:0.79rem;">' + highlightMatch(r.headcount, rawQ) + '</td>' +
+ '<td class="mono" style="font-size:0.79rem;color:var(--mui-primary-lighter);font-weight:700;">' + highlightMatch(r.margins, rawQ) + '</td>' +
+ '<td>' + highlightMatch(r.verdict, rawQ) + ' <a class="cite-link" href="' + r.sourceUrl + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(r.sourceLabel) + ' ↗</a></td>' +
+ '</tr>';
+ }).join('');
+ }
+
+ function renderChecklist() {
+ var container = document.getElementById('checklistContainer');
+ var chip = document.getElementById('checklistScoreChip');
+ var bar = document.getElementById('checklistProgressBar');
+ if (!container) return;
+ var items = isEn() ? CHECKLIST_EN : CHECKLIST_ZH;
+ var done = state.checks.filter(Boolean).length;
+ var pct = Math.round((done / items.length) * 100);
+ if (chip) chip.textContent = isEn() ? ('Verified ' + done + ' / ' + items.length + ' (' + pct + '%)') : ('已核查 ' + done + ' / ' + items.length + ' 项 (' + pct + '%)');
+ if (bar) bar.style.width = pct + '%';
+ container.innerHTML = items.map(function (it, idx) {
+ var ck = !!state.checks[idx];
+ return '<label class="check-card ' + (ck ? 'checked' : '') + '">' +
+ '<input type="checkbox" data-check-input="' + idx + '" ' + (ck ? 'checked' : '') + ' />' +
+ '<div style="flex:1;">' +
+ '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin-bottom:4px;">' +
+ '<span class="check-title">' + escapeHtml(it.title) + '</span>' +
+ '<span class="mui-chip mono">' + escapeHtml(it.tag) + '</span>' +
+ '</div>' +
+ '<p class="check-desc">' + escapeHtml(it.desc) + '</p>' +
+ '</div></label>';
+ }).join('');
+ }
+
+ function formatCurrency(val) {
+ if (val >= 10000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+ return '$' + Math.round(val).toLocaleString('en-US');
+ }
+
+ function updateSimulatorUI() {
+ var p = state.sim.principal, yrs = state.sim.years, cagr = state.sim.priceCagr;
+ var boost = state.sim.drip ? 4.5 : 0.0;
+ var totRate = (cagr + boost) / 100;
+ var endV = p * Math.pow(1 + totRate, yrs);
+ var moic = endV / p;
+ var midY = Math.max(1, Math.floor(yrs / 2));
+ var midV = p * Math.pow(1 + totRate, midY);
+
+ document.getElementById('simPrincipalLabel').textContent = '$' + Math.round(p).toLocaleString('en-US');
+ document.getElementById('simYearsLabel').textContent = yrs + (isEn() ? ' yrs' : ' 年');
+ document.getElementById('simCagrLabel').textContent = cagr.toFixed(1) + '%';
+ document.getElementById('simEndingVal').textContent = formatCurrency(endV);
+ document.getElementById('simMoicVal').textContent = (moic >= 100 ? moic.toFixed(1) : moic.toFixed(2)) + 'x · ' + (totRate * 100).toFixed(1) + '%';
+ document.getElementById('simNetGainVal').textContent = formatCurrency(endV - p);
+ document.getElementById('simMidLabel').textContent = isEn() ? ('Year ' + midY + ' Midpoint') : ('第 ' + midY + ' 年中期资产节点');
+ document.getElementById('simMidVal').textContent = formatCurrency(midV);
+
+ var pbs = document.querySelectorAll('[data-preset]');
+ for (var i = 0; i < pbs.length; i++) pbs[i].classList.toggle('active', pbs[i].getAttribute('data-preset') === state.sim.preset);
+ drawSimChart();
+ }
+
+ // Canvas Engine
+ function getPalette() {
+ var dark = state.theme === 'dark';
+ return {
+ isDark: dark,
+ grid: dark ? 'rgba(148,163,184,0.13)' : 'rgba(100,116,139,0.16)',
+ tick: dark ? '#94A3B8' : '#475569',
+ text: dark ? '#F3F6F9' : '#0F1924',
+ sub: dark ? '#B2BAC2' : '#334155',
+ pillBg: dark ? 'rgba(9, 13, 22, 0.88)' : 'rgba(255, 255, 255, 0.94)',
+ pillBorder: dark ? 'rgba(51, 153, 255, 0.28)' : 'rgba(0, 115, 230, 0.24)',
+ trackBg: dark ? 'rgba(148, 163, 184, 0.10)' : 'rgba(15, 25, 36, 0.06)',
+ c1: dark ? '#3399FF' : '#0073E6',
+ c2: dark ? '#22C55E' : '#16A34A',
+ c3: dark ? '#FFB74D' : '#D97706',
+ c4: dark ? '#A78BFA' : '#7C3AED'
+ };
+ }
+
+ function prepCanvas(id) {
+ var canvas = document.getElementById(id);
+ if (!canvas || !canvas.parentElement) return null;
+ var rect = canvas.parentElement.getBoundingClientRect();
+ var w = Math.max(240, Math.floor(rect.width)), h = Math.max(170, Math.floor(rect.height));
+ var dpr = Math.min(window.devicePixelRatio || 1, 2);
+ canvas.width = Math.floor(w * dpr);
+ canvas.height = Math.floor(h * dpr);
+ var ctx = canvas.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { ctx: ctx, w: w, h: h };
+ }
+
+ function roundRectPath(ctx, x, y, w, h, r) {
+ if (w <= 0 || h <= 0) return;
+ var rd = Math.min(r, w / 2, h / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rd, y);
+ ctx.arcTo(x + w, y, x + w, y + h, rd);
+ ctx.arcTo(x + w, y + h, x, y + h, rd);
+ ctx.arcTo(x, y + h, x, y, rd);
+ ctx.arcTo(x, y, x + w, y, rd);
+ ctx.closePath();
+ }
+
+ function drawCh1Chart() {
+ var env = prepCanvas('chartCh1');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartCh1 = [];
+ var pad = { top: 28, right: 48, bottom: 42, left: 52 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+
+ if (state.ch1View === 'viewA') {
+ var lbls = ['SI (AI+Cursor+X)', 'Connectivity (星链)', 'Space (航天发射)'];
+ var q325 = [0.813, 3.097, 1.666];
+ var q326 = [7.560, 5.248, 1.767];
+ var growth = ['+830% (9.3x)', '+69.5% YoY', '+6.1% YoY'];
+ var maxY = 8.5;
+ for (var g = 0; g <= 4; g++) {
+ var gv = (maxY / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv.toFixed(1) + 'B', pad.left - 8, gy + 4);
+ }
+ var step = pw / lbls.length, bw = Math.min(44, step * 0.28);
+ lbls.forEach(function (lb, i) {
+ var cx = pad.left + step * (i + 0.5);
+ if (state.ch1Series.s1) {
+ var h1 = Math.max(4, (q325[i] / maxY) * ph), y1 = pad.top + ph - h1;
+ ctx.fillStyle = pal.c1;
+ roundRectPath(ctx, cx - bw - 4, y1, bw, h1, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + q325[i].toFixed(2) + 'B', cx - bw / 2 - 4, y1 - 6);
+ }
+ if (state.ch1Series.s2) {
+ var h2 = Math.max(4, (q326[i] / maxY) * ph), y2 = pad.top + ph - h2;
+ ctx.fillStyle = pal.c2;
+ roundRectPath(ctx, cx + 4, y2, bw, h2, 5); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + q326[i].toFixed(2) + 'B', cx + bw / 2 + 4, y2 - 6);
+ }
+ ctx.fillStyle = pal.text; ctx.font = '700 11.5px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(lb, cx, pad.top + ph + 19);
+ ctx.fillStyle = pal.c2; ctx.font = '600 10px "IBM Plex Mono", sans-serif';
+ ctx.fillText(growth[i], cx, pad.top + ph + 33);
+ hitRegions.chartCh1.push({
+ x: pad.left + step * i, y: pad.top, w: step, h: ph + 36,
+ html: '<strong>' + lb + ' (SEC 10-Q Note 18)</strong><br/>• Q3 2025: <strong>$' + q325[i].toFixed(3) + 'B</strong><br/>• Q3 2026: <strong>$' + q326[i].toFixed(3) + 'B</strong> (' + growth[i] + ')'
+ });
+ });
+ } else {
+ var yrs = ['2023', '2024', '2025 (S-1)', 'Q3 26 (年化)'];
+ var ftes = [11.81, 14.60, 18.15, 22.62];
+ var revFte = [0.76, 0.90, 1.03, 2.58];
+ var maxF = 28.0, maxR = 3.0;
+ for (var k = 0; k <= 4; k++) {
+ var r = k / 4, ky = pad.top + ph - r * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, ky); ctx.lineTo(pad.left + pw, ky); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText((maxF * r).toFixed(0) + 'k', pad.left - 7, ky + 4);
+ ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+ ctx.fillText('$' + (maxR * r).toFixed(2) + 'M', pad.left + pw + 7, ky + 4);
+ }
+ var stB = pw / yrs.length, bW = Math.min(44, stB * 0.4);
+ var pts = [];
+ yrs.forEach(function (yr, i) {
+ var cx = pad.left + stB * (i + 0.5);
+ if (state.ch1Series.s1) {
+ var bh = (ftes[i] / maxF) * ph, by = pad.top + ph - bh;
+ ctx.fillStyle = pal.c1;
+ roundRectPath(ctx, cx - bW / 2, by, bW, bh, 5); ctx.fill();
+ ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(ftes[i].toFixed(1) + 'k', cx, by + 16);
+ }
+ pts.push({ x: cx, y: pad.top + ph - (revFte[i] / maxR) * ph, v: revFte[i] });
+ ctx.fillStyle = pal.text; ctx.font = '700 11px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(yr, cx, pad.top + ph + 20);
+ hitRegions.chartCh1.push({
+ x: pad.left + stB * i, y: pad.top, w: stB, h: ph + 26,
+ html: '<strong>' + yr + ' 人效与编制</strong><br/>• 全职员工：<strong>' + Math.round(ftes[i] * 1000).toLocaleString() + ' 人</strong><br/>• 人均年创收：<strong>$' + revFte[i].toFixed(2) + 'M / 人</strong>'
+ });
+ });
+ if (state.ch1Series.s2) {
+ ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.8; ctx.beginPath();
+ pts.forEach(function (pt, idx) { if (idx === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+ ctx.stroke();
+ pts.forEach(function (pt) {
+ ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(pt.x, pt.y, 4.5, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + pt.v.toFixed(2) + 'M', pt.x, pt.y - 9);
+ });
+ }
+ }
+ }
+
+ function drawRadarChart() {
+ var env = prepCanvas('chartRadar');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartRadar = [];
+ var axes = isEn() ? ['First-Principles', 'Hardware Velocity', 'In-House BOM', 'RE Ownership', 'Cash Conversion'] : ['第一性原理降本', '硬件敏捷迭代速度', '核心部件垂直自制', 'RE端到端单点问责', '经常性利润转化'];
+ var series = [
+ { key: 'spcx', color: pal.c1, fill: 'rgba(51,153,255,0.24)', vals: [9.9, 9.8, 9.6, 9.7, 9.1] },
+ { key: 'nvda', color: pal.c2, fill: 'rgba(34,197,94,0.16)', vals: [9.3, 9.1, 8.2, 9.5, 9.8] },
+ { key: 'oldspace', color: pal.c3, fill: 'rgba(255,183,77,0.14)', vals: [4.2, 3.5, 3.8, 4.8, 6.2] }
+ ];
+ var cx = w / 2, cy = h / 2 + 6;
+ var radius = Math.max(60, Math.min((w - 200) / 2, h * 0.35));
+ var total = axes.length;
+
+ for (var ring = 2; ring <= 10; ring += 2) {
+ var r = (ring / 10) * radius;
+ ctx.strokeStyle = pal.grid; ctx.beginPath();
+ for (var i = 0; i < total; i++) {
+ var ang = -Math.PI / 2 + (i * 2 * Math.PI) / total;
+ var px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ }
+ ctx.closePath(); ctx.stroke();
+ }
+ axes.forEach(function (axName, a) {
+ var ang = -Math.PI / 2 + (a * 2 * Math.PI) / total;
+ var ax = cx + Math.cos(ang) * radius, ay = cy + Math.sin(ang) * radius;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, ay); ctx.stroke();
+ var lx = cx + Math.cos(ang) * (radius + 14), ly = cy + Math.sin(ang) * (radius + 15);
+ ctx.fillStyle = a === state.activePillar ? pal.c1 : pal.text;
+ ctx.font = '700 11px sans-serif';
+ ctx.textAlign = Math.abs(Math.cos(ang)) < 0.2 ? 'center' : (Math.cos(ang) > 0 ? 'left' : 'right');
+ ctx.fillText(axName, lx, ly);
+ hitRegions.chartRadar.push({
+ x: Math.min(ax, lx) - 34, y: Math.min(ay, ly) - 20, w: 70 + Math.abs(lx - ax), h: 40,
+ html: '<strong>' + axName + '</strong><br/>• SpaceX: <strong>' + series[0].vals[a] + '</strong> · 顶尖科技标杆: <strong>' + series[1].vals[a] + '</strong> · 传统军工: <strong>' + series[2].vals[a] + '</strong>'
+ });
+ });
+ series.forEach(function (s) {
+ if (!state.radarSeries[s.key]) return;
+ ctx.beginPath();
+ s.vals.forEach(function (v, idx) {
+ var th = -Math.PI / 2 + (idx * 2 * Math.PI) / total, d = (v / 10) * radius;
+ var vx = cx + Math.cos(th) * d, vy = cy + Math.sin(th) * d;
+ if (idx === 0) ctx.moveTo(vx, vy); else ctx.lineTo(vx, vy);
+ });
+ ctx.closePath();
+ ctx.fillStyle = s.fill; ctx.fill();
+ ctx.strokeStyle = s.color; ctx.lineWidth = 2.4; ctx.stroke();
+ });
+ }
+
+ function drawHorizontalBars() {
+ var env = prepCanvas('chartBars');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartBars = [];
+ var items = [
+ { label: 'Falcon 9 Block 5 一级助推器回收着陆成功率', val: 99.1, col: '#16A34A', sub: '652 / 658 次成功回收', note: '支撑单枚助推器高达 37 次复用的工程可靠性奇迹' },
+ { label: 'SpaceX 占全球年度入轨有效载荷总质量份额', val: 86.5, col: '#0073E6', sub: '>85% 全球质量统治力', note: '高频复用形成的跨代运力垄断' },
+ { label: 'SpaceX 火箭与星链核心硬件内部垂直自制率', val: 82.0, col: '#7C3AED', sub: '>80% In-House BOM', note: '白痴指数驱动自造引擎、航电、阀门与相控阵硅芯片' },
+ { label: 'SpaceX 星链连接分部营业利润率 (Q3 2026)', val: 45.1, col: '#22C55E', sub: '$2,367M / $5,248M', note: '贡献集团 84.8% 营业利润的超级现金流底座' },
+ { label: 'Rocket Lab (RKLB) 综合 GAAP 毛利率 (Q3 2026)', val: 33.6, col: '#0284C7', sub: 'Non-GAAP 38.4%', note: '商业航天第二梯队优秀垂直整合样本' },
+ { label: '传统军工代表：洛克希德马丁营业利润率 / 波音净利率', val: 10.2, col: '#D97706', sub: 'LMT ~10.2% · BA 2.5%', note: '多层转包与固定总价超支限制利润率上限' }
+ ];
+ var pad = { top: 10, right: 18, bottom: 26, left: 18 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var maxX = 100, rowH = ph / items.length;
+ items.forEach(function (it, i) {
+ var rowTop = pad.top + rowH * i;
+ var labelY = rowTop + Math.max(15, rowH * 0.35);
+ var barY = rowTop + Math.max(22, rowH * 0.52);
+ var barH = 13, bw = (it.val / maxX) * pw;
+ ctx.fillStyle = pal.text; ctx.font = '600 12px sans-serif'; ctx.textAlign = 'left';
+ ctx.fillText(it.label, pad.left, labelY);
+ ctx.fillStyle = it.col; ctx.font = '800 12px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(it.val.toFixed(1) + '%', pad.left + pw, labelY);
+ ctx.fillStyle = pal.trackBg; roundRectPath(ctx, pad.left, barY, pw, barH, 6); ctx.fill();
+ ctx.fillStyle = it.col; roundRectPath(ctx, pad.left, barY, bw, barH, 6); ctx.fill();
+ hitRegions.chartBars.push({ x: pad.left, y: rowTop, w: pw, h: rowH, html: '<strong>' + it.label + ': ' + it.val + '%</strong><br/>• ' + it.sub + '<br/>• ' + it.note });
+ });
+ }
+
+ function drawEpsComboChart() {
+ var env = prepCanvas('chartEps');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartEps = [];
+ var years = ['2022', '2023', '2024', '2025', '2026 (至11月)'];
+ var launches = [61, 98, 138, 170, 136];
+ var valB = [127, 175, 350, 800, 1900];
+ var pad = { top: 26, right: 54, bottom: 38, left: 48 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var maxL = 200, maxV = 2100;
+
+ for (var g = 0; g <= 4; g++) {
+ var r = g / 4, gy = pad.top + ph - r * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(Math.round(maxL * r) + '发', pad.left - 7, gy + 4);
+ ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+ ctx.fillText('$' + Math.round(maxV * r) + 'B', pad.left + pw + 7, gy + 4);
+ }
+ var step = pw / years.length, bw = Math.min(44, step * 0.42);
+ var pts = [];
+ years.forEach(function (yr, i) {
+ var cx = pad.left + step * (i + 0.5);
+ if (state.epsSeries.eps) {
+ var bh = (launches[i] / maxL) * ph, by = pad.top + ph - bh;
+ ctx.fillStyle = pal.c1;
+ roundRectPath(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+ ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(launches[i] + '发', cx, by + 16);
+ }
+ pts.push({ x: cx, y: pad.top + ph - (valB[i] / maxV) * ph, v: valB[i] });
+ ctx.fillStyle = pal.text; ctx.font = '700 11px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(yr, cx, pad.top + ph + 20);
+ hitRegions.chartEps.push({
+ x: pad.left + step * i, y: pad.top, w: step, h: ph + 26,
+ html: '<strong>' + yr + '</strong><br/>• 总发射次数：<strong>' + launches[i] + ' 次</strong><br/>• 估值/市值：<strong>$' + valB[i] + 'B</strong>'
+ });
+ });
+ if (state.epsSeries.oci) {
+ ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.8; ctx.beginPath();
+ pts.forEach(function (p, i) { if (i === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y); });
+ ctx.stroke();
+ pts.forEach(function (p) {
+ ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(p.x, p.y, 4.5, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(p.v >= 1000 ? ('$' + (p.v / 1000).toFixed(2) + 'T') : ('$' + p.v + 'B'), p.x, p.y - 9);
+ });
+ }
+ }
+
+ function drawSimChart() {
+ var env = prepCanvas('chartSim');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartSim = [];
+ var p = state.sim.principal, yrs = state.sim.years;
+ var baseR = state.sim.priceCagr / 100;
+ var totR = (state.sim.priceCagr + (state.sim.drip ? 4.5 : 0)) / 100;
+ var totS = [], baseS = [];
+ for (var y = 0; y <= yrs; y++) {
+ totS.push(p * Math.pow(1 + totR, y));
+ baseS.push(p * Math.pow(1 + baseR, y));
+ }
+ var maxVal = Math.max(totS[yrs], p * 1.2) * 1.1;
+ var pad = { top: 20, right: 20, bottom: 28, left: 62 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ for (var g = 0; g <= 3; g++) {
+ var gv = (maxVal / 3) * g, gy = pad.top + ph - (g / 3) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(gv >= 1000000 ? ('$' + (gv / 1000000).toFixed(1) + 'M') : ('$' + Math.round(gv / 1000) + 'k'), pad.left - 7, gy + 4);
+ }
+ var stepX = pw / yrs;
+ ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = pal.tick; ctx.lineWidth = 1.8; ctx.beginPath();
+ baseS.forEach(function (v, i) {
+ var px = pad.left + stepX * i, py = pad.top + ph - (v / maxVal) * ph;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ });
+ ctx.stroke(); ctx.restore();
+
+ ctx.strokeStyle = pal.c1; ctx.lineWidth = 2.6; ctx.beginPath();
+ totS.forEach(function (v, i) {
+ var px = pad.left + stepX * i, py = pad.top + ph - (v / maxVal) * ph;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ if (i === 0 || i === Math.floor(yrs / 2) || i === yrs) {
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('Y' + i, px, pad.top + ph + 18);
+ }
+ hitRegions.chartSim.push({
+ x: px - stepX / 2, y: pad.top, w: Math.max(10, stepX), h: ph + 20,
+ html: '<strong>第 ' + i + ' 年预估价值</strong><br/>• 含太空AI生态溢价：<strong>' + formatCurrency(totS[i]) + '</strong><br/>• 仅核心业务基准：<strong>' + formatCurrency(baseS[i]) + '</strong>'
+ });
+ });
+ ctx.stroke();
+ }
+
+ function renderAllCharts() {
+ drawCh1Chart();
+ drawRadarChart();
+ drawHorizontalBars();
+ drawEpsComboChart();
+ drawSimChart();
+ }
+
+ function wireTip(cid) {
+ var canvas = document.getElementById(cid), tip = document.getElementById('chartTooltip');
+ if (!canvas || !tip) return;
+ canvas.addEventListener('mousemove', function (e) {
+ var rect = canvas.getBoundingClientRect();
+ var x = e.clientX - rect.left, y = e.clientY - rect.top;
+ var list = hitRegions[cid] || [], hit = null;
+ for (var i = 0; i < list.length; i++) {
+ var r = list[i];
+ if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) { hit = r; break; }
+ }
+ if (hit) {
+ tip.innerHTML = hit.html;
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 300, Math.max(12, e.clientX + 14)) + 'px';
+ tip.style.top = Math.max(12, e.clientY - tip.offsetHeight - 12) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ });
+ canvas.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+ }
+
+ function applyTheme(t, silent) {
+ state.theme = t === 'dark' ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var sl = document.getElementById('sideLightBtn'), sd = document.getElementById('sideDarkBtn');
+ if (sl) sl.setAttribute('aria-pressed', state.theme === 'light' ? 'true' : 'false');
+ if (sd) sd.setAttribute('aria-pressed', state.theme === 'dark' ? 'true' : 'false');
+ renderAllCharts();
+ if (!silent) showToast(state.theme === 'dark' ? '已切换至深色模式' : '已切换至浅色模式');
+ }
+
+ function applyLang(lang, silent) {
+ state.lang = lang === 'en' ? 'en' : 'zh';
+ document.documentElement.lang = isEn() ? 'en' : 'zh-CN';
+ document.getElementById('langZhBtn').classList.toggle('active', !isEn());
+ document.getElementById('langEnBtn').classList.toggle('active', isEn());
+ var nodes = document.querySelectorAll('[data-i18n-zh]');
+ for (var i = 0; i < nodes.length; i++) {
+ var val = nodes[i].getAttribute(isEn() ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1) nodes[i].innerHTML = val;
+ else nodes[i].textContent = val;
+ }
+ }
+ document.getElementById('pillarFocusNote').innerHTML = '<div>' + (isEn() ? PILLAR_NOTES_EN : PILLAR_NOTES_ZH)[state.activePillar] + '</div>';
+ renderPeerTable();
+ renderChecklist();
+ updateSimulatorUI();
+ renderAllCharts();
+ if (!silent) showToast(isEn() ? 'Switched to English' : '已切换为中文');
+ }
+
+ // Bindings
+ document.getElementById('ch1TabA').addEventListener('click', function () {
+ state.ch1View = 'viewA';
+ this.classList.add('active'); document.getElementById('ch1TabB').classList.remove('active');
+ drawCh1Chart();
+ });
+ document.getElementById('ch1TabB').addEventListener('click', function () {
+ state.ch1View = 'viewB';
+ this.classList.add('active'); document.getElementById('ch1TabA').classList.remove('active');
+ drawCh1Chart();
+ });
+
+ document.querySelectorAll('[data-ch1-series]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var k = this.getAttribute('data-ch1-series');
+ state.ch1Series[k] = !state.ch1Series[k];
+ if (!state.ch1Series.s1 && !state.ch1Series.s2) state.ch1Series[k] = true;
+ this.classList.toggle('muted', !state.ch1Series[k]);
+ drawCh1Chart();
+ });
+ });
+
+ document.querySelectorAll('[data-eps-series]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var k = this.getAttribute('data-eps-series');
+ state.epsSeries[k] = !state.epsSeries[k];
+ if (!state.epsSeries.eps && !state.epsSeries.oci) state.epsSeries[k] = true;
+ this.classList.toggle('muted', !state.epsSeries[k]);
+ drawEpsComboChart();
+ });
+ });
+
+ document.querySelectorAll('[data-collapse-target]').forEach(function (btn) {
+ btn.addEventListener('click', function () {
+ var panel = document.getElementById(this.getAttribute('data-collapse-target'));
+ if (!panel) return;
+ var open = panel.classList.toggle('open');
+ this.innerHTML = open ? '<span>收起微观执行机制</span> <span>⌃</span>' : '<span>展开微观执行机制</span> <span>⌄</span>';
+ });
+ });
+
+ document.querySelectorAll('[data-pillar]').forEach(function (card) {
+ card.addEventListener('click', function () {
+ var idx = parseInt(this.getAttribute('data-pillar'), 10) || 0;
+ state.activePillar = idx;
+ document.querySelectorAll('[data-pillar]').forEach(function (c, i) { c.classList.toggle('active', i === idx); });
+ document.getElementById('pillarFocusNote').innerHTML = '<div>' + (isEn() ? PILLAR_NOTES_EN : PILLAR_NOTES_ZH)[idx] + '</div>';
+ drawRadarChart();
+ });
+ });
+
+ document.querySelectorAll('[data-radar-key]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var k = this.getAttribute('data-radar-key');
+ state.radarSeries[k] = !state.radarSeries[k];
+ if (!state.radarSeries.spcx && !state.radarSeries.nvda && !state.radarSeries.oldspace) state.radarSeries[k] = true;
+ this.classList.toggle('muted', !state.radarSeries[k]);
+ drawRadarChart();
+ });
+ });
+
+ document.getElementById('peerSearchInput').addEventListener('input', function () {
+ state.peerQuery = this.value;
+ renderPeerTable();
+ });
+ document.querySelectorAll('[data-peer-filter]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ state.peerFilter = this.getAttribute('data-peer-filter');
+ document.querySelectorAll('[data-peer-filter]').forEach(function (x) { x.classList.toggle('active', x === b); });
+ renderPeerTable();
+ });
+ });
+
+ var pS = document.getElementById('simPrincipalSlider'), yS = document.getElementById('simYearsSlider'), cS = document.getElementById('simCagrSlider'), dT = document.getElementById('simDripToggle');
+ pS.addEventListener('input', function () { state.sim.principal = parseFloat(this.value) || 10000; state.sim.preset = ''; updateSimulatorUI(); });
+ yS.addEventListener('input', function () { state.sim.years = parseInt(this.value, 10) || 10; state.sim.preset = ''; updateSimulatorUI(); });
+ cS.addEventListener('input', function () { state.sim.priceCagr = parseFloat(this.value) || 10; state.sim.preset = ''; updateSimulatorUI(); });
+ dT.addEventListener('change', function () { state.sim.drip = !!this.checked; updateSimulatorUI(); });
+ document.querySelectorAll('[data-preset]').forEach(function (pb) {
+ pb.addEventListener('click', function () {
+ var k = this.getAttribute('data-preset'), cfg = PRESETS[k];
+ if (!cfg) return;
+ state.sim.principal = cfg.principal; state.sim.years = cfg.years; state.sim.priceCagr = cfg.priceCagr; state.sim.drip = cfg.drip; state.sim.preset = k;
+ pS.value = cfg.principal; yS.value = cfg.years; cS.value = cfg.priceCagr; dT.checked = cfg.drip;
+ updateSimulatorUI();
+ });
+ });
+
+ document.getElementById('checklistContainer').addEventListener('change', function (e) {
+ var inp = e.target.closest('[data-check-input]');
+ if (!inp) return;
+ var idx = parseInt(inp.getAttribute('data-check-input'), 10);
+ state.checks[idx] = !!inp.checked;
+ try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+ renderChecklist();
+ });
+ document.getElementById('checkAllBtn').addEventListener('click', function () {
+ state.checks = [true, true, true, true, true, true];
+ try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+ renderChecklist();
+ showToast('已勾选全部 6 项核查指标');
+ });
+ document.getElementById('resetCheckBtn').addEventListener('click', function () {
+ state.checks = [true, true, true, false, false, false];
+ try { localStorage.setItem(STORAGE_CHECK_KEY, JSON.stringify(state.checks)); } catch (err) {}
+ renderChecklist();
+ showToast('已恢复默认核查状态');
+ });
+
+ // Suite Hub Filter & Navigation
+ document.getElementById('coHubPills').addEventListener('click', function (e) {
+ var b = e.target.closest('[data-co-cat]');
+ if (!b) return;
+ var cat = b.getAttribute('data-co-cat');
+ this.querySelectorAll('.co-hub-pill').forEach(function (p) { p.classList.toggle('active', p === b); });
+ document.querySelectorAll('#coHubList [data-co-item-cat]').forEach(function (it) {
+ it.classList.toggle('co-hub-hidden', !(cat === 'ALL' || it.getAttribute('data-co-item-cat') === cat));
+ });
+ });
+ document.getElementById('coHubList').addEventListener('click', function (e) {
+ var item = e.target.closest('[data-suite-page]');
+ if (!item) return;
+ var tf = item.getAttribute('data-suite-page');
+ if (tf === 'SpaceX企业文化与组织架构深度研究报告.html') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+ if (window.location.protocol === 'file:') window.location.href = tf;
+ else showToast('请在聊天文件列表中切换或下载同目录打开：' + tf);
+ });
+
+ // Quick Jump
+ var qIn = document.getElementById('quickJumpInput'), qPop = document.getElementById('quickJumpPopover');
+ function renderQ(kw) {
+ var q = (kw || '').trim().toLowerCase();
+ var list = QUICK_JUMP.filter(function (x) { return !q || (x.title + ' ' + x.sub).toLowerCase().indexOf(q) !== -1; });
+ qPop.innerHTML = list.map(function (x) {
+ return '<button type="button" class="quick-jump-item" data-jump-sec="' + x.sec + '"><span class="quick-jump-item-title">' + x.title + '</span><span class="quick-jump-item-sub">' + x.sub + '</span></button>';
+ }).join('');
+ qPop.classList.toggle('open', list.length > 0);
+ }
+ qIn.addEventListener('focus', function () { renderQ(qIn.value); });
+ qIn.addEventListener('input', function () { renderQ(qIn.value); });
+ qPop.addEventListener('click', function (e) {
+ var b = e.target.closest('[data-jump-sec]');
+ if (!b) return;
+ var el = document.getElementById(b.getAttribute('data-jump-sec'));
+ if (el) el.scrollIntoView({ behavior: 'smooth' });
+ qPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) { if (!e.target.closest('.quick-search-wrap')) qPop.classList.remove('open'); });
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); qIn.focus(); }
+ if (e.key === 'Escape') {
+ qPop.classList.remove('open');
+ document.getElementById('muiSidebar').classList.remove('open');
+ document.getElementById('drawerBackdrop').classList.remove('open');
+ }
+ });
+
+ var sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
+ if (window.innerWidth > 1120) {
+ var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+ if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+ else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+ try { localStorage.setItem(STORAGE_SIDEBAR_KEY, col ? '0' : '1'); } catch (err) {}
+ setTimeout(renderAllCharts, 60);
+ } else {
+ var open = sb.classList.toggle('open');
+ bd.classList.toggle('open', open);
+ }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+ document.getElementById('portalReadingTools').addEventListener('click', function (e) {
+ var tb = e.target.closest('[data-portal-theme]');
+ if (tb) {
+ var nt = tb.getAttribute('data-portal-theme');
+ applyTheme(nt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nt); } catch (err) {}
+ }
+ });
+ document.getElementById('exportHtmlBtn').addEventListener('click', function () {
+ var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+ var url = URL.createObjectURL(blob);
+ var a = document.createElement('a');
+ a.href = url; a.download = 'SpaceX企业文化与组织架构深度研究报告.html'; a.click();
+ setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+ showToast('已导出：SpaceX企业文化与组织架构深度研究报告.html');
+ });
+ document.getElementById('printPdfBtn').addEventListener('click', function () { window.print(); });
+
+ document.getElementById('appbarThemeBtn').addEventListener('click', function () {
+ var nxt = state.theme === 'dark' ? 'light' : 'dark';
+ applyTheme(nxt, false);
+ try { localStorage.setItem(STORAGE_THEME_KEY, nxt); } catch (err) {}
+ });
+ document.getElementById('langSwitchGroup').addEventListener('click', function (e) {
+ var lb = e.target.closest('[data-lang]');
+ if (!lb) return;
+ var nl = lb.getAttribute('data-lang');
+ applyLang(nl, false);
+ try { localStorage.setItem(STORAGE_LANG_KEY, nl); } catch (err) {}
+ });
+
+ window.addEventListener('scroll', function () {
+ var maxS = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+ document.getElementById('readingProgressBar').style.width = Math.min(100, (window.scrollY / maxS) * 100) + '%';
+ }, { passive: true });
+
+ try {
+ var sc = JSON.parse(localStorage.getItem(STORAGE_CHECK_KEY) || 'null');
+ if (Array.isArray(sc) && sc.length === 6) state.checks = sc.map(Boolean);
+ applyTheme((localStorage.getItem(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, ''), true);
+ applyLang((localStorage.getItem(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, ''), true);
+ } catch (e) {
+ renderPeerTable();
+ renderChecklist();
+ updateSimulatorUI();
+ renderAllCharts();
+ }
+
+ ['chartCh1', 'chartRadar', 'chartBars', 'chartEps', 'chartSim'].forEach(wireTip);
+ var rt = null;
+ window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(renderAllCharts, 70); });
+ })();
+ </script>
+</body>
+</html>

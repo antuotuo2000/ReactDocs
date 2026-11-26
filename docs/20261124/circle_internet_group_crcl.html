@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告 | 数据中心</title>
+ <meta name="description" content="Circle Internet Group, Inc. (NYSE: CRCL) 企业文化与组织架构深度研究报告：正门监管主义 (Walking Through the Front Door)、硅谷平台极客与央行级合规统帅双螺旋、30%投票权封顶公众治理、千人数字优先精兵撬动 $30.3亿 TTM 营收与 $13.9万亿单季链上清算。" />
+ 
+ <style>
+ /* ==========================================================================
+ MUI Official Branding Design System (https://mui.com/)
+ Circle (NYSE: CRCL) Corporate Culture & Organizational Architecture Monograph (Ch 00–07)
+ ========================================================================== */
+ html[data-theme="dark"] {
+ color-scheme: dark;
+ --bg-canvas: #090D16;
+ --bg-canvas-elevated: #0C1320;
+ --bg-paper: rgba(15, 25, 36, 0.90);
+ --bg-paper-solid: #0F1924;
+ --bg-subtle: rgba(19, 35, 55, 0.68);
+ --bg-hover: rgba(51, 153, 255, 0.08);
+ --bg-active: rgba(0, 115, 230, 0.16);
+ --bg-appbar: rgba(9, 13, 22, 0.86);
+
+ --border-subtle: rgba(51, 153, 255, 0.14);
+ --border-default: rgba(148, 163, 184, 0.18);
+ --border-strong: rgba(51, 153, 255, 0.42);
+ --divider: rgba(148, 163, 184, 0.12);
+
+ --text-primary: #F3F6F9;
+ --text-secondary: #B2BAC2;
+ --text-muted: #7E8C9A;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #3399FF;
+ --mui-primary-lighter: #66B2FF;
+ --mui-primary-bg: rgba(0, 115, 230, 0.15);
+ --mui-primary-border: rgba(51, 153, 255, 0.35);
+
+ --mui-success-main: #1AA251;
+ --mui-success-text: #66BB6A;
+ --mui-success-bg: rgba(26, 162, 81, 0.14);
+ --mui-success-border: rgba(102, 187, 106, 0.34);
+
+ --mui-warning-main: #DEA500;
+ --mui-warning-text: #FFB74D;
+ --mui-warning-bg: rgba(255, 183, 77, 0.14);
+ --mui-warning-border: rgba(255, 183, 77, 0.34);
+
+ --mui-error-main: #EB0014;
+ --mui-error-text: #FF6B6B;
+ --mui-error-bg: rgba(235, 0, 20, 0.14);
+ --mui-error-border: rgba(255, 107, 107, 0.34);
+
+ --mui-violet-text: #A78BFA;
+ --mui-violet-bg: rgba(139, 92, 246, 0.14);
+ --mui-violet-border: rgba(167, 139, 250, 0.32);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.24), rgba(9, 13, 22, 0) 70%);
+ --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 26px rgba(0, 0, 0, 0.30);
+ --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 153, 255, 0.22);
+
+ --chart-grid: rgba(148, 163, 184, 0.13);
+ --chart-tick: #94A3B8;
+ --chart-c1: #3399FF;
+ --chart-c2: #22C55E;
+ --chart-c3: #FFB74D;
+ --chart-c4: #A78BFA;
+ }
+
+ :root,
+ html[data-theme="light"] {
+ color-scheme: light;
+ --bg-canvas: #F8FAFC;
+ --bg-canvas-elevated: #F1F5F9;
+ --bg-paper: #FFFFFF;
+ --bg-paper-solid: #FFFFFF;
+ --bg-subtle: #F1F5F9;
+ --bg-hover: rgba(0, 115, 230, 0.06);
+ --bg-active: rgba(0, 115, 230, 0.11);
+ --bg-appbar: rgba(255, 255, 255, 0.90);
+
+ --border-subtle: #E2E8F0;
+ --border-default: #CBD5E1;
+ --border-strong: #0073E6;
+ --divider: #E2E8F0;
+
+ --text-primary: #0F1924;
+ --text-secondary: #334155;
+ --text-muted: #5B6B7C;
+
+ --mui-primary-main: #0073E6;
+ --mui-primary-light: #0059B2;
+ --mui-primary-lighter: #0059B2;
+ --mui-primary-bg: rgba(0, 115, 230, 0.09);
+ --mui-primary-border: rgba(0, 115, 230, 0.28);
+
+ --mui-success-main: #15803D;
+ --mui-success-text: #15803D;
+ --mui-success-bg: rgba(21, 128, 61, 0.09);
+ --mui-success-border: rgba(21, 128, 61, 0.26);
+
+ --mui-warning-main: #B45309;
+ --mui-warning-text: #B45309;
+ --mui-warning-bg: rgba(180, 83, 9, 0.09);
+ --mui-warning-border: rgba(180, 83, 9, 0.26);
+
+ --mui-error-main: #C62828;
+ --mui-error-text: #C62828;
+ --mui-error-bg: rgba(198, 40, 40, 0.08);
+ --mui-error-border: rgba(198, 40, 40, 0.26);
+
+ --mui-violet-text: #6D28D9;
+ --mui-violet-bg: rgba(109, 40, 217, 0.08);
+ --mui-violet-border: rgba(109, 40, 217, 0.25);
+
+ --hero-glow: radial-gradient(ellipse 86% 44% at 50% -8%, rgba(0, 115, 230, 0.10), rgba(248, 250, 252, 0) 70%);
+ --shadow-card: 0 1px 3px rgba(15, 25, 36, 0.04), 0 6px 20px rgba(15, 25, 36, 0.04);
+ --shadow-popover: 0 14px 34px rgba(15, 25, 36, 0.14), 0 0 0 1px #CBD5E1;
+
+ --chart-grid: rgba(100, 116, 139, 0.16);
+ --chart-tick: #475569;
+ --chart-c1: #0073E6;
+ --chart-c2: #16A34A;
+ --chart-c3: #D97706;
+ --chart-c4: #7C3AED;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+ body {
+ font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+ background-color: var(--bg-canvas);
+ background-image: var(--hero-glow);
+ background-attachment: fixed;
+ color: var(--text-primary);
+ line-height: 1.65;
+ overflow-x: hidden;
+ min-height: 100vh;
+ }
+ .mono { font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+ a { color: var(--mui-primary-lighter); text-decoration: none; transition: all 0.16s ease; }
+ a:hover { text-decoration: underline; }
+
+ .cite-link {
+ display: inline-flex; align-items: center; gap: 3px; font-size: 0.75rem; font-weight: 600; line-height: 1.3;
+ padding: 1px 7px; margin: 0 2px; border-radius: 6px; background: var(--mui-primary-bg);
+ border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter);
+ white-space: nowrap; vertical-align: baseline; text-decoration: none !important;
+ }
+ .cite-link:hover { background: var(--bg-active); border-color: var(--mui-primary-light); transform: translateY(-0.5px); }
+
+ #readingProgressBar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); z-index: 1300; transition: width 0.08s linear; }
+ #chartTooltip { position: fixed; pointer-events: none; z-index: 1400; padding: 10px 13px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-strong); color: var(--text-primary); font-size: 0.77rem; line-height: 1.55; box-shadow: var(--shadow-popover); display: none; max-width: 295px; }
+ #muiSnackbar { position: fixed; bottom: 22px; right: 22px; z-index: 1500; padding: 11px 16px; border-radius: 10px; background: var(--bg-paper-solid); color: var(--text-primary); border: 1px solid var(--border-strong); box-shadow: var(--shadow-popover); font-size: 0.82rem; font-weight: 600; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; }
+ #muiSnackbar.show { opacity: 1; transform: translateY(0); }
+
+ /* AppBar */
+ .mui-appbar { position: sticky; top: 0; z-index: 1100; height: 60px; background: var(--bg-appbar); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle); }
+ .mui-appbar-inner { max-width: 1560px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+ .appbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+ .appbar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+ .mui-icon-btn, .mui-theme-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); cursor: pointer; transition: all 0.16s ease; flex-shrink: 0; }
+ .mui-icon-btn:hover, .mui-theme-icon-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); color: var(--mui-primary-main); }
+ .brand-monogram { width: 36px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #0073E6 0%, #004C99 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 4px 12px rgba(0, 115, 230, 0.32); color: #FFFFFF; font-weight: 800; font-size: 0.76rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+ .breadcrumbs { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+ .breadcrumbs .crumb-link { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+ .breadcrumbs .crumb-link:hover { color: var(--mui-primary-lighter); background: var(--bg-hover); }
+ .breadcrumbs .crumb-current { color: var(--text-primary); font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+
+ .quick-search-wrap { position: relative; width: 220px; flex-shrink: 0; }
+ .quick-search-input { width: 100%; height: 34px; padding: 0 44px 0 32px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); font-size: 0.8rem; outline: none; transition: all 0.16s ease; }
+ .quick-search-input:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .quick-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; }
+ .quick-search-kbd { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); font-size: 0.68rem; font-weight: 700; padding: 1px 5px; border-radius: 5px; border: 1px solid var(--border-default); background: var(--bg-subtle); color: var(--text-muted); pointer-events: none; }
+ .quick-jump-popover { position: absolute; top: 40px; right: 0; width: 320px; max-height: 340px; overflow-y: auto; border-radius: 12px; background: var(--bg-paper-solid); box-shadow: var(--shadow-popover); padding: 6px; display: none; z-index: 1250; }
+ .quick-jump-popover.open { display: block; }
+ .quick-jump-item { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; padding: 8px 10px; border: none; border-radius: 8px; background: transparent; color: var(--text-primary); cursor: pointer; font-family: inherit; }
+ .quick-jump-item:hover { background: var(--bg-hover); }
+ .quick-jump-item-title { font-size: 0.82rem; font-weight: 700; color: var(--mui-primary-lighter); }
+ .quick-jump-item-sub { font-size: 0.74rem; color: var(--text-secondary); }
+
+ .mui-lang-switch { display: inline-flex; align-items: center; height: 34px; padding: 2px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); gap: 2px; flex-shrink: 0; }
+ .mui-lang-btn { height: 28px; padding: 0 10px; border: none; border-radius: 7px; background: transparent; color: var(--text-secondary); font-size: 0.76rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+ .mui-lang-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+ .mui-segmented { display: inline-flex; flex-wrap: wrap; align-items: center; padding: 3px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); gap: 2px; }
+ .mui-seg-btn { border: none; background: transparent; color: var(--text-secondary); font-family: inherit; font-size: 0.78rem; font-weight: 600; padding: 5px 10px; border-radius: 7px; cursor: pointer; transition: all 0.16s ease; }
+ .mui-seg-btn:hover { color: var(--text-primary); }
+ .mui-seg-btn.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15, 25, 36, 0.12); }
+
+ .mui-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 10px; font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.16s ease; border: 1px solid var(--border-subtle); background: var(--bg-paper); color: var(--text-primary); }
+ .mui-btn:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+
+ .mui-chip { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; padding: 2px 9px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-secondary); }
+ .mui-chip-primary { background: var(--mui-primary-bg); border-color: var(--mui-primary-border); color: var(--mui-primary-lighter); }
+ .mui-chip-success { background: var(--mui-success-bg); border-color: var(--mui-success-border); color: var(--mui-success-text); }
+ .mui-chip-warning { background: var(--mui-warning-bg); border-color: var(--mui-warning-border); color: var(--mui-warning-text); }
+ .mui-chip-error { background: var(--mui-error-bg); border-color: var(--mui-error-border); color: var(--mui-error-text); }
+ .mui-chip-violet { background: var(--mui-violet-bg); border-color: var(--mui-violet-border); color: var(--mui-violet-text); }
+
+ /* Layout Shell & Sidebar */
+ .layout-shell { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 28px; padding: 24px 20px 72px; align-items: start; }
+ html[data-sidebar-collapsed="1"] .layout-shell { grid-template-columns: minmax(0, 1fr); max-width: 1280px; }
+ html[data-sidebar-collapsed="1"] .mui-sidebar { display: none; }
+ .mui-sidebar { display: flex; flex-direction: column; gap: 12px; }
+ .sidebar-card { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-card); }
+ .sidebar-brand-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+ .sidebar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-primary); }
+ .sidebar-subtitle { font-size: 0.77rem; color: var(--text-secondary); line-height: 1.45; margin-top: 4px; }
+ .sidebar-mini-kpis { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider); }
+ .sidebar-mini-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.75rem; }
+ .sidebar-mini-label { color: var(--text-muted); }
+ .sidebar-mini-val { font-weight: 700; color: var(--text-primary); }
+ .nav-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding-left: 6px; }
+ .mui-nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+ .mui-nav-link { display: flex; align-items: center; gap: 9px; padding: 6px 10px; border-radius: 9px; font-size: 0.80rem; font-weight: 600; color: var(--text-secondary); position: relative; text-decoration: none !important; transition: all 0.15s ease; }
+ .mui-nav-link:hover { background: var(--bg-hover); color: var(--text-primary); }
+ .mui-nav-link.active { background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .nav-idx { font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: var(--bg-subtle); color: var(--text-muted); }
+ .mui-nav-link.active .nav-idx { background: rgba(0, 115, 230, 0.24); color: var(--mui-primary-lighter); }
+ .nav-divider { height: 1px; background: var(--divider); margin: 10px 0; }
+
+ .co-side-nav { margin-bottom: 8px; padding-bottom: 10px; border-bottom: 1px dashed var(--border-subtle); }
+ .co-side-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+ .co-side-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+ .co-hub-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); margin-bottom: 10px; }
+ .co-hub-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 4px 8px; border-radius: 7px; font-size: 0.74rem; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: inherit; }
+ .co-hub-pill[data-co-cat="ALL"] { grid-column: 1 / -1; }
+ .co-hub-pill.active { background: var(--bg-paper-solid); color: var(--mui-primary-lighter); box-shadow: 0 1px 3px rgba(15,25,36,0.12); }
+ .co-side-list { display: flex; flex-direction: column; gap: 6px; }
+ .co-hub-item { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); cursor: pointer; font-family: inherit; transition: all 0.16s ease; }
+ .co-hub-item.co-hub-hidden { display: none; }
+ .co-hub-item:hover { border-color: #3399FF; background: var(--bg-hover); }
+ .co-hub-item.active { border-color: #0073E6; background: var(--mui-primary-bg); box-shadow: 0 0 0 1px #0073E6; }
+ .co-hub-ticker { flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 800; background: var(--mui-primary-bg); color: var(--mui-primary-lighter); border: 1px solid var(--mui-primary-border); }
+ .co-hub-item.active .co-hub-ticker { background: linear-gradient(180deg, #0073E6, #0059B2); color: #FFFFFF; }
+ .co-hub-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+ .co-hub-title { font-size: 0.73rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+ .co-hub-meta { font-size: 0.63rem; color: var(--text-muted); }
+
+ .sidebar-actions { display: flex; flex-direction: column; gap: 8px; }
+ .side-theme-group, .side-tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+ .side-theme-opt, .mui-tool-btn { height: 31px; border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--bg-subtle); color: var(--text-secondary); font-family: inherit; font-size: 0.76rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 5px; cursor: pointer; transition: all 0.15s ease; }
+ .side-theme-opt:hover, .side-theme-opt.active, .mui-tool-btn:hover { color: var(--mui-primary-lighter); border-color: var(--mui-primary-main); background: var(--bg-hover); }
+
+ .drawer-backdrop { display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.64); backdrop-filter: blur(4px); z-index: 1180; }
+ .drawer-backdrop.open { display: block; }
+
+ /* Main Content Monograph Stack */
+ .main-content { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+ .mui-paper { background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 16px; box-shadow: var(--shadow-card); }
+ .section-block { scroll-margin-top: 76px; padding: 26px; }
+ .hero-card { position: relative; overflow: hidden; padding: 28px; }
+ .hero-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0073E6 0%, #3399FF 55%, #16A34A 100%); }
+
+ .status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+ .hero-overline { display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.04em; color: var(--mui-primary-lighter); margin-bottom: 10px; }
+ .hero-h1 { font-size: clamp(1.48rem, 2.4vw, 2.12rem); font-weight: 800; line-height: 1.28; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 16px; }
+ .hero-h1 .gradient-accent { background: linear-gradient(90deg, #0059B2 0%, #0073E6 60%, #15803D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ html[data-theme="dark"] .hero-h1 .gradient-accent { background: linear-gradient(90deg, #3399FF 0%, #66B2FF 55%, #66BB6A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ .lead-prose { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.78; margin-bottom: 22px; }
+ .lead-prose strong { color: var(--text-primary); font-weight: 700; }
+
+ .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+ .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+ .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+ .grid-radar { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 18px; align-items: stretch; }
+
+ .feature-card { padding: 18px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.16s ease, transform 0.16s ease; }
+ .feature-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+ .mui-avatar-icon { width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: var(--mui-primary-bg); border: 1px solid var(--mui-primary-border); color: var(--mui-primary-lighter); flex-shrink: 0; }
+ .feature-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+ .feature-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+
+ .kpi-card { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+ .kpi-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+ .kpi-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+ .kpi-value { font-size: 1.68rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.2; margin: 2px 0; }
+ .kpi-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.52; }
+
+ .sec-header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--divider); }
+ .sec-eyebrow { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mui-primary-lighter); margin-bottom: 6px; }
+ .sec-h2 { font-size: clamp(1.20rem, 1.9vw, 1.46rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.015em; line-height: 1.35; }
+ .sec-sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+
+ .mui-alert { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--mui-primary-border); background: var(--mui-primary-bg); font-size: 0.85rem; color: var(--text-primary); }
+ .mui-alert-success { border-color: var(--mui-success-border); background: var(--mui-success-bg); }
+ .mui-alert-warning { border-color: var(--mui-warning-border); background: var(--mui-warning-bg); }
+
+ /* Architecture Blueprint */
+ .arch-blueprint { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); margin-bottom: 18px; }
+ .arch-hub { text-align: center; padding: 12px 16px; border-radius: 10px; background: linear-gradient(90deg, rgba(0, 115, 230, 0.16), rgba(51, 153, 255, 0.08), rgba(0, 115, 230, 0.16)); border: 1px solid var(--mui-primary-border); margin-bottom: 12px; }
+ .arch-hub-title { font-size: 0.9rem; font-weight: 800; color: var(--text-primary); }
+ .arch-hub-sub { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+ .arch-nodes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+ .arch-node { padding: 11px 12px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .arch-node-tag { font-size: 0.68rem; font-weight: 800; color: var(--mui-primary-lighter); text-transform: uppercase; letter-spacing: 0.04em; }
+ .arch-node-name { font-size: 0.84rem; font-weight: 700; color: var(--text-primary); margin: 2px 0; }
+ .arch-node-desc { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.45; }
+ .arch-platform-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .arch-platform { padding: 10px 14px; border-radius: 10px; background: var(--mui-success-bg); border: 1px solid var(--mui-success-border); display: flex; flex-direction: column; gap: 2px; }
+ .arch-platform strong { font-size: 0.82rem; color: var(--mui-success-text); }
+ .arch-platform span { font-size: 0.75rem; color: var(--text-secondary); }
+
+ .matrix-card { padding: 18px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 10px; }
+ .matrix-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+ .matrix-card-title { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+ .matrix-card-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; }
+ .collapse-toggle { align-self: flex-start; border: none; background: transparent; color: var(--mui-primary-lighter); font-family: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; }
+ .collapse-panel { display: none; padding-top: 10px; border-top: 1px dashed var(--divider); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+ .collapse-panel.open { display: block; }
+
+ /* Chart Stage */
+ .chart-card { padding: 18px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .chart-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+ .chart-title { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+ .chart-caption { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; }
+ .canvas-stage { position: relative; width: 100%; height: 320px; overflow: hidden; }
+ .canvas-stage-tall { position: relative; width: 100%; height: 350px; overflow: hidden; }
+ .canvas-stage-bars { position: relative; width: 100%; height: 386px; overflow: hidden; }
+ .canvas-stage-sim { position: relative; width: 100%; height: 228px; overflow: hidden; }
+ .canvas-stage canvas, .canvas-stage-tall canvas, .canvas-stage-bars canvas, .canvas-stage-sim canvas { width: 100% !important; height: 100% !important; display: block; }
+ .chart-axis-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.73rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; flex-wrap: wrap; }
+ .chart-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; align-items: center; }
+ .legend-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+ .legend-pill.muted { opacity: 0.42; }
+ .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+ /* Pillars */
+ .pillar-stack { display: flex; flex-direction: column; gap: 10px; }
+ .pillar-card { width: 100%; text-align: left; padding: 15px 16px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-primary); cursor: pointer; font-family: inherit; transition: all 0.16s ease; }
+ .pillar-card:hover { border-color: var(--border-strong); }
+ .pillar-card.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); box-shadow: inset 3px 0 0 var(--mui-primary-light); }
+ .pillar-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+ .pillar-title { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); }
+ .pillar-desc { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; }
+
+ /* DataGrid */
+ .datagrid-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+ .mui-input-outlined { height: 36px; min-width: 240px; flex: 1; max-width: 390px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); color: var(--text-primary); font-family: inherit; font-size: 0.83rem; outline: none; }
+ .mui-input-outlined:focus { border-color: var(--mui-primary-light); box-shadow: 0 0 0 3px var(--mui-primary-bg); }
+ .table-wrap { width: 100%; overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); }
+ .mui-table { width: 100%; border-collapse: collapse; min-width: 860px; font-size: 0.83rem; }
+ .mui-table th { text-align: left; padding: 12px 14px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg-subtle); border-bottom: 1px solid var(--border-subtle); }
+ .mui-table td { padding: 14px; border-bottom: 1px solid var(--divider); color: var(--text-secondary); vertical-align: top; line-height: 1.58; }
+ .mui-table tr:last-child td { border-bottom: none; }
+ .mui-table tbody tr:hover td { background: var(--bg-hover); }
+ .mui-table tr.benchmark-row td { background: rgba(0, 115, 230, 0.06); }
+ mark.hl { background: rgba(255, 183, 77, 0.28); color: var(--text-primary); padding: 0 2px; border-radius: 3px; }
+
+ /* Flywheel Simulator */
+ .simulator-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 18px; margin-top: 18px; }
+ .sim-controls, .sim-output-panel { padding: 18px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); display: flex; flex-direction: column; gap: 14px; }
+ .preset-stack { display: flex; flex-direction: column; gap: 6px; }
+ .preset-btn { width: 100%; text-align: left; padding: 9px 12px; border-radius: 9px; border: 1px solid var(--border-subtle); background: var(--bg-paper-solid); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; transition: all 0.15s ease; }
+ .preset-btn.active { border-color: var(--mui-primary-light); background: var(--mui-primary-bg); color: var(--mui-primary-lighter); font-weight: 700; }
+ .slider-group { display: flex; flex-direction: column; gap: 5px; }
+ .slider-head { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; }
+ .slider-val { color: var(--mui-primary-lighter); font-weight: 800; }
+ input[type="range"].mui-slider { width: 100%; accent-color: #0073E6; cursor: pointer; height: 6px; }
+ .mui-switch-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--mui-success-border); background: var(--mui-success-bg); cursor: pointer; }
+ .mui-switch-row input { width: 18px; height: 18px; accent-color: #0073E6; cursor: pointer; }
+ .sim-readouts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+ .sim-stat-box { padding: 12px 14px; border-radius: 10px; background: var(--bg-paper-solid); border: 1px solid var(--border-subtle); }
+ .sim-stat-label { font-size: 0.73rem; color: var(--text-muted); font-weight: 700; }
+ .sim-stat-num { font-size: 1.30rem; font-weight: 800; color: var(--text-primary); margin-top: 2px; }
+
+ /* Timeline & Checklist */
+ .mui-timeline { display: flex; flex-direction: column; gap: 14px; position: relative; padding-left: 24px; margin-bottom: 20px; }
+ .mui-timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(180deg, #0073E6 0%, #3399FF 55%, #22C55E 100%); }
+ .timeline-step { position: relative; padding: 16px 18px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); }
+ .timeline-dot { position: absolute; left: -23px; top: 20px; width: 14px; height: 14px; border-radius: 50%; background: var(--mui-primary-main); border: 3px solid var(--bg-canvas); box-shadow: 0 0 0 2px var(--mui-primary-light); }
+
+ .progress-track { width: 100%; height: 8px; border-radius: 999px; background: var(--bg-subtle); overflow: hidden; border: 1px solid var(--border-subtle); margin: 10px 0 16px; }
+ .progress-fill { height: 100%; width: 50%; border-radius: 999px; background: linear-gradient(90deg, #0073E6 0%, #3399FF 60%, #22C55E 100%); transition: width 0.24s ease; }
+ .checklist-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+ .check-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border-subtle); background: var(--bg-subtle); cursor: pointer; transition: all 0.15s ease; }
+ .check-card.checked { border-color: var(--mui-primary-border); background: var(--mui-primary-bg); }
+ .check-card input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: #0073E6; cursor: pointer; flex-shrink: 0; }
+ .check-title { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+ .check-desc { font-size: 0.79rem; color: var(--text-secondary); line-height: 1.55; }
+
+ .sources-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; list-style: none; margin-top: 12px; font-size: 0.79rem; }
+ .sources-list li { display: flex; align-items: baseline; gap: 7px; color: var(--text-secondary); }
+
+ @media (max-width: 1120px) {
+ .layout-shell { grid-template-columns: minmax(0, 1fr) !important; }
+ .mui-sidebar { position: fixed; top: 60px; left: 0; bottom: 0; width: min(320px, 88vw); background: var(--bg-canvas); border-right: 1px solid var(--border-subtle); padding: 14px; z-index: 1200; transform: translateX(-105%); transition: transform 0.24s ease; overflow-y: auto; display: flex !important; }
+ .mui-sidebar.open { transform: translateX(0); }
+ .grid-4, .arch-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .grid-radar, .simulator-grid { grid-template-columns: minmax(0, 1fr); }
+ }
+ @media (max-width: 760px) {
+ .quick-search-wrap, .hide-sm { display: none; }
+ .hero-card, .section-block { padding: 18px; }
+ .grid-3, .grid-2, .grid-4, .arch-nodes, .arch-platform-bar, .checklist-grid, .sources-list, .sim-readouts { grid-template-columns: minmax(0, 1fr); }
+ }
+ @media print {
+ .mui-appbar, .mui-sidebar, #readingProgressBar, #muiSnackbar, #chartTooltip { display: none !important; }
+ .layout-shell { grid-template-columns: 1fr !important; padding: 0 !important; }
+ }
+ </style>
+<!-- PORTAL_MUI_OPT_CSS_START -->
+  <script id="portalDetailPreferences">
+    (function () {
+      try {
+        var theme = window.localStorage.getItem('mui_portal_theme_v4');
+        theme = (theme || '').replace(/^"|"$/g, '');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (window.localStorage.getItem('mui_portal_sidebar_collapsed_v1') === '1') {
+          document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style id="portalMuiOptStyle">@media (min-width:1024px){.mui-sidebar{top:72px !important;max-height:none !important;overflow-y:visible !important;padding-bottom:24px !important;gap:10px !important;}html[data-sidebar-collapsed="1"] .mui-sidebar{display:none !important;}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr) !important;}}.sidebar-card{padding:12px 14px !important;flex-shrink:0 !important;}.sidebar-subtitle{margin:4px 0 8px !important;font-size:0.77rem !important;line-height:1.4 !important;}.sidebar-mini-kpis{gap:4px !important;padding-top:8px !important;}.mui-sidebar .mui-nav-list{gap:2px !important;}.mui-ext-nav-link{padding:4px 8px !important;font-size:0.77rem !important;line-height:1.32 !important;}.mui-ext-nav-left > span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mui-nav-link{padding:5px 10px !important;font-size:0.80rem !important;}.mui-chip{box-sizing:border-box !important;display:inline-flex !important;flex-wrap:wrap !important;align-items:center !important;max-width:100% !important;min-width:0 !important;white-space:normal !important;height:auto !important;min-height:24px;line-height:1.35 !important;padding:3px 10px !important;overflow-wrap:anywhere !important;word-break:break-word !important;text-align:left !important;}.appbar-left .mui-chip{white-space:nowrap !important;flex-wrap:nowrap !important;max-width:190px !important;overflow:hidden !important;text-overflow:ellipsis !important;display:inline-block !important;}.sidebar-brand-top,.hero-overline,.mui-hero-badges,.kpi-top,.matrix-card-head{flex-wrap:wrap !important;gap:6px !important;max-width:100% !important;min-width:0 !important;}@media (max-width:1023px){.mui-sidebar{width:min(320px,88vw) !important;max-width:88vw !important;box-sizing:border-box !important;overflow-x:hidden !important;overflow-y:auto !important;-webkit-overflow-scrolling:touch;}.mui-sidebar .sidebar-card{width:100% !important;max-width:100% !important;min-width:0 !important;box-sizing:border-box !important;overflow:visible !important;}.co-side-home{padding:4px 10px;min-height:28px;font-size:0.72rem;}.co-hub-btn{min-height:36px;font-size:0.76rem;}.co-hub-pills{grid-template-columns:repeat(2,minmax(0,1fr)) !important;overflow:visible !important;gap:6px;padding:6px;}.co-hub-pill{min-height:38px;padding:7px 10px;font-size:0.78rem;}.co-side-list{max-height:none !important;overflow:visible !important;gap:7px !important;padding:4px 2px !important;margin:0 !important;}.co-hub-item{height:auto !important;min-height:0 !important;padding:9px 10px !important;}}.co-side-nav{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--border-subtle,#e2e8f0);}.co-side-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;}.co-side-title{font-size:0.72rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.co-side-home{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:0.70rem;font-weight:700;text-decoration:none !important;flex-shrink:0;color:#0073E6 !important;background:rgba(0,115,230,0.08);border:1px solid rgba(0,115,230,0.22);transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}.co-side-home:hover{background:rgba(0,115,230,0.15);border-color:#0073E6;}[data-theme="dark"] .co-side-home,html.dark .co-side-home{color:#66B2FF !important;background:rgba(51,153,255,0.14);border-color:rgba(51,153,255,0.3);}.co-side-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}.co-hub-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:30px;padding:0 8px;border-radius:8px;font-size:0.74rem;font-weight:700;border:1px solid var(--border-default,#cbd5e1);background:var(--bg-paper,#ffffff);color:var(--text-primary,#0f172a) !important;text-decoration:none !important;cursor:pointer;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-btn:hover{border-color:#3399FF;color:#0073E6 !important;background:rgba(0,115,230,0.06);transform:translateY(-1px);}.co-hub-btn:active{transform:translateY(0) scale(0.98);}.co-hub-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#e2e8f0);margin-bottom:10px;}.co-hub-pill{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:34px;padding:6px 10px;border-radius:8px;font-size:0.76rem;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-secondary,#475569);transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-pill[data-co-cat="ALL"]{grid-column:1 / -1;}.co-hub-pill:not(.active):hover{color:var(--text-primary,#0f172a);background:rgba(255,255,255,0.55);}[data-theme="dark"] .co-hub-pill:not(.active):hover,html.dark .co-hub-pill:not(.active):hover{color:#F8FAFC;background:rgba(255,255,255,0.06);}.co-hub-pill.active{background:var(--bg-paper,#ffffff);color:#0073E6;box-shadow:0 1px 3px rgba(15,25,36,0.12);}[data-theme="dark"] .co-hub-pill.active,html.dark .co-hub-pill.active{color:#66B2FF;}.co-side-list{display:flex;flex-direction:column;gap:6px;max-height:none !important;overflow:visible !important;padding:4px 2px;margin:0;}.co-hub-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;border:1px solid var(--border-subtle,#e2e8f0);background:var(--bg-paper,#ffffff);text-decoration:none !important;min-width:0;transition:transform 0.16s cubic-bezier(0.4,0,0.2,1),background-color 0.16s cubic-bezier(0.4,0,0.2,1),border-color 0.16s cubic-bezier(0.4,0,0.2,1),box-shadow 0.16s cubic-bezier(0.4,0,0.2,1);}.co-hub-item.co-hub-hidden{display:none !important;}.co-hub-item:hover{border-color:#3399FF;background:rgba(0,115,230,0.05);transform:translateY(-1px);}.co-hub-item:active{transform:translateY(0) scale(0.99);}.co-hub-item.active{border-color:#0073E6;background:rgba(0,115,230,0.08);box-shadow:0 0 0 1px #0073E6,0 2px 8px rgba(0,115,230,0.14);}[data-theme="dark"] .co-hub-item.active,html.dark .co-hub-item.active{border-color:#3399FF;background:rgba(51,153,255,0.14);box-shadow:0 0 0 1px #3399FF,0 2px 8px rgba(0,115,230,0.24);}.co-hub-ticker{flex-shrink:0;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.66rem;font-weight:800;background:rgba(0,115,230,0.09) !important;color:#0073E6 !important;border:1px solid rgba(0,115,230,0.22) !important;transition:all 0.16s cubic-bezier(0.4,0,0.2,1);}[data-theme="dark"] .co-hub-ticker,html.dark .co-hub-ticker{background:rgba(51,153,255,0.14) !important;color:#66B2FF !important;border-color:rgba(51,153,255,0.28) !important;}.co-hub-item.active .co-hub-ticker{background:linear-gradient(180deg,#0073E6 0%,#0059B2 100%) !important;color:#FFFFFF !important;border-color:#0059B2 !important;}.co-hub-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}.co-hub-title{font-size:0.73rem;font-weight:700;line-height:1.3;color:var(--text-primary,#0f172a) !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.co-hub-meta{font-size:0.63rem;color:var(--text-muted,#64748b) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}main > section,.section-block,.mui-section{content-visibility:visible !important;contain-intrinsic-size:none !important;}@media (max-width:720px){html,body{overflow-x:hidden;max-width:100vw;}.mui-chip,.mui-segmented button,.cite-link{white-space:normal !important;max-width:100%;overflow-wrap:anywhere;}.mui-input-outlined{max-width:100%;min-width:0;}.mui-appbar{padding:0 12px !important;}.mui-sidebar .mui-nav-link,.mui-sidebar .mui-ext-nav-link{min-height:36px;}}@media (max-width:440px){.appbar-left .mui-chip{display:none !important;}}</style>
+  <style id="portalDetailChrome">html{--portal-detail-width:1560px;--portal-detail-gutter:20px}.mui-appbar{position:sticky!important;top:0!important;height:60px!important;z-index:1100!important;padding:0!important;background:var(--bg-appbar,rgba(255,255,255,.92))!important;border-bottom:1px solid var(--border-subtle,#dce5ef)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.mui-appbar .mui-appbar-inner{display:flex!important;justify-content:space-between;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:var(--portal-detail-width);height:100%;padding:0 var(--portal-detail-gutter)!important;margin:0 auto}.mui-appbar .appbar-left,.mui-appbar .appbar-right{display:flex;align-items:center;gap:8px;min-width:0}.mui-appbar .appbar-left{flex:1}.mui-appbar .appbar-right{flex-shrink:0}.mui-appbar:is(.breadcrumbs,.appbar-breadcrumb){display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;font-size:.85rem}.mui-appbar:is(.crumb-current,.appbar-breadcrumb-cur){overflow:hidden;text-overflow:ellipsis;min-width:0;font-weight:700}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle){display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px!important;height:34px!important;padding:0!important;border-radius:10px!important;border:1px solid var(--border-subtle,#dce5ef)!important;background:var(--bg-paper,#fff)!important;color:var(--text-secondary,#334155)!important;cursor:pointer}.mui-appbar:is(#sidebarToggleBtn,#drawerToggleBtn,#appbarThemeBtn,#themeToggle):hover{color:var(--mui-primary-lighter,#0073e6)!important;border-color:var(--mui-primary-lighter,#0073e6)!important}.mui-appbar #langSwitchGroup{display:inline-flex!important;align-items:center;gap:2px;height:34px;padding:2px!important;border-radius:10px;background:var(--bg-subtle,#f1f5f9);border:1px solid var(--border-subtle,#dce5ef);flex-shrink:0}.mui-appbar #langSwitchGroup button{height:28px;padding:0 10px!important;border:0;border-radius:7px;font:inherit;font-size:.76rem;font-weight:700;background:transparent;color:var(--text-secondary,#334155);cursor:pointer;white-space:nowrap}.mui-appbar #langSwitchGroup button.active{background:var(--bg-paper,#fff);color:var(--mui-primary-lighter,#0059b2);box-shadow:0 1px 3px rgba(15,25,36,.12)}.mui-appbar .quick-search-wrap{position:relative;width:220px;flex-shrink:0}.mui-appbar .quick-search-input{width:100%;height:34px;border-radius:10px;background:var(--bg-paper,#fff);border:1px solid var(--border-subtle,#dce5ef);color:var(--text-primary,#0f1924)}#appbarThemeLabel{display:none!important}main code:not(pre code){font:inherit;color:inherit;background:none;border:0;padding:0;box-shadow:none}#muiSidebar .sidebar-card{border-radius:14px;border:1px solid var(--border-subtle,#dce5ef);background:var(--bg-paper,#fff);box-shadow:var(--shadow-card,0 1px 3px rgba(15,25,36,.05))}#muiSidebar .portal-reading-tools{display:flex;flex-direction:column;gap:8px}#muiSidebar .portal-reading-tools .side-theme-group,#muiSidebar .portal-reading-tools .side-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}#muiSidebar .portal-reading-tools button{font:inherit;font-size:.76rem;min-height:30px;color:var(--text-secondary,#334155);border:1px solid var(--border-subtle,#dce5ef);border-radius:8px;background:var(--bg-subtle,#f1f5f9);cursor:pointer}#muiSidebar .portal-reading-tools button[aria-pressed="true"],#muiSidebar .portal-reading-tools button:hover{color:var(--mui-primary-lighter,#0059b2);border-color:var(--mui-primary-lighter,#0073e6)}#muiSidebar .portal-reading-tools button svg{margin-right:4px;vertical-align:middle}.portal-detail-extras{display:flex;flex-wrap:wrap;gap:5px}.portal-detail-extras:empty{display:none}#portalDetailBackdrop{display:none;position:fixed;inset:0;z-index:1190;background:rgba(9,13,22,.5)}@media(min-width:1024px){html .layout-shell{grid-template-columns:280px minmax(0,1fr)!important}html[data-sidebar-collapsed="1"] .layout-shell{grid-template-columns:minmax(0,1fr)!important;box-sizing:border-box;width:100%!important;max-width:var(--portal-detail-width)!important;margin-inline:auto!important;padding-inline:var(--portal-detail-gutter)!important}#muiSidebar{position:static!important;align-self:start;width:auto!important;transform:none!important;height:auto!important;max-height:none!important;overflow:visible!important;z-index:auto!important}html[data-sidebar-collapsed="1"] #muiSidebar{display:none!important}}@media(max-width:1023px){html .layout-shell{grid-template-columns:minmax(0,1fr)!important}#muiSidebar{position:fixed!important;inset:0 auto 0 0!important;width:min(320px,88vw)!important;max-height:100dvh!important;z-index:1200!important;display:flex!important;padding:16px 12px!important;background:var(--bg-paper-solid,var(--bg-canvas,#fff));transform:translateX(-104%)!important;visibility:hidden;transition:transform .24s ease,visibility .24s;overflow:auto!important}body.portal-detail-drawer #muiSidebar{transform:translateX(0)!important;visibility:visible}body.portal-detail-drawer #portalDetailBackdrop{display:block}}@media(max-width:850px){.mui-appbar .mui-appbar-inner{padding:0 12px!important}.mui-appbar .appbar-left .mui-chip{display:none!important}}@media(max-width:760px){.mui-appbar .quick-search-wrap{display:none!important}}@media print{.mui-appbar,#muiSidebar,#portalDetailBackdrop{display:none!important}}</style>
+  <script id="portalDetailMenu">
+    (function () {
+      var root = document.documentElement;
+      var sidebarKey = 'mui_portal_sidebar_collapsed_v1';
+      var wide = matchMedia('(min-width:1024px)');
+      function setCollapsed(active) {
+        if (active) root.setAttribute('data-sidebar-collapsed', '1');
+        else root.removeAttribute('data-sidebar-collapsed');
+      }
+      function syncSidebar() {
+        try { setCollapsed(localStorage.getItem(sidebarKey) === '1'); } catch (error) {}
+      }
+      function closeDrawer() {
+        if (document.body) document.body.classList.remove('portal-detail-drawer');
+        updateSidebarButton();
+      }
+      function updateSidebarButton() {
+        var control = document.querySelector('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (!control) return;
+        var expanded = wide.matches ? root.getAttribute('data-sidebar-collapsed') !== '1'
+          : document.body.classList.contains('portal-detail-drawer');
+        control.setAttribute('aria-expanded', String(expanded));
+        control.setAttribute('aria-controls', 'muiSidebar');
+      }
+      function syncMenu() {
+        var zh = document.getElementById('langZhBtn');
+        var en = document.getElementById('langEnBtn');
+        if (!zh || !en) return;
+        var english = en.classList.contains('active') || (!zh.classList.contains('active') && root.lang === 'en');
+        if (root.lang !== (english ? 'en' : 'zh-CN')) root.lang = english ? 'en' : 'zh-CN';
+        zh.setAttribute('aria-pressed', String(!english));
+        en.setAttribute('aria-pressed', String(english));
+        var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        document.querySelectorAll('#muiSidebar [data-portal-theme],#muiSidebar [data-side-theme]').forEach(function (button) {
+          var pressed = (button.dataset.portalTheme || button.dataset.sideTheme) === theme;
+          button.setAttribute('aria-pressed', String(pressed));
+        });
+        for (var id of ['sideThemeLightBtn','sideThemeDarkBtn']) {
+          var button = document.getElementById(id);
+          if (button) button.setAttribute('aria-pressed', String(id === (theme === 'dark' ? 'sideThemeDarkBtn' : 'sideThemeLightBtn')));
+        }
+        document.querySelectorAll('#companySubfolderHub [data-i18n-zh],.portal-reading-tools [data-portal-zh],.portal-menu-text').forEach(function (node) {
+          var label = node.getAttribute(english ? 'data-portal-en' : 'data-portal-zh')
+            || node.getAttribute(english ? 'data-i18n-en' : 'data-i18n-zh');
+          if (label && node.textContent !== label) node.textContent = label;
+        });
+        var themeButton = document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)');
+        if (themeButton) {
+          var themeLabel = english ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+            : (theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+          themeButton.setAttribute('aria-label', themeLabel);
+          themeButton.title = themeLabel;
+        }
+        updateSidebarButton();
+      }
+      function addTools() {
+        var sidebar = document.getElementById('muiSidebar');
+        if (!sidebar) return;
+        var tools = sidebar.querySelector('.sidebar-actions') || document.getElementById('portalReadingTools');
+        if (!tools) return;
+        tools.classList.add('portal-reading-tools');
+        var extras = document.createElement('div');
+        extras.className = 'portal-detail-extras';
+        var controls = document.querySelectorAll('.mui-appbar :is(#appbarDensityBtn,#densityComfortBtn,#densityCompactBtn,#densityComfBtn,#densityCompBtn)');
+        controls.forEach(function (button) { extras.appendChild(button); });
+        if (extras.childElementCount) tools.appendChild(extras);
+      }
+      syncSidebar();
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('.mui-appbar :is(#sidebarToggleBtn,#drawerToggleBtn)');
+        if (toggle) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (wide.matches) {
+            var collapsed = root.getAttribute('data-sidebar-collapsed') !== '1';
+            setCollapsed(collapsed);
+            try { localStorage.setItem(sidebarKey, collapsed ? '1' : '0'); } catch (error) {}
+            window.dispatchEvent(new Event('resize'));
+          } else document.body.classList.toggle('portal-detail-drawer');
+          updateSidebarButton();
+          return;
+        }
+        if (event.target.closest('#portalDetailBackdrop,#muiSidebar .mui-nav-link')) closeDrawer();
+        var mode = event.target.closest('[data-portal-theme]');
+        if (mode && (root.getAttribute('data-theme') || 'light') !== mode.dataset.portalTheme) {
+          document.querySelector('.mui-appbar :is(#appbarThemeBtn,#themeToggle)')?.click();
+        }
+        if (event.target.closest('[data-portal-print]')) window.print();
+        if (event.target.closest('[data-portal-export]')) {
+          var original = document.getElementById('exportHtmlBtn') || document.getElementById('sideExportBtn');
+          if (original) original.click();
+          else {
+            var url = URL.createObjectURL(new Blob(['<!doctype html>', root.outerHTML], {type:'text/html;charset=utf-8'}));
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = location.pathname.split('/').pop() || 'report.html';
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+          }
+        }
+        if (event.target.closest('#langZhBtn,#langEnBtn')) queueMicrotask(syncMenu);
+      }, true);
+      window.addEventListener('storage', function (event) {
+        if (event.key === sidebarKey) syncSidebar();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeDrawer();
+      });
+      wide.addEventListener('change', closeDrawer);
+      document.addEventListener('DOMContentLoaded', function () {
+        addTools();
+        var en = document.getElementById('langEnBtn');
+        var observer = new MutationObserver(syncMenu);
+        observer.observe(root, {attributes:true,attributeFilter:['lang','data-lang','data-theme','data-sidebar-collapsed']});
+        if (en) observer.observe(en, {attributes:true,attributeFilter:['class']});
+        syncMenu();
+      });
+    })();
+  </script>
+
+  <script id="portalReportProse">
+    (function () {
+      'use strict';
+      var markup = /<a\s+([^<>]*\bclass=["']cite-link["'][^<>]*)>([^<>]*)<\/a>|<(em|strong|code)>([^<>]*)<\/\3>|\*\*([^*\r\n]+)\*\*|`([^`\r\n]+)`|(?<![\w*])\*(\S(?:[^*\r\n]*?\S)?)\*(?![\w*])/gi;
+      var skip = 'a, code, pre, script, style, textarea, template, [contenteditable]';
+
+      function makeCitation(attributes, label) {
+        var href = /(?:^|\s)href=(?:"([^"]+)"|'([^']+)')/i.exec(attributes);
+        if (!href) return null;
+        var url;
+        try { url = new URL((href[1] || href[2]).replace(/&amp;/g, '&')); }
+        catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+        var link = document.createElement('a');
+        link.className = 'cite-link';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label.replace(/&amp;/g, '&');
+        return link;
+      }
+
+      function formatText(node) {
+        var value = node.nodeValue;
+        markup.lastIndex = 0;
+        if (!markup.test(value) || !node.parentElement || node.parentElement.closest(skip)) return;
+        markup.lastIndex = 0;
+        var result = document.createDocumentFragment(), offset = 0, match;
+        while ((match = markup.exec(value))) {
+          var element = null;
+          if (match[1]) {
+            element = makeCitation(match[1], match[2]);
+          } else if (match[6]) {
+            element = document.createTextNode(match[6]);
+          } else {
+            element = document.createElement(match[3] ? match[3].toLowerCase() : match[7] ? 'em' : 'strong');
+            element.textContent = match[4] || match[5] || match[7] || '';
+          }
+          if (!element) continue;
+          result.append(value.slice(offset, match.index), element);
+          offset = markup.lastIndex;
+        }
+        if (!offset) return;
+        result.append(value.slice(offset));
+        node.replaceWith(result);
+      }
+
+      function formatVisibleReportProse(root) {
+        if (root.nodeType === Node.TEXT_NODE) { formatText(root); return; }
+        if (root.nodeType !== Node.ELEMENT_NODE || root.closest(skip)) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        var pending = [], node;
+        while ((node = walker.nextNode())) pending.push(node);
+        pending.forEach(formatText);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelector('main');
+        if (!main) return;
+        formatVisibleReportProse(main);
+        // Only inspect the nodes a report or language switch actually changes.
+        new MutationObserver(function (changes) {
+          changes.forEach(function (change) {
+            if (change.type === 'characterData') formatText(change.target);
+            else change.addedNodes.forEach(formatVisibleReportProse);
+          });
+        }).observe(main, {subtree:true, childList:true, characterData:true});
+      });
+    })();
+  </script>
+<!-- PORTAL_MUI_OPT_CSS_END -->
+</head>
+<body id="top">
+<div id="portalDetailBackdrop" aria-hidden="true"></div>
+ <div id="readingProgressBar"></div>
+ <div id="drawerBackdrop" class="drawer-backdrop"></div>
+ <div id="chartTooltip"></div>
+ <div id="muiSnackbar" role="status" aria-live="polite"></div>
+
+ <!-- Sticky MUI AppBar -->
+ <header class="mui-appbar">
+ <div class="mui-appbar-inner">
+ <div class="appbar-left">
+ <button type="button" id="sidebarToggleBtn" class="mui-icon-btn" aria-label="切换目录侧边栏" title="展开/收起章节目录">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+ </button>
+ <span class="brand-monogram mono">CRCL</span>
+ <nav class="breadcrumbs" aria-label="面包屑导航">
+ <a class="crumb-link hide-sm" href="../index.html">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--mui-primary-main);"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6.007 6.007 0 0 1-6 6z"/></svg>
+ <span data-i18n-zh="数据中心" data-i18n-en="Research Hub">数据中心</span>
+ </a>
+ <span class="hide-sm" style="opacity:0.45;">/</span>
+ <span class="crumb-current" data-i18n-zh="Circle (CRCL) 企业文化与组织架构研报" data-i18n-en="Circle (CRCL) Corporate Culture &amp; Org Report">Circle (CRCL) 企业文化与组织架构研报</span>
+ </nav>
+ <span class="mui-chip mui-chip-primary mono hide-sm">NYSE: CRCL</span>
+ <span class="mui-chip mui-chip-success mono hide-sm">FY2025 10-K · 2026 DEF 14A</span>
+ </div>
+
+ <div class="appbar-right">
+ <div class="quick-search-wrap">
+ <span class="quick-search-icon">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ </span>
+ <input type="search" id="quickJumpInput" class="quick-search-input" placeholder="检索章节或指标…" aria-label="快速跳转章节或指标" autocomplete="off" />
+ <span class="quick-search-kbd mono">⌘K</span>
+ <div id="quickJumpPopover" class="quick-jump-popover"></div>
+ </div>
+ <div id="langSwitchGroup" class="mui-lang-switch" role="group" aria-label="语言切换">
+ <button type="button" id="langZhBtn" class="mui-lang-btn active" data-lang="zh" aria-pressed="true">中文</button>
+ <button type="button" id="langEnBtn" class="mui-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+ </div>
+ <button type="button" id="appbarThemeBtn" class="mui-theme-icon-btn" aria-label="切换深浅色主题" title="切换浅色 / 深色主题">
+ <span id="appbarThemeIcon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></span>
+ </button>
+ </div>
+ </div>
+ </header>
+
+ <div class="layout-shell">
+ <!-- Left Sidebar -->
+ <aside id="muiSidebar" class="mui-sidebar" aria-label="研究章节目录与套件导航">
+ <div class="sidebar-card">
+ <div class="sidebar-brand-top">
+ <span class="mui-chip mui-chip-primary mono">CRCL · CORPORATE CULTURE</span>
+ </div>
+ <div class="sidebar-title" data-i18n-zh="Circle 企业文化研报" data-i18n-en="Circle Culture Monograph">Circle 企业文化研报</div>
+ <p class="sidebar-subtitle" data-i18n-zh="正门监管主义 × 协议开放中立 × 硅谷极客与央行治理双螺旋 × 30%投票权封顶公众问责" data-i18n-en="Front-Door Regulatory First × Open Protocol Neutrality × Tech-Policy Dual Helix × 30% Voting Cap">正门监管主义 × 协议开放中立 × 硅谷极客与央行治理双螺旋 × 30%投票权封顶公众问责</p>
+
+ <div class="sidebar-mini-kpis">
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="组织形态与治理" data-i18n-en="Org &amp; Governance">组织形态与治理</span>
+ <span class="sidebar-mini-val mono" data-i18n-zh="数字优先 · 30%票权封顶" data-i18n-en="Digital-First · 30% Cap">数字优先 · 30%票权封顶</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="精兵编制 / TTM人效" data-i18n-en="FTEs / TTM Rev per FTE">精兵编制 / TTM人效</span>
+ <span class="sidebar-mini-val mono">~1,045人 · ~$2.90M</span>
+ </div>
+ <div class="sidebar-mini-row">
+ <span class="sidebar-mini-label" data-i18n-zh="Q3'26 RLDC / EBITDA率" data-i18n-en="Q3'26 RLDC / EBITDA">Q3'26 RLDC / EBITDA率</span>
+ <span class="sidebar-mini-val mono">52.4% · 70.0%</span>
+ </div>
+ </div>
+ </div>
+
+ <nav class="sidebar-card" aria-label="套件导航与章节目录">
+ <!-- SITE_RELATED_NAV_START -->
+        <div class="co-side-nav" id="companySubfolderHub" data-co-key="20261124">
+          <div class="co-side-head">
+            <span class="co-side-title mono">20261124 · 25/53</span>
+            <a href="../index.html" class="co-side-home" data-i18n-zh="← 首页" data-i18n-en="← Home">← 首页</a>
+          </div>
+          <div class="co-side-actions">
+            <a class="co-hub-btn" id="coHubPrevBtn" href="circle_internet_group_crcl (1).html" data-i18n-zh="← 上一篇" data-i18n-en="← Prev">← 上一篇</a>
+            <a class="co-hub-btn" id="coHubNextBtn" href="meta.html" data-i18n-zh="下一篇 →" data-i18n-en="Next →">下一篇 →</a>
+          </div>
+          <div class="co-hub-pills">
+            <button type="button" class="co-hub-pill active" data-co-cat="ALL" data-i18n-zh="全部 (53)" data-i18n-en="All (53)">全部 (53)</button>
+            <button type="button" class="co-hub-pill" data-co-cat="Company" data-i18n-zh="公司深度 (53)" data-i18n-en="Company (53)">公司深度 (53)</button>
+          </div>
+          <div class="co-side-list">
+            <a class="co-hub-item" data-co-item-cat="Company" href="Meta未来十年（2026–2032）战略图谱.html" title="Meta META 2026–2032 战略与增长曲线"><span class="co-hub-ticker mono">01</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta META 2026–2032 战略与增长曲线" data-i18n-en="Meta 2026–2032 &amp;">Meta META 2026–2032 战略与增长曲线</span><span class="co-hub-meta mono">Meta未来十年（2026–2032）战略图谱.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (1).html" title="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">02</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告" data-i18n-en="Google Alphabet Inc. (GOOGL) Corporate Culture &amp; Org Architecture Deep Dive">谷歌公司 Alphabet Inc. (GOOGL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">alphabet_inc_googl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl (2).html" title="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学"><span class="co-hub-ticker mono">03</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学" data-i18n-en="GoogleCorporate Culture &amp;: Holding, AI &amp; People">谷歌企业文化与组织操作系统图谱：控股伞隔离、AI大一统与实证人才科学</span><span class="co-hub-meta mono">alphabet_inc_googl (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl.html" title="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">04</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解" data-i18n-en="Google Alphabet Inc. (GOOGL) Business Model Deep DiveBreakdown">谷歌公司 Alphabet Inc. (GOOGL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">alphabet_inc_googl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="alphabet_inc_googl3.html" title="谷歌未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">05</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="谷歌未来十年（2026–2032）战略图谱" data-i18n-en="Google Y (2026–2032)">谷歌未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">alphabet_inc_googl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn (1).html" title="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">06</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告" data-i18n-en="Amazon.com (AMZN) Corporate Culture &amp; Org Architecture Deep Dive">亚马逊 Amazon.com (AMZN) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">amazon_com_amzn (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn.html" title="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解"><span class="co-hub-ticker mono">07</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解" data-i18n-en="Amazon.com (AMZN) Business Model Deep DiveBreakdown">亚马逊 Amazon.com (AMZN) 商业模式架构深度拆解</span><span class="co-hub-meta mono">amazon_com_amzn.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn3.html" title="亚马逊未来十年（2026–2032）战略图谱"><span class="co-hub-ticker mono">08</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊未来十年（2026–2032）战略图谱" data-i18n-en="Amazon Y (2026–2032)">亚马逊未来十年（2026–2032）战略图谱</span><span class="co-hub-meta mono">amazon_com_amzn3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="amazon_com_amzn4.html" title="亚马逊企业文化与组织操作系统"><span class="co-hub-ticker mono">09</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="亚马逊企业文化与组织操作系统" data-i18n-en="AmazonCorporate Culture &amp;">亚马逊企业文化与组织操作系统</span><span class="co-hub-meta mono">amazon_com_amzn4.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic.html" title="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动"><span class="co-hub-ticker mono">10</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动" data-i18n-en="Anthropic Corporate Culture &amp;:, &amp;">Anthropic 企业文化与组织操作系统图谱：信托立宪、白盒对齐与双核驱动</span><span class="co-hub-meta mono">anthropic.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_2026_2032.html" title="Anthropic 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">11</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Anthropic 2026–2032 &amp;">Anthropic 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">anthropic_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant (1).html" title="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">12</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告" data-i18n-en="Anthropic, PBC (ANT) Corporate Culture &amp; Org Architecture Deep Dive">Anthropic, PBC (ANT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">anthropic_pbc_ant (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="anthropic_pbc_ant.html" title="Anthropic, PBC (ANT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">13</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Anthropic, PBC (ANT) 商业模式架构深度拆解" data-i18n-en="Anthropic, PBC (ANT) Business Model Deep DiveBreakdown">Anthropic, PBC (ANT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">anthropic_pbc_ant.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl (1).html" title="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">14</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Corporate Culture &amp; Org Architecture Deep Dive">苹果公司 Apple Inc. (AAPL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">apple_inc_aapl (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl.html" title="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">15</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解" data-i18n-en="Apple Inc. Apple Inc. (AAPL) Business Model Deep DiveBreakdown">苹果公司 Apple Inc. (AAPL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">apple_inc_aapl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl2.html" title="苹果公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">16</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Apple Inc. 2026–2032 &amp;">苹果公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">apple_inc_aapl2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="apple_inc_aapl3.html" title="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承"><span class="co-hub-ticker mono">17</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承" data-i18n-en="AppleCorporate Culture &amp;:, &amp;">苹果企业文化与组织操作系统图谱：单一损益表、专家治企与三代传承</span><span class="co-hub-meta mono">apple_inc_aapl3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_2026_2032.html" title="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">18</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Arm Holdings Arm 2026–2032 &amp;">安谋控股 Arm 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">arm_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (1).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">19</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp; Org Architecture Deep Dive">安谋控股 Arm Holdings (ARM) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">arm_holdings_arm (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm (2).html" title="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱"><span class="co-hub-ticker mono">20</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱" data-i18n-en="Arm Holdings (ARM) Corporate Culture &amp;">安谋控股 Arm Holdings (ARM) 企业文化与组织操作系统图谱</span><span class="co-hub-meta mono">arm_holdings_arm (2).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="arm_holdings_arm.html" title="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解"><span class="co-hub-ticker mono">21</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解" data-i18n-en="Arm Holdings (ARM) Business Model Deep DiveBreakdown">安谋控股 Arm Holdings (ARM) 商业模式架构深度拆解</span><span class="co-hub-meta mono">arm_holdings_arm.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle.html" title="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理"><span class="co-hub-ticker mono">22</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理" data-i18n-en="Circle Corporate Culture &amp;:, &amp;">Circle 企业文化与组织操作系统图谱：正门合规、协议中立与双螺旋治理</span><span class="co-hub-meta mono">circle.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_2026_2032.html" title="Circle 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">23</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Circle 2026–2032 &amp;">Circle 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">circle_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="circle_internet_group_crcl (1).html" title="Circle Internet Group (CRCL) 商业模式架构深度拆解"><span class="co-hub-ticker mono">24</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 商业模式架构深度拆解" data-i18n-en="Circle Internet Group (CRCL) Business Model Deep DiveBreakdown">Circle Internet Group (CRCL) 商业模式架构深度拆解</span><span class="co-hub-meta mono">circle_internet_group_crcl (1).html</span></span></a>
+            <a class="co-hub-item active" data-co-item-cat="Company" href="circle_internet_group_crcl.html" title="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">25</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告" data-i18n-en="Circle Internet Group (CRCL) Corporate Culture &amp; Org Architecture Deep Dive">Circle Internet Group (CRCL) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">circle_internet_group_crcl.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta.html" title="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力"><span class="co-hub-ticker mono">26</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力" data-i18n-en="MetaCorporate Culture &amp;: People, &amp; Compute">Meta企业文化与组织操作系统图谱：创始人锁权、极致扁平与战时算力</span><span class="co-hub-meta mono">meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_2026_2032.html" title="Meta公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">27</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Meta 2026–2032 &amp;">Meta公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">meta_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta (1).html" title="Meta公司 Meta Platforms (META) 商业模式架构深度拆解"><span class="co-hub-ticker mono">28</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 商业模式架构深度拆解" data-i18n-en="Meta Platforms (META) Business Model Deep DiveBreakdown">Meta公司 Meta Platforms (META) 商业模式架构深度拆解</span><span class="co-hub-meta mono">meta_meta_platforms_meta (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="meta_meta_platforms_meta.html" title="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">29</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告" data-i18n-en="Meta Platforms (META) Corporate Culture &amp; Org Architecture Deep Dive">Meta公司 Meta Platforms (META) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">meta_meta_platforms_meta.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft (1).html" title="微软公司 Microsoft (MSFT) 商业模式架构深度拆解"><span class="co-hub-ticker mono">30</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 商业模式架构深度拆解" data-i18n-en="Microsoft (MSFT) Business Model Deep DiveBreakdown">微软公司 Microsoft (MSFT) 商业模式架构深度拆解</span><span class="co-hub-meta mono">microsoft_msft (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft.html" title="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">31</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告" data-i18n-en="Microsoft (MSFT) Corporate Culture &amp; Org Architecture Deep Dive">微软公司 Microsoft (MSFT) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">microsoft_msft.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft2.html" title="微软公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">32</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="2026–2032 &amp;">微软公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">microsoft_msft2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="microsoft_msft3.html" title="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进"><span class="co-hub-ticker mono">33</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进" data-i18n-en="Corporate Culture &amp;:, &amp; Trajectory">微软企业文化与组织操作系统图谱：成长型思维、双核分治与三代演进</span><span class="co-hub-meta mono">microsoft_msft3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx (1).html" title="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">34</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 商业模式架构深度拆解" data-i18n-en="Netflix (NFLX) Business Model Deep DiveBreakdown">奈飞公司 Netflix (NFLX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">netflix_nflx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx.html" title="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">35</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告" data-i18n-en="Netflix (NFLX) Corporate Culture &amp; Org Architecture Deep Dive">奈飞公司 Netflix (NFLX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">netflix_nflx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx2.html" title="奈飞公司 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">36</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞公司 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Netflix 2026–2032 &amp;">奈飞公司 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">netflix_nflx2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="netflix_nflx3.html" title="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承"><span class="co-hub-ticker mono">37</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承" data-i18n-en="NetflixCorporate Culture &amp;:, &amp;">奈飞企业文化与组织操作系统图谱：梦之队、知情船长与三代传承</span><span class="co-hub-meta mono">netflix_nflx3.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_2032.html" title="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">38</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="On Holding AG 2026–2032 &amp;">昂跑 On Holding AG 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">on_holding_ag_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_2026_20323.html" title="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治"><span class="co-hub-ticker mono">39</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治" data-i18n-en="On HoldingCorporate Culture &amp;:, &amp; People">昂跑企业文化与组织操作系统图谱：椋鸟群智、全价北极星与创始人联席共治</span><span class="co-hub-meta mono">on_holding_ag_2026_20323.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon (1).html" title="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">40</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告" data-i18n-en="On Holding AG (ONON) Corporate Culture &amp; Org Architecture Deep Dive">昂跑 On Holding AG (ONON) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">on_holding_ag_onon (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="on_holding_ag_onon.html" title="昂跑 On Holding AG (ONON) 商业模式架构深度拆解"><span class="co-hub-ticker mono">41</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="昂跑 On Holding AG (ONON) 商业模式架构深度拆解" data-i18n-en="On Holding AG (ONON) Business Model Deep DiveBreakdown">昂跑 On Holding AG (ONON) 商业模式架构深度拆解</span><span class="co-hub-meta mono">on_holding_ag_onon.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab (1).html" title="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">42</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告" data-i18n-en="Rocket Lab Corporate Culture &amp; Org Architecture Deep Dive">火箭实验室 Rocket Lab 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">rocket_lab (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab.html" title="火箭实验室 Rocket Lab 企业文化与组织操作系统"><span class="co-hub-ticker mono">43</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab 企业文化与组织操作系统" data-i18n-en="Rocket Lab Corporate Culture &amp;">火箭实验室 Rocket Lab 企业文化与组织操作系统</span><span class="co-hub-meta mono">rocket_lab.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_2026_2032.html" title="Rocket Lab 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">44</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="Rocket Lab 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="Rocket Lab 2026–2032 &amp;">Rocket Lab 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">rocket_lab_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="rocket_lab_rklb.html" title="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解"><span class="co-hub-ticker mono">45</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解" data-i18n-en="Rocket Lab (RKLB) Business Model Deep DiveBreakdown">火箭实验室 Rocket Lab (RKLB) 商业模式架构深度拆解</span><span class="co-hub-meta mono">rocket_lab_rklb.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex.html" title="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承"><span class="co-hub-ticker mono">46</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承" data-i18n-en="SpaceX Corporate Culture &amp;:, &amp;">SpaceX 企业文化与组织操作系统图谱：五步算法、白痴指数与双核传承</span><span class="co-hub-meta mono">spacex.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_2026_2032.html" title="SpaceX 2026–2032 未来战略与新增长曲线观测站"><span class="co-hub-ticker mono">47</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX 2026–2032 未来战略与新增长曲线观测站" data-i18n-en="SpaceX 2026–2032 &amp;">SpaceX 2026–2032 未来战略与新增长曲线观测站</span><span class="co-hub-meta mono">spacex_2026_2032.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx (1).html" title="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解"><span class="co-hub-ticker mono">48</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解" data-i18n-en="SpaceX (NASDAQ: SPCX) Business Model Deep DiveBreakdown">SpaceX (NASDAQ: SPCX) 商业模式架构深度拆解</span><span class="co-hub-meta mono">spacex_nasdaq_spcx (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="spacex_nasdaq_spcx.html" title="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">49</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告" data-i18n-en="SpaceX (NASDAQ: SPCX) Corporate Culture &amp; Org Architecture Deep Dive">SpaceX (NASDAQ: SPCX) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">spacex_nasdaq_spcx.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla (1).html" title="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告"><span class="co-hub-ticker mono">50</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告" data-i18n-en="Tesla, Inc. (TSLA) Corporate Culture &amp; Org Architecture Deep Dive">特斯拉 Tesla, Inc. (TSLA) 企业文化与组织架构深度研究报告</span><span class="co-hub-meta mono">tesla_inc_tsla (1).html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla.html" title="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解"><span class="co-hub-ticker mono">51</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解" data-i18n-en="Tesla, Inc. (TSLA) Business Model Deep DiveBreakdown">特斯拉公司 Tesla, Inc. (TSLA) 商业模式架构深度拆解</span><span class="co-hub-meta mono">tesla_inc_tsla.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla2.html" title="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站"><span class="co-hub-ticker mono">52</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站" data-i18n-en="Tesla 2026–2032 &amp; AI">特斯拉 2026–2032 未来战略与物理AI新增长曲线观测站</span><span class="co-hub-meta mono">tesla_inc_tsla2.html</span></span></a>
+            <a class="co-hub-item" data-co-item-cat="Company" href="tesla_inc_tsla3.html" title="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军"><span class="co-hub-ticker mono">53</span><span class="co-hub-info"><span class="co-hub-title" data-i18n-zh="特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军" data-i18n-en="TeslaCorporate Culture &amp;: First Principles, &amp; COO">特斯拉企业文化与组织操作系统图谱：第一性原理、五步算法与无COO铁军</span><span class="co-hub-meta mono">tesla_inc_tsla3.html</span></span></a>
+          </div>
+          <script>(function(){var h=document.getElementById("companySubfolderHub");if(!h)return;var sk="co_hub_cat_"+(h.getAttribute("data-co-key")||"");function applyCat(cat){var ps=h.querySelectorAll("[data-co-cat]");var okAny=false;for(var i=0;i<ps.length;i++){var ok=ps[i].getAttribute("data-co-cat")===cat;ps[i].classList.toggle("active",ok);if(ok)okAny=true;}if(!okAny&&ps.length){cat="ALL";ps[0].classList.add("active");}var its=h.querySelectorAll("[data-co-item-cat]");for(var j=0;j<its.length;j++){its[j].classList.toggle("co-hub-hidden",!(cat==="ALL"||its[j].getAttribute("data-co-item-cat")===cat));}try{if(sk)sessionStorage.setItem(sk,cat);}catch(e){}}try{var saved=sk?sessionStorage.getItem(sk):null;if(saved&&saved!=="ALL")applyCat(saved);}catch(e){}h.addEventListener("click",function(e){var t=e.target&&e.target.nodeType===3?e.target.parentElement:e.target;if(!t||!t.closest)return;var b=t.closest("[data-co-cat]");if(b){e.preventDefault();applyCat(b.getAttribute("data-co-cat")||"ALL");}},true);var act=h.querySelector(".co-hub-item.active");if(act&&act.scrollIntoView){try{act.scrollIntoView({block:"nearest"});}catch(e){}}document.addEventListener("keydown",function(e){if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;if(e.key==="["){var pb=document.getElementById("coHubPrevBtn");if(pb)pb.click();}if(e.key==="]"){var nb=document.getElementById("coHubNextBtn");if(nb)nb.click();}});})();</script>
+        </div>
+        <!-- SITE_RELATED_NAV_END -->
+
+ <div class="nav-divider"></div>
+ <div class="nav-section-label" data-i18n-zh="核心研究章节 (00 – 07)" data-i18n-en="Report Chapters (00 – 07)">核心研究章节 (00 – 07)</div>
+ <ul class="mui-nav-list" id="tocNavList">
+ <li><a href="#sec-00" class="mui-nav-link active" data-sec="sec-00"><span class="nav-idx mono">00</span><span data-i18n-zh="执行摘要与核心指标" data-i18n-en="Executive Summary &amp; KPIs">执行摘要与核心指标</span></a></li>
+ <li><a href="#sec-01" class="mui-nav-link" data-sec="sec-01"><span class="nav-idx mono">01</span><span data-i18n-zh="双螺旋架构与千人超高人效" data-i18n-en="Dual-Helix Org &amp; Productivity">双螺旋架构与千人超高人效</span></a></li>
+ <li><a href="#sec-02" class="mui-nav-link" data-sec="sec-02"><span class="nav-idx mono">02</span><span data-i18n-zh="四大文化支柱与五维雷达" data-i18n-en="4 Cultural Pillars &amp; Radar">四大文化支柱与五维雷达</span></a></li>
+ <li><a href="#sec-03" class="mui-nav-link" data-sec="sec-03"><span class="nav-idx mono">03</span><span data-i18n-zh="全球金融与加密巨头文化对比" data-i18n-en="Global Fintech Peer Matrix">全球金融与加密巨头文化对比</span></a></li>
+ <li><a href="#sec-04" class="mui-nav-link" data-sec="sec-04"><span class="nav-idx mono">04</span><span data-i18n-zh="经营杠杆释放与复利推演器" data-i18n-en="Operating Leverage &amp; Flywheel">经营杠杆释放与复利推演器</span></a></li>
+ <li><a href="#sec-05" class="mui-nav-link" data-sec="sec-05"><span class="nav-idx mono">05</span><span data-i18n-zh="三幕组织演进与四大生死战" data-i18n-en="3-Act History &amp; Case Studies">三幕组织演进与四大生死战</span></a></li>
+ <li><a href="#sec-06" class="mui-nav-link" data-sec="sec-06"><span class="nav-idx mono">06</span><span data-i18n-zh="Circle 文化法则核查清单" data-i18n-en="Org Diagnostic Checklist">Circle 文化法则核查清单</span></a></li>
+ <li><a href="#sec-07" class="mui-nav-link" data-sec="sec-07"><span class="nav-idx mono">07</span><span data-i18n-zh="数据来源与监管核验索引" data-i18n-en="Primary Filings &amp; Sources">数据来源与监管核验索引</span></a></li>
+ </ul>
+ </nav>
+
+ <div class="sidebar-card sidebar-actions" aria-label="阅读与导出工具">
+ <div class="nav-section-label" data-i18n-zh="阅读与导出工具" data-i18n-en="Reading &amp; Export Tools">阅读与导出工具</div>
+ <div class="side-theme-group" role="group" aria-label="外观模式切换">
+ <button type="button" id="sideThemeLightBtn" class="side-theme-opt active" data-side-theme="light" data-i18n-zh="浅色外观" data-i18n-en="Light">浅色外观</button>
+ <button type="button" id="sideThemeDarkBtn" class="side-theme-opt" data-side-theme="dark" data-i18n-zh="深色外观" data-i18n-en="Dark">深色外观</button>
+ </div>
+ <div class="side-tool-grid">
+ <button type="button" id="sideExportBtn" class="mui-tool-btn" data-i18n-zh="导出 HTML" data-i18n-en="Export HTML">导出 HTML</button>
+ <button type="button" id="sidePrintBtn" class="mui-tool-btn" data-i18n-zh="打印 / PDF" data-i18n-en="Print / PDF">打印 / PDF</button>
+ </div>
+ </div>
+ </aside>
+
+ <!-- Main Analytical Monograph Content -->
+ <main class="main-content">
+
+ <!-- 00 执行摘要与核心指标 -->
+ <section id="sec-00" class="mui-paper hero-card section-block">
+ <div class="status-strip">
+ <span class="mui-chip mui-chip-primary" data-i18n-zh="组织史定评：加密史上唯一以“央行级正门合规 × 开源互联网协议”双基因运转的纽交所主板巨头" data-i18n-en="Verdict: The Only NYSE Fintech Uniting Central-Bank-Grade Compliance with Open Internet Protocol DNA">组织史定评：加密史上唯一以“央行级正门合规 × 开源互联网协议”双基因运转的纽交所主板巨头</span>
+ <span class="mui-chip" data-i18n-zh="研究横跨：首张 BitLicense (2013–2017) · SVB 淬火聚焦 (2018–2024) · IPO 与 Arc 纪元 (2025–2026+)" data-i18n-en="Scope: BitLicense #1 (2013–17) · USDC &amp; SVB Crucible (2018–24) · NYSE IPO &amp; Arc Era (2025–26+)">研究横跨：首张 BitLicense (2013–2017) · SVB 淬火聚焦 (2018–2024) · IPO 与 Arc 纪元 (2025–2026+)</span>
+ <span class="mui-chip mui-chip-success mono">数据基准：FY25 10-K · 2026 DEF 14A · Q3'26 8-K</span>
+ </div>
+
+ <div class="hero-overline mono">
+ <span data-i18n-zh="CORE THESIS · 正门监管主义 (Front-Door Compliance) × 协议级中立 (Open Protocol) × 极客-监管双螺旋 × 30%投票权封顶治理" data-i18n-en="CORE THESIS · Front-Door Compliance × Open Protocol Neutrality × Tech-Policy Dual Helix × 30% Voting Cap">CORE THESIS · 正门监管主义 (Front-Door Compliance) × 协议级中立 (Open Protocol) × 极客-监管双螺旋 × 30%投票权封顶治理</span>
+ </div>
+
+ <h1 class="hero-h1" data-i18n-zh="Circle Internet Group 企业文化与组织架构深度研究报告：<span class='gradient-accent'>“走监管正门”的硅谷协议极客，如何用千人精兵撬动每季 $13.9万亿 全球数字美元清算？</span>" data-i18n-en="Circle Internet Group Corporate Culture &amp; Org Architecture Deep Dive: <span class='gradient-accent'>How ~1,045 'Front-Door' Protocol Builders Power $13.9T in Quarterly Onchain Dollar Settlement</span>">
+ Circle Internet Group 企业文化与组织架构深度研究报告：<span class="gradient-accent">“走监管正门”的硅谷协议极客，如何用千人精兵撬动每季 $13.9万亿 全球数字美元清算？</span>
+ </h1>
+
+ <p class="lead-prose">
+ 在过去十余年充斥着“离岸监管套利、匿名黑盒储备与草莽高杠杆爆雷（如 FTX、Terra/Luna）”的加密行业中，为什么偏偏是<strong>Circle Internet Group, Inc.（NYSE: CRCL）</strong>赢得了贝莱德、Visa、SAP、美国财政部与华尔街主流资本的共同背书？答案深植于连续三次打造现象级互联网平台（Allaire Corp / ColdFusion、Macromedia CTO、Brightcove 上市）的联合创始人兼 CEO <strong>Jeremy Allaire</strong> 自 2013 年创立之初确立的反共识信条——<strong>“永远从正门走进全球监管机构与立法者办公室（Walking in through the front door of regulators and policymakers）”</strong>
+ <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000119312525126208/d737521ds1a.htm" target="_blank" rel="noopener noreferrer">SEC S-1/A 创始人信 ↗</a>。
+ 在组织架构上，Circle 构建了罕见的<strong>“硅谷分布式协议极客（CPTO Nikhil Chandhok 统领）× 华尔街/联邦顶级监管统帅（前美国 CFTC 主席、代理财政部副部长 Heath Tarbert 出任总裁兼首席法务官）”双螺旋治理结构</strong>；在公司治理上，甚至主动将创始人持有的 5 票权 Class B 股设定<strong>全类别 30% 总投票权硬上限（Allaire 投票权仅 23.9%）</strong>，放弃绝对独裁以换取全球主权级金融基础设施所需的制度公信力
+ <a class="cite-link" href="https://eco.com/support/en/articles/17272678-circle-ownership-jeremy-allaire-class-b-votes-and-crcl-holders" target="_blank" rel="noopener noreferrer">2026 DEF 14A 治理披露 ↗</a>。
+ 据 FY2025 Form 10-K 与 2026 年 11 月发布的 Q3 2026 财报，Circle 依托遍布 12+ 国家与美国 35+ 州的约 <strong>1,045–1,100 名数字优先员工</strong>（Q3'26 主动实施约 5% 组织扁平化重整以聚焦 Arc 与 AI 支付），创造了 TTM <strong>$30.31亿 总营收与储备收入（人均创收高达 ~$2.90M，超越苹果的 $2.87M）</strong>、单季 <strong>$3.17亿 经调整 EBITDA（70% RLDC 利润率）</strong>与单季 <strong>$13.9万亿 链上结算额</strong>的惊人组织效率
+ <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3 2026 官方财报 ↗</a>。
+ </p>
+
+ <!-- 3 Core Thesis Cards -->
+ <div class="grid-3" style="margin-bottom: 18px;">
+ <div class="feature-card">
+ <div class="mui-avatar-icon">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+ </div>
+ <h3 data-i18n-zh="正门监管主义 (Walking Through the Front Door)" data-i18n-en="Walking Through the Front Door of Regulators">正门监管主义 (Walking Through the Front Door)</h3>
+ <p data-i18n-zh="拒绝离岸灰色套利，从 2015 年拿下全球首张纽约 BitLicense，到深度参与美国 GENIUS 法案立法、获批 OCC 联邦国民信托银行与欧盟 MiCA 牌照，把合规内化为最深的产品护城河。" data-i18n-en="Rejecting offshore arbitrage—from winning NY BitLicense #1 in 2015 to shaping the U.S. GENIUS Act, OCC National Trust approval, and EU MiCA EMI licensing.">拒绝离岸灰色套利，从 2015 年拿下全球首张纽约 BitLicense，到深度参与美国 GENIUS 法案立法、获批 OCC 联邦国民信托银行与欧盟 MiCA 牌照，把合规内化为最深的产品护城河。</p>
+ </div>
+
+ <div class="feature-card">
+ <div class="mui-avatar-icon" style="color: var(--mui-success-text); background: var(--mui-success-bg); border-color: var(--mui-success-border);">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+ </div>
+ <h3 data-i18n-zh="把货币当作开放互联网协议 (HTTP of Money)" data-i18n-en="Treating Money as an Open Internet Protocol">把货币当作开放互联网协议 (HTTP of Money)</h3>
+ <p data-i18n-zh="承袭 Allaire 早年打造 Web 开发标准的技术哲学，坚持市场中立（Market-Neutral）：原生支持 30+ 竞争性公链，不自营散户投机交易所与客户争利。" data-i18n-en="Rooted in Allaire's Web protocol heritage, Circle stays strictly market-neutral across 30+ blockchains without operating a competing retail casino exchange.">承袭 Allaire 早年打造 Web 开发标准的技术哲学，坚持市场中立（Market-Neutral）：原生支持 30+ 竞争性公链，不自营散户投机交易所与客户争利。</p>
+ </div>
+
+ <div class="feature-card">
+ <div class="mui-avatar-icon" style="color: var(--mui-violet-text); background: var(--mui-violet-bg); border-color: var(--mui-violet-border);">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+ </div>
+ <h3 data-i18n-zh="30% 投票权封顶与公众级透明问责" data-i18n-en="30% Founder Voting Cap &amp; Public Accountability">30% 投票权封顶与公众级透明问责</h3>
+ <p data-i18n-zh="不同于硅谷常见的创始人 10–20 票超级独裁权，Circle 章程规定 Class B 总表决权不得超过 30%（Allaire 占 23.9%），以制度制衡赢得全球央行与主权机构信任。" data-i18n-en="Unlike unchecked 20-vote founder control, Circle caps total Class B voting power at 30% (Allaire holds 23.9%), matching institutional financial infrastructure norms.">不同于硅谷常见的创始人 10–20 票超级独裁权，Circle 章程规定 Class B 总表决权不得超过 30%（Allaire 占 23.9%），以制度制衡赢得全球央行与主权机构信任。</p>
+ </div>
+ </div>
+
+ <!-- 4 KPI Cards -->
+ <div class="grid-4">
+ <div class="mui-paper kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="TTM 人均创收与精兵编制" data-i18n-en="TTM Rev / FTE &amp; Lean Workforce">TTM 人均创收与精兵编制</span>
+ <span class="mui-chip mui-chip-primary mono">~1,045–1,100人</span>
+ </div>
+ <div class="kpi-value mono">~$2.90M</div>
+ <p class="kpi-desc">FY25 末约 1,100 名员工（FY25 人均创收 $2.50M），Q3'26 主动精简约 5% 对齐战略重心，TTM 人均创收跃升至 ~$290 万美元 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">SEC 10-K ↗</a>。</p>
+ </div>
+
+ <div class="mui-paper kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="TTM 总收入与 Q3'26 净利" data-i18n-en="TTM Revenue &amp; Q3'26 Net Profit">TTM 总收入与 Q3'26 净利</span>
+ <span class="mui-chip mui-chip-success mono">Q3 净利 $226M</span>
+ </div>
+ <div class="kpi-value mono">$3.03B</div>
+ <p class="kpi-desc">收入由 2020 年仅 $1,540万 狂飙近 197 倍至 TTM $30.31亿；Q3'26 单季总收入 $8.65亿（+17% YoY），稀释 EPS $0.84 <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3'26 8-K ↗</a>。</p>
+ </div>
+
+ <div class="mui-paper kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="Q3'26 经调整 EBITDA 利润率" data-i18n-en="Q3'26 Adj. EBITDA / RLDC Margin">Q3'26 经调整 EBITDA 利润率</span>
+ <span class="mui-chip mui-chip-warning mono">RLDC 率 52.4%</span>
+ </div>
+ <div class="kpi-value mono">70.0%</div>
+ <p class="kpi-desc">Q3'26 RLDC 达 $4.53亿（+55% YoY），经调整运营开支严格控制在 $1.39亿，驱动经调整 EBITDA 同比增长 +85% 至 $3.17亿。</p>
+ </div>
+
+ <div class="mui-paper kpi-card">
+ <div class="kpi-top">
+ <span class="kpi-label" data-i18n-zh="单季链上交易额与市场统治力" data-i18n-en="Q3 Onchain Volume &amp; Share">单季链上交易额与市场统治力</span>
+ <span class="mui-chip mui-chip-violet mono">79% 交易量份额</span>
+ </div>
+ <div class="kpi-value mono">$13.9T</div>
+ <p class="kpi-desc">Q3'26 USDC 链上结算量同比增长 +49% 至 $13.9万亿，占据全球稳定币链上真实流转量的 79% <a class="cite-link" href="https://finance.biggo.com/news/US_CRCL_2026-11-04" target="_blank" rel="noopener noreferrer">Q3 Call ↗</a>。</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- 01 双螺旋架构与千人超高人效 -->
+ <section id="sec-01" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 01 · TECH-REGULATORY DUAL-HELIX ARCHITECTURE</div>
+ <h2 class="sec-h2" data-i18n-zh="一、“硅谷平台极客 × 华尔街央行治理”双螺旋：千人团队如何撑起全球金融底座？" data-i18n-en="1. Tech-Regulatory Dual-Helix Architecture: Scaling Global Dollar Rails with ~1,045 FTEs">一、“硅谷平台极客 × 华尔街央行治理”双螺旋：千人团队如何撑起全球金融底座？</h2>
+ <p class="sec-sub" data-i18n-zh="打破传统金融“合规拖慢创新”与草莽加密“速度摧毁合规”的死结，把监管标准直接编译进底层代码" data-i18n-en="Embedding global financial compliance directly into open protocol engineering without legacy bank bloat">打破传统金融“合规拖慢创新”与草莽加密“速度摧毁合规”的死结，把监管标准直接编译进底层代码</p>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">12+ 国家 · 美国 35+ 州分布式协同</span>
+ </div>
+
+ <!-- Architectural Blueprint Diagram -->
+ <div class="arch-blueprint">
+ <div class="arch-hub">
+ <div class="arch-hub-title">Circle Internet Group 执行中枢（One World Trade Center, NYC · 公众公司董事会 + 30% Class B 投票权封顶）</div>
+ <div class="arch-hub-sub">核心统帅班底：Jeremy Allaire (联合创始人/董事长/CEO) × Heath Tarbert (总裁兼CLO · 前CFTC主席) × Nikhil Chandhok (首席产品与技术官 CPTO)</div>
+ </div>
+ <div class="arch-nodes">
+ <div class="arch-node">
+ <div class="arch-node-tag mono">PROTOCOL &amp; L1 · 技术基建群</div>
+ <div class="arch-node-name">Arc Mainnet &amp; Interop</div>
+ <div class="arch-node-desc">Nikhil Chandhok (前 Meta/Google 工程高管) 统领：Arc L1 公链、CCTP、Circle Gateway、xReserve 与 AI Agent Stack。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">POLICY &amp; TRUST · 法务牌照群</div>
+ <div class="arch-node-name">Global Regulatory &amp; Legal</div>
+ <div class="arch-node-desc">Heath Tarbert 统领：OCC 国民信托银行、GENIUS 法案对接、欧盟 MiCA、新加坡 MAS 与全球反洗钱 AML 风控网。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">TREASURY &amp; RESERVE · 储备金库</div>
+ <div class="arch-node-name">Reserve Ops &amp; Finance</div>
+ <div class="arch-node-desc">协同贝莱德管理 $735.7亿 隔离储备、四大月度鉴证及 SOX 内控（CFO Jeremy Fox-Geen 服务至 2026 年底平稳交接）。</div>
+ </div>
+ <div class="arch-node">
+ <div class="arch-node-tag mono">NETWORK &amp; GTM · 清算生态群</div>
+ <div class="arch-node-name">CPN, Tazapay &amp; Alliances</div>
+ <div class="arch-node-desc">拓展 205 家 CPN 金融机构、Visa Direct、SAP/Tereina、币安 5 年战略同盟与全球 185+ 国机构出入金走廊。</div>
+ </div>
+ </div>
+ <div class="arch-platform-bar">
+ <div class="arch-platform">
+ <strong>“Compliance-by-Design”合规即代码协同机制</strong>
+ <span>法务与风控专家不作事后盖章警察，而是从立项第一天嵌入 Arc、CPN 与智能合约架构设计，使合规成为机构客户开箱即用的产品特性。</span>
+ </div>
+ <div class="arch-platform">
+ <strong>Digital-First 全球无边界精兵制 × Q3'26 5% 敏捷重整</strong>
+ <span>横跨十余国吸引顶尖密码学与央行政策人才；2026Q3 在高盈利期主动精简约 5% 冗余岗位（$915万重组费），把编制聚焦于 Arc 与 AI 支付。</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="mui-alert" style="margin-bottom: 18px;">
+ <span class="mui-chip mui-chip-primary mono">治理里程碑</span>
+ <div>
+ <strong>2025.06 纽交所敲钟 + 2026.09 董事会与财务中枢平稳迭代：</strong>2025 年 6 月 5 日 Circle 以 $31/股完成 $12亿 纽交所 IPO；2026 年 9 月 25 日，伴随联合创始人 Sean Neville 功成身退卸任董事（董事会精简为 7 席高独立性架构），陪伴公司走过 5 年半并主导 IPO 的功勋 CFO Jeremy Fox-Geen 宣布留任至 2026 年 12 月底协助继任者平稳交接，彰显成熟上市金融平台制度化治理 <a class="cite-link" href="https://www.stocktitan.net/sec-filings/CRCL/8-k-circle-internet-group-inc-reports-material-event-0a8184595271.html" target="_blank" rel="noopener noreferrer">SEC 8-K 交接披露 ↗</a>。
+ </div>
+ </div>
+
+ <!-- Interactive Chart: View A (Revenue Explosion 2020-TTM26) vs View B (FTE Discipline & Rev/FTE) -->
+ <div class="chart-card" style="margin-bottom: 18px;">
+ <div class="chart-toolbar">
+ <div>
+ <div id="ch1ChartTitle" class="chart-title">FY2020–TTM Q3'26 总营收与储备收入跨越 197 倍跃升轨迹（$M · SEC S-1 &amp; 10-K/10-Q）</div>
+ <div id="ch1ChartSub" class="chart-caption">从 2020 年 $15.4M 起步，跨越 2023 硅谷银行压力测试，跃升至 FY25 $2,746.6M 与 TTM $3,030.6M 历史峰值</div>
+ </div>
+ <div class="mui-segmented" role="tablist" aria-label="第一章图表视图切换">
+ <button type="button" id="ch1TabA" class="mui-seg-btn active" data-ch1-view="viewA">视图A: 六年收入 197倍跃迁</button>
+ <button type="button" id="ch1TabB" class="mui-seg-btn" data-ch1-view="viewB">视图B: 千人编制与超高人效</button>
+ </div>
+ </div>
+ <div id="ch1AxisMeta" class="chart-axis-meta mono">
+ <span style="color:var(--chart-c1);">■ 蓝色：储备利息收入 Reserve Income ($M)</span>
+ <span style="color:var(--chart-c2);">■ 绿色：非利差平台与网络其他收入 Other Revenue ($M)</span>
+ </div>
+ <div class="canvas-stage">
+ <canvas id="chartCh1"></canvas>
+ </div>
+ <div class="chart-legend" id="ch1Legend">
+ <button type="button" class="legend-pill" data-ch1-series="s1"><span class="legend-dot" style="background:var(--chart-c1);"></span><span id="ch1Leg1">储备收入 Reserve Income ($M)</span></button>
+ <button type="button" class="legend-pill" data-ch1-series="s2"><span class="legend-dot" style="background:var(--chart-c2);"></span><span id="ch1Leg2">其他平台与网络收入 Other Revenue ($M)</span></button>
+ </div>
+ </div>
+
+ <!-- 4 Expandable Execution Cards -->
+ <div class="grid-2">
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">央行级政商外交与立法共创团队（Policy as Strategy）</div>
+ <span class="mui-chip mui-chip-primary mono">GENIUS + OCC 信托</span>
+ </div>
+ <p class="matrix-card-body">由前美国商品期货交易委员会（CFTC）主席 Heath Tarbert 任总裁，Jeremy Allaire 多次出席美国国会听证会。2025 年生效的美国联邦《GENIUS 法案》在储备隔离、1:1 赎回与月度鉴证上的核心条文，几乎完美复刻了 Circle 践行多年的内部标准 <a class="cite-link" href="https://www.circle.com/pressroom/circle-reports-second-quarter-2025-results" target="_blank" rel="noopener noreferrer">GENIUS 法案解读 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail1"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail1" class="collapse-panel">全员每年强制执行反洗钱（AML）与网络安全考核培训；在全球斩获美国各州货币传输牌照、纽约 BitLicense、欧盟法国 MiCA EMI、新加坡 MAS 大型支付机构及阿布扎比/百慕大牌照。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">硅谷顶级平台工程文化（Platform-First Engineering）</div>
+ <span class="mui-chip mui-chip-success mono">30+ 原生公链覆盖</span>
+ </div>
+ <p class="matrix-card-body">首席产品与技术官 Nikhil Chandhok（曾任 Meta、Google、Microsoft 核心产品技术高管）按云计算 SDK 标准打磨 Circle Wallets、Circle Contracts 与 CCTP，让传统 Web2 研发团队无需重学复杂密码学即可调用链上美元 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">SEC 10-K 产品栈 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail2"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail2" class="collapse-panel">2026年9月16日发布的 Arc 公共主网凝聚了 75,000+ 名 Arc House 社区开发者与 10,000 名 Architect 大使，在私有主网阶段即孵化出超过 1,200 个金融与代理应用项目。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">反周期的编制克制与盈利期主动瘦身（Talent Density）</div>
+ <span class="mui-chip mui-chip-warning mono">Q3'26 精简 ~5%</span>
+ </div>
+ <p class="matrix-card-body">即便在 Q3'26 营收同比增长 17%、经调整 EBITDA 暴涨 85% 的高景气期，管理层仍主动执行约 5% 组织结构优化（计提 $914.5万 重组费用），砍掉重叠中后台层级，将全年经调整运营开支严格锁定在 $5.70亿–$5.85亿 指引区间 <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3'26 重组附注 ↗</a>。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail3"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail3" class="collapse-panel">通过剔除与股价挂钩的股权激励薪资税波动，Q3'26 经调整运营费用仅 $1.388亿（环比 Q2 的 $1.464亿 下降 5.2%），彰显上市后极强的成本纪律。</div>
+ </div>
+
+ <div class="matrix-card">
+ <div class="matrix-card-head">
+ <div class="matrix-card-title">社会普惠使命与 Circle Foundation 制度化回馈</div>
+ <span class="mui-chip mui-chip-violet mono">联合国人道援助结算</span>
+ </div>
+ <p class="matrix-card-body">围绕“通过无摩擦价值交换提升全球经济繁荣”使命，公司专门设立捐赠人建议基金 Circle Foundation（承诺持续捐赠 Class A 股份），并联合联合国开发计划署（UNDP）、世界粮食计划署（WFP）与 Global Citizen 在非洲及战乱地区落地秒级透明数字援助分发。</p>
+ <button type="button" class="collapse-toggle" data-collapse-target="matrixDetail4"><span>展开微观执行机制</span> <span>⌄</span></button>
+ <div id="matrixDetail4" class="collapse-panel">根据 Q3'26 财报披露，Circle 按季度等额向 Circle Foundation 划转总计 268,239 股 Class A 普通股用于支持全球普惠金融与人道主义数字支付基础设施。</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 02 四大文化支柱与创新护城河 -->
+ <section id="sec-02" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 02 · CULTURAL PILLARS &amp; INSTITUTIONAL TRUST MOAT</div>
+ <h2 class="sec-h2" data-i18n-zh="二、四大企业文化支柱：高诚信正门原则、多方共赢中立、卓越工程与危机极限抗压" data-i18n-en="2. Four Cultural Pillars: High Integrity, Multistakeholder Neutrality, Craft &amp; Crisis Grit">二、四大企业文化支柱：高诚信正门原则、多方共赢中立、卓越工程与危机极限抗压</h2>
+ <p class="sec-sub" data-i18n-zh="点击左侧任一文化支柱卡片，联动查看 Circle 内部行为准则及与离岸稳定币、传统银行清算网的五维雷达画像" data-i18n-en="Click any pillar card on the left to inspect Circle's cultural code and 5-axis institutional radar">点击左侧任一文化支柱卡片，联动查看 Circle 内部行为准则及与离岸稳定币、传统银行清算网的五维雷达画像</p>
+ </div>
+ <span class="mui-chip mui-chip-success">护城河定性：极深制度信任壁垒 (Institutional Trust + Network Velocity)</span>
+ </div>
+
+ <div class="grid-radar">
+ <div class="pillar-stack" id="pillarStack">
+ <button type="button" class="pillar-card active" data-pillar="0">
+ <div class="pillar-head">
+ <span class="pillar-title">01 · 高诚信与正门透明（High Integrity &amp; Radical Transparency）</span>
+ <span class="mui-chip mui-chip-primary mono">四大月审 · 贝莱德托管</span>
+ </div>
+ <p class="pillar-desc">在金融基础设施领域，“信任就是产品本身”。Circle 坚持每周披露资产铸赎明细、每月出具四大会计师事务所储备鉴证报告，绝不触碰不透明商业票据或客户资产挪用红线。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="1">
+ <div class="pillar-head">
+ <span class="pillar-title">02 · 多方共赢与市场中立（Multistakeholder &amp; Market-Neutral）</span>
+ <span class="mui-chip mui-chip-success mono">不与伙伴抢终端客群</span>
+ </div>
+ <p class="pillar-desc">2019 年后主动剥离自营加密交易所（Poloniex）与场外做市业务，确立纯粹中立底座定位——因此无论 Coinbase、币安还是 Visa、SAP 都敢放心将核心支付流水跑在 USDC 之上。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="2">
+ <div class="pillar-head">
+ <span class="pillar-title">03 · 卓越追求与平台化抽象（Driven by Excellence &amp; Platform Craft）</span>
+ <span class="mui-chip mui-chip-warning mono">把区块链复杂性归零</span>
+ </div>
+ <p class="pillar-desc">正如 Allaire 在 S-1 中强调：“为早期极客造玩具，与为全球主流商业造基建截然不同。”团队痴迷于用 Gateway、MPC 钱包与 CPN 屏蔽底层公链摩擦，交付如刷卡般丝滑的体验。</p>
+ </button>
+
+ <button type="button" class="pillar-card" data-pillar="3">
+ <div class="pillar-head">
+ <span class="pillar-title">04 · 清醒审慎与危机极限抗压（Mindful Resilience under Fire）</span>
+ <span class="mui-chip mui-chip-violet mono">SVB $3.3B 惊魂 72h 零违约</span>
+ </div>
+ <p class="pillar-desc">2023 年 3 月硅谷银行突遭接管导致 $33亿 储备短暂冻结、USDC 一度脱锚至 $0.87；全员 72 小时不眠协同监管与新结算行，周一开盘即恢复 100% 1:1 刚性兑付并将主力储备转入贝莱德。</p>
+ </button>
+
+ <div id="pillarFocusNote" class="mui-alert" style="margin-top: 4px;">
+ <div>
+ <strong>当前选中支柱解读（01 高诚信与正门透明）：</strong>Allaire 在招股书与 2026 股东信中反复指出，货币网络没有“先破坏再道歉”的特权——正是十余年如一日的正门合规，让 Circle 在《GENIUS 法案》时代自动成为美国主流银行与跨国 ERP 的默认合规接口 <a class="cite-link" href="https://d18rn0p25nwr6d.cloudfront.net/CIK-0001876042/3924f49b-d901-4a89-813a-3ef657a68045.pdf" target="_blank" rel="noopener noreferrer">2026 Proxy 使命价值观 ↗</a>。
+ </div>
+ </div>
+ </div>
+
+ <!-- Right: 5-Axis Radar Chart -->
+ <div class="chart-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+ <div>
+ <div class="chart-title">数字货币与全球清算组织文化五维雷达图（10分制标杆评估）</div>
+ <div class="chart-caption">点击下方图例胶囊可开关对比曲线，悬停顶点查看各维度评分明细</div>
+ </div>
+ <div class="canvas-stage-tall">
+ <canvas id="chartRadar"></canvas>
+ </div>
+ <div class="chart-legend" id="radarLegend">
+ <button type="button" class="legend-pill" data-radar-key="crcl"><span class="legend-dot" style="background:#3399FF;"></span><span>Circle (CRCL · 正门合规协议派)</span></button>
+ <button type="button" class="legend-pill" data-radar-key="usdt"><span class="legend-dot" style="background:#22C55E;"></span><span>Tether (USDT · 离岸极简高利差派)</span></button>
+ <button type="button" class="legend-pill" data-radar-key="swift"><span class="legend-dot" style="background:#FFB74D;"></span><span>传统跨国代理行清算体系基准</span></button>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 03 全球金融与加密巨头文化对比 -->
+ <section id="sec-03" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 03 · GLOBAL FINTECH &amp; DIGITAL ASSET CULTURE BENCHMARKING</div>
+ <h2 class="sec-h2" data-i18n-zh="三、全球金融基础设施与加密巨头文化横向对比：五种组织基因与人效统治力" data-i18n-en="3. Global Fintech &amp; Digital Asset Culture Matrix: Five Organizational Archetypes">三、全球金融基础设施与加密巨头文化横向对比：五种组织基因与人效统治力</h2>
+ <p class="sec-sub" data-i18n-zh="支持按企业、掌舵人（Allaire / Ardoino / Armstrong / Collison / McInerney）或治理特征实时搜索与筛选" data-i18n-en="Search or filter in real time by company, CEO, licensing stance, or revenue per employee">支持按企业、掌舵人（Allaire / Ardoino / Armstrong / Collison / McInerney）或治理特征实时搜索与筛选</p>
+ </div>
+ <span id="peerCountBadge" class="mui-chip mui-chip-primary mono">显示 5 / 5 家标杆企业</span>
+ </div>
+
+ <div class="datagrid-toolbar">
+ <input type="search" id="peerSearchInput" class="mui-input-outlined" placeholder="搜索企业、掌舵人、治理特征 (正门合规 / 离岸 / API / 投票权)…" aria-label="筛选对比企业" />
+ <div class="mui-segmented" role="group" aria-label="标杆企业分类筛选">
+ <button type="button" class="mui-seg-btn active" data-peer-filter="all">全部标杆企业</button>
+ <button type="button" class="mui-seg-btn" data-peer-filter="crypto">原生加密与稳定币派</button>
+ <button type="button" class="mui-seg-btn" data-peer-filter="fintech">全球支付与清算网派</button>
+ </div>
+ </div>
+
+ <div class="table-wrap" style="margin-bottom: 20px;">
+ <table class="mui-table" aria-label="全球顶级金融基础设施与加密巨头企业文化横向对比表">
+ <thead>
+ <tr>
+ <th>企业与文化掌舵人</th>
+ <th>底层组织与监管姿态</th>
+ <th>核心文化信条与治理机制</th>
+ <th>员工规模与人效特征</th>
+ <th>核心财务与业务统治力</th>
+ <th>与 Circle 组织文化的异同及竞合关系</th>
+ </tr>
+ </thead>
+ <tbody id="peerTableBody"></tbody>
+ </table>
+ </div>
+
+ <!-- Horizontal Bar Chart: Margins, Share & Governance -->
+ <div class="chart-card">
+ <div class="chart-toolbar">
+ <div>
+ <div class="chart-title">组织文化向经营效率与生态壁垒的转化：Circle 核心财务与治理关键比率拆解（%）</div>
+ <div class="chart-caption">数据来源：Circle Q3 2026 8-K/10-Q、FY2025 Form 10-K 与 2026 DEF 14A 代理声明</div>
+ </div>
+ <span class="mui-chip mui-chip-success mono">88% 贝莱德储备托管 · 79% 链上交易份额 · 70% EBITDA/RLDC 率</span>
+ </div>
+ <div class="canvas-stage-bars">
+ <canvas id="chartBars"></canvas>
+ </div>
+ </div>
+ </section>
+
+ <!-- 04 经营杠杆释放与复利推演器 -->
+ <section id="sec-04" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 04 · OPERATING LEVERAGE &amp; NETWORK COMPOUNDING</div>
+ <h2 class="sec-h2" data-i18n-zh="四、平台经营杠杆与文化复利推演：跨越 IPO 股权费用洪峰后的盈利大爆发" data-i18n-en="4. Platform Operating Leverage &amp; Compounding: Post-IPO Profitability Breakout">四、平台经营杠杆与文化复利推演：跨越 IPO 股权费用洪峰后的盈利大爆发</h2>
+ <p class="sec-sub" data-i18n-zh="剥离 2025 年上市一次性股权归属（$4.24亿 SBC）噪音后，经调整 EBITDA 从 $2.85亿 (FY24) → $5.82亿 (FY25) → $7.88亿 (TTM Q3'26) 连跨三大台阶" data-i18n-en="Stripping out FY25's one-time $424M IPO SBC vesting charge reveals Adjusted EBITDA surging from $285M (FY24) to $582M (FY25) and $788M (TTM Q3'26)">剥离 2025 年上市一次性股权归属（$4.24亿 SBC）噪音后，经调整 EBITDA 从 $2.85亿 (FY24) → $5.82亿 (FY25) → $7.88亿 (TTM Q3'26) 连跨三大台阶</p>
+ </div>
+ <span class="mui-chip mui-chip-warning mono">TTM 经调整 EBITDA $787.5M</span>
+ </div>
+
+ <div class="grid-4" style="margin-bottom: 18px;">
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">Q3'26 ADJUSTED EBITDA</span>
+ <div class="kpi-value mono" style="color: var(--mui-primary-lighter);">$316.7M <span style="font-size:0.85rem;font-weight:600;">(+85%)</span></div>
+ <p class="kpi-desc">单季经调整 EBITDA 创历史最高纪录，占扣除分润后净收入（RLDC）比例达 70.0%。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">CORPORATE LIQUIDITY</span>
+ <div class="kpi-value mono" style="color: var(--mui-success-text);">$2.72B <span style="font-size:0.85rem;font-weight:600;">($0 Debt)</span></div>
+ <p class="kpi-desc">自有现金 $17.00亿 + 企业持币隔离现金 $10.16亿，可转债清零，资产负债表坚如磐石。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">9M 2026 GAAP TURNAROUND</span>
+ <div class="kpi-value mono" style="color: var(--mui-warning-text);">+$329.5M</div>
+ <p class="kpi-desc">2026 前三季度归母 GAAP 净利润扭亏大赚 $3.295亿（对比 2025 同期因 IPO 股权确认亏损 -$2.029亿）。</p>
+ </div>
+ <div class="mui-paper kpi-card">
+ <span class="kpi-label mono">FOUNDER VOTING CAP</span>
+ <div class="kpi-value mono" style="color: var(--mui-violet-text);">23.9% <span style="font-size:0.85rem;font-weight:600;">(≤30% Cap)</span></div>
+ <p class="kpi-desc">Jeremy Allaire 持有 79.8% Class B 股（每股5票），受 30% 硬上限约束，兼顾远见与公众监督。</p>
+ </div>
+ </div>
+
+ <!-- Combo Chart: FY22–TTM26 Adjusted EBITDA & RLDC Margin -->
+ <div class="chart-card">
+ <div class="chart-toolbar">
+ <div>
+ <div class="chart-title">FY2022–TTM Q3'26 经营杠杆兑现期：经调整 EBITDA ($M) 与综合 RLDC 利润率 (%)</div>
+ <div class="chart-caption">柱状图（左轴）为经调整 EBITDA；折线（右轴）为扣除分润后 RLDC 净留存利润率（平台直存与 Arc/CPN 双轮抬升）</div>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">EBITDA 复合爆发 · Q3'26 单季 $317M</span>
+ </div>
+ <div class="chart-axis-meta mono">
+ <span style="color:var(--chart-c1);">■ 左轴：年度 / TTM 经调整 EBITDA ($M)</span>
+ <span style="color:var(--chart-c2);">● 右轴：扣除分润后 RLDC 利润率 (%)</span>
+ </div>
+ <div class="canvas-stage">
+ <canvas id="chartEps"></canvas>
+ </div>
+ <div class="chart-legend" id="epsLegend">
+ <button type="button" class="legend-pill" data-eps-series="eps"><span class="legend-dot" style="background:var(--chart-c1);"></span><span>经调整 EBITDA (左轴 · $M)</span></button>
+ <button type="button" class="legend-pill" data-eps-series="oci"><span class="legend-dot" style="background:var(--chart-c2);"></span><span>RLDC 净留存利润率 (右轴 · %)</span></button>
+ </div>
+ </div>
+
+ <!-- Interactive Multi-Era Compounding Simulator -->
+ <div class="simulator-grid">
+ <div class="sim-controls">
+ <div>
+ <div class="sec-eyebrow mono" style="margin-bottom:2px;">INTERACTIVE NETWORK FLYWHEEL SIMULATOR</div>
+ <h3 style="font-size:1rem;font-weight:800;">Circle 跨周期合规网络与非利差溢价复利推演器</h3>
+ </div>
+
+ <label class="mui-switch-row" for="simDripToggle">
+ <div>
+ <div style="font-size:0.84rem;font-weight:700;color:var(--text-primary);">叠加 CPN 跨境清算 + Arc 平台直存利润率增厚 (+4.5%/年)</div>
+ <div style="font-size:0.74rem;color:var(--text-secondary);">映射从纯国债利差分成向全栈互联网金融 OS 跃迁带来的超额每股内生价值增速</div>
+ </div>
+ <input type="checkbox" id="simDripToggle" checked />
+ </label>
+
+ <div class="preset-stack" role="group" aria-label="Circle 历史与前瞻复利预设周期">
+ <button type="button" class="preset-btn active" data-preset="p1">
+ <span>① 2026–2032 全栈金融 OS 跃迁基准期</span>
+ <span class="mono">6年 · 22.0%+平台增厚</span>
+ </button>
+ <button type="button" class="preset-btn" data-preset="p2">
+ <span>② 2020–2025 USDC 规模爆发冲刺期 (收入口径)</span>
+ <span class="mono">5年 · 38.0% 极速扩张</span>
+ </button>
+ <button type="button" class="preset-btn" data-preset="p3">
+ <span>③ 2026–2036 全球数字美元成熟稳态期</span>
+ <span class="mono">10年 · 14.5%+平台增厚</span>
+ </button>
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>初始模拟配置本金 (USD)</span>
+ <span id="simPrincipalLabel" class="slider-val mono">$10,000</span>
+ </div>
+ <input type="range" id="simPrincipalSlider" class="mui-slider" min="1000" max="100000" step="1000" value="10000" />
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>长期持有年限 (Years)</span>
+ <span id="simYearsLabel" class="slider-val mono">6 年</span>
+ </div>
+ <input type="range" id="simYearsSlider" class="mui-slider" min="3" max="20" step="1" value="6" />
+ </div>
+
+ <div class="slider-group">
+ <div class="slider-head">
+ <span>核心网络内生复合增值率 (Base CAGR %)</span>
+ <span id="simCagrLabel" class="slider-val mono">22.0%</span>
+ </div>
+ <input type="range" id="simCagrSlider" class="mui-slider" min="5" max="40" step="0.5" value="22.0" />
+ </div>
+ </div>
+
+ <div class="sim-output-panel">
+ <div class="sim-readouts">
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">期末预估总价值 (Ending Value)</div>
+ <div id="simEndingVal" class="sim-stat-num mono" style="color:var(--mui-primary-lighter);">$40,967</div>
+ </div>
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">总回报倍数 (MOIC) / 综合年化</div>
+ <div id="simMoicVal" class="sim-stat-num mono" style="color:var(--mui-success-text);">4.10x · 26.50%</div>
+ </div>
+ <div class="sim-stat-box">
+ <div class="sim-stat-label">累计净复利增益 (Net Gain)</div>
+ <div id="simNetGainVal" class="sim-stat-num mono">$30,967</div>
+ </div>
+ <div class="sim-stat-box">
+ <div id="simMidLabel" class="sim-stat-label">第 3 年中期节点价值</div>
+ <div id="simMidVal" class="sim-stat-num mono">$20,243</div>
+ </div>
+ </div>
+
+ <div class="canvas-stage-sim">
+ <canvas id="chartSim"></canvas>
+ </div>
+ <div class="chart-legend" style="margin-top:4px;">
+ <span class="mui-chip mui-chip-primary mono">━ 含 CPN/Arc 平台溢价总价值轨迹</span>
+ <span class="mui-chip mono">- - 仅基础储备规模内生增长基准</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- Positive vs Critical Lens Dual Cards -->
+ <div class="grid-2" style="margin-top: 18px;">
+ <div class="mui-alert mui-alert-success" style="flex-direction:column; gap:8px;">
+ <div style="display:flex;align-items:center;gap:8px;">
+ <span class="mui-chip mui-chip-success mono">ENDURING MOAT</span>
+ <strong>正向组织文化遗产定评</strong>
+ </div>
+ <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+ <strong>1. 历经极端黑天鹅检验的机构信任金身：</strong>2022 加密寒冬零坏账、2023 SVB 危机 100% 兑付，铸就全球机构不可复制的合规品牌溢价。<br/>
+ <strong>2. 极高人才密度与协议杠杆：</strong>约千名员工支撑 $739亿 资产安全运转与每季 $13.9万亿 清算，人均创收 ~$2.90M 媲美顶级硬科技巨头。<br/>
+ <strong>3. 创始人长线定力与现代公众治理平衡：</strong>Allaire 坚守 13 年终圆纽交所主板上市梦，同时以 30% 投票权上限杜绝一言堂治理折价。
+ </p>
+ </div>
+
+ <div class="mui-alert mui-alert-warning" style="flex-direction:column; gap:8px;">
+ <div style="display:flex;align-items:center;gap:8px;">
+ <span class="mui-chip mui-chip-warning mono">CRITICAL LENS</span>
+ <strong>客观局限与组织张力反思</strong>
+ </div>
+ <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.65;">
+ <strong>1. 早期“与巨头结盟换规模”留下的分润枷锁：</strong>当年与 Coinbase 合建 Centre 虽成功突围，但也留下高达 ~51% 的单一伙伴储备分润负担。<br/>
+ <strong>2. 上市公司发行原生公链代币的治理新考题：</strong>Arc 主网及 100 亿枚 ARC 代币在向 2027 去中心化 PoS 过渡中，需平衡股东利益与代币社区治理。<br/>
+ <strong>3. 核心高管换代期的平稳衔接考验：</strong>2026 年 9 月联合创始人 Sean Neville 离任董事及功勋 CFO Jeremy Fox-Geen 宣布年底交棒，新任 CFO 人选备受华尔街关注 <a class="cite-link" href="https://ffnews.com/news/circle-announces-cfo-transition-plan-ca015e81" target="_blank" rel="noopener noreferrer">FFNews 报道 ↗</a>。
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- 05 三幕组织演进与四大生死战 -->
+ <section id="sec-05" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 05 · THREE-ACT EVOLUTION &amp; FOUR DEFINING BATTLES</div>
+ <h2 class="sec-h2" data-i18n-zh="五、三幕组织进化史与四大生死战役复盘：从消费应用试错到全球数字美元霸主" data-i18n-en="5. Three-Act Evolution &amp; Four Defining Battles: 13 Years of Strategic Focus">五、三幕组织进化史与四大生死战役复盘：从消费应用试错到全球数字美元霸主</h2>
+ <p class="sec-sub" data-i18n-zh="Circle 之所以能成为行业幸存的合规灯塔，源于其数次在泡沫顶峰主动剥离暴利投机业务的战略减法勇气" data-i18n-en="Circle's survival and dominance trace to ruthless strategic subtraction at crypto hype peaks">Circle 之所以能成为行业幸存的合规灯塔，源于其数次在泡沫顶峰主动剥离暴利投机业务的战略减法勇气</p>
+ </div>
+ <span class="mui-chip mui-chip-primary mono">2013 波士顿创立 → 2026 纽约世贸中心总部</span>
+ </div>
+
+ <div class="mui-timeline">
+ <div class="timeline-step">
+ <span class="timeline-dot"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第一幕 · 消费支付探索与首张 BitLicense 奠基 (2013–2017) —— 确立“正门合规”第一性原理</strong>
+ <span class="mui-chip mono">2015 获颁纽约 001 号 BitLicense</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">2013 年 Jeremy Allaire 与 Sean Neville 创立 Circle，早年尝试基于比特币 rails 的社交支付 Circle Pay、场外交易 Circle Trade 及收购 Poloniex 交易所与 SeedInvest 股权众筹；尽管发现波动性资产难以充当日常支付媒介，但 2015 年率先拿下纽约金融服务署（NYDFS）史上第一张 BitLicense 及英国电子货币牌照，奠定了全员合规基因。</p>
+ </div>
+
+ <div class="timeline-step">
+ <span class="timeline-dot" style="background:#3399FF;"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第二幕 · 壮士断腕战略聚焦、USDC 崛起与 SVB 淬火重生 (2018–2024) —— All-in 数字美元底座</strong>
+ <span class="mui-chip mui-chip-primary mono">营收 $15M (2020) → $1.68B (2024)</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">2018 年推出 USDC 后，Allaire 于 2019–2022 年果断剥离 Poloniex 交易所、Circle Trade 与消费端 App，忍痛放弃高风险交易佣金，将全公司重组为纯粹中立的稳定币与云 API 平台；2022 年底主动终止高估值 SPAC 合并，2023 年 3 月扛过硅谷银行危机并将 88% 储备迁入贝莱德 Circle Reserve Fund，2024 年 7 月完成从爱尔兰迁册回美国特拉华州 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000119312525126208/d737521ds1a.htm" target="_blank" rel="noopener noreferrer">SEC S-1/A 沿革 ↗</a>。</p>
+ </div>
+
+ <div class="timeline-step">
+ <span class="timeline-dot" style="background:#22C55E;"></span>
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+ <strong style="font-size:0.95rem;">第三幕 · 纽交所敲钟、GENIUS 法案加冕与全栈经济 OS 跃迁 (2025–2026+) —— 迈向互联网金融平台</strong>
+ <span class="mui-chip mui-chip-success mono">2025.06 NYSE IPO · 2026.09 Arc 主网</span>
+ </div>
+ <p style="font-size:0.84rem;color:var(--text-secondary);">2025 年 6 月 5 日成功登陆纽交所主板（CRCL），同年美国《GENIUS 法案》签署立法、12 月获 OCC 国民信托银行有条件批准；2026 年上线 CPN Managed Payments（年化 $413亿 TPV）、发布企业级公链 Arc 主网、宣布 $4亿并购 Tazapay 并与币安、Visa、SAP 达成深度全球合作，开启三层全栈金融平台新纪元。</p>
+ </div>
+ </div>
+
+ <!-- 4 Landmark Battles -->
+ <div class="grid-2" style="margin-bottom: 18px;">
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-warning mono">战役 01 · 2019–2020</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">战略减法魄力</span>
+ </div>
+ <h3>剥离 Poloniex 交易所：用短期阵痛换取终身“协议中立权”</h3>
+ <p>若保留自营交易所，Circle 虽能赚取牛市暴利，但全球其他交易所与银行绝不会采用竞争对手发行的稳定币。砍掉交易业务让 USDC 成为全行业唯一无利益冲突的合规公器。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-error mono">战役 02 · 2023.03</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">72小时生死时速</span>
+ </div>
+ <h3>硅谷银行（SVB）$33亿储备冻结：零隐瞒沟通铸就信誉丰碑</h3>
+ <p>面对传统银行系统性暴雷，Allaire 全程实名公开每一笔储备下落并承诺公司兜底潜在缺口，周末紧急接通新清算行，随后将近九成储备锁入贝莱德管理的美债基金，彻底消除单一商行挤兑风险。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-primary mono">战役 03 · 2023.08</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">收回治理主权</span>
+ </div>
+ <h3>解散 Centre 联盟与重签 Coinbase 协议：统合多链发行大权</h3>
+ <p>通过协议重构，Circle 100% 收回 USDC 智能合约治理与多链快速部署权（迅速扩展至 30+ 条公链），并确立“谁托管谁优先享收益”规则，为自家平台直存扩张打开空间。</p>
+ </div>
+
+ <div class="feature-card">
+ <div style="display:flex;justify-content:space-between;align-items:center;">
+ <span class="mui-chip mui-chip-success mono">战役 04 · 2025–2026</span>
+ <span class="mono" style="font-size:0.75rem;color:var(--text-muted);">拒绝上市懈怠</span>
+ </div>
+ <h3>IPO 后高速进击：一年半连发 CPN、Arc 主网并主动精简 5% 组织</h3>
+ <p>上市非但未令团队官僚化，反而在 18 个月内密集交付 Gateway、xReserve、CPN 与 Arc L1 主网，并在高盈利季度主动裁剪 5% 冗余编制，保持初创级战斗力。</p>
+ </div>
+ </div>
+
+ <!-- 3 Cultural Laws -->
+ <div class="grid-3">
+ <div class="mui-alert">
+ <div><strong>法则一：</strong>在主权货币与金融清算赛道，“正门合规”不是拖慢增长的成本中心，而是唯一能通往万亿美元级企业 ERP 与银行金库的入场券。</div>
+ </div>
+ <div class="mui-alert">
+ <div><strong>法则二：</strong>想成为全行业的底层结算标准，就必须彻底克制下场做裁判员兼运动员的诱惑——严守“协议中立”，让所有竞争者都成为你的分发商。</div>
+ </div>
+ <div class="mui-alert">
+ <div><strong>法则三：</strong>用软件 API 和智能合约替代传统银行的人海战术，严控千人级高密度工程与合规团队，让规模效应直接转化为 70% 的 EBITDA 利润率。</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- 06 Circle 文化法则核查清单 -->
+ <section id="sec-06" class="mui-paper section-block">
+ <div class="sec-header">
+ <div>
+ <div class="sec-eyebrow mono">CHAPTER 06 · INTERACTIVE FINTECH ORGANIZATION DIAGNOSTIC CHECKLIST</div>
+ <h2 class="sec-h2" data-i18n-zh="六、“Circle 制度信任法则”金融科技与加密基础设施交互式核查清单" data-i18n-en="6. Interactive 'Circle Trust Laws' Fintech &amp; Web3 Infrastructure Checklist">六、“Circle 制度信任法则”金融科技与加密基础设施交互式核查清单</h2>
+ <p class="sec-sub" data-i18n-zh="用于评估任何数字金融平台、稳定币网络或跨境支付基建是否具备穿越监管与利率周期的长期护城河（本地自动保存）" data-i18n-en="Evaluate whether a fintech or digital asset platform possesses institutional-grade durability (saved locally)">用于评估任何数字金融平台、稳定币网络或跨境支付基建是否具备穿越监管与利率周期的长期护城河（本地自动保存）</p>
+ </div>
+ <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+ <span id="checklistScoreChip" class="mui-chip mui-chip-primary mono">已核查 3 / 6 项 (50%)</span>
+ <button type="button" id="checkAllBtn" class="mui-btn">全部勾选</button>
+ <button type="button" id="resetCheckBtn" class="mui-btn">重置清单</button>
+ </div>
+ </div>
+
+ <div class="progress-track" aria-label="核查完成度进度条">
+ <div id="checklistProgressBar" class="progress-fill"></div>
+ </div>
+
+ <div id="checklistContainer" class="checklist-grid"></div>
+ </section>
+
+ <!-- 07 Primary Sources & Disclosure Footer -->
+ <footer id="sec-07" class="mui-paper section-block" style="padding: 22px 26px;">
+ <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;">
+ <strong style="font-size:0.92rem;">数据来源与一手监管核验索引（SEC EDGAR · Circle Investor Relations · 2026 Proxy DEF 14A）</strong>
+ <span class="mui-chip mono">MUI High-Clarity Architecture · Offline Ready</span>
+ </div>
+ <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">
+ 本研报所有财务、员工人数、分润结构、投票权上限、管理层变动与生态合作数据均严格核验自美国证监会（SEC EDGAR Form 10-K / 10-Q / 8-K / S-1 / DEF 14A）及 Circle 官方新闻稿，仅供企业文化与商业架构研究参考，不构成任何投资建议。
+ </p>
+ <ul class="sources-list">
+ <li><span class="mono">[01]</span><a href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Circle Q3 2026 Official Earnings Release &amp; Financial Statements (2026-11-04) ↗</a></li>
+ <li><span class="mono">[02]</span><a href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">Circle Internet Group FY2025 Form 10-K Annual Report (~1,100 Employees · Filed 2026-03-09) ↗</a></li>
+ <li><span class="mono">[03]</span><a href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/final_circlereportsfourt.htm" target="_blank" rel="noopener noreferrer">SEC Form 8-K Exhibit 99.1 — Q4 &amp; Full Fiscal Year 2025 Results (2026-02-25) ↗</a></li>
+ <li><span class="mono">[04]</span><a href="https://www.sec.gov/Archives/edgar/data/1876042/000119312525126208/d737521ds1a.htm" target="_blank" rel="noopener noreferrer">SEC Form S-1/A Prospectus — Jeremy Allaire Founder's Letter &amp; Mission Principles ↗</a></li>
+ <li><span class="mono">[05]</span><a href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000112/crcl-20260401.htm" target="_blank" rel="noopener noreferrer">SEC 2026 Definitive Proxy Statement (DEF 14A · Governance &amp; 30% Class B Cap) ↗</a></li>
+ <li><span class="mono">[06]</span><a href="https://eco.com/support/en/articles/17272678-circle-ownership-jeremy-allaire-class-b-votes-and-crcl-holders" target="_blank" rel="noopener noreferrer">2026 Proxy Ownership Analysis — Jeremy Allaire 23.9% Voting Power Breakdown ↗</a></li>
+ <li><span class="mono">[07]</span><a href="https://www.stocktitan.net/sec-filings/CRCL/8-k-circle-internet-group-inc-reports-material-event-0a8184595271.html" target="_blank" rel="noopener noreferrer">SEC Form 8-K — CFO Transition Plan &amp; Board Update (2026-09-25) ↗</a></li>
+ <li><span class="mono">[08]</span><a href="https://s206.q4cdn.com/265218871/files/doc_financials/2025/ar/CRCL_AR_2026_WO13_WKV_PR-1.pdf" target="_blank" rel="noopener noreferrer">Circle 2025 Annual Report — Becoming a Full-Stack Internet Financial Platform ↗</a></li>
+ </ul>
+ </footer>
+
+ </main>
+ </div>
+
+ <script>
+ (function () {
+ 'use strict';
+
+ var STORAGE_THEME_KEY = 'mui_portal_theme_v4';
+ var STORAGE_LANG_KEY = 'mui_portal_lang_v1';
+ var STORAGE_SIDEBAR_KEY = 'mui_portal_sidebar_collapsed_v1';
+ var STORAGE_CHECK_KEY = 'mui_crcl_culture_checks_v1';
+
+ var PILLAR_NOTES = [
+ '<strong>当前选中支柱解读（01 高诚信与正门透明）：</strong>Allaire 在招股书与 2026 股东信中反复指出，货币网络没有“先破坏再道歉”的特权——正是十余年如一日的正门合规，让 Circle 在《GENIUS 法案》时代自动成为美国主流银行与跨国 ERP 的默认合规接口 <a class="cite-link" href="https://d18rn0p25nwr6d.cloudfront.net/CIK-0001876042/3924f49b-d901-4a89-813a-3ef657a68045.pdf" target="_blank" rel="noopener noreferrer">2026 Proxy 使命价值观 ↗</a>。',
+ '<strong>当前选中支柱解读（02 多方共赢与市场中立）：</strong>不自营散户投机交易所、不偏袒单一公链，使 USDC 得以在 30+ 条竞争性区块链上原生通行，并先后赢得 Coinbase、币安（$1亿战略入股）及 Visa 的共同力推 <a class="cite-link" href="https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results" target="_blank" rel="noopener noreferrer">Q3 2026 生态公告 ↗</a>。',
+ '<strong>当前选中支柱解读（03 卓越追求与平台化抽象）：</strong>通过 Circle Gateway 亚秒级跨链统一余额、MPC 免助记词企业钱包与 CPN Managed Payments，将复杂的链上 Gas 与桥接细节彻底封装在云端 API 之后 <a class="cite-link" href="https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm" target="_blank" rel="noopener noreferrer">FY25 10-K 技术栈 ↗</a>。',
+ '<strong>当前选中支柱解读（04 清醒审慎与危机极限抗压）：</strong>经历 2023 年 SVB 危机洗礼后，Circle 将约 88% 储备锚定于贝莱德管理的 SEC 2a-7 纯美债货币基金，并清零全部有息可转债、手握 $27.2亿 自有流动性现金。'
+ ];
+
+ var PEER_ROWS = [
+ {
+ category: 'crypto',
+ benchmark: true,
+ company: '研究基准：Circle Internet Group (NYSE: CRCL)',
+ leader: 'Jeremy Allaire (CEO) · Heath Tarbert (总裁)',
+ positioning: '全球正门合规 + 贝莱德 88% 国债托管 + 纽交所上市公众治理',
+ culture: '高诚信透明 + 协议级市场中立 + 30% Class B 投票权封顶',
+ headcount: '~1,045–1,100人 · TTM 人均创收 ~$2.90M',
+ margins: 'TTM 收入 $30.3亿 · Q3 RLDC 率 52.4% · EBITDA/RLDC 70%',
+ verdict: '机构级链上金融标准制定者：唯一兼具美欧全牌照、79% 链上交易量份额与 Arc/CPN 全栈清算网的上市公司。',
+ sourceLabel: 'SEC FY25 10-K / Q3 8-K',
+ sourceUrl: 'https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results'
+ },
+ {
+ category: 'crypto',
+ benchmark: false,
+ company: 'Tether Holdings (USDT · 私人离岸)',
+ leader: 'Paolo Ardoino (CEO) · Giancarlo Devasini',
+ positioning: '萨尔瓦多离岸总部 + 规避美国/欧盟 MiCA 严苛银行级监管',
+ culture: '百人极简特种兵 + 零渠道分润独享利差 + 新兴市场草根渗透',
+ headcount: '~150–200人 · 人类商业史极致人均创利极值',
+ margins: '零交易所分润，毛利率 >95%，配置美债+黄金+比特币',
+ verdict: '离岸高利差现金机器：在发展中国家灰市与散户点对点汇款占优，但因合规受限难以进入美国银行、SAP ERP 与机构清结算核心层。',
+ sourceLabel: 'Artemis Stablecoin Comp',
+ sourceUrl: 'https://research.artemis.ai/p/circle-internet-group-crcl'
+ },
+ {
+ category: 'crypto',
+ benchmark: false,
+ company: 'Coinbase Global (NASDAQ: COIN)',
+ leader: 'Brian Armstrong (联合创始人兼 CEO)',
+ positioning: '美国合规加密超级入口 + Base L2 + 现货 ETF 核心托管商',
+ culture: 'Mission-Focused 去政治化聚焦 + 交易经纪与链上生态双轮驱动',
+ headcount: '~3,700–4,200人 · 高弹性周期性人效',
+ margins: '综合毛利率 ~85% · 2025 年分走 Circle 总储备收入约 51% ($13.5亿)',
+ verdict: '最亲密的战友与分润博弈方：Coinbase 需要 USDC 留住链上生态，Circle 则通过拓展币安、银行与自有平台直存平衡其议价权。',
+ sourceLabel: 'Coinbase / Circle 10-K',
+ sourceUrl: 'https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm'
+ },
+ {
+ category: 'fintech',
+ benchmark: false,
+ company: 'Stripe (+ Bridge 稳定币网关)',
+ leader: 'Patrick & John Collison',
+ positioning: '全球互联网商户收单霸主 + $11亿收购 Bridge 布局稳定币 API',
+ culture: '硅谷极致开发者文档美学 + 长线基础设施复利文化',
+ headcount: '~8,000+ 人 · 工程与企业销售并重',
+ margins: '万亿美元级 TPV，净收单留存率 ~30–40bps',
+ verdict: '应用层收单王者：Stripe 强在电商结账最后一公里，而底层跨链稳定币流动性仍高度接入并放大 USDC 网络效应。',
+ sourceLabel: 'Circle Industry Report',
+ sourceUrl: 'https://www.circle.com/pressroom/from-stablecoins-to-infrastructure-circle-charts-the-rise-of-the-internet-financial-system-2026-report'
+ },
+ {
+ category: 'fintech',
+ benchmark: false,
+ company: 'Visa Inc. (NYSE: V)',
+ leader: 'Ryan McInerney (CEO)',
+ positioning: '覆盖 200+ 国家与 40亿+ 张卡的全球四方清算网络霸主',
+ culture: '零信贷风险网络中立 + 99.999% 金融级高可用纪律',
+ headcount: '~31,000+ 人 · 人均创收 ~$1.2M',
+ margins: '营业利润率高达 ~67%，纯正交易基点收费机',
+ verdict: 'Circle 的终局镜像与合作盟友：Visa Direct 已在 180+ 国商业化部署 USDC 预注资结算；Circle 正是在公链上复刻“下一代可编程 Visa”。',
+ sourceLabel: 'Q3 2026 Visa Direct 部署',
+ sourceUrl: 'https://www.businesswire.com/news/home/20261104960710/en/Circle-Reports-Third-Quarter-2026-Results'
+ }
+ ];
+
+ var CHECKLIST_ITEMS = [
+ {
+ tag: '正门牌照壁垒',
+ title: '1. “正门监管”测试：是否在美欧亚核心司法辖区持有最高等级原生牌照？',
+ desc: '核查企业是否主动拥抱《GENIUS 法案》、OCC 国民信托银行、欧盟 MiCA 等法定框架，而非依赖随时可能被封堵的离岸灰色通道。'
+ },
+ {
+ tag: '100% 破产隔离',
+ title: '2. 储备纯度测试：客户储备资产是否 100% 破产隔离且零杠杆信贷挪用？',
+ desc: '对标 Circle Reserve Fund（贝莱德管理 88% 纯短债 + 12% GSIB 现金 + 四大月审），确认极端挤兑下具备 T+0 全额刚性兑付能力。'
+ },
+ {
+ tag: '协议中立不争利',
+ title: '3. 市场中立测试：是否严守底座边界、不自营高冲突业务与下游客户抢生意？',
+ desc: '正如 Circle 剥离 Poloniex 交易所并原生支持 30+ 公链，唯有绝对中立才能让互相竞争的银行、交易所与 ERP 共同采用同一套货币标准。'
+ },
+ {
+ tag: '直存与非利差引擎',
+ title: '4. 分润脱敏测试：平台直存占比与非利差结算收入是否呈季度结构性上升？',
+ desc: '跟踪平台内托管 USDC 权重（Q3\'26 达 18.1%）及 CPN/Arc/CCTP 等抗降息手续费收入占比，验证毛利率自主权持续增强。'
+ },
+ {
+ tag: '~$2.90M 人效锚',
+ title: '5. 千人精兵纪律测试：收入翻倍扩张时是否保持极简编制与高 EBITDA 转化率？',
+ desc: '对标 Q3\'26 主动精简 5% 冗余岗位、实现 70% 经调整 EBITDA/RLDC 利润率，拒绝顺周期盲目堆砌人力。'
+ },
+ {
+ tag: '30% 票权硬上限',
+ title: '6. 公众治理制衡测试：管理层权力是否受透明董事会与投票权上限制度约束？',
+ desc: '核查同股不同权架构是否设有合理封顶（如 Circle Class B 设 30% 总票权硬上限），兼顾创始人长期战略定力与外部机构股东保护。'
+ }
+ ];
+
+ var QUICK_JUMP_INDEX = [
+ { sec: 'sec-00', title: '00 执行摘要与核心指标', sub: 'TTM $3.03B 收入 · ~$2.90M 人均创收 · 79% 链上交易量份额' },
+ { sec: 'sec-01', title: '01 双螺旋架构与千人超高人效', sub: 'Allaire × Tarbert × Chandhok · 六年 197 倍收入跃迁图' },
+ { sec: 'sec-02', title: '02 四大文化支柱与五维雷达', sub: '高诚信正门合规 · 协议中立 · SVB 72h 极限兑付 · 雷达图' },
+ { sec: 'sec-03', title: '03 全球金融与加密巨头文化对比', sub: 'Circle vs Tether vs Coinbase vs Stripe vs Visa 实时筛选表' },
+ { sec: 'sec-04', title: '04 经营杠杆释放与复利推演器', sub: 'EBITDA 跃升曲线 · 跨周期平台复利交互模拟器' },
+ { sec: 'sec-05', title: '05 三幕组织演进与四大生死战', sub: '首张 BitLicense · 剥离交易所 · SVB 淬火 · 纽交所敲钟与 Arc' },
+ { sec: 'sec-06', title: '06 Circle 文化法则核查清单', sub: '6 项金融基础设施组织诊断与本地持久化评分' },
+ { sec: 'sec-07', title: '07 数据来源与监管核验索引', sub: 'SEC 10-K/8-K/S-1/DEF 14A 官方一手文件索引' }
+ ];
+
+ var PRESETS = {
+ p1: { principal: 10000, years: 6, priceCagr: 22.0, drip: true },
+ p2: { principal: 10000, years: 5, priceCagr: 38.0, drip: false },
+ p3: { principal: 10000, years: 10, priceCagr: 14.5, drip: true }
+ };
+
+ var state = {
+ lang: 'zh',
+ theme: 'light',
+ ch1View: 'viewA',
+ ch1Series: { s1: true, s2: true },
+ activePillar: 0,
+ radarSeries: { crcl: true, usdt: true, swift: true },
+ peerFilter: 'all',
+ peerQuery: '',
+ epsSeries: { eps: true, oci: true },
+ sim: { principal: 10000, years: 6, priceCagr: 22.0, drip: true, preset: 'p1' },
+ checks: [true, true, true, false, false, false]
+ };
+
+ var hitRegions = { chartCh1: [], chartRadar: [], chartBars: [], chartEps: [], chartSim: [] };
+ var hoverState = { chartCh1: -1, chartRadar: -1, chartBars: -1, chartEps: -1, chartSim: -1 };
+
+ function safeGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+ function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+ var toastTimer = null;
+ function showToast(msg) {
+ var el = document.getElementById('muiSnackbar');
+ if (!el) return;
+ el.textContent = msg;
+ el.classList.add('show');
+ clearTimeout(toastTimer);
+ toastTimer = setTimeout(function () { el.classList.remove('show'); }, 2500);
+ }
+
+ function applyTheme(theme, silent) {
+ state.theme = theme === 'dark' ? 'dark' : 'light';
+ document.documentElement.setAttribute('data-theme', state.theme);
+ var abIcon = document.getElementById('appbarThemeIcon');
+ if (abIcon) {
+ abIcon.innerHTML = state.theme === 'dark'
+ ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+ : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+ }
+ document.getElementById('sideThemeLightBtn').classList.toggle('active', state.theme === 'light');
+ document.getElementById('sideThemeDarkBtn').classList.toggle('active', state.theme === 'dark');
+ safeSet(STORAGE_THEME_KEY, state.theme);
+ renderAllCharts();
+ if (!silent) showToast(state.theme === 'dark' ? '已切换至深色护眼模式' : '已切换至清晰浅色模式');
+ }
+
+ function applyLanguage(lang, silent) {
+ state.lang = lang === 'en' ? 'en' : 'zh';
+ document.documentElement.lang = state.lang === 'en' ? 'en' : 'zh-CN';
+ document.getElementById('langZhBtn').classList.toggle('active', state.lang === 'zh');
+ document.getElementById('langEnBtn').classList.toggle('active', state.lang === 'en');
+ document.querySelectorAll('[data-i18n-zh]').forEach(function (node) {
+ var val = node.getAttribute(state.lang === 'en' ? 'data-i18n-en' : 'data-i18n-zh');
+ if (val !== null) {
+ if (val.indexOf('<span') !== -1) node.innerHTML = val;
+ else node.textContent = val;
+ }
+ });
+ safeSet(STORAGE_LANG_KEY, state.lang);
+ renderAllCharts();
+ if (!silent) showToast(state.lang === 'en' ? 'Switched to English' : '已切换至中文视图');
+ }
+
+ // Suite Hub Filter & Notification
+ var hub = document.getElementById('companySubfolderHub');
+ if (hub) {
+ hub.addEventListener('click', function (e) {
+ var pill = e.target.closest('[data-co-cat]');
+ if (pill) {
+ var cat = pill.getAttribute('data-co-cat');
+ hub.querySelectorAll('[data-co-cat]').forEach(function (p) { p.classList.toggle('active', p === pill); });
+ hub.querySelectorAll('[data-co-item-cat]').forEach(function (it) {
+ it.classList.toggle('co-hub-hidden', !(cat === 'ALL' || it.getAttribute('data-co-item-cat') === cat));
+ });
+ return;
+ }
+ var item = e.target.closest('[data-suite-doc]');
+ if (item && !item.classList.contains('active')) {
+ showToast('请在本次交付的四份网页附件中打开：《' + item.getAttribute('data-suite-doc') + '》');
+ }
+ });
+ }
+
+ function escapeHtml(str) {
+ return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+ }
+ function highlightMatch(text, query) {
+ var safe = escapeHtml(text);
+ if (!query) return safe;
+ var escapedQ = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ return safe.replace(new RegExp('(' + escapedQ + ')', 'gi'), '<mark class="hl">$1</mark>');
+ }
+
+ function renderPeerTable() {
+ var tbody = document.getElementById('peerTableBody');
+ var badge = document.getElementById('peerCountBadge');
+ if (!tbody) return;
+ var q = state.peerQuery.trim().toLowerCase();
+ var filtered = PEER_ROWS.filter(function (row) {
+ var catOk = state.peerFilter === 'all' || row.category === state.peerFilter;
+ if (!catOk) return false;
+ if (!q) return true;
+ var hay = (row.company + ' ' + row.leader + ' ' + row.positioning + ' ' + row.culture + ' ' + row.verdict).toLowerCase();
+ return hay.indexOf(q) !== -1;
+ });
+ if (badge) badge.textContent = '显示 ' + filtered.length + ' / ' + PEER_ROWS.length + ' 家标杆企业';
+ if (!filtered.length) {
+ tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;">未找到匹配记录，请尝试其他关键词或重置筛选。</td></tr>';
+ return;
+ }
+ var rawQ = state.peerQuery.trim();
+ tbody.innerHTML = filtered.map(function (r) {
+ return '<tr class="' + (r.benchmark ? 'benchmark-row' : '') + '">' +
+ '<td><strong style="color:var(--text-primary);display:block;">' + highlightMatch(r.company, rawQ) + '</strong><span style="font-size:0.76rem;color:var(--text-muted);">' + highlightMatch(r.leader, rawQ) + '</span></td>' +
+ '<td>' + highlightMatch(r.positioning, rawQ) + '</td>' +
+ '<td>' + highlightMatch(r.culture, rawQ) + '</td>' +
+ '<td class="mono" style="font-size:0.79rem;">' + highlightMatch(r.headcount, rawQ) + '</td>' +
+ '<td class="mono" style="font-size:0.79rem;color:var(--mui-primary-lighter);font-weight:700;">' + highlightMatch(r.margins, rawQ) + '</td>' +
+ '<td>' + highlightMatch(r.verdict, rawQ) + ' <a class="cite-link" href="' + r.sourceUrl + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(r.sourceLabel) + ' ↗</a></td>' +
+ '</tr>';
+ }).join('');
+ }
+
+ function formatCurrency(val) {
+ if (val >= 10000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+ return '$' + Math.round(val).toLocaleString('en-US');
+ }
+
+ function updateSimulatorUI() {
+ var p = state.sim.principal, yrs = state.sim.years, cagr = state.sim.priceCagr;
+ var boost = state.sim.drip ? 4.5 : 0.0;
+ var totalRate = (cagr + boost) / 100;
+ var endingValue = p * Math.pow(1 + totalRate, yrs);
+ var moic = endingValue / p;
+ var netGain = endingValue - p;
+ var midYear = Math.max(1, Math.floor(yrs / 2));
+ var midValue = p * Math.pow(1 + totalRate, midYear);
+
+ document.getElementById('simPrincipalLabel').textContent = '$' + Math.round(p).toLocaleString('en-US');
+ document.getElementById('simYearsLabel').textContent = yrs + ' 年';
+ document.getElementById('simCagrLabel').textContent = cagr.toFixed(1) + '%';
+ document.getElementById('simEndingVal').textContent = formatCurrency(endingValue);
+ document.getElementById('simMoicVal').textContent = moic.toFixed(2) + 'x · ' + (totalRate * 100).toFixed(2) + '%';
+ document.getElementById('simNetGainVal').textContent = formatCurrency(netGain);
+ document.getElementById('simMidLabel').textContent = '第 ' + midYear + ' 年中期节点价值';
+ document.getElementById('simMidVal').textContent = formatCurrency(midValue);
+
+ document.querySelectorAll('[data-preset]').forEach(function (b) {
+ b.classList.toggle('active', b.getAttribute('data-preset') === state.sim.preset);
+ });
+ drawSimChart();
+ }
+
+ function renderChecklist() {
+ var container = document.getElementById('checklistContainer');
+ var chip = document.getElementById('checklistScoreChip');
+ var bar = document.getElementById('checklistProgressBar');
+ if (!container) return;
+ var doneCount = state.checks.filter(Boolean).length;
+ var pct = Math.round((doneCount / CHECKLIST_ITEMS.length) * 100);
+ if (chip) chip.textContent = '已核查 ' + doneCount + ' / ' + CHECKLIST_ITEMS.length + ' 项 (' + pct + '%)';
+ if (bar) bar.style.width = pct + '%';
+ container.innerHTML = CHECKLIST_ITEMS.map(function (item, idx) {
+ var isChecked = !!state.checks[idx];
+ return '<label class="check-card ' + (isChecked ? 'checked' : '') + '">' +
+ '<input type="checkbox" data-check-input="' + idx + '" ' + (isChecked ? 'checked' : '') + ' />' +
+ '<div style="flex:1;">' +
+ '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin-bottom:4px;">' +
+ '<span class="check-title">' + escapeHtml(item.title) + '</span>' +
+ '<span class="mui-chip mono">' + escapeHtml(item.tag) + '</span>' +
+ '</div>' +
+ '<p class="check-desc">' + escapeHtml(item.desc) + '</p>' +
+ '</div></label>';
+ }).join('');
+ }
+
+ // High-DPI Retina Canvas Charts
+ function getPalette() {
+ var isDark = state.theme === 'dark';
+ return {
+ isDark: isDark,
+ grid: isDark ? 'rgba(148,163,184,0.13)' : 'rgba(100,116,139,0.16)',
+ tick: isDark ? '#94A3B8' : '#475569',
+ text: isDark ? '#F3F6F9' : '#0F1924',
+ pillBg: isDark ? 'rgba(9, 13, 22, 0.90)' : 'rgba(255, 255, 255, 0.95)',
+ pillBorder: isDark ? 'rgba(51, 153, 255, 0.28)' : 'rgba(0, 115, 230, 0.24)',
+ trackBg: isDark ? 'rgba(148, 163, 184, 0.10)' : 'rgba(15, 25, 36, 0.06)',
+ hoverBand: isDark ? 'rgba(51, 153, 255, 0.07)' : 'rgba(0, 115, 230, 0.05)',
+ c1: isDark ? '#3399FF' : '#0073E6',
+ c2: isDark ? '#22C55E' : '#16A34A',
+ c3: isDark ? '#FFB74D' : '#D97706',
+ c4: isDark ? '#A78BFA' : '#7C3AED'
+ };
+ }
+
+ function prepareCanvas(id) {
+ var canvas = document.getElementById(id);
+ if (!canvas || !canvas.parentElement) return null;
+ var rect = canvas.parentElement.getBoundingClientRect();
+ var w = Math.max(240, Math.floor(rect.width || 500));
+ var h = Math.max(170, Math.floor(rect.height || 300));
+ var dpr = Math.min(window.devicePixelRatio || 1, 2);
+ canvas.width = Math.floor(w * dpr);
+ canvas.height = Math.floor(h * dpr);
+ var ctx = canvas.getContext('2d');
+ ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ ctx.clearRect(0, 0, w, h);
+ return { ctx: ctx, w: w, h: h };
+ }
+
+ function roundRectPath(ctx, x, y, w, h, r) {
+ if (w <= 0 || h <= 0) return;
+ var rad = Math.min(r, w / 2, h / 2);
+ ctx.beginPath();
+ ctx.moveTo(x + rad, y);
+ ctx.lineTo(x + w - rad, y);
+ ctx.quadraticCurveTo(x + w, y, x + w, y + rad);
+ ctx.lineTo(x + w, y + h - rad);
+ ctx.quadraticCurveTo(x + w, y + h, x + w - rad, y + h);
+ ctx.lineTo(x + rad, y + h);
+ ctx.quadraticCurveTo(x, y + h, x, y + h - rad);
+ ctx.lineTo(x, y + rad);
+ ctx.quadraticCurveTo(x, y, x + rad, y);
+ ctx.closePath();
+ }
+
+ function drawCh1Chart() {
+ var env = prepareCanvas('chartCh1');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartCh1 = [];
+ var titleEl = document.getElementById('ch1ChartTitle');
+ var subEl = document.getElementById('ch1ChartSub');
+ var metaEl = document.getElementById('ch1AxisMeta');
+
+ if (state.ch1View === 'viewA') {
+ titleEl.textContent = "FY2020–TTM Q3'26 总营收与储备收入跨越 197 倍跃升轨迹（$M · SEC S-1 & 10-K/10-Q）";
+ subEl.textContent = "从 2020 年 $15.4M 起步，跨越 2023 硅谷银行压力测试，跃升至 FY25 $2,746.6M 与 TTM $3,030.6M 历史峰值";
+ metaEl.innerHTML = '<span style="color:var(--chart-c1);">■ 蓝色：储备利息收入 Reserve Income ($M)</span><span style="color:var(--chart-c2);">■ 绿色：非利差平台与网络其他收入 Other Revenue ($M)</span>';
+
+ var pad = { top: 28, right: 20, bottom: 38, left: 56 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var yrs = ['FY20', 'FY21', 'FY22', 'FY23', 'FY24', 'FY25', "TTM Q3'26"];
+ var resInc = [4.0, 28.0, 735.8, 1430.6, 1661.1, 2636.8, 2711.3];
+ var othRev = [11.4, 56.9, 36.2, 19.9, 15.2, 109.8, 319.3];
+ var maxY = 3300;
+ for (var g = 0; g <= 4; g++) {
+ var gv = (maxY / 4) * g, gy = pad.top + ph - (g / 4) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText('$' + gv.toFixed(0) + 'M', pad.left - 8, gy + 4);
+ }
+ var step = pw / yrs.length, bw = Math.min(42, step * 0.54);
+ yrs.forEach(function (y, i) {
+ var cx = pad.left + step * (i + 0.5), x = cx - bw / 2;
+ var rVal = state.ch1Series.s1 ? resInc[i] : 0;
+ var oVal = state.ch1Series.s2 ? othRev[i] : 0;
+ var tot = rVal + oVal;
+ var hR = (rVal / maxY) * ph, hO = (oVal / maxY) * ph;
+ if (hR > 0) {
+ ctx.fillStyle = pal.c1;
+ roundRectPath(ctx, x, pad.top + ph - hR, bw, hR, 4); ctx.fill();
+ }
+ if (hO > 0) {
+ ctx.fillStyle = pal.c2;
+ roundRectPath(ctx, x, pad.top + ph - hR - hO, bw, Math.max(3, hO), 4); ctx.fill();
+ }
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + (tot >= 1000 ? (tot / 1000).toFixed(2) + 'B' : tot.toFixed(0) + 'M'), cx, pad.top + ph - hR - hO - 7);
+ ctx.fillStyle = pal.tick; ctx.font = '600 11px "IBM Plex Mono", sans-serif';
+ ctx.fillText(y, cx, pad.top + ph + 20);
+ hitRegions.chartCh1.push({
+ idx: i, x: pad.left + step * i, y: pad.top, w: step, h: ph + 28,
+ html: '<strong>' + y + ' 收入拆解</strong><br/>• 储备收入：<strong>$' + resInc[i].toFixed(1) + 'M</strong><br/>• 平台与网络其他收入：<strong>$' + othRev[i].toFixed(1) + 'M</strong><br/>• 合计总收入：<strong>$' + (resInc[i] + othRev[i]).toFixed(1) + 'M</strong>'
+ });
+ });
+ } else {
+ titleEl.textContent = "FY2022–Q3'26 极简团队规模（人）vs 人均年化创收跃迁（$M/人）";
+ subEl.textContent = "拒绝顺周期人海扩张，Q3'26 主动实施约 5% 组织精简后，TTM 人均创收冲上 ~$2.90M 行业塔尖";
+ metaEl.innerHTML = '<span style="color:var(--chart-c1);">■ 左轴：员工总人数 Headcount</span><span style="color:var(--chart-c2);">● 右轴：人均创收 Revenue / FTE ($M)</span>';
+
+ var padB = { top: 28, right: 54, bottom: 38, left: 52 };
+ var pwB = w - padB.left - padB.right, phB = h - padB.top - padB.bottom;
+ var pLbls = ['FY22', 'FY23', 'FY24(IPO前)', 'FY25(10-K)', "Q3'26(精简后)"];
+ var ftes = [920, 890, 900, 1100, 1045];
+ var revEmp = [0.84, 1.63, 1.86, 2.50, 2.90];
+ var maxFte = 1600, maxRev = 3.4;
+ for (var j = 0; j <= 4; j++) {
+ var r = j / 4, gyB = padB.top + phB - r * phB;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(padB.left, gyB); ctx.lineTo(padB.left + pwB, gyB); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(Math.round(maxFte * r), padB.left - 8, gyB + 4);
+ ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+ ctx.fillText('$' + (maxRev * r).toFixed(2) + 'M', padB.left + pwB + 8, gyB + 4);
+ }
+ var stepB = pwB / pLbls.length, bwB = Math.min(40, stepB * 0.44);
+ var pts = [];
+ pLbls.forEach(function (lb, k) {
+ var cx = padB.left + stepB * (k + 0.5);
+ if (state.ch1Series.s1) {
+ var bh = (ftes[k] / maxFte) * phB, by = padB.top + phB - bh;
+ ctx.fillStyle = pal.c1;
+ roundRectPath(ctx, cx - bwB / 2, by, bwB, bh, 5); ctx.fill();
+ ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(ftes[k] + '人', cx, by + 16);
+ }
+ var ly = padB.top + phB - (revEmp[k] / maxRev) * phB;
+ pts.push({ x: cx, y: ly, v: revEmp[k] });
+ ctx.fillStyle = pal.tick; ctx.font = '600 10.5px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(lb, cx, padB.top + phB + 20);
+ hitRegions.chartCh1.push({
+ idx: k, x: padB.left + stepB * k, y: padB.top, w: stepB, h: phB + 28,
+ html: '<strong>' + lb + '</strong><br/>• 团队人数：<strong>~' + ftes[k] + ' 人</strong><br/>• 人均年创收：<strong>$' + revEmp[k].toFixed(2) + 'M / 人</strong>'
+ });
+ });
+ if (state.ch1Series.s2) {
+ ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.6; ctx.beginPath();
+ pts.forEach(function (pt, idx) { if (idx === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+ ctx.stroke();
+ pts.forEach(function (pt) {
+ ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(pt.x, pt.y, 4.5, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + pt.v.toFixed(2) + 'M', pt.x, pt.y - 9);
+ });
+ }
+ }
+ }
+
+ function drawRadarChart() {
+ var env = prepareCanvas('chartRadar');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartRadar = [];
+ var axes = ['主权监管合规度', '储备审计透明度', '跨链开发者生态', '单兵软件人效', '公众治理制衡'];
+ var series = [
+ { key: 'crcl', name: 'Circle (CRCL)', color: pal.c1, fill: 'rgba(51, 153, 255, 0.24)', vals: [9.8, 9.9, 9.6, 9.3, 9.4] },
+ { key: 'usdt', name: 'Tether (USDT)', color: pal.c2, fill: 'rgba(34, 197, 94, 0.14)', vals: [4.2, 5.0, 7.8, 9.9, 3.8] },
+ { key: 'swift', name: '传统代理行网络', color: pal.c3, fill: 'rgba(255, 183, 77, 0.14)', vals: [9.5, 8.2, 3.2, 4.5, 8.0] }
+ ];
+ var cx = w / 2, cy = h / 2 + 6;
+ var radius = Math.max(62, Math.min((w - 190) / 2, h * 0.35));
+ var total = axes.length;
+ for (var ring = 2; ring <= 10; ring += 2) {
+ var r = (ring / 10) * radius;
+ ctx.strokeStyle = pal.grid; ctx.beginPath();
+ for (var i = 0; i < total; i++) {
+ var ang = -Math.PI / 2 + (i * 2 * Math.PI) / total;
+ var px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ }
+ ctx.closePath(); ctx.stroke();
+ }
+ for (var a = 0; a < total; a++) {
+ var angle = -Math.PI / 2 + (a * 2 * Math.PI) / total;
+ var ax = cx + Math.cos(angle) * radius, ay = cy + Math.sin(angle) * radius;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, ay); ctx.stroke();
+ var lx = cx + Math.cos(angle) * (radius + 14), ly = cy + Math.sin(angle) * (radius + 15);
+ ctx.fillStyle = pal.text; ctx.font = '600 11px sans-serif';
+ ctx.textAlign = Math.abs(Math.cos(angle)) < 0.2 ? 'center' : (Math.cos(angle) > 0 ? 'left' : 'right');
+ ctx.fillText(axes[a], lx, ly);
+ hitRegions.chartRadar.push({
+ idx: a, x: Math.min(ax, lx) - 34, y: Math.min(ay, ly) - 20, w: 70 + Math.abs(lx - ax), h: 40,
+ html: '<strong>' + axes[a] + '</strong><br/>• Circle: <strong>' + series[0].vals[a] + '</strong> | Tether: <strong>' + series[1].vals[a] + '</strong> | 传统代理行: <strong>' + series[2].vals[a] + '</strong>'
+ });
+ }
+ series.forEach(function (s) {
+ if (!state.radarSeries[s.key]) return;
+ ctx.beginPath();
+ for (var idx = 0; idx < total; idx++) {
+ var th = -Math.PI / 2 + (idx * 2 * Math.PI) / total;
+ var vx = cx + Math.cos(th) * ((s.vals[idx] / 10) * radius);
+ var vy = cy + Math.sin(th) * ((s.vals[idx] / 10) * radius);
+ if (idx === 0) ctx.moveTo(vx, vy); else ctx.lineTo(vx, vy);
+ }
+ ctx.closePath(); ctx.fillStyle = s.fill; ctx.fill();
+ ctx.strokeStyle = s.color; ctx.lineWidth = 2.4; ctx.stroke();
+ });
+ }
+
+ function drawHorizontalBars() {
+ var env = prepareCanvas('chartBars');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartBars = [];
+ var items = [
+ { label: '贝莱德 Circle Reserve Fund 纯国债托管占比', val: 88.0, col: '#16A34A', sub: '~$64.7B / $73.6B 隔离储备', note: 'SEC 注册 2a-7 政府货币市场基金托管，彻底隔离商业银行挤兑风险' },
+ { label: 'USDC 占全球稳定币链上真实交易量份额 (Q3\'26)', val: 79.0, col: '#0073E6', sub: '单季 $13.9T (+49% YoY)', note: '智能合约、DeFi、CCTP 与机构支付首选合规数字美元' },
+ { label: 'Q3 2026 经调整 EBITDA / RLDC 经营转化率', val: 70.0, col: '#2563EB', sub: '$316.7M / $453.3M', note: '千人精兵平台架构带来的超高边际利润释放能力' },
+ { label: 'Q3 2026 扣除分润后净留存利润率 (RLDC Margin)', val: 52.4, col: '#7C3AED', sub: '同比大幅跃升 +1,291bps', note: 'Arc 代币预售收入确认与分润下降共同推升净留存率' },
+ { label: '创始人 Class B 类别总投票权制度硬上限', val: 30.0, col: '#D97706', sub: 'Allaire 实际持 23.9% 投票权', note: '罕见的创始人主动限权设计，契合全球金融基础设施公众监管要求' },
+ { label: 'Circle 平台内直存 USDC 日均加权占比 (Q3\'26)', val: 18.1, col: '#0284C7', sub: '期末 $13.9B (+462bps YoY)', note: '零外部渠道分润的核心高毛利增长极' }
+ ];
+ var pad = { top: 10, right: 18, bottom: 26, left: 18 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var maxX = 100, rowH = ph / items.length;
+ for (var g = 0; g <= 4; g++) {
+ var gx = pad.left + (g / 4) * pw;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(gx, pad.top); ctx.lineTo(gx, pad.top + ph); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText((g * 25) + '%', gx, pad.top + ph + 18);
+ }
+ items.forEach(function (it, i) {
+ var rt = pad.top + rowH * i;
+ var ly = rt + rowH * 0.35, by = rt + rowH * 0.52, bh = Math.min(15, rowH * 0.26);
+ var bw = (it.val / maxX) * pw;
+ ctx.fillStyle = pal.text; ctx.font = '600 12px sans-serif'; ctx.textAlign = 'left';
+ ctx.fillText(it.label, pad.left, ly);
+ ctx.fillStyle = it.col; ctx.font = '800 12px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(it.val.toFixed(1) + '%', pad.left + pw, ly);
+ ctx.fillStyle = pal.trackBg; roundRectPath(ctx, pad.left, by, pw, bh, bh / 2); ctx.fill();
+ ctx.fillStyle = it.col; roundRectPath(ctx, pad.left, by, bw, bh, bh / 2); ctx.fill();
+ hitRegions.chartBars.push({
+ idx: i, x: pad.left, y: rt, w: pw, h: rowH,
+ html: '<strong>' + it.label + ': ' + it.val.toFixed(1) + '%</strong><br/>• 明细：' + it.sub + '<br/>• 解读：' + it.note
+ });
+ });
+ }
+
+ function drawEpsComboChart() {
+ var env = prepareCanvas('chartEps');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartEps = [];
+ var yrs = ['FY2022', 'FY2023', 'FY2024', 'FY2025', "TTM Q3'26"];
+ var ebM = [95.0, 268.0, 284.9, 582.2, 787.5];
+ var rldcPct = [37.8, 39.1, 39.3, 39.4, 43.9];
+ var pad = { top: 26, right: 50, bottom: 38, left: 54 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ var maxE = 900, minM = 30, maxM = 50;
+ for (var g = 0; g <= 4; g++) {
+ var r = g / 4, gy = pad.top + ph - r * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '11px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText('$' + Math.round(maxE * r) + 'M', pad.left - 8, gy + 4);
+ ctx.fillStyle = pal.c2; ctx.textAlign = 'left';
+ ctx.fillText((minM + r * (maxM - minM)).toFixed(1) + '%', pad.left + pw + 8, gy + 4);
+ }
+ var step = pw / yrs.length, bw = Math.min(44, step * 0.44);
+ var pts = [];
+ yrs.forEach(function (y, i) {
+ var cx = pad.left + step * (i + 0.5);
+ if (state.epsSeries.eps) {
+ var bh = (ebM[i] / maxE) * ph, by = pad.top + ph - bh;
+ ctx.fillStyle = pal.c1; roundRectPath(ctx, cx - bw / 2, by, bw, bh, 5); ctx.fill();
+ ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('$' + ebM[i].toFixed(0) + 'M', cx, by + 16);
+ }
+ var ly = pad.top + ph - ((rldcPct[i] - minM) / (maxM - minM)) * ph;
+ pts.push({ x: cx, y: ly, v: rldcPct[i] });
+ ctx.fillStyle = pal.text; ctx.font = '700 11px sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(y, cx, pad.top + ph + 20);
+ hitRegions.chartEps.push({
+ idx: i, x: pad.left + step * i, y: pad.top, w: step, h: ph + 28,
+ html: '<strong>' + y + '</strong><br/>• 经调整 EBITDA：<strong>$' + ebM[i].toFixed(1) + 'M</strong><br/>• 综合 RLDC 利润率：<strong>' + rldcPct[i].toFixed(1) + '%</strong>'
+ });
+ });
+ if (state.epsSeries.oci) {
+ ctx.strokeStyle = pal.c2; ctx.lineWidth = 2.6; ctx.beginPath();
+ pts.forEach(function (pt, idx) { if (idx === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+ ctx.stroke();
+ pts.forEach(function (pt) {
+ ctx.fillStyle = pal.c2; ctx.beginPath(); ctx.arc(pt.x, pt.y, 4.5, 0, Math.PI * 2); ctx.fill();
+ ctx.fillStyle = pal.text; ctx.font = 'bold 10.5px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText(pt.v.toFixed(1) + '%', pt.x, pt.y - 9);
+ });
+ }
+ }
+
+ function drawSimChart() {
+ var env = prepareCanvas('chartSim');
+ if (!env) return;
+ var ctx = env.ctx, w = env.w, h = env.h, pal = getPalette();
+ hitRegions.chartSim = [];
+ var p = state.sim.principal, yrs = state.sim.years;
+ var baseR = state.sim.priceCagr / 100;
+ var totR = (state.sim.priceCagr + (state.sim.drip ? 4.5 : 0)) / 100;
+ var totS = [], baseS = [];
+ for (var y = 0; y <= yrs; y++) {
+ totS.push(p * Math.pow(1 + totR, y));
+ baseS.push(p * Math.pow(1 + baseR, y));
+ }
+ var maxVal = Math.max(totS[yrs], baseS[yrs], p * 1.2) * 1.1;
+ var pad = { top: 20, right: 20, bottom: 26, left: 58 };
+ var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+ for (var g = 0; g <= 3; g++) {
+ var v = (maxVal / 3) * g, gy = pad.top + ph - (g / 3) * ph;
+ ctx.strokeStyle = pal.grid; ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(pad.left + pw, gy); ctx.stroke();
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'right';
+ ctx.fillText(v >= 1000000 ? ('$' + (v / 1000000).toFixed(1) + 'M') : ('$' + Math.round(v / 1000) + 'k'), pad.left - 7, gy + 4);
+ }
+ var stepX = pw / yrs;
+ ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = pal.tick; ctx.lineWidth = 1.8; ctx.beginPath();
+ for (var i = 0; i <= yrs; i++) {
+ var px = pad.left + stepX * i, py = pad.top + ph - (baseS[i] / maxVal) * ph;
+ if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+ }
+ ctx.stroke(); ctx.restore();
+
+ ctx.strokeStyle = pal.c1; ctx.lineWidth = 2.6; ctx.beginPath();
+ for (var k = 0; k <= yrs; k++) {
+ var tx = pad.left + stepX * k, ty = pad.top + ph - (totS[k] / maxVal) * ph;
+ if (k === 0) ctx.moveTo(tx, ty); else ctx.lineTo(tx, ty);
+ if (k === 0 || k === Math.floor(yrs / 2) || k === yrs) {
+ ctx.fillStyle = pal.tick; ctx.font = '10px "IBM Plex Mono", sans-serif'; ctx.textAlign = 'center';
+ ctx.fillText('Y' + k, tx, pad.top + ph + 18);
+ }
+ hitRegions.chartSim.push({
+ idx: k, x: tx - stepX / 2, y: pad.top, w: Math.max(10, stepX), h: ph + 22,
+ html: '<strong>第 ' + k + ' 年模拟价值</strong><br/>• 含 CPN/Arc 平台增厚：<strong>' + formatCurrency(totS[k]) + '</strong><br/>• 纯储备内生基准：<strong>' + formatCurrency(baseS[k]) + '</strong>'
+ });
+ }
+ ctx.stroke();
+ }
+
+ function renderAllCharts() {
+ drawCh1Chart();
+ drawRadarChart();
+ drawHorizontalBars();
+ drawEpsComboChart();
+ drawSimChart();
+ }
+
+ function wireCanvasTooltip(canvasId) {
+ var canvas = document.getElementById(canvasId), tip = document.getElementById('chartTooltip');
+ if (!canvas || !tip) return;
+ canvas.addEventListener('mousemove', function (e) {
+ var rect = canvas.getBoundingClientRect();
+ var x = e.clientX - rect.left, y = e.clientY - rect.top;
+ var regions = hitRegions[canvasId] || [], matched = null;
+ for (var i = 0; i < regions.length; i++) {
+ var r = regions[i];
+ if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) { matched = r; break; }
+ }
+ if (matched) {
+ tip.innerHTML = matched.html;
+ tip.style.display = 'block';
+ tip.style.left = Math.min(window.innerWidth - 300, Math.max(12, e.clientX + 14)) + 'px';
+ tip.style.top = Math.max(12, e.clientY - tip.offsetHeight - 12) + 'px';
+ } else {
+ tip.style.display = 'none';
+ }
+ });
+ canvas.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+ }
+
+ // Init & Listeners
+ var savedT = (safeGet(STORAGE_THEME_KEY) || 'light').replace(/^"|"$/g, '');
+ var savedL = (safeGet(STORAGE_LANG_KEY) || 'zh').replace(/^"|"$/g, '');
+ var savedC = safeGet(STORAGE_CHECK_KEY);
+ if (savedC) {
+ try {
+ var parsed = JSON.parse(savedC);
+ if (Array.isArray(parsed) && parsed.length === CHECKLIST_ITEMS.length) state.checks = parsed.map(Boolean);
+ } catch (e) {}
+ }
+
+ renderPeerTable();
+ renderChecklist();
+ updateSimulatorUI();
+ applyTheme(savedT, true);
+ applyLanguage(savedL, true);
+
+ document.getElementById('langZhBtn').addEventListener('click', function () { applyLanguage('zh', false); });
+ document.getElementById('langEnBtn').addEventListener('click', function () { applyLanguage('en', false); });
+ document.getElementById('appbarThemeBtn').addEventListener('click', function () { applyTheme(state.theme === 'dark' ? 'light' : 'dark', false); });
+ document.getElementById('sideThemeLightBtn').addEventListener('click', function () { applyTheme('light', false); });
+ document.getElementById('sideThemeDarkBtn').addEventListener('click', function () { applyTheme('dark', false); });
+
+ document.getElementById('sideExportBtn').addEventListener('click', function () {
+ var blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+ var url = URL.createObjectURL(blob);
+ var a = document.createElement('a');
+ a.href = url;
+ a.download = 'Circle_企业文化与组织架构深度研究报告.html';
+ a.click();
+ setTimeout(function () { URL.revokeObjectURL(url); }, 1800);
+ showToast('已导出独立网页：Circle_企业文化与组织架构深度研究报告.html');
+ });
+ document.getElementById('sidePrintBtn').addEventListener('click', function () { window.print(); });
+
+ var sbBtn = document.getElementById('sidebarToggleBtn'), sb = document.getElementById('muiSidebar'), bd = document.getElementById('drawerBackdrop');
+ sbBtn.addEventListener('click', function () {
+ if (window.innerWidth <= 1120) {
+ var op = sb.classList.toggle('open');
+ bd.classList.toggle('open', op);
+ } else {
+ var col = document.documentElement.getAttribute('data-sidebar-collapsed') === '1';
+ if (col) document.documentElement.removeAttribute('data-sidebar-collapsed');
+ else document.documentElement.setAttribute('data-sidebar-collapsed', '1');
+ safeSet(STORAGE_SIDEBAR_KEY, col ? '0' : '1');
+ setTimeout(renderAllCharts, 60);
+ }
+ });
+ bd.addEventListener('click', function () { sb.classList.remove('open'); bd.classList.remove('open'); });
+
+ var jumpInput = document.getElementById('quickJumpInput'), jumpPop = document.getElementById('quickJumpPopover');
+ function renderJumpList(q) {
+ var kw = (q || '').trim().toLowerCase();
+ var list = QUICK_JUMP_INDEX.filter(function (it) { return !kw || (it.title + ' ' + it.sub).toLowerCase().indexOf(kw) !== -1; });
+ jumpPop.innerHTML = list.map(function (it) {
+ return '<button type="button" class="quick-jump-item" data-jump-sec="' + it.sec + '"><span class="quick-jump-item-title">' + escapeHtml(it.title) + '</span><span class="quick-jump-item-sub">' + escapeHtml(it.sub) + '</span></button>';
+ }).join('');
+ jumpPop.classList.toggle('open', list.length > 0);
+ }
+ jumpInput.addEventListener('focus', function () { renderJumpList(jumpInput.value); });
+ jumpInput.addEventListener('input', function () { renderJumpList(jumpInput.value); });
+ jumpPop.addEventListener('click', function (e) {
+ var btn = e.target.closest('[data-jump-sec]');
+ if (!btn) return;
+ var el = document.getElementById(btn.getAttribute('data-jump-sec'));
+ if (el) el.scrollIntoView({ behavior: 'smooth' });
+ jumpPop.classList.remove('open');
+ });
+ document.addEventListener('click', function (e) { if (!e.target.closest('.quick-search-wrap')) jumpPop.classList.remove('open'); });
+ document.addEventListener('keydown', function (e) {
+ if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); jumpInput.focus(); }
+ if (e.key === 'Escape') { jumpPop.classList.remove('open'); sb.classList.remove('open'); bd.classList.remove('open'); }
+ });
+
+ document.querySelectorAll('[data-ch1-view]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ state.ch1View = b.getAttribute('data-ch1-view');
+ document.getElementById('ch1TabA').classList.toggle('active', state.ch1View === 'viewA');
+ document.getElementById('ch1TabB').classList.toggle('active', state.ch1View === 'viewB');
+ drawCh1Chart();
+ });
+ });
+ document.querySelectorAll('[data-ch1-series]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var k = b.getAttribute('data-ch1-series');
+ state.ch1Series[k] = !state.ch1Series[k];
+ if (!state.ch1Series.s1 && !state.ch1Series.s2) state.ch1Series[k] = true;
+ b.classList.toggle('muted', !state.ch1Series[k]);
+ drawCh1Chart();
+ });
+ });
+ document.querySelectorAll('[data-collapse-target]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var panel = document.getElementById(b.getAttribute('data-collapse-target'));
+ if (!panel) return;
+ var open = panel.classList.toggle('open');
+ b.innerHTML = open ? '<span>收起微观执行机制</span> <span>⌃</span>' : '<span>展开微观执行机制</span> <span>⌄</span>';
+ });
+ });
+ document.querySelectorAll('[data-pillar]').forEach(function (card) {
+ card.addEventListener('click', function () {
+ var idx = parseInt(card.getAttribute('data-pillar'), 10) || 0;
+ state.activePillar = idx;
+ document.querySelectorAll('[data-pillar]').forEach(function (c, k) { c.classList.toggle('active', k === idx); });
+ document.getElementById('pillarFocusNote').innerHTML = '<div>' + PILLAR_NOTES[idx] + '</div>';
+ drawRadarChart();
+ });
+ });
+ document.querySelectorAll('[data-radar-key]').forEach(function (p) {
+ p.addEventListener('click', function () {
+ var k = p.getAttribute('data-radar-key');
+ state.radarSeries[k] = !state.radarSeries[k];
+ if (!state.radarSeries.crcl && !state.radarSeries.usdt && !state.radarSeries.swift) state.radarSeries[k] = true;
+ p.classList.toggle('muted', !state.radarSeries[k]);
+ drawRadarChart();
+ });
+ });
+
+ document.getElementById('peerSearchInput').addEventListener('input', function () { state.peerQuery = this.value; renderPeerTable(); });
+ document.querySelectorAll('[data-peer-filter]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ state.peerFilter = b.getAttribute('data-peer-filter');
+ document.querySelectorAll('[data-peer-filter]').forEach(function (x) { x.classList.toggle('active', x === b); });
+ renderPeerTable();
+ });
+ });
+
+ document.querySelectorAll('[data-eps-series]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var k = b.getAttribute('data-eps-series');
+ state.epsSeries[k] = !state.epsSeries[k];
+ if (!state.epsSeries.eps && !state.epsSeries.oci) state.epsSeries[k] = true;
+ b.classList.toggle('muted', !state.epsSeries[k]);
+ drawEpsComboChart();
+ });
+ });
+
+ var pS = document.getElementById('simPrincipalSlider'), yS = document.getElementById('simYearsSlider'), cS = document.getElementById('simCagrSlider'), dT = document.getElementById('simDripToggle');
+ pS.addEventListener('input', function () { state.sim.principal = parseFloat(this.value) || 10000; state.sim.preset = ''; updateSimulatorUI(); });
+ yS.addEventListener('input', function () { state.sim.years = parseInt(this.value, 10) || 6; state.sim.preset = ''; updateSimulatorUI(); });
+ cS.addEventListener('input', function () { state.sim.priceCagr = parseFloat(this.value) || 0; state.sim.preset = ''; updateSimulatorUI(); });
+ dT.addEventListener('change', function () { state.sim.drip = !!this.checked; updateSimulatorUI(); });
+ document.querySelectorAll('[data-preset]').forEach(function (b) {
+ b.addEventListener('click', function () {
+ var key = b.getAttribute('data-preset'), cfg = PRESETS[key];
+ if (!cfg) return;
+ state.sim.principal = cfg.principal; state.sim.years = cfg.years; state.sim.priceCagr = cfg.priceCagr; state.sim.drip = cfg.drip; state.sim.preset = key;
+ pS.value = String(cfg.principal); yS.value = String(cfg.years); cS.value = String(cfg.priceCagr); dT.checked = cfg.drip;
+ updateSimulatorUI();
+ });
+ });
+
+ document.getElementById('checklistContainer').addEventListener('change', function (e) {
+ var inp = e.target.closest('[data-check-input]');
+ if (!inp) return;
+ state.checks[parseInt(inp.getAttribute('data-check-input'), 10)] = !!inp.checked;
+ safeSet(STORAGE_CHECK_KEY, JSON.stringify(state.checks));
+ renderChecklist();
+ });
+ document.getElementById('checkAllBtn').addEventListener('click', function () {
+ state.checks = [true, true, true, true, true, true];
+ safeSet(STORAGE_CHECK_KEY, JSON.stringify(state.checks));
+ renderChecklist();
+ showToast('已勾选全部 6 项核查指标');
+ });
+ document.getElementById('resetCheckBtn').addEventListener('click', function () {
+ state.checks = [true, true, true, false, false, false];
+ safeSet(STORAGE_CHECK_KEY, JSON.stringify(state.checks));
+ renderChecklist();
+ showToast('已恢复默认基准状态 (50%)');
+ });
+
+ window.addEventListener('scroll', function () {
+ var docEl = document.documentElement;
+ var maxS = Math.max(1, docEl.scrollHeight - window.innerHeight);
+ document.getElementById('readingProgressBar').style.width = Math.min(100, (window.scrollY / maxS) * 100) + '%';
+ }, { passive: true });
+
+ ['chartCh1', 'chartRadar', 'chartBars', 'chartEps', 'chartSim'].forEach(wireCanvasTooltip);
+ var rt = null;
+ window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(renderAllCharts, 70); });
+ })();
+ </script>
+</body>
+</html>
